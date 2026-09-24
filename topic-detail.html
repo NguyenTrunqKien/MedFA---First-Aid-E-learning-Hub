@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Chi tiết Tình huống Sơ cấp cứu - MedFA</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- MedFA Modular CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00288e",
+            "primary-container": "#1e40af",
+            "primary-fixed": "#dde1ff",
+            "primary-fixed-dim": "#b8c4ff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#a8b8ff",
+            "on-primary-fixed": "#001453",
+            "on-primary-fixed-variant": "#173bab",
+            "inverse-primary": "#b8c4ff",
+            "secondary": "#006a61",
+            "secondary-container": "#86f2e4",
+            "secondary-fixed": "#89f5e7",
+            "secondary-fixed-dim": "#6bd8cb",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#006f66",
+            "on-secondary-fixed": "#00201d",
+            "on-secondary-fixed-variant": "#005049",
+            "tertiary": "#700013",
+            "tertiary-container": "#9b001f",
+            "tertiary-fixed": "#ffdad8",
+            "tertiary-fixed-dim": "#ffb3b1",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#ffa3a1",
+            "on-tertiary-fixed": "#410007",
+            "on-tertiary-fixed-variant": "#92001c",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "background": "#f8f9ff",
+            "on-background": "#121c2a",
+            "surface": "#f8f9ff",
+            "surface-dim": "#d0dbed",
+            "surface-bright": "#f8f9ff",
+            "surface-variant": "#d9e3f6",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e6eeff",
+            "surface-container-high": "#dee9fc",
+            "surface-container-highest": "#d9e3f6",
+            "on-surface": "#121c2a",
+            "on-surface-variant": "#444653",
+            "inverse-surface": "#27313f",
+            "inverse-on-surface": "#eaf1ff",
+            "outline": "#757684",
+            "outline-variant": "#c4c5d5",
+            "surface-tint": "#3755c3"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-lg": "2rem",
+            "gutter-sm": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin-sm": "1rem",
+            "margin-lg": "3rem",
+            "gutter": "1.5rem",
+            "margin": "1.5rem",
+            "space-xl": "2.5rem"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="topics">
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)] flex-1">
+    <div class="flex flex-col w-full">
+      <div class="max-w-7xl mx-auto w-full px-4 md:px-8 py-6">
+
+        <!-- 1. BREADCRUMB -->
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="flex flex-wrap items-center gap-2 text-sm text-on-surface-variant">
+            <li class="flex items-center gap-1">
+              <a class="hover:text-primary transition-colors flex items-center gap-1" href="index.html">
+                <span class="material-symbols-outlined text-[16px]">home</span>
+                <span>Trang chủ</span>
+              </a>
+              <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+            </li>
+            <li class="flex items-center gap-1">
+              <a class="hover:text-primary transition-colors" href="topics.html">
+                Thư viện sơ cấp cứu
+              </a>
+              <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+            </li>
+            <li class="font-bold text-on-surface flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-tertiary inline-block animate-ping"></span>
+              <span id="breadcrumb-topic-title">Hóc dị vật (Nghẹn & Tắc đường thở)</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- 2. TWO-COLUMN LAYOUT -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          <!-- 3. MAIN CONTENT (Left Column - ~70%) -->
+          <div class="lg:col-span-8 flex flex-col gap-6">
+
+            <!-- ARTICLE CORE CARD -->
+            <article class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm border border-outline-variant/30">
+              
+              <!-- Category Badges & Meta -->
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span id="detail-category-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-[16px]">air</span>
+                    <span id="detail-category-label">Cấp cứu đường thở</span>
+                  </span>
+                  <span id="detail-read-time" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold">
+                    <span class="material-symbols-outlined text-[15px]">timer</span>
+                    <span>Đọc 2 phút</span>
+                  </span>
+                </div>
+                <div class="inline-flex items-center gap-1 text-on-surface-variant text-xs bg-surface-container-low px-3 py-1 rounded-full">
+                  <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+                  <span id="detail-standard">Chuẩn ERC & AHA 2025</span>
+                </div>
+              </div>
+
+              <!-- Main Title & Lead -->
+              <div class="mt-4">
+                <h1 id="detail-title" class="text-2xl md:text-4xl text-primary tracking-tight font-extrabold leading-tight">
+                  Hóc dị vật (Nghẹn & Tắc đường thở)
+                </h1>
+                <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant mt-2 leading-relaxed">
+                  Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu <span class="font-bold text-tertiary">tổn thương không thể phục hồi chỉ sau 4 phút</span> thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.
+                </p>
+              </div>
+
+              <!-- CRITICAL ALERT BANNER -->
+              <section aria-label="Cảnh báo sinh mạng" class="mt-6 bg-tertiary-fixed rounded-xl p-4 flex items-start gap-4 shadow-sm border border-tertiary/20">
+                <div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm font-bold text-on-tertiary-fixed uppercase tracking-wider">Báo động khẩn cấp</span>
+                    <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                  </div>
+                  <p id="detail-alert-text" class="text-sm md:text-base font-bold text-on-tertiary-fixed leading-snug">
+                    GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.
+                  </p>
+                  <p class="text-xs text-on-tertiary-fixed-variant">
+                    Đồng thời chuẩn bị tiến hành hồi sinh tim phổi (CPR 30 ép tim : 2 thổi ngạt) ngay trên mặt sàn phẳng và cứng.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 4-MINUTE GOLDEN TIMELINE VISUALIZATION -->
+              <div class="mt-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-1.5 text-sm text-on-surface font-bold">
+                    <span class="material-symbols-outlined text-primary text-[18px]">acute</span>
+                    <span>Thước đo 4 Phút Vàng sinh tử (Hypoxia Timeline)</span>
+                  </div>
+                  <span class="text-xs text-tertiary font-bold">Não thiếu oxy</span>
+                </div>
+                <div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex">
+                  <div class="h-full bg-secondary-container transition-all" style="width: 25%" title="0-1 phút: Bắt đầu ngạt, hoảng loạn"></div>
+                  <div class="h-full bg-primary-fixed transition-all" style="width: 25%" title="1-2 phút: Tím tái, mất phản xạ ho"></div>
+                  <div class="h-full bg-on-tertiary-container transition-all" style="width: 25%" title="2-4 phút: Ngất lịm, bất tỉnh"></div>
+                  <div class="h-full bg-tertiary transition-all" style="width: 25%" title=">4 phút: Tổn thương tế bào thần kinh vĩnh viễn"></div>
+                </div>
+                <div class="grid grid-cols-4 gap-2 text-center text-xs mt-2 text-on-surface-variant">
+                  <div><strong>0-1 phút</strong><br><span class="hidden sm:inline">Khó thở rít</span></div>
+                  <div><strong>1-2 phút</strong><br><span class="hidden sm:inline">Môi tím tái</span></div>
+                  <div class="text-tertiary font-semibold"><strong>2-4 phút</strong><br><span class="hidden sm:inline">Hôn mê / Gục</span></div>
+                  <div class="text-tertiary font-bold"><strong>>4 phút</strong><br><span class="hidden sm:inline">Tử vong tế bào não</span></div>
+                </div>
+              </div>
+
+              <!-- SECTION: CÁC BƯỚC XỬ LÝ CHUẨN Y KHOA -->
+              <section class="mt-8">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-outline-variant/30 pb-3">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+                      <span class="material-symbols-outlined text-[20px]">e911_emergency</span>
+                    </div>
+                    <h2 class="text-xl text-on-surface font-bold">
+                      Quy trình sơ cứu chuẩn y khoa
+                    </h2>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-primary-fixed text-primary text-xs font-bold">
+                    Thao tác tuần tự
+                  </span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2">
+                  Áp dụng tuần tự các bước dưới đây. Luôn giữ bình tĩnh, thực hiện dứt khoát đến khi tình trạng nguy cấp được giải tỏa.
+                </p>
+
+                <!-- DYNAMIC STEPS CONTAINER -->
+                <div class="mt-6 flex flex-col gap-4" id="detail-steps-container">
+                  <!-- Fallback Step 1 -->
+                  <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
+                    <div class="flex items-start gap-4">
+                      <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">1</div>
+                      <div class="flex-1">
+                        <h3 class="text-base md:text-lg font-bold text-on-surface">Đánh giá & Khuyến khích ho mạnh</h3>
+                        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+                          Nếu nạn nhân vẫn còn tỉnh táo, nói được câu ngắn hoặc ho mạnh: Tuyệt đối không can thiệp thô bạo. Động viên họ gập người ra trước và ho liên tục.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Fallback Step 2 -->
+                  <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
+                    <div class="flex items-start gap-4">
+                      <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">2</div>
+                      <div class="flex-1">
+                        <h3 class="text-base md:text-lg font-bold text-on-surface">5 lần vỗ lưng dứt khoát</h3>
+                        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+                          Đứng chếch phía sau, dùng một tay đỡ ngực nạn nhân nghiêng về phía trước. Dùng gót bàn tay kia vỗ mạnh 5 lần vào giữa hai xương bả vai hướng lên trên.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Fallback Step 3 -->
+                  <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
+                    <div class="flex items-start gap-4">
+                      <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">3</div>
+                      <div class="flex-1">
+                        <h3 class="text-base md:text-lg font-bold text-on-surface">5 lần ép bụng Heimlich</h3>
+                        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+                          Vòng hai tay quanh eo nạn nhân. Đặt nắm đấm vào vùng thượng vị (trên rốn, dưới mũi ức), giật mạnh theo hướng vào trong và lên trên.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- DO'S AND DON'TS COMPARISON GRID -->
+              <section class="mt-8 pt-6 border-t border-outline-variant/20">
+                <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">flaky</span>
+                  Những điều NÊN và TUYỆT ĐỐI KHÔNG làm
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <!-- DO Column -->
+                  <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+                    <div class="flex items-center gap-2 font-bold text-emerald-800 text-sm mb-3">
+                      <span class="material-symbols-outlined text-emerald-600">check_circle</span>
+                      NÊN LÀM (CHUẨN Y KHOA)
+                    </div>
+                    <ul class="flex flex-col gap-2 text-sm text-emerald-950" id="detail-dos-list">
+                      <li class="flex items-start gap-2">
+                        <span class="text-emerald-600 font-bold">•</span>
+                        <span>Khuyến khích nạn nhân tiếp tục ho mạnh nếu họ còn ho được.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-emerald-600 font-bold">•</span>
+                        <span>Cúi người nạn nhân về phía trước khi vỗ lưng để dị vật rơi ra ngoài.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-emerald-600 font-bold">•</span>
+                        <span>Đối với trẻ nhỏ &lt;1 tuổi: dùng 5 vỗ lưng và 5 ấn ngực bằng 2 ngón tay.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- DON'T Column -->
+                  <div class="p-4 rounded-xl bg-rose-50 border border-rose-200">
+                    <div class="flex items-center gap-2 font-bold text-rose-800 text-sm mb-3">
+                      <span class="material-symbols-outlined text-rose-600">cancel</span>
+                      TUYỆT ĐỐI KHÔNG LÀM
+                    </div>
+                    <ul class="flex flex-col gap-2 text-sm text-rose-950" id="detail-donts-list">
+                      <li class="flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">•</span>
+                        <span>KHÔNG móc họng mù quáng bằng ngón tay khi không nhìn thấy rõ dị vật.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">•</span>
+                        <span>KHÔNG cho uống nước hay nuốt cơm để cố đẩy dị vật xuống.</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">•</span>
+                        <span>KHÔNG ép bụng cho phụ nữ mang thai tháng cuối (chuyển sang ép ngực).</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+            </article>
+
+          </div>
+
+          <!-- 4. SIDEBAR (Right Column - ~30%) -->
+          <aside class="lg:col-span-4 flex flex-col gap-6 sticky top-24">
+
+            <!-- Fast Action Card -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/30 flex flex-col gap-4">
+              <h3 class="text-lg font-bold text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-error">phone_in_talk</span>
+                Cần trợ giúp tức thì?
+              </h3>
+              <p class="text-sm text-on-surface-variant">
+                Nếu bạn đang ở hiện trường và cần hỗ trợ, hãy gọi cấp cứu hoặc mở Trợ lý AI để tra cứu quy trình khẩn cấp.
+              </p>
+              <a href="tel:115" class="btn btn-danger w-full py-3 font-bold text-center">
+                <span class="material-symbols-outlined">call</span>
+                GỌI 115 NGAY
+              </a>
+              <button onclick="document.getElementById('medfa-chat-window')?.classList.remove('hidden')" type="button" class="btn btn-secondary w-full py-3 font-bold text-center">
+                <span class="material-symbols-outlined">smart_toy</span>
+                Hỏi Trợ lý AI MedFA
+              </button>
+            </div>
+
+            <!-- Social Impact Callout -->
+            <div class="bg-primary/5 rounded-2xl p-6 border border-primary/20 flex flex-col gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+              </div>
+              <h4 class="text-base font-bold text-primary">Lan tỏa kỹ năng vàng</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Hơn 90% người gặp nạn có thể bình phục nếu người xung quanh biết kỹ năng sơ cấp cứu chuẩn. Cùng MedFA bảo vệ sức khỏe cộng đồng!
+              </p>
+              <a href="social-impact.html" class="btn btn-primary text-xs py-2.5 px-4 font-bold self-start mt-1">
+                Xem tác động xã hội →
+              </a>
+            </div>
+
+            <!-- Back to topics button -->
+            <a href="topics.html" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-sm font-semibold text-on-surface">
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+              Quay lại danh mục tình huống
+            </a>
+
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data-loader.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Dynamic topic loader based on ?id= query param
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const topicId = urlParams.get('id');
+      if (!topicId || !window.DataLoader) return;
+
+      const topic = await window.DataLoader.getTopicById(topicId);
+      if (!topic) return;
+
+      // Update Breadcrumb & Header
+      document.title = `${topic.fullTitle || topic.title} - MedFA`;
+      const breadcrumb = document.getElementById('breadcrumb-topic-title');
+      if (breadcrumb) breadcrumb.textContent = topic.fullTitle || topic.title;
+
+      const titleEl = document.getElementById('detail-title');
+      if (titleEl) titleEl.textContent = topic.fullTitle || topic.title;
+
+      const leadEl = document.getElementById('detail-lead');
+      if (leadEl) leadEl.textContent = topic.lead || topic.shortDesc;
+
+      const catLabel = document.getElementById('detail-category-label');
+      if (catLabel) catLabel.textContent = topic.categoryLabel || topic.category;
+
+      const readTime = document.getElementById('detail-read-time');
+      if (readTime && topic.readTime) {
+        readTime.innerHTML = `<span class="material-symbols-outlined text-[15px]">timer</span><span>Đọc ${topic.readTime}</span>`;
+      }
+
+      const alertEl = document.getElementById('detail-alert-text');
+      if (alertEl && topic.emergencyAlert) {
+        alertEl.textContent = topic.emergencyAlert;
+      }
+
+      // Update Steps if available
+      const stepsContainer = document.getElementById('detail-steps-container');
+      if (stepsContainer && topic.steps && topic.steps.length > 0) {
+        stepsContainer.innerHTML = topic.steps.map(s => `
+          <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">
+                ${s.stepNumber}
+              </div>
+              <div class="flex-1">
+                <h3 class="text-base md:text-lg font-bold text-on-surface">${s.title}</h3>
+                <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">${s.desc}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Update Dos
+      const dosList = document.getElementById('detail-dos-list');
+      if (dosList && topic.dos && topic.dos.length > 0) {
+        dosList.innerHTML = topic.dos.map(item => `
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">•</span>
+            <span>${item}</span>
+          </li>
+        `).join('');
+      }
+
+      // Update Donts
+      const dontsList = document.getElementById('detail-donts-list');
+      if (dontsList && topic.donts && topic.donts.length > 0) {
+        dontsList.innerHTML = topic.donts.map(item => `
+          <li class="flex items-start gap-2">
+            <span class="text-rose-600 font-bold">•</span>
+            <span>${item}</span>
+          </li>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

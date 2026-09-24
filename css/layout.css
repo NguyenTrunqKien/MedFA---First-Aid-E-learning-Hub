@@ -1,0 +1,85 @@
+/* ==========================================================================
+   MedFA Layout Styles
+   Grid, Flexbox, Main Container, Sticky Header & Footer
+   ========================================================================== */
+
+.site-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+/* App Header Layout */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 80px;
+  background-color: rgba(248, 249, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(196, 197, 213, 0.25);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-normal);
+}
+
+.site-header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* App Main Layout */
+.site-main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-top: 80px;
+}
+
+/* App Footer Layout */
+.site-footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--color-surface-container-low, #eff4ff);
+  color: var(--color-on-surface, #121c2a);
+  border-top: 1px solid rgba(196, 197, 213, 0.3);
+}
+
+/* Reusable Grid Utilities */
+.grid-auto-fit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.grid-cols-3-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .grid-cols-3-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-cols-3-layout {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

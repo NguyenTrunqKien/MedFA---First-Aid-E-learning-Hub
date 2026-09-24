@@ -1,0 +1,96 @@
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="h-20 max-w-7xl mx-auto px-margin-sm lg:px-margin flex items-center justify-between gap-space-md">
+    <!-- Brand Logo -->
+    <div class="flex items-center gap-space-md">
+      <a aria-label="Trang chủ MedFA" class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-10 w-auto" fill="none">
+          <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
+          <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+          <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
+          <circle cx="56" cy="24" r="4" fill="#E63946"/>
+          <text x="86" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="800" fill="#1E40AF" letter-spacing="-0.5">Med<tspan fill="#0D9488">FA</tspan></text>
+          <text x="88" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.5">MEDICAL FIRST AID</text>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation Links (4 core items) -->
+    <nav aria-label="Menu điều hướng chính" class="hidden items-center gap-space-md 2xl:gap-space-lg lg:flex justify-end flex-1" id="main-nav">
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html">Trang chủ</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="topics" href="topics.html">Thư viện sơ cấp cứu</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html">Về MedFA</a>
+    </nav>
+
+    <!-- Header Actions (Search, Language, Mobile Toggle) -->
+    <div class="flex items-center gap-2 sm:gap-space-sm md:gap-space-md">
+      <a href="topics.html" aria-label="Tìm kiếm tình huống sơ cứu" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">search</span>
+      </a>
+
+      <!-- Language Switcher -->
+      <div class="relative inline-block text-left" id="language-dropdown-container">
+        <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
+          <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+            <rect fill="#DA251D" height="20" width="30"></rect>
+            <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+          </svg>
+          <span class="font-label-md text-label-md font-bold text-primary">VN</span>
+          <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200" id="lang-arrow">expand_more</span>
+        </button>
+        <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
+          <button type="button" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                <rect fill="#DA251D" height="20" width="30"></rect>
+                <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+              </svg>
+              <span class="font-label-md text-label-md font-bold text-primary">Tiếng Việt</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">VN</span>
+              <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+            </div>
+          </button>
+          <button type="button" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                <clipPath id="uk-flag-clip"><rect width="60" height="30"></rect></clipPath>
+                <g clip-path="url(#uk-flag-clip)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></g>
+              </svg>
+              <span class="font-label-md text-label-md font-medium text-on-surface">English</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">ENG</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu toggle button -->
+      <button id="mobile-menu-btn" aria-label="Mở menu di động" class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-3 flex-col gap-2 shadow-lg">
+    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="home" href="index.html">
+      <span>Trang chủ</span>
+      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="social-impact" href="social-impact.html">
+      <span>Tác động xã hội</span>
+      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="topics" href="topics.html">
+      <span>Thư viện sơ cấp cứu</span>
+      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="about" href="about.html">
+      <span>Về MedFA</span>
+      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    </a>
+  </div>
+</header>

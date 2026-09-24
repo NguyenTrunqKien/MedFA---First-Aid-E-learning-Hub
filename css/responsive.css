@@ -1,0 +1,66 @@
+/* ==========================================================================
+   MedFA Responsive Media Queries
+   Breakpoints:
+   - Mobile: < 480px / 640px
+   - Tablet: 641px - 1023px
+   - Desktop: ≥ 1024px
+   ========================================================================== */
+
+/* Mobile Breakpoint (< 640px) */
+@media (max-width: 639px) {
+  .site-header {
+    height: 70px;
+  }
+
+  .site-main {
+    padding-top: 70px;
+  }
+
+  .font-display-lg {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  .font-headline-lg {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  /* Chat window full width on small screens */
+  #medfa-chat-window {
+    width: calc(100vw - 2rem) !important;
+    right: 1rem !important;
+    bottom: 5rem !important;
+  }
+}
+
+/* Tablet Breakpoint (640px to 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .site-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Desktop Breakpoint (≥ 1024px) */
+@media (min-width: 1024px) {
+  .site-container {
+    max-width: 1280px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .site-footer,
+  #medfa-chat-window,
+  #medfa-chat-toggle-btn {
+    display: none !important;
+  }
+
+  .site-main {
+    padding-top: 0 !important;
+  }
+}

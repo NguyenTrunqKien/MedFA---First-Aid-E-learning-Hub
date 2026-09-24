@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Về MedFA - Giới thiệu & Sứ mệnh Đồ án</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- MedFA Modular CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00288e",
+            "primary-container": "#1e40af",
+            "primary-fixed": "#dde1ff",
+            "primary-fixed-dim": "#b8c4ff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#a8b8ff",
+            "on-primary-fixed": "#001453",
+            "on-primary-fixed-variant": "#173bab",
+            "inverse-primary": "#b8c4ff",
+            "secondary": "#006a61",
+            "secondary-container": "#86f2e4",
+            "secondary-fixed": "#89f5e7",
+            "secondary-fixed-dim": "#6bd8cb",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#006f66",
+            "on-secondary-fixed": "#00201d",
+            "on-secondary-fixed-variant": "#005049",
+            "tertiary": "#700013",
+            "tertiary-container": "#9b001f",
+            "tertiary-fixed": "#ffdad8",
+            "tertiary-fixed-dim": "#ffb3b1",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#ffa3a1",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "background": "#f8f9ff",
+            "surface": "#f8f9ff",
+            "surface-dim": "#d0dbed",
+            "surface-bright": "#f8f9ff",
+            "surface-variant": "#d9e3f6",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e6eeff",
+            "surface-container-high": "#dee9fc",
+            "surface-container-highest": "#d9e3f6",
+            "on-surface": "#121c2a",
+            "on-surface-variant": "#444653",
+            "outline": "#757684",
+            "outline-variant": "#c4c5d5"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans text-on-surface antialiased min-h-screen flex flex-col justify-between" data-page="about">
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="w-full pt-20 bg-surface flex-1">
+    <div class="flex flex-col w-full">
+
+      <!-- SECTION 1: HERO STORY -->
+      <section class="bg-surface-container-lowest py-16 lg:py-20 border-b border-outline-variant/20" id="mission">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Info -->
+            <div class="lg:col-span-7 flex flex-col items-start">
+              <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold mb-4 shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">school</span>
+                <span>HÀNH TRÌNH KHỞI TẠO • ĐỒ ÁN MÔN HỌC</span>
+              </div>
+              <h1 class="text-3xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">
+                Từ một đồ án môn học đến thư viện tri thức mở.
+              </h1>
+              <p class="text-lg text-on-surface-variant leading-relaxed mb-3">
+                MedFA (Medical First Aid) không bắt đầu từ một tổ chức y tế khổng lồ. Chúng tôi là một nhóm những người trẻ đam mê công nghệ tại Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM), thực hiện dự án này trong khuôn khổ đồ án môn học IE104.
+              </p>
+              <p class="text-base text-on-surface-variant leading-relaxed mb-6">
+                Xuất phát từ khao khát ứng dụng những dòng code và thiết kế giao diện vào một mục đích mang ý nghĩa nhân văn, MedFA ra đời nhằm số hóa và đơn giản hóa kiến thức sơ cứu. Chúng tôi tin rằng, công nghệ ý nghĩa nhất là công nghệ giúp bảo vệ sự sống.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-primary text-sm font-semibold shadow-sm">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">volunteer_activism</span>
+                  <span>100% Phi lợi nhuận</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-primary text-sm font-semibold shadow-sm">
+                  <span class="material-symbols-outlined text-primary text-[20px]">code_blocks</span>
+                  <span>HTML5 / CSS3 / Vanilla JS</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-primary text-sm font-semibold shadow-sm">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+                  <span>Chuẩn hóa Y khoa ERC & AHA</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Image Showcase -->
+            <div class="lg:col-span-5">
+              <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-surface-container border border-outline-variant/30">
+                <img alt="Nhóm sinh viên phát triển dự án MedFA" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEVDWiaXb0TCKLHtCU_mFPHMYocB1oXPe6013v880QexQg5RPbqmErkB-DGBsX9A78QKIWXWgIdp4CNOk5n08O2uXM4hW90gx7p7aJAqWrWREQLpsEIsCezGADGhpYV1FjBVBeg3c9rkeTb_2SloFHdIXwjmcaWfTu-XOO0jXAKz9l5MeSBWeT0vI_Ddbf9Cik3v_WlfohRjTu2lI8rnOh0_C4GEFSMmtiMfjAoWK-1ua9HSPSUjC5CA">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent pointer-events-none"></div>
+                <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-surface/95 backdrop-blur-md flex items-center gap-3 shadow-md border border-outline-variant/30">
+                  <div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">group_work</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <span class="font-bold text-sm text-on-surface truncate">Nhóm Phát Triển Dự Án MedFA</span>
+                    <span class="text-xs text-on-surface-variant truncate">Đồ án môn học IE104 • Đại học Công nghệ Thông tin (UIT)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: TEAM MEMBERS -->
+      <section class="bg-surface-container-low py-16" id="team">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary tracking-tight mb-2">
+              Đội ngũ thực hiện dự án
+            </h2>
+            <div class="w-16 h-1 bg-secondary rounded-full mb-3"></div>
+            <p class="text-base text-on-surface-variant">
+              Các thành viên sinh viên cùng chung niềm đam mê xây dựng sản phẩm công nghệ vì cộng đồng
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Member 1 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center border border-outline-variant/20 hover:-translate-y-1">
+              <div class="w-20 h-20 rounded-full p-1 bg-surface-container-low flex items-center justify-center text-primary mb-4 shadow-inner">
+                <div class="w-full h-full rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  NT
+                </div>
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-1">Nguyễn Trọng Nhân</h3>
+              <p class="text-xs font-bold text-primary mb-1">Trưởng nhóm & Frontend Lead</p>
+              <span class="text-xs text-on-surface-variant mb-4">MSSV: 24520888</span>
+              <div class="flex items-center justify-center gap-2 mt-auto pt-2">
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">terminal</span>
+                </span>
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">code</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center border border-outline-variant/20 hover:-translate-y-1">
+              <div class="w-20 h-20 rounded-full p-1 bg-surface-container-low flex items-center justify-center text-secondary mb-4 shadow-inner">
+                <div class="w-full h-full rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold text-xl">
+                  TB
+                </div>
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-1">Thành viên 2</h3>
+              <p class="text-xs font-bold text-secondary mb-1">UI/UX Designer & Research</p>
+              <span class="text-xs text-on-surface-variant mb-4">Thiết kế hệ thống Design System</span>
+              <div class="flex items-center justify-center gap-2 mt-auto pt-2">
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">palette</span>
+                </span>
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">draw</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center border border-outline-variant/20 hover:-translate-y-1">
+              <div class="w-20 h-20 rounded-full p-1 bg-surface-container-low flex items-center justify-center text-tertiary mb-4 shadow-inner">
+                <div class="w-full h-full rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary font-bold text-xl">
+                  HC
+                </div>
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-1">Thành viên 3</h3>
+              <p class="text-xs font-bold text-tertiary mb-1">Content & Medical Verification</p>
+              <span class="text-xs text-on-surface-variant mb-4">Biên tập quy trình Y khoa chuẩn</span>
+              <div class="flex items-center justify-center gap-2 mt-auto pt-2">
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">description</span>
+                </span>
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">verified_user</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center border border-outline-variant/20 hover:-translate-y-1">
+              <div class="w-20 h-20 rounded-full p-1 bg-surface-container-low flex items-center justify-center text-primary mb-4 shadow-inner">
+                <div class="w-full h-full rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  MD
+                </div>
+              </div>
+              <h3 class="text-lg font-bold text-on-surface mb-1">Thành viên 4</h3>
+              <p class="text-xs font-bold text-primary mb-1">Frontend Dev & Accessibility</p>
+              <span class="text-xs text-on-surface-variant mb-4">Tối ưu hiệu năng & Responsive</span>
+              <div class="flex items-center justify-center gap-2 mt-auto pt-2">
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">code</span>
+                </span>
+                <span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px]">accessibility_new</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: ACADEMIC & MEDICAL STANDARDS -->
+      <section class="bg-surface-container-lowest py-16 border-b border-outline-variant/20" id="standards">
+        <div class="max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary text-xs font-bold mb-3 shadow-sm">
+            <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            <span>TÍNH HỌC THUẬT & MINH BẠCH</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-on-surface mb-3">
+            Tài liệu chuẩn xác & Đáng tin cậy
+          </h3>
+          <p class="text-base text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
+            Dù là một dự án đồ án phi lợi nhuận, mọi thông tin trong Thư viện MedFA đều được chúng tôi biên tập, tổng hợp và đối chiếu cẩn thận từ các nguồn tài liệu y khoa uy tín thế giới và Việt Nam.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full text-left">
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
+              <span class="font-bold text-primary text-base">AHA 2025</span>
+              <span class="text-xs text-on-surface-variant mt-1">American Heart Association - Phác đồ hồi sinh tim phổi và xử trí cấp cứu tim mạch.</span>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
+              <span class="font-bold text-secondary text-base">ERC Guidelines</span>
+              <span class="text-xs text-on-surface-variant mt-1">European Resuscitation Council - Hướng dẫn sơ cấp cứu và sơ cứu đường thở châu Âu.</span>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
+              <span class="font-bold text-tertiary text-base">Red Cross & Red Crescent</span>
+              <span class="text-xs text-on-surface-variant mt-1">Hiệp hội Chữ thập đỏ quốc tế - Cẩm nang kỹ năng sơ cấp cứu cộng đồng tiêu chuẩn.</span>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
+              <span class="font-bold text-on-surface text-base">Bộ Y Tế Việt Nam</span>
+              <span class="text-xs text-on-surface-variant mt-1">Tài liệu tập huấn sơ cấp cứu ban đầu cho lực lượng y tế cơ sở và người dân.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDICAL DISCLAIMER -->
+      <section class="py-12 px-4 max-w-5xl mx-auto w-full">
+        <div class="rounded-2xl bg-error-container/40 p-6 border border-error/30 shadow-sm flex flex-col md:flex-row items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-error shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+          </div>
+          <div class="flex flex-col flex-1">
+            <span class="text-base text-error font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
+              <span class="material-symbols-outlined text-[18px]">gavel</span>
+              TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM Y KHOA
+            </span>
+            <p class="text-sm text-on-surface leading-relaxed">
+              MedFA là dự án phục vụ mục đích giáo dục, đồ án khóa học môn IE104 và cung cấp thông tin tham khảo. Chúng tôi <strong>KHÔNG</strong> cung cấp dịch vụ chẩn đoán hay thay thế các chỉ định y khoa chuyên nghiệp. Trong mọi tình huống nguy hiểm đe dọa trực tiếp tính mạng, vui lòng <strong>GỌI NGAY CHO TỔNG ĐÀI CẤP CỨU (115)</strong> trước khi tự thực hiện các bước sơ cứu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder">
+    <footer class="w-full bg-surface-container-low text-on-surface mt-auto border-t border-outline-variant/30">
+      <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin pt-space-xl pb-space-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg pb-space-xl">
+          <!-- Col 1 & 2: Brand Story & Emergency Contacts -->
+          <div class="lg:col-span-2 flex flex-col gap-space-md">
+            <div class="flex items-center gap-space-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-9 w-auto" fill="none">
+                <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
+                <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+                <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
+                <circle cx="56" cy="24" r="4" fill="#E63946"/>
+                <text x="86" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="800" fill="#1E40AF" letter-spacing="-0.5">Med<tspan fill="#0D9488">FA</tspan></text>
+                <text x="88" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.5">MEDICAL FIRST AID</text>
+              </svg>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+              MedFA (Medical First Aid) là nền tảng trực tuyến phi lợi nhuận chuyên tổng hợp và cung cấp kiến thức sơ cấp cứu cơ bản. Đây là sản phẩm được phát triển dưới dạng đồ án môn học IE104 (Trường Đại học Công nghệ Thông tin - UIT), hướng tới mục tiêu nâng cao nhận thức cộng đồng và trang bị kỹ năng phản ứng khẩn cấp thiết yếu.
+            </p>
+
+            <!-- National Emergency Hotlines -->
+            <div class="rounded-xl bg-error-container/20 border border-error/20 p-3 self-start shadow-sm transition-all duration-200 w-full max-w-md">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-7 h-7 rounded-full bg-error-container flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-error text-[18px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+                </div>
+                <span class="font-label-md text-label-md uppercase font-bold text-error tracking-wider">Tổng đài Khẩn cấp Quốc Gia</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-on-surface">
+                  <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">111</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Tổng đài Quốc gia Bảo vệ Trẻ em</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-surface">
+                  <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">112</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Yêu cầu Tìm kiếm Cứu nạn khẩn cấp</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-surface">
+                  <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">113</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Lực lượng Cảnh sát & An ninh trật tự</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-surface">
+                  <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">114</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Cứu hỏa & Cứu nạn cứu hộ</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-surface">
+                  <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">115</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant font-medium font-bold text-primary">Cấp cứu Y tế</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 3: Explore Links (No Quiz) -->
+          <div class="flex flex-col gap-space-sm">
+            <span class="font-title-md text-title-md text-on-surface font-bold">Khám phá</span>
+            <nav aria-label="Liên kết nhanh" class="flex flex-col gap-space-xs">
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topics.html">Thư viện tình huống sơ cứu</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="social-impact.html">Tác động xã hội & Giá trị</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=ngung-tuan-hoan-cpr">Hồi sinh tim phổi (CPR & AED)</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=hoc-di-vat">Sơ cứu hóc dị vật Heimlich</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=bong-cap-do-1-2">Sơ cứu vết bỏng nhiệt & lửa</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=chay-mau-nghiem-trong">Kỹ thuật băng ép & Ga-rô</a>
+            </nav>
+          </div>
+
+          <!-- Col 4: About MedFA Links -->
+          <div class="flex flex-col gap-space-sm">
+            <span class="font-title-md text-title-md text-on-surface font-bold">Về dự án</span>
+            <nav aria-label="Về MedFA" class="flex flex-col gap-space-xs">
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html">Giới thiệu MedFA</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html#team">Đội ngũ phát triển IE104</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html#mission">Mục tiêu & Sứ mệnh</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html#standards">Nguồn chuẩn Y khoa tham khảo</a>
+            </nav>
+          </div>
+
+          <!-- Col 5: Contact Info -->
+          <div class="flex flex-col gap-space-sm">
+            <span class="font-title-md text-title-md text-on-surface font-bold">Thông tin liên hệ</span>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Website phát triển phi lợi nhuận cho đồ án môn học IE104 - Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM).
+            </p>
+            <div class="flex flex-col gap-space-xs mt-space-xs">
+              <span class="font-label-md text-label-md text-on-surface-variant">Số điện thoại:</span>
+              <a class="font-title-md text-title-md text-primary font-bold hover:underline" href="tel:+84919985358">(+84) 919 985 358</a>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-md text-label-md text-on-surface-variant">Email:</span>
+              <a class="font-body-sm text-body-sm text-on-surface hover:text-primary" href="mailto:24520888@gm.uit.edu.vn">24520888@gm.uit.edu.vn</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="pt-space-lg border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
+          <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid. Đồ án môn học IE104 - UIT.</span>
+          <div class="flex items-center gap-space-md text-body-sm">
+            <a class="hover:text-primary transition-colors" href="about.html#standards">Nguồn tài liệu tham khảo</a>
+            <span>•</span>
+            <a class="hover:text-primary transition-colors" href="about.html#team">Danh sách thành viên</a>
+            <span>•</span>
+            <a class="text-tertiary font-medium hover:underline" href="about.html#standards">Miễn trừ trách nhiệm y khoa</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING COMPONENT: MEDFA AI FIRST AID ASSISTANT -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+      <div id="medfa-chat-window" class="pointer-events-auto w-[380px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 flex flex-col overflow-hidden mb-3 transition-all duration-300 origin-bottom-right hidden">
+        <div class="bg-gradient-to-r from-primary-container to-primary px-4 py-3.5 text-on-primary flex items-center justify-between shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+              </div>
+              <span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary-container rounded-full border-2 border-primary-container shadow-xs"></span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="font-title-md text-title-md font-bold tracking-tight leading-tight text-white">MedFA Trợ lý AI</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/20 text-white leading-none">Y KHOA</span>
+              </div>
+              <span class="text-[12px] text-white/80 font-medium flex items-center gap-1 mt-0.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>Trực tuyến 24/7 • Phản xạ cấp cứu
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center gap-1 text-white/90">
+            <button id="chat-close-btn" type="button" title="Thu nhỏ" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
+              <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          </div>
+        </div>
+        <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto bg-surface-container-low flex flex-col gap-3">
+          <div class="flex justify-center my-1">
+            <span class="text-[11px] font-medium text-on-surface-variant/70 bg-surface-container-high px-2.5 py-0.5 rounded-full">Trợ lý y tế phản hồi tức thì</span>
+          </div>
+          <div class="flex items-start gap-2.5 max-w-[90%]">
+            <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+            </div>
+            <div class="flex flex-col items-start gap-1">
+              <div class="bg-surface-container-lowest text-on-surface p-3.5 rounded-2xl rounded-tl-sm border border-outline-variant/30 shadow-sm text-body-sm leading-relaxed">
+                <p class="font-semibold text-primary mb-1">Xin chào bạn! Mình là Trợ lý AI MedFA 🩺</p>
+                <p class="text-on-surface-variant">Bạn hoặc người thân đang gặp tình huống sơ cấp cứu nào cần hướng dẫn xử trí khẩn cấp không?</p>
+              </div>
+              <span class="text-[10px] text-on-surface-variant/60 font-medium ml-1">Vừa xong</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5 pl-9 mt-1">
+            <span class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Gợi ý tình huống nhanh:</span>
+            <div class="flex flex-wrap gap-1.5">
+              <a href="topic-detail.html?id=ngung-tuan-hoan-cpr" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+                <span>🚨</span> Ép tim CPR & AED
+              </a>
+              <a href="topic-detail.html?id=hoc-di-vat" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+                <span>👶</span> Hóc dị vật đường thở
+              </a>
+              <a href="topic-detail.html?id=bong-cap-do-1-2" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+                <span>🔥</span> Sơ cứu vết bỏng
+              </a>
+              <a href="topic-detail.html?id=chay-mau-nghiem-trong" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+                <span>🩸</span> Băng ép cầm máu
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 bg-surface-container-lowest border-t border-outline-variant/30">
+          <form id="chat-input-form" class="flex items-center gap-2 bg-surface-container-low rounded-xl px-3 py-2 border border-outline-variant/40 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+            <input id="chat-user-input" type="text" placeholder="Nhập tình huống sơ cứu..." class="flex-1 bg-transparent border-none text-body-sm text-on-surface focus:outline-none placeholder:text-on-surface-variant/50 p-0" />
+            <button type="submit" class="w-8 h-8 rounded-lg bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-colors shadow-xs shrink-0">
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </button>
+          </form>
+          <div class="flex items-center justify-between mt-2 px-1">
+            <span class="text-[11px] text-on-surface-variant/70">Dữ liệu tham khảo y khoa</span>
+            <a href="tel:115" class="text-[11px] font-bold text-error hover:underline flex items-center gap-0.5">
+              <span class="material-symbols-outlined text-[13px]">call</span>Cấp cứu 115
+            </a>
+          </div>
+        </div>
+      </div>
+      <button id="medfa-chat-toggle-btn" type="button" aria-label="Mở trợ lý sơ cứu AI" class="pointer-events-auto relative w-14 h-14 rounded-full bg-primary-container hover:bg-primary text-on-primary shadow-2xl flex items-center justify-center transition-all duration-200 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/40 group">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-30 animate-ping -z-10"></span>
+        <span class="material-symbols-outlined text-[26px]">smart_toy</span>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-white font-bold text-[9px] rounded-full flex items-center justify-center border-2 border-surface-container-lowest shadow-xs">1</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/main.js"></script>
+</body>
+</html>

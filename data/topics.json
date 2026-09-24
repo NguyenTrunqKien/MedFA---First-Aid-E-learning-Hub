@@ -1,0 +1,332 @@
+[
+  {
+    "id": "hoc-di-vat",
+    "title": "Hóc dị vật (Nghẹn)",
+    "fullTitle": "Hóc dị vật (Nghẹn & Tắc đường thở)",
+    "category": "tre-em",
+    "categoryLabel": "Trẻ em",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "2 phút",
+    "standard": "Chuẩn ERC & AHA 2025",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
+    "shortDesc": "Cách thực hiện nghiệm pháp Heimlich để tống dị vật ra khỏi đường thở cho người lớn và trẻ nhỏ.",
+    "lead": "Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.",
+    "timeline": [
+      { "time": "0 - 1 phút", "status": "Khó thở, hoảng loạn, ôm cổ họng", "level": "safe" },
+      { "time": "1 - 2 phút", "status": "Tím tái môi, mất dần phản xạ ho", "level": "warning" },
+      { "time": "2 - 4 phút", "status": "Ngất lịm, mất tri giác, ngừng thở", "level": "danger" },
+      { "time": "> 4 phút", "status": "Tổn thương não vĩnh viễn hoặc tử vong", "level": "critical" }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Đánh giá mức độ tắc nghẽn",
+        "desc": "Hỏi nạn nhân 'Bạn có bị nghẹn không?'. Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được: KHUYẾN KHÍCH HO MẠNH, tuyệt đối KHÔNG đập lưng hay can thiệp ép bụng lúc này."
+      },
+      {
+        "stepNumber": 2,
+        "title": "5 vỗ lưng dứt khoát (Back Blows)",
+        "desc": "Nếu nạn nhân không thở được hoặc ho yếu: Đứng hơi chếch sau lưng, một tay đỡ ngực nạn nhân nghiêng người về phía trước. Dùng gót bàn tay kia vỗ mạnh, dứt khoát 5 lần vào khoảng giữa 2 xương bả vai hướng lên trên."
+      },
+      {
+        "stepNumber": 3,
+        "title": "5 lần ép bụng Heimlich (Abdominal Thrusts)",
+        "desc": "Vòng hai tay quanh eo nạn nhân. Nắm chặt một bàn tay, đặt nắm đấm (ngón cái hướng vào trong) tại vùng thượng vị (trên rốn, dưới mũi ức). Tay kia bọc lấy nắm đấm, giật mạnh dứt khoát theo hướng VÀO TRONG VÀ LÊN TRÊN."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Lặp lại chu kỳ 5 vỗ lưng : 5 ép bụng",
+        "desc": "Tiếp tục luân phiên 5 vỗ lưng và 5 ép bụng cho đến khi dị vật bật ra ngoài hoặc nạn nhân thở lại bình thường."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Nếu nạn nhân bất tỉnh: Chuyển sang CPR",
+        "desc": "Đặt nạn nhân nằm ngửa trên mặt sàn phẳng cứng, gọi 115 và bắt đầu ép tim ngoài lồng ngực (30 lần ép tim : 2 lần thổi ngạt). Trước mỗi lần thổi ngạt, kiểm tra khoang miệng xem có dị vật trồi lên không."
+      }
+    ],
+    "dos": [
+      "Khuyến khích nạn nhân tiếp tục ho mạnh nếu họ còn ho được.",
+      "Cúi người nạn nhân về phía trước khi vỗ lưng để dị vật rơi ra ngoài.",
+      "Đối với trẻ sơ sinh (<1 tuổi): Dùng 5 vỗ lưng và 5 ấn ngực bằng 2 ngón tay, KHÔNG ép bụng Heimlich."
+    ],
+    "donts": [
+      "KHÔNG móc họng mù quáng bằng ngón tay khi không nhìn thấy rõ dị vật.",
+      "KHÔNG cho uống nước hay nuốt cơm để cố đẩy dị vật xuống.",
+      "KHÔNG ép bụng cho phụ nữ mang thai tháng cuối (chuyển sang ép ngực)."
+    ]
+  },
+  {
+    "id": "bong-cap-do-1-2",
+    "title": "Bỏng cấp độ 1 & 2",
+    "fullTitle": "Sơ cứu Bỏng nhiệt cấp độ 1 & 2 (Nước sôi, Lửa, Bô xe)",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Sinh hoạt",
+    "badgeClass": "bg-surface-container-high text-on-surface-variant",
+    "criticalLevel": "medium",
+    "readTime": "3 phút",
+    "standard": "Chuẩn Hội Bỏng Quốc tế (ISBI)",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"></path></svg>",
+    "shortDesc": "Các bước làm mát vết bỏng, sơ cứu chống nhiễm trùng và những điều tuyệt đối không được làm.",
+    "lead": "Tổn thương da do nhiệt độ cao gây đau đớn dữ dội, thoát dịch huyết tương và nguy cơ nhiễm trùng cao. Việc ngâm rửa đúng cách trong 15-20 phút đầu quyết định 80% mức độ để lại sẹo.",
+    "emergencyAlert": "Đưa đến cơ sở y tế ngay nếu diện tích bỏng lớn hơn 1 bàn tay, bỏng ở mặt, khớp, bàn tay, vùng kín hoặc nạn nhân là trẻ nhỏ.",
+    "timeline": [
+      { "time": "0 - 20 phút", "status": "Thời gian vàng ngâm xả nước mát làm dịu", "level": "safe" },
+      { "time": "20 - 60 phút", "status": "Bảo vệ màng bóng nước, băng gạc vô khuẩn", "level": "warning" },
+      { "time": "> 1 giờ", "status": "Nguy cơ thoát dịch và nhiễm trùng mô tế bào", "level": "danger" }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Loại bỏ nguồn nhiệt và dị vật",
+        "desc": "Nhanh chóng đưa nạn nhân rời khỏi vùng nguy hiểm. Cởi bỏ nhẹ nhàng quần áo dính chất nóng hoặc trang sức vùng bị bỏng trước khi vết thương sưng nề. Nếu quần áo dính chặt vào da, KHÔNG cố giật ra mà cắt vòng quanh."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Làm mát bằng nước sạch chảy nhẹ trong 15-20 phút",
+        "desc": "Xả nước mát sạch (nhiệt độ phòng khoảng 15-25°C) chảy nhẹ liên tục lên vùng bỏng tối thiểu 15-20 phút đến khi nạn nhân thấy dịu đau. Tuyệt đối KHÔNG dùng đá lạnh trực tiếp."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bảo vệ vết bỏng bằng gạc sạch vô trùng",
+        "desc": "Dùng gạc y tế vô khuẩn hoặc màng bọc thực phẩm sạch che phủ lỏng lẻo lên vết bỏng. Băng nhẹ tay, không siết chặt để tránh gây cọ xát và tổn thương mô phù nề."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bù nước và chuyển tuyến y tế",
+        "desc": "Cho nạn nhân uống nước điện giải hoặc nước ấm nếu còn tỉnh táo. Đưa đến bệnh viện gần nhất nếu diện tích bỏng rộng hoặc có bóng nước lớn."
+      }
+    ],
+    "dos": [
+      "Ngâm hoặc xả nước sạch liên tục 15-20 phút ngay sau khi bị bỏng.",
+      "Giữ nguyên các bọng nước (phỏng nước), tuyệt đối không chọc vỡ.",
+      "Che phủ vết bỏng bằng gạc ẩm vô khuẩn hoặc màng bọc thực phẩm sạch."
+    ],
+    "donts": [
+      "KHÔNG bôi kem đánh răng, nước mắm, mỡ trăn, trứng gà lên vết bỏng.",
+      "KHÔNG chườm đá lạnh trực tiếp (gây bỏng lạnh và co mạch hoại tử mô).",
+      "KHÔNG chọc vỡ bọng nước tự nhiên của da."
+    ]
+  },
+  {
+    "id": "chay-mau-nghiem-trong",
+    "title": "Chảy máu nghiêm trọng",
+    "fullTitle": "Sơ cứu Vết thương Chảy máu Nghiêm trọng & Sử dụng Ga-rô",
+    "category": "sinh-hoat",
+    "categoryLabel": "Chấn thương",
+    "badgeType": "Chấn thương",
+    "badgeClass": "bg-primary-fixed text-primary",
+    "criticalLevel": "high",
+    "readTime": "4 phút",
+    "standard": "Khuyến nghị Stop the Bleed & Red Cross",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"></path><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"></path></svg>",
+    "shortDesc": "Kỹ thuật băng ép trực tiếp cầm máu và cách sử dụng ga-rô trong tình huống khẩn cấp.",
+    "lead": "Chảy máu động mạch có thể dẫn đến sốc mất máu tử vong chỉ trong vòng vài phút. Hành động cầm máu tại chỗ bằng lực ép trực tiếp là kỹ năng then chốt cứu mạng.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC khi máu phun thành tia, thấm đẫm nhiều lớp vải hoặc nạn nhân có dấu hiệu da lạnh, vã mồ hôi, lơ mơ.",
+    "timeline": [
+      { "time": "0 - 3 phút", "status": "Mất máu cấp, nhịp tim tăng nhanh", "level": "warning" },
+      { "time": "3 - 5 phút", "status": "Tụt huyết áp, sốc mất máu, ngất", "level": "danger" },
+      { "time": "> 5 phút", "status": "Trụy mạch tuần hoàn, nguy cơ tử vong", "level": "critical" }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bảo hộ an toàn và đè ép trực tiếp",
+        "desc": "Đeo găng tay y tế nếu có. Dùng một tấm gạc sạch hoặc vải dày đè thật chặt trực tiếp lên miệng vết thương đang chảy máu. Giữ lực ép liên tục không buông trong ít nhất 5-10 phút."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Băng ép cố định và nâng cao chi",
+        "desc": "Dùng cuộn băng thun quấn chặt quanh vết thương để duy trì áp lực ép. Nâng chi bị thương cao hơn tim (nếu không nghi ngờ gãy xương) để giảm áp lực dòng máu."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Nếu máu vẫn thấm qua: Thêm lớp mới, KHÔNG gỡ lớp cũ",
+        "desc": "Nếu máu tiếp tục thấm ướt qua lớp băng gạc đầu tiên, KHÔNG tháo gạc cũ ra (để tránh phá vỡ cục máu đông đang hình thành), hãy đặt thêm lớp gạc mới lên trên và băng chặt hơn."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Áp dụng Ga-rô (Tourniquet) nếu máu phun tia ở tay/chân",
+        "desc": "Nếu máu chảy ồ ạt từ động mạch tay hoặc chân không thể cầm bằng băng ép: Đặt dây ga-rô cách vết thương 5-7cm về phía gốc chi (không đặt đè lên khớp). Siết chặt cho đến khi máu ngừng chảy hoàn toàn và ghi rõ giờ đặt ga-rô lên trán nạn nhân."
+      }
+    ],
+    "dos": [
+      "Ép chặt tay liên tục lên vị trí vết thương ít nhất 5 phút.",
+      "Ghi rõ thời gian đặt ga-rô (giờ:phút) để báo cho bác sĩ cấp cứu.",
+      "Giữ ấm cho nạn nhân để phòng tránh sốc hạ thân nhiệt."
+    ],
+    "donts": [
+      "KHÔNG tháo băng cũ ra kiểm tra khi máu đang cầm.",
+      "KHÔNG đặt ga-rô trực tiếp lên khớp khuỷu tay hoặc đầu gối.",
+      "KHÔNG tự ý nới lỏng ga-rô khi chưa có nhân viên y tế hỗ trợ."
+    ]
+  },
+  {
+    "id": "ngung-tuan-hoan-cpr",
+    "title": "Ngừng tuần hoàn (Ép tim CPR)",
+    "fullTitle": "Hồi sinh Tim Phổi (CPR) & Sử dụng Máy sốc điện tự động AED",
+    "category": "benh-ly",
+    "categoryLabel": "Bệnh lý",
+    "badgeType": "Sinh tử",
+    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
+    "criticalLevel": "critical",
+    "readTime": "5 phút",
+    "standard": "Phác đồ Quốc tế AHA & ERC 2025",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"></path><path d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"></path></svg>",
+    "shortDesc": "Hướng dẫn thực hiện hồi sinh tim phổi (CPR) kết hợp hơi thở nhân tạo đúng nhịp độ.",
+    "lead": "Khi tim ngừng đập, dòng máu nuôi dưỡng não bộ ngưng trệ ngay lập tức. Mỗi phút trôi qua không có CPR làm giảm 10% cơ hội sống sót của nạn nhân.",
+    "emergencyAlert": "HÔ TO GỌI NGƯỜI HỖ TRỢ, GỌI 115 VÀ TÌM MÁY AED NGAY LẬP TỨC. Bắt đầu ép tim ngay không được chậm trễ.",
+    "timeline": [
+      { "time": "0 - 4 phút", "status": "Thời gian vàng phục hồi não tối ưu", "level": "safe" },
+      { "time": "4 - 6 phút", "status": "Bắt đầu tổn thương tế bào não", "level": "warning" },
+      { "time": "6 - 10 phút", "status": "Tổn thương não diện rộng không hồi phục", "level": "danger" },
+      { "time": "> 10 phút", "status": "Chết não lâm sàng, tử vong", "level": "critical" }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Kiểm tra hiện trường và phản xạ nạn nhân",
+        "desc": "Đảm bảo hiện trường xung quanh an toàn. Vỗ mạnh hai vai nạn nhân và gọi to: 'Anh/chị có sao không?'. Quan sát lồng ngực trong 5-10 giây xem có thở bình thường không (thở ngáp cá được coi là không thở)."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Kích hoạt hệ thống cấp cứu 115 và tìm máy AED",
+        "desc": "Chỉ định rõ một người xung quanh: 'Anh áo xanh gọi 115 và tìm máy sốc điện AED gần đây mang lại đây!'. Nếu chỉ có một mình, bật loa ngoài điện thoại gọi 115 và bắt đầu ép tim ngay."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Ép tim đúng vị trí và tần số chuẩn 100-120 lần/phút",
+        "desc": "Đặt gót bàn tay vào nửa dưới xương ức (chính giữa ngực). Bàn tay kia lồng lên trên, các ngón đan vào nhau. Hai cánh tay thẳng vuông góc với ngực nạn nhân. Dùng trọng lượng nửa thân trên ép lún sâu 5 - 6 cm, để ngực nở hoàn toàn sau mỗi lần ép."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Thổi ngạt (30 ép tim : 2 thổi ngạt)",
+        "desc": "Sau 30 lần ép tim, ngửa đầu nâng cằm nạn nhân, kẹp mũi và thổi ngạt 2 hơi liên tiếp (mỗi hơi 1 giây, thấy ngực phồng lên). Nếu không quen hoặc không có màng che bảo vệ: Tiếp tục ÉP TIM LIÊN TỤC KHÔNG DỪNG (Hands-only CPR)."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Bật máy AED ngay khi có sẵn",
+        "desc": "Bật nguồn máy AED và làm theo hướng dẫn giọng nói phát ra từ máy. Dán hai miếng điện cực theo hình vẽ. Đảm bảo KHÔNG AI CHẠM vào nạn nhân khi máy phân tích nhịp tim hoặc giật điện."
+      }
+    ],
+    "dos": [
+      "Ép tim nhanh và mạnh: tần số 100 - 120 nhịp/phút (nhịp bài hát Stayin' Alive).",
+      "Ép đủ độ sâu (5 - 6 cm đối với người lớn) và để ngực nở lại hoàn toàn.",
+      "Đổi người ép tim mỗi 2 phút để tránh mỏi tay làm giảm chất lượng ép."
+    ],
+    "donts": [
+      "KHÔNG tì đè liên tục lên ngực mà không để lồng ngực nở về vị trí cũ.",
+      "KHÔNG dừng ép tim quá 10 giây giữa các chu kỳ.",
+      "KHÔNG chạm vào nạn nhân khi máy AED đang phóng điện sốc tim."
+    ]
+  },
+  {
+    "id": "soc-nhiet-say-nang",
+    "title": "Sốc nhiệt & Say nắng",
+    "fullTitle": "Sơ cứu Sốc nhiệt Thân nhiệt cao (Heatstroke) & Say nắng",
+    "category": "ngoai-troi",
+    "categoryLabel": "Ngoài trời",
+    "badgeType": "Ngoài trời",
+    "badgeClass": "bg-secondary-container text-on-secondary-container",
+    "criticalLevel": "medium",
+    "readTime": "3 phút",
+    "standard": "Hướng dẫn Y học Lao động & Thể thao",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9a4 4 0 0 0-2 7.5\"></path><path d=\"M12 3v2\"></path><path d=\"m6.6 18.4-1.4 1.4\"></path><path d=\"M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\"></path><path d=\"M4 13H2\"></path><path d=\"M6.34 7.34 4.93 5.93\"></path></svg>",
+    "shortDesc": "Nhận diện dấu hiệu đột quỵ nhiệt và các bước hạ thân nhiệt cấp tốc an toàn.",
+    "lead": "Sốc nhiệt xảy ra khi hệ thống điều hòa thân nhiệt của cơ thể bị quá tải, nhiệt độ cơ thể vọt lên trên 40°C gây tổn thương não và các cơ quan nội tạng đe dọa trực tiếp tính mạng.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân lú lẫn, nói nhảm, co giật hoặc hôn mê do nhiệt độ cao.",
+    "timeline": [
+      { "time": "Giai đoạn 1", "status": "Chuột rút nhiệt, mệt mỏi, vã mồ hôi nhiều", "level": "safe" },
+      { "time": "Giai đoạn 2", "status": "Kiệt sức vì nhiệt, chóng mặt, buồn nôn, mạch nhanh", "level": "warning" },
+      { "time": "Giai đoạn 3", "status": "Sốc nhiệt (>40°C), da khô nóng, mê sảng, co giật", "level": "critical" }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Di chuyển vào nơi râm mát ngay",
+        "desc": "Đưa nạn nhân ngay lập tức vào phòng có điều hòa mát hoặc bóng râm thông thoáng, cởi bỏ bớt quần áo ngoài dày bó sát."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Hạ nhiệt cấp tốc",
+        "desc": "Xịt hoặc lau nước mát khắp người nạn nhân kết hợp bật quạt gió mạnh. Đặt các túi chườm mát bọc khăn vào các vùng có mạch máu lớn đi qua: 2 bên cổ, 2 nách và 2 bẹn."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bù nước và điện giải nếu còn tỉnh",
+        "desc": "Nếu nạn nhân hoàn toàn tỉnh táo và có thể nuốt tốt: Cho uống từng ngụm nhỏ nước mát, nước pha oresol hoặc nước uống thể thao bù muối khoáng. KHÔNG ép uống nếu nạn nhân lơ mơ."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Theo dõi sát tri giác và thân nhiệt",
+        "desc": "Liên tục theo dõi nhịp thở và tri giác của nạn nhân. Nếu thấy thân nhiệt hạ về khoảng 38°C thì ngừng chườm lạnh mạnh để tránh hạ nhiệt độ quá mức gây run rẩy."
+      }
+    ],
+    "dos": [
+      "Hạ nhiệt tích cực bằng nước mát và quạt gió ngay tại hiện trường.",
+      "Đặt túi chườm vào các vùng có mạch máu lớn: cổ, nách, bẹn.",
+      "Gọi hỗ trợ y tế 115 khi nạn nhân có biểu hiện rối loạn ý thức."
+    ],
+    "donts": [
+      "KHÔNG cho nạn nhân uống thuốc hạ sốt như Paracetamol/Aspirin (không có tác dụng trong sốc nhiệt và có thể gây hại cho gan/thận).",
+      "KHÔNG cho uống nước ngọt có ga hoặc đồ uống có cồn, caffeine.",
+      "KHÔNG ngâm nạn nhân lơ mơ vào bồn nước đá sâu một mình vì nguy cơ đuối nước."
+    ]
+  },
+  {
+    "id": "co-giat-dong-kinh",
+    "title": "Co giật & Động kinh",
+    "fullTitle": "Xử trí Cơn Co Giật & Cơn Động Kinh Cấp Tính",
+    "category": "benh-ly",
+    "categoryLabel": "Bệnh lý",
+    "badgeType": "Bệnh lý",
+    "badgeClass": "bg-surface-container-high text-on-surface-variant",
+    "criticalLevel": "medium",
+    "readTime": "4 phút",
+    "standard": "Hiệp hội Động kinh Quốc tế (ILAE)",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3\"></path><path d=\"M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4\"></path><circle cx=\"20\" cy=\"10\" r=\"2\"></circle></svg>",
+    "shortDesc": "Bảo vệ nạn nhân khỏi chấn thương trong cơn co giật, tư thế phục hồi sau khi tỉnh.",
+    "lead": "Co giật là tình trạng phóng điện đột ngột và bất thường của các tế bào não bộ. Đa số các cơn co giật tự ngừng sau 1-3 phút. Vai trò chính của người sơ cứu là BẢO VỆ NẠN NHÂN TRÁNH CHẤN THƯƠNG.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu cơn co giật kéo dài trên 5 phút, hoặc co giật tái diễn liên tiếp mà nạn nhân chưa kịp tỉnh lại.",
+    "timeline": [
+      { "time": "0 - 1 phút", "status": "Giai đoạn co cứng toàn thân, có thể tím môi", "level": "warning" },
+      { "time": "1 - 3 phút", "status": "Giai đoạn co giật nhịp nhàng các cơ, sùi bọt mép", "level": "danger" },
+      { "time": "Sau cơn giật", "status": "Giai đoạn lú lẫn, thở sâu, buồn ngủ phục hồi", "level": "safe" }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bảo vệ đầu và dọn dẹp vật sắc nhọn xung quanh",
+        "desc": "Đỡ nhẹ nạn nhân nằm xuống sàn phẳng an toàn. Kê gối mềm hoặc áo gấp dưới đầu để tránh chấn thương sọ não do đập đầu. Dời xa các vật cứng, sắc nhọn, bàn ghế xung quanh."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Nới lỏng trang phục và bấm giờ cơn giật",
+        "desc": "Nới lỏng cà vạt, cúc cổ áo, thắt lưng để nạn nhân dễ thở. Nhìn đồng hồ bấm chính xác thời gian cơn giật diễn ra."
+      },
+      {
+        "stepNumber": 3,
+        "title": "KHÔNG kìm kẹp, KHÔNG nhét bất cứ thứ gì vào miệng",
+        "desc": "Để cơ thể nạn nhân co giật tự nhiên, KHÔNG đè giữ chân tay (có thể gây gãy xương hoặc rách cơ). TUYỆT ĐỐI KHÔNG nhét khăn, đũa, ngón tay vào miệng nạn nhân."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Đặt vào tư thế nằm nghiêng an toàn (Tư thế hồi phục)",
+        "desc": "Khi cơn co giật vừa dứt, nhẹ nhàng xoay toàn bộ cơ thể nạn nhân nằm nghiêng sang một bên. Tư thế này giúp đờm dãi, chất nôn chảy ra ngoài, tránh hít sặc và tránh tụt lưỡi bịt đường thở."
+      }
+    ],
+    "dos": [
+      "Kê vật mềm dưới đầu để tránh va đập sọ não.",
+      "Ghi nhận chính xác thời gian bắt đầu và kết thúc cơn co giật.",
+      "Xoay nạn nhân nằm nghiêng an toàn ngay khi cơn giật kết thúc."
+    ],
+    "donts": [
+      "TUYỆT ĐỐI KHÔNG nhét bất cứ vật gì (đũa, muỗng, chanh, ngón tay) vào miệng nạn nhân.",
+      "KHÔNG ghì chặt hoặc cố định chân tay nạn nhân khi đang co giật.",
+      "KHÔNG cho ăn, uống bất kỳ thứ gì cho đến khi nạn nhân hoàn toàn tỉnh táo."
+    ]
+  }
+]
