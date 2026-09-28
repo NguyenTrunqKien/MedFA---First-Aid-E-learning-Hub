@@ -32,15 +32,17 @@
       <!-- Language Switcher -->
       <div class="relative inline-block text-left" id="language-dropdown-container">
         <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
-          <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-            <rect fill="#DA251D" height="20" width="30"></rect>
-            <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
-          </svg>
+          <span class="flag-container shrink-0 inline-flex items-center">
+            <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="#DA251D" height="20" width="30"></rect>
+              <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+            </svg>
+          </span>
           <span class="font-label-md text-label-md font-bold text-primary">VN</span>
           <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200" id="lang-arrow">expand_more</span>
         </button>
         <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
-          <button type="button" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
+          <button type="button" data-lang-select="vi" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
             <div class="flex items-center gap-2.5">
               <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
                 <rect fill="#DA251D" height="20" width="30"></rect>
@@ -50,10 +52,10 @@
             </div>
             <div class="flex items-center gap-1.5">
               <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">VN</span>
-              <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+              <span class="material-symbols-outlined text-primary text-[18px] lang-check-icon">check</span>
             </div>
           </button>
-          <button type="button" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
+          <button type="button" data-lang-select="en" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
             <div class="flex items-center gap-2.5">
               <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
                 <clipPath id="uk-flag-clip"><rect width="60" height="30"></rect></clipPath>
@@ -61,8 +63,9 @@
               </svg>
               <span class="font-label-md text-label-md font-medium text-on-surface">English</span>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center gap-1.5">
               <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">ENG</span>
+              <span class="material-symbols-outlined text-primary text-[18px] lang-check-icon hidden">check</span>
             </div>
           </button>
         </div>

@@ -32,13 +32,43 @@ const FALLBACK_HEADER_HTML = `
       </a>
       <div class="relative inline-block text-left" id="language-dropdown-container">
         <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
-          <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-            <rect fill="#DA251D" height="20" width="30"></rect>
-            <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
-          </svg>
+          <span class="flag-container shrink-0 inline-flex items-center">
+            <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="#DA251D" height="20" width="30"></rect>
+              <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+            </svg>
+          </span>
           <span class="font-label-md text-label-md font-bold text-primary">VN</span>
           <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200">expand_more</span>
         </button>
+        <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
+          <button type="button" data-lang-select="vi" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                <rect fill="#DA251D" height="20" width="30"></rect>
+                <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+              </svg>
+              <span class="font-label-md text-label-md font-bold text-primary">Tiếng Việt</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">VN</span>
+              <span class="material-symbols-outlined text-primary text-[18px] lang-check-icon">check</span>
+            </div>
+          </button>
+          <button type="button" data-lang-select="en" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                <clipPath id="uk-flag-clip"><rect width="60" height="30"></rect></clipPath>
+                <g clip-path="url(#uk-flag-clip)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></g>
+              </svg>
+              <span class="font-label-md text-label-md font-medium text-on-surface">English</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">ENG</span>
+              <span class="material-symbols-outlined text-primary text-[18px] lang-check-icon hidden">check</span>
+            </div>
+          </button>
+        </div>
       </div>
       <button id="mobile-menu-btn" aria-label="Mở menu di động" class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
         <span class="material-symbols-outlined">menu</span>
@@ -380,28 +410,30 @@ function bindHeaderFooterEvents() {
  */
 function generateBotReply(query) {
   const q = query.toLowerCase();
-  if (q.includes('cpr') || q.includes('ngừng tim') || q.includes('ép tim')) {
-    return `<p class="font-semibold text-error mb-1">🚨 Ép tim CPR khẩn cấp:</p>
+  const isEn = window.MedFAi18n && window.MedFAi18n.getLanguage() === 'en';
+
+  if (q.includes('cpr') || q.includes('ngừng tim') || q.includes('ép tim') || q.includes('cardiac') || q.includes('compress')) {
+    return isEn ? window.MedFAi18n.t('chat.cpr_reply') : `<p class="font-semibold text-error mb-1">🚨 Ép tim CPR khẩn cấp:</p>
             <p>1. Gọi 115 ngay!</p>
             <p>2. Đặt gót bàn tay giữa ngực, ép sâu 5-6cm với tốc độ 100-120 lần/phút.</p>
             <a href="topic-detail.html?id=ngung-tuan-hoan-cpr" class="text-primary font-bold underline mt-1.5 inline-block">Xem chi tiết bài CPR & AED →</a>`;
   }
-  if (q.includes('hóc') || q.includes('nghẹn') || q.includes('heimlich')) {
-    return `<p class="font-semibold text-primary mb-1">👶 Hóc dị vật đường thở:</p>
+  if (q.includes('hóc') || q.includes('nghẹn') || q.includes('heimlich') || q.includes('chok')) {
+    return isEn ? window.MedFAi18n.t('chat.choking_reply') : `<p class="font-semibold text-primary mb-1">👶 Hóc dị vật đường thở:</p>
             <p>Thực hiện ngay 5 vỗ lưng dứt khoát kết hợp 5 lần ép bụng Heimlich.</p>
             <a href="topic-detail.html?id=hoc-di-vat" class="text-primary font-bold underline mt-1.5 inline-block">Xem quy trình Heimlich chi tiết →</a>`;
   }
-  if (q.includes('bỏng') || q.includes('cháy')) {
-    return `<p class="font-semibold text-primary mb-1">🔥 Sơ cứu bỏng:</p>
+  if (q.includes('bỏng') || q.includes('cháy') || q.includes('burn')) {
+    return isEn ? window.MedFAi18n.t('chat.burn_reply') : `<p class="font-semibold text-primary mb-1">🔥 Sơ cứu bỏng:</p>
             <p>Xả nước mát sạch (15-25°C) liên tục trong 15-20 phút. KHÔNG bôi kem đánh răng hay chườm đá lạnh.</p>
             <a href="topic-detail.html?id=bong-cap-do-1-2" class="text-primary font-bold underline mt-1.5 inline-block">Xem hướng dẫn xử trí bỏng →</a>`;
   }
-  if (q.includes('chảy máu') || q.includes('máu') || q.includes('vết thương')) {
-    return `<p class="font-semibold text-primary mb-1">🩸 Cầm máu:</p>
+  if (q.includes('chảy máu') || q.includes('máu') || q.includes('vết thương') || q.includes('bleed') || q.includes('wound')) {
+    return isEn ? window.MedFAi18n.t('chat.bleed_reply') : `<p class="font-semibold text-primary mb-1">🩸 Cầm máu:</p>
             <p>Dùng gạc sạch đè chặt trực tiếp lên miệng vết thương trong 5-10 phút. Nâng cao chi bị thương.</p>
             <a href="topic-detail.html?id=chay-mau-nghiem-trong" class="text-primary font-bold underline mt-1.5 inline-block">Xem kỹ thuật băng ép và ga-rô →</a>`;
   }
-  return `<p>MedFA đã ghi nhận câu hỏi của bạn: <em>"${escapeHTML(query)}"</em>.</p>
+  return isEn ? window.MedFAi18n.t('chat.default_reply') : `<p>MedFA đã ghi nhận câu hỏi của bạn: <em>"${escapeHTML(query)}"</em>.</p>
           <p class="mt-1">Bạn có thể tra cứu toàn bộ tình huống chuẩn Y khoa trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a> hoặc gọi ngay <strong class="text-error">115</strong> nếu đang trong tình trạng khẩn cấp!</p>`;
 }
 
@@ -456,9 +488,12 @@ async function injectHeaderAndFooter() {
     }
   }
 
-  // Once injected, bind events and highlight active nav
+  // Once injected, bind events, highlight active nav, and apply i18n
   highlightActiveNav();
   bindHeaderFooterEvents();
+  if (window.MedFAi18n) {
+    window.MedFAi18n.applyCurrentLanguage();
+  }
 }
 
 // Global initialization

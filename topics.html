@@ -117,16 +117,16 @@
           <!-- Badge -->
           <span class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-secondary-container/40 text-secondary text-xs font-bold tracking-wide uppercase shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-            CẨM NANG Y KHOA KHẨN CẤP
+            <span data-i18n="topics.badge">CẨM NANG Y KHOA KHẨN CẤP</span>
           </span>
 
           <!-- Primary Title -->
-          <h1 class="text-3xl md:text-5xl text-primary tracking-tight font-extrabold mt-4">
+          <h1 class="text-3xl md:text-5xl text-primary tracking-tight font-extrabold mt-4" data-i18n="topics.title">
             Thư viện tình huống sơ cấp cứu
           </h1>
 
           <!-- Subtitle -->
-          <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mt-3">
+          <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mt-3" data-i18n="topics.subtitle">
             Tra cứu nhanh chóng các bước xử lý chuẩn y khoa quốc tế cho mọi tình huống khẩn cấp thường gặp.
           </p>
 
@@ -143,10 +143,11 @@
                 class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline pl-12 pr-28 py-3.5 rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.06)] hover:shadow-md transition-shadow text-base outline-none focus:ring-2 focus:ring-secondary/40 border border-outline-variant/30" 
                 id="search-input" 
                 placeholder="Tìm kiếm tình huống: CPR, hóc dị vật, bỏng, say nắng..." 
+                data-i18n-placeholder="topics.search_placeholder"
                 type="text"
               >
               <div class="absolute right-2 flex items-center gap-1">
-                <button class="px-5 py-2 rounded-full bg-secondary hover:bg-secondary/90 text-on-secondary font-semibold text-sm transition-all shadow-sm active:scale-95" id="search-btn" type="button">
+                <button class="px-5 py-2 rounded-full bg-secondary hover:bg-secondary/90 text-on-secondary font-semibold text-sm transition-all shadow-sm active:scale-95" id="search-btn" type="button" data-i18n="topics.search_btn">
                   Tìm kiếm
                 </button>
               </div>
@@ -155,19 +156,19 @@
 
           <!-- Category Filter Pills -->
           <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-6" id="category-filter-group">
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-secondary text-on-secondary" data-category="all" type="button">
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-secondary text-on-secondary" data-category="all" type="button" data-i18n="topics.cat_all">
               Tất cả
             </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="sinh-hoat" type="button">
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="sinh-hoat" type="button" data-i18n="topics.cat_daily">
               Tai nạn sinh hoạt
             </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="tre-em" type="button">
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="tre-em" type="button" data-i18n="topics.cat_children">
               Trẻ em
             </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="ngoai-troi" type="button">
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="ngoai-troi" type="button" data-i18n="topics.cat_outdoor">
               Ngoài trời
             </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="benh-ly" type="button">
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="benh-ly" type="button" data-i18n="topics.cat_medical">
               Bệnh lý
             </button>
           </div>
@@ -187,7 +188,7 @@
               </span>
             </div>
             <div class="flex items-center gap-2 text-on-surface-variant self-end sm:self-auto">
-              <span class="text-xs uppercase tracking-wider text-outline font-semibold">Sắp xếp:</span>
+              <span class="text-xs uppercase tracking-wider text-outline font-semibold" data-i18n="topics.sort_label">Sắp xếp:</span>
               <div class="relative inline-block">
                 <select class="appearance-none bg-surface-container-lowest text-on-surface text-sm pl-4 pr-8 py-1.5 rounded-lg shadow-sm outline-none cursor-pointer focus:ring-1 focus:ring-primary border border-outline-variant/30" id="sort-select">
                   <option value="popular">Phổ biến nhất</option>
@@ -256,6 +257,8 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript Modules -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/data-loader.js"></script>
   <script src="js/render-topics.js"></script>
   <script src="js/main.js"></script>
