@@ -328,5 +328,554 @@
       "KHÔNG ghì chặt hoặc cố định chân tay nạn nhân khi đang co giật.",
       "KHÔNG cho ăn, uống bất kỳ thứ gì cho đến khi nạn nhân hoàn toàn tỉnh táo."
     ]
+  },
+  {
+    "id": "hoc-di-vat-o-tre-em",
+    "title": "Hóc dị vật ở trẻ em",
+    "fullTitle": "Hướng dẫn sơ cứu trẻ bị hóc dị vật đường thở",
+    "category": "tre-em",
+    "categoryLabel": "Trẻ em",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"8\" cy=\"5\" r=\"2\"/><path d=\"M8 7v6m-3 0 3-2 3 2m-3-2v9m7-13h6m-3-3 3 3-3 3\"/></svg>",
+    "shortDesc": "Nhận biết nghẹn thở và sơ cứu khác nhau cho trẻ dưới 1 tuổi và trẻ lớn hơn.",
+    "lead": "Dị vật có thể làm tắc đường thở rất nhanh. Cách xử trí phụ thuộc vào việc trẻ còn ho được hay không và trẻ đã đủ 1 tuổi chưa.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu trẻ không thể ho, khóc hoặc thở, tím tái hay bất tỉnh; nhờ người khác gọi trong khi bắt đầu sơ cứu.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Đánh giá khả năng ho và thở",
+        "desc": "Nếu trẻ còn ho mạnh hoặc khóc được, khuyến khích trẻ tiếp tục ho và theo dõi sát. Nếu ho yếu, không phát ra tiếng hoặc không thở được, xử trí tắc nghẽn đường thở ngay."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Trẻ dưới 1 tuổi: vỗ lưng",
+        "desc": "Đỡ đầu và cổ, đặt trẻ nằm sấp dọc cẳng tay, đầu thấp hơn ngực. Dùng gót bàn tay vỗ 5 lần giữa hai xương bả vai."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Trẻ dưới 1 tuổi: ấn ngực",
+        "desc": "Lật trẻ nằm ngửa, vẫn giữ đầu thấp hơn ngực; dùng hai ngón tay ấn nhanh 5 lần vào giữa ngực, ngay dưới đường nối hai núm vú. Lặp lại 5 vỗ lưng và 5 ấn ngực nếu dị vật chưa ra."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Trẻ từ 1 tuổi: vỗ lưng và ép bụng",
+        "desc": "Cho trẻ cúi người về trước, vỗ 5 lần giữa hai xương bả vai. Nếu chưa hết nghẹn, đứng hoặc quỳ phía sau, thực hiện 5 lần ép bụng hướng vào trong và lên trên; lặp lại đến khi trẻ thở được hoặc bất tỉnh."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Nếu trẻ bất tỉnh",
+        "desc": "Đặt trẻ nằm trên mặt phẳng cứng, gọi 115 nếu chưa gọi và bắt đầu CPR theo hướng dẫn của tổng đài hoặc kỹ năng đã được học. Chỉ lấy dị vật khi nhìn thấy rõ trong miệng."
+      }
+    ],
+    "dos": [
+      "Khuyến khích trẻ còn ho hiệu quả tiếp tục ho và quan sát liên tục.",
+      "Với trẻ dưới 1 tuổi, luân phiên 5 vỗ lưng và 5 ấn ngực.",
+      "Với trẻ từ 1 tuổi bị nghẹn nặng, luân phiên 5 vỗ lưng và 5 ép bụng."
+    ],
+    "donts": [
+      "KHÔNG ép bụng cho trẻ dưới 1 tuổi.",
+      "KHÔNG móc họng bằng ngón tay khi không nhìn thấy rõ dị vật.",
+      "KHÔNG để trẻ một mình hoặc chờ đợi nếu trẻ không thể thở, ho hay khóc."
+    ]
+  },
+  {
+    "id": "duoi-nuoc-o-tre-em",
+    "title": "Đuối nước ở trẻ em",
+    "fullTitle": "Các bước sơ cứu ban đầu trẻ bị đuối nước",
+    "category": "ngoai-troi",
+    "categoryLabel": "Ngoài trời",
+    "badgeType": "Sinh tử",
+    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
+    "criticalLevel": "critical",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"5\" r=\"2\"/><path d=\"M4 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0m-9-8 2-3 4 4\"/></svg>",
+    "shortDesc": "Đưa trẻ ra khỏi nước an toàn, gọi cấp cứu và hỗ trợ hô hấp nếu trẻ không thở bình thường.",
+    "lead": "Đuối nước gây thiếu oxy. Ưu tiên cứu hộ an toàn, gọi cấp cứu và hỗ trợ hô hấp sớm; không mất thời gian tìm cách đẩy nước ra khỏi phổi.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu trẻ bất tỉnh, không thở hoặc chỉ thở ngáp; trẻ ho kéo dài, khó thở hoặc bất thường sau khi được đưa khỏi nước cũng cần được đánh giá y tế.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Đưa trẻ ra khỏi nước an toàn",
+        "desc": "Gọi người cứu hộ và đưa trẻ lên bờ bằng cách không đặt bản thân vào nguy hiểm; không xuống nước nếu không có kỹ năng và phương tiện an toàn."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Gọi 115, kiểm tra đáp ứng và thở",
+        "desc": "Nhờ người khác gọi 115 và tìm AED. Kiểm tra trẻ có đáp ứng và có thở bình thường không; thở ngáp không phải thở bình thường."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Nếu không thở: hỗ trợ hô hấp và CPR",
+        "desc": "Nếu biết thực hiện, mở đường thở và cho 2 hơi thổi ngạt ban đầu, sau đó luân phiên 30 ép ngực với 2 hơi thổi. Nếu không thể thổi ngạt, thực hiện ép ngực liên tục theo hướng dẫn của 115."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Dùng AED và tiếp tục theo dõi",
+        "desc": "Dùng AED ngay khi có và làm theo lời máy. Tiếp tục hỗ trợ cho đến khi nhân viên y tế tiếp nhận; nếu trẻ đã thở bình thường, theo dõi hô hấp và tình trạng tỉnh táo."
+      }
+    ],
+    "dos": [
+      "Đảm bảo an toàn cho người cứu trước khi tiếp cận trẻ.",
+      "Gọi 115 sớm và bắt đầu CPR khi trẻ không thở bình thường.",
+      "Dùng AED khi có sẵn và tiếp tục theo dõi trẻ sau khi ra khỏi nước."
+    ],
+    "donts": [
+      "KHÔNG nhảy xuống nước cứu khi không đủ kỹ năng hoặc thiếu phương tiện an toàn.",
+      "KHÔNG ép bụng hoặc dốc ngược trẻ để cố đẩy nước ra.",
+      "KHÔNG trì hoãn CPR để móc họng hoặc tìm cách hút nước khỏi phổi."
+    ]
+  },
+  {
+    "id": "dot-quy",
+    "title": "Đột quỵ",
+    "fullTitle": "Đột quỵ có cứu được không? Yếu tố nào gây ảnh hưởng?",
+    "category": "benh-ly",
+    "categoryLabel": "Bệnh lý",
+    "badgeType": "Sinh tử",
+    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
+    "criticalLevel": "critical",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 18V6a3 3 0 0 0-5.7-1.3A3 3 0 0 0 4 9a3 3 0 0 0 .2 5A3 3 0 0 0 7 19a3 3 0 0 0 5-1Zm0 0V6a3 3 0 0 1 5.7-1.3A3 3 0 0 1 20 9a3 3 0 0 1-.2 5A3 3 0 0 1 17 19a3 3 0 0 1-5-1Z\"/><path d=\"M8 8c0 2 2 2 2 4m6-4c0 2-2 2-2 4\"/></svg>",
+    "shortDesc": "Nhận biết FAST, gọi 115 ngay và ghi thời điểm khởi phát triệu chứng đột quỵ.",
+    "lead": "Đột quỵ có thể biểu hiện bằng méo mặt, yếu tay chân, nói khó, rối loạn thị giác hoặc mất thăng bằng đột ngột. Cấp cứu sớm giúp giảm nguy cơ tổn thương lâu dài.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC khi nghi đột quỵ: méo mặt, yếu một bên tay, nói khó, hoặc triệu chứng thần kinh xuất hiện đột ngột; gọi kể cả khi triệu chứng đã hết.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Nhận biết dấu hiệu FAST",
+        "desc": "Kiểm tra mặt có lệch không, hai tay có nâng đều không, lời nói có méo hoặc khó hiểu không. Chú ý thêm mất thăng bằng, nhìn mờ hoặc đau đầu dữ dội bất ngờ."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Gọi 115 và ghi giờ khởi phát",
+        "desc": "Gọi cấp cứu ngay. Ghi lại thời điểm triệu chứng bắt đầu hoặc lần cuối người bệnh còn bình thường để báo nhân viên y tế."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Đặt người bệnh an toàn",
+        "desc": "Để người bệnh nghỉ, trấn an và nới lỏng trang phục chật. Nếu lơ mơ, chảy dãi hoặc khó nuốt nhưng vẫn thở, đặt nằm nghiêng an toàn nếu không nghi chấn thương cột sống."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Theo dõi trong lúc chờ cấp cứu",
+        "desc": "Theo dõi hô hấp và mức độ tỉnh táo. Nếu ngừng thở bình thường, bắt đầu CPR theo hướng dẫn của tổng đài."
+      }
+    ],
+    "dos": [
+      "Gọi 115 ngay khi nghi đột quỵ, kể cả khi dấu hiệu thoáng qua.",
+      "Ghi giờ bắt đầu triệu chứng hoặc giờ cuối cùng còn bình thường.",
+      "Ở lại, trấn an và theo dõi hô hấp, tri giác của người bệnh."
+    ],
+    "donts": [
+      "KHÔNG chờ triệu chứng tự hết rồi mới gọi cấp cứu.",
+      "KHÔNG cho ăn hoặc uống khi có nguy cơ khó nuốt, sặc.",
+      "KHÔNG nhét đũa, khăn hay bất kỳ vật gì vào miệng nếu người bệnh co giật."
+    ]
+  },
+  {
+    "id": "bong-nhiet",
+    "title": "Bỏng nhiệt",
+    "fullTitle": "Sơ cứu khi bị bỏng lửa, bỏng nước sôi",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Trung bình",
+    "badgeClass": "bg-secondary-container text-on-secondary-container",
+    "criticalLevel": "medium",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"></path></svg>",
+    "shortDesc": "Làm mát vết bỏng bằng nước mát chảy, che phủ sạch và nhận diện dấu hiệu cần cấp cứu.",
+    "lead": "Bỏng do nước sôi hoặc lửa cần được ngừng tiếp xúc nguồn nhiệt và làm mát sớm. Cần bảo vệ da sau khi làm mát và đánh giá mức độ bỏng.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu bỏng rộng, sâu, bỏng mặt/cổ hoặc gây khó thở; bỏng ở tay, chân, khớp hay vùng sinh dục cũng cần được khám khẩn.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Ngừng tiếp xúc nguồn nhiệt",
+        "desc": "Đưa người bị nạn ra khỏi nguồn nhiệt một cách an toàn; nếu quần áo cháy, dập lửa bằng nước hoặc cho nằm xuống và lăn."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Làm mát 20 phút",
+        "desc": "Cho vùng bỏng dưới nước mát chảy khoảng 20 phút. Giữ ấm phần cơ thể còn lại, đặc biệt ở trẻ em hoặc khi bỏng rộng."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bỏ đồ không dính vết thương",
+        "desc": "Tháo trang sức và quần áo gần vùng bỏng trước khi sưng, nhưng để nguyên phần đã dính vào da."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Che phủ và đánh giá",
+        "desc": "Sau khi làm mát, phủ lỏng bằng màng bọc thực phẩm sạch hoặc gạc sạch không dính; không quấn chặt. Đưa đi khám nếu bỏng rộng, sâu hoặc ở vị trí nhạy cảm."
+      }
+    ],
+    "dos": [
+      "Làm mát vùng bỏng bằng nước mát chảy khoảng 20 phút.",
+      "Tháo trang sức gần vùng bỏng nếu chưa dính da.",
+      "Che phủ lỏng bằng vật liệu sạch sau khi làm mát."
+    ],
+    "donts": [
+      "KHÔNG chườm đá trực tiếp lên vết bỏng.",
+      "KHÔNG bóc quần áo đã dính vào vùng da bỏng.",
+      "KHÔNG bôi kem đánh răng, dầu, bơ hay tự chọc vỡ bóng nước."
+    ]
+  },
+  {
+    "id": "bong-hoa-chat",
+    "title": "Bỏng hóa chất",
+    "fullTitle": "Sơ cứu khi bị bỏng hóa chất",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M9 3h6m-4 0v7l-5 8a2 2 0 0 0 1.7 3h8.6a2 2 0 0 0 1.7-3l-5-8V3M8 16h8\"/><path d=\"M11 18h.01m3 1h.01\"/></svg>",
+    "shortDesc": "Bảo vệ người cứu, loại bỏ hóa chất, xả nước liên tục và đưa nạn nhân đi cấp cứu.",
+    "lead": "Hóa chất có thể tiếp tục gây tổn thương khi còn bám trên da hoặc trong mắt. Cần ngừng phơi nhiễm ngay và nhờ nhân viên y tế đánh giá.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu hóa chất dính vào da hoặc mắt, đặc biệt khi bỏng rộng, đau tăng, khó thở hoặc không rõ loại hóa chất.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bảo vệ người cứu và gọi 115",
+        "desc": "Tránh chạm trực tiếp vào hóa chất; đeo găng nếu có, rời khỏi vùng phơi nhiễm và gọi cấp cứu."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Loại bỏ đồ nhiễm hóa chất",
+        "desc": "Cởi quần áo, trang sức bị nhiễm hóa chất nếu làm được an toàn. Với bột hóa chất khô, nhẹ nhàng phủi bột khỏi da trước khi xả nước."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Xả nước liên tục",
+        "desc": "Rửa vùng bị ảnh hưởng bằng thật nhiều nước mát hoặc ấm chảy liên tục ít nhất 20 phút; tiếp tục theo hướng dẫn của 115. Nếu dính mắt, tiếp tục rửa mắt cho đến khi nhân viên y tế tiếp nhận."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Theo dõi và chuyển viện",
+        "desc": "Theo dõi hô hấp, mức tỉnh táo và đưa nạn nhân đến cơ sở y tế. Mang theo nhãn hoặc tên hóa chất nếu có, không để hóa chất tiếp tục tiếp xúc với người cứu."
+      }
+    ],
+    "dos": [
+      "Đeo găng và tránh phơi nhiễm cho người cứu.",
+      "Loại bỏ quần áo nhiễm hóa chất và phủi bột khô trước khi xả.",
+      "Xả nước nhiều, liên tục và đưa nạn nhân đi đánh giá y tế."
+    ],
+    "donts": [
+      "KHÔNG dùng hóa chất khác để cố trung hòa vết bỏng.",
+      "KHÔNG bôi kem, dầu hoặc thuốc lên vùng bỏng khi chờ cấp cứu.",
+      "KHÔNG chạm tay trần vào quần áo hoặc da còn dính hóa chất."
+    ]
+  },
+  {
+    "id": "soc-nhiet-say-nang",
+    "title": "Sốc nhiệt, say nắng",
+    "fullTitle": "Say nắng, say nóng là gì? Nguyên nhân và cách xử trí khi gặp",
+    "category": "ngoai-troi",
+    "categoryLabel": "Ngoài trời",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"7\" r=\"3\"/><path d=\"M12 1v2M4 7h2m12 0h2M6.3 1.3l1.4 1.4m8.6 0 1.4-1.4M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/></svg>",
+    "shortDesc": "Nhận diện say nắng và sốc nhiệt, gọi cấp cứu khi rối loạn ý thức, làm mát cơ thể ngay.",
+    "lead": "Sốc nhiệt là cấp cứu nguy hiểm, có thể kèm lú lẫn hoặc ngất. Kiệt sức vì nóng nhẹ hơn nhưng có thể tiến triển nặng; cách cho uống nước phụ thuộc mức tỉnh táo và tình trạng.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nghi sốc nhiệt: lú lẫn, ngất, co giật, thân nhiệt rất cao hoặc tình trạng xấu đi nhanh.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Gọi 115 khi nghi sốc nhiệt",
+        "desc": "Nếu người bệnh lú lẫn, ngất, co giật hoặc rất nóng, gọi 115 ngay. Đừng đợi có nhiệt kế mới bắt đầu xử trí."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Đưa đến nơi mát",
+        "desc": "Đưa người bệnh ra khỏi nắng hoặc nơi nóng, nới lỏng và cởi bớt quần áo không cần thiết."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Làm mát ngay",
+        "desc": "Dùng nước mát làm ướt da và quạt; có thể chườm khăn lạnh ở cổ, nách, bẹn hoặc cho vào bồn nước mát nếu an toàn và có người giám sát."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Theo dõi và xử trí uống nước",
+        "desc": "Theo dõi hô hấp, mức tỉnh táo đến khi cấp cứu đến. Với kiệt sức vì nóng, người tỉnh táo và nuốt tốt có thể uống từng ngụm nước; nếu nghi sốc nhiệt, không cho uống."
+      }
+    ],
+    "dos": [
+      "Gọi 115 ngay khi có rối loạn ý thức hoặc nghi sốc nhiệt.",
+      "Đưa nạn nhân đến nơi mát và làm mát cơ thể ngay.",
+      "Theo dõi hô hấp và mức tỉnh táo liên tục khi chờ cấp cứu."
+    ],
+    "donts": [
+      "KHÔNG chậm làm mát để chờ xe cấp cứu.",
+      "KHÔNG cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
+      "KHÔNG để người lơ mơ một mình trong bồn nước."
+    ]
+  },
+  {
+    "id": "ngo-doc-thuc-pham",
+    "title": "Ngộ độc thực phẩm",
+    "fullTitle": "Cách sơ cứu ngộ độc thực phẩm: Lưu ý quan trọng khi thực hiện",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Trung bình",
+    "badgeClass": "bg-secondary-container text-on-secondary-container",
+    "criticalLevel": "medium",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 7c-3-3-9-1-9 5 0 4 3 9 6 9 1.5 0 2-1 3-1s1.5 1 3 1c3 0 6-5 6-9 0-6-6-8-9-5Zm0 0c0-2 1-4 3-5m-3 5c2-2 4-2 6-1\"/><path d=\"M12 10v5m0 3h.01\"/></svg>",
+    "shortDesc": "Bù nước an toàn, theo dõi dấu hiệu mất nước và nhận biết khi cần khám cấp cứu.",
+    "lead": "Ngộ độc thực phẩm có thể gây nôn, tiêu chảy và mất nước. Mục tiêu ban đầu là bù dịch an toàn, theo dõi dấu hiệu nặng và tìm hỗ trợ y tế khi cần.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu người bệnh bất tỉnh, co giật hoặc khó thở. Đi khám sớm nếu đi ngoài ra máu, sốt cao, nôn không giữ được nước hoặc có dấu hiệu mất nước.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Đánh giá mức độ nặng",
+        "desc": "Kiểm tra mức tỉnh táo, nhịp thở, số lần nôn và tiêu chảy. Nếu bất tỉnh, co giật hoặc khó thở, gọi 115."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bù nước từng ngụm nhỏ",
+        "desc": "Nếu tỉnh táo và nuốt được, cho uống nước từng ngụm nhỏ thường xuyên. Khi tiêu chảy nhiều, ưu tiên dung dịch bù nước đường uống pha đúng hướng dẫn."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Theo dõi mất nước",
+        "desc": "Chú ý khô miệng, tiểu ít, chóng mặt khi đứng, mệt lả; trẻ nhỏ có thể ít nước mắt hoặc lừ đừ."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Đi khám khi có dấu hiệu nặng",
+        "desc": "Liên hệ cơ sở y tế nếu phân có máu, sốt cao, nôn không giữ được nước, tiêu chảy kéo dài hoặc có dấu hiệu mất nước. Ghi lại thực phẩm đã ăn để báo nhân viên y tế."
+      }
+    ],
+    "dos": [
+      "Cho người tỉnh táo uống nước thành nhiều ngụm nhỏ.",
+      "Pha dung dịch bù nước đường uống đúng hướng dẫn nếu cần.",
+      "Theo dõi dấu hiệu mất nước và đi khám khi có triệu chứng nặng."
+    ],
+    "donts": [
+      "KHÔNG tự gây nôn hoặc kích thích họng để nôn.",
+      "KHÔNG ép người bất tỉnh hoặc khó nuốt uống nước.",
+      "KHÔNG tự dùng thuốc cầm tiêu chảy khi sốt cao hoặc đi ngoài ra máu nếu chưa có chỉ dẫn y tế."
+    ]
+  },
+  {
+    "id": "dien-giat",
+    "title": "Điện giật",
+    "fullTitle": "Cách sơ cứu người bị điện giật sao cho đúng chuẩn và an toàn?",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"m13 2-9 12h7l-1 8 10-12h-7l1-8Z\"/></svg>",
+    "shortDesc": "Ngắt nguồn điện an toàn, gọi cấp cứu, kiểm tra hô hấp và chăm sóc bỏng điện.",
+    "lead": "Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải chắc chắn nguồn điện đã được ngắt trước khi tiếp cận.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, thở bất thường, đau ngực, bỏng nặng hoặc liên quan điện cao thế. Người bị điện giật cần được nhân viên y tế đánh giá.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Cắt điện và giữ an toàn",
+        "desc": "Ngắt điện ở công tắc hoặc cầu dao trước khi chạm vào nạn nhân. Với điện cao thế hoặc nguồn chưa an toàn, không tiếp cận, gọi 115 và lực lượng chuyên trách."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Gọi 115 và kiểm tra nạn nhân",
+        "desc": "Khi đã an toàn, kiểm tra mức tỉnh táo và thở bình thường. Nhờ người gọi 115 và tìm AED."
+      },
+      {
+        "stepNumber": 3,
+        "title": "CPR nếu ngừng thở bình thường",
+        "desc": "Nếu nạn nhân không đáp ứng và không thở hoặc chỉ thở ngáp, bắt đầu CPR theo hướng dẫn 115; dùng AED ngay khi có."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Chăm sóc bỏng và theo dõi",
+        "desc": "Nếu có vết bỏng, làm mát bằng nước mát sạch chảy khi đã chắc chắn không còn điện. Theo dõi thay đổi hô hấp, tri giác và đưa đi đánh giá y tế."
+      }
+    ],
+    "dos": [
+      "Ngắt nguồn điện trước khi chạm vào nạn nhân.",
+      "Gọi 115, theo dõi thở và bắt đầu CPR nếu ngừng thở bình thường.",
+      "Đưa người bị điện giật đi đánh giá y tế dù vết bỏng nhỏ."
+    ],
+    "donts": [
+      "KHÔNG chạm trực tiếp vào nạn nhân khi còn nối với nguồn điện.",
+      "KHÔNG tiếp cận dây điện cao thế hoặc khu vực chưa được xác nhận an toàn.",
+      "KHÔNG đánh giá mức độ tổn thương chỉ theo vết bỏng ngoài da."
+    ]
+  },
+  {
+    "id": "hoi-sinh-tim-phoi-nguoi-lon",
+    "title": "Hồi sinh tim phổi người lớn",
+    "fullTitle": "Hồi sinh tim phổi cơ bản cho người lớn khi bị tai nạn",
+    "category": "benh-ly",
+    "categoryLabel": "Bệnh lý",
+    "badgeType": "Sinh tử",
+    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
+    "criticalLevel": "critical",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"></path><path d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"></path></svg>",
+    "shortDesc": "Nhận biết ngừng tim, gọi 115, ép tim đúng nhịp và dùng AED sớm.",
+    "lead": "Người lớn bất tỉnh và không thở bình thường hoặc chỉ thở ngáp cần được gọi cấp cứu và bắt đầu CPR ngay. AED nên dùng sớm khi có sẵn.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu người lớn không đáp ứng và không thở bình thường hoặc chỉ thở ngáp; yêu cầu người xung quanh mang AED.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Kiểm tra an toàn, đáp ứng và thở",
+        "desc": "Bảo đảm hiện trường an toàn, gọi to và vỗ vai. Quan sát thở bình thường trong tối đa 10 giây; thở ngáp không phải thở bình thường."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Gọi 115 và lấy AED",
+        "desc": "Nhờ người xung quanh gọi 115, lấy AED; nếu một mình, gọi trên loa ngoài để nhận hướng dẫn và bắt đầu CPR."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Ép ngực 30 lần",
+        "desc": "Đặt hai tay ở giữa ngực trên mặt phẳng cứng, ép sâu khoảng 5–6 cm với nhịp 100–120 lần/phút, để ngực nở lại hoàn toàn sau mỗi lần ép."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Thổi ngạt nếu đã được học",
+        "desc": "Nếu được huấn luyện và có thể thực hiện, sau 30 lần ép ngực thổi 2 hơi, mỗi hơi khoảng 1 giây để ngực nâng lên; tiếp tục 30:2. Nếu không thể thổi ngạt, ép ngực liên tục."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Dùng AED và tiếp tục CPR",
+        "desc": "Bật AED, dán điện cực theo hình trên máy và làm theo lời nhắc. Đảm bảo không ai chạm nạn nhân khi máy phân tích hoặc sốc điện; tiếp tục CPR khi máy yêu cầu."
+      }
+    ],
+    "dos": [
+      "Gọi 115 và bắt đầu ép ngực ngay khi không đáp ứng, không thở bình thường.",
+      "Ép ngực 100–120 lần/phút, để ngực nở lại hoàn toàn.",
+      "Dùng AED sớm và làm theo hướng dẫn của máy."
+    ],
+    "donts": [
+      "KHÔNG trì hoãn ép ngực để cố tìm mạch nếu không được huấn luyện.",
+      "KHÔNG ngừng ép ngực lâu quá 10 giây giữa các chu kỳ.",
+      "KHÔNG chạm vào nạn nhân khi AED đang phân tích hoặc phát sốc."
+    ]
+  },
+  {
+    "id": "chay-mau-va-cam-mau",
+    "title": "Chảy máu và cầm máu",
+    "fullTitle": "Sơ cứu chảy máu (cầm máu): Những điều cần biết",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"></path><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"></path></svg>",
+    "shortDesc": "Ép trực tiếp để cầm máu, gọi 115 khi chảy máu nặng và dùng ga-rô khi phù hợp.",
+    "lead": "Chảy máu nhiều có thể gây sốc nhanh. Ưu tiên ép trực tiếp vào nguồn chảy máu và gọi cấp cứu; ga-rô dành cho chảy máu đe dọa tính mạng ở tay hoặc chân.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu máu chảy nhiều liên tục hoặc phun tia, không cầm được bằng ép trực tiếp, hay nạn nhân tái lạnh, lơ mơ, thở nhanh.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Đánh giá an toàn và gọi hỗ trợ",
+        "desc": "Đeo găng hoặc dùng vật chắn nếu có. Gọi 115 ngay với chảy máu nặng; tìm vị trí chảy máu."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Ép trực tiếp lên vết thương",
+        "desc": "Đặt gạc hoặc vải sạch lên nguồn chảy máu và ép mạnh liên tục. Nếu có vật cắm sâu, không rút ra; ép quanh vật."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Ga-rô khi chảy máu chi đe dọa tính mạng",
+        "desc": "Nếu chảy máu dữ dội ở tay hoặc chân và đã được hướng dẫn sử dụng ga-rô, đặt ga-rô phía trên vết thương, tránh khớp; siết đến khi máu ngừng chảy và ghi giờ đặt."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Theo dõi trong khi chờ cấp cứu",
+        "desc": "Tiếp tục ép nếu chưa cầm máu. Giữ ấm, theo dõi hô hấp và mức tỉnh táo, báo cho nhân viên y tế những gì đã làm."
+      }
+    ],
+    "dos": [
+      "Ép mạnh trực tiếp lên nguồn chảy máu bằng gạc hoặc vải sạch.",
+      "Gọi 115 ngay nếu máu chảy dữ dội hoặc có dấu hiệu sốc.",
+      "Ghi giờ đặt ga-rô và báo lại cho nhân viên y tế nếu đã dùng."
+    ],
+    "donts": [
+      "KHÔNG rút vật cắm sâu ra khỏi vết thương.",
+      "KHÔNG tháo lớp gạc đầu tiên đang tiếp xúc trực tiếp vết thương khi máu thấm qua.",
+      "KHÔNG tự nới hoặc tháo ga-rô sau khi đã đặt; việc đó để nhân viên y tế thực hiện."
+    ]
+  },
+  {
+    "id": "gay-xuong",
+    "title": "Gãy xương",
+    "fullTitle": "Sơ cứu khi bị gãy xương: Đừng cố di chuyển người bệnh",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M6.5 7.5 4 7a2.5 2.5 0 1 1 3-3l.5 2.5 9 10L19 17a2.5 2.5 0 1 1-3 3l-.5-2.5-9-10Z\"/><path d=\"m10 10 2 1-1 2 3 1\"/></svg>",
+    "shortDesc": "Giữ yên vùng nghi gãy, xử trí chảy máu và nhận biết dấu hiệu cần gọi cấp cứu.",
+    "lead": "Gãy xương có thể kín hoặc hở; di chuyển hoặc nắn chỉnh sai có thể làm tổn thương thêm. Ưu tiên giữ yên vùng bị thương và đánh giá dấu hiệu nặng.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu xương lòi ra ngoài, chi biến dạng nhiều, chảy máu nặng, tê/lạnh phía dưới chỗ gãy, hoặc nghi chấn thương đầu, cổ, lưng, hông.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Đánh giá tình trạng và gọi hỗ trợ",
+        "desc": "Kiểm tra hiện trường, hô hấp, chảy máu và dấu hiệu sốc. Gọi 115 nếu có gãy xương hở, biến dạng nặng hoặc nghi tổn thương đầu/cột sống."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Giữ yên vùng nghi gãy",
+        "desc": "Giúp nạn nhân nằm hoặc ngồi yên ở tư thế đang có. Đỡ chi bị thương bằng khăn hay đệm mềm; không cố nắn xương về vị trí cũ."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Xử trí chảy máu và giảm sưng",
+        "desc": "Dùng gạc sạch ép quanh vết thương nếu chảy máu, tránh đè trực tiếp lên xương nhô ra. Với chấn thương kín, có thể chườm lạnh qua khăn tối đa 20 phút nếu người bệnh chịu được."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Theo dõi và chờ nhân viên y tế",
+        "desc": "Theo dõi màu sắc, cảm giác phía dưới chỗ gãy và mức tỉnh táo. Giữ ấm, hạn chế di chuyển; đặc biệt không tự di chuyển nếu nghi chấn thương cột sống."
+      }
+    ],
+    "dos": [
+      "Giữ yên vùng nghi gãy và đỡ ở tư thế đang có.",
+      "Gọi 115 khi có gãy xương hở, biến dạng nặng hoặc nghi chấn thương cột sống.",
+      "Theo dõi cảm giác, màu da phía dưới vùng chấn thương."
+    ],
+    "donts": [
+      "KHÔNG cố duỗi thẳng hoặc nắn lại chi biến dạng.",
+      "KHÔNG đẩy xương lòi ra vào trong hoặc ép trực tiếp lên đầu xương.",
+      "KHÔNG tự di chuyển người nghi chấn thương cổ hoặc cột sống trừ khi nơi đó không an toàn."
+    ]
   }
 ]
