@@ -15,10 +15,26 @@
     "lead": "Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.",
     "timeline": [
-      { "time": "0 - 1 phút", "status": "Khó thở, hoảng loạn, ôm cổ họng", "level": "safe" },
-      { "time": "1 - 2 phút", "status": "Tím tái môi, mất dần phản xạ ho", "level": "warning" },
-      { "time": "2 - 4 phút", "status": "Ngất lịm, mất tri giác, ngừng thở", "level": "danger" },
-      { "time": "> 4 phút", "status": "Tổn thương não vĩnh viễn hoặc tử vong", "level": "critical" }
+      {
+        "time": "0 - 1 phút",
+        "status": "Khó thở, hoảng loạn, ôm cổ họng",
+        "level": "safe"
+      },
+      {
+        "time": "1 - 2 phút",
+        "status": "Tím tái môi, mất dần phản xạ ho",
+        "level": "warning"
+      },
+      {
+        "time": "2 - 4 phút",
+        "status": "Ngất lịm, mất tri giác, ngừng thở",
+        "level": "danger"
+      },
+      {
+        "time": "> 4 phút",
+        "status": "Tổn thương não vĩnh viễn hoặc tử vong",
+        "level": "critical"
+      }
     ],
     "steps": [
       {
@@ -74,9 +90,21 @@
     "lead": "Tổn thương da do nhiệt độ cao gây đau đớn dữ dội, thoát dịch huyết tương và nguy cơ nhiễm trùng cao. Việc ngâm rửa đúng cách trong 15-20 phút đầu quyết định 80% mức độ để lại sẹo.",
     "emergencyAlert": "Đưa đến cơ sở y tế ngay nếu diện tích bỏng lớn hơn 1 bàn tay, bỏng ở mặt, khớp, bàn tay, vùng kín hoặc nạn nhân là trẻ nhỏ.",
     "timeline": [
-      { "time": "0 - 20 phút", "status": "Thời gian vàng ngâm xả nước mát làm dịu", "level": "safe" },
-      { "time": "20 - 60 phút", "status": "Bảo vệ màng bóng nước, băng gạc vô khuẩn", "level": "warning" },
-      { "time": "> 1 giờ", "status": "Nguy cơ thoát dịch và nhiễm trùng mô tế bào", "level": "danger" }
+      {
+        "time": "0 - 20 phút",
+        "status": "Thời gian vàng ngâm xả nước mát làm dịu",
+        "level": "safe"
+      },
+      {
+        "time": "20 - 60 phút",
+        "status": "Bảo vệ màng bóng nước, băng gạc vô khuẩn",
+        "level": "warning"
+      },
+      {
+        "time": "> 1 giờ",
+        "status": "Nguy cơ thoát dịch và nhiễm trùng mô tế bào",
+        "level": "danger"
+      }
     ],
     "steps": [
       {
@@ -127,9 +155,21 @@
     "lead": "Chảy máu động mạch có thể dẫn đến sốc mất máu tử vong chỉ trong vòng vài phút. Hành động cầm máu tại chỗ bằng lực ép trực tiếp là kỹ năng then chốt cứu mạng.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC khi máu phun thành tia, thấm đẫm nhiều lớp vải hoặc nạn nhân có dấu hiệu da lạnh, vã mồ hôi, lơ mơ.",
     "timeline": [
-      { "time": "0 - 3 phút", "status": "Mất máu cấp, nhịp tim tăng nhanh", "level": "warning" },
-      { "time": "3 - 5 phút", "status": "Tụt huyết áp, sốc mất máu, ngất", "level": "danger" },
-      { "time": "> 5 phút", "status": "Trụy mạch tuần hoàn, nguy cơ tử vong", "level": "critical" }
+      {
+        "time": "0 - 3 phút",
+        "status": "Mất máu cấp, nhịp tim tăng nhanh",
+        "level": "warning"
+      },
+      {
+        "time": "3 - 5 phút",
+        "status": "Tụt huyết áp, sốc mất máu, ngất",
+        "level": "danger"
+      },
+      {
+        "time": "> 5 phút",
+        "status": "Trụy mạch tuần hoàn, nguy cơ tử vong",
+        "level": "critical"
+      }
     ],
     "steps": [
       {
@@ -180,10 +220,26 @@
     "lead": "Khi tim ngừng đập, dòng máu nuôi dưỡng não bộ ngưng trệ ngay lập tức. Mỗi phút trôi qua không có CPR làm giảm 10% cơ hội sống sót của nạn nhân.",
     "emergencyAlert": "HÔ TO GỌI NGƯỜI HỖ TRỢ, GỌI 115 VÀ TÌM MÁY AED NGAY LẬP TỨC. Bắt đầu ép tim ngay không được chậm trễ.",
     "timeline": [
-      { "time": "0 - 4 phút", "status": "Thời gian vàng phục hồi não tối ưu", "level": "safe" },
-      { "time": "4 - 6 phút", "status": "Bắt đầu tổn thương tế bào não", "level": "warning" },
-      { "time": "6 - 10 phút", "status": "Tổn thương não diện rộng không hồi phục", "level": "danger" },
-      { "time": "> 10 phút", "status": "Chết não lâm sàng, tử vong", "level": "critical" }
+      {
+        "time": "0 - 4 phút",
+        "status": "Thời gian vàng phục hồi não tối ưu",
+        "level": "safe"
+      },
+      {
+        "time": "4 - 6 phút",
+        "status": "Bắt đầu tổn thương tế bào não",
+        "level": "warning"
+      },
+      {
+        "time": "6 - 10 phút",
+        "status": "Tổn thương não diện rộng không hồi phục",
+        "level": "danger"
+      },
+      {
+        "time": "> 10 phút",
+        "status": "Chết não lâm sàng, tử vong",
+        "level": "critical"
+      }
     ],
     "steps": [
       {
@@ -239,9 +295,21 @@
     "lead": "Sốc nhiệt xảy ra khi hệ thống điều hòa thân nhiệt của cơ thể bị quá tải, nhiệt độ cơ thể vọt lên trên 40°C gây tổn thương não và các cơ quan nội tạng đe dọa trực tiếp tính mạng.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân lú lẫn, nói nhảm, co giật hoặc hôn mê do nhiệt độ cao.",
     "timeline": [
-      { "time": "Giai đoạn 1", "status": "Chuột rút nhiệt, mệt mỏi, vã mồ hôi nhiều", "level": "safe" },
-      { "time": "Giai đoạn 2", "status": "Kiệt sức vì nhiệt, chóng mặt, buồn nôn, mạch nhanh", "level": "warning" },
-      { "time": "Giai đoạn 3", "status": "Sốc nhiệt (>40°C), da khô nóng, mê sảng, co giật", "level": "critical" }
+      {
+        "time": "Giai đoạn 1",
+        "status": "Chuột rút nhiệt, mệt mỏi, vã mồ hôi nhiều",
+        "level": "safe"
+      },
+      {
+        "time": "Giai đoạn 2",
+        "status": "Kiệt sức vì nhiệt, chóng mặt, buồn nôn, mạch nhanh",
+        "level": "warning"
+      },
+      {
+        "time": "Giai đoạn 3",
+        "status": "Sốc nhiệt (>40°C), da khô nóng, mê sảng, co giật",
+        "level": "critical"
+      }
     ],
     "steps": [
       {
@@ -292,9 +360,21 @@
     "lead": "Co giật là tình trạng phóng điện đột ngột và bất thường của các tế bào não bộ. Đa số các cơn co giật tự ngừng sau 1-3 phút. Vai trò chính của người sơ cứu là BẢO VỆ NẠN NHÂN TRÁNH CHẤN THƯƠNG.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu cơn co giật kéo dài trên 5 phút, hoặc co giật tái diễn liên tiếp mà nạn nhân chưa kịp tỉnh lại.",
     "timeline": [
-      { "time": "0 - 1 phút", "status": "Giai đoạn co cứng toàn thân, có thể tím môi", "level": "warning" },
-      { "time": "1 - 3 phút", "status": "Giai đoạn co giật nhịp nhàng các cơ, sùi bọt mép", "level": "danger" },
-      { "time": "Sau cơn giật", "status": "Giai đoạn lú lẫn, thở sâu, buồn ngủ phục hồi", "level": "safe" }
+      {
+        "time": "0 - 1 phút",
+        "status": "Giai đoạn co cứng toàn thân, có thể tím môi",
+        "level": "warning"
+      },
+      {
+        "time": "1 - 3 phút",
+        "status": "Giai đoạn co giật nhịp nhàng các cơ, sùi bọt mép",
+        "level": "danger"
+      },
+      {
+        "time": "Sau cơn giật",
+        "status": "Giai đoạn lú lẫn, thở sâu, buồn ngủ phục hồi",
+        "level": "safe"
+      }
     ],
     "steps": [
       {
@@ -877,5 +957,404 @@
       "KHÔNG đẩy xương lòi ra vào trong hoặc ép trực tiếp lên đầu xương.",
       "KHÔNG tự di chuyển người nghi chấn thương cổ hoặc cột sống trừ khi nơi đó không an toàn."
     ]
+  },
+  {
+    "id": "so-cuu-nguoi-bi-nhoi-mau-co-tim-dau-tim-dot-ngot",
+    "title": "Nhồi máu cơ tim",
+    "fullTitle": "Sơ cứu người bị nhồi máu cơ tim (đau tim đột ngột)",
+    "category": "benh-ly",
+    "categoryLabel": "Bệnh lý",
+    "badgeType": "Sinh tử",
+    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
+    "criticalLevel": "critical",
+    "readTime": "5 phút",
+    "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
+    "shortDesc": "Động mạch vành bị tắc nghẽn đột ngột khiến cơ tim thiếu máu nuôi; đau thắt ngực dữ dội lan vai/tay trái. Cần nghỉ ngơi, gọi 115 và chuẩn bị CPR ngay.",
+    "lead": "Động mạch vành bị tắc nghẽn đột ngột khiến cơ tim thiếu máu nuôi; nạn nhân đau thắt ngực dữ dội lan lên vai/cánh tay trái/hàm, khó thở, vã mồ hôi. Cần để nạn nhân nghỉ ngơi tư thế nửa nằm nửa ngồi, gọi cấp cứu 115 ngay, sẵn sàng hồi sinh tim phổi (CPR) nếu ngừng tim.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC khi phát hiện cơn đau thắt ngực dữ dội kéo dài trên vài phút lan lên vai, hàm, cánh tay trái hoặc nạn nhân có dấu hiệu ngất xỉu, bất tỉnh.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Nghỉ ngơi tuyệt đối ở tư thế nửa nằm nửa ngồi",
+        "desc": "Dừng ngay mọi việc đang làm, ngồi nghỉ hoặc nằm theo tư thế nửa nằm nửa ngồi (co đầu gối, nằm nghiêng 75 độ so với mặt đất) ở nơi thoáng đãng."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Nới lỏng trang phục và hít thở nhẹ nhàng",
+        "desc": "Buông lỏng phần vai và hai cánh tay, nhắm mắt hít thở nhẹ nhàng bằng mũi. Nới rộng cổ áo, cà vạt, khăn quàng cổ để đường thở thông thoáng."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Dùng thuốc hỗ trợ theo chỉ định của bác sĩ",
+        "desc": "Nếu bệnh nhân có sẵn đơn thuốc, dùng ngay viên ngậm dưới lưỡi Nitroglycerin hoặc nhai 1 viên Aspirin chống đông máu theo hướng dẫn y tế."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Ép tim ngoài lồng ngực (CPR) nếu bất tỉnh",
+        "desc": "Đặt nạn nhân nằm lên mặt phẳng cứng. Chồng hai bàn tay đặt lên giữa ngực (trên xương ức) ép mạnh và sâu 1/3 lồng ngực, duy trì liên tục trong khi chờ xe 115."
+      }
+    ],
+    "dos": [
+      "Dừng ngay mọi việc, nằm tư thế nửa nằm nửa ngồi co nhẹ đầu gối.",
+      "Buông lỏng vai và hai tay, nhắm mắt hít thở nhẹ nhàng bằng mũi.",
+      "Cho dùng thuốc ngậm Nitroglycerin hoặc nhai Aspirin nếu có chỉ định sẵn của bác sĩ.",
+      "Gọi ngay cấp cứu 115 và chuẩn bị ép tim ngoài lồng ngực nếu nạn nhân ngưng thở."
+    ],
+    "donts": [
+      "KHÔNG cố hít sâu hoặc nín thở (làm tăng gánh nặng và khiến tim mệt thêm).",
+      "KHÔNG nói to hay hỏi quá nhiều gây hoảng loạn, căng thẳng tâm lý cho nạn nhân.",
+      "KHÔNG để nạn nhân tự đi lại hoặc tự lái xe đến bệnh viện."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-xu-tri-so-cuu-cho-nguoi-bi-nhoi-mau-co-tim-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Nguồn đối chiếu 2",
+        "url": "https://tiemchunglongchau.com.vn/kien-thuc-tiem-chung/huong-dan-so-cuu-nhoi-mau-co-tim-va-bien-phap-phong-benh-hieu-qua",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "VTC1",
+      "youtubeUrl": "https://www.youtube.com/watch?v=JmU2j38E2V8"
+    }
+  },
+  {
+    "id": "so-cuu-chay-mau-cam",
+    "title": "Chảy máu cam",
+    "fullTitle": "Sơ cứu chảy máu cam",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Phổ biến",
+    "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
+    "criticalLevel": "moderate",
+    "readTime": "3 phút",
+    "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
+    "shortDesc": "Mao mạch niêm mạc mũi bị vỡ do thời tiết hanh khô hoặc chấn thương. Cần ngồi thẳng, hơi cúi đầu về phía trước, bóp chặt cánh mũi 10-15 phút để cầm máu.",
+    "lead": "Mao mạch niêm mạc mũi bị vỡ do thời tiết hanh khô, ngoáy mũi hoặc chấn thương. Cần cho nạn nhân ngồi thẳng, hơi cúi đầu về phía trước, bóp chặt cánh mũi 10-15 phút và thở bằng miệng. Tuyệt đối không ngửa cổ ra sau.",
+    "emergencyAlert": "GỌI 115 HOẶC ĐẾN BỆNH VIỆN NGAY nếu chảy máu mũi kéo dài trên 30 phút không cầm, nạn nhân ngất xỉu, choáng váng hoặc chảy máu sau tai nạn chấn thương vùng đầu mặt.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Ngồi thẳng và cúi nhẹ đầu về phía trước",
+        "desc": "Cho nạn nhân ngồi thẳng lưng, đầu hơi cúi về phía trước. Ở tư thế này áp lực máu giảm, tránh máu chảy ngược xuống họng gây sặc vào khí quản hoặc nôn."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Bóp chặt hai cánh mũi trong 10 đến 15 phút",
+        "desc": "Dùng ngón cái và ngón trỏ bóp chặt hai bên cánh mũi mềm, thở đều bằng miệng liên tục từ 10 đến 15 phút để tạo áp lực cầm máu."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Kiểm tra và xử trí lặp lại",
+        "desc": "Sau 15 phút từ từ buông tay ra. Nếu máu còn chảy, nhắc lại thao tác bóp mũi thêm 10-15 phút. Nếu vẫn không cầm được máu, đưa ngay đến cơ sở y tế."
+      }
+    ],
+    "dos": [
+      "Ngồi hơi cúi người về phía trước để máu chảy ra ngoài lỗ mũi.",
+      "Dùng ngón cái và ngón trỏ bóp chặt hai cánh mũi mềm liên tục trong 10-15 phút.",
+      "Thở đều bằng miệng trong lúc bóp mũi.",
+      "Giữ đầu cao hơn mức tim sau khi máu đã cầm."
+    ],
+    "donts": [
+      "TUYỆT ĐỐI KHÔNG ngửa cổ ra sau (tránh máu chảy xuống họng gây sặc khí quản hoặc kích thích nôn).",
+      "KHÔNG ngoáy mũi, không xì mũi mạnh và không cúi gập người trong vài giờ sau sơ cứu.",
+      "KHÔNG nhét khăn giấy bẩn hay bông gòn thô ráp sâu vào hốc mũi."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-dung-khi-bi-chay-mau-cam-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Nguồn đối chiếu 2",
+        "url": "https://tamanhhospital.vn/so-cuu-chay-mau-cam/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Đa khoa Tâm Anh",
+      "youtubeUrl": "https://www.youtube.com/watch?v=0iA0eN_3k_8"
+    }
+  },
+  {
+    "id": "so-cap-cuu-chan-thuong-bung-theo-huong-dan-cua-bo-y-te",
+    "title": "Chấn thương bụng",
+    "fullTitle": "Sơ cấp cứu chấn thương bụng theo hướng dẫn của Bộ Y tế",
+    "category": "tai-nan",
+    "categoryLabel": "Tai nạn",
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container font-bold",
+    "criticalLevel": "high",
+    "readTime": "5 phút",
+    "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
+    "shortDesc": "Tổn thương nội tạng do va đập hoặc thấu bụng; đau dữ dội, thành bụng gồng cứng. Cần nằm yên, ủ ấm, không cho ăn uống, gọi 115 cấp cứu khẩn cấp.",
+    "lead": "Tổn thương nội tạng trong ổ bụng do va đập mạnh hoặc vết thương thấu bụng; nạn nhân đau bụng dữ dội, thành bụng co cứng, có thể kèm sốc mất máu. Cần cho nạn nhân nằm yên, giữ ấm, không cho ăn uống và chuyển cấp cứu khẩn cấp.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC khi nghi ngờ chấn thương bụng có biểu hiện choáng, vã mồ hôi, bụng chướng gồng cứng, nôn ra máu hoặc có vết thương lòi ruột/tạng, dị vật đâm xuyên.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Gọi 115 và để nạn nhân nằm nghỉ thoáng mát",
+        "desc": "Để nạn nhân nằm thoải mái, nới lỏng quần áo thắt lưng. Nếu nạn nhân nôn hoặc có xu hướng nôn, cho nằm nghiêng an toàn sang bên trái."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Xử trí phòng chống sốc mất máu",
+        "desc": "Nếu nạn nhân có dấu hiệu sốc (da lạnh, mạch nhanh): để đầu thấp chân cao, ủ ấm tạm thời. Băng vết thương hở bằng gạc sạch vô trùng."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bảo vệ phần tạng lộ ra ngoài (nếu lòi ruột)",
+        "desc": "Tuyệt đối không cố gắng ấn nhét tạng vào trong. Dùng gạc sạch tẩm nước muối sinh lý đậy lên hoặc úp bát/chậu sạch lên trên để giữ ẩm và chống nhiễm trùng."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Giữ nguyên dị vật đâm xuyên và chờ xe cấp cứu",
+        "desc": "Không được rút hay tháo dị vật, vũ khí đâm xuyên ra khỏi thành bụng vì sẽ gây chảy máu ồ ạt nguy hiểm tính mạng. Chờ xe 115 tiếp nhận."
+      }
+    ],
+    "dos": [
+      "Nằm nghiêng an toàn bên trái nếu nạn nhân nôn mửa.",
+      "Dùng gạc sạch tẩm nước muối sinh lý hoặc bát sạch úp lên phần tạng lộ ra ngoài.",
+      "Giữ ấm cho nạn nhân bằng chăn mỏng.",
+      "Thông báo rõ tình trạng lòi tạng hoặc dấu hiệu sốc cho tổng đài 115."
+    ],
+    "donts": [
+      "TUYỆT ĐỐI KHÔNG ấn nhét phần ruột, tạng bị lòi ra ngoài trở lại ổ bụng.",
+      "TUYỆT ĐỐI KHÔNG rút dị vật đâm xuyên tại hiện trường.",
+      "KHÔNG cho nạn nhân ăn hay uống bất kỳ thứ gì.",
+      "KHÔNG tự ý di chuyển nạn nhân khi chấn thương nặng chưa ổn định."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-chan-thuong-bung-huong-dan-cua-bo-y-te-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Nguồn đối chiếu 2",
+        "url": "https://bvnguyentriphuong.com.vn/hoi-suc-tich-cuc-chong-doc/so-cap-cuu-chan-thuong-bung",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Kênh Y tế Sức khỏe",
+      "youtubeUrl": "https://www.youtube.com/watch?v=F3wG36YnJvI"
+    }
+  },
+  {
+    "id": "nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien",
+    "title": "Nguyên tắc sơ cấp cứu",
+    "fullTitle": "Nguyên tắc sơ cấp cứu và kế hoạch thực hiện",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Phổ biến",
+    "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
+    "criticalLevel": "moderate",
+    "readTime": "4 phút",
+    "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
+    "shortDesc": "4 nguyên tắc cốt lõi: Đảm bảo hiện trường an toàn - Đánh giá nạn nhân - Gọi 115 - Thực hiện sơ cứu theo thứ tự ưu tiên (khai thông thở, CPR, cầm máu).",
+    "lead": "4 nguyên tắc cốt lõi: Nhận định hiện trường an toàn - Đánh giá tình trạng nạn nhân - Gọi trợ giúp 115 - Thực hiện sơ cứu theo thứ tự ưu tiên (khai thông đường thở, CPR ép tim, cầm máu). Đảm bảo an toàn cho người cứu hộ trước tiên.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu hiện trường có nguy cơ tai nạn liên hoàn, cháy nổ hoặc nạn nhân bất tỉnh, ngừng thở, mất máu nhiều đe dọa trực tiếp tính mạng.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Nhận định hiện trường và nạn nhân",
+        "desc": "Đảm bảo môi trường an toàn cho chính bạn và nạn nhân. Nhận định tri giác, kiểm tra nạn nhân còn thở không, có chấn thương cột sống không."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Lập kế hoạch hành động và gọi trợ giúp",
+        "desc": "Gọi 115 và kêu gọi người xung quanh. Lập kế hoạch sơ cứu dựa trên nhận định. Nếu nhiều nạn nhân, ưu tiên người có đường thở tắc nghẽn hoặc chảy máu nhiều trước."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Thực hiện sơ cấp cứu theo mức độ ưu tiên",
+        "desc": "Tiến hành sơ cứu ngay lập tức (hồi sinh tim phổi CPR ép tim - thổi ngạt, cầm máu). Trấn an tâm lý nạn nhân và người nhà."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Đánh giá lại và chuẩn bị chuyển viện",
+        "desc": "Đảm bảo hiện trường tiếp tục an toàn. Kiểm tra lại nhịp thở, băng ép, nẹp cố định. Bàn giao đầy đủ thông tin cho đội cứu thương 115."
+      }
+    ],
+    "dos": [
+      "Giữ bình tĩnh và ưu tiên an toàn của bản thân lên hàng đầu.",
+      "Kiểm soát hiện trường chắc chắn an toàn trước khi tiếp cận nạn nhân.",
+      "Làm theo từng bước tuần tự (Nhận định - Kế hoạch - Thực hiện - Đánh giá).",
+      "Ưu tiên khai thông đường thở và kiểm soát chảy máu trước tiên."
+    ],
+    "donts": [
+      "KHÔNG mạo hiểm lao vào hiện trường nguy hiểm (điện hở, cháy nổ, khí độc).",
+      "KHÔNG di chuyển nạn nhân nghi ngờ có chấn thương cột sống (trừ trường hợp khẩn cấp sinh tử).",
+      "KHÔNG tập trung vào vết thương nhỏ mà bỏ quên chấn thương ngừng thở của nạn nhân khác."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Nguồn đối chiếu 2",
+        "url": "https://tramytep10q10.medinet.gov.vn/chuyen-muc/huong-dan-so-cap-cuu-ban-dau-cmobile3091-154422.aspx",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Trung tâm Kiểm soát Bệnh tật",
+      "youtubeUrl": "https://www.youtube.com/watch?v=N6j3v-GvX_g"
+    }
+  },
+  {
+    "id": "so-cap-cuu-bong-o-tre-em",
+    "title": "Bỏng ở trẻ em",
+    "fullTitle": "Sơ cấp cứu bỏng ở trẻ em",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Phổ biến",
+    "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
+    "criticalLevel": "high",
+    "readTime": "4 phút",
+    "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
+    "shortDesc": "Bỏng nước sôi, thức ăn nóng, lửa ở trẻ em. Cần ngâm/xả ngay vùng bỏng dưới nước sạch mát 15-20 phút, băng gạc sạch và đưa ngay đến cơ sở y tế gần nhất.",
+    "lead": "Da trẻ mỏng và nhạy cảm nên bỏng nước sôi, thức ăn nóng, lửa dễ ăn sâu gây sốc bỏng và nhiễm trùng. Cần ngâm/xả ngay vùng bỏng dưới nước sạch mát 15-20 phút, giữ sạch bằng gạc và đưa đi viện. Tuyệt đối không bôi mỡ trăn, kem đánh răng.",
+    "emergencyAlert": "ĐƯA TRẺ ĐẾN BỆNH VIỆN NGAY nếu vết bỏng có diện tích rộng (toàn bộ lưng, ngực, bụng hoặc một chi), bỏng ở mặt, vùng kín, bỏng từ độ 2 trở lên hoặc trẻ có biểu hiện sốc, hoảng loạn.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Loại bỏ tác nhân gây bỏng và đưa trẻ ra nơi an toàn",
+        "desc": "Nhanh chóng cách ly trẻ khỏi nguồn nhiệt (nước sôi, lửa, bàn ủi). Cởi bỏ nhẹ nhàng quần áo dính chất lỏng nóng trước khi vết bỏng sưng phù."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Ngâm xả nước mát sạch từ 15 đến 20 phút",
+        "desc": "Ngâm ngay phần bị bỏng vào nước sạch mát hoặc xả nhẹ dưới vòi nước chảy (nhiệt độ 15 - 20°C) trong 15-20 phút để giảm độ sâu bỏng, giảm đau và phù nề."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Bảo vệ vết bỏng bằng gạc sạch vô khuẩn",
+        "desc": "Giữ vết bỏng sạch, băng nhẹ bằng gạc vô trùng để giảm đau tại chỗ. Tuyệt đối không bôi thuốc lạ hay hóa chất lên vết bỏng."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bù nước, phòng chống sốc bỏng và chuyển viện",
+        "desc": "Cho trẻ bú hoặc uống nhiều nước đường pha chút muối/Oresol để phòng sốc. Bế đầu cao nghiêng một bên tránh trào ngược. Nhanh chóng đưa trẻ đến cơ sở y tế gần nhất."
+      }
+    ],
+    "dos": [
+      "Ngâm ngay vùng bỏng vào nước sạch mát trong 15-20 phút đầu.",
+      "Cho trẻ uống bù nước đường pha muối hoặc dung dịch Oresol.",
+      "Bế trẻ đầu cao, nghiêng một bên tránh sặc.",
+      "Động viên an ủi để trẻ không bị hoảng loạn tinh thần."
+    ],
+    "donts": [
+      "TUYỆT ĐỐI KHÔNG bôi kem đánh răng, nước mắm, mỡ trăn, trứng gà hay thuốc lạ lên vết bỏng của trẻ.",
+      "TUYỆT ĐỐI KHÔNG ngâm nước đá quá lạnh (gây bỏng lạnh và hạ thân nhiệt ở trẻ).",
+      "KHÔNG chọc vỡ các bóng phỏng rộp của da.",
+      "KHÔNG cố lột giật quần áo dính chặt vào vết bỏng."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-bong-o-tre-em-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Nguồn đối chiếu 2",
+        "url": "https://tamanhhospital.vn/so-cuu-tre-bi-bong/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "VTC9",
+      "youtubeUrl": "https://www.youtube.com/watch?v=JtV5aG_i0h0"
+    }
+  },
+  {
+    "id": "so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu",
+    "title": "Chi bị đứt lìa",
+    "fullTitle": "Sơ cứu và bảo quản chi bị đứt lìa trong cấp cứu",
+    "category": "sinh-hoat",
+    "categoryLabel": "Sinh hoạt",
+    "badgeType": "Sinh tử",
+    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
+    "criticalLevel": "critical",
+    "readTime": "5 phút",
+    "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
+    "shortDesc": "Tai nạn khiến chi bị đứt rời tối khẩn cấp. Cần sơ cứu cầm máu cho nạn nhân và bảo quản chi đứt rời trong túi kín đặt vào thùng đá lạnh gián tiếp.",
+    "lead": "Tai nạn khiến chi bị đứt rời là tình trạng tối khẩn cấp. Sơ cứu cầm máu cho nạn nhân và bảo quản phần chi đứt rời đúng kỹ thuật (bọc túi sạch, đặt trong xô đá lạnh gián tiếp) quyết định khả năng vi phẫu nối lại chi.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC! Vừa cầm máu tính mạng cho nạn nhân vừa bảo quản đúng cách phần chi đứt rời trong môi trường lạnh gián tiếp để kịp thời gian vàng vi phẫu ghép nối (trong vòng 6 giờ).",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Bảo đảm đường thở và kiểm tra sinh hiệu",
+        "desc": "Đảm bảo đường thở thông thoáng. Nếu nạn nhân ngừng tuần hoàn hô hấp thì tiến hành hồi sinh tim phổi CPR ngay lập tức tại hiện trường."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cầm máu mỏm cụt cho nạn nhân trước tiên",
+        "desc": "Rửa vết thương mỏm cụt bằng nước muối sinh lý hoặc nước sạch. Băng ép mỏm cụt để cầm máu; nếu đứt lìa bàn tay/bàn chân chảy máu nhiều thì tiến hành đặt garo cách mỏm cụt 10cm và ghi nhận thời điểm."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Rửa nhẹ và bọc gạc ẩm phần chi đứt rời",
+        "desc": "Cầm nắm nhẹ nhàng, rửa sạch phần chi đứt bằng nước muối sinh lý vô khuẩn hoặc nước sạch (không dùng xà phòng/hóa chất). Bọc kín chi bằng gạc sạch tẩm ẩm nước muối sinh lý."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Bảo quản gián tiếp trong túi kín và thùng đá lạnh",
+        "desc": "Đặt phần chi đã bọc gạc ẩm vào túi nilon sạch, buộc kín miệng túi (chống nước ngấm vào). Đặt túi nilon vào trong thùng/chậu nước đá lạnh (tuyệt đối không để chi tiếp xúc trực tiếp với đá)."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Vận chuyển khẩn cấp nạn nhân và chi thể đến bệnh viện",
+        "desc": "Nhanh chóng đưa nạn nhân và thùng bảo quản chi thể đến bệnh viện chuyên khoa chấn thương chỉnh hình có khả năng vi phẫu ghép nối."
+      }
+    ],
+    "dos": [
+      "Ưu tiên cầm máu tính mạng cho nạn nhân trước tiên.",
+      "Cầm nắm nhẹ nhàng và rửa phần chi bằng nước muối sinh lý sạch.",
+      "Bọc chi trong gạc ẩm, cho vào túi nilon kín rồi mới đặt vào thùng đá lạnh (bảo quản gián tiếp).",
+      "Nếu chi chưa đứt lìa hoàn toàn thì giữ nguyên không cắt rời."
+    ],
+    "donts": [
+      "TUYỆT ĐỐI KHÔNG để chi thể tiếp xúc trực tiếp với đá lạnh (nhiệt độ quá lạnh sẽ làm chết mô vi phẫu).",
+      "TUYỆT ĐỐI KHÔNG dùng xà phòng, cồn hay hóa chất để rửa phần chi đứt.",
+      "KHÔNG tự ý cắt rời phần chi nếu nó vẫn còn dính lại một phần trên da.",
+      "KHÔNG bỏ quên phần chi đứt lìa tại hiện trường tai nạn."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Nguồn đối chiếu 2",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/cach-so-cuu-va-bao-quan-chi-the-dut-roi.html",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Nam Sài Gòn",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ZG6IyTPEEQU"
+    }
   }
 ]
