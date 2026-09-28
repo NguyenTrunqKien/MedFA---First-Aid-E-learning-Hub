@@ -42,6 +42,13 @@
   }
 }
 
+/* Home hero title on medium and larger screens */
+@media (min-width: 768px) {
+  body[data-page="home"] h1.font-display-lg {
+    line-height: 1.25;
+  }
+}
+
 /* Desktop Breakpoint (≥ 1024px) */
 @media (min-width: 1024px) {
   .site-container {

@@ -259,9 +259,9 @@ function highlightActiveNav() {
   navLinks.forEach(link => {
     const page = link.getAttribute('data-page');
     if (page === currentKey) {
-      link.className = 'nav-link font-label-lg text-label-lg font-bold text-on-primary bg-primary px-3.5 py-1.5 rounded-full shadow-sm transition-colors';
+      link.setAttribute('aria-current', 'page');
     } else {
-      link.className = 'nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full';
+      link.removeAttribute('aria-current');
     }
   });
 
