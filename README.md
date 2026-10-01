@@ -21,29 +21,31 @@ project MedFA/
 ├── topic-detail.html          (Chi tiết 1 tình huống - load động theo ?id=...)
 ├── social-impact.html         (Tác động xã hội: Bức tranh thực trạng & giải pháp)
 ├── about.html                 (Giới thiệu dự án, đội ngũ IE104, chuẩn y khoa & miễn trừ)
-├── header.html                (Template Header dùng chung - inject vào placeholder)
-├── footer.html                (Template Footer & Chat AI Assistant dùng chung)
+├── components/
+│   ├── header.html            (Component Header & Navigation dùng chung)
+│   └── footer.html            (Component Footer & Chat AI Assistant dùng chung)
 ├── css/
 │   ├── variables.css          (Màu sắc Material 3 / LifeSafe, Spacing, Typography)
 │   ├── base.css               (CSS Reset, Typography cơ bản, Smooth scroll)
 │   ├── layout.css             (Grid, Flexbox, Container, Header/Footer layout)
 │   ├── components.css         (Card, Button, Badge, Modal, Chat widget, Alert)
+│   ├── utilities.css          (Tiện ích CSS3 thuần thay thế hoàn toàn Tailwind)
 │   └── responsive.css         (Media queries chuẩn Mobile, Tablet, Desktop)
 ├── js/
 │   ├── data-loader.js         (DataLoader: Fetch JSON tĩnh, cache bộ nhớ, fallback an toàn)
 │   ├── render-topics.js       (TopicsRenderer: Template Literal Card, filter & search)
-│   ├── storage.js             (Storage Wrapper: LocalStorage cho bookmarks)
-│   ├── search.js              (SearchUtil: Fuzzy search tìm kiếm tình huống)
-│   ├── flashcard.js           (Flashcard: Logic lật thẻ sơ cứu)
 │   └── main.js                (Khởi tạo chung, chèn Header/Footer, Active nav, Trợ lý AI)
 ├── data/
-│   └── topics.json            (Dữ liệu các tình huống cấp cứu chuẩn hóa)
-├── components/
-│   ├── header.html            (Bản sao component Header)
-│   └── footer.html            (Bản sao component Footer)
+│   └── topics.json            (Dữ liệu 11 tình huống cấp cứu chuẩn hóa y khoa)
 ├── assets/
 │   ├── icons/                 (Logo SVG MedFA và biểu tượng)
 │   └── images/
+├── docs/
+│   └── GUIDE_DATA_PREPARATION.md (Hướng dẫn chuẩn bị dữ liệu cào chuẩn schema)
+├── scripts/
+│   ├── build-utilities-css.js (Build CSS tiện ích thuần tự động từ code dự án)
+│   ├── validate-topics.js     (Kiểm thử tính hợp lệ và chuẩn y khoa của topics.json)
+│   └── verify-all.js          (Kiểm tra toàn diện tính nguyên vẹn & tiêu chuẩn thuần)
 └── README.md
 ```
 
@@ -55,7 +57,7 @@ project MedFA/
    - Chuyển toàn bộ 5 màn hình Stitch vào thư mục gốc (`index.html`, `topics.html`, `topic-detail.html`, `social-impact.html`, `about.html`).
    - Loại bỏ inline styling cố định `width: 1280px` để giao diện co giãn hoàn toàn responsive từ thiết bị di động (< 480px) đến màn hình lớn.
 2. **Quy hoạch Header & Footer tập trung (DRY)**:
-   - Tách thanh Navigation và Footer thành `header.html` và `footer.html`.
+   - Tách thanh Navigation và Footer thành component dùng chung trong thư mục `components/` (`components/header.html` và `components/footer.html`).
    - `main.js` tự động fetch và inject vào mọi trang qua `<div id="header-placeholder"></div>` và `<div id="footer-placeholder"></div>`.
    - Tự động nhận diện trang đang mở và đánh dấu (highlight) active tab tương ứng.
 3. **Làm rỗng Container & Render Động**:

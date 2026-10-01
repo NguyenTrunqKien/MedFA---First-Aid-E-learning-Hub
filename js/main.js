@@ -109,10 +109,10 @@ const FALLBACK_FOOTER_HTML = `
         <nav aria-label="Liên kết nhanh" class="flex flex-col gap-space-xs">
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topics.html">Thư viện tình huống sơ cứu</a>
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="social-impact.html">Tác động xã hội & Giá trị</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=ngung-tuan-hoan-cpr">Hồi sinh tim phổi (CPR & AED)</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=hoc-di-vat">Sơ cứu hóc dị vật Heimlich</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=bong-cap-do-1-2">Sơ cứu vết bỏng nhiệt & lửa</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=chay-mau-nghiem-trong">Kỹ thuật băng ép & Ga-rô</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon">Hồi sinh tim phổi (CPR & AED)</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=hoc-di-vat-o-tre-em">Sơ cứu hóc dị vật ở trẻ em</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=bong-nhiet">Sơ cứu vết bỏng nhiệt</a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=chay-mau-va-cam-mau">Kỹ thuật băng ép & Cầm máu</a>
         </nav>
       </div>
       <div class="flex flex-col gap-space-sm">
@@ -194,16 +194,16 @@ const FALLBACK_FOOTER_HTML = `
       <div class="flex flex-col gap-1.5 pl-9 mt-1">
         <span class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Gợi ý tình huống nhanh:</span>
         <div class="flex flex-wrap gap-1.5">
-          <a href="topic-detail.html?id=ngung-tuan-hoan-cpr" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>🚨</span> Ép tim CPR & AED
           </a>
-          <a href="topic-detail.html?id=hoc-di-vat" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>👶</span> Hóc dị vật đường thở
           </a>
-          <a href="topic-detail.html?id=bong-cap-do-1-2" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=bong-nhiet" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>🔥</span> Sơ cứu vết bỏng
           </a>
-          <a href="topic-detail.html?id=chay-mau-nghiem-trong" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>🩸</span> Băng ép cầm máu
           </a>
         </div>
@@ -368,11 +368,6 @@ function bindHeaderFooterEvents() {
       }, 600);
     });
   }
-
-  // Refresh Lucide icons if available
-  if (typeof window !== 'undefined' && window.lucide) {
-    window.lucide.createIcons();
-  }
 }
 
 /**
@@ -384,22 +379,22 @@ function generateBotReply(query) {
     return `<p class="font-semibold text-error mb-1">🚨 Ép tim CPR khẩn cấp:</p>
             <p>1. Gọi 115 ngay!</p>
             <p>2. Đặt gót bàn tay giữa ngực, ép sâu 5-6cm với tốc độ 100-120 lần/phút.</p>
-            <a href="topic-detail.html?id=ngung-tuan-hoan-cpr" class="text-primary font-bold underline mt-1.5 inline-block">Xem chi tiết bài CPR & AED →</a>`;
+            <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="text-primary font-bold underline mt-1.5 inline-block">Xem chi tiết bài CPR & AED →</a>`;
   }
   if (q.includes('hóc') || q.includes('nghẹn') || q.includes('heimlich')) {
     return `<p class="font-semibold text-primary mb-1">👶 Hóc dị vật đường thở:</p>
             <p>Thực hiện ngay 5 vỗ lưng dứt khoát kết hợp 5 lần ép bụng Heimlich.</p>
-            <a href="topic-detail.html?id=hoc-di-vat" class="text-primary font-bold underline mt-1.5 inline-block">Xem quy trình Heimlich chi tiết →</a>`;
+            <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="text-primary font-bold underline mt-1.5 inline-block">Xem quy trình Heimlich chi tiết →</a>`;
   }
   if (q.includes('bỏng') || q.includes('cháy')) {
     return `<p class="font-semibold text-primary mb-1">🔥 Sơ cứu bỏng:</p>
             <p>Xả nước mát sạch (15-25°C) liên tục trong 15-20 phút. KHÔNG bôi kem đánh răng hay chườm đá lạnh.</p>
-            <a href="topic-detail.html?id=bong-cap-do-1-2" class="text-primary font-bold underline mt-1.5 inline-block">Xem hướng dẫn xử trí bỏng →</a>`;
+            <a href="topic-detail.html?id=bong-nhiet" class="text-primary font-bold underline mt-1.5 inline-block">Xem hướng dẫn xử trí bỏng →</a>`;
   }
   if (q.includes('chảy máu') || q.includes('máu') || q.includes('vết thương')) {
     return `<p class="font-semibold text-primary mb-1">🩸 Cầm máu:</p>
             <p>Dùng gạc sạch đè chặt trực tiếp lên miệng vết thương trong 5-10 phút. Nâng cao chi bị thương.</p>
-            <a href="topic-detail.html?id=chay-mau-nghiem-trong" class="text-primary font-bold underline mt-1.5 inline-block">Xem kỹ thuật băng ép và ga-rô →</a>`;
+            <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="text-primary font-bold underline mt-1.5 inline-block">Xem kỹ thuật băng ép và ga-rô →</a>`;
   }
   return `<p>MedFA đã ghi nhận câu hỏi của bạn: <em>"${escapeHTML(query)}"</em>.</p>
           <p class="mt-1">Bạn có thể tra cứu toàn bộ tình huống chuẩn Y khoa trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a> hoặc gọi ngay <strong class="text-error">115</strong> nếu đang trong tình trạng khẩn cấp!</p>`;
@@ -421,13 +416,13 @@ async function injectHeaderAndFooter() {
   // Inject Header
   if (headerPlaceholder) {
     try {
-      const res = await fetch('header.html');
+      const res = await fetch('components/header.html');
       if (res.ok) {
         headerPlaceholder.innerHTML = await res.text();
       } else {
-        const resComp = await fetch('components/header.html');
-        if (resComp.ok) {
-          headerPlaceholder.innerHTML = await resComp.text();
+        const resRoot = await fetch('header.html');
+        if (resRoot.ok) {
+          headerPlaceholder.innerHTML = await resRoot.text();
         } else {
           headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
         }
@@ -440,13 +435,13 @@ async function injectHeaderAndFooter() {
   // Inject Footer (only if empty)
   if (footerPlaceholder && footerPlaceholder.children.length === 0) {
     try {
-      const res = await fetch('footer.html');
+      const res = await fetch('components/footer.html');
       if (res.ok) {
         footerPlaceholder.innerHTML = await res.text();
       } else {
-        const resComp = await fetch('components/footer.html');
-        if (resComp.ok) {
-          footerPlaceholder.innerHTML = await resComp.text();
+        const resRoot = await fetch('footer.html');
+        if (resRoot.ok) {
+          footerPlaceholder.innerHTML = await resRoot.text();
         } else {
           footerPlaceholder.innerHTML = FALLBACK_FOOTER_HTML;
         }
