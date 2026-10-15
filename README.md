@@ -1,7 +1,7 @@
 # MedFA – Medical First Aid E-Learning Hub
 
 > **Dự án Frontend Web Sơ cấp cứu Y tế Vì Cộng Đồng**  
-> Đồ án môn học: **IE104 - Thiết kế Giao diện Người dùng (UI/UX)**  
+> Đồ án môn học: **IE104 - INTERNET VÀ CÔNG NGHỆ WEB**  
 > Trường Đại học Công nghệ Thông tin – ĐHQG-HCM (UIT)
 
 ---
@@ -19,8 +19,8 @@ project MedFA/
 ├── index.html                 (Trang chủ: Giới thiệu & Số liệu thực trạng)
 ├── topics.html                (Thư viện tình huống sơ cứu: Lọc danh mục, tìm kiếm động)
 ├── topic-detail.html          (Chi tiết 1 tình huống - load động theo ?id=...)
-├── social-impact.html         (Tác động xã hội: Bức tranh thực trạng & giải pháp)
-├── about.html                 (Giới thiệu dự án, đội ngũ IE104, chuẩn y khoa & miễn trừ)
+├── social-impact.html         (Tác động xã hội: Bức tranh thực trạng hiện tại & giải pháp)
+├── about.html                 (Giới thiệu dự án, đội ngũ thực hiện đồ án môn IE104)
 ├── components/
 │   ├── header.html            (Component Header & Navigation dùng chung)
 │   └── footer.html            (Component Footer & Chat AI Assistant dùng chung)
