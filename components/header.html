@@ -75,23 +75,45 @@
     </div>
   </div>
 
-  <!-- Mobile Dropdown Navigation -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-3 flex-col gap-2 shadow-lg">
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="home" href="index.html">
-      <span>Trang chủ</span>
-      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+  <!-- Mobile Dropdown Navigation Drawer -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
+    <div class="flex items-center justify-between pb-2 mb-1 border-b border-outline-variant/20">
+      <span class="text-xs font-bold text-primary tracking-wider uppercase">Menu Điều Hướng</span>
+      <span class="text-xs text-on-surface-variant font-medium">MedFA Mobile</span>
+    </div>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="home" href="index.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">home</span>
+        <span>Trang chủ</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="social-impact" href="social-impact.html">
-      <span>Tác động xã hội</span>
-      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="social-impact" href="social-impact.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary text-[20px]">volunteer_activism</span>
+        <span>Tác động xã hội</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="topics" href="topics.html">
-      <span>Thư viện sơ cấp cứu</span>
-      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="topics" href="topics.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+        <span>Thư viện sơ cấp cứu</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="about" href="about.html">
-      <span>Về MedFA</span>
-      <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="about" href="about.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+        <span>Về MedFA</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
+    <div class="pt-2.5 mt-1 border-t border-outline-variant/20 flex flex-col gap-2">
+      <a href="tel:115" class="w-full py-2.5 px-4 rounded-xl bg-error hover:bg-red-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+        <span class="material-symbols-outlined text-[18px]">call</span>
+        Gọi Cấp Cứu 115 Khẩn Cấp
+      </a>
+    </div>
   </div>
 </header>

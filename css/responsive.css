@@ -1,73 +1,398 @@
 /* ==========================================================================
-   MedFA Responsive Media Queries
+   MedFA Master Responsive Design System
    Breakpoints:
-   - Mobile: < 480px / 640px
-   - Tablet: 641px - 1023px
-   - Desktop: ≥ 1024px
+   - Extra Small Mobile (xs): < 375px
+   - Small Mobile (sm-mobile): 375px - 479px
+   - Standard Mobile: < 640px
+   - Tablet (sm to md): 640px - 1023px
+   - Desktop (lg): 1024px - 1439px
+   - Large Desktop (2K/xl): ≥ 1440px
    ========================================================================== */
 
-/* Mobile Breakpoint (< 640px) */
-@media (max-width: 639px) {
+/* --------------------------------------------------------------------------
+   1. FLUID ROOT & GLOBAL ADAPTATIONS
+   -------------------------------------------------------------------------- */
+:root {
+  --header-height-mobile: 68px;
+  --header-height-desktop: 80px;
+}
+
+/* Fluid Container Padding */
+.site-container,
+.max-w-7xl {
+  width: 100%;
+  padding-left: clamp(1rem, 3.5vw, 2rem) !important;
+  padding-right: clamp(1rem, 3.5vw, 2rem) !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Typography overflow prevention across all devices */
+h1, h2, h3, h4, h5, h6, p, span, a {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* --------------------------------------------------------------------------
+   2. MOBILE BREAKPOINT (< 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 639.98px) {
+  /* Header & Main Offset */
   .site-header {
-    height: 70px;
+    height: var(--header-height-mobile) !important;
   }
 
-  .site-main {
-    padding-top: 70px;
+  .site-main,
+  main {
+    padding-top: var(--header-height-mobile) !important;
   }
 
-  .font-display-lg {
-    font-size: 2rem !important;
-    line-height: 2.5rem !important;
+  #header-placeholder > header > div:first-child {
+    height: var(--header-height-mobile) !important;
+    padding-inline: 0.75rem !important;
   }
 
-  .font-headline-lg {
-    font-size: 1.5rem !important;
-    line-height: 2rem !important;
+  /* Compact Brand Logo on Mobile */
+  #header-placeholder svg.h-10,
+  header svg.h-10 {
+    height: 34px !important;
+    width: auto !important;
   }
 
-  /* Chat window full width on small screens */
+  /* Compact Language Selector on Mobile */
+  #language-switcher-btn {
+    padding: 0.25rem 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+
+  #language-switcher-btn svg {
+    width: 16px !important;
+    height: 11px !important;
+  }
+
+  #language-switcher-btn span:nth-child(2) {
+    font-size: 0.75rem !important;
+  }
+
+  /* Fluid Typography for Mobile Headings */
+  .font-display-lg,
+  h1.font-display-lg,
+  section h1 {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  h2, .text-2xl, .text-3xl {
+    font-size: clamp(1.35rem, 5vw, 1.75rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Hero Section Mobile Adaptation */
+  section.min-h-\[640px\],
+  section.lg\:min-h-\[720px\] {
+    min-height: auto !important;
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Mobile Full-width CTA Action Buttons */
+  .hero-cta-buttons,
+  .hero-cta-group,
+  div:has(> a[href="topics.html"]) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-cta-buttons a,
+  .hero-cta-buttons button,
+  .hero-cta-group a,
+  .hero-cta-group button {
+    width: 100% !important;
+    min-height: 48px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Mobile Category Filter Pills (Horizontal Touch Swipe) */
+  #category-filter-group,
+  .category-filter-scroll {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 0.5rem !important;
+    padding: 0.5rem 0.5rem 0.75rem !important;
+    margin-inline: -0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  #category-filter-group::-webkit-scrollbar,
+  .category-filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  #category-filter-group .category-btn,
+  .category-filter-scroll .category-btn {
+    flex-shrink: 0 !important;
+    scroll-snap-align: start;
+    white-space: nowrap !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8125rem !important;
+    min-height: 38px;
+  }
+
+  /* Mobile Search Bar optimization */
+  #search-input {
+    font-size: 0.875rem !important;
+    padding-left: 2.75rem !important;
+    padding-right: 5.5rem !important;
+  }
+
+  #search-btn {
+    padding: 0.375rem 0.875rem !important;
+    font-size: 0.8125rem !important;
+  }
+
+  /* Mobile Cards Grid: Clean 1-Column */
+  #topics-container,
+  .grid-cols-1 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .first-aid-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Hypoxia Timeline on Mobile: 2x2 Clean Milestone Matrix */
+  #hypoxia-timeline-labels,
+  .hypoxia-timeline-labels {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    text-align: left !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .hypoxia-timeline-labels > div {
+    background: var(--color-surface-container-lowest, #ffffff);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(196, 197, 213, 0.3);
+  }
+
+  /* Mobile Floating AI Chat Assistant Window */
   #medfa-chat-window {
-    width: calc(100vw - 2rem) !important;
-    right: 1rem !important;
-    bottom: 5rem !important;
+    width: calc(100vw - 1.25rem) !important;
+    max-width: 400px !important;
+    right: 0.625rem !important;
+    bottom: 4.75rem !important;
+    height: min(520px, calc(100vh - 6rem)) !important;
+    max-height: calc(100vh - 6rem) !important;
   }
-}
 
-/* Tablet Breakpoint (640px to 1023px) */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .site-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-/* Home hero title on medium and larger screens */
-@media (min-width: 768px) {
-  body[data-page="home"] h1.font-display-lg {
-    line-height: 1.25;
-  }
-}
-
-/* Desktop Breakpoint (≥ 1024px) */
-@media (min-width: 1024px) {
-  .site-container {
-    max-width: 1280px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .site-header,
-  .site-footer,
-  #medfa-chat-window,
   #medfa-chat-toggle-btn {
+    right: 1rem !important;
+    bottom: 1rem !important;
+    width: 3.25rem !important;
+    height: 3.25rem !important;
+  }
+
+  /* Mobile Menu Drawer Styling */
+  #mobile-menu {
+    border-radius: 0 0 1.25rem 1.25rem;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15) !important;
+    padding: 1rem !important;
+  }
+
+  .nav-link-mobile {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Footer on Mobile */
+  footer .grid {
+    gap: 2rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. EXTRA SMALL MOBILE (< 375px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 374.98px) {
+  #header-placeholder svg.h-10,
+  header svg.h-10 {
+    height: 28px !important;
+  }
+
+  .font-display-lg,
+  h1.font-display-lg {
+    font-size: 1.6rem !important;
+  }
+
+  #search-input {
+    padding-right: 4.75rem !important;
+  }
+
+  #search-btn {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. TABLET BREAKPOINT (640px to 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  /* Site header & main */
+  .site-header {
+    height: 76px;
+  }
+
+  .site-main,
+  main {
+    padding-top: 76px;
+  }
+
+  /* 2-Column Responsive Card Grids */
+  #topics-container,
+  .topics-grid,
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Stats grid: 2 columns on tablet */
+  .stats-grid-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Topic detail layout: stack sidebar below with comfortable spacing */
+  .topic-detail-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Chat window positioning on tablet */
+  #medfa-chat-window {
+    width: 360px !important;
+    right: 1.25rem !important;
+    bottom: 5.5rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. DESKTOP BREAKPOINT (≥ 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  /* 3-Column Topic Cards Grid */
+  #topics-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Category Filter Pills Centered */
+  #category-filter-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Floating chat default desktop size */
+  #medfa-chat-window {
+    width: 380px;
+    height: 520px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. ULTRA-WIDE & 2K BREAKPOINT (≥ 1440px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .max-w-7xl {
+    max-width: 1360px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. INTERACTIVE TOUCH VS MOUSE INTERACTIONS
+   -------------------------------------------------------------------------- */
+/* Only apply hover lifts on devices with fine pointer (mouse), avoiding mobile sticky hover */
+@media (hover: hover) and (pointer: fine) {
+  .first-aid-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.12);
+    border-color: rgba(30, 64, 175, 0.35);
+  }
+
+  .first-aid-card:hover .first-aid-card__icon-wrapper {
+    background-color: var(--color-secondary-teal, #0d9488);
+    color: #ffffff;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Touch feedback for mobile */
+@media (hover: none) {
+  .first-aid-card:active,
+  .btn:active,
+  .category-btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & PREFERENCES
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. PRINT STYLES FOR FIRST AID ACTION SHEETS
+   -------------------------------------------------------------------------- */
+@media print {
+  header,
+  footer,
+  #header-placeholder,
+  #footer-placeholder,
+  #medfa-chat-window,
+  #medfa-chat-toggle-btn,
+  .btn,
+  button {
     display: none !important;
   }
 
-  .site-main {
+  main {
     padding-top: 0 !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .first-aid-card,
+  article,
+  section {
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    page-break-inside: avoid;
   }
 }
