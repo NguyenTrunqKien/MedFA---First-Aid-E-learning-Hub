@@ -109,8 +109,29 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-floating: 0 12px 32px -4px rgba(15, 23, 42, 0.18);
 
+  /* Fluid Typography Scale (Scales smoothly between 320px and 1440px) */
+  --font-fluid-hero: clamp(1.85rem, 4.5vw + 0.5rem, 3.25rem);
+  --font-fluid-h1: clamp(1.6rem, 3.5vw + 0.5rem, 2.75rem);
+  --font-fluid-h2: clamp(1.35rem, 2.5vw + 0.5rem, 2.15rem);
+  --font-fluid-h3: clamp(1.15rem, 1.8vw + 0.5rem, 1.5rem);
+  --font-fluid-body: clamp(0.925rem, 0.4vw + 0.8rem, 1.05rem);
+
+  /* Fluid Spacing Scale */
+  --space-fluid-gutter: clamp(1rem, 3vw, 2rem);
+  --space-fluid-section: clamp(2.5rem, 5vw, 4.5rem);
+
+  /* Safe Area Insets for Mobile Notches & Dynamic Island */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Mobile Touch Target Standards (WCAG AAA) */
+  --touch-target-min: 44px;
+
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+

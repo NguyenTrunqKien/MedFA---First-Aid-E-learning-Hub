@@ -45,21 +45,57 @@ const FALLBACK_HEADER_HTML = `
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-3 flex-col gap-2 shadow-lg">
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors" data-page="home" href="index.html">Trang chủ</a>
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors" data-page="topics" href="topics.html">Thư viện sơ cấp cứu</a>
-    <a class="nav-link-mobile px-4 py-2 rounded-lg font-medium text-on-surface hover:bg-surface-container transition-colors" data-page="about" href="about.html">Về MedFA</a>
+  <!-- Mobile Dropdown Navigation Drawer -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
+    <div class="flex items-center justify-between pb-2 mb-1 border-b border-outline-variant/20">
+      <span class="text-xs font-bold text-primary tracking-wider uppercase">Menu Điều Hướng</span>
+      <span class="text-xs text-on-surface-variant font-medium">MedFA Mobile</span>
+    </div>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="home" href="index.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">home</span>
+        <span>Trang chủ</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="social-impact" href="social-impact.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary text-[20px]">volunteer_activism</span>
+        <span>Tác động xã hội</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="topics" href="topics.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+        <span>Thư viện sơ cấp cứu</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="about" href="about.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+        <span>Về MedFA</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <div class="pt-2.5 mt-1 border-t border-outline-variant/20 flex flex-col gap-2">
+      <a href="tel:115" class="w-full py-2.5 px-4 rounded-xl bg-error hover:bg-red-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+        <span class="material-symbols-outlined text-[18px]">call</span>
+        Gọi Cấp Cứu 115 Khẩn Cấp
+      </a>
+    </div>
   </div>
 </header>
 `;
 
-// Fallback Footer HTML template
+// Fallback Footer HTML template (4-column layout)
 const FALLBACK_FOOTER_HTML = `
 <footer class="w-full bg-surface-container-low text-on-surface mt-auto border-t border-outline-variant/30">
   <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin pt-space-xl pb-space-lg">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg pb-space-xl">
-      <div class="lg:col-span-2 flex flex-col gap-space-md">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-space-xl">
+      <!-- Cột 1: Thương hiệu & Sứ mệnh -->
+      <div class="flex flex-col gap-space-md">
         <div class="flex items-center gap-space-sm">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-9 w-auto" fill="none">
             <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
@@ -70,79 +106,127 @@ const FALLBACK_FOOTER_HTML = `
             <text x="88" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.5">MEDICAL FIRST AID</text>
           </svg>
         </div>
-        <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
-          MedFA (Medical First Aid) là nền tảng trực tuyến phi lợi nhuận chuyên tổng hợp và cung cấp kiến thức sơ cấp cứu cơ bản. Đây là sản phẩm được phát triển dưới dạng đồ án môn học IE104 (Trường Đại học Công nghệ Thông tin - UIT), hướng tới mục tiêu nâng cao nhận thức cộng đồng và trang bị kỹ năng phản ứng khẩn cấp thiết yếu.
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          MedFA là nền tảng phi lợi nhuận chuyên chuẩn hóa và phổ biến kiến thức sơ cấp cứu ban đầu trong <strong>"4 Phút Vàng"</strong> theo chuẩn y khoa quốc tế AHA & ERC.
         </p>
-        <div class="rounded-xl bg-error-container/20 border border-error/20 p-3 self-start shadow-sm transition-all duration-200 w-full max-w-md">
-          <div class="flex items-center gap-2 mb-2">
-            <div class="w-7 h-7 rounded-full bg-error-container flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-error text-[18px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
-            </div>
-            <span class="font-label-md text-label-md uppercase font-bold text-error tracking-wider">Tổng đài Khẩn cấp Quốc Gia</span>
-          </div>
-          <div class="flex flex-col gap-1.5">
-            <div class="flex items-center gap-2 text-on-surface">
-              <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">111</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Tổng đài Quốc gia Bảo vệ Trẻ em</span>
-            </div>
-            <div class="flex items-center gap-2 text-on-surface">
-              <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">112</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Yêu cầu Tìm kiếm Cứu nạn khẩn cấp</span>
-            </div>
-            <div class="flex items-center gap-2 text-on-surface">
-              <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">113</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Lực lượng Cảnh sát & An ninh trật tự</span>
-            </div>
-            <div class="flex items-center gap-2 text-on-surface">
-              <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">114</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Cứu hỏa & Cứu nạn cứu hộ</span>
-            </div>
-            <div class="flex items-center gap-2 text-on-surface">
-              <span class="font-label-sm text-label-sm font-bold text-error bg-surface-container-lowest border border-error/30 px-2 py-0.5 rounded shadow-sm shrink-0 min-w-[42px] text-center">115</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium font-bold text-primary">Cấp cứu Y tế</span>
-            </div>
-          </div>
+        <div class="flex flex-wrap items-center gap-2 pt-1">
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container">
+            <span class="material-symbols-outlined text-[14px]">volunteer_activism</span>
+            100% Phi lợi nhuận
+          </span>
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-primary-fixed text-primary">
+            <span class="material-symbols-outlined text-[14px]">school</span>
+            Đồ án IE104 UIT
+          </span>
         </div>
       </div>
+
+      <!-- Cột 2: Danh bạ Khẩn cấp Quốc Gia -->
       <div class="flex flex-col gap-space-sm">
-        <span class="font-title-md text-title-md text-on-surface font-bold">Khám phá</span>
-        <nav aria-label="Liên kết nhanh" class="flex flex-col gap-space-xs">
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topics.html">Thư viện tình huống sơ cứu</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="social-impact.html">Tác động xã hội & Giá trị</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=ngung-tuan-hoan-cpr">Hồi sinh tim phổi (CPR & AED)</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=hoc-di-vat">Sơ cứu hóc dị vật Heimlich</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=bong-cap-do-1-2">Sơ cứu vết bỏng nhiệt & lửa</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="topic-detail.html?id=chay-mau-nghiem-trong">Kỹ thuật băng ép & Ga-rô</a>
-        </nav>
-      </div>
-      <div class="flex flex-col gap-space-sm">
-        <span class="font-title-md text-title-md text-on-surface font-bold">Về dự án</span>
-        <nav aria-label="Về MedFA" class="flex flex-col gap-space-xs">
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html">Giới thiệu MedFA</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html#team">Đội ngũ phát triển IE104</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html#mission">Mục tiêu & Sứ mệnh</a>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html#standards">Nguồn chuẩn Y khoa tham khảo</a>
-        </nav>
-      </div>
-      <div class="flex flex-col gap-space-sm">
-        <span class="font-title-md text-title-md text-on-surface font-bold">Thông tin liên hệ</span>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">Website phát triển phi lợi nhuận cho đồ án môn học IE104 - Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM).</p>
-        <div class="flex flex-col gap-space-xs mt-space-xs">
-          <span class="font-label-md text-label-md text-on-surface-variant">Số điện thoại:</span>
-          <a class="font-title-md text-title-md text-primary font-bold hover:underline" href="tel:+84919985358">(+84) 919 985 358</a>
+        <span class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+          Tổng đài khẩn cấp
+        </span>
+        <div class="flex flex-col gap-2 mt-1">
+          <a href="tel:115" class="flex items-center justify-between p-2 rounded-lg bg-error-container/30 border border-error/30 hover:bg-error-container/50 transition-colors group">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-xs text-white bg-error px-2 py-0.5 rounded shadow-xs">115</span>
+              <span class="font-body-sm text-body-sm font-bold text-error">Cấp cứu Y tế</span>
+            </div>
+            <span class="material-symbols-outlined text-error text-[18px] group-hover:translate-x-0.5 transition-transform">phone_in_talk</span>
+          </a>
+          <a href="tel:114" class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-xs text-on-surface bg-surface-container-lowest border border-outline-variant/30 px-2 py-0.5 rounded shadow-xs">114</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Cứu hỏa & Cứu nạn</span>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[16px]">call</span>
+          </a>
+          <a href="tel:113" class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-xs text-on-surface bg-surface-container-lowest border border-outline-variant/30 px-2 py-0.5 rounded shadow-xs">113</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Cảnh sát & An ninh</span>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[16px]">call</span>
+          </a>
+          <a href="tel:111" class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-xs text-on-surface bg-surface-container-lowest border border-outline-variant/30 px-2 py-0.5 rounded shadow-xs">111</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Bảo vệ Trẻ em</span>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[16px]">call</span>
+          </a>
         </div>
-        <div class="flex flex-col gap-space-xs">
-          <span class="font-label-md text-label-md text-on-surface-variant">Email:</span>
-          <a class="font-body-sm text-body-sm text-on-surface hover:text-primary" href="mailto:24520888@gm.uit.edu.vn">24520888@gm.uit.edu.vn</a>
+      </div>
+
+      <!-- Cột 3: Cẩm nang Sơ cấp cứu -->
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-title-md text-title-md text-on-surface font-bold">Cẩm nang sơ cứu</span>
+        <nav aria-label="Tình huống sơ cứu" class="flex flex-col gap-space-xs">
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topics.html">
+            <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
+            Thư viện tình huống sơ cứu
+          </a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon">
+            <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
+            Ép tim CPR & Máy sốc điện AED
+          </a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=hoc-di-vat-o-tre-em">
+            <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
+            Hóc dị vật & Nghiệm pháp Heimlich
+          </a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=bong-nhiet">
+            <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
+            Sơ cứu bỏng nhiệt an toàn
+          </a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=chay-mau-va-cam-mau">
+            <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
+            Kỹ thuật băng ép & Cầm máu
+          </a>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=dot-quy">
+            <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
+            Nhận biết dấu hiệu Đột quỵ FAST
+          </a>
+        </nav>
+      </div>
+
+      <!-- Cột 4: Dự án & Thông tin liên hệ -->
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-title-md text-title-md text-on-surface font-bold">Dự án & Liên hệ</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">
+          Đồ án môn học <strong>IE104 - Internet và Công nghệ Web</strong>. Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM).
+        </p>
+        <div class="flex flex-col gap-space-xs mt-1">
+          <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">call</span>
+            <a class="font-body-sm text-body-sm text-primary font-bold hover:underline" href="tel:+84919985358">(+84) 919 985 358</a>
+          </div>
+          <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-primary" href="mailto:24520888@gm.uit.edu.vn">24520888@gm.uit.edu.vn</a>
+          </div>
+          <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+            <span class="font-body-sm text-body-sm">ĐHQG-HCM, TP. Thủ Đức</span>
+          </div>
+        </div>
+        <div class="mt-2 pt-2 border-t border-outline-variant/20 flex flex-wrap gap-2 text-xs">
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html">Về MedFA</a>
+          <span>•</span>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html#team">Thành viên</a>
+          <span>•</span>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="social-impact.html">Tác động xã hội</a>
         </div>
       </div>
     </div>
+
+    <!-- Bottom Copyright -->
     <div class="pt-space-lg border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
       <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid. Đồ án môn học IE104 - UIT.</span>
-      <div class="flex items-center gap-space-md text-body-sm">
-        <a class="hover:text-primary transition-colors" href="about.html#standards">Nguồn tài liệu tham khảo</a>
+      <div class="flex flex-wrap items-center gap-space-md text-body-sm">
+        <a class="hover:text-primary transition-colors" href="about.html#standards">Nguồn tài liệu y khoa</a>
         <span>•</span>
-        <a class="hover:text-primary transition-colors" href="about.html#team">Danh sách thành viên</a>
+        <a class="hover:text-primary transition-colors" href="about.html#team">Đội ngũ phát triển</a>
         <span>•</span>
         <a class="text-tertiary font-medium hover:underline" href="about.html#standards">Miễn trừ trách nhiệm y khoa</a>
       </div>
@@ -194,16 +278,16 @@ const FALLBACK_FOOTER_HTML = `
       <div class="flex flex-col gap-1.5 pl-9 mt-1">
         <span class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Gợi ý tình huống nhanh:</span>
         <div class="flex flex-wrap gap-1.5">
-          <a href="topic-detail.html?id=ngung-tuan-hoan-cpr" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>🚨</span> Ép tim CPR & AED
           </a>
-          <a href="topic-detail.html?id=hoc-di-vat" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>👶</span> Hóc dị vật đường thở
           </a>
-          <a href="topic-detail.html?id=bong-cap-do-1-2" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=bong-nhiet" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>🔥</span> Sơ cứu vết bỏng
           </a>
-          <a href="topic-detail.html?id=chay-mau-nghiem-trong" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
+          <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
             <span>🩸</span> Băng ép cầm máu
           </a>
         </div>
@@ -259,9 +343,9 @@ function highlightActiveNav() {
   navLinks.forEach(link => {
     const page = link.getAttribute('data-page');
     if (page === currentKey) {
-      link.className = 'nav-link font-label-lg text-label-lg font-bold text-on-primary bg-primary px-3.5 py-1.5 rounded-full shadow-sm transition-colors';
+      link.setAttribute('aria-current', 'page');
     } else {
-      link.className = 'nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full';
+      link.removeAttribute('aria-current');
     }
   });
 
@@ -281,13 +365,55 @@ function highlightActiveNav() {
  * Bind interactive events for Header & Footer
  */
 function bindHeaderFooterEvents() {
-  // 1. Mobile Menu Toggle
+  // 1. Mobile Menu Toggle with icon swap & auto-close
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('flex');
+    const iconSpan = mobileBtn.querySelector('.material-symbols-outlined');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      if (iconSpan) iconSpan.textContent = 'menu';
+    }
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isClosed = mobileMenu.classList.contains('hidden');
+      if (isClosed) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        if (iconSpan) iconSpan.textContent = 'close';
+      } else {
+        closeMobileMenu();
+      }
+    });
+
+    // Close when clicking any nav link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Close when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -368,11 +494,6 @@ function bindHeaderFooterEvents() {
       }, 600);
     });
   }
-
-  // Refresh Lucide icons if available
-  if (typeof window !== 'undefined' && window.lucide) {
-    window.lucide.createIcons();
-  }
 }
 
 /**
@@ -384,22 +505,22 @@ function generateBotReply(query) {
     return `<p class="font-semibold text-error mb-1">🚨 Ép tim CPR khẩn cấp:</p>
             <p>1. Gọi 115 ngay!</p>
             <p>2. Đặt gót bàn tay giữa ngực, ép sâu 5-6cm với tốc độ 100-120 lần/phút.</p>
-            <a href="topic-detail.html?id=ngung-tuan-hoan-cpr" class="text-primary font-bold underline mt-1.5 inline-block">Xem chi tiết bài CPR & AED →</a>`;
+            <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="text-primary font-bold underline mt-1.5 inline-block">Xem chi tiết bài CPR & AED →</a>`;
   }
   if (q.includes('hóc') || q.includes('nghẹn') || q.includes('heimlich')) {
     return `<p class="font-semibold text-primary mb-1">👶 Hóc dị vật đường thở:</p>
             <p>Thực hiện ngay 5 vỗ lưng dứt khoát kết hợp 5 lần ép bụng Heimlich.</p>
-            <a href="topic-detail.html?id=hoc-di-vat" class="text-primary font-bold underline mt-1.5 inline-block">Xem quy trình Heimlich chi tiết →</a>`;
+            <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="text-primary font-bold underline mt-1.5 inline-block">Xem quy trình Heimlich chi tiết →</a>`;
   }
   if (q.includes('bỏng') || q.includes('cháy')) {
     return `<p class="font-semibold text-primary mb-1">🔥 Sơ cứu bỏng:</p>
             <p>Xả nước mát sạch (15-25°C) liên tục trong 15-20 phút. KHÔNG bôi kem đánh răng hay chườm đá lạnh.</p>
-            <a href="topic-detail.html?id=bong-cap-do-1-2" class="text-primary font-bold underline mt-1.5 inline-block">Xem hướng dẫn xử trí bỏng →</a>`;
+            <a href="topic-detail.html?id=bong-nhiet" class="text-primary font-bold underline mt-1.5 inline-block">Xem hướng dẫn xử trí bỏng →</a>`;
   }
   if (q.includes('chảy máu') || q.includes('máu') || q.includes('vết thương')) {
     return `<p class="font-semibold text-primary mb-1">🩸 Cầm máu:</p>
             <p>Dùng gạc sạch đè chặt trực tiếp lên miệng vết thương trong 5-10 phút. Nâng cao chi bị thương.</p>
-            <a href="topic-detail.html?id=chay-mau-nghiem-trong" class="text-primary font-bold underline mt-1.5 inline-block">Xem kỹ thuật băng ép và ga-rô →</a>`;
+            <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="text-primary font-bold underline mt-1.5 inline-block">Xem kỹ thuật băng ép và ga-rô →</a>`;
   }
   return `<p>MedFA đã ghi nhận câu hỏi của bạn: <em>"${escapeHTML(query)}"</em>.</p>
           <p class="mt-1">Bạn có thể tra cứu toàn bộ tình huống chuẩn Y khoa trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a> hoặc gọi ngay <strong class="text-error">115</strong> nếu đang trong tình trạng khẩn cấp!</p>`;
@@ -421,13 +542,13 @@ async function injectHeaderAndFooter() {
   // Inject Header
   if (headerPlaceholder) {
     try {
-      const res = await fetch('header.html');
+      const res = await fetch('components/header.html');
       if (res.ok) {
         headerPlaceholder.innerHTML = await res.text();
       } else {
-        const resComp = await fetch('components/header.html');
-        if (resComp.ok) {
-          headerPlaceholder.innerHTML = await resComp.text();
+        const resRoot = await fetch('header.html');
+        if (resRoot.ok) {
+          headerPlaceholder.innerHTML = await resRoot.text();
         } else {
           headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
         }
@@ -440,13 +561,13 @@ async function injectHeaderAndFooter() {
   // Inject Footer (only if empty)
   if (footerPlaceholder && footerPlaceholder.children.length === 0) {
     try {
-      const res = await fetch('footer.html');
+      const res = await fetch('components/footer.html');
       if (res.ok) {
         footerPlaceholder.innerHTML = await res.text();
       } else {
-        const resComp = await fetch('components/footer.html');
-        if (resComp.ok) {
-          footerPlaceholder.innerHTML = await resComp.text();
+        const resRoot = await fetch('footer.html');
+        if (resRoot.ok) {
+          footerPlaceholder.innerHTML = await resRoot.text();
         } else {
           footerPlaceholder.innerHTML = FALLBACK_FOOTER_HTML;
         }
