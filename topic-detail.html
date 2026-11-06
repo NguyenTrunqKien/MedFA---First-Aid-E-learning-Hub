@@ -74,10 +74,6 @@
                     <span>Đọc 2 phút</span>
                   </span>
                 </div>
-                <div class="inline-flex items-center gap-1 text-on-surface-variant text-xs bg-surface-container-low px-3 py-1 rounded-full">
-                  <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
-                  <span id="detail-standard">Chuẩn ERC & AHA 2025</span>
-                </div>
               </div>
 
               <!-- Main Title & Lead -->
@@ -91,6 +87,7 @@
               </div>
 
               <!-- CRITICAL ALERT BANNER -->
+              <div id="topic-guidance" hidden>
               <section aria-label="Cảnh báo sinh mạng" class="mt-6 bg-tertiary-fixed rounded-xl p-4 flex items-start gap-4 shadow-sm border border-tertiary/20">
                 <div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
                   <span class="material-symbols-outlined text-[24px]">crisis_alert</span>
@@ -103,14 +100,14 @@
                   <p id="detail-alert-text" class="text-sm md:text-base font-bold text-on-tertiary-fixed leading-snug">
                     GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.
                   </p>
-                  <p class="text-xs text-on-tertiary-fixed-variant">
+                  <p id="choking-alert-note" class="text-xs text-on-tertiary-fixed-variant">
                     Đồng thời chuẩn bị tiến hành hồi sinh tim phổi (CPR 30 ép tim : 2 thổi ngạt) ngay trên mặt sàn phẳng và cứng.
                   </p>
                 </div>
               </section>
 
               <!-- 4-MINUTE GOLDEN TIMELINE VISUALIZATION -->
-              <div class="mt-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+              <div id="choking-timeline" class="mt-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-1.5 text-sm text-on-surface font-bold">
                     <span class="material-symbols-outlined text-primary text-[18px]">acute</span>
@@ -140,7 +137,7 @@
                       <span class="material-symbols-outlined text-[20px]">e911_emergency</span>
                     </div>
                     <h2 class="text-xl text-on-surface font-bold">
-                      Quy trình sơ cứu chuẩn y khoa
+                      Các bước sơ cứu
                     </h2>
                   </div>
                   <span class="px-3 py-1 rounded-full bg-primary-fixed text-primary text-xs font-bold">
@@ -247,6 +244,14 @@
                 </div>
               </section>
 
+              </div>
+              <section id="medical-disclaimer" aria-labelledby="medical-disclaimer-title" class="mt-8 p-4 md:p-6 rounded-xl border border-outline-variant/30 bg-surface-container-low">
+                <h2 id="medical-disclaimer-title" class="text-xl font-bold text-on-surface">Lưu ý y khoa</h2>
+                <p class="mt-2 text-sm text-on-surface-variant">
+                  Nội dung MedFA phục vụ học tập và không thay thế tư vấn y tế hoặc đào tạo thực hành.
+                  Trong tình huống khẩn cấp tại Việt Nam, hãy <a class="font-bold underline" href="tel:115">gọi 115</a> và làm theo hướng dẫn của nhân viên cấp cứu.
+                </p>
+              </section>
             </article>
 
           </div>
@@ -315,14 +320,60 @@
   <script src="js/data-loader.js"></script>
   <script src="js/main.js"></script>
   <script>
+    async function loadMedicalDisclaimer(topic) {
+      const disclaimer = document.getElementById('medical-disclaimer');
+      try {
+        const response = await fetch('components/medical-disclaimer.html');
+        if (response.ok) disclaimer.innerHTML = await response.text();
+      } catch {
+        // Keep the notice already in the page when the fragment cannot load.
+      }
+
+      const list = document.getElementById('detail-source-list');
+      if (!list || !Array.isArray(topic?.sources)) return;
+
+      for (const source of topic.sources) {
+        if (!source?.name) continue;
+        let url;
+        try {
+          url = new URL(source.url);
+        } catch {
+          continue;
+        }
+        if (url.protocol !== 'https:') continue;
+
+        const link = document.createElement('a');
+        link.href = url.href;
+        link.textContent = source.name;
+        link.className = 'underline text-primary';
+        const item = document.createElement('li');
+        item.append(link);
+        list.append(item);
+      }
+
+      if (list.childElementCount > 0) {
+        document.getElementById('detail-sources-empty').hidden = true;
+      }
+    }
+
     // Dynamic topic loader based on ?id= query param
     document.addEventListener('DOMContentLoaded', async () => {
       const urlParams = new URLSearchParams(window.location.search);
-      const topicId = urlParams.get('id');
-      if (!topicId || !window.DataLoader) return;
+      const topicId = urlParams.get('id') || 'hoc-di-vat';
+      const topic = await window.DataLoader?.getTopicById(topicId);
+      const matchesTopic = topic?.id === topicId;
+      loadMedicalDisclaimer(matchesTopic ? topic : null);
 
-      const topic = await window.DataLoader.getTopicById(topicId);
-      if (!topic) return;
+      if (!matchesTopic) {
+        const title = 'Chủ đề hiện không khả dụng';
+        document.title = `${title} - MedFA`;
+        document.getElementById('breadcrumb-topic-title').textContent = title;
+        document.getElementById('detail-title').textContent = title;
+        document.getElementById('detail-lead').textContent = 'Quay lại thư viện để chọn một chủ đề đang có.';
+        document.getElementById('detail-category-badge').hidden = true;
+        document.getElementById('detail-read-time').hidden = true;
+        return;
+      }
 
       // Update Breadcrumb & Header
       document.title = `${topic.fullTitle || topic.title} - MedFA`;
@@ -342,6 +393,15 @@
       if (readTime && topic.readTime) {
         readTime.innerHTML = `<span class="material-symbols-outlined text-[15px]">timer</span><span>Đọc ${topic.readTime}</span>`;
       }
+
+      if (topic.needsMedicalReview) {
+        leadEl.textContent = 'Bài này đang chờ đối chiếu nội dung y khoa. Xem hướng dẫn chính thức bên dưới.';
+        return;
+      }
+
+      const isChokingTopic = topic.id === 'hoc-di-vat';
+      document.getElementById('choking-alert-note').hidden = !isChokingTopic;
+      document.getElementById('choking-timeline').hidden = !isChokingTopic;
 
       const alertEl = document.getElementById('detail-alert-text');
       if (alertEl && topic.emergencyAlert) {
@@ -387,6 +447,7 @@
           </li>
         `).join('');
       }
+      document.getElementById('topic-guidance').hidden = false;
     });
   </script>
 </body>
