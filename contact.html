@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liên hệ MedFA, gọi cấp cứu 115 hoặc gửi phản hồi và đóng góp tình huống sơ cứu.">
+  <title>Liên hệ MedFA | Góp ý & Đóng góp</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/contact-quiz.css">
+</head>
+<body class="bg-background font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="contact">
+  <div id="header-placeholder"></div>
+  <main class="contact-quiz-page">
+    <div class="cq-shell">
+      <header class="cq-heading">
+        <span class="cq-eyebrow">MEDFA · KẾT NỐI CỘNG ĐỒNG</span>
+        <h1>Liên hệ & đóng góp</h1>
+        <p>Ý kiến của bạn giúp MedFA hoàn thiện thư viện kiến thức sơ cứu dễ hiểu và hữu ích hơn.</p>
+      </header>
+
+      <section class="contact-emergency" aria-labelledby="emergency-title">
+        <div class="contact-emergency-icon" aria-hidden="true">
+          <span class="material-symbols-outlined">emergency</span>
+        </div>
+        <div>
+          <h2 id="emergency-title">Đang có tình huống khẩn cấp?</h2>
+          <p>Gọi cấp cứu y tế <strong>115</strong> ngay. Không chờ phản hồi qua website.</p>
+        </div>
+        <a class="contact-call-button" href="tel:115">
+          <span class="material-symbols-outlined" aria-hidden="true">call</span>
+          Gọi 115
+        </a>
+      </section>
+
+      <div class="contact-layout">
+        <section class="cq-card contact-form-card" aria-labelledby="contact-form-title">
+          <div class="cq-card-heading">
+            <span class="cq-icon" aria-hidden="true"><span class="material-symbols-outlined">edit_note</span></span>
+            <div>
+              <h2 id="contact-form-title">Gửi phản hồi</h2>
+              <p>Biểu mẫu minh họa, thông tin chỉ được lưu trong phiên trình duyệt này.</p>
+            </div>
+          </div>
+          <form id="contact-form" novalidate>
+            <div class="contact-fields">
+              <div class="cq-field">
+                <label for="contact-name">Họ và tên <span aria-hidden="true">*</span></label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                <small class="field-error" id="name-error"></small>
+              </div>
+              <div class="cq-field">
+                <label for="contact-email">Email <span aria-hidden="true">*</span></label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                <small class="field-error" id="email-error"></small>
+              </div>
+              <div class="cq-field">
+                <label for="contact-phone">Số điện thoại <span aria-hidden="true">*</span></label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="phone-error">
+                <small class="field-error" id="phone-error"></small>
+              </div>
+              <div class="cq-field">
+                <label for="contact-subject">Nội dung đóng góp <span aria-hidden="true">*</span></label>
+                <select id="contact-subject" name="subject" required aria-describedby="subject-error">
+                  <option value="">Chọn chủ đề</option>
+                  <option value="feedback">Góp ý cho website</option>
+                  <option value="scenario">Đề xuất tình huống sơ cứu</option>
+                  <option value="correction">Báo nội dung cần kiểm tra</option>
+                  <option value="other">Khác</option>
+                </select>
+                <small class="field-error" id="subject-error"></small>
+              </div>
+              <div class="cq-field cq-field-wide">
+                <label for="contact-message">Lời nhắn <span aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" rows="5" required aria-describedby="message-error" placeholder="Chia sẻ góp ý hoặc tình huống bạn muốn đề xuất..."></textarea>
+                <small class="field-error" id="message-error"></small>
+              </div>
+              <label class="contact-consent cq-field-wide">
+                <input id="contact-consent" name="consent" type="checkbox" required aria-describedby="consent-error">
+                <span>Tôi đồng ý lưu thông tin này tạm thời trong phiên trình duyệt để minh họa chức năng gửi.</span>
+              </label>
+              <small class="field-error cq-field-wide" id="consent-error"></small>
+            </div>
+            <button class="btn btn-primary contact-submit" type="submit">
+              <span class="material-symbols-outlined" aria-hidden="true">send</span>
+              Gửi phản hồi
+            </button>
+          </form>
+        </section>
+
+        <aside class="contact-side">
+          <section class="cq-card contact-info-card" aria-labelledby="contact-info-title">
+            <span class="cq-icon" aria-hidden="true"><span class="material-symbols-outlined">support_agent</span></span>
+            <h2 id="contact-info-title">Kết nối với MedFA</h2>
+            <p>MedFA là dự án học tập phi lợi nhuận. Biểu mẫu này chưa gửi dữ liệu tới máy chủ.</p>
+            <div class="contact-social">
+              <h3>Chia sẻ MedFA</h3>
+              <a class="contact-social-link" href="https://www.facebook.com/sharer/sharer.php" data-share="facebook" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined" aria-hidden="true">share</span>
+                Chia sẻ trên Facebook
+                <span class="material-symbols-outlined contact-link-arrow" aria-hidden="true">open_in_new</span>
+              </a>
+              <a class="contact-social-link" href="https://zalo.me" data-share="zalo" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined" aria-hidden="true">forum</span>
+                Chia sẻ qua Zalo
+                <span class="material-symbols-outlined contact-link-arrow" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+          </section>
+          <section class="contact-quiz-promo">
+            <span class="material-symbols-outlined" aria-hidden="true">quiz</span>
+            <h2>Thử sức với tình huống sơ cứu</h2>
+            <p>Ôn luyện kiến thức qua 10 câu hỏi tình huống và xem giải thích sau mỗi câu.</p>
+            <a href="quiz.html" class="contact-quiz-link">Làm bài trắc nghiệm <span aria-hidden="true">→</span></a>
+          </section>
+          <p class="contact-disclaimer">Nội dung MedFA chỉ nhằm mục đích giáo dục, không thay thế tư vấn hoặc điều trị y tế chuyên nghiệp.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <div id="contact-toast" class="cq-toast" role="status" aria-live="polite" hidden></div>
+  <script src="js/main.js" defer></script>
+  <script src="js/contact-validation.js" defer></script>
+</body>
+</html>
