@@ -4,6 +4,8 @@ Tài liệu này hướng dẫn chi tiết quy trình chuyển đổi dữ liệ
 
 ---
 
+Xem [đặc tả dữ liệu hiện hành](DATA_SCHEMA_SPEC.md) trước khi đưa dữ liệu vào dự án.
+
 ## 📑 MỤC LỤC
 1. [Tổng quan Cấu trúc JSON của 1 Topic](#1-tổng-quan-cấu-trúc-json-của-1-topic)
 2. [Bảng Đặc Tả Chi Tiết Từng Trường Dữ Liệu (Field Specification)](#2-bảng-đặc-tả-chi-tiết-từng-trường-dữ-liệu)
@@ -73,13 +75,13 @@ Một đối tượng topic hoàn chỉnh trong `data/topics.json` có cấu tr�
 | `id` | `string` | **Có** | Dạng `kebab-case` không dấu, duy nhất. VD: `duoi-nuoc`, `bong-cap-do-1-2`. | Dùng trong URL: `topic-detail.html?id=duoi-nuoc` và thuộc tính `data-id`. |
 | `title` | `string` | **Có** | Tên ngắn gọn (dưới 35 ký tự). | Thẻ Card trong danh sách `topics.html`, Chat widget. |
 | `fullTitle` | `string` | **Có** | Tên đầy đủ chuẩn y khoa (khoảng 40-70 ký tự). | Breadcrumb, tiêu đề trang và thẻ H1 trên `topic-detail.html`. |
-| `category` | `string` | **Có** | Bắt buộc thuộc 1 trong 4 mã: `sinh-hoat`, `tre-em`, `ngoai-troi`, `benh-ly`. | Dùng cho bộ lọc danh mục và thuộc tính `data-category`. |
+| `category` | `string` | **Có** | Dùng một trong năm mã `sinh-hoat`, `tre-em`, `ngoai-troi`, `benh-ly`, `tai-nan`. | Dùng cho bộ lọc danh mục và thuộc tính `data-category`. |
 | `categoryLabel` | `string` | **Có** | Nhãn danh mục hiển thị tiếng Việt tương ứng. | Badge trên Card và Badge ở đầu trang chi tiết. |
 | `badgeType` | `string` | **Có** | Loại tag ngắn: "Khẩn cấp", "Sinh tử", "Sinh hoạt", "Ngoài trời", "Bệnh lý". | Tag nhỏ trên góc phải thẻ Card. |
 | `badgeClass` | `string` | **Có** | Class màu Tailwind quy định màu nền/màu chữ của tag. | Style màu sắc của `badgeType`. |
 | `criticalLevel` | `string` | **Có** | 1 trong 4 mức: `low`, `medium`, `high`, `critical`. | Dùng cho bộ sắp xếp (sort) theo độ khẩn cấp. |
 | `readTime` | `string` | **Có** | Thời gian đọc ước tính: `"2 phút"`, `"3 phút"`, `"5 phút"`. | Footer thẻ Card và metadata trang chi tiết. |
-| `standard` | `string` | **Có** | Cơ quan/tiêu chuẩn y khoa tham chiếu: "Chuẩn AHA 2025", "Chuẩn ERC & Red Cross". | Badge xác thực y khoa trên trang chi tiết. |
+| `standard` | `string` | **Có** | Ghi chú về tài liệu tham chiếu. | Dùng khi biên tập dữ liệu. Link nguồn trên trang chi tiết lấy từ `sources`. |
 | `iconSvg` | `string` | **Có** | Chuỗi SVG dạng inline 24x24 px, stroke-width=2, viewBox="0 0 24 24". | Icon tròn trên góc thẻ Card `topics.html`. |
 | `shortDesc` | `string` | **Có** | Tóm tắt súc tích trong 1-2 câu (khoảng 100 - 150 ký tự). | Đoạn mô tả 2 dòng (line-clamp-2) trên thẻ Card. |
 | `lead` | `string` | **Có** | Giải thích nguy cơ sinh mạng, cơ chế tổn thương (khoảng 150 - 250 ký tự). | Đoạn dẫn nhập (lead text) dưới tiêu đề H1 ở trang chi tiết. |
@@ -94,7 +96,7 @@ Một đối tượng topic hoàn chỉnh trong `data/topics.json` có cấu tr�
 ## 3. Quy Tắc Định Danh Danh Mục & Mức Độ Khẩn Cấp
 
 ### 3.1. Bảng ánh xạ Category bắt buộc
-Để bộ lọc trên `topics.html` hoạt động chính xác, trường `category` **bắt buộc** phải là một trong 4 giá trị sau:
+Để bộ lọc trên `topics.html` hoạt động chính xác, trường `category` dùng một trong năm mã sau.
 
 | `category` (code) | `categoryLabel` (hiển thị) | Tiêu chí phân loại tình huống |
 | :--- | :--- | :--- |
@@ -102,6 +104,7 @@ Một đối tượng topic hoàn chỉnh trong `data/topics.json` có cấu tr�
 | `tre-em` | **Trẻ em** | Hóc dị vật/sặc sữa, sốt cao co giật ở trẻ nhỏ, té ngã chấn thương đầu trẻ em. |
 | `ngoai-troi` | **Ngoài trời** | Đuối nước, sốc nhiệt say nắng, rắn độc cắn, ong đốt sốc phản vệ, tai nạn giao thông. |
 | `benh-ly` | **Bệnh lý** | Ngừng tim đột ngột (CPR), đột quỵ não (FAST), nhồi máu cơ tim, cơn hen phế quản cấp, co giật động kinh. |
+| `tai-nan` | **Tai nạn** | Chấn thương do va đập hoặc tai nạn, ví dụ chấn thương bụng. |
 
 ### 3.2. Bảng ánh xạ Critical Level & Badge Class
 | `criticalLevel` | `badgeType` | `badgeClass` (Tailwind) | Ví dụ tình huống |

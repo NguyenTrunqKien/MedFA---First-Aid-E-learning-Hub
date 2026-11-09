@@ -281,67 +281,57 @@
   },
   {
     "id": "soc-nhiet-say-nang",
-    "title": "Sốc nhiệt & Say nắng",
-    "fullTitle": "Sơ cứu Sốc nhiệt Thân nhiệt cao (Heatstroke) & Say nắng",
+    "title": "Sốc nhiệt, say nắng",
+    "fullTitle": "Say nắng, say nóng là gì? Nguyên nhân và cách xử trí khi gặp",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Ngoài trời",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
-    "criticalLevel": "medium",
-    "readTime": "3 phút",
-    "standard": "Hướng dẫn Y học Lao động & Thể thao",
-    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9a4 4 0 0 0-2 7.5\"></path><path d=\"M12 3v2\"></path><path d=\"m6.6 18.4-1.4 1.4\"></path><path d=\"M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z\"></path><path d=\"M4 13H2\"></path><path d=\"M6.34 7.34 4.93 5.93\"></path></svg>",
-    "shortDesc": "Nhận diện dấu hiệu đột quỵ nhiệt và các bước hạ thân nhiệt cấp tốc an toàn.",
-    "lead": "Sốc nhiệt xảy ra khi hệ thống điều hòa thân nhiệt của cơ thể bị quá tải, nhiệt độ cơ thể vọt lên trên 40°C gây tổn thương não và các cơ quan nội tạng đe dọa trực tiếp tính mạng.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân lú lẫn, nói nhảm, co giật hoặc hôn mê do nhiệt độ cao.",
-    "timeline": [
-      {
-        "time": "Giai đoạn 1",
-        "status": "Chuột rút nhiệt, mệt mỏi, vã mồ hôi nhiều",
-        "level": "safe"
-      },
-      {
-        "time": "Giai đoạn 2",
-        "status": "Kiệt sức vì nhiệt, chóng mặt, buồn nôn, mạch nhanh",
-        "level": "warning"
-      },
-      {
-        "time": "Giai đoạn 3",
-        "status": "Sốc nhiệt (>40°C), da khô nóng, mê sảng, co giật",
-        "level": "critical"
-      }
-    ],
+    "badgeType": "Khẩn cấp",
+    "badgeClass": "bg-error-container text-on-error-container",
+    "criticalLevel": "high",
+    "readTime": "1 phút",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"7\" r=\"3\"/><path d=\"M12 1v2M4 7h2m12 0h2M6.3 1.3l1.4 1.4m8.6 0 1.4-1.4M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/></svg>",
+    "shortDesc": "Nhận diện say nắng và sốc nhiệt, gọi cấp cứu khi rối loạn ý thức, làm mát cơ thể ngay.",
+    "lead": "Sốc nhiệt là cấp cứu nguy hiểm, có thể kèm lú lẫn hoặc ngất. Kiệt sức vì nóng nhẹ hơn nhưng có thể tiến triển nặng; cách cho uống nước phụ thuộc mức tỉnh táo và tình trạng.",
+    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nghi sốc nhiệt: lú lẫn, ngất, co giật, thân nhiệt rất cao hoặc tình trạng xấu đi nhanh.",
+    "timeline": [],
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Di chuyển vào nơi râm mát ngay",
-        "desc": "Đưa nạn nhân ngay lập tức vào phòng có điều hòa mát hoặc bóng râm thông thoáng, cởi bỏ bớt quần áo ngoài dày bó sát."
+        "title": "Gọi 115 khi nghi sốc nhiệt",
+        "desc": "Nếu người bệnh lú lẫn, ngất, co giật hoặc rất nóng, gọi 115 ngay. Đừng đợi có nhiệt kế mới bắt đầu xử trí."
       },
       {
         "stepNumber": 2,
-        "title": "Hạ nhiệt cấp tốc",
-        "desc": "Xịt hoặc lau nước mát khắp người nạn nhân kết hợp bật quạt gió mạnh. Đặt các túi chườm mát bọc khăn vào các vùng có mạch máu lớn đi qua: 2 bên cổ, 2 nách và 2 bẹn."
+        "title": "Đưa đến nơi mát",
+        "desc": "Đưa người bệnh ra khỏi nắng hoặc nơi nóng, nới lỏng và cởi bớt quần áo không cần thiết."
       },
       {
         "stepNumber": 3,
-        "title": "Bù nước và điện giải nếu còn tỉnh",
-        "desc": "Nếu nạn nhân hoàn toàn tỉnh táo và có thể nuốt tốt: Cho uống từng ngụm nhỏ nước mát, nước pha oresol hoặc nước uống thể thao bù muối khoáng. KHÔNG ép uống nếu nạn nhân lơ mơ."
+        "title": "Làm mát ngay",
+        "desc": "Dùng nước mát làm ướt da và quạt; có thể chườm khăn lạnh ở cổ, nách, bẹn hoặc cho vào bồn nước mát nếu an toàn và có người giám sát."
       },
       {
         "stepNumber": 4,
-        "title": "Theo dõi sát tri giác và thân nhiệt",
-        "desc": "Liên tục theo dõi nhịp thở và tri giác của nạn nhân. Nếu thấy thân nhiệt hạ về khoảng 38°C thì ngừng chườm lạnh mạnh để tránh hạ nhiệt độ quá mức gây run rẩy."
+        "title": "Theo dõi và xử trí uống nước",
+        "desc": "Theo dõi hô hấp, mức tỉnh táo đến khi cấp cứu đến. Với kiệt sức vì nóng, người tỉnh táo và nuốt tốt có thể uống từng ngụm nước; nếu nghi sốc nhiệt, không cho uống."
       }
     ],
     "dos": [
-      "Hạ nhiệt tích cực bằng nước mát và quạt gió ngay tại hiện trường.",
-      "Đặt túi chườm vào các vùng có mạch máu lớn: cổ, nách, bẹn.",
-      "Gọi hỗ trợ y tế 115 khi nạn nhân có biểu hiện rối loạn ý thức."
+      "Gọi 115 ngay khi có rối loạn ý thức hoặc nghi sốc nhiệt.",
+      "Đưa nạn nhân đến nơi mát và làm mát cơ thể ngay.",
+      "Theo dõi hô hấp và mức tỉnh táo liên tục khi chờ cấp cứu."
     ],
     "donts": [
-      "KHÔNG cho nạn nhân uống thuốc hạ sốt như Paracetamol/Aspirin (không có tác dụng trong sốc nhiệt và có thể gây hại cho gan/thận).",
-      "KHÔNG cho uống nước ngọt có ga hoặc đồ uống có cồn, caffeine.",
-      "KHÔNG ngâm nạn nhân lơ mơ vào bồn nước đá sâu một mình vì nguy cơ đuối nước."
+      "KHÔNG chậm làm mát để chờ xe cấp cứu.",
+      "KHÔNG cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
+      "KHÔNG để người lơ mơ một mình trong bồn nước."
+    ],
+    "sources": [
+      {
+        "name": "CDC — Nhận biết và sơ cứu bệnh do nóng",
+        "url": "https://stacks.cdc.gov/view/cdc/59395"
+      }
     ]
   },
   {
@@ -419,7 +409,7 @@
     "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"8\" cy=\"5\" r=\"2\"/><path d=\"M8 7v6m-3 0 3-2 3 2m-3-2v9m7-13h6m-3-3 3 3-3 3\"/></svg>",
     "shortDesc": "Nhận biết nghẹn thở và sơ cứu khác nhau cho trẻ dưới 1 tuổi và trẻ lớn hơn.",
     "lead": "Dị vật có thể làm tắc đường thở rất nhanh. Cách xử trí phụ thuộc vào việc trẻ còn ho được hay không và trẻ đã đủ 1 tuổi chưa.",
@@ -473,7 +463,7 @@
     "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"5\" r=\"2\"/><path d=\"M4 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0m-9-8 2-3 4 4\"/></svg>",
     "shortDesc": "Đưa trẻ ra khỏi nước an toàn, gọi cấp cứu và hỗ trợ hô hấp nếu trẻ không thở bình thường.",
     "lead": "Đuối nước gây thiếu oxy. Ưu tiên cứu hộ an toàn, gọi cấp cứu và hỗ trợ hô hấp sớm; không mất thời gian tìm cách đẩy nước ra khỏi phổi.",
@@ -522,7 +512,7 @@
     "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 18V6a3 3 0 0 0-5.7-1.3A3 3 0 0 0 4 9a3 3 0 0 0 .2 5A3 3 0 0 0 7 19a3 3 0 0 0 5-1Zm0 0V6a3 3 0 0 1 5.7-1.3A3 3 0 0 1 20 9a3 3 0 0 1-.2 5A3 3 0 0 1 17 19a3 3 0 0 1-5-1Z\"/><path d=\"M8 8c0 2 2 2 2 4m6-4c0 2-2 2-2 4\"/></svg>",
     "shortDesc": "Nhận biết FAST, gọi 115 ngay và ghi thời điểm khởi phát triệu chứng đột quỵ.",
     "lead": "Đột quỵ có thể biểu hiện bằng méo mặt, yếu tay chân, nói khó, rối loạn thị giác hoặc mất thăng bằng đột ngột. Cấp cứu sớm giúp giảm nguy cơ tổn thương lâu dài.",
@@ -571,7 +561,7 @@
     "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"></path></svg>",
     "shortDesc": "Làm mát vết bỏng bằng nước mát chảy, che phủ sạch và nhận diện dấu hiệu cần cấp cứu.",
     "lead": "Bỏng do nước sôi hoặc lửa cần được ngừng tiếp xúc nguồn nhiệt và làm mát sớm. Cần bảo vệ da sau khi làm mát và đánh giá mức độ bỏng.",
@@ -620,7 +610,7 @@
     "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M9 3h6m-4 0v7l-5 8a2 2 0 0 0 1.7 3h8.6a2 2 0 0 0 1.7-3l-5-8V3M8 16h8\"/><path d=\"M11 18h.01m3 1h.01\"/></svg>",
     "shortDesc": "Bảo vệ người cứu, loại bỏ hóa chất, xả nước liên tục và đưa nạn nhân đi cấp cứu.",
     "lead": "Hóa chất có thể tiếp tục gây tổn thương khi còn bám trên da hoặc trong mắt. Cần ngừng phơi nhiễm ngay và nhờ nhân viên y tế đánh giá.",
@@ -660,55 +650,6 @@
     ]
   },
   {
-    "id": "soc-nhiet-say-nang",
-    "title": "Sốc nhiệt, say nắng",
-    "fullTitle": "Say nắng, say nóng là gì? Nguyên nhân và cách xử trí khi gặp",
-    "category": "ngoai-troi",
-    "categoryLabel": "Ngoài trời",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
-    "criticalLevel": "high",
-    "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
-    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"7\" r=\"3\"/><path d=\"M12 1v2M4 7h2m12 0h2M6.3 1.3l1.4 1.4m8.6 0 1.4-1.4M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/></svg>",
-    "shortDesc": "Nhận diện say nắng và sốc nhiệt, gọi cấp cứu khi rối loạn ý thức, làm mát cơ thể ngay.",
-    "lead": "Sốc nhiệt là cấp cứu nguy hiểm, có thể kèm lú lẫn hoặc ngất. Kiệt sức vì nóng nhẹ hơn nhưng có thể tiến triển nặng; cách cho uống nước phụ thuộc mức tỉnh táo và tình trạng.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nghi sốc nhiệt: lú lẫn, ngất, co giật, thân nhiệt rất cao hoặc tình trạng xấu đi nhanh.",
-    "timeline": [],
-    "steps": [
-      {
-        "stepNumber": 1,
-        "title": "Gọi 115 khi nghi sốc nhiệt",
-        "desc": "Nếu người bệnh lú lẫn, ngất, co giật hoặc rất nóng, gọi 115 ngay. Đừng đợi có nhiệt kế mới bắt đầu xử trí."
-      },
-      {
-        "stepNumber": 2,
-        "title": "Đưa đến nơi mát",
-        "desc": "Đưa người bệnh ra khỏi nắng hoặc nơi nóng, nới lỏng và cởi bớt quần áo không cần thiết."
-      },
-      {
-        "stepNumber": 3,
-        "title": "Làm mát ngay",
-        "desc": "Dùng nước mát làm ướt da và quạt; có thể chườm khăn lạnh ở cổ, nách, bẹn hoặc cho vào bồn nước mát nếu an toàn và có người giám sát."
-      },
-      {
-        "stepNumber": 4,
-        "title": "Theo dõi và xử trí uống nước",
-        "desc": "Theo dõi hô hấp, mức tỉnh táo đến khi cấp cứu đến. Với kiệt sức vì nóng, người tỉnh táo và nuốt tốt có thể uống từng ngụm nước; nếu nghi sốc nhiệt, không cho uống."
-      }
-    ],
-    "dos": [
-      "Gọi 115 ngay khi có rối loạn ý thức hoặc nghi sốc nhiệt.",
-      "Đưa nạn nhân đến nơi mát và làm mát cơ thể ngay.",
-      "Theo dõi hô hấp và mức tỉnh táo liên tục khi chờ cấp cứu."
-    ],
-    "donts": [
-      "KHÔNG chậm làm mát để chờ xe cấp cứu.",
-      "KHÔNG cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
-      "KHÔNG để người lơ mơ một mình trong bồn nước."
-    ]
-  },
-  {
     "id": "ngo-doc-thuc-pham",
     "title": "Ngộ độc thực phẩm",
     "fullTitle": "Cách sơ cứu ngộ độc thực phẩm: Lưu ý quan trọng khi thực hiện",
@@ -718,7 +659,7 @@
     "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 7c-3-3-9-1-9 5 0 4 3 9 6 9 1.5 0 2-1 3-1s1.5 1 3 1c3 0 6-5 6-9 0-6-6-8-9-5Zm0 0c0-2 1-4 3-5m-3 5c2-2 4-2 6-1\"/><path d=\"M12 10v5m0 3h.01\"/></svg>",
     "shortDesc": "Bù nước an toàn, theo dõi dấu hiệu mất nước và nhận biết khi cần khám cấp cứu.",
     "lead": "Ngộ độc thực phẩm có thể gây nôn, tiêu chảy và mất nước. Mục tiêu ban đầu là bù dịch an toàn, theo dõi dấu hiệu nặng và tìm hỗ trợ y tế khi cần.",
@@ -767,7 +708,7 @@
     "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"m13 2-9 12h7l-1 8 10-12h-7l1-8Z\"/></svg>",
     "shortDesc": "Ngắt nguồn điện an toàn, gọi cấp cứu, kiểm tra hô hấp và chăm sóc bỏng điện.",
     "lead": "Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải chắc chắn nguồn điện đã được ngắt trước khi tiếp cận.",
@@ -816,7 +757,7 @@
     "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"></path><path d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"></path></svg>",
     "shortDesc": "Nhận biết ngừng tim, gọi 115, ép tim đúng nhịp và dùng AED sớm.",
     "lead": "Người lớn bất tỉnh và không thở bình thường hoặc chỉ thở ngáp cần được gọi cấp cứu và bắt đầu CPR ngay. AED nên dùng sớm khi có sẵn.",
@@ -870,7 +811,7 @@
     "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"></path><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"></path></svg>",
     "shortDesc": "Ép trực tiếp để cầm máu, gọi 115 khi chảy máu nặng và dùng ga-rô khi phù hợp.",
     "lead": "Chảy máu nhiều có thể gây sốc nhanh. Ưu tiên ép trực tiếp vào nguồn chảy máu và gọi cấp cứu; ga-rô dành cho chảy máu đe dọa tính mạng ở tay hoặc chân.",
@@ -919,7 +860,7 @@
     "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
-    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng; xem SOURCES_REVIEW.md",
+    "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M6.5 7.5 4 7a2.5 2.5 0 1 1 3-3l.5 2.5 9 10L19 17a2.5 2.5 0 1 1-3 3l-.5-2.5-9-10Z\"/><path d=\"m10 10 2 1-1 2 3 1\"/></svg>",
     "shortDesc": "Giữ yên vùng nghi gãy, xử trí chảy máu và nhận biết dấu hiệu cần gọi cấp cứu.",
     "lead": "Gãy xương có thể kín hoặc hở; di chuyển hoặc nắn chỉnh sai có thể làm tổn thương thêm. Ưu tiên giữ yên vùng bị thương và đánh giá dấu hiệu nặng.",
@@ -959,6 +900,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "xu-ly-khi-bi-soc-phan-ve",
     "title": "Xử lý khi bị sốc phản vệ",
     "fullTitle": "Xử lý khi bị sốc phản vệ",
@@ -1006,6 +948,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "sac-sua-o-tre-so-sinh-rat-nguy",
     "title": "Sặc sữa ở trẻ sơ sinh rất nguy",
     "fullTitle": "Sặc sữa ở trẻ sơ sinh rất nguy hiểm",
@@ -1056,6 +999,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "so-cuu-ong-dot",
     "title": "Sơ cứu ong đốt",
     "fullTitle": "Hướng dẫn sơ cứu ong đốt",
@@ -1111,6 +1055,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "so-cap-cuu-chan-thuong-dau-va-tuy",
     "title": "Sơ cấp cứu chấn thương đầu và tủy",
     "fullTitle": "Sơ cấp cứu chấn thương đầu và tủy sống",
@@ -1163,6 +1108,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "bi-bong-gan-co-tay-co-chan-phai",
     "title": "Bị bong gân cổ tay, cổ chân: Phải",
     "fullTitle": "Bị bong gân cổ tay, cổ chân: Phải làm sao?",
@@ -1213,6 +1159,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "xu-ly-ha-duong-huyet-o-nguoi-tieu",
     "title": "Xử lý hạ đường huyết ở người tiểu",
     "fullTitle": "Xử lý hạ đường huyết ở người tiểu đường",
@@ -1268,6 +1215,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "cach-lay-di-vat-trong-mat",
     "title": "Cách lấy dị vật trong mắt",
     "fullTitle": "Hướng dẫn cách lấy dị vật trong mắt",
@@ -1318,52 +1266,49 @@
   },
   {
     "id": "cach-so-cuu-dong-kinh-xu-tri-dung",
-    "title": "Cách sơ cứu động kinh xử trí đúng",
-    "fullTitle": "Hướng dẫn cách sơ cứu động kinh xử trí đúng kỹ thuật, an toàn",
+    "title": "Sơ cứu khi co giật",
+    "fullTitle": "Sơ cứu người đang co giật",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
     "badgeType": "Bệnh lý",
     "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "3 phút",
-    "standard": "Tham khảo: ",
+    "standard": "Tham khảo Epilepsy Foundation Australia",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
-    "shortDesc": "Khi thấy người bệnh lên cơn động kinh, việc áp dụng cách sơ cứu động kinh đúng sẽ giúp hạn chế nguy hiểm cho người bệnh, đồng thời tăng tỷ lệ cấp cứu…",
-    "lead": "Khi thấy người bệnh lên cơn động kinh, việc áp dụng cách sơ cứu động kinh đúng sẽ giúp hạn chế nguy hiểm cho người bệnh, đồng thời tăng tỷ lệ cấp cứu động kinh thành công.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, ngừng thở hoặc tình trạng ngày càng nặng.",
+    "shortDesc": "Bảo vệ người đang co giật khỏi chấn thương, theo dõi thời gian và biết khi nào cần gọi cấp cứu.",
+    "lead": "Giữ bình tĩnh và ở cạnh người bệnh. Hãy bảo vệ họ khỏi chấn thương trong cơn và theo dõi cho đến khi họ tỉnh lại.",
+    "emergencyAlert": "Gọi 115 nếu cơn kéo dài từ 5 phút, cơn khác tiếp diễn, đây là cơn đầu tiên hoặc người bệnh không hồi tỉnh sau cơn.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Epilepsy First Aid | Epilepsy Foundation",
-        "desc": "Epilepsy First Aid | Epilepsy Foundation. (2020). Epilepsy Foundation. https://epilepsyfoundation.org.au/understanding-epilepsy/seizure-first-aid/tonic-clonic-seizures/"
+        "title": "Bảo vệ khỏi chấn thương",
+        "desc": "Dọn vật cứng và sắc xung quanh, kê vật mềm dưới đầu và theo dõi thời gian co giật."
       },
       {
         "stepNumber": 2,
-        "title": "First aid for epilepsy seizures",
-        "desc": "First aid for epilepsy seizures. (2023, January 16). WebMD. https://www.webmd.com/epilepsy/first-aid-seizures"
+        "title": "Giữ đường thở thông thoáng",
+        "desc": "Nhẹ nhàng đặt người bệnh nằm nghiêng khi có thể thực hiện an toàn. Nếu có thức ăn, dịch hoặc chất nôn trong miệng, đặt họ nằm nghiêng ngay."
       },
       {
         "stepNumber": 3,
-        "title": "Health. (2023). Epilepsy – first aid and safety.",
-        "desc": "Health. (2023). Epilepsy – first aid and safety. Vic.gov.au. https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/epilepsy-first-aid-and-safety"
-      },
-      {
-        "stepNumber": 4,
-        "title": "First Aid for Epilepsy – Seizure Management Resource",
-        "desc": "First Aid for Epilepsy – Seizure Management Resource. (2021, January 28). Epilepsy Foundation Texas. https://www.eftx.org/epilepsy-seizure-first-aid/"
+        "title": "Ở lại theo dõi",
+        "desc": "Theo dõi nhịp thở và ở lại cho đến khi người bệnh tỉnh hoặc nhân viên cấp cứu tới."
       }
     ],
     "dos": [
-      "Khi thực hiện sơ cứu động kinh, cần lưu ý: ( 1 ).",
-      "Giúp bệnh nhân không bị chấn thương trong lúc đang co giật bằng cách di dời những đồ vật có thể gây sang chấn cho bệnh nhân ra xa.",
-      "Đặt một chiếc gối mỏng, mềm dưới đầu bệnh nhân.",
-      "Nới lỏng cổ áo, cà vạt, thắt lưng…"
+      "Theo dõi thời điểm bắt đầu và kết thúc cơn.",
+      "Dọn vật nguy hiểm và trấn an người bệnh khi họ tỉnh."
     ],
     "donts": [
-      "KHÔNG một số cách xử lý khi bị động kinh không phù hợp sẽ dễ làm tăng nguy hiểm cho người bệnh.",
-      "TUYỆT ĐỐI KHÔNG nên làm theo các thao tác dưới đây khi đang thực hiện sơ cứu cho người bị động kinh:.",
-      "KHÔNG cố gắng ngăn ngừa bệnh nhân cắn lưỡi bằng cách đưa bất cứ đồ vật nào vào miệng bệnh nhân (Nếu chẳng may cắn phải lưỡi lúc co giật, khi hết cơn đưa bệnh nhân vào bệnh viện…",
-      "KHÔNG đè hoặc cố giữ tay chân khi bệnh nhân co giật."
+      "Không ghì giữ người đang co giật.",
+      "Không đặt vật vào miệng hoặc cho ăn uống khi chưa hoàn toàn tỉnh."
+    ],
+    "sources": [
+      {
+        "name": "Epilepsy Foundation Australia — Sơ cứu cơn co giật",
+        "url": "https://epilepsyfoundation.org.au/understanding-epilepsy/seizure-first-aid/tonic-clonic-seizures/"
+      }
     ]
   },
   {
@@ -1376,47 +1321,49 @@
     "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "2 phút",
-    "standard": "Chuẩn Mayo Clinic",
+    "standard": "Tham khảo St John Ambulance",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
-    "shortDesc": "Ngất xỉu là tình trạng cơ thể mất ý thức đột ngột do lưu lượng máu đến não không đủ.",
-    "lead": "Ngất xỉu là tình trạng cơ thể mất ý thức đột ngột do lưu lượng máu đến não không đủ. Tình trạng ngất xỉu có thể xảy ra ở mọi độ tuổi. Vậy có những cách sơ cứu người bị ngất xỉu nào có thể áp dụng?",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu bạn ngất xỉu lâu, hay bị chấn thương, họ có thể hỗ trợ.",
+    "shortDesc": "Giúp người sắp ngất nằm xuống và kiểm tra nhịp thở nếu họ vẫn không đáp ứng.",
+    "lead": "Ngất thường chỉ kéo dài trong thời gian ngắn. Nếu người bệnh vẫn không đáp ứng, cần kiểm tra nhịp thở và gọi cấp cứu.",
+    "emergencyAlert": "Gọi 115 nếu người bệnh không tỉnh lại hoặc không thở bình thường. Làm theo hướng dẫn của nhân viên cấp cứu.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Fainting causes",
-        "desc": "Fainting causes, symptoms and treatment . (n.d.). https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/fainting/"
+        "title": "Giúp người bệnh nằm xuống",
+        "desc": "Nếu có thể, kê chân hơi cao. Đề nghị người xung quanh lùi ra để có không khí thoáng."
       },
       {
         "stepNumber": 2,
-        "title": "Fainting, First Aid Condition, Treatments and Pictures for",
-        "desc": "Fainting, First Aid Condition, Treatments and Pictures for – Skinsight . (2022, October 6). Skinsight. https://skinsight.com/skin-conditions/first-aid-fainting/"
+        "title": "Theo dõi khi tỉnh lại",
+        "desc": "Trấn an người bệnh. Khi họ thấy đỡ, giúp họ ngồi dậy từ từ trong vài phút."
       },
       {
         "stepNumber": 3,
-        "title": "Fainting",
-        "desc": "First aid . (2023, April 5). Mayo Clinic. https://www.mayoclinic.org/first-aid/first-aid-fainting/basics/art-20056606"
-      },
-      {
-        "stepNumber": 4,
-        "title": "Fainting treatment ",
-        "desc": "Fainting treatment . (2005, August 9). WebMD. https://www.webmd.com/first-aid/fainting-treatment"
+        "title": "Kiểm tra nếu vẫn không đáp ứng",
+        "desc": "Mở đường thở, kiểm tra nhịp thở và gọi 115. Nếu họ thở bình thường, đặt nằm nghiêng an toàn và tiếp tục theo dõi."
       }
     ],
     "dos": [
-      "Những triệu chứng cảnh báo ngất xỉu thường xảy ra rất nhanh.",
-      "Vì vậy, khi nhận thấy hơi choáng váng, hoa mắt, tay chân bị run, đổ mồ hôi,… bạn nên:.",
-      "Dừng ngay công việc đang làm lại;.",
-      "Nhanh chóng ngồi hoặc nằm xuống chỗ thoáng mát, có bóng râm. Hoặc bạn có thể ngồi ở tư thế gục đầu xuống giữa hai đầu gối."
+      "Giữ khu vực xung quanh thông thoáng.",
+      "Theo dõi mức tỉnh táo và nhịp thở."
     ],
     "donts": [
-      "KHÔNG tập trung đông quanh người ngất xỉu để họ có không gian hít thở.",
-      "KHÔNG châm kim vào các đầu ngón tay của người ngất xỉu để tránh nguy cơ nhiễm trùng.",
-      "KHÔNG vì vậy, người bệnh không nên chủ quan khi bị ngất xỉu đột ngột.",
-      "KHÔNG đặt nạn nhân nằm nghiêng đầu quay sang một bên nếu họ bị nôn, chảy máu từ miệng để tránh hít ngược chất nôn, máu gây ngạt thở."
+      "Không giúp người bệnh đứng lên ngay khi vừa tỉnh.",
+      "Không tụ tập sát quanh người bệnh."
+    ],
+    "sources": [
+      {
+        "name": "St John Ambulance — Sơ cứu khi ngất",
+        "url": "https://www.sja.org.uk/first-aid-advice/fainting/"
+      },
+      {
+        "name": "St John Ambulance — Tư thế nằm nghiêng an toàn",
+        "url": "https://www.sja.org.uk/first-aid-advice/recovery-position/"
+      }
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "so-cuu-khi-bi-ran-can-ran-doc",
     "title": "Sơ cứu khi bị rắn cắn (rắn độc):",
     "fullTitle": "Cách sơ cứu khi bị rắn cắn (rắn độc): Điều NÊN và KHÔNG nên làm",
@@ -1426,7 +1373,7 @@
     "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "3 phút",
-    "standard": "Tham khảo: ",
+    "standard": "Chưa ghi nhận nguồn cụ thể",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
     "shortDesc": "Trong số khoảng 3.000 loài rắn trên thế giới, chỉ có 15% – 20% loài có nọc độc hoặc chất tiết nước bọt độc hại cho con người.",
     "lead": "Trong số khoảng 3.000 loài rắn trên thế giới, chỉ có 15% – 20% loài có nọc độc hoặc chất tiết nước bọt độc hại cho con người. Việc t rang bị cách sơ cứu khi bị rắn cắn nhằm ngăn chặn chất độc từ nọc rắn phát tán và gây ra những hậu quả đáng tiếc,…",
@@ -1467,6 +1414,7 @@
     ]
   },
   {
+    "needsMedicalReview": true,
     "id": "nghiem-phap-heimlich-la-gi-cach",
     "title": "Nghiệm pháp Heimlich là gì? Cách",
     "fullTitle": "Nghiệm pháp Heimlich là gì? Cách thực hiện",
@@ -1476,7 +1424,7 @@
     "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "2 phút",
-    "standard": "Tham khảo: ",
+    "standard": "Chưa ghi nhận nguồn cụ thể",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
     "shortDesc": "Nghiệm pháp Heimlich là một biện pháp cấp cứu đầu tiên nhằm loại bỏ dị vật gây tắc nghẽn đường thở.",
     "lead": "Nghiệm pháp Heimlich là một biện pháp cấp cứu đầu tiên nhằm loại bỏ dị vật gây tắc nghẽn đường thở. Các dị vật thường gây tắc nghẽn bao gồm thức ăn, đồ chơi và các vật dụng khác.",
@@ -1597,7 +1545,7 @@
     "categoryLabel": "Sinh hoạt",
     "badgeType": "Phổ biến",
     "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
-    "criticalLevel": "moderate",
+    "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
@@ -1725,7 +1673,7 @@
     "categoryLabel": "Sinh hoạt",
     "badgeType": "Phổ biến",
     "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
-    "criticalLevel": "moderate",
+    "criticalLevel": "medium",
     "readTime": "4 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
