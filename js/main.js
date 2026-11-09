@@ -24,7 +24,38 @@ const FALLBACK_HEADER_HTML = `
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html">Trang chủ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="topics" href="topics.html">Thư viện sơ cấp cứu</a>
-      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="quiz" href="quiz.html">Trắc nghiệm</a>
+
+      <!-- Dropdown Luyện tập & Phản xạ -->
+      <div class="relative group" id="practice-dropdown-container">
+        <button id="practice-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full inline-flex items-center gap-1 focus:outline-none cursor-pointer" data-page="practice">
+          <span>Luyện tập</span>
+          <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+        </button>
+        <div class="hidden group-hover:flex hover:flex absolute left-0 top-full mt-1.5 w-64 rounded-2xl bg-surface-container-lowest shadow-2xl border border-outline-variant/30 p-2 z-50 flex-col gap-1 transition-all">
+          <a href="flashcards.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="flashcards">
+            <span class="material-symbols-outlined text-primary text-[20px]">style</span>
+            <div class="flex flex-col">
+              <span class="font-bold">Flashcard 3D</span>
+              <span class="text-xs text-on-surface-variant font-normal">Lật thẻ phản xạ trực quan</span>
+            </div>
+          </a>
+          <a href="timed-practice.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="timed-practice">
+            <span class="material-symbols-outlined text-secondary text-[20px]">timer</span>
+            <div class="flex flex-col">
+              <span class="font-bold">Thử thách 4 Phút Vàng</span>
+              <span class="text-xs text-on-surface-variant font-normal">Đồng hồ đếm ngược 240s</span>
+            </div>
+          </a>
+          <a href="quiz.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="quiz">
+            <span class="material-symbols-outlined text-tertiary text-[20px]">quiz</span>
+            <div class="flex flex-col">
+              <span class="font-bold">Trắc nghiệm tình huống</span>
+              <span class="text-xs text-on-surface-variant font-normal">10 case-study có giải thích y khoa</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="contact" href="contact.html">Liên hệ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html">Về MedFA</a>
     </nav>
@@ -74,13 +105,31 @@ const FALLBACK_HEADER_HTML = `
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
-    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="quiz" href="quiz.html">
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-primary text-[20px]">quiz</span>
-        <span>Trắc nghiệm sơ cứu</span>
-      </div>
-      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
-    </a>
+    <!-- Luyện tập & Phản xạ Group -->
+    <div class="rounded-xl bg-surface-container-low/70 p-2 flex flex-col gap-1 border border-outline-variant/20 my-1">
+      <span class="text-[10px] font-bold text-primary tracking-wider uppercase px-2 py-0.5">Luyện tập & Phản xạ</span>
+      <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="flashcards" href="flashcards.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-primary text-[18px]">style</span>
+          <span class="text-sm">Flashcard 3D</span>
+        </div>
+        <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+      </a>
+      <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="timed-practice" href="timed-practice.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-secondary text-[18px]">timer</span>
+          <span class="text-sm">Thử thách 4 Phút Vàng</span>
+        </div>
+        <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+      </a>
+      <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="quiz" href="quiz.html">
+        <div class="flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-tertiary text-[18px]">quiz</span>
+          <span class="text-sm">Trắc nghiệm tình huống</span>
+        </div>
+        <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+      </a>
+    </div>
     <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="contact" href="contact.html">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-secondary text-[20px]">contact_support</span>
@@ -344,6 +393,10 @@ function getCurrentPageKey() {
   if (path.includes('social-impact')) return 'social-impact';
   if (path.includes('topic-detail')) return 'topics';
   if (path.includes('topics')) return 'topics';
+  if (path.includes('flashcards')) return 'flashcards';
+  if (path.includes('timed-practice')) return 'timed-practice';
+  if (path.includes('quiz')) return 'quiz';
+  if (path.includes('contact')) return 'contact';
   if (path.includes('about')) return 'about';
   return 'home';
 }
@@ -353,12 +406,13 @@ function getCurrentPageKey() {
  */
 function highlightActiveNav() {
   const currentKey = getCurrentPageKey();
+  const isPracticePage = ['flashcards', 'timed-practice', 'quiz'].includes(currentKey);
 
   // Desktop links
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     const page = link.getAttribute('data-page');
-    if (page === currentKey) {
+    if (page === currentKey || (page === 'practice' && isPracticePage)) {
       link.setAttribute('aria-current', 'page');
     } else {
       link.removeAttribute('aria-current');

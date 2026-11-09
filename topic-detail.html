@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
@@ -74,6 +74,12 @@
                     <span>Đọc 2 phút</span>
                   </span>
                 </div>
+                <!-- Bookmark button -->
+                <button id="detail-bookmark-btn" type="button" class="btn-bookmark inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-outline-variant/30 text-xs font-bold hover:bg-surface-container transition-colors text-on-surface cursor-pointer shadow-xs" title="Lưu bài học này">
+                  <span class="material-symbols-outlined text-[18px] text-outline">bookmark_add</span>
+                  <span class="bookmark-text">Lưu bài học</span>
+                </button>
+              </div>
               </div>
 
               <!-- Main Title & Lead -->
@@ -317,9 +323,53 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript Modules -->
+  <script src="js/storage.js"></script>
   <script src="js/data-loader.js"></script>
+  <script src="js/chatbot-gemini.js"></script>
   <script src="js/main.js"></script>
   <script>
+    
+    function injectTopicSchema(topic) {
+      if (!topic) return;
+      const existing = document.getElementById('dynamic-topic-schema');
+      if (existing) existing.remove();
+
+      const schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "MedicalWebPage",
+            "@id": window.location.href + "#webpage",
+            "url": window.location.href,
+            "name": topic.fullTitle || topic.title,
+            "description": topic.shortDesc || topic.lead,
+            "medicalAudience": "Patient",
+            "about": {
+              "@type": "MedicalCondition",
+              "name": topic.title
+            }
+          },
+          {
+            "@type": "HowTo",
+            "name": "Quy trình sơ cứu: " + (topic.fullTitle || topic.title),
+            "description": topic.lead || topic.shortDesc,
+            "step": Array.isArray(topic.steps) ? topic.steps.map((s, idx) => ({
+              "@type": "HowToStep",
+              "position": s.stepNumber || (idx + 1),
+              "name": s.title,
+              "text": s.desc
+            })) : []
+          }
+        ]
+      };
+
+      const scriptEl = document.createElement('script');
+      scriptEl.id = 'dynamic-topic-schema';
+      scriptEl.type = 'application/ld+json';
+      scriptEl.textContent = JSON.stringify(schema, null, 2);
+      document.head.appendChild(scriptEl);
+    }
+
     async function loadMedicalDisclaimer(topic) {
       const disclaimer = document.getElementById('medical-disclaimer');
       try {
@@ -363,6 +413,14 @@
       const topic = await window.DataLoader?.getTopicById(topicId);
       const matchesTopic = topic?.id === topicId;
       loadMedicalDisclaimer(matchesTopic ? topic : null);
+      if (matchesTopic && topic) {
+        injectTopicSchema(topic);
+        const bBtn = document.getElementById('detail-bookmark-btn');
+        if (bBtn) {
+          bBtn.setAttribute('data-topic-id', topic.id);
+          if (window.Storage) window.Storage.syncAllBookmarkButtons();
+        }
+      }
 
       if (!matchesTopic) {
         const title = 'Chủ đề hiện không khả dụng';

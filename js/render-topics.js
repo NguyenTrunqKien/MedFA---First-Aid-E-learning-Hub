@@ -31,10 +31,15 @@ const TopicsRenderer = (() => {
             <div class="w-12 h-12 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-300 shadow-sm">
               ${topic.iconSvg || '<span class="material-symbols-outlined text-[24px]">medical_services</span>'}
             </div>
-            <!-- Status Badge -->
-            <span class="px-space-md py-1 rounded-full font-label-md text-label-md ${topic.badgeClass || 'bg-surface-container-high text-on-surface-variant'} font-semibold tracking-tight">
-              ${topic.badgeType || 'Sơ cứu'}
-            </span>
+            <!-- Status Badge & Bookmark -->
+            <div class="flex items-center gap-1.5">
+              <span class="px-space-md py-1 rounded-full font-label-md text-label-md ${topic.badgeClass || 'bg-surface-container-high text-on-surface-variant'} font-semibold tracking-tight">
+                ${topic.badgeType || 'Sơ cứu'}
+              </span>
+              <button type="button" class="btn-bookmark w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-high text-outline hover:text-primary transition-colors focus:outline-none" data-topic-id="${topic.id}" title="Lưu bài học" aria-label="Lưu bài học" onclick="event.stopPropagation();">
+                <span class="material-symbols-outlined text-[19px]">bookmark_add</span>
+              </button>
+            </div>
           </div>
 
           <!-- Title -->
@@ -94,6 +99,9 @@ const TopicsRenderer = (() => {
 
     const htmlContent = topics.map(topic => createTopicCardHTML(topic)).join('');
     container.innerHTML = htmlContent;
+    if (window.Storage && typeof window.Storage.syncAllBookmarkButtons === 'function') {
+      window.Storage.syncAllBookmarkButtons();
+    }
   }
 
   /**
@@ -103,7 +111,12 @@ const TopicsRenderer = (() => {
     let result = [...allTopics];
 
     // 1. Filter by category
-    if (currentCategory && currentCategory !== 'all') {
+    if (currentCategory === 'bookmarks') {
+      const bookmarks = (window.Storage && typeof window.Storage.getBookmarks === 'function')
+        ? window.Storage.getBookmarks()
+        : [];
+      result = result.filter(t => bookmarks.includes(t.id));
+    } else if (currentCategory && currentCategory !== 'all') {
       result = result.filter(t => t.category === currentCategory);
     }
 

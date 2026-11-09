@@ -19,6 +19,38 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- SEO Meta Tags & Open Graph -->
+  <meta name="description" content="MedFA - Nền tảng giáo dục sơ cấp cứu y tế phi lợi nhuận vì cộng đồng, rèn luyện phản xạ trong 4 phút vàng chuẩn AHA & ERC.">
+  <meta property="og:title" content="MedFA - Cẩm nang & Phản xạ Sơ cấp cứu Y tế Vì Cộng Đồng">
+  <meta property="og:description" content="Học kỹ năng sơ cấp cứu, xử trí chính xác trong 4 phút vàng cứu sống người thân. Thư viện chuẩn y khoa, Flashcard 3D và thử thách đếm ngược.">
+  <meta property="og:image" content="assets/images/hero-cpr.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nguyentrunqkien.github.io/MedFA/#organization",
+        "name": "MedFA - Medical First Aid Educational Hub",
+        "url": "https://nguyentrunqkien.github.io/MedFA/",
+        "logo": "assets/icons/logo.svg",
+        "description": "Nền tảng giáo dục sơ cấp cứu y tế phi lợi nhuận vì cộng đồng theo khuyến cáo AHA và ERC."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nguyentrunqkien.github.io/MedFA/#website",
+        "url": "https://nguyentrunqkien.github.io/MedFA/",
+        "name": "MedFA",
+        "description": "Cẩm nang và phản xạ sơ cấp cứu y tế trong 4 phút vàng vì cộng đồng",
+        "publisher": { "@id": "https://nguyentrunqkien.github.io/MedFA/#organization" },
+        "inLanguage": "vi-VN"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-background font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="home">
 
@@ -158,6 +190,80 @@
                 <p class="text-sm text-on-surface-variant font-medium">Nạn nhân ngừng tim tử vong trước khi kịp đến bệnh viện</p>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+            <!-- SECTION: INTERACTIVE PRACTICE HUB - 4 PHÚT VÀNG -->
+      <section class="w-full py-16 bg-surface-container-low border-y border-outline-variant/30">
+        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-secondary-container/50 text-secondary text-xs font-bold uppercase tracking-wider mb-3">
+              <span class="material-symbols-outlined text-[15px]">bolt</span>
+              Luyện phản xạ trong "4 Phút Vàng"
+            </span>
+            <h2 class="text-2xl md:text-4xl font-extrabold text-primary tracking-tight">
+              Biến Kiến Thức Thành Phản Xạ Sinh Tử
+            </h2>
+            <p class="text-on-surface-variant text-base mt-2">
+              Não bộ chỉ chịu được tối đa 4 phút thiếu oxy. Hãy rèn luyện phản xạ cấp cứu tức thì qua 3 chế độ tương tác chuyên sâu.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1: Flashcard 3D -->
+            <a href="flashcards.html" class="group bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/20 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">style</span>
+                </div>
+                <span class="text-xs font-bold text-primary uppercase tracking-wider">Thị giác không gian</span>
+                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-primary transition-colors">Flashcard Sơ Cứu 3D</h3>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Lật thẻ 3D hai mặt mô phỏng tình huống khẩn cấp và hành động xử trí sống còn. Hỗ trợ phím tắt và chế độ luyện nhanh 10 thẻ.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center justify-between text-primary font-bold text-sm">
+                <span>Luyện thẻ ngay</span>
+                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </a>
+
+            <!-- Card 2: Thử thách 4 Phút Vàng -->
+            <a href="timed-practice.html" class="group bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/20 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">timer</span>
+                </div>
+                <span class="text-xs font-bold text-secondary uppercase tracking-wider">Áp lực đếm ngược</span>
+                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-secondary transition-colors">Thử Thách 4 Phút Vàng</h3>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Đồng hồ đếm ngược 240 giây liên tục thử thách phản xạ với 12 ca cấp cứu sinh tử. Kiểm tra xem bạn có đủ bình tĩnh cứu người?
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center justify-between text-secondary font-bold text-sm">
+                <span>Vào thử thách</span>
+                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </a>
+
+            <!-- Card 3: Trắc nghiệm tình huống -->
+            <a href="quiz.html" class="group bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/20 flex flex-col justify-between hover:-translate-y-1">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-tertiary/10 text-tertiary flex items-center justify-center mb-4 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">quiz</span>
+                </div>
+                <span class="text-xs font-bold text-tertiary uppercase tracking-wider">Đánh giá chuẩn AHA</span>
+                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-tertiary transition-colors">Trắc Nghiệm Tình Huống</h3>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  10 câu hỏi case-study thực tế có giải thích cơ chế y khoa ngay lập tức. Tính điểm, cấp huy hiệu và lưu tiến độ học tập.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center justify-between text-tertiary font-bold text-sm">
+                <span>Làm bài thi</span>
+                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -406,6 +512,8 @@
   <div id="footer-placeholder"></div>
 
   <!-- Main JavaScript File -->
+  <script src="js/storage.js"></script>
+  <script src="js/chatbot-gemini.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
