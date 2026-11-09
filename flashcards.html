@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flashcard 3D | MedFA</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- MedFA Modular CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/interactive-3d.css">
+  
+  <script src="js/data-loader.js" defer></script>
+  <script src="js/flashcard-controller.js" defer></script>
+</head>
+<body class="bg-background font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="flashcards">
+  <div id="header-placeholder"></div>
+  <main class="practice-page flex-1">
+    <div class="practice-shell">
+      <div class="practice-intro">
+        <span class="practice-eyebrow">MEDFA · LUYỆN TẬP PHẢN XẠ</span>
+        <h1>Flashcard Sơ Cứu 3D</h1>
+        <p>Thử phán đoán hành động sơ cứu khẩn cấp trước khi lật thẻ kiểm tra.</p>
+      </div>
+
+      <!-- Bộ chọn 2 chế độ học: Luyện nhanh 10 thẻ vs Tất cả dữ liệu -->
+      <div class="deck-mode-wrapper">
+        <div class="deck-mode-selector" role="tablist" aria-label="Chọn chế độ học">
+          <button type="button" class="mode-tab is-active" id="mode-quick" role="tab" aria-selected="true" title="Luyện nhanh 10 tình huống ngẫu nhiên">
+            <span class="material-symbols-outlined text-[16px]">bolt</span> Luyện nhanh (10 thẻ)
+          </button>
+          <button type="button" class="mode-tab" id="mode-all" role="tab" aria-selected="false" title="Ôn tập toàn bộ dữ liệu">
+            <span class="material-symbols-outlined text-[16px]">library_books</span> Tất cả dữ liệu
+          </button>
+        </div>
+      </div>
+
+      <section class="deck" aria-label="Bộ thẻ luyện tập">
+        <div class="deck-header">
+          <span class="deck-tag" id="card-category">Phản xạ sơ cấp cứu</span>
+          <span id="card-count" aria-live="polite">1 / 11</span>
+          <button id="shuffle" type="button" class="btn-icon-shuffle" title="Xáo trộn ngẫu nhiên bộ thẻ (Phím S)" aria-label="Xáo trộn bộ thẻ">
+            <span class="material-symbols-outlined text-[18px]">shuffle</span>
+          </button>
+        </div>
+        <progress id="card-progress" aria-label="Vị trí trong bộ thẻ"></progress>
+
+        <div id="card" class="flashcard" role="button" tabindex="0" aria-pressed="false" aria-label="Lật thẻ">
+          <div class="card-inner">
+            <!-- Mặt trước -->
+            <div class="card-face card-front-face">
+              <div class="card-face-header">
+                <span class="card-badge badge-front">
+                  <span class="material-symbols-outlined text-[15px]">medical_services</span> Triệu chứng & Tình huống
+                </span>
+              </div>
+              <div class="card-face-body">
+                <strong id="card-front"></strong>
+                <p id="card-front-desc" class="card-desc"></p>
+              </div>
+              <div class="card-face-footer">
+                <span class="card-hint">
+                  <span class="material-symbols-outlined text-[14px]">touch_app</span> Bấm vào thẻ hoặc phím <kbd>↑</kbd> <kbd>↓</kbd> để lật
+                </span>
+              </div>
+            </div>
+
+            <!-- Mặt sau -->
+            <div class="card-face card-back card-back-face">
+              <div class="card-face-header">
+                <span class="card-badge badge-back">
+                  <span class="material-symbols-outlined text-[15px]">health_and_safety</span> Xử trí khẩn cấp sống còn
+                </span>
+              </div>
+              <div class="card-face-body">
+                <strong id="card-back"></strong>
+                <div id="card-back-steps" class="card-steps-container"></div>
+                <p id="card-back-desc" class="card-desc" style="display:none;"></p>
+              </div>
+              <div class="card-face-footer">
+                <span class="card-hint">
+                  <span class="material-symbols-outlined text-[14px]">cached</span> Bấm để quay lại câu hỏi
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mức độ 1: Thẻ Tổng kết Thành tích (Summary Celebration Face) -->
+          <div id="card-completion" class="card-completion-face" style="display: none;">
+            <div class="completion-badge-wrap">
+              <span class="completion-badge">
+                <span class="material-symbols-outlined text-[15px]">emoji_events</span> Hoàn thành phiên học
+              </span>
+            </div>
+            
+            <div class="completion-body">
+              <div class="completion-icon-pulse">
+                <span class="material-symbols-outlined text-[44px] text-emerald-600">verified</span>
+              </div>
+              <h3 id="completion-title" class="completion-title">Tuyệt vời! Bạn đã hoàn thành 10 phản xạ!</h3>
+              <p id="completion-subtitle" class="completion-subtitle">Bạn đã làm chủ các thao tác xử trí khẩn cấp sống còn. Hãy tiếp tục duy trì phản xạ mỗi ngày!</p>
+              
+              <div class="completion-stats">
+                <div class="stat-pill">
+                  <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                  <span id="completion-stat-count">10 / 10 Thẻ</span>
+                </div>
+                <div class="stat-pill stat-pill-success">
+                  <span class="material-symbols-outlined text-[16px] text-emerald-600">bolt</span>
+                  <span>Phản xạ chuẩn 100%</span>
+                </div>
+              </div>
+
+              <div class="completion-card-actions">
+                <button type="button" id="btn-completion-repeat" class="btn-completion btn-completion-primary">
+                  <span class="material-symbols-outlined text-[18px]">autorenew</span>
+                  <span id="btn-completion-repeat-text">Luyện 10 thẻ khác</span>
+                </button>
+                <button type="button" id="btn-completion-secondary" class="btn-completion btn-completion-secondary">
+                  <span class="material-symbols-outlined text-[18px]" id="btn-completion-secondary-icon">library_books</span>
+                  <span id="btn-completion-secondary-text">Học tất cả dữ liệu</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thanh điều khiển Quizlet Style -->
+        <div class="deck-actions-quizlet">
+          <button id="previous" type="button" class="ctrl-btn ctrl-prev" title="Thẻ trước (Phím ←)" aria-label="Thẻ trước">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          
+          <button id="flip" type="button" class="ctrl-btn ctrl-flip" aria-controls="card" title="Lật thẻ (Phím ↑ hoặc ↓)">
+            <span class="material-symbols-outlined icon-flip">sync</span>
+            <span id="flip-text">Lật thẻ</span>
+          </button>
+
+          <button id="next" type="button" class="ctrl-btn ctrl-next" title="Thẻ tiếp (Phím →)" aria-label="Thẻ tiếp">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Hộp thông báo hoàn thành phiên 10 thẻ -->
+        <div id="quick-session-done" class="session-complete-box" style="display:none;">
+          <div class="session-complete-content">
+            <span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+            <span>Đã hoàn thành 10 thẻ luyện nhanh!</span>
+          </div>
+          <div class="session-complete-actions">
+            <button type="button" id="btn-next-batch" class="btn-batch">
+              <span class="material-symbols-outlined text-[16px]">autorenew</span> Luyện 10 thẻ khác
+            </button>
+            <button type="button" id="btn-switch-all" class="btn-batch btn-batch-outline">
+              <span class="material-symbols-outlined text-[16px]">library_books</span> Xem tất cả dữ liệu
+            </button>
+          </div>
+        </div>
+
+        <!-- Hướng dẫn phím tắt tiện lợi -->
+        <div class="keyboard-helper" aria-hidden="true">
+          <span><kbd>←</kbd> Trước</span>
+          <span><kbd>↑</kbd> <kbd>↓</kbd> Lật thẻ</span>
+          <span><kbd>→</kbd> Tiếp theo</span>
+          <span><kbd>S</kbd> Xáo trộn</span>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- Mức độ 2: Canvas hiệu ứng pháo hoa giấy (Micro Confetti) -->
+  <canvas id="confetti-canvas" class="confetti-canvas" style="display: none;" aria-hidden="true"></canvas>
+  <div id="footer-placeholder"></div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

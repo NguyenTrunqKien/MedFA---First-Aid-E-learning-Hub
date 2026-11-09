@@ -1,0 +1,482 @@
+[
+  {
+    "id": "tp-01",
+    "topicId": "ngung-tuan-hoan-cpr",
+    "topicTitle": "Ngừng tuần hoàn (Ép tim CPR)",
+    "prompt": "Thời gian vàng tối đa để cấp cứu hồi sinh tế bào não trước khi bị tổn thương không thể hồi phục khi ngừng tuần hoàn là bao lâu?",
+    "options": [
+      "4 phút",
+      "10 phút",
+      "15 phút",
+      "30 phút"
+    ],
+    "answer": 0,
+    "explanation": "Theo cẩm nang MedFA và khuyến cáo ERC/AHA, não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu tim ngừng đập.",
+    "standard": "Chuẩn ERC & AHA 2025"
+  },
+  {
+    "id": "tp-02",
+    "topicId": "ngung-tuan-hoan-cpr",
+    "topicTitle": "Ngừng tuần hoàn (Ép tim CPR)",
+    "prompt": "Khi thực hiện ép tim ngoài lồng ngực (CPR) cho người lớn theo khuyến cáo, tần số ép ngực đạt chuẩn là bao nhiêu?",
+    "options": [
+      "60 - 80 lần/phút",
+      "100 - 120 lần/phút",
+      "130 - 150 lần/phút",
+      "Tùy theo nhịp thở của người sơ cứu"
+    ],
+    "answer": 1,
+    "explanation": "Tần số ép tim chuẩn là 100 - 120 lần/phút, độ sâu 5 - 6 cm đối với người lớn và phải để lồng ngực nở hoàn toàn sau mỗi lần ép.",
+    "standard": "Chuẩn ERC & AHA 2025"
+  },
+  {
+    "id": "tp-03",
+    "topicId": "ngung-tuan-hoan-cpr",
+    "topicTitle": "Ngừng tuần hoàn (Ép tim CPR)",
+    "prompt": "Trong quy trình hồi sinh tim phổi (CPR) kết hợp ép tim và thổi ngạt, tỉ lệ chu kỳ chuẩn là:",
+    "options": [
+      "15 lần ép tim : 2 lần thổi ngạt",
+      "30 lần ép tim : 2 lần thổi ngạt",
+      "30 lần ép tim : 5 lần thổi ngạt",
+      "50 lần ép tim : 1 lần thổi ngạt"
+    ],
+    "answer": 1,
+    "explanation": "Chu kỳ chuẩn theo AHA/ERC là 30 lần ép tim liên tục xen kẽ 2 lần thổi ngạt hiệu quả, gián đoạn ép tim không quá 10 giây.",
+    "standard": "Chuẩn ERC & AHA 2025"
+  },
+  {
+    "id": "tp-04",
+    "topicId": "hoc-di-vat",
+    "topicTitle": "Hóc dị vật (Nghẹn)",
+    "prompt": "Phát hiện một người lớn đang bị nghẹn thức ăn nhưng vẫn còn nói được và đang cố ho mạnh. Bạn nên làm gì?",
+    "options": [
+      "Lao vào thực hiện nghiệm pháp Heimlich ngay lập tức",
+      "Dùng ngón tay móc sâu vào họng để tìm dị vật",
+      "Khuyến khích nạn nhân tiếp tục ho mạnh, không can thiệp đập lưng hay ép bụng",
+      "Cho nạn nhân uống ngay một cốc nước đầy"
+    ],
+    "answer": 2,
+    "explanation": "Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được, phản xạ ho tự nhiên là cách tống dị vật tốt nhất. Khuyến khích ho mạnh, tuyệt đối không vỗ lưng hay ép bụng lúc này.",
+    "standard": "Chuẩn ERC & AHA 2025"
+  },
+  {
+    "id": "tp-05",
+    "topicId": "hoc-di-vat",
+    "topicTitle": "Hóc dị vật (Nghẹn)",
+    "prompt": "Khi thực hiện nghiệm pháp Heimlich cho người lớn bị tắc nghẽn đường thở hoàn toàn, vị trí đặt nắm đấm tay là:",
+    "options": [
+      "Chính giữa xương ức",
+      "Vùng thượng vị (trên rốn, dưới mũi ức)",
+      "Dưới rốn 5cm",
+      "Vùng hạ sườn phải"
+    ],
+    "answer": 1,
+    "explanation": "Nắm đấm đặt tại vùng thượng vị (trên rốn và dưới mũi ức), tay kia bọc lấy và giật mạnh dứt khoát theo hướng VÀO TRONG VÀ LÊN TRÊN.",
+    "standard": "Chuẩn ERC & AHA 2025"
+  },
+  {
+    "id": "tp-06",
+    "topicId": "hoc-di-vat-o-tre-em",
+    "topicTitle": "Hóc dị vật ở trẻ em",
+    "prompt": "Trẻ sơ sinh dưới 1 tuổi bị sặc dị vật tím tái, không khóc được. Hành động nào sau đây bị CẤM tuyệt đối vì gây nguy cơ dập vỡ nội tạng?",
+    "options": [
+      "Thực hiện 5 lần vỗ lưng",
+      "Thực hiện 5 lần ấn ngực",
+      "Thực hiện nghiệm pháp ép bụng Heimlich",
+      "Gọi cấp cứu 115"
+    ],
+    "answer": 2,
+    "explanation": "Đối với trẻ dưới 1 tuổi, gan và các cơ quan nội tạng còn rất non nớt. TUYỆT ĐỐI KHÔNG ép bụng Heimlich, chỉ dùng chu kỳ 5 vỗ lưng và 5 ấn ngực.",
+    "standard": "Chuẩn ERC & AHA 2025"
+  },
+  {
+    "id": "tp-07",
+    "topicId": "bong-cap-do-1-2",
+    "topicTitle": "Bỏng cấp độ 1 & 2",
+    "prompt": "Bị bỏng nước sôi ở cẳng tay xuất hiện các vết phồng rộp. Cách xử trí làm mát tại chỗ đúng chuẩn y khoa là gì?",
+    "options": [
+      "Xối nhẹ dưới vòi nước mát sạch (15-25°C) liên tục 15-20 phút",
+      "Chườm trực tiếp đá lạnh đóng băng lên vết bỏng",
+      "Bôi ngay kem đánh răng hoặc mỡ trăn để làm dịu",
+      "Chọc thủng các bọng nước để thoát dịch nhanh"
+    ],
+    "answer": 0,
+    "explanation": "Làm mát vết bỏng bằng nước sạch chảy nhẹ trong 15-20 phút giúp hạ nhiệt mô sâu. Tránh đá lạnh (gây bỏng lạnh hoại tử) và không bôi kem đánh răng, mỡ trăn.",
+    "standard": "Chuẩn Hội Bỏng Quốc tế (ISBI)"
+  },
+  {
+    "id": "tp-08",
+    "topicId": "chay-mau-nghiem-trong",
+    "topicTitle": "Chảy máu nghiêm trọng",
+    "prompt": "Khi đang băng ép cầm máu cho vết thương sâu ở cẳng tay, nếu thấy máu vẫn tiếp tục thấm đỏ qua lớp băng gạc đầu tiên, bạn nên làm gì?",
+    "options": [
+      "Tháo toàn bộ lớp gạc cũ ra để kiểm tra miệng vết thương",
+      "Đặt thêm lớp gạc mới chèn lên trên lớp cũ và tiếp tục quấn băng ép chặt hơn",
+      "Rắc bột cà phê hoặc thuốc lá để cầm máu",
+      "Nới lỏng băng để máu lưu thông tốt hơn"
+    ],
+    "answer": 1,
+    "explanation": "Tuyệt đối KHÔNG tháo lớp băng cũ vì sẽ làm vỡ các cục máu đông đang hình thành. Hãy đặt thêm lớp gạc mới lên trên và tiếp tục đè ép cố định.",
+    "standard": "Chuẩn IFRC / Hội Chữ Thập Đỏ"
+  },
+  {
+    "id": "tp-09",
+    "topicId": "chay-mau-va-cam-mau",
+    "topicTitle": "Chảy máu và cầm máu",
+    "prompt": "Khi nào người sơ cứu bắt buộc phải sử dụng phương pháp đặt Ga-rô (Tourniquet)?",
+    "options": [
+      "Mọi vết thương chảy máu ở tay chân",
+      "Chỉ khi chảy máu động mạch dữ dội phun thành tia hoặc đứt lìa chi mà băng ép trực tiếp không kiểm soát được",
+      "Vết trầy xước chảy máu rỉ rỉ ngoài da",
+      "Chảy máu ở vùng đầu và cổ"
+    ],
+    "answer": 1,
+    "explanation": "Ga-rô là biện pháp cứu mạng cuối cùng chỉ áp dụng cho vết thương chi chảy máu ồ ạt đe dọa tính mạng (phun tia, đứt lìa) khi đè ép trực tiếp thất bại.",
+    "standard": "Chuẩn IFRC / Hội Chữ Thập Đỏ"
+  },
+  {
+    "id": "tp-10",
+    "topicId": "co-giat-dong-kinh",
+    "topicTitle": "Co giật & Động kinh",
+    "prompt": "Gặp nạn nhân đang lên cơn co giật dữ dội, hành vi nào sau đây TUYỆT ĐỐI KHÔNG ĐƯỢC LÀM?",
+    "options": [
+      "Kê đệm mềm dưới đầu nạn nhân và gạt bỏ các vật sắc nhọn xung quanh",
+      "Cố gắng nhét thìa, đũa, chanh hoặc ngón tay vào miệng nạn nhân",
+      "Nới lỏng cổ áo và thắt lưng của nạn nhân",
+      "Bấm giờ theo dõi thời gian cơn co giật diễn ra"
+    ],
+    "answer": 1,
+    "explanation": "Nạn nhân không thể tự cắn đứt lưỡi khi co giật. Nhét vật cứng vào miệng có nguy cơ gãy răng, rách họng, tắc nghẽn đường thở hoặc cắn đứt ngón tay người cứu.",
+    "standard": "Chuẩn Hiệp hội Động kinh Quốc tế"
+  },
+  {
+    "id": "tp-11",
+    "topicId": "dot-quy",
+    "topicTitle": "Đột quỵ",
+    "prompt": "Quy tắc F.A.S.T dùng để nhận diện nhanh cơn Đột quỵ bao gồm những dấu hiệu nào?",
+    "options": [
+      "Face (Méo mặt), Arms (Yếu liệt tay chân), Speech (Nói khó/ngọng), Time (Thời gian vàng gọi 115)",
+      "Fever (Sốt cao), Allergy (Dị ứng), Shock (Sốc), Tremor (Run tay)",
+      "Food (Ngộ độc), Airway (Tắc thở), Skin (Tái nhợt), Temperature (Hạ thân nhiệt)",
+      "Fracture (Gãy xương), Ache (Đau đầu), Sleep (Mơ màng), Tension (Tăng huyết áp)"
+    ],
+    "answer": 0,
+    "explanation": "FAST là bộ quy tắc chuẩn quốc tế: F - Face (cười lệch mặt), A - Arms (yếu một bên tay), S - Speech (nói khó, phát âm không rõ), T - Time (khẩn cấp gọi 115).",
+    "standard": "Chuẩn Hội Đột Quỵ Thế Giới (WSO)"
+  },
+  {
+    "id": "tp-12",
+    "topicId": "duoi-nuoc-o-tre-em",
+    "topicTitle": "Đuối nước ở trẻ em",
+    "prompt": "Sau khi vớt một nạn nhân đuối nước ngừng thở lên bờ cát, hành vi sai lầm nguy hiểm nào cần TUYỆT ĐỐI TRÁNH?",
+    "options": [
+      "Lập tức tiến hành khai thông đường thở và hà hơi thổi ngạt",
+      "Ép tim ngoài lồng ngực kết hợp thổi ngạt",
+      "Vác nạn nhân chạy vòng quanh để xốc nước ra khỏi phổi",
+      "Gọi hỗ trợ y tế 115 ngay lập tức"
+    ],
+    "answer": 2,
+    "explanation": "Hành động vác chạy xốc nước làm chậm trễ thời gian vàng hồi sức tim phổi CPR và có thể khiến dịch dạ dày trào ngược lọt vào đường thở gây ngạt thở thứ phát.",
+    "standard": "Chuẩn Hiệp hội Cứu sinh Quốc tế (ILS)"
+  },
+  {
+    "id": "tp-13",
+    "topicId": "dien-giat",
+    "topicTitle": "Điện giật",
+    "prompt": "Phát hiện nạn nhân bị điện giật tại nhà đang dính chặt vào dây điện hở, hành động ĐẦU TIÊN bắt buộc phải làm là:",
+    "options": [
+      "Lao vào dùng hai tay kéo nạn nhân ra ngay",
+      "Ngắt ngay nguồn điện (cầu dao, aptomat) hoặc dùng vật liệu cách điện khô gạt dây điện ra",
+      "Hô hấp nhân tạo ngay tại chỗ khi dây điện còn cắm",
+      "Tạt nước lạnh vào hiện trường để dập tắt tia lửa"
+    ],
+    "answer": 1,
+    "explanation": "An toàn cho người sơ cứu là nguyên tắc số 1. Phải ngắt cầu dao hoặc dùng vật cách điện khô (gậy gỗ khô, chổi nhựa) tách nạn nhân ra khỏi nguồn điện trước khi chạm vào.",
+    "standard": "Chuẩn An toàn Điện lực & Cấp cứu"
+  },
+  {
+    "id": "tp-14",
+    "topicId": "gay-xuong",
+    "topicTitle": "Gãy xương",
+    "prompt": "Nguyên tắc sơ cứu quan trọng nhất đối với một trường hợp nghi ngờ gãy kín xương cẳng chân là gì?",
+    "options": [
+      "Cố định bất động chi gãy qua 2 khớp lân cận (khớp gối và khớp cổ chân) trước khi vận chuyển",
+      "Cố gắng nắn bẻ đầu xương gãy cho thẳng trục ngay tại hiện trường",
+      "Cho nạn nhân đứng dậy đi thử để đánh giá mức độ đau",
+      "Chườm nóng và xoa bóp dầu cao liên tục"
+    ],
+    "answer": 0,
+    "explanation": "Nguyên tắc bất động xương gãy là nẹp cố định qua 2 khớp liền kề (khớp trên và khớp dưới ổ gãy). Tuyệt đối không nắn chỉnh xương vì có thể đâm thủng mạch máu và biến gãy kín thành gãy hở.",
+    "standard": "Chuẩn Chấn thương Chỉnh hình & Cấp cứu"
+  },
+  {
+    "id": "tp-15",
+    "topicId": "soc-nhiet-say-nang",
+    "topicTitle": "Sốc nhiệt, say nắng",
+    "prompt": "Đối với nạn nhân bị sốc nhiệt nặng kèm lú lẫn hoặc bất tỉnh, điều nào sau đây bị CẤM thực hiện?",
+    "options": [
+      "Đưa nạn nhân vào nơi râm mát, thoáng khí",
+      "Cởi bớt quần áo ngoài và chườm mát vùng cổ, nách, bẹn",
+      "Cố ép nạn nhân uống nước hoặc dung dịch điện giải",
+      "Bật quạt thổi nhẹ và gọi 115"
+    ],
+    "answer": 2,
+    "explanation": "Khi nạn nhân bị lú lẫn, co giật hoặc mất ý thức, việc cố đổ nước vào miệng sẽ gây sặc nghiêm trọng vào đường thở dẫn đến nghẹt thở hoặc viêm phổi hít.",
+    "standard": "Chuẩn Cấp cứu Say nắng & Sốc nhiệt"
+  },
+  {
+    "id": "tp-16",
+    "topicId": "xu-ly-khi-bi-soc-phan-ve",
+    "topicTitle": "Xử lý khi bị sốc phản vệ",
+    "prompt": "Thuốc đầu tay và quan trọng nhất có tác dụng cứu sống tính mạng người bị sốc phản vệ nặng là gì?",
+    "options": [
+      "Thuốc giảm đau Paracetamol",
+      "Adrenaline (Epinephrine) tiêm bắp",
+      "Kháng sinh đường uống",
+      "Vitamin C liều cao"
+    ],
+    "answer": 1,
+    "explanation": "Adrenaline (Epinephrine) là thuốc thiết yếu cấp cứu sốc phản vệ giúp nâng huyết áp, giãn phế quản và chống phù nề đường thở khẩn cấp.",
+    "standard": "Hướng dẫn Chẩn đoán & Xử trí Sốc phản vệ - Bộ Y tế"
+  },
+  {
+    "id": "tp-17",
+    "topicId": "sac-sua-o-tre-so-sinh-rat-nguy",
+    "topicTitle": "Sặc sữa ở trẻ sơ sinh rất nguy",
+    "prompt": "Trẻ sơ sinh bị sặc sữa trào ra mũi miệng, cơ thể tím tái và khó thở. Động tác cấp cứu đúng là gì?",
+    "options": [
+      "Bế dựng trẻ lên và vỗ mạnh vào lưng theo hướng thẳng đứng",
+      "Bế dốc ngược hai chân trẻ lắc mạnh",
+      "Đặt trẻ nằm sấp dọc cánh tay người lớn (đầu thấp hơn thân), vỗ 5 cái dứt khoát vào giữa 2 bả vai kết hợp hút sạch dịch mũi miệng",
+      "Cho trẻ uống tiếp nước ấm để hòa tan sữa"
+    ],
+    "answer": 2,
+    "explanation": "Đặt trẻ nằm sấp đầu thấp dốc xuống trên cẳng tay, dùng gót bàn tay vỗ 5 lần dứt khoát giữa 2 bả vai, lật ngửa ấn ngực 5 lần và làm sạch khoang miệng mũi.",
+    "standard": "Tư vấn Nhi sơ sinh - Bệnh viện Vinmec"
+  },
+  {
+    "id": "tp-18",
+    "topicId": "so-cuu-ong-dot",
+    "topicTitle": "Sơ cứu ong đốt",
+    "prompt": "Cách lấy ngòi nọc độc của ong ra khỏi da an toàn và đúng kỹ thuật nhất là gì?",
+    "options": [
+      "Dùng nhíp bóp chặt vào túi nọc để nhổ thẳng lên",
+      "Dùng mép thẻ nhựa cứng (hoặc móng tay) gạt nhẹ ngang sát bề mặt da",
+      "Dùng kim nhọn chọc thủng vết đốt",
+      "Nặn thật mạnh xung quanh vết đốt cho ra hết nọc"
+    ],
+    "answer": 1,
+    "explanation": "Dùng thẻ cứng gạt ngang giúp đẩy ngòi ra mà không bóp vỡ túi nọc. Nếu dùng nhíp bóp vào túi nọc sẽ vô tình bơm thêm nọc độc vào sâu trong da.",
+    "standard": "Cấp cứu Độc chất & Dị ứng"
+  },
+  {
+    "id": "tp-19",
+    "topicId": "so-cap-cuu-chan-thuong-dau-va-tuy",
+    "topicTitle": "Sơ cấp cứu chấn thương đầu và tủy",
+    "prompt": "Nạn nhân ngã từ trên cao nghi ngờ chấn thương cột sống cổ, nguyên tắc cố định bất động sống còn là:",
+    "options": [
+      "Luôn giữ thẳng trục Đầu - Cổ - Thân mình, không cúi gập hay xoay lắc đầu nạn nhân",
+      "Nâng đầu nạn nhân gối thật cao lên",
+      "Cho nạn nhân ngồi dậy uống nước đường",
+      "Xoay đầu nạn nhân sang hai bên để kiểm tra biên độ cổ"
+    ],
+    "answer": 0,
+    "explanation": "Mọi cử động gập hoặc xoay cổ có thể khiến mảnh xương vỡ chèn ép cắt đứt tủy sống gây liệt toàn thân vĩnh viễn hoặc tử vong ngay lập tức.",
+    "standard": "Hướng dẫn Cấp cứu Chấn thương Đầu & Tủy sống"
+  },
+  {
+    "id": "tp-20",
+    "topicId": "bi-bong-gan-co-tay-co-chan-phai",
+    "topicTitle": "Bị bong gân cổ tay, cổ chân: Phải",
+    "prompt": "Trong 48 giờ đầu sau khi bị bong gân cấp tính, hành động nào sau đây là SAI LẦM nghiêm trọng cần tránh?",
+    "options": [
+      "Nghỉ ngơi và hạn chế vận động khớp bị tổn thương",
+      "Chườm túi lạnh hoặc bọc đá 15-20 phút",
+      "Xoa bóp dầu nóng, cồn rượu thuốc hoặc ngâm nước nóng",
+      "Băng ép nhẹ bằng băng thun để giảm sưng"
+    ],
+    "answer": 2,
+    "explanation": "Nhiệt nóng từ dầu gió, rượu thuốc làm giãn mạch máu khiến máu dồn về vùng tổn thương nhiều hơn, gây sưng phù nề và tụ máu nặng nề hơn (Tuân thủ nguyên tắc R.I.C.E).",
+    "standard": "Phục hồi chức năng & Y học Thể thao"
+  },
+  {
+    "id": "tp-21",
+    "topicId": "xu-ly-ha-duong-huyet-o-nguoi-tieu",
+    "topicTitle": "Xử lý hạ đường huyết ở người tiểu",
+    "prompt": "Phát hiện bệnh nhân tiểu đường có biểu hiện hạ đường huyết (run rẩy, vã mồ hôi, hoa mắt) nhưng VẪN CÒN TỈNH TÁO, xử trí nhanh là:",
+    "options": [
+      "Cho uống ngay 1 ly nước đường, nước ngọt có ga hoặc ngậm vài viên kẹo ngọt",
+      "Tiêm thêm một liều Insulin ngay lập tức",
+      "Để nạn nhân nhịn ăn thêm 2 giờ để cơ thể tự cân bằng",
+      "Bắt nạn nhân chạy bộ nhẹ để tăng tuần hoàn máu"
+    ],
+    "answer": 0,
+    "explanation": "Cung cấp ngay 15g carbohydrate hấp thu nhanh (1/2 ly nước ngọt, nước đường, kẹo) giúp nâng đường huyết kịp thời tránh hôn mê hạ đường huyết.",
+    "standard": "Hiệp hội Đái tháo đường Hoa Kỳ (ADA)"
+  },
+  {
+    "id": "tp-22",
+    "topicId": "cach-lay-di-vat-trong-mat",
+    "topicTitle": "Cách lấy dị vật trong mắt",
+    "prompt": "Bụi hoặc hạt cát bay vào mắt gây xốn cộm chảy nước mắt, thao tác sơ cứu an toàn là gì?",
+    "options": [
+      "Dùng tay dụi thật mạnh vào mí mắt",
+      "Chớp mắt liên tục trong một chén nước sạch hoặc nhỏ nước muối sinh lý rửa trôi",
+      "Dùng móng tay cào vào giác mạc để gắp hạt bụi",
+      "Nhỏ thuốc kháng sinh bừa bãi không theo đơn"
+    ],
+    "answer": 1,
+    "explanation": "Dụi mắt khiến hạt bụi chà xát làm xước giác mạc và có thể dẫn đến loét giác mạc. Hãy chớp mắt trong nước sạch để dị vật tự trôi ra ngoài.",
+    "standard": "Nhãn khoa & Sơ cứu Chấn thương Mắt"
+  },
+  {
+    "id": "tp-23",
+    "topicId": "nhung-cach-so-cuu-nguoi-bi-ngat",
+    "topicTitle": "Những cách sơ cứu người bị ngất",
+    "prompt": "Khi sơ cứu người vừa bị ngất xỉu (đã kiểm tra vẫn còn thở đều), tư thế nằm tốt nhất để hỗ trợ phục hồi là:",
+    "options": [
+      "Ngồi thẳng lưng trên ghế",
+      "Nằm ngửa trên mặt phẳng thoáng khí và nâng cao hai chân khoảng 20-30cm",
+      "Nằm sấp áp mặt xuống gối",
+      "Đứng tựa vào tường"
+    ],
+    "answer": 1,
+    "explanation": "Nâng cao hai chân hơn tim khoảng 20-30cm giúp hồi lưu máu tĩnh mạch về tim và não nhanh hơn, giúp nạn nhân sớm hồi phục tri giác.",
+    "standard": "Hướng dẫn Sơ cấp cứu Ban đầu"
+  },
+  {
+    "id": "tp-24",
+    "topicId": "so-cuu-khi-bi-ran-can-ran-doc",
+    "topicTitle": "Sơ cứu khi bị rắn cắn (rắn độc):",
+    "prompt": "Khi bị rắn độc cắn vào cẳng chân, phương pháp sơ cứu nào sau đây được y học khuyến cáo KHÔNG NÊN làm?",
+    "options": [
+      "Cố định bất động chi bị cắn và để thấp hơn tim",
+      "Rửa sạch nhẹ nhàng bằng nước muối hoặc xà phòng",
+      "Rạch vết cắn, cố dùng miệng hút nọc hoặc ga-rô siết nghẹt chi",
+      "Nhanh chóng chuyển nạn nhân đến bệnh viện có huyết thanh kháng nọc"
+    ],
+    "answer": 2,
+    "explanation": "Rạch vết cắn hay hút nọc không loại bỏ được nọc độc mà còn gây nhiễm trùng nặng, hoại tử mô và nguy cơ ngộ độc cho người hút nọc.",
+    "standard": "Trung tâm Chống độc - Bệnh viện Bạch Mai"
+  },
+  {
+    "id": "tp-25",
+    "topicId": "so-cuu-nguoi-bi-nhoi-mau-co-tim-dau-tim-dot-ngot",
+    "topicTitle": "Nhồi máu cơ tim",
+    "prompt": "Nạn nhân xuất hiện cơn đau thắt ngực dữ dội đè nặng sau xương ức, vã mồ hôi nghi do nhồi máu cơ tim. Tư thế nghỉ ngơi phù hợp nhất là:",
+    "options": [
+      "Nằm sấp buông thõng hai tay",
+      "Tư thế nửa nằm nửa ngồi (tựa lưng góc 45 độ), nới lỏng trang phục và nghỉ ngơi tuyệt đối",
+      "Đi bộ nhẹ nhàng xung quanh phòng",
+      "Nằm dốc ngược chân lên cao"
+    ],
+    "answer": 1,
+    "explanation": "Tư thế nửa nằm nửa ngồi giúp giảm áp lực máu dồn về tim, giảm gánh nặng co bóp cho cơ tim đang thiếu máu cục bộ và giúp phổi hô hấp dễ dàng hơn.",
+    "standard": "Chuẩn Cấp cứu Tim mạch Hoa Kỳ (AHA)"
+  },
+  {
+    "id": "tp-26",
+    "topicId": "so-cuu-chay-mau-cam",
+    "topicTitle": "Chảy máu cam",
+    "prompt": "Động tác chuẩn xác khi sơ cứu người bị chảy máu cam (chảy máu mũi) là:",
+    "options": [
+      "Ngửa cổ ra sau thật sâu và giơ hai tay lên cao",
+      "Ngồi thẳng lưng, hơi cúi đầu nhẹ về phía trước và dùng ngón tay bóp chặt hai cánh mũi trong 10-15 phút",
+      "Nằm ngửa nhét khăn giấy sâu vào trong lỗ mũi",
+      "Cúi gập người sát đất và thổi mạnh mũi"
+    ],
+    "answer": 1,
+    "explanation": "Cúi nhẹ đầu về phía trước để máu chảy ra ngoài. Nếu ngửa cổ ra sau, máu sẽ chảy ngược xuống họng gây sặc vào khí quản hoặc nôn mửa dạ dày.",
+    "standard": "Tai Mũi Họng & Sơ cứu Cộng đồng"
+  },
+  {
+    "id": "tp-27",
+    "topicId": "so-cap-cuu-chan-thuong-bung-theo-huong-dan-cua-bo-y-te",
+    "topicTitle": "Chấn thương bụng",
+    "prompt": "Trong tai nạn có vết thương thấu bụng khiến một đoạn ruột bị lòi ra ngoài ổ bụng, cách xử trí đúng là gì?",
+    "options": [
+      "Cố gắng dùng tay ấn đẩy phần ruột lòi vào lại trong ổ bụng",
+      "Dùng gạc hoặc khăn sạch thấm ẩm nước muối vô trùng đắp nhẹ che phủ lên đoạn ruột rồi băng cố định lỏng",
+      "Rắc kháng sinh bột trực tiếp lên quai ruột",
+      "Cho nạn nhân uống nước đá để giảm đau"
+    ],
+    "answer": 1,
+    "explanation": "Tuyệt đối KHÔNG cố ấn nhét tạng trở lại vì gây nhiễm trùng phúc mạc toàn thể. Hãy bảo vệ bằng gạc ẩm vô khuẩn để giữ ruột không bị khô hoại tử.",
+    "standard": "Hướng dẫn Sơ cấp cứu Chấn thương - Bộ Y tế"
+  },
+  {
+    "id": "tp-28",
+    "topicId": "so-cap-cuu-chan-thuong-bung-theo-huong-dan-cua-bo-y-te",
+    "topicTitle": "Chấn thương bụng",
+    "prompt": "Nạn nhân bị một thanh kim loại đâm xuyên cắm chặt vào ổ bụng tại hiện trường tai nạn, việc làm cần thiết là:",
+    "options": [
+      "Rút thanh kim loại ra ngay lập tức để khử trùng vết thương",
+      "Giữ nguyên thanh kim loại tại chỗ, chèn gạc xung quanh để cố định dị vật rồi chuyển cấp cứu",
+      "Cố xoay thanh kim loại xem có găm vào xương không",
+      "Cho nạn nhân ăn nhẹ trước khi di chuyển"
+    ],
+    "answer": 1,
+    "explanation": "Dị vật đang có tác dụng nút cầm máu tạm thời. Rút dị vật ra tại hiện trường sẽ giải phóng áp lực gây chảy máu ồ ạt trong ổ bụng dẫn đến tử vong nhanh chóng.",
+    "standard": "Hướng dẫn Sơ cấp cứu Chấn thương - Bộ Y tế"
+  },
+  {
+    "id": "tp-29",
+    "topicId": "so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu",
+    "topicTitle": "Chi bị đứt lìa",
+    "prompt": "Quy trình bảo quản phần chi thể bị đứt lìa (ngón tay, bàn tay) để vận chuyển đến bệnh viện vi phẫu đúng chuẩn là:",
+    "options": [
+      "Thả trực tiếp phần chi thể ngập vào trong xô đá lạnh",
+      "Rửa sạch nhẹ bằng nước muối, bọc trong gạc ẩm sạch, cho vào túi nilon buộc kín rồi mới đặt túi vào thùng nước đá mát",
+      "Ngâm chi thể vào dung dịch cồn 90 độ sát khuẩn",
+      "Bỏ chi thể vào ngăn đá tủ lạnh đóng băng hoàn toàn"
+    ],
+    "answer": 1,
+    "explanation": "Phải bảo quản lạnh gián tiếp (qua túi nilon kín). Nếu để chi thể tiếp xúc trực tiếp đá lạnh sẽ gây bỏng lạnh và làm chết tế bào thần kinh, mạch máu vi phẫu.",
+    "standard": "Cấp cứu Ngoại khoa Vi phẫu & Ghép tạng"
+  },
+  {
+    "id": "tp-30",
+    "topicId": "so-cap-cuu-bong-o-tre-em",
+    "topicTitle": "Bỏng ở trẻ em",
+    "prompt": "Trẻ em bị bỏng nước sôi ở vùng đùi, tại sao TUYỆT ĐỐI KHÔNG dùng nước đá đóng băng để chườm?",
+    "options": [
+      "Vì đá lạnh làm nước sôi bốc hơi nhanh hơn",
+      "Vì diện tích da trẻ mỏng, chườm đá lạnh đột ngột dễ gây bỏng lạnh cục bộ và hạ thân nhiệt nguy hiểm",
+      "Vì đá lạnh làm vết bỏng liền da quá nhanh tạo sẹo co rút",
+      "Vì làm loãng các enzym trên bề mặt da"
+    ],
+    "answer": 1,
+    "explanation": "Trung tâm điều nhiệt của trẻ chưa hoàn thiện. Chườm đá lạnh trực tiếp gây co mạch đột ngột làm thiếu máu nuôi da và dễ dẫn đến hạ thân nhiệt toàn thân sốc bỏng.",
+    "standard": "Chuẩn Bỏng Nhi khoa Quốc tế"
+  },
+  {
+    "id": "tp-31",
+    "topicId": "bong-hoa-chat",
+    "topicTitle": "Bỏng hóa chất",
+    "prompt": "Khi nạn nhân bị hóa chất tẩy rửa công nghiệp bắn vào da hoặc mắt, bước sơ cứu đầu tiên cần làm liên tục là gì?",
+    "options": [
+      "Tìm hóa chất đối kháng (axit trung hòa kiềm hoặc ngược lại)",
+      "Rửa xối liên tục dưới vòi nước sạch chảy nhẹ trong ít nhất 15-20 phút",
+      "Bôi dầu dừa hoặc mỡ trăn để phủ kín bề mặt da",
+      "Băng kín lại ngay lập tức để cách ly không khí"
+    ],
+    "answer": 1,
+    "explanation": "Rửa xối nước sạch liên tục giúp pha loãng và cuốn trôi hóa chất. Tuyệt đối không dùng chất trung hòa vì phản ứng tỏa nhiệt sẽ gây bỏng nhiệt sâu thêm.",
+    "standard": "Chuẩn Cấp cứu Độc chất & Hóa chất"
+  },
+  {
+    "id": "tp-32",
+    "topicId": "nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien",
+    "topicTitle": "Nguyên tắc sơ cấp cứu",
+    "prompt": "Trước khi tiến lại gần tiếp cận nạn nhân tại một hiện trường tai nạn, hành động tiên quyết đầu tiên của người sơ cứu là:",
+    "options": [
+      "Quan sát và đánh giá độ an toàn của hiện trường cho chính bản thân mình",
+      "Lao vào nâng nạn nhân dậy ngay lập tức",
+      "Tìm kiếm điện thoại và ví tiền của nạn nhân",
+      "Chỉ tập trung vào người chảy máu nhiều nhất bất kể môi trường"
+    ],
+    "answer": 0,
+    "explanation": "Nguyên tắc bất di bất dịch của sơ cấp cứu: Đảm bảo hiện trường an toàn (tránh điện hở, khí độc, sập đổ, cháy nổ). Không biến người sơ cứu thành nạn nhân thứ hai.",
+    "standard": "Nguyên tắc Cấp cứu Ban đầu - Chữ thập đỏ Quốc tế"
+  }
+]
