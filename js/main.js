@@ -4,7 +4,7 @@
  * Mobile navigation, Language switcher, and AI Chat Assistant.
  */
 
-// Fallback Header HTML template (4 core navigation tabs, no quiz)
+// Fallback Header HTML template
 const FALLBACK_HEADER_HTML = `
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
   <div class="h-20 max-w-7xl mx-auto px-margin-sm lg:px-margin flex items-center justify-between gap-space-md">
@@ -24,6 +24,8 @@ const FALLBACK_HEADER_HTML = `
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html">Trang chủ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="topics" href="topics.html">Thư viện sơ cấp cứu</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="quiz" href="quiz.html">Trắc nghiệm</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="contact" href="contact.html">Liên hệ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html">Về MedFA</a>
     </nav>
     <div class="flex items-center gap-2 sm:gap-space-sm md:gap-space-md">
@@ -69,6 +71,20 @@ const FALLBACK_HEADER_HTML = `
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
         <span>Thư viện sơ cấp cứu</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="quiz" href="quiz.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-[20px]">quiz</span>
+        <span>Trắc nghiệm sơ cứu</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="contact" href="contact.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary text-[20px]">contact_support</span>
+        <span>Liên hệ</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luyện tập kiến thức sơ cứu qua 10 câu hỏi tình huống, có giải thích và lưu điểm trên MedFA.">
+  <title>Trắc nghiệm tình huống sơ cứu | MedFA</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/contact-quiz.css">
+</head>
+<body class="bg-background font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="quiz">
+  <div id="header-placeholder"></div>
+  <main class="contact-quiz-page">
+    <div class="cq-shell cq-quiz-shell">
+      <header class="cq-heading">
+        <span class="cq-eyebrow">MEDFA · LUYỆN TẬP PHẢN XẠ</span>
+        <h1>Trắc nghiệm tình huống sơ cứu</h1>
+        <p>10 tình huống thực tế. Chọn phương án phù hợp để xem giải thích ngay sau mỗi câu.</p>
+      </header>
+
+      <section class="cq-card quiz-card" aria-labelledby="quiz-title">
+        <div id="quiz-loading" class="quiz-loading" role="status" aria-live="polite">Đang tải bộ câu hỏi...</div>
+        <div id="quiz-content" hidden>
+          <div class="quiz-progress-heading">
+            <span id="quiz-count">Câu 1 / 10</span>
+            <span id="quiz-score-live">Điểm: 0</span>
+          </div>
+          <progress id="quiz-progress" max="10" value="0" aria-label="Tiến độ bài trắc nghiệm"></progress>
+          <article id="quiz-question-card" class="quiz-question-card">
+            <span id="quiz-category" class="quiz-category">Tình huống</span>
+            <h2 id="quiz-title" tabindex="-1"></h2>
+            <p id="quiz-question" class="quiz-question"></p>
+            <div id="quiz-options" class="quiz-options" aria-label="Các phương án trả lời"></div>
+            <div id="quiz-feedback" class="quiz-feedback" role="status" aria-live="polite" hidden></div>
+            <div class="quiz-controls">
+              <button id="quiz-next" class="btn btn-primary" type="button" hidden>Tiếp theo</button>
+            </div>
+          </article>
+        </div>
+        <section id="quiz-result" class="quiz-result" aria-labelledby="quiz-result-title" hidden>
+          <span class="quiz-result-icon material-symbols-outlined" aria-hidden="true">workspace_premium</span>
+          <span id="quiz-badge" class="quiz-badge"></span>
+          <h2 id="quiz-result-title" tabindex="-1">Kết quả của bạn</h2>
+          <p id="quiz-result-score" class="quiz-result-score"></p>
+          <p id="quiz-result-message"></p>
+          <div class="quiz-result-actions">
+            <button id="quiz-save" class="btn btn-secondary" type="button">
+              <span class="material-symbols-outlined" aria-hidden="true">save</span>
+              Lưu điểm
+            </button>
+            <button id="quiz-restart" class="btn btn-primary" type="button">
+              <span class="material-symbols-outlined" aria-hidden="true">restart_alt</span>
+              Làm lại
+            </button>
+          </div>
+          <p id="quiz-save-status" class="quiz-save-status" role="status" aria-live="polite"></p>
+        </section>
+        <p id="quiz-data-status" class="quiz-data-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <aside class="quiz-disclaimer">
+        <span class="material-symbols-outlined" aria-hidden="true">info</span>
+        <p>Trắc nghiệm chỉ phục vụ học tập, không thay thế hướng dẫn của nhân viên y tế. Trong tình huống nguy kịch, hãy gọi 115.</p>
+        <a href="contact.html">Gửi góp ý <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="js/storage.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/quiz-engine.js" defer></script>
+</body>
+</html>
