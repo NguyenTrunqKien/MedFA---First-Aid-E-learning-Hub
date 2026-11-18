@@ -16,8 +16,6 @@ const DataLoader = (() => {
       "fullTitle": "Hướng dẫn sơ cứu trẻ bị hóc dị vật đường thở",
       "category": "tre-em",
       "categoryLabel": "Trẻ em",
-      "badgeType": "Khẩn cấp",
-      "badgeClass": "bg-error-container text-on-error-container",
       "criticalLevel": "high",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -59,9 +57,9 @@ const DataLoader = (() => {
         "Với trẻ từ 1 tuổi bị nghẹn nặng, luân phiên 5 vỗ lưng và 5 ép bụng."
       ],
       "donts": [
-        "KHÔNG ép bụng cho trẻ dưới 1 tuổi.",
-        "KHÔNG móc họng bằng ngón tay khi không nhìn thấy rõ dị vật.",
-        "KHÔNG để trẻ một mình hoặc chờ đợi nếu trẻ không thể thở, ho hay khóc."
+        "Không nên ép bụng cho trẻ dưới 1 tuổi.",
+        "Không nên móc họng bằng ngón tay khi không nhìn thấy rõ dị vật.",
+        "Không nên để trẻ một mình hoặc chờ đợi nếu trẻ không thể thở, ho hay khóc."
       ]
     },
     {
@@ -70,8 +68,6 @@ const DataLoader = (() => {
       "fullTitle": "Các bước sơ cứu ban đầu trẻ bị đuối nước",
       "category": "ngoai-troi",
       "categoryLabel": "Ngoài trời",
-      "badgeType": "Sinh tử",
-      "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
       "criticalLevel": "critical",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -108,9 +104,9 @@ const DataLoader = (() => {
         "Dùng AED khi có sẵn và tiếp tục theo dõi trẻ sau khi ra khỏi nước."
       ],
       "donts": [
-        "KHÔNG nhảy xuống nước cứu khi không đủ kỹ năng hoặc thiếu phương tiện an toàn.",
-        "KHÔNG ép bụng hoặc dốc ngược trẻ để cố đẩy nước ra.",
-        "KHÔNG trì hoãn CPR để móc họng hoặc tìm cách hút nước khỏi phổi."
+        "Không nên nhảy xuống nước cứu khi không đủ kỹ năng hoặc thiếu phương tiện an toàn.",
+        "Không nên ép bụng hoặc dốc ngược trẻ để cố đẩy nước ra.",
+        "Không nên trì hoãn CPR để móc họng hoặc tìm cách hút nước khỏi phổi."
       ]
     },
     {
@@ -119,8 +115,6 @@ const DataLoader = (() => {
       "fullTitle": "Đột quỵ có cứu được không? Yếu tố nào gây ảnh hưởng?",
       "category": "benh-ly",
       "categoryLabel": "Bệnh lý",
-      "badgeType": "Sinh tử",
-      "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
       "criticalLevel": "critical",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -157,9 +151,9 @@ const DataLoader = (() => {
         "Ở lại, trấn an và theo dõi hô hấp, tri giác của người bệnh."
       ],
       "donts": [
-        "KHÔNG chờ triệu chứng tự hết rồi mới gọi cấp cứu.",
-        "KHÔNG cho ăn hoặc uống khi có nguy cơ khó nuốt, sặc.",
-        "KHÔNG nhét đũa, khăn hay bất kỳ vật gì vào miệng nếu người bệnh co giật."
+        "Không nên chờ triệu chứng tự hết rồi mới gọi cấp cứu.",
+        "Không nên cho ăn hoặc uống khi có nguy cơ khó nuốt, sặc.",
+        "Không nên nhét đũa, khăn hay bất kỳ vật gì vào miệng nếu người bệnh co giật."
       ]
     },
     {
@@ -168,8 +162,6 @@ const DataLoader = (() => {
       "fullTitle": "Sơ cứu khi bị bỏng lửa, bỏng nước sôi",
       "category": "sinh-hoat",
       "categoryLabel": "Sinh hoạt",
-      "badgeType": "Trung bình",
-      "badgeClass": "bg-secondary-container text-on-secondary-container",
       "criticalLevel": "medium",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -182,7 +174,7 @@ const DataLoader = (() => {
         {
           "stepNumber": 1,
           "title": "Ngừng tiếp xúc nguồn nhiệt",
-          "desc": "Đưa người bị nạn ra khỏi nguồn nhiệt một cách an toàn; nếu quần áo cháy, dập lửa bằng nước hoặc cho nằm xuống và lăn."
+          "desc": "Đưa nạn nhân ra khỏi nguồn nhiệt một cách an toàn; nếu quần áo cháy, dập lửa bằng nước hoặc cho nằm xuống và lăn."
         },
         {
           "stepNumber": 2,
@@ -206,9 +198,9 @@ const DataLoader = (() => {
         "Che phủ lỏng bằng vật liệu sạch sau khi làm mát."
       ],
       "donts": [
-        "KHÔNG chườm đá trực tiếp lên vết bỏng.",
-        "KHÔNG bóc quần áo đã dính vào vùng da bỏng.",
-        "KHÔNG bôi kem đánh răng, dầu, bơ hay tự chọc vỡ bóng nước."
+        "Không nên chườm đá trực tiếp lên vết bỏng.",
+        "Không nên bóc quần áo đã dính vào vùng da bỏng.",
+        "Không nên bôi kem đánh răng, dầu, bơ hay tự chọc vỡ bóng nước."
       ]
     },
     {
@@ -217,8 +209,6 @@ const DataLoader = (() => {
       "fullTitle": "Sơ cứu khi bị bỏng hóa chất",
       "category": "sinh-hoat",
       "categoryLabel": "Sinh hoạt",
-      "badgeType": "Khẩn cấp",
-      "badgeClass": "bg-error-container text-on-error-container",
       "criticalLevel": "high",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -255,9 +245,9 @@ const DataLoader = (() => {
         "Xả nước nhiều, liên tục và đưa nạn nhân đi đánh giá y tế."
       ],
       "donts": [
-        "KHÔNG dùng hóa chất khác để cố trung hòa vết bỏng.",
-        "KHÔNG bôi kem, dầu hoặc thuốc lên vùng bỏng khi chờ cấp cứu.",
-        "KHÔNG chạm tay trần vào quần áo hoặc da còn dính hóa chất."
+        "Không nên dùng hóa chất khác để cố trung hòa vết bỏng.",
+        "Không nên bôi kem, dầu hoặc thuốc lên vùng bỏng khi chờ cấp cứu.",
+        "Không nên chạm tay trần vào quần áo hoặc da còn dính hóa chất."
       ]
     },
     {
@@ -266,8 +256,6 @@ const DataLoader = (() => {
       "fullTitle": "Say nắng, say nóng là gì? Nguyên nhân và cách xử trí khi gặp",
       "category": "ngoai-troi",
       "categoryLabel": "Ngoài trời",
-      "badgeType": "Khẩn cấp",
-      "badgeClass": "bg-error-container text-on-error-container",
       "criticalLevel": "high",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -304,9 +292,9 @@ const DataLoader = (() => {
         "Theo dõi hô hấp và mức tỉnh táo liên tục khi chờ cấp cứu."
       ],
       "donts": [
-        "KHÔNG chậm làm mát để chờ xe cấp cứu.",
-        "KHÔNG cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
-        "KHÔNG để người lơ mơ một mình trong bồn nước."
+        "Không nên chậm làm mát để chờ xe cấp cứu.",
+        "Không nên cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
+        "Không nên để người lơ mơ một mình trong bồn nước."
       ],
       "sources": [
         {
@@ -321,8 +309,6 @@ const DataLoader = (() => {
       "fullTitle": "Cách sơ cứu ngộ độc thực phẩm: Lưu ý quan trọng khi thực hiện",
       "category": "sinh-hoat",
       "categoryLabel": "Sinh hoạt",
-      "badgeType": "Trung bình",
-      "badgeClass": "bg-secondary-container text-on-secondary-container",
       "criticalLevel": "medium",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -359,9 +345,9 @@ const DataLoader = (() => {
         "Theo dõi dấu hiệu mất nước và đi khám khi có triệu chứng nặng."
       ],
       "donts": [
-        "KHÔNG tự gây nôn hoặc kích thích họng để nôn.",
-        "KHÔNG ép người bất tỉnh hoặc khó nuốt uống nước.",
-        "KHÔNG tự dùng thuốc cầm tiêu chảy khi sốt cao hoặc đi ngoài ra máu nếu chưa có chỉ dẫn y tế."
+        "Không nên tự gây nôn hoặc kích thích họng để nôn.",
+        "Không nên ép người bất tỉnh hoặc khó nuốt uống nước.",
+        "Không nên tự dùng thuốc cầm tiêu chảy khi sốt cao hoặc đi ngoài ra máu nếu chưa có chỉ dẫn y tế."
       ]
     },
     {
@@ -370,14 +356,12 @@ const DataLoader = (() => {
       "fullTitle": "Cách sơ cứu người bị điện giật sao cho đúng chuẩn và an toàn?",
       "category": "sinh-hoat",
       "categoryLabel": "Sinh hoạt",
-      "badgeType": "Khẩn cấp",
-      "badgeClass": "bg-error-container text-on-error-container",
       "criticalLevel": "high",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
       "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"m13 2-9 12h7l-1 8 10-12h-7l1-8Z\"/></svg>",
       "shortDesc": "Ngắt nguồn điện an toàn, gọi cấp cứu, kiểm tra hô hấp và chăm sóc bỏng điện.",
-      "lead": "Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải chắc chắn nguồn điện đã được ngắt trước khi tiếp cận.",
+      "lead": "Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải đảm bảo nguồn điện đã được ngắt trước khi tiếp cận.",
       "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, thở bất thường, đau ngực, bỏng nặng hoặc liên quan điện cao thế. Người bị điện giật cần được nhân viên y tế đánh giá.",
       "timeline": [],
       "steps": [
@@ -408,9 +392,9 @@ const DataLoader = (() => {
         "Đưa người bị điện giật đi đánh giá y tế dù vết bỏng nhỏ."
       ],
       "donts": [
-        "KHÔNG chạm trực tiếp vào nạn nhân khi còn nối với nguồn điện.",
-        "KHÔNG tiếp cận dây điện cao thế hoặc khu vực chưa được xác nhận an toàn.",
-        "KHÔNG đánh giá mức độ tổn thương chỉ theo vết bỏng ngoài da."
+        "Không nên chạm trực tiếp vào nạn nhân khi còn nối với nguồn điện.",
+        "Không nên tiếp cận dây điện cao thế hoặc khu vực chưa được xác nhận an toàn.",
+        "Không nên đánh giá mức độ tổn thương chỉ theo vết bỏng ngoài da."
       ]
     },
     {
@@ -419,8 +403,6 @@ const DataLoader = (() => {
       "fullTitle": "Hồi sinh tim phổi cơ bản cho người lớn khi bị tai nạn",
       "category": "benh-ly",
       "categoryLabel": "Bệnh lý",
-      "badgeType": "Sinh tử",
-      "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
       "criticalLevel": "critical",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -462,9 +444,9 @@ const DataLoader = (() => {
         "Dùng AED sớm và làm theo hướng dẫn của máy."
       ],
       "donts": [
-        "KHÔNG trì hoãn ép ngực để cố tìm mạch nếu không được huấn luyện.",
-        "KHÔNG ngừng ép ngực lâu quá 10 giây giữa các chu kỳ.",
-        "KHÔNG chạm vào nạn nhân khi AED đang phân tích hoặc phát sốc."
+        "Không nên trì hoãn ép ngực để cố tìm mạch nếu không được huấn luyện.",
+        "Không nên ngừng ép ngực lâu quá 10 giây giữa các chu kỳ.",
+        "Không nên chạm vào nạn nhân khi AED đang phân tích hoặc phát sốc."
       ]
     },
     {
@@ -473,8 +455,6 @@ const DataLoader = (() => {
       "fullTitle": "Sơ cứu chảy máu (cầm máu): Những điều cần biết",
       "category": "sinh-hoat",
       "categoryLabel": "Sinh hoạt",
-      "badgeType": "Khẩn cấp",
-      "badgeClass": "bg-error-container text-on-error-container",
       "criticalLevel": "high",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -511,9 +491,9 @@ const DataLoader = (() => {
         "Ghi giờ đặt ga-rô và báo lại cho nhân viên y tế nếu đã dùng."
       ],
       "donts": [
-        "KHÔNG rút vật cắm sâu ra khỏi vết thương.",
-        "KHÔNG tháo lớp gạc đầu tiên đang tiếp xúc trực tiếp vết thương khi máu thấm qua.",
-        "KHÔNG tự nới hoặc tháo ga-rô sau khi đã đặt; việc đó để nhân viên y tế thực hiện."
+        "Không nên rút vật cắm sâu ra khỏi vết thương.",
+        "Không nên tháo lớp gạc đầu tiên đang tiếp xúc trực tiếp vết thương khi máu thấm qua.",
+        "Không nên tự nới hoặc tháo ga-rô sau khi đã đặt; việc đó để nhân viên y tế thực hiện."
       ]
     },
     {
@@ -522,8 +502,6 @@ const DataLoader = (() => {
       "fullTitle": "Sơ cứu khi bị gãy xương: Đừng cố di chuyển người bệnh",
       "category": "sinh-hoat",
       "categoryLabel": "Sinh hoạt",
-      "badgeType": "Khẩn cấp",
-      "badgeClass": "bg-error-container text-on-error-container",
       "criticalLevel": "high",
       "readTime": "1 phút",
       "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -560,9 +538,9 @@ const DataLoader = (() => {
         "Theo dõi cảm giác, màu da phía dưới vùng chấn thương."
       ],
       "donts": [
-        "KHÔNG cố duỗi thẳng hoặc nắn lại chi biến dạng.",
-        "KHÔNG đẩy xương lòi ra vào trong hoặc ép trực tiếp lên đầu xương.",
-        "KHÔNG tự di chuyển người nghi chấn thương cổ hoặc cột sống trừ khi nơi đó không an toàn."
+        "Không nên cố duỗi thẳng hoặc nắn lại chi biến dạng.",
+        "Không nên đẩy xương lòi ra vào trong hoặc ép trực tiếp lên đầu xương.",
+        "Không nên tự di chuyển người nghi chấn thương cổ hoặc cột sống trừ khi nơi đó không an toàn."
       ]
     }
   ];
@@ -597,8 +575,9 @@ const DataLoader = (() => {
    */
   async function getTopicById(id) {
     const topics = await loadTopics();
+    // Nếu không truyền id thì mặc định lấy chủ đề đầu tiên; nếu có id cụ thể thì trả null khi không khớp (tránh che giấu lỗi 404)
     if (!id) return topics[0] || null;
-    return topics.find(t => t.id === id) || topics[0] || null;
+    return topics.find(t => t.id === id) || null;
   }
 
   /**
@@ -615,29 +594,53 @@ const DataLoader = (() => {
   }
 
   /**
-   * Search topics by query string
+   * Chuẩn hóa chuỗi tiếng Việt về dạng không dấu (Unicode NFD -> loại bỏ dấu thanh + đ -> d)
+   * Giúp người dùng gõ vội không dấu trong tình huống khẩn cấp vẫn tìm được đúng bài sơ cứu.
+   * @param {string} str
+   * @returns {string}
+   */
+  function normalizeText(str) {
+    return String(str || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd')
+      .replace(/Đ/g, 'D')
+      .toLowerCase()
+      .trim();
+  }
+
+  /**
+   * Search topics by query string (hỗ trợ cả tiếng Việt có dấu và không dấu)
    * @param {string} query - Keyword to search
    * @returns {Promise<Array>}
    */
   async function searchTopics(query) {
     const topics = await loadTopics();
-    if (!query || !query.trim()) {
+    const q = normalizeText(query);
+    if (!q) {
       return topics;
     }
 
-    const q = query.trim().toLowerCase();
     return topics.filter(t => {
-      const titleMatch = t.title.toLowerCase().includes(q) || (t.fullTitle && t.fullTitle.toLowerCase().includes(q));
-      const descMatch = t.shortDesc.toLowerCase().includes(q);
-      const categoryMatch = t.category.toLowerCase().includes(q) || (t.categoryLabel && t.categoryLabel.toLowerCase().includes(q));
-      return titleMatch || descMatch || categoryMatch;
+      const searchable = [
+        t.id,
+        t.title,
+        t.fullTitle,
+        t.shortDesc,
+        t.lead,
+        t.category,
+        t.categoryLabel
+      ].map(normalizeText).join(' ');
+      return searchable.includes(q);
     });
   }
   return {
     loadTopics,
+    getAllTopics: loadTopics,
     getTopicById,
     getTopicsByCategory,
     searchTopics,
+    normalizeText,
     FALLBACK_TOPICS
   };
 })();

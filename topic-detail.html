@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="Hướng dẫn sơ cấp cứu chi tiết theo từng bước chuẩn y khoa AHA & ERC, cảnh báo khẩn cấp và lưu ý thực hành trên MedFA.">
+  <meta name="robots" content="index, follow">
   <title>Chi tiết Tình huống Sơ cấp cứu - MedFA</title>
+  <link rel="canonical" href="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topic-detail.html">
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Open Graph & Twitter Cards -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="MedFA">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Chi tiết Tình huống Sơ cấp cứu - MedFA">
+  <meta property="og:description" content="Hướng dẫn sơ cấp cứu chi tiết theo từng bước chuẩn y khoa AHA & ERC, cảnh báo khẩn cấp và lưu ý thực hành trên MedFA.">
+  <meta property="og:url" content="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topic-detail.html">
+  <meta property="og:image" content="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/images/hero-cpr.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chi tiết Tình huống Sơ cấp cứu - MedFA">
+  <meta name="twitter:description" content="Hướng dẫn sơ cấp cứu chi tiết theo từng bước chuẩn y khoa AHA & ERC.">
+  <meta name="twitter:image" content="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/images/hero-cpr.webp">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,7 +96,6 @@
                   <span class="bookmark-text">Lưu bài học</span>
                 </button>
               </div>
-              </div>
 
               <!-- Main Title & Lead -->
               <div class="mt-4">
@@ -117,7 +132,7 @@
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-1.5 text-sm text-on-surface font-bold">
                     <span class="material-symbols-outlined text-primary text-[18px]">acute</span>
-                    <span>Thước đo 4 Phút Vàng sinh tử (Hypoxia Timeline)</span>
+                    <span>Thước đo 4 Phút Vàng (Hypoxia Timeline)</span>
                   </div>
                   <span class="text-xs text-tertiary font-bold">Não thiếu oxy</span>
                 </div>
@@ -134,6 +149,34 @@
                   <div class="text-tertiary font-bold"><strong>>4 phút</strong><br><span class="hidden sm:inline">Tử vong tế bào não</span></div>
                 </div>
               </div>
+
+              <!-- CPR 110 BPM METRONOME WIDGET (Tự động bật cho các ca có quy trình Ép tim CPR) -->
+              <section id="cpr-metronome-widget" class="mt-6 cpr-metronome-card" aria-label="Bộ đếm nhịp ép tim CPR" hidden>
+                <div class="flex items-center gap-3">
+                  <div id="cpr-beat-indicator" class="cpr-beat-indicator" aria-hidden="true">
+                    <span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <h2 class="text-sm md:text-base font-bold text-on-surface">Nhịp ép tim CPR chuẩn AHA/ERC (110 nhịp/phút)</h2>
+                      <span id="cpr-beat-counter" class="cpr-beat-counter">0 / 30 nhịp</span>
+                    </div>
+                    <p id="cpr-cycle-hint" class="text-xs text-on-surface-variant">
+                      Bấm Bắt đầu để nghe tiếng bíp & nhịp đập trực quan giữ tốc độ 100–120 lần/phút (30 ép tim : 2 thổi ngạt).
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <button id="cpr-metronome-btn" type="button" class="btn btn-danger text-xs py-2 px-4">
+                    <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                    <span id="cpr-metronome-btn-text">Bắt đầu nhịp 110 BPM</span>
+                  </button>
+                  <button id="cpr-sound-btn" type="button" aria-pressed="true" title="Bật / Tắt âm thanh bíp" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container text-xs font-semibold text-on-surface transition-colors">
+                    <span id="cpr-sound-icon" class="material-symbols-outlined text-[18px] text-primary">volume_up</span>
+                    <span id="cpr-sound-text">Âm thanh: Bật</span>
+                  </button>
+                </div>
+              </section>
 
               <!-- SECTION: CÁC BƯỚC XỬ LÝ CHUẨN Y KHOA -->
               <section class="mt-8">
@@ -163,7 +206,7 @@
                       <div class="flex-1">
                         <h3 class="text-base md:text-lg font-bold text-on-surface">Đánh giá & Khuyến khích ho mạnh</h3>
                         <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
-                          Nếu nạn nhân vẫn còn tỉnh táo, nói được câu ngắn hoặc ho mạnh: Tuyệt đối không can thiệp thô bạo. Động viên họ gập người ra trước và ho liên tục.
+                          Nếu nạn nhân vẫn còn tỉnh táo, nói được câu ngắn hoặc ho mạnh: Khuyến cáo không can thiệp thô bạo. Động viên họ gập người ra trước và ho liên tục.
                         </p>
                       </div>
                     </div>
@@ -201,7 +244,7 @@
               <section class="mt-8 pt-6 border-t border-outline-variant/20">
                 <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
                   <span class="material-symbols-outlined text-primary">flaky</span>
-                  Những điều NÊN và TUYỆT ĐỐI KHÔNG làm
+                  Những điều nên làm và cần tránh
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- DO Column -->
@@ -230,7 +273,7 @@
                   <div class="p-4 rounded-xl bg-rose-50 border border-rose-200">
                     <div class="flex items-center gap-2 font-bold text-rose-800 text-sm mb-3">
                       <span class="material-symbols-outlined text-rose-600">cancel</span>
-                      TUYỆT ĐỐI KHÔNG LÀM
+                      Cần tránh
                     </div>
                     <ul class="flex flex-col gap-2 text-sm text-rose-950" id="detail-donts-list">
                       <li class="flex items-start gap-2">
@@ -250,6 +293,25 @@
                 </div>
               </section>
 
+              <!-- VIDEO HƯỚNG DẪN MINH HỌA (Hiển thị động nếu bài học có nguồn video YouTube) -->
+              <section id="detail-video-section" class="mt-6 p-4 md:p-5 rounded-xl bg-surface-container-low border border-outline-variant/30" hidden>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[22px]">smart_display</span>
+                    </div>
+                    <div>
+                      <h3 class="text-sm md:text-base font-bold text-on-surface">Video hướng dẫn thực hành</h3>
+                      <p id="detail-video-creator" class="text-xs text-on-surface-variant mt-0.5"></p>
+                    </div>
+                  </div>
+                  <a id="detail-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs py-2.5 px-4 self-start sm:self-auto">
+                    <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    <span id="detail-video-link-label">Xem trên YouTube</span>
+                  </a>
+                </div>
+              </section>
+
               </div>
               <section id="medical-disclaimer" aria-labelledby="medical-disclaimer-title" class="mt-8 p-4 md:p-6 rounded-xl border border-outline-variant/30 bg-surface-container-low">
                 <h2 id="medical-disclaimer-title" class="text-xl font-bold text-on-surface">Lưu ý y khoa</h2>
@@ -257,6 +319,15 @@
                   Nội dung MedFA phục vụ học tập và không thay thế tư vấn y tế hoặc đào tạo thực hành.
                   Trong tình huống khẩn cấp tại Việt Nam, hãy <a class="font-bold underline" href="tel:115">gọi 115</a> và làm theo hướng dẫn của nhân viên cấp cứu.
                 </p>
+              </section>
+
+              <!-- TÌNH HUỐNG SƠ CẤP CỨU LIÊN QUAN (Internal Linking SEO) -->
+              <section id="related-topics-section" aria-labelledby="related-topics-title" class="mt-8 pt-6 border-t border-outline-variant/30" hidden>
+                <div class="flex items-center justify-between gap-2 mb-4">
+                  <h2 id="related-topics-title" class="text-lg font-bold text-on-surface">Tình huống sơ cấp cứu liên quan</h2>
+                  <a href="topics.html" class="text-xs font-bold text-primary hover:underline">Xem toàn bộ tình huống →</a>
+                </div>
+                <div id="related-topics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
               </section>
             </article>
 
@@ -269,7 +340,7 @@
             <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/30 flex flex-col gap-4">
               <h3 class="text-lg font-bold text-on-surface flex items-center gap-2">
                 <span class="material-symbols-outlined text-error">phone_in_talk</span>
-                Cần trợ giúp tức thì?
+                Cần trợ giúp y tế khẩn cấp?
               </h3>
               <p class="text-sm text-on-surface-variant">
                 Nếu bạn đang ở hiện trường và cần hỗ trợ, hãy gọi cấp cứu hoặc mở Trợ lý AI để tra cứu quy trình khẩn cấp.
@@ -323,190 +394,11 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript Modules -->
+  <script src="js/seo-config.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/data-loader.js"></script>
   <script src="js/chatbot-gemini.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    
-    function injectTopicSchema(topic) {
-      if (!topic) return;
-      const existing = document.getElementById('dynamic-topic-schema');
-      if (existing) existing.remove();
-
-      const schema = {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "MedicalWebPage",
-            "@id": window.location.href + "#webpage",
-            "url": window.location.href,
-            "name": topic.fullTitle || topic.title,
-            "description": topic.shortDesc || topic.lead,
-            "medicalAudience": "Patient",
-            "about": {
-              "@type": "MedicalCondition",
-              "name": topic.title
-            }
-          },
-          {
-            "@type": "HowTo",
-            "name": "Quy trình sơ cứu: " + (topic.fullTitle || topic.title),
-            "description": topic.lead || topic.shortDesc,
-            "step": Array.isArray(topic.steps) ? topic.steps.map((s, idx) => ({
-              "@type": "HowToStep",
-              "position": s.stepNumber || (idx + 1),
-              "name": s.title,
-              "text": s.desc
-            })) : []
-          }
-        ]
-      };
-
-      const scriptEl = document.createElement('script');
-      scriptEl.id = 'dynamic-topic-schema';
-      scriptEl.type = 'application/ld+json';
-      scriptEl.textContent = JSON.stringify(schema, null, 2);
-      document.head.appendChild(scriptEl);
-    }
-
-    async function loadMedicalDisclaimer(topic) {
-      const disclaimer = document.getElementById('medical-disclaimer');
-      try {
-        const response = await fetch('components/medical-disclaimer.html');
-        if (response.ok) disclaimer.innerHTML = await response.text();
-      } catch {
-        // Keep the notice already in the page when the fragment cannot load.
-      }
-
-      const list = document.getElementById('detail-source-list');
-      if (!list || !Array.isArray(topic?.sources)) return;
-
-      for (const source of topic.sources) {
-        if (!source?.name) continue;
-        let url;
-        try {
-          url = new URL(source.url);
-        } catch {
-          continue;
-        }
-        if (url.protocol !== 'https:') continue;
-
-        const link = document.createElement('a');
-        link.href = url.href;
-        link.textContent = source.name;
-        link.className = 'underline text-primary';
-        const item = document.createElement('li');
-        item.append(link);
-        list.append(item);
-      }
-
-      if (list.childElementCount > 0) {
-        document.getElementById('detail-sources-empty').hidden = true;
-      }
-    }
-
-    // Dynamic topic loader based on ?id= query param
-    document.addEventListener('DOMContentLoaded', async () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const topicId = urlParams.get('id') || 'hoc-di-vat';
-      const topic = await window.DataLoader?.getTopicById(topicId);
-      const matchesTopic = topic?.id === topicId;
-      loadMedicalDisclaimer(matchesTopic ? topic : null);
-      if (matchesTopic && topic) {
-        injectTopicSchema(topic);
-        const bBtn = document.getElementById('detail-bookmark-btn');
-        if (bBtn) {
-          bBtn.setAttribute('data-topic-id', topic.id);
-          if (window.Storage) window.Storage.syncAllBookmarkButtons();
-        }
-      }
-
-      if (!matchesTopic) {
-        const title = 'Chủ đề hiện không khả dụng';
-        document.title = `${title} - MedFA`;
-        document.getElementById('breadcrumb-topic-title').textContent = title;
-        document.getElementById('detail-title').textContent = title;
-        document.getElementById('detail-lead').textContent = 'Quay lại thư viện để chọn một chủ đề đang có.';
-        document.getElementById('detail-category-badge').hidden = true;
-        document.getElementById('detail-read-time').hidden = true;
-        return;
-      }
-
-      // Update Breadcrumb & Header
-      document.title = `${topic.fullTitle || topic.title} - MedFA`;
-      const breadcrumb = document.getElementById('breadcrumb-topic-title');
-      if (breadcrumb) breadcrumb.textContent = topic.fullTitle || topic.title;
-
-      const titleEl = document.getElementById('detail-title');
-      if (titleEl) titleEl.textContent = topic.fullTitle || topic.title;
-
-      const leadEl = document.getElementById('detail-lead');
-      if (leadEl) leadEl.textContent = topic.lead || topic.shortDesc;
-
-      const catLabel = document.getElementById('detail-category-label');
-      if (catLabel) catLabel.textContent = topic.categoryLabel || topic.category;
-
-      const readTime = document.getElementById('detail-read-time');
-      if (readTime && topic.readTime) {
-        readTime.innerHTML = `<span class="material-symbols-outlined text-[15px]">timer</span><span>Đọc ${topic.readTime}</span>`;
-      }
-
-      if (topic.needsMedicalReview) {
-        leadEl.textContent = 'Bài này đang chờ đối chiếu nội dung y khoa. Xem hướng dẫn chính thức bên dưới.';
-        return;
-      }
-
-      const isChokingTopic = topic.id === 'hoc-di-vat';
-      document.getElementById('choking-alert-note').hidden = !isChokingTopic;
-      document.getElementById('choking-timeline').hidden = !isChokingTopic;
-
-      const alertEl = document.getElementById('detail-alert-text');
-      if (alertEl && topic.emergencyAlert) {
-        alertEl.textContent = topic.emergencyAlert;
-      }
-
-      // Update Steps if available
-      const stepsContainer = document.getElementById('detail-steps-container');
-      if (stepsContainer && topic.steps && topic.steps.length > 0) {
-        stepsContainer.innerHTML = topic.steps.map(s => `
-          <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">
-                ${s.stepNumber}
-              </div>
-              <div class="flex-1">
-                <h3 class="text-base md:text-lg font-bold text-on-surface">${s.title}</h3>
-                <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">${s.desc}</p>
-              </div>
-            </div>
-          </div>
-        `).join('');
-      }
-
-      // Update Dos
-      const dosList = document.getElementById('detail-dos-list');
-      if (dosList && topic.dos && topic.dos.length > 0) {
-        dosList.innerHTML = topic.dos.map(item => `
-          <li class="flex items-start gap-2">
-            <span class="text-emerald-600 font-bold">•</span>
-            <span>${item}</span>
-          </li>
-        `).join('');
-      }
-
-      // Update Donts
-      const dontsList = document.getElementById('detail-donts-list');
-      if (dontsList && topic.donts && topic.donts.length > 0) {
-        dontsList.innerHTML = topic.donts.map(item => `
-          <li class="flex items-start gap-2">
-            <span class="text-rose-600 font-bold">•</span>
-            <span>${item}</span>
-          </li>
-        `).join('');
-      }
-      document.getElementById('topic-guidance').hidden = false;
-    });
-  </script>
+  <script src="js/topic-detail.js"></script>
 </body>
 </html>

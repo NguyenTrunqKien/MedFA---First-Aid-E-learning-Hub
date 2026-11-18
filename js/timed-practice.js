@@ -25,124 +25,184 @@ const reviewAnswers = document.querySelector('#review-answers');
 // Fallback an toàn 100% nếu mở file:// hoặc mất mạng
 const DEFAULT_QUESTIONS = [
   {
-    id: "tp-01",
-    topicId: "ngung-tuan-hoan-cpr",
-    topicTitle: "Ngừng tuần hoàn (Ép tim CPR)",
-    prompt: "Thời gian vàng tối đa để cấp cứu hồi sinh tế bào não trước khi bị tổn thương không thể hồi phục khi ngừng tuần hoàn là bao lâu?",
-    options: ["4 phút", "10 phút", "15 phút", "30 phút"],
-    answer: 0,
-    explanation: "Theo cẩm nang MedFA và khuyến cáo ERC/AHA, não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu tim ngừng đập.",
-    standard: "Chuẩn ERC & AHA 2025"
+    "id": "tp-01",
+    "topicId": "ngung-tuan-hoan-cpr",
+    "topicTitle": "Ngừng tuần hoàn (ép tim CPR)",
+    "prompt": "Thời gian vàng cao nhất có thể để cấp cứu hồi sinh tế bào não trước khi bị tổn thương khó có khả năng hồi phục khi ngừng tuần hoàn là bao lâu?",
+    "options": [
+      "4 phút",
+      "10 phút",
+      "15 phút",
+      "30 phút"
+    ],
+    "answer": 0,
+    "explanation": "Theo cẩm nang medFA và khuyến cáo ERC/AHA, não bộ sẽ bắt đầu tổn thương khó có khả năng phục hồi chỉ sau 4 phút thiếu oxy nếu tim ngừng đập.",
+    "standard": "Chuẩn ERC & AHA 2025"
   },
   {
-    id: "tp-02",
-    topicId: "ngung-tuan-hoan-cpr",
-    topicTitle: "Ngừng tuần hoàn (Ép tim CPR)",
-    prompt: "Khi thực hiện ép tim ngoài lồng ngực (CPR) cho người lớn theo khuyến cáo, tần số ép ngực đạt chuẩn là bao nhiêu?",
-    options: ["60 - 80 lần/phút", "100 - 120 lần/phút", "130 - 150 lần/phút", "Tùy theo nhịp thở của người sơ cứu"],
-    answer: 1,
-    explanation: "Tần số ép tim chuẩn là 100 - 120 lần/phút, độ sâu 5 - 6 cm đối với người lớn và phải để lồng ngực nở hoàn toàn sau mỗi lần ép.",
-    standard: "Chuẩn ERC & AHA 2025"
+    "id": "tp-02",
+    "topicId": "ngung-tuan-hoan-cpr",
+    "topicTitle": "Ngừng tuần hoàn (ép tim CPR)",
+    "prompt": "Khi thực hiện ép tim ngoài lồng ngực (CPR) cho người lớn theo khuyến cáo, tần số ép ngực đạt chuẩn là bao nhiêu?",
+    "options": [
+      "60 - 80 lần/phút",
+      "100 - 120 lần/phút",
+      "130 - 150 lần/phút",
+      "Tùy theo nhịp thở của người sơ cứu"
+    ],
+    "answer": 1,
+    "explanation": "Tần số ép tim chuẩn là 100 - 120 lần/phút, độ sâu 5 - 6 cm đối với người lớn và phải để lồng ngực nở hoàn toàn sau mỗi lần ép.",
+    "standard": "Chuẩn ERC & AHA 2025"
   },
   {
-    id: "tp-03",
-    topicId: "ngung-tuan-hoan-cpr",
-    topicTitle: "Ngừng tuần hoàn (Ép tim CPR)",
-    prompt: "Trong quy trình hồi sinh tim phổi (CPR) kết hợp ép tim và thổi ngạt, tỉ lệ chu kỳ chuẩn là:",
-    options: ["15 lần ép tim : 2 lần thổi ngạt", "30 lần ép tim : 2 lần thổi ngạt", "30 lần ép tim : 5 lần thổi ngạt", "50 lần ép tim : 1 lần thổi ngạt"],
-    answer: 1,
-    explanation: "Chu kỳ chuẩn theo AHA/ERC là 30 lần ép tim liên tục xen kẽ 2 lần thổi ngạt hiệu quả, gián đoạn ép tim không quá 10 giây.",
-    standard: "Chuẩn ERC & AHA 2025"
+    "id": "tp-03",
+    "topicId": "ngung-tuan-hoan-cpr",
+    "topicTitle": "Ngừng tuần hoàn (ép tim CPR)",
+    "prompt": "Trong quy trình hồi sinh tim phổi (CPR) kết hợp ép tim và thổi ngạt, tỉ lệ chu kỳ chuẩn là:",
+    "options": [
+      "15 lần ép tim: 2 lần thổi ngạt",
+      "30 lần ép tim: 2 lần thổi ngạt",
+      "30 lần ép tim: 5 lần thổi ngạt",
+      "50 lần ép tim: 1 lần thổi ngạt"
+    ],
+    "answer": 1,
+    "explanation": "Chu kỳ chuẩn theo AHA/ERC là 30 lần ép tim liên tục xen kẽ 2 lần thổi ngạt hiệu quả, gián đoạn ép tim không quá 10 giây.",
+    "standard": "Chuẩn ERC & AHA 2025"
   },
   {
-    id: "tp-04",
-    topicId: "hoc-di-vat",
-    topicTitle: "Hóc dị vật (Nghẹn)",
-    prompt: "Phát hiện một người lớn đang bị nghẹn thức ăn nhưng vẫn còn nói được và đang cố ho mạnh. Bạn nên làm gì?",
-    options: ["Lao vào thực hiện nghiệm pháp Heimlich ngay lập tức", "Dùng ngón tay móc sâu vào họng để tìm dị vật", "Khuyến khích nạn nhân tiếp tục ho mạnh, không can thiệp đập lưng hay ép bụng", "Cho nạn nhân uống ngay một cốc nước đầy"],
-    answer: 2,
-    explanation: "Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được, phản xạ ho tự nhiên là cách tống dị vật tốt nhất. Khuyến khích ho mạnh, tuyệt đối không vỗ lưng hay ép bụng lúc này.",
-    standard: "Chuẩn ERC & AHA 2025"
+    "id": "tp-04",
+    "topicId": "hoc-di-vat",
+    "topicTitle": "Hóc dị vật (nghẹn)",
+    "prompt": "Phát hiện một người lớn đang bị nghẹn thức ăn nhưng vẫn còn nói được và đang cố ho mạnh. Bạn nên làm gì?",
+    "options": [
+      "Lao vào thực hiện nghiệm pháp Heimlich ngay lập tức",
+      "Dùng ngón tay móc sâu vào họng để tìm dị vật",
+      "Khuyến khích nạn nhân tiếp tục ho mạnh, không can thiệp đập lưng hay ép bụng",
+      "Cho nạn nhân uống ngay một cốc nước đầy"
+    ],
+    "answer": 2,
+    "explanation": "Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được, phản xạ ho tự nhiên là cách tống dị vật tốt nhất. Khuyến khích ho mạnh, đặc biệt tránh vỗ lưng hay ép bụng lúc này.",
+    "standard": "Chuẩn ERC & AHA 2025"
   },
   {
-    id: "tp-05",
-    topicId: "hoc-di-vat",
-    topicTitle: "Hóc dị vật (Nghẹn)",
-    prompt: "Khi thực hiện nghiệm pháp Heimlich cho người lớn bị tắc nghẽn đường thở hoàn toàn, vị trí đặt nắm đấm tay là:",
-    options: ["Chính giữa xương ức", "Vùng thượng vị (trên rốn, dưới mũi ức)", "Dưới rốn 5cm", "Vùng hạ sườn phải"],
-    answer: 1,
-    explanation: "Nắm đấm đặt tại vùng thượng vị (trên rốn và dưới mũi ức), tay kia bọc lấy và giật mạnh dứt khoát theo hướng VÀO TRONG VÀ LÊN TRÊN.",
-    standard: "Chuẩn ERC & AHA 2025"
+    "id": "tp-05",
+    "topicId": "hoc-di-vat",
+    "topicTitle": "Hóc dị vật (nghẹn)",
+    "prompt": "Khi thực hiện nghiệm pháp Heimlich cho người lớn bị tắc nghẽn đường thở hoàn toàn, vị trí đặt nắm đấm tay là:",
+    "options": [
+      "Chính giữa xương ức",
+      "Vùng thượng vị (trên rốn, dưới mũi ức)",
+      "Dưới rốn 5cm",
+      "Vùng hạ sườn phải"
+    ],
+    "answer": 1,
+    "explanation": "Nắm đấm đặt tại vùng thượng vị (trên rốn và dưới mũi ức), tay kia bọc lấy và giật mạnh dứt khoát theo hướng VÀO TRONG VÀ LÊN TRÊN.",
+    "standard": "Chuẩn ERC & AHA 2025"
   },
   {
-    id: "tp-06",
-    topicId: "hoc-di-vat-o-tre-em",
-    topicTitle: "Hóc dị vật ở trẻ em",
-    prompt: "Trẻ sơ sinh dưới 1 tuổi bị sặc dị vật tím tái, không khóc được. Hành động nào sau đây bị CẤM tuyệt đối vì gây nguy cơ dập vỡ nội tạng?",
-    options: ["Thực hiện 5 lần vỗ lưng", "Thực hiện 5 lần ấn ngực", "Thực hiện nghiệm pháp ép bụng Heimlich", "Gọi cấp cứu 115"],
-    answer: 2,
-    explanation: "Đối với trẻ dưới 1 tuổi, gan và các cơ quan nội tạng còn rất non nớt. TUYỆT ĐỐI KHÔNG ép bụng Heimlich, chỉ dùng chu kỳ 5 vỗ lưng và 5 ấn ngực.",
-    standard: "Chuẩn ERC & AHA 2025"
+    "id": "tp-06",
+    "topicId": "hoc-di-vat-o-tre-em",
+    "topicTitle": "Hóc dị vật ở trẻ em",
+    "prompt": "Trẻ sơ sinh dưới 1 tuổi bị sặc dị vật tím tái, không khóc được. Hành động nào sau đây cần tránh vì gây nguy cơ dập vỡ nội tạng?",
+    "options": [
+      "Thực hiện 5 lần vỗ lưng",
+      "Thực hiện 5 lần ấn ngực",
+      "Thực hiện nghiệm pháp ép bụng Heimlich",
+      "Gọi cấp cứu 115"
+    ],
+    "answer": 2,
+    "explanation": "Đối với trẻ dưới 1 tuổi, gan và các cơ quan nội tạng còn rất non nớt. khuyến cáo tránh ép bụng Heimlich, chỉ dùng chu kỳ 5 vỗ lưng và 5 ấn ngực.",
+    "standard": "Chuẩn ERC & AHA 2025"
   },
   {
-    id: "tp-07",
-    topicId: "bong-cap-do-1-2",
-    topicTitle: "Bỏng cấp độ 1 & 2",
-    prompt: "Bị bỏng nước sôi ở cẳng tay xuất hiện các vết phồng rộp. Cách xử trí làm mát tại chỗ đúng chuẩn y khoa là gì?",
-    options: ["Xối nhẹ dưới vòi nước mát sạch (15-25°C) liên tục 15-20 phút", "Chườm trực tiếp đá lạnh đóng băng lên vết bỏng", "Bôi ngay kem đánh răng hoặc mỡ trăn để làm dịu", "Chọc thủng các bọng nước để thoát dịch nhanh"],
-    answer: 0,
-    explanation: "Làm mát vết bỏng bằng nước sạch chảy nhẹ trong 15-20 phút giúp hạ nhiệt mô sâu. Tránh đá lạnh (gây bỏng lạnh hoại tử) và không bôi kem đánh răng, mỡ trăn.",
-    standard: "Chuẩn Hội Bỏng Quốc tế (ISBI)"
+    "id": "tp-07",
+    "topicId": "bong-cap-do-1-2",
+    "topicTitle": "Bỏng cấp độ 1 & 2",
+    "prompt": "Bị bỏng nước sôi ở cẳng tay xuất hiện các vết phồng rộp. Cách xử trí làm mát tại chỗ đúng chuẩn y khoa là gì?",
+    "options": [
+      "Xối nhẹ dưới vòi nước mát sạch (15-25°C) liên tục 15-20 phút",
+      "Chườm trực tiếp đá lạnh đóng băng lên vết bỏng",
+      "Bôi ngay kem đánh răng hoặc mỡ trăn để làm dịu",
+      "Chọc thủng các bọng nước để thoát dịch nhanh"
+    ],
+    "answer": 0,
+    "explanation": "Làm mát vết bỏng bằng nước sạch chảy nhẹ trong 15-20 phút giúp hạ nhiệt mô sâu. Tránh đá lạnh (gây bỏng lạnh hoại tử) và không bôi kem đánh răng, mỡ trăn.",
+    "standard": "Chuẩn Hội Bỏng Quốc tế (ISBI)"
   },
   {
-    id: "tp-08",
-    topicId: "chay-mau-nghiem-trong",
-    topicTitle: "Chảy máu nghiêm trọng",
-    prompt: "Khi đang băng ép cầm máu cho vết thương sâu ở cẳng tay, nếu thấy máu vẫn tiếp tục thấm đỏ qua lớp băng gạc đầu tiên, bạn nên làm gì?",
-    options: ["Tháo toàn bộ lớp gạc cũ ra để kiểm tra miệng vết thương", "Đặt thêm lớp gạc mới chèn lên trên lớp cũ và tiếp tục quấn băng ép chặt hơn", "Rắc bột cà phê hoặc thuốc lá để cầm máu", "Nới lỏng băng để máu lưu thông tốt hơn"],
-    answer: 1,
-    explanation: "Tuyệt đối KHÔNG tháo lớp băng cũ vì sẽ làm vỡ các cục máu đông đang hình thành. Hãy đặt thêm lớp gạc mới lên trên và tiếp tục đè ép cố định.",
-    standard: "Chuẩn IFRC / Hội Chữ Thập Đỏ"
+    "id": "tp-08",
+    "topicId": "chay-mau-nghiem-trong",
+    "topicTitle": "Chảy máu nghiêm trọng",
+    "prompt": "Khi đang băng ép cầm máu cho vết thương sâu ở cẳng tay, nếu thấy máu vẫn tiếp tục thấm đỏ qua lớp băng gạc đầu tiên, bạn nên làm gì?",
+    "options": [
+      "Tháo toàn bộ lớp gạc cũ ra để kiểm tra miệng vết thương",
+      "Đặt thêm lớp gạc mới chèn lên trên lớp cũ và tiếp tục quấn băng ép chặt hơn",
+      "Rắc bột cà phê hoặc thuốc lá để cầm máu",
+      "Nới lỏng băng để máu lưu thông tốt hơn"
+    ],
+    "answer": 1,
+    "explanation": "Tối đa không nên tháo lớp băng cũ vì sẽ làm vỡ các cục máu đông đang hình thành. Hãy đặt thêm lớp gạc mới lên trên và tiếp tục đè ép cố định.",
+    "standard": "Chuẩn IFRC / Hội Chữ Thập Đỏ"
   },
   {
-    id: "tp-09",
-    topicId: "chay-mau-va-cam-mau",
-    topicTitle: "Chảy máu và cầm máu",
-    prompt: "Khi nào người sơ cứu bắt buộc phải sử dụng phương pháp đặt Ga-rô (Tourniquet)?",
-    options: ["Mọi vết thương chảy máu ở tay chân", "Chỉ khi chảy máu động mạch dữ dội phun thành tia hoặc đứt lìa chi mà băng ép trực tiếp không kiểm soát được", "Vết trầy xước chảy máu rỉ rỉ ngoài da", "Chảy máu ở vùng đầu và cổ"],
-    answer: 1,
-    explanation: "Ga-rô là biện pháp cứu mạng cuối cùng chỉ áp dụng cho vết thương chi chảy máu ồ ạt đe dọa tính mạng (phun tia, đứt lìa) khi đè ép trực tiếp thất bại.",
-    standard: "Chuẩn IFRC / Hội Chữ Thập Đỏ"
+    "id": "tp-09",
+    "topicId": "chay-mau-va-cam-mau",
+    "topicTitle": "Chảy máu và cầm máu",
+    "prompt": "Khi nào người sơ cứu cần thiết phải sử dụng phương pháp đặt ga-rô (tourniquet)?",
+    "options": [
+      "Mọi vết thương chảy máu ở tay chân",
+      "Chỉ khi chảy máu động mạch dữ dội phun thành tia hoặc đứt lìa chi mà băng ép trực tiếp không kiểm soát được",
+      "Vết trầy xước chảy máu rỉ rỉ ngoài da",
+      "Chảy máu ở vùng đầu và cổ"
+    ],
+    "answer": 1,
+    "explanation": "Ga-rô là biện pháp cứu mạng cuối cùng chỉ áp dụng cho vết thương chi chảy máu ồ ạt đe dọa tính mạng (phun tia, đứt lìa) khi đè ép trực tiếp thất bại.",
+    "standard": "Chuẩn IFRC / Hội Chữ Thập Đỏ"
   },
   {
-    id: "tp-10",
-    topicId: "co-giat-dong-kinh",
-    topicTitle: "Co giật & Động kinh",
-    prompt: "Gặp nạn nhân đang lên cơn co giật dữ dội, hành vi nào sau đây TUYỆT ĐỐI KHÔNG ĐƯỢC LÀM?",
-    options: ["Kê đệm mềm dưới đầu nạn nhân và gạt bỏ các vật sắc nhọn xung quanh", "Cố gắng nhét thìa, đũa, chanh hoặc ngón tay vào miệng nạn nhân", "Nới lỏng cổ áo và thắt lưng của nạn nhân", "Bấm giờ theo dõi thời gian cơn co giật diễn ra"],
-    answer: 1,
-    explanation: "Nạn nhân không thể tự cắn đứt lưỡi khi co giật. Nhét vật cứng vào miệng có nguy cơ gãy răng, rách họng, tắc nghẽn đường thở hoặc cắn đứt ngón tay người cứu.",
-    standard: "Chuẩn Hiệp hội Động kinh Quốc tế"
+    "id": "tp-10",
+    "topicId": "co-giat-dong-kinh",
+    "topicTitle": "Co giật & động kinh",
+    "prompt": "Gặp nạn nhân đang lên cơn co giật dữ dội, hành vi nào sau đây không nên LÀM?",
+    "options": [
+      "Kê đệm mềm dưới đầu nạn nhân và gạt bỏ các vật sắc nhọn xung quanh",
+      "Cố gắng nhét thìa, đũa, chanh hoặc ngón tay vào miệng nạn nhân",
+      "Nới lỏng cổ áo và thắt lưng của nạn nhân",
+      "Bấm giờ theo dõi thời gian cơn co giật diễn ra"
+    ],
+    "answer": 1,
+    "explanation": "Nạn nhân không thể tự cắn đứt lưỡi khi co giật. Nhét vật cứng vào miệng có nguy cơ gãy răng, rách họng, tắc nghẽn đường thở hoặc cắn đứt ngón tay người cứu.",
+    "standard": "Chuẩn Hiệp hội Động kinh Quốc tế"
   },
   {
-    id: "tp-11",
-    topicId: "dot-quy",
-    topicTitle: "Đột quỵ",
-    prompt: "Quy tắc F.A.S.T dùng để nhận diện nhanh cơn Đột quỵ bao gồm những dấu hiệu nào?",
-    options: ["Face (Méo mặt), Arms (Yếu liệt tay chân), Speech (Nói khó/ngọng), Time (Thời gian vàng gọi 115)", "Fever (Sốt cao), Allergy (Dị ứng), Shock (Sốc), Tremor (Run tay)", "Food (Ngộ độc), Airway (Tắc thở), Skin (Tái nhợt), Temperature (Hạ thân nhiệt)", "Fracture (Gãy xương), Ache (Đau đầu), Sleep (Mơ màng), Tension (Tăng huyết áp)"],
-    answer: 0,
-    explanation: "FAST là bộ quy tắc chuẩn quốc tế: F - Face (cười lệch mặt), A - Arms (yếu một bên tay), S - Speech (nói khó, phát âm không rõ), T - Time (khẩn cấp gọi 115).",
-    standard: "Chuẩn Hội Đột Quỵ Thế Giới (WSO)"
+    "id": "tp-11",
+    "topicId": "dot-quy",
+    "topicTitle": "Đột quỵ",
+    "prompt": "Quy tắc F. A. S. T dùng để nhận diện nhanh cơn đột quỵ bao gồm những dấu hiệu nào?",
+    "options": [
+      "Face (méo mặt), arms (yếu liệt tay chân), speech (nói khó/ngọng), time (thời gian vàng gọi 115)",
+      "Fever (sốt cao), allergy (dị ứng), shock (sốc), tremor (run tay)",
+      "Food (ngộ độc), airway (tắc thở), skin (tái nhợt), temperature (Hạ thân nhiệt)",
+      "Fracture (gãy xương), ache (đau đầu), sleep (mơ màng), tension (tăng huyết áp)"
+    ],
+    "answer": 0,
+    "explanation": "FAST là bộ quy tắc chuẩn quốc tế: F - face (cười lệch mặt), A - arms (yếu một bên tay), S - speech (nói khó, phát âm không rõ), T - time (khẩn cấp gọi 115).",
+    "standard": "Chuẩn Hội Đột Quỵ Thế Giới (WSO)"
   },
   {
-    id: "tp-12",
-    topicId: "duoi-nuoc-o-tre-em",
-    topicTitle: "Đuối nước ở trẻ em",
-    prompt: "Sau khi vớt một nạn nhân đuối nước ngừng thở lên bờ cát, hành vi sai lầm nguy hiểm nào cần TUYỆT ĐỐI TRÁNH?",
-    options: ["Lập tức tiến hành khai thông đường thở và hà hơi thổi ngạt", "Ép tim ngoài lồng ngực kết hợp thổi ngạt", "Vác nạn nhân chạy vòng quanh để xốc nước ra khỏi phổi", "Gọi hỗ trợ y tế 115 ngay lập tức"],
-    answer: 2,
-    explanation: "Hành động vác chạy xốc nước làm chậm trễ thời gian vàng hồi sức tim phổi CPR và có thể khiến dịch dạ dày trào ngược lọt vào đường thở gây ngạt thở thứ phát.",
-    standard: "Chuẩn Hiệp hội Cứu sinh Quốc tế (ILS)"
+    "id": "tp-12",
+    "topicId": "duoi-nuoc-o-tre-em",
+    "topicTitle": "Đuối nước ở trẻ em",
+    "prompt": "Sau khi vớt một nạn nhân đuối nước ngừng thở lên bờ cát, hành vi sai lầm nguy hiểm nào cần đặc biệt tránh?",
+    "options": [
+      "Lập tức làm khai thông đường thở và hà hơi thổi ngạt",
+      "Ép tim ngoài lồng ngực kết hợp thổi ngạt",
+      "Vác nạn nhân chạy vòng quanh để xốc nước ra khỏi phổi",
+      "Gọi hỗ trợ y tế 115 ngay lập tức"
+    ],
+    "answer": 2,
+    "explanation": "Hành động vác chạy xốc nước làm chậm trễ thời gian vàng hồi sức tim phổi CPR và có thể khiến dịch dạ dày trào ngược lọt vào đường thở gây ngạt thở thứ phát.",
+    "standard": "Chuẩn Hiệp hội Cứu sinh Quốc tế (ILS)"
   }
 ];
 
@@ -266,16 +326,25 @@ function showReview(completed) {
     if (item.explanation) {
       const explainEl = document.createElement('p');
       explainEl.style.cssText = 'margin-top: 0.65rem; font-size: 0.9rem; color: var(--color-on-surface-variant); background: var(--color-surface-container-low); padding: 0.65rem 0.9rem; border-radius: 0.5rem; border-left: 3px solid var(--color-primary); line-height: 1.45;';
-      explainEl.innerHTML = `<strong>💡 Giải thích chuyên môn:</strong> ${item.explanation}`;
+      const strongEl = document.createElement('strong');
+      strongEl.textContent = '💡 Giải thích chuyên môn: ';
+      explainEl.append(strongEl, document.createTextNode(item.explanation));
       entry.append(explainEl);
     }
 
     if (item.topicId) {
       const topicEl = document.createElement('p');
       topicEl.style.cssText = 'margin-top: 0.4rem;';
-      topicEl.innerHTML = `<a href="topic-detail.html?id=${item.topicId}" class="review-topic-link" style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-decoration: underline;">
-        <span class="material-symbols-outlined" style="font-size: 16px;">menu_book</span> Ôn lại bài học: ${item.topicTitle || 'Chi tiết chủ đề'}
-      </a>`;
+      const linkEl = document.createElement('a');
+      linkEl.href = 'topic-detail.html?id=' + encodeURIComponent(item.topicId);
+      linkEl.className = 'review-topic-link';
+      linkEl.style.cssText = 'display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-decoration: underline;';
+      const iconEl = document.createElement('span');
+      iconEl.className = 'material-symbols-outlined';
+      iconEl.style.fontSize = '16px';
+      iconEl.textContent = 'menu_book';
+      linkEl.append(iconEl, document.createTextNode(' Ôn lại bài học: ' + (item.topicTitle || 'Chi tiết chủ đề')));
+      topicEl.append(linkEl);
       entry.append(topicEl);
     }
 
@@ -331,13 +400,15 @@ function finish(completed) {
 }
 
 /**
- * Cập nhật đồng hồ đếm ngược và trạng thái cảnh báo < 60s
+ * Cập nhật đồng hồ đếm ngược và trạng thái cảnh báo < 60s.
+ * Dùng mốc deadline = Date.now() + duration * 1000 thay vì trừ dần 1 giây mỗi tick
+ * để tránh bị trễ giờ khi trình duyệt throttle setInterval ở tab nền.
  */
 function updateClock() {
   const remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
   time.textContent = formatTime(remaining);
 
-  // Kỹ thuật stroke-dashoffset hình tròn
+  // Vòng tròn SVG dùng pathLength="100" nên stroke-dashoffset đi từ 0 (đầy 100%) đến 100 (hết giờ)
   ring.setAttribute('stroke-dashoffset', String(100 * (1 - remaining / duration)));
 
   // Khi dưới 60 giây: Đổi sang class .warning (Đỏ rực + animation: pulse 1s infinite)
@@ -357,7 +428,15 @@ function showQuestion() {
 
   question.style.display = 'block';
   const item = questions[index];
-  question.innerHTML = `<span class="q-progress-badge">Tình huống ${index + 1} / ${questions.length}</span><div class="q-text">${item.prompt}</div>`;
+  // Tạo phần tử DOM bằng textContent để đảm bảo an toàn XSS khi nạp dữ liệu JSON
+  question.replaceChildren();
+  const badgeSpan = document.createElement('span');
+  badgeSpan.className = 'q-progress-badge';
+  badgeSpan.textContent = `Tình huống ${index + 1} / ${questions.length}`;
+  const textDiv = document.createElement('div');
+  textDiv.className = 'q-text';
+  textDiv.textContent = item.prompt;
+  question.append(badgeSpan, textDiv);
 
   choices.replaceChildren();
   const letters = ['A', 'B', 'C', 'D'];
@@ -365,7 +444,13 @@ function showQuestion() {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'choice-btn';
-    button.innerHTML = `<span class="choice-letter">${letters[optionIndex] || (optionIndex + 1)}</span><span class="choice-label">${label}</span>`;
+    const letterSpan = document.createElement('span');
+    letterSpan.className = 'choice-letter';
+    letterSpan.textContent = letters[optionIndex] || String(optionIndex + 1);
+    const labelSpan = document.createElement('span');
+    labelSpan.className = 'choice-label';
+    labelSpan.textContent = label;
+    button.append(letterSpan, labelSpan);
     button.addEventListener('click', () => {
       if (Date.now() >= deadline) {
         updateClock();
@@ -424,32 +509,3 @@ start.addEventListener('click', async () => {
     challengeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 });
-
-/**
- * Hỗ trợ Dev/Tester: Tự động chọn đúng 100% tất cả các câu hỏi
- * Cách dùng: Mở F12 -> Console -> gõ `testAutoWin()` -> Enter
- */
-window.testAutoWin = async function () {
-  // Nếu chưa bấm bắt đầu, tự động kích hoạt bắt đầu
-  if (start && start.style.display !== 'none' && !start.disabled) {
-    start.click();
-    await new Promise(resolve => setTimeout(resolve, 300));
-  }
-
-  if (!questions || questions.length === 0) {
-    console.warn('[MedFA Debug] Chưa có dữ liệu câu hỏi, hãy bấm bắt đầu rồi thử lại.');
-    return;
-  }
-
-  // Tự động gán toàn bộ đáp án chính xác
-  answers = questions.map(item => item.answer);
-  score = questions.length;
-  index = questions.length;
-
-  console.log(
-    '%c🏆 [MedFA Dev Mode] Đã kích hoạt testAutoWin() thành công! Đạt 100% (' + score + '/' + questions.length + ').',
-    'background: #10b981; color: #ffffff; font-weight: bold; font-size: 13px; padding: 4px 8px; border-radius: 4px;'
-  );
-
-  finish(true);
-};

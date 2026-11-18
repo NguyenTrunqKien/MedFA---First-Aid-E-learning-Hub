@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="Thư viện tra cứu các tình huống sơ cấp cứu chuẩn y khoa quốc tế AHA & ERC: tìm kiếm nhanh, lọc theo danh mục và lưu bài học.">
   <title>Thư viện Sơ cấp cứu - MedFA</title>
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
 
@@ -19,6 +20,56 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- SEO Meta Tags, Canonical, Open Graph & Schema.org -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topics.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MedFA">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Thư viện Sơ cấp cứu - MedFA">
+  <meta property="og:description" content="Thư viện tra cứu các tình huống sơ cấp cứu chuẩn y khoa quốc tế AHA & ERC: tìm kiếm nhanh, lọc theo danh mục và lưu bài học.">
+  <meta property="og:url" content="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topics.html">
+  <meta property="og:image" content="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/images/first-aid-child.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thư viện Sơ cấp cứu - MedFA">
+  <meta name="twitter:description" content="Thư viện tra cứu các tình huống sơ cấp cứu chuẩn y khoa quốc tế AHA & ERC: tìm kiếm nhanh, lọc theo danh mục và lưu bài học.">
+  <meta name="twitter:image" content="https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/images/first-aid-child.webp">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topics.html#webpage",
+        "url": "https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topics.html",
+        "name": "Thư viện Sơ cấp cứu - MedFA",
+        "description": "Thư viện tra cứu các tình huống sơ cấp cứu chuẩn y khoa quốc tế AHA & ERC: tìm kiếm nhanh, lọc theo danh mục và lưu bài học.",
+        "inLanguage": "vi-VN",
+        "isPartOf": {
+          "@id": "https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Thư viện sơ cấp cứu",
+            "item": "https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/topics.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-surface font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="topics">
 
@@ -60,7 +111,7 @@
               <input 
                 class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline pl-12 pr-28 py-3.5 rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.06)] hover:shadow-md transition-shadow text-base outline-none focus:ring-2 focus:ring-secondary/40 border border-outline-variant/30" 
                 id="search-input" 
-                placeholder="Tìm kiếm tình huống: CPR, bỏng, hóc dị vật..." 
+                placeholder="Tìm kiếm tình huống (gõ có hoặc không dấu): CPR, bong nhiet, hoc di vat..." 
                 type="text"
               >
               <div class="absolute right-2 flex items-center gap-1">
@@ -185,6 +236,7 @@
   <script src="js/data-loader.js"></script>
   <script src="js/chatbot-gemini.js"></script>
   <script src="js/render-topics.js"></script>
+  <script src="js/seo-config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

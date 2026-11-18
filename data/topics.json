@@ -1,18 +1,16 @@
 [
   {
     "id": "hoc-di-vat",
-    "title": "Hóc dị vật (Nghẹn)",
-    "fullTitle": "Hóc dị vật (Nghẹn & Tắc đường thở)",
+    "title": "Hóc dị vật (nghẹn)",
+    "fullTitle": "Hóc dị vật (nghẹn & tắc đường thở)",
     "category": "tre-em",
     "categoryLabel": "Trẻ em",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "2 phút",
     "standard": "Chuẩn ERC & AHA 2025",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
     "shortDesc": "Cách thực hiện nghiệm pháp Heimlich để tống dị vật ra khỏi đường thở cho người lớn và trẻ nhỏ.",
-    "lead": "Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.",
+    "lead": "Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu tổn thương khó có khả năng phục hồi chỉ sau 4 phút thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.",
     "timeline": [
       {
@@ -40,53 +38,67 @@
       {
         "stepNumber": 1,
         "title": "Đánh giá mức độ tắc nghẽn",
-        "desc": "Hỏi nạn nhân 'Bạn có bị nghẹn không?'. Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được: KHUYẾN KHÍCH HO MẠNH, tuyệt đối KHÔNG đập lưng hay can thiệp ép bụng lúc này."
+        "desc": "Hỏi nạn nhân 'bạn có bị nghẹn không? '. Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được: KHUYẾN KHÍCH HO MẠNH, tối đa không nên đập lưng hay can thiệp ép bụng lúc này."
       },
       {
         "stepNumber": 2,
-        "title": "5 vỗ lưng dứt khoát (Back Blows)",
+        "title": "5 vỗ lưng dứt khoát (back blows)",
         "desc": "Nếu nạn nhân không thở được hoặc ho yếu: Đứng hơi chếch sau lưng, một tay đỡ ngực nạn nhân nghiêng người về phía trước. Dùng gót bàn tay kia vỗ mạnh, dứt khoát 5 lần vào khoảng giữa 2 xương bả vai hướng lên trên."
       },
       {
         "stepNumber": 3,
-        "title": "5 lần ép bụng Heimlich (Abdominal Thrusts)",
+        "title": "5 lần ép bụng Heimlich (abdominal thrusts)",
         "desc": "Vòng hai tay quanh eo nạn nhân. Nắm chặt một bàn tay, đặt nắm đấm (ngón cái hướng vào trong) tại vùng thượng vị (trên rốn, dưới mũi ức). Tay kia bọc lấy nắm đấm, giật mạnh dứt khoát theo hướng VÀO TRONG VÀ LÊN TRÊN."
       },
       {
         "stepNumber": 4,
-        "title": "Lặp lại chu kỳ 5 vỗ lưng : 5 ép bụng",
+        "title": "Lặp lại chu kỳ 5 vỗ lưng: 5 ép bụng",
         "desc": "Tiếp tục luân phiên 5 vỗ lưng và 5 ép bụng cho đến khi dị vật bật ra ngoài hoặc nạn nhân thở lại bình thường."
       },
       {
         "stepNumber": 5,
         "title": "Nếu nạn nhân bất tỉnh: Chuyển sang CPR",
-        "desc": "Đặt nạn nhân nằm ngửa trên mặt sàn phẳng cứng, gọi 115 và bắt đầu ép tim ngoài lồng ngực (30 lần ép tim : 2 lần thổi ngạt). Trước mỗi lần thổi ngạt, kiểm tra khoang miệng xem có dị vật trồi lên không."
+        "desc": "Đặt nạn nhân nằm ngửa trên mặt sàn phẳng cứng, gọi 115 và bắt đầu ép tim ngoài lồng ngực (30 lần ép tim: 2 lần thổi ngạt). Trước mỗi lần thổi ngạt, kiểm tra khoang miệng xem có dị vật trồi lên không."
       }
     ],
     "dos": [
       "Khuyến khích nạn nhân tiếp tục ho mạnh nếu họ còn ho được.",
       "Cúi người nạn nhân về phía trước khi vỗ lưng để dị vật rơi ra ngoài.",
-      "Đối với trẻ sơ sinh (<1 tuổi): Dùng 5 vỗ lưng và 5 ấn ngực bằng 2 ngón tay, KHÔNG ép bụng Heimlich."
+      "Đối với trẻ sơ sinh (<1 tuổi): Dùng 5 vỗ lưng và 5 ấn ngực bằng 2 ngón tay, không nên ép bụng Heimlich."
     ],
     "donts": [
-      "KHÔNG móc họng mù quáng bằng ngón tay khi không nhìn thấy rõ dị vật.",
-      "KHÔNG cho uống nước hay nuốt cơm để cố đẩy dị vật xuống.",
-      "KHÔNG ép bụng cho phụ nữ mang thai tháng cuối (chuyển sang ép ngực)."
-    ]
+      "Không nên móc họng mù quáng bằng ngón tay khi không nhìn thấy rõ dị vật.",
+      "Không nên cho uống nước hay nuốt cơm để cố đẩy dị vật xuống.",
+      "Không nên ép bụng cho phụ nữ mang thai tháng cuối (chuyển sang ép ngực)."
+    ],
+    "sources": [
+      {
+        "name": "Nhà thuốc Long Châu",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/nghiem-phap-heimlich-la-gi-cach-thuc-hien.html",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/chu-de/nghiem-phap-heimlich",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Sức khỏe & Đời sống (SKĐS)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HS4_SPZdp5g"
+    }
   },
   {
     "id": "bong-cap-do-1-2",
     "title": "Bỏng cấp độ 1 & 2",
-    "fullTitle": "Sơ cứu Bỏng nhiệt cấp độ 1 & 2 (Nước sôi, Lửa, Bô xe)",
+    "fullTitle": "Sơ cứu bỏng nhiệt cấp độ 1 & 2 (nước sôi, lửa, bô xe)",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Sinh hoạt",
-    "badgeClass": "bg-surface-container-high text-on-surface-variant",
     "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Chuẩn Hội Bỏng Quốc tế (ISBI)",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"></path></svg>",
-    "shortDesc": "Các bước làm mát vết bỏng, sơ cứu chống nhiễm trùng và những điều tuyệt đối không được làm.",
+    "shortDesc": "Các bước làm mát vết bỏng, sơ cứu chống nhiễm trùng và những điều không nên làm.",
     "lead": "Tổn thương da do nhiệt độ cao gây đau đớn dữ dội, thoát dịch huyết tương và nguy cơ nhiễm trùng cao. Việc ngâm rửa đúng cách trong 15-20 phút đầu quyết định 80% mức độ để lại sẹo.",
     "emergencyAlert": "Đưa đến cơ sở y tế ngay nếu diện tích bỏng lớn hơn 1 bàn tay, bỏng ở mặt, khớp, bàn tay, vùng kín hoặc nạn nhân là trẻ nhỏ.",
     "timeline": [
@@ -110,12 +122,12 @@
       {
         "stepNumber": 1,
         "title": "Loại bỏ nguồn nhiệt và dị vật",
-        "desc": "Nhanh chóng đưa nạn nhân rời khỏi vùng nguy hiểm. Cởi bỏ nhẹ nhàng quần áo dính chất nóng hoặc trang sức vùng bị bỏng trước khi vết thương sưng nề. Nếu quần áo dính chặt vào da, KHÔNG cố giật ra mà cắt vòng quanh."
+        "desc": "Nhanh chóng đưa nạn nhân rời khỏi vùng nguy hiểm. Cởi bỏ nhẹ nhàng quần áo dính chất nóng hoặc trang sức vùng bị bỏng trước khi vết thương sưng nề. Nếu quần áo dính chặt vào da, không nên cố giật ra mà cắt vòng quanh."
       },
       {
         "stepNumber": 2,
         "title": "Làm mát bằng nước sạch chảy nhẹ trong 15-20 phút",
-        "desc": "Xả nước mát sạch (nhiệt độ phòng khoảng 15-25°C) chảy nhẹ liên tục lên vùng bỏng tối thiểu 15-20 phút đến khi nạn nhân thấy dịu đau. Tuyệt đối KHÔNG dùng đá lạnh trực tiếp."
+        "desc": "Xả nước mát sạch (nhiệt độ phòng khoảng 15-25°C) chảy nhẹ liên tục lên vùng bỏng tối thiểu 15-20 phút đến khi nạn nhân thấy dịu đau. tối đa không nên dùng đá lạnh trực tiếp."
       },
       {
         "stepNumber": 3,
@@ -130,23 +142,37 @@
     ],
     "dos": [
       "Ngâm hoặc xả nước sạch liên tục 15-20 phút ngay sau khi bị bỏng.",
-      "Giữ nguyên các bọng nước (phỏng nước), tuyệt đối không chọc vỡ.",
+      "Giữ nguyên các bọng nước (phỏng nước), đặc biệt tránh chọc vỡ.",
       "Che phủ vết bỏng bằng gạc ẩm vô khuẩn hoặc màng bọc thực phẩm sạch."
     ],
     "donts": [
-      "KHÔNG bôi kem đánh răng, nước mắm, mỡ trăn, trứng gà lên vết bỏng.",
-      "KHÔNG chườm đá lạnh trực tiếp (gây bỏng lạnh và co mạch hoại tử mô).",
-      "KHÔNG chọc vỡ bọng nước tự nhiên của da."
-    ]
+      "Không nên bôi kem đánh răng, nước mắm, mỡ trăn, trứng gà lên vết bỏng.",
+      "Không nên chườm đá lạnh trực tiếp (gây bỏng lạnh và co mạch hoại tử mô).",
+      "Không nên chọc vỡ bọng nước tự nhiên của da."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Bệnh viện Nguyễn Tri Phương",
+        "url": "https://bvnguyentriphuong.com.vn/chan-thuong-chinh-hinh/quy-trinh-so-cuu-cap-cuu-ton-thuong-bong-nhiet",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Báo Pháp Luật TP HCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=cwpPymepUgE"
+    }
   },
   {
     "id": "chay-mau-nghiem-trong",
     "title": "Chảy máu nghiêm trọng",
-    "fullTitle": "Sơ cứu Vết thương Chảy máu Nghiêm trọng & Sử dụng Ga-rô",
+    "fullTitle": "Sơ cứu vết thương chảy máu nghiêm trọng & sử dụng ga-rô",
     "category": "sinh-hoat",
     "categoryLabel": "Chấn thương",
-    "badgeType": "Chấn thương",
-    "badgeClass": "bg-primary-fixed text-primary",
     "criticalLevel": "high",
     "readTime": "4 phút",
     "standard": "Khuyến nghị Stop the Bleed & Red Cross",
@@ -184,12 +210,12 @@
       },
       {
         "stepNumber": 3,
-        "title": "Nếu máu vẫn thấm qua: Thêm lớp mới, KHÔNG gỡ lớp cũ",
-        "desc": "Nếu máu tiếp tục thấm ướt qua lớp băng gạc đầu tiên, KHÔNG tháo gạc cũ ra (để tránh phá vỡ cục máu đông đang hình thành), hãy đặt thêm lớp gạc mới lên trên và băng chặt hơn."
+        "title": "Nếu máu vẫn thấm qua: Thêm lớp mới, không nên gỡ lớp cũ",
+        "desc": "Nếu máu tiếp tục thấm ướt qua lớp băng gạc đầu tiên, không nên tháo gạc cũ ra (để tránh phá vỡ cục máu đông đang hình thành), hãy đặt thêm lớp gạc mới lên trên và băng chặt hơn."
       },
       {
         "stepNumber": 4,
-        "title": "Áp dụng Ga-rô (Tourniquet) nếu máu phun tia ở tay/chân",
+        "title": "Áp dụng ga-rô (tourniquet) nếu máu phun tia ở tay/chân",
         "desc": "Nếu máu chảy ồ ạt từ động mạch tay hoặc chân không thể cầm bằng băng ép: Đặt dây ga-rô cách vết thương 5-7cm về phía gốc chi (không đặt đè lên khớp). Siết chặt cho đến khi máu ngừng chảy hoàn toàn và ghi rõ giờ đặt ga-rô lên trán nạn nhân."
       }
     ],
@@ -199,19 +225,33 @@
       "Giữ ấm cho nạn nhân để phòng tránh sốc hạ thân nhiệt."
     ],
     "donts": [
-      "KHÔNG tháo băng cũ ra kiểm tra khi máu đang cầm.",
-      "KHÔNG đặt ga-rô trực tiếp lên khớp khuỷu tay hoặc đầu gối.",
-      "KHÔNG tự ý nới lỏng ga-rô khi chưa có nhân viên y tế hỗ trợ."
-    ]
+      "Không nên tháo băng cũ ra kiểm tra khi máu đang cầm.",
+      "Không nên đặt ga-rô trực tiếp lên khớp khuỷu tay hoặc đầu gối.",
+      "Không nên tự ý nới lỏng ga-rô khi chưa có nhân viên y tế hỗ trợ."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-chay-mau-cam-mau-nhung-dieu-can-biet-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-vet-thuong-chay-mau-bang-cach-de-ep-va-bang-vet-thuong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Báo Sức khỏe & Đời sống",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qix-Gb1DZvA"
+    }
   },
   {
     "id": "ngung-tuan-hoan-cpr",
-    "title": "Ngừng tuần hoàn (Ép tim CPR)",
-    "fullTitle": "Hồi sinh Tim Phổi (CPR) & Sử dụng Máy sốc điện tự động AED",
+    "title": "Ngừng tuần hoàn (ép tim CPR)",
+    "fullTitle": "Hồi sinh tim phổi (CPR) & sử dụng máy sốc điện tự động AED",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "5 phút",
     "standard": "Phác đồ Quốc tế AHA & ERC 2025",
@@ -245,12 +285,12 @@
       {
         "stepNumber": 1,
         "title": "Kiểm tra hiện trường và phản xạ nạn nhân",
-        "desc": "Đảm bảo hiện trường xung quanh an toàn. Vỗ mạnh hai vai nạn nhân và gọi to: 'Anh/chị có sao không?'. Quan sát lồng ngực trong 5-10 giây xem có thở bình thường không (thở ngáp cá được coi là không thở)."
+        "desc": "Đảm bảo hiện trường xung quanh an toàn. Vỗ mạnh hai vai nạn nhân và gọi to: 'Anh/chị có sao không? '. Quan sát lồng ngực trong 5-10 giây xem có thở bình thường không (thở ngáp cá được coi là không thở)."
       },
       {
         "stepNumber": 2,
         "title": "Kích hoạt hệ thống cấp cứu 115 và tìm máy AED",
-        "desc": "Chỉ định rõ một người xung quanh: 'Anh áo xanh gọi 115 và tìm máy sốc điện AED gần đây mang lại đây!'. Nếu chỉ có một mình, bật loa ngoài điện thoại gọi 115 và bắt đầu ép tim ngay."
+        "desc": "Chỉ định rõ một người xung quanh: 'Anh áo xanh gọi 115 và tìm máy sốc điện AED gần đây mang lại đây! '. Nếu chỉ có một mình, bật loa ngoài điện thoại gọi 115 và bắt đầu ép tim ngay."
       },
       {
         "stepNumber": 3,
@@ -259,25 +299,41 @@
       },
       {
         "stepNumber": 4,
-        "title": "Thổi ngạt (30 ép tim : 2 thổi ngạt)",
-        "desc": "Sau 30 lần ép tim, ngửa đầu nâng cằm nạn nhân, kẹp mũi và thổi ngạt 2 hơi liên tiếp (mỗi hơi 1 giây, thấy ngực phồng lên). Nếu không quen hoặc không có màng che bảo vệ: Tiếp tục ÉP TIM LIÊN TỤC KHÔNG DỪNG (Hands-only CPR)."
+        "title": "Thổi ngạt (30 ép tim: 2 thổi ngạt)",
+        "desc": "Sau 30 lần ép tim, ngửa đầu nâng cằm nạn nhân, kẹp mũi và thổi ngạt 2 hơi liên tiếp (mỗi hơi 1 giây, thấy ngực phồng lên). Nếu không quen hoặc không có màng che bảo vệ: Tiếp tục ÉP TIM LIÊN TỤC không nên DỪNG (hands-only CPR)."
       },
       {
         "stepNumber": 5,
         "title": "Bật máy AED ngay khi có sẵn",
-        "desc": "Bật nguồn máy AED và làm theo hướng dẫn giọng nói phát ra từ máy. Dán hai miếng điện cực theo hình vẽ. Đảm bảo KHÔNG AI CHẠM vào nạn nhân khi máy phân tích nhịp tim hoặc giật điện."
+        "desc": "Bật nguồn máy AED và làm theo hướng dẫn giọng nói phát ra từ máy. Dán hai miếng điện cực theo hình vẽ. Đảm bảo không nên AI CHẠM vào nạn nhân khi máy phân tích nhịp tim hoặc giật điện."
       }
     ],
     "dos": [
-      "Ép tim nhanh và mạnh: tần số 100 - 120 nhịp/phút (nhịp bài hát Stayin' Alive).",
+      "Ép tim nhanh và mạnh: tần số 100 - 120 nhịp/phút (nhịp bài hát stayin' alive).",
       "Ép đủ độ sâu (5 - 6 cm đối với người lớn) và để ngực nở lại hoàn toàn.",
       "Đổi người ép tim mỗi 2 phút để tránh mỏi tay làm giảm chất lượng ép."
     ],
     "donts": [
-      "KHÔNG tì đè liên tục lên ngực mà không để lồng ngực nở về vị trí cũ.",
-      "KHÔNG dừng ép tim quá 10 giây giữa các chu kỳ.",
-      "KHÔNG chạm vào nạn nhân khi máy AED đang phóng điện sốc tim."
-    ]
+      "Không nên tì đè liên tục lên ngực mà không để lồng ngực nở về vị trí cũ.",
+      "Không nên dừng ép tim quá 10 giây giữa các chu kỳ.",
+      "Không nên chạm vào nạn nhân khi máy AED đang phóng điện sốc tim."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/hoi-sinh-tim-phoi-co-ban-cho-nguoi-lon-khi-bi-tai-nan-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-ho-hap-nhan-tao-cho-nguoi-lon-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Bạch Mai / Báo Sức khỏe & Đời sống",
+      "youtubeUrl": "https://www.youtube.com/watch?v=e7GsqN19s1g"
+    }
   },
   {
     "id": "soc-nhiet-say-nang",
@@ -285,8 +341,6 @@
     "fullTitle": "Say nắng, say nóng là gì? Nguyên nhân và cách xử trí khi gặp",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -323,25 +377,37 @@
       "Theo dõi hô hấp và mức tỉnh táo liên tục khi chờ cấp cứu."
     ],
     "donts": [
-      "KHÔNG chậm làm mát để chờ xe cấp cứu.",
-      "KHÔNG cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
-      "KHÔNG để người lơ mơ một mình trong bồn nước."
+      "Không nên chậm làm mát để chờ xe cấp cứu.",
+      "Không nên cho người nghi sốc nhiệt, lú lẫn hoặc bất tỉnh uống nước.",
+      "Không nên để người lơ mơ một mình trong bồn nước."
     ],
     "sources": [
       {
         "name": "CDC — Nhận biết và sơ cứu bệnh do nóng",
         "url": "https://stacks.cdc.gov/view/cdc/59395"
+      },
+      {
+        "name": "Bệnh viện Tâm Anh",
+        "url": "https://tamanhhospital.vn/benh/say-nang-say-nong/",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Sở Y tế TP.HCM (Medinet)",
+        "url": "https://trungtamytequan12.medinet.gov.vn/chuyen-muc/4-buoc-so-cuu-say-nang-soc-nhiet-don-gian-cmobile14390-239756.aspx",
+        "accessDate": "13/9/2026"
       }
-    ]
+    ],
+    "video": {
+      "creator": "Bệnh viện Đa Khoa Tâm Anh",
+      "youtubeUrl": "https://www.youtube.com/watch?v=UCHbYZjZ4vg"
+    }
   },
   {
     "id": "co-giat-dong-kinh",
-    "title": "Co giật & Động kinh",
-    "fullTitle": "Xử trí Cơn Co Giật & Cơn Động Kinh Cấp Tính",
+    "title": "Co giật & động kinh",
+    "fullTitle": "Xử trí cơn co giật & cơn động kinh cấp tính",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Bệnh lý",
-    "badgeClass": "bg-surface-container-high text-on-surface-variant",
     "criticalLevel": "medium",
     "readTime": "4 phút",
     "standard": "Hiệp hội Động kinh Quốc tế (ILAE)",
@@ -379,12 +445,12 @@
       },
       {
         "stepNumber": 3,
-        "title": "KHÔNG kìm kẹp, KHÔNG nhét bất cứ thứ gì vào miệng",
-        "desc": "Để cơ thể nạn nhân co giật tự nhiên, KHÔNG đè giữ chân tay (có thể gây gãy xương hoặc rách cơ). TUYỆT ĐỐI KHÔNG nhét khăn, đũa, ngón tay vào miệng nạn nhân."
+        "title": "Không nên kìm kẹp, không nên nhét bất cứ thứ gì vào miệng",
+        "desc": "Để cơ thể nạn nhân co giật tự nhiên, không nên đè giữ chân tay (có thể gây gãy xương hoặc rách cơ). khuyến cáo tránh nhét khăn, đũa, ngón tay vào miệng nạn nhân."
       },
       {
         "stepNumber": 4,
-        "title": "Đặt vào tư thế nằm nghiêng an toàn (Tư thế hồi phục)",
+        "title": "Đặt vào tư thế nằm nghiêng an toàn (tư thế hồi phục)",
         "desc": "Khi cơn co giật vừa dứt, nhẹ nhàng xoay toàn bộ cơ thể nạn nhân nằm nghiêng sang một bên. Tư thế này giúp đờm dãi, chất nôn chảy ra ngoài, tránh hít sặc và tránh tụt lưỡi bịt đường thở."
       }
     ],
@@ -394,10 +460,26 @@
       "Xoay nạn nhân nằm nghiêng an toàn ngay khi cơn giật kết thúc."
     ],
     "donts": [
-      "TUYỆT ĐỐI KHÔNG nhét bất cứ vật gì (đũa, muỗng, chanh, ngón tay) vào miệng nạn nhân.",
-      "KHÔNG ghì chặt hoặc cố định chân tay nạn nhân khi đang co giật.",
-      "KHÔNG cho ăn, uống bất kỳ thứ gì cho đến khi nạn nhân hoàn toàn tỉnh táo."
-    ]
+      "Khuyến cáo tránh nhét bất cứ vật gì (đũa, muỗng, chanh, ngón tay) vào miệng nạn nhân.",
+      "Không nên ghì chặt hoặc cố định chân tay nạn nhân khi đang co giật.",
+      "Không nên cho ăn, uống bất kỳ thứ gì cho đến khi nạn nhân hoàn toàn tỉnh táo."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/?p=197275",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/cach-so-cuu-nguoi-bi-co-giat-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Dr. Wynn Tran Official",
+      "youtubeUrl": "https://www.youtube.com/watch?v=U_nqzdiQ0bc"
+    }
   },
   {
     "id": "hoc-di-vat-o-tre-em",
@@ -405,8 +487,6 @@
     "fullTitle": "Hướng dẫn sơ cứu trẻ bị hóc dị vật đường thở",
     "category": "tre-em",
     "categoryLabel": "Trẻ em",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -448,10 +528,26 @@
       "Với trẻ từ 1 tuổi bị nghẹn nặng, luân phiên 5 vỗ lưng và 5 ép bụng."
     ],
     "donts": [
-      "KHÔNG ép bụng cho trẻ dưới 1 tuổi.",
-      "KHÔNG móc họng bằng ngón tay khi không nhìn thấy rõ dị vật.",
-      "KHÔNG để trẻ một mình hoặc chờ đợi nếu trẻ không thể thở, ho hay khóc."
-    ]
+      "Không nên ép bụng cho trẻ dưới 1 tuổi.",
+      "Không nên móc họng bằng ngón tay khi không nhìn thấy rõ dị vật.",
+      "Không nên để trẻ một mình hoặc chờ đợi nếu trẻ không thể thở, ho hay khóc."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-tre-bi-hoc-di-vat-duong-tho-vi",
+        "accessDate": "10/9/2026"
+      },
+      {
+        "name": "Survival Skills Vietnam (SSVN)",
+        "url": "https://survivalskills.vn/2024/07/10/xu-ly-tre-em-hoc-thuc-an-di-vat/",
+        "accessDate": "10/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "CDC Đồng Nai",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6HOgkJmfoyM"
+    }
   },
   {
     "id": "duoi-nuoc-o-tre-em",
@@ -459,8 +555,6 @@
     "fullTitle": "Các bước sơ cứu ban đầu trẻ bị đuối nước",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -497,10 +591,26 @@
       "Dùng AED khi có sẵn và tiếp tục theo dõi trẻ sau khi ra khỏi nước."
     ],
     "donts": [
-      "KHÔNG nhảy xuống nước cứu khi không đủ kỹ năng hoặc thiếu phương tiện an toàn.",
-      "KHÔNG ép bụng hoặc dốc ngược trẻ để cố đẩy nước ra.",
-      "KHÔNG trì hoãn CPR để móc họng hoặc tìm cách hút nước khỏi phổi."
-    ]
+      "Không nên nhảy xuống nước cứu khi không đủ kỹ năng hoặc thiếu phương tiện an toàn.",
+      "Không nên ép bụng hoặc dốc ngược trẻ để cố đẩy nước ra.",
+      "Không nên trì hoãn CPR để móc họng hoặc tìm cách hút nước khỏi phổi."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/cac-buoc-so-cuu-ban-dau-tre-bi-duoi-nuoc-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/so-cuu-duoi-nuoc/",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "VTV24",
+      "youtubeUrl": "https://www.youtube.com/watch?v=uRQwZ2QX7Vc"
+    }
   },
   {
     "id": "dot-quy",
@@ -508,8 +618,6 @@
     "fullTitle": "Đột quỵ có cứu được không? Yếu tố nào gây ảnh hưởng?",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -546,10 +654,26 @@
       "Ở lại, trấn an và theo dõi hô hấp, tri giác của người bệnh."
     ],
     "donts": [
-      "KHÔNG chờ triệu chứng tự hết rồi mới gọi cấp cứu.",
-      "KHÔNG cho ăn hoặc uống khi có nguy cơ khó nuốt, sặc.",
-      "KHÔNG nhét đũa, khăn hay bất kỳ vật gì vào miệng nếu người bệnh co giật."
-    ]
+      "Không nên chờ triệu chứng tự hết rồi mới gọi cấp cứu.",
+      "Không nên cho ăn hoặc uống khi có nguy cơ khó nuốt, sặc.",
+      "Không nên nhét đũa, khăn hay bất kỳ vật gì vào miệng nếu người bệnh co giật."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Tâm Anh",
+        "url": "https://tamanhhospital.vn/dot-quy-co-cuu-duoc-khong/",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-dot-quy-tai-nha-vi",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Đại học Y dược TP.HCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=SKs8EKh_3SQ"
+    }
   },
   {
     "id": "bong-nhiet",
@@ -557,8 +681,6 @@
     "fullTitle": "Sơ cứu khi bị bỏng lửa, bỏng nước sôi",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Trung bình",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -571,7 +693,7 @@
       {
         "stepNumber": 1,
         "title": "Ngừng tiếp xúc nguồn nhiệt",
-        "desc": "Đưa người bị nạn ra khỏi nguồn nhiệt một cách an toàn; nếu quần áo cháy, dập lửa bằng nước hoặc cho nằm xuống và lăn."
+        "desc": "Đưa nạn nhân ra khỏi nguồn nhiệt một cách an toàn; nếu quần áo cháy, dập lửa bằng nước hoặc cho nằm xuống và lăn."
       },
       {
         "stepNumber": 2,
@@ -595,10 +717,26 @@
       "Che phủ lỏng bằng vật liệu sạch sau khi làm mát."
     ],
     "donts": [
-      "KHÔNG chườm đá trực tiếp lên vết bỏng.",
-      "KHÔNG bóc quần áo đã dính vào vùng da bỏng.",
-      "KHÔNG bôi kem đánh răng, dầu, bơ hay tự chọc vỡ bóng nước."
-    ]
+      "Không nên chườm đá trực tiếp lên vết bỏng.",
+      "Không nên bóc quần áo đã dính vào vùng da bỏng.",
+      "Không nên bôi kem đánh răng, dầu, bơ hay tự chọc vỡ bóng nước."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Bệnh viện Nguyễn Tri Phương",
+        "url": "https://bvnguyentriphuong.com.vn/chan-thuong-chinh-hinh/quy-trinh-so-cuu-cap-cuu-ton-thuong-bong-nhiet",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Báo Pháp Luật TP HCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=cwpPymepUgE"
+    }
   },
   {
     "id": "bong-hoa-chat",
@@ -606,8 +744,6 @@
     "fullTitle": "Sơ cứu khi bị bỏng hóa chất",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -644,10 +780,26 @@
       "Xả nước nhiều, liên tục và đưa nạn nhân đi đánh giá y tế."
     ],
     "donts": [
-      "KHÔNG dùng hóa chất khác để cố trung hòa vết bỏng.",
-      "KHÔNG bôi kem, dầu hoặc thuốc lên vùng bỏng khi chờ cấp cứu.",
-      "KHÔNG chạm tay trần vào quần áo hoặc da còn dính hóa chất."
-    ]
+      "Không nên dùng hóa chất khác để cố trung hòa vết bỏng.",
+      "Không nên bôi kem, dầu hoặc thuốc lên vùng bỏng khi chờ cấp cứu.",
+      "Không nên chạm tay trần vào quần áo hoặc da còn dính hóa chất."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-hoa-chat-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Viện Bỏng Quốc gia Lê Hữu Trác",
+        "url": "https://vienbongquocgia.vn/huong-dan-so-cap-cuu-bong/huong-dan-so-cap-cuu-bong-hoa-chat-o-tre-em",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Bỏng quốc gia Lê Hữu Trác",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gCrAxTJC3w8"
+    }
   },
   {
     "id": "ngo-doc-thuc-pham",
@@ -655,8 +807,6 @@
     "fullTitle": "Cách sơ cứu ngộ độc thực phẩm: Lưu ý quan trọng khi thực hiện",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Trung bình",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -693,10 +843,26 @@
       "Theo dõi dấu hiệu mất nước và đi khám khi có triệu chứng nặng."
     ],
     "donts": [
-      "KHÔNG tự gây nôn hoặc kích thích họng để nôn.",
-      "KHÔNG ép người bất tỉnh hoặc khó nuốt uống nước.",
-      "KHÔNG tự dùng thuốc cầm tiêu chảy khi sốt cao hoặc đi ngoài ra máu nếu chưa có chỉ dẫn y tế."
-    ]
+      "Không nên tự gây nôn hoặc kích thích họng để nôn.",
+      "Không nên ép người bất tỉnh hoặc khó nuốt uống nước.",
+      "Không nên tự dùng thuốc cầm tiêu chảy khi sốt cao hoặc đi ngoài ra máu nếu chưa có chỉ dẫn y tế."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Tâm Anh",
+        "url": "https://tamanhhospital.vn/so-cuu-ngo-doc-thuc-pham/",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Trung tâm Kiểm soát Bệnh tật TP.HCM (HCDC)",
+        "url": "https://hcdc.vn/cach-so-cap-cuu-tam-thoi-khi-bi-ngo-doc-thuc-pham-GFkYsi.html",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "THVL Tổng Hợp",
+      "youtubeUrl": "https://www.youtube.com/watch?v=lHw-YZfyvdY"
+    }
   },
   {
     "id": "dien-giat",
@@ -704,14 +870,12 @@
     "fullTitle": "Cách sơ cứu người bị điện giật sao cho đúng chuẩn và an toàn?",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"m13 2-9 12h7l-1 8 10-12h-7l1-8Z\"/></svg>",
     "shortDesc": "Ngắt nguồn điện an toàn, gọi cấp cứu, kiểm tra hô hấp và chăm sóc bỏng điện.",
-    "lead": "Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải chắc chắn nguồn điện đã được ngắt trước khi tiếp cận.",
+    "lead": "Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải đảm bảo nguồn điện đã được ngắt trước khi tiếp cận.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, thở bất thường, đau ngực, bỏng nặng hoặc liên quan điện cao thế. Người bị điện giật cần được nhân viên y tế đánh giá.",
     "timeline": [],
     "steps": [
@@ -742,10 +906,26 @@
       "Đưa người bị điện giật đi đánh giá y tế dù vết bỏng nhỏ."
     ],
     "donts": [
-      "KHÔNG chạm trực tiếp vào nạn nhân khi còn nối với nguồn điện.",
-      "KHÔNG tiếp cận dây điện cao thế hoặc khu vực chưa được xác nhận an toàn.",
-      "KHÔNG đánh giá mức độ tổn thương chỉ theo vết bỏng ngoài da."
-    ]
+      "Không nên chạm trực tiếp vào nạn nhân khi còn nối với nguồn điện.",
+      "Không nên tiếp cận dây điện cao thế hoặc khu vực chưa được xác nhận an toàn.",
+      "Không nên đánh giá mức độ tổn thương chỉ theo vết bỏng ngoài da."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Tâm Anh",
+        "url": "https://tamanhhospital.vn/cach-so-cuu-nguoi-bi-dien-giat/",
+        "accessDate": "16/9/2026"
+      },
+      {
+        "name": "Survival Skills Vietnam (SSVN)",
+        "url": "https://survivalskills.vn/2026/08/27/dien-giat-4-buoc-so-cuu-dung-cach-bao-ve-nguoi-than/",
+        "accessDate": "16/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Truyền hình Quảng Trị",
+      "youtubeUrl": "https://www.youtube.com/watch?v=05CxQUoSSy0"
+    }
   },
   {
     "id": "hoi-sinh-tim-phoi-nguoi-lon",
@@ -753,8 +933,6 @@
     "fullTitle": "Hồi sinh tim phổi cơ bản cho người lớn khi bị tai nạn",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -796,10 +974,26 @@
       "Dùng AED sớm và làm theo hướng dẫn của máy."
     ],
     "donts": [
-      "KHÔNG trì hoãn ép ngực để cố tìm mạch nếu không được huấn luyện.",
-      "KHÔNG ngừng ép ngực lâu quá 10 giây giữa các chu kỳ.",
-      "KHÔNG chạm vào nạn nhân khi AED đang phân tích hoặc phát sốc."
-    ]
+      "Không nên trì hoãn ép ngực để cố tìm mạch nếu không được huấn luyện.",
+      "Không nên ngừng ép ngực lâu quá 10 giây giữa các chu kỳ.",
+      "Không nên chạm vào nạn nhân khi AED đang phân tích hoặc phát sốc."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/hoi-sinh-tim-phoi-co-ban-cho-nguoi-lon-khi-bi-tai-nan-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-ho-hap-nhan-tao-cho-nguoi-lon-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Bạch Mai / Báo Sức khỏe & Đời sống",
+      "youtubeUrl": "https://www.youtube.com/watch?v=e7GsqN19s1g"
+    }
   },
   {
     "id": "chay-mau-va-cam-mau",
@@ -807,8 +1001,6 @@
     "fullTitle": "Sơ cứu chảy máu (cầm máu): Những điều cần biết",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -845,10 +1037,26 @@
       "Ghi giờ đặt ga-rô và báo lại cho nhân viên y tế nếu đã dùng."
     ],
     "donts": [
-      "KHÔNG rút vật cắm sâu ra khỏi vết thương.",
-      "KHÔNG tháo lớp gạc đầu tiên đang tiếp xúc trực tiếp vết thương khi máu thấm qua.",
-      "KHÔNG tự nới hoặc tháo ga-rô sau khi đã đặt; việc đó để nhân viên y tế thực hiện."
-    ]
+      "Không nên rút vật cắm sâu ra khỏi vết thương.",
+      "Không nên tháo lớp gạc đầu tiên đang tiếp xúc trực tiếp vết thương khi máu thấm qua.",
+      "Không nên tự nới hoặc tháo ga-rô sau khi đã đặt; việc đó để nhân viên y tế thực hiện."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-chay-mau-cam-mau-nhung-dieu-can-biet-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-vet-thuong-chay-mau-bang-cach-de-ep-va-bang-vet-thuong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Báo Sức khỏe & Đời sống",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qix-Gb1DZvA"
+    }
   },
   {
     "id": "gay-xuong",
@@ -856,8 +1064,6 @@
     "fullTitle": "Sơ cứu khi bị gãy xương: Đừng cố di chuyển người bệnh",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "1 phút",
     "standard": "Tham khảo nguồn y tế, chưa thẩm định lâm sàng",
@@ -894,126 +1100,164 @@
       "Theo dõi cảm giác, màu da phía dưới vùng chấn thương."
     ],
     "donts": [
-      "KHÔNG cố duỗi thẳng hoặc nắn lại chi biến dạng.",
-      "KHÔNG đẩy xương lòi ra vào trong hoặc ép trực tiếp lên đầu xương.",
-      "KHÔNG tự di chuyển người nghi chấn thương cổ hoặc cột sống trừ khi nơi đó không an toàn."
-    ]
+      "Không nên cố duỗi thẳng hoặc nắn lại chi biến dạng.",
+      "Không nên đẩy xương lòi ra vào trong hoặc ép trực tiếp lên đầu xương.",
+      "Không nên tự di chuyển người nghi chấn thương cổ hoặc cột sống trừ khi nơi đó không an toàn."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-gay-xuong-dung-co-di-chuyen-nguoi-benh-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/phan-loai-va-nhung-bien-chung-sau-khi-gay-xuong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Chấn thương Chỉnh hình TP.HCM",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fJNjXeEV2yQ"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "xu-ly-khi-bi-soc-phan-ve",
     "title": "Xử lý khi bị sốc phản vệ",
-    "fullTitle": "Xử lý khi bị sốc phản vệ",
+    "fullTitle": "Xử lý nghi ngờ sốc phản vệ cấp tính (anaphylaxis)",
     "category": "tre-em",
     "categoryLabel": "Trẻ em",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "2 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
     "shortDesc": "Bị sốc phản vệ là một phản ứng dị ứng cấp tính và nghiêm trọng, có thể gây nguy hiểm đến tính mạng nếu không được cấp cứu kịp thời.",
-    "lead": "Bị sốc phản vệ là một phản ứng dị ứng cấp tính và nghiêm trọng, có thể gây nguy hiểm đến tính mạng nếu không được cấp cứu kịp thời.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, ngừng thở hoặc tình trạng ngày càng nặng.",
+    "lead": "Sốc phản vệ là phản ứng dị ứng toàn thân nghiêm trọng, có thể xuất hiện nhanh chóng sau khi tiếp xúc với dị nguyên (thuốc, nọc ong, thực phẩm như hải sản, lạc...). điều này dễ đe dọa tính mạng do phù nề thanh quản hoặc tụt huyết áp nếu không được hỗ trợ y tế kịp thời.",
+    "emergencyAlert": "Hãy gọi 115 ngay. Hỗ trợ người bệnh dùng bút tiêm Adrenalin (Epinephrine) vào mặt trước ngoài đùi nếu họ được bác sĩ kê đơn mang theo.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Phản vệ hai pha (biphasic)",
-        "desc": "Tình trạng này có thể xuất hiện từ 1 đến 72 giờ sau phản ứng đầu tiên, với tỷ lệ từ 5-20% các trường hợp có thể phát triển phản vệ hai pha, trong đó khoảng 3% có thể cần can thiệp cấp cứu. Những trường hợp nặng cần hỗ trợ hô hấp liên tục hoặc những người phải tiêm Adrenalin hoặc Glucagon nên được nhập khoa hồi sức cấp cứu. Triệu chứng, nguyên nhân, điều trị"
+        "title": "Cách ly dị nguyên nghi ngờ",
+        "desc": "Ngừng ngay việc tiếp xúc với tác nhân nghi ngờ (thức ăn, thuốc), hoặc nhẹ nhàng gạt ngòi độc ong ra nếu bị đốt."
       },
       {
         "stepNumber": 2,
-        "title": "Tìm hiểu lý do gây mề đay",
-        "desc": "Tìm hiểu lý do gây mề đay Xử trí khi bị dị ứng thuốc Khó thở"
+        "title": "Tư thế nằm phù hợp",
+        "desc": "Đặt người bệnh nằm ngửa trên mặt phẳng, có thể kê cao hai chân khoảng 30 cm để hỗ trợ tuần hoàn. Nếu người bệnh khó thở nhiều, có thể cho ngồi tựa lưng (nửa nằm nửa ngồi)."
       },
       {
         "stepNumber": 3,
-        "title": "Adrenaline",
-        "desc": "Adrenaline Suy hô hấp Tụt huyết áp"
+        "title": "Hỗ trợ sử dụng Adrenalin (Epinephrine)",
+        "desc": "Nếu người bệnh có sẵn bút tiêm Adrenalin tự động (epiPen) được kê đơn, hỗ trợ họ tiêm vào mặt trước ngoài đùi theo hướng dẫn sử dụng."
       },
       {
         "stepNumber": 4,
-        "title": "Hồi sức cấp cứu",
-        "desc": "Hồi sức cấp cứu Sốc phản vệ Xử trí sốc phản vệ"
+        "title": "Gọi 115 và theo dõi hồi sức",
+        "desc": "Liên hệ ngay 115 để chuyển đến cơ sở y tế. nếu người bệnh ngừng thở, ngừng tim, có thể ép tim ngoài lồng ngực (CPR) theo hướng dẫn."
       }
     ],
     "dos": [
-      "Phản vệ hai pha (biphasic).",
-      "Tìm hiểu lý do gây mề đay.",
-      "Adrenaline.",
-      "Hồi sức cấp cứu."
+      "Hỗ trợ người bệnh dùng Adrenalin sớm theo chỉ định sẵn có khi nhận thấy dấu hiệu khó thở hoặc tụt huyết áp.",
+      "Giữ người bệnh nằm yên, kê cao chân (nếu không khó thở) và giữ ấm cơ thể.",
+      "Theo dõi tại cơ sở y tế tối thiểu 24 giờ theo hướng dẫn bác sĩ để đề phòng phản vệ hai pha (biphasic reaction)."
     ],
     "donts": [
-      "KHÔNG bị sốc phản vệ là một phản ứng dị ứng cấp tính và nghiêm trọng, có thể gây nguy hiểm đến tính mạng nếu không được cấp cứu kịp thời."
-    ]
+      "Tránh để người bệnh đột ngột ngồi dậy hoặc đứng lên đi lại vì có nguy cơ gây tụt huyết áp.",
+      "Không nên chần chừ việc gọi cấp cứu khi đã xuất hiện dấu hiệu phù thanh quản hoặc khó thở.",
+      "Tránh cho người bệnh ăn, uống hay tự ý dùng các loại thuốc uống khác khi đang khó thở hoặc suy giảm ý thức."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/xu-ly-khi-bi-soc-phan-ve-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Hệ thống Nhà thuốc Long Châu",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/so-cuu-soc-phan-ve-dung-cach-va-hieu-qua-54180.html",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Đa khoa tỉnh Phú Thọ",
+      "youtubeUrl": "https://www.youtube.com/watch?v=vdtyxGilk0w"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "sac-sua-o-tre-so-sinh-rat-nguy",
-    "title": "Sặc sữa ở trẻ sơ sinh rất nguy",
-    "fullTitle": "Sặc sữa ở trẻ sơ sinh rất nguy hiểm",
+    "title": "Sặc sữa ở trẻ sơ sinh",
+    "fullTitle": "Sơ cứu khi trẻ sơ sinh & trẻ nhỏ bị sặc sữa",
     "category": "tre-em",
     "categoryLabel": "Trẻ em",
-    "badgeType": "Trẻ em",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
-    "shortDesc": "Bài viết được tư vấn chuyên môn bởi Bác sĩ chuyên khoa I Bùi Thị Hà - Bác sĩ Nhi - Sơ sinh - Khoa Nhi - Sơ sinh - Bệnh viện Đa khoa Quốc tế Vinmec Hạ…",
-    "lead": "Bài viết được tư vấn chuyên môn bởi Bác sĩ chuyên khoa I Bùi Thị Hà - Bác sĩ Nhi - Sơ sinh - Khoa Nhi - Sơ sinh - Bệnh viện Đa khoa Quốc tế Vinmec Hạ Long.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, ngừng thở hoặc tình trạng ngày càng nặng.",
+    "shortDesc": "Bài viết được tư vấn chuyên môn bởi bác sĩ chuyên khoa I Bùi Thị Hà - bác sĩ nhi - sơ sinh - khoa nhi - sơ sinh - Bệnh viện đa khoa quốc tế Vinmec Hạ…",
+    "lead": "Sặc sữa là tình huống hay gặp ở trẻ sơ sinh và trẻ nhỏ khi sữa tràn vào đường thở, làm tắc đường thở và có nguy cơ dẫn đến thiếu oxy nhanh chóng nếu không được xử trí kịp thời.",
+    "emergencyAlert": "Hãy gọi 115 ngay nếu trẻ có dấu hiệu tím tái, ngừng thở hoặc không khóc được sau khi xử trí ban đầu.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Cho trẻ nằm sấp trên lòng bàn tay và cánh tay phải",
-        "desc": "Cho trẻ nằm sấp trên lòng bàn tay và cánh tay phải, dùng lòng bàn tay vỗ mạnh và nhanh năm cái vào lưng trẻ nhằm tăng áp lực trong lồng ngực để tống sữa ra khỏi đường hô hấp."
+        "title": "Vỗ lưng hỗ trợ đẩy sữa",
+        "desc": "Đặt trẻ nằm sấp dọc theo cẳng tay người hỗ trợ, đầu hướng thấp hơn ngực, bàn tay giữ nhẹ cằm và má trẻ. Dùng gót bàn tay kia vỗ dứt khoát 5 lần vào vùng lưng giữa hai xương bả vai."
       },
       {
         "stepNumber": 2,
-        "title": "Nếu trẻ vẫn khó thở",
-        "desc": "Nếu trẻ vẫn khó thở, tím tái thì đặt trẻ nằm ngửa trên một mặt phẳng cứng, dùng hai ngón tay trỏ và giữa đột ngột ấn mạnh 5 cái ở nửa dưới của xương ức, dưới đường nối hai vú 1- 2 cm. Lặp lại 5 đến 6 lần cho đến khi trẻ có dấu hiệu hồi phục, da hồng hào trở lại."
+        "title": "Ấn ngực nếu trẻ vẫn khó thở",
+        "desc": "Nếu trẻ vẫn tím tái, nhẹ nhàng lật ngửa trẻ sang cẳng tay đối diện, giữ đầu thấp hơn thân. Dùng 2 ngón tay (trỏ và giữa) ấn 5 lần vào nửa dưới xương ức (dưới đường nối hai núm vú khoảng 1 cm)."
       },
       {
         "stepNumber": 3,
-        "title": "Thông đường thở bằng cách dùng miệng hút mạnh vào mũi",
-        "desc": "Thông đường thở bằng cách dùng miệng hút mạnh vào mũi, miệng trẻ, hút kỹ những sữa còn đọng ở họng và mũi càng nhanh, càng tốt. Hút miệng trước, mũi sau. Nếu để chậm, sặc sữa ở trẻ sơ sinh sẽ gây tắc nghẽn đường hô hấp do sữa tràn vào phế quản."
+        "title": "Làm sạch dịch mũi họng",
+        "desc": "Sử dụng dụng cụ hút mũi chuyên dụng hoặc gạc sạch làm thông thoáng dịch sữa đọng ở miệng và mũi trẻ (ưu tiên làm sạch miệng trước, mũi sau)."
       },
       {
         "stepNumber": 4,
-        "title": "Đối với trẻ có biểu hiện ngưng thở",
-        "desc": "Sau kết hợp các biện pháp trên và khi đã hút sạch đường, mà trẻ vẫn ngừng thở thì phải kết hợp với hà hơi thổi ngạt, cụ thể ngậm mũi và miệng trẻ thổi vào và thấy lồng ngực hơi nhô lên. Hà hơi thổi ngạt khi trẻ có nhịp thở, sau đó phải đưa trẻ đến ngay bệnh viện gần nhất để được bác sĩ cấp cứu kịp thời."
+        "title": "Hỗ trợ hô hấp và đưa đi cấp cứu",
+        "desc": "Nếu trẻ ngừng thở, có thể thực hiện thổi ngạt nhẹ nhàng kết hợp ép tim theo hướng dẫn nhi khoa và đưa trẻ đến cơ sở y tế gần nhất."
       }
     ],
     "dos": [
-      "Cho trẻ nằm sấp trên lòng bàn tay và cánh tay phải.",
-      "Nếu trẻ vẫn khó thở.",
-      "Thông đường thở bằng cách dùng miệng hút mạnh vào mũi.",
-      "Đối với trẻ có biểu hiện ngưng thở."
+      "Giữ đầu trẻ ở vị trí thấp hơn ngực trong quá trình vỗ lưng ấn ngực để hỗ trợ dịch sữa thoát ra ngoài.",
+      "Ưu tiên làm sạch vùng miệng trước khi làm sạch mũi.",
+      "Cho trẻ bú đúng tư thế: bế đầu cao, cho bú từ từ và vỗ ợ hơi cho trẻ sau khi bú."
     ],
     "donts": [
-      "KHÔNG khi cho trẻ bú cần thực hiện như sau:.",
-      "KHÔNG khi cho bú nên bế trẻ cao đầu, ở tư thế thoải mái, phải cho trẻ bú từ từ, không vội vàng, nhất là trẻ còn yếu, sinh non tháng.",
-      "KHÔNG quan sát trẻ trong khi bú, tốt nhất là thấy được trẻ nuốt hết sữa ở miệng sau khi mút sữa.",
-      "KHÔNG khi trẻ ho hoặc khóc phải ngừng cho trẻ bú ngay, sữa còn trong miệng thì phải dừng cho bú, để trẻ nuốt hết sữa ở trong miệng, không để sữa tiếp tục chảy xuống miệng."
-    ]
+      "Tránh dốc ngược trẻ lên hoặc bế xốc thẳng đứng khi trẻ đang sặc sữa.",
+      "Tránh dùng ngón tay móc họng trẻ mù quáng vì có thể làm trầy xước niêm mạc và đẩy sữa vào sâu hơn.",
+      "Không nên tiếp tục cho bú khi trẻ đang khóc, ho hoặc có dấu hiệu khó thở."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/sac-sua-o-tre-so-sinh-rat-nguy-hiem-huong-dan-nhan-biet-va-so-cuu-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-xu-tri-sac-sua-cho-tre-so-sinh-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Đa khoa Tâm Anh",
+      "youtubeUrl": "https://www.youtube.com/watch?v=TKGN00us97o"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "so-cuu-ong-dot",
     "title": "Sơ cứu ong đốt",
     "fullTitle": "Hướng dẫn sơ cứu ong đốt",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Ngoài trời",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
-    "shortDesc": "Bài viết được tư vấn chuyên môn bởi Thạc sĩ, Bác sĩ Lê Thị Thanh Hương - Bác sĩ Hồi sức cấp cứu - Khoa Hồi sức cấp cứu - Bệnh viện Đa khoa Quốc tế…",
-    "lead": "Bài viết được tư vấn chuyên môn bởi Thạc sĩ, Bác sĩ Lê Thị Thanh Hương - Bác sĩ Hồi sức cấp cứu - Khoa Hồi sức cấp cứu - Bệnh viện Đa khoa Quốc tế Vinmec Central Park",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu bị ong đốt một số trường hợp sau bắt buộc phải đến cơ sở y tế càng sớm càng tốt.",
+    "shortDesc": "Bài viết được tư vấn chuyên môn bởi thạc sĩ, bác sĩ lê Thị thanh hương - bác sĩ hồi sức cấp cứu - khoa hồi sức cấp cứu - Bệnh viện đa khoa quốc tế…",
+    "lead": "Ong hoặc côn trùng đốt gây đau nhức, sưng đỏ tại chỗ và có nguy cơ gây sốc phản vệ nếu bị đốt nhiều nốt, đốt vùng đầu mặt cổ hoặc ở người có cơ địa dị ứng.",
+    "emergencyAlert": "Gọi 115 ngay nếu nạn nhân bị đốt nhiều nốt, đốt vùng đầu mặt cổ, hoặc xuất hiện khó thở, sưng môi mắt, nổi mề đay, chóng mặt (dấu hiệu sốc phản vệ).",
     "steps": [
       {
         "stepNumber": 1,
@@ -1022,13 +1266,13 @@
       },
       {
         "stepNumber": 2,
-        "title": "Lấy vòi chích của ong ra bằng cách khều nhẹ (có thể dùng",
+        "title": "Lấy vòi chích của ong ra bằng cách khều nhẹ",
         "desc": "Lấy vòi chích của ong ra bằng cách khều nhẹ (có thể dùng móng tay khều nhẹ xuôi chiều hướng vòi chích) hoặc dùng nhíp lấy ra vì hầu hết sau khi đốt, ong đều để lại vòi chích và túi nọc ở vết đốt trên da. Tránh nặn ép bằng tay vì có thể làm nọc độc lan ra."
       },
       {
         "stepNumber": 3,
         "title": "Rửa sạch vùng da bị đốt bằng xà phòng và nước ấm",
-        "desc": "Rửa sạch vùng da bị đốt bằng xà phòng và nước ấm. Bôi dung dịch sát trùng như Povidine 10% hoặc cồn 70 độ lên vết đốt mỗi ngày 2 lần."
+        "desc": "Rửa sạch vùng da bị đốt bằng xà phòng và nước ấm. Bôi dung dịch sát trùng như povidine 10% hoặc cồn 70 độ lên vết đốt mỗi ngày 2 lần."
       },
       {
         "stepNumber": 4,
@@ -1048,221 +1292,285 @@
       "Uống nhiều nước để loại thải độc tố."
     ],
     "donts": [
-      "KHÔNG về cơ bản có những loại ong đốt là lành tính, tuy nhiên lại có những loại ong chứa nhiều độc tố, khi đốt có thể ảnh hưởng nghiêm trọng tới sức khỏe.",
-      "KHÔNG vì thế cách tốt là nên chủ động phòng tránh ong đốt để đảm bảo an toàn.",
-      "KHÔNG tiếp xúc với ong. Không chọc phá tổ ong.",
-      "KHÔNG khi ong bay đến, không chạy, cần đứng hoặc ngồi im và không cử động (ong sẽ không bay theo nữa)."
-    ]
+      "Không nên về cơ bản có những loại ong đốt là lành tính, tuy nhiên lại có những loại ong chứa nhiều độc tố, khi đốt có thể ảnh hưởng nghiêm trọng tới sức khỏe.",
+      "Không nên vì thế cách tốt là nên chủ động phòng tránh ong đốt để đảm bảo an toàn.",
+      "Không nên tiếp xúc với ong. Không chọc phá tổ ong.",
+      "Không nên khi ong bay đến, không chạy, cần đứng hoặc ngồi im và không cử động (ong sẽ không bay theo nữa)."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-ong-dot-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/so-cuu-ong-dot/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Kênh sức khỏe cộng đồng",
+      "youtubeUrl": "https://www.youtube.com/watch?v=oTYpNw1JFcw"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "so-cap-cuu-chan-thuong-dau-va-tuy",
     "title": "Sơ cấp cứu chấn thương đầu và tủy",
-    "fullTitle": "Sơ cấp cứu chấn thương đầu và tủy sống",
+    "fullTitle": "Sơ cấp cứu nghi ngờ chấn thương đầu và cột sống - tủy sống",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Bệnh lý",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "2 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
-    "shortDesc": "Bài viết bởi Bác sĩ chuyên khoa I Trịnh Ngọc Duy - Bác sĩ Cấp cứu - Khoa Cấp cứu - Bệnh viện Đa khoa quốc tế Vinmec Times City",
-    "lead": "Bài viết bởi Bác sĩ chuyên khoa I Trịnh Ngọc Duy - Bác sĩ Cấp cứu - Khoa Cấp cứu - Bệnh viện Đa khoa quốc tế Vinmec Times City",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu bạn chỉ có một mình.",
+    "shortDesc": "Bài viết bởi bác sĩ chuyên khoa I Trịnh Ngọc Duy - bác sĩ cấp cứu - khoa cấp cứu - Bệnh viện đa khoa quốc tế Vinmec Times City",
+    "lead": "Chấn thương đầu và cột sống cổ là những tổn thương nghiêm trọng, rất nguy hiểm đến tính mạng hoặc gây di chứng vận động lâu dài nếu việc sơ cứu và di chuyển không đúng kỹ thuật.",
+    "emergencyAlert": "Cần ưu tiên cố định cổ tại chỗ và gọi 115. Đặc biệt tránh bế xốc nách, cõng hoặc xoay vặn cổ nạn nhân.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Cố định đầu",
-        "desc": "Cố định đầu"
+        "title": "Hạn chế di chuyển và giữ thẳng trục đầu - cổ",
+        "desc": "Giữ đầu và cổ nạn nhân thẳng hàng ở tư thế trung gian, tránh gập, ngửa hay xoay. Có thể dùng hai tay giữ nhẹ hai bên đầu hoặc chèn vật mềm hai bên tai."
       },
       {
         "stepNumber": 2,
-        "title": "Gọi 3 người trợ giúp",
-        "desc": "Gọi 3 người trợ giúp"
+        "title": "Kêu gọi hỗ trợ phối hợp nhiều người",
+        "desc": "Nếu cần di chuyển khẩn cấp khỏi vùng nguy hiểm, nên có tối thiểu 3-4 người phối hợp theo kỹ thuật lật khối thống nhất (log-roll)."
       },
       {
         "stepNumber": 3,
-        "title": "Lấy cáng cứu hộ và các vật dụng khác",
-        "desc": "Lấy cáng cứu hộ và các vật dụng khác"
+        "title": "Chuẩn bị cáng cứng phẳng",
+        "desc": "Đặt cáng cứng (hoặc tấm ván phẳng) song song sát cạnh nạn nhân."
       },
       {
         "stepNumber": 4,
-        "title": "Phối hợp cùng nhau RẤT CẨN THẬN để chuyển nạn nhân vào cáng",
-        "desc": "Phối hợp cùng nhau RẤT CẨN THẬN để chuyển nạn nhân vào cáng cứu hộ"
+        "title": "Phối hợp đưa nạn nhân lên cáng",
+        "desc": "Người giữ đầu điều phối nhịp để tất cả cùng lật nghiêng nạn nhân đồng thời theo một trục thẳng, trượt cáng vào dưới lưng và nhẹ nhàng hạ nạn nhân xuống."
       },
       {
         "stepNumber": 5,
-        "title": "Cố định nạn nhân vào cáng",
-        "desc": "Cố định nạn nhân vào cáng"
+        "title": "Cố định vào cáng và chuyển viện",
+        "desc": "Cố định nhẹ nhàng vùng trán, ngực, hông vào cáng và chuyển đến cơ sở y tế có chuyên khoa chấn thương."
       }
     ],
     "dos": [
-      "Cố định đầu.",
-      "Gọi 3 người trợ giúp.",
-      "Lấy cáng cứu hộ và các vật dụng khác.",
-      "Phối hợp cùng nhau RẤT CẨN THẬN để chuyển nạn nhân vào cáng."
+      "Duy trì trục thẳng đầu - cổ - thân mình trong suốt quá trình hỗ trợ.",
+      "Thường xuyên quan sát đường thở, nhịp thở và mức độ tỉnh táo của nạn nhân.",
+      "Nới lỏng trang phục chật và giữ ấm cơ thể cho nạn nhân trong khi chờ y tế."
     ],
     "donts": [
-      "KHÔNG tỉnh táo."
-    ]
+      "Tránh bế xốc nách, cõng hoặc ôm ngang người nạn nhân vì có nguy cơ làm tổn thương tủy sống nặng hơn.",
+      "Tránh xoay hoặc gập đầu nạn nhân để kiểm tra vết thương vùng gáy.",
+      "Không nên tự ý tháo mũ bảo hiểm của nạn nhân nếu chưa được tập huấn kỹ thuật cố định cổ hai người."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-chan-thuong-dau-va-tuy-song-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Báo Tuổi Trẻ - Sức khỏe",
+        "url": "https://tuoitre.vn/video/bac-si-huong-dan-cach-so-cuu-khi-bi-chan-thuong-vung-dau-tranh-sai-lam-nguy-hiem-155283.htm",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "HTV7",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Eu2Kt6Qdl0E"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "bi-bong-gan-co-tay-co-chan-phai",
-    "title": "Bị bong gân cổ tay, cổ chân: Phải",
-    "fullTitle": "Bị bong gân cổ tay, cổ chân: Phải làm sao?",
+    "title": "Bong gân cổ tay, cổ chân",
+    "fullTitle": "Xử trí bong gân cổ tay, cổ chân theo nguyên tắc R.I.C.E",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Sơ cứu cơ bản",
-    "badgeClass": "bg-surface-container-high text-on-surface-variant",
     "criticalLevel": "low",
     "readTime": "4 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"></path></svg>",
     "shortDesc": "Bị bong gân nên làm gì là câu hỏi mà nhiều người đặc biệt quan tâm, nếu như không có cách xử lý hiệu quả có thể dẫn đến tình trạng nghiêm trọng hơn.",
-    "lead": "Bị bong gân nên làm gì là câu hỏi mà nhiều người đặc biệt quan tâm, nếu như không có cách xử lý hiệu quả có thể dẫn đến tình trạng nghiêm trọng hơn. Bài viết dưới đây sẽ giúp chúng ta giải đáp chi tiết hơn về thắc mắc này.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, ngừng thở hoặc tình trạng ngày càng nặng.",
+    "lead": "Bong gân là tình trạng giãn hoặc rách dây chằng quanh khớp do vận động quá mức hoặc vấp ngã. Việc áp dụng nguyên tắc R.I.C.E thường được khuyến cáo để giảm đau, hạn chế sưng nề ban đầu.",
+    "emergencyAlert": "Nên đưa đến cơ sở y tế thăm khám nếu nhận thấy khớp biến dạng, không thể chịu lực hoặc đau nhức nhiều nghi ngờ có gãy xương kèm theo.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Phương pháp RICE là từ viết tắt kết hợp chữ cái đầu của 4",
-        "desc": "Phương pháp RICE là từ viết tắt kết hợp chữ cái đầu của 4 bước sơ cứu khi gặp chấn thương trong thể thao gồm: Rest (nghỉ ngơi), Ice (chườm đá), Compression (băng ép) và Elevation (kê cao vị trí chấn thương). Trên đây là cách xử trí giúp bệnh nhân giải đáp thắc mắc bị bong gân nên làm gì ."
+        "title": "Rest (nghỉ ngơi)",
+        "desc": "Ngừng các hoạt động thể lực, hạn chế đi lại hoặc cử động khớp đang bị tổn thương."
       },
       {
         "stepNumber": 2,
-        "title": "Tuy nhiên, những phương pháp này chỉ áp dụng với mức độ",
-        "desc": "Tuy nhiên, những phương pháp này chỉ áp dụng với mức độ bong gân nhẹ, dây chằng chỉ bị giãn hoặc không đứt hoàn toàn. Sau khi hết đau, người bệnh nên tập vận động khớp một cách nhẹ nhàng để máu được lưu thông."
+        "title": "Ice (chườm lạnh)",
+        "desc": "Bọc đá lạnh trong khăn vải mềm và chườm lên vùng khớp khoảng 15-20 phút mỗi lần, cách 2-3 giờ trong 48 giờ đầu để hỗ trợ giảm sưng đau."
       },
       {
         "stepNumber": 3,
-        "title": "Đối với những trường hợp bị bong gân nặng",
-        "desc": "Đối với những trường hợp bị bong gân nặng, người bệnh cần thăm khám tại bệnh viện hoặc trung tâm y tế để được mang nẹp hỗ trợ hoặc băng bột bất động khớp trong khoảng 4 - 6 tuần, sau đó người bệnh có thể tập vận động lại với các mức độ từ nhẹ đến nặng tùy theo chỉ định của bác sĩ."
+        "title": "Compression (băng ép nhẹ)",
+        "desc": "Dùng băng thun quấn nhẹ nhàng quanh khớp để hỗ trợ cố định, tránh quấn quá chặt gây tê hoặc tím đầu ngón."
       },
       {
         "stepNumber": 4,
-        "title": "Dưới đây là một số lưu ý cần thiết khi xử lý bong gân",
-        "desc": "Dưới đây là một số lưu ý cần thiết khi xử lý bong gân: Bong gân là tình trạng xảy ra khi các dây chằng bị giãn hoặc rách do chấn thương."
+        "title": "Elevation (nâng cao chi)",
+        "desc": "Kê khớp bị thương cao hơn mức tim khi nghỉ ngơi để hỗ trợ lưu thông tuần hoàn và giảm phù nề."
       }
     ],
     "dos": [
-      "Dùng băng vải hoặc băng thun để cố định vùng khớp bị bong gân. Cách này sẽ làm giảm đau và giảm sưng, đồng thời nâng đỡ vùng khớp bị tổn thương.",
-      "Chườm lạnh để làm dịu cơn đau và co mạch, giúp giảm sưng. Có thể chườm 4 - 8 lần mỗi ngày, mỗi lần khoảng 15 - 20 phút.",
-      "Kê hoặc nâng cao vùng khớp bị tổn thương để giúp giảm sưng và bầm tím.",
-      "Hạn chế tì đè lên chỗ cổ tay, cổ chân bị bong gân. Nếu cần di chuyển hoặc cử động, người bệnh có thể sử dụng dụng cụ hỗ trợ."
+      "Áp dụng 4 bước R.I.C.E trong 48 giờ đầu sau chấn thương.",
+      "Luôn bọc đá qua lớp khăn vải để tránh gây bỏng lạnh cho da.",
+      "Thăm khám bác sĩ để đánh giá mức độ tổn thương dây chằng hoặc loại trừ gãy xương."
     ],
     "donts": [
-      "KHÔNG thể cử động và đi lại: Nếu bong gân ở cổ chân , cổ tay, bàn chân, bàn tay, người bệnh có thể không đi được, không cử động được.",
-      "KHÔNG dùng rượu, cao để xoa bóp hoặc chườm nóng vào vùng khớp bị tổn thương, bởi có thể gây chảy máu bên trong nhiều hơn.",
-      "KHÔNG tiêm thuốc gì vào chỗ bị bong gân để tránh làm giãn mạch, sưng, bầm tím nhiều hơn.",
-      "KHÔNG NÊN băng chỗ bị bong gân quá chặt vì có thể gây đau nhức và bầm tím."
-    ]
+      "Tránh xoa bóp dầu nóng, rượu thuốc hoặc ngâm nước nóng ngay sau chấn thương vì có thể làm tăng sưng nề.",
+      "Tránh tự ý nắn chỉnh hoặc kéo giật khớp bị thương.",
+      "Không nên vận động mạnh trở lại khi khớp chưa hồi phục ổn định."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/bi-bong-gan-co-tay-co-chan-phai-lam-sao-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/so-cuu-bong-gan-trat-khop/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "1LIFE FIRST AID (BS. Phạm Quang Vinh)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=K8Cf9g5EHgc"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "xu-ly-ha-duong-huyet-o-nguoi-tieu",
-    "title": "Xử lý hạ đường huyết ở người tiểu",
-    "fullTitle": "Xử lý hạ đường huyết ở người tiểu đường",
+    "title": "Hạ đường huyết ở người tiểu đường",
+    "fullTitle": "Xử trí Hạ đường huyết ở người bệnh đái tháo đường",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Bệnh lý",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "4 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
     "shortDesc": "Hạ đường huyết là một trong những biến chứng hay gặp ở người bệnh đái tháo đường.",
-    "lead": "Hạ đường huyết là một trong những biến chứng hay gặp ở người bệnh đái tháo đường. Đây là một tình trạng cấp cứu nội khoa, nếu không được xử trí kịp thời có thể làm nguy hiểm đến tính mạng của người bệnh, thậm chí tử vong.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu hạ đường huyết nghiêm trọng kèm co giật, mất ý thức, hôn mê cần ngay lập tức.",
+    "lead": "Hạ đường huyết có thể xảy ra ở người bệnh đái tháo đường khi dùng thuốc quá liều, ăn uống thiếu bữa hoặc vận động nhiều. Các dấu hiệu thường gặp gồm run tay, vã mồ hôi lạnh, đói cồn cào; nếu kéo dài có nguy cơ ảnh hưởng đến ý thức và hệ thần kinh.",
+    "emergencyAlert": "Hãy gọi 115 ngay nếu người bệnh có biểu hiện lơ mơ, hôn mê hoặc co giật. Đặc biệt tránh đổ nước hoặc thức ăn vào miệng người đang bất tỉnh.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Tiêm tĩnh mạch dung dịch đường glucose 20-30% để cung cấp",
-        "desc": "Tiêm tĩnh mạch dung dịch đường glucose 20-30% để cung cấp glucose nhanh chóng và tiêm nhắc lại nếu người bệnh chưa tỉnh. Sau đó duy trì đường huyết >5,5 mmol/l bằng truyền glucose. Trường hợp không thể lấy được ven ở người bệnh, nhân viên y tế có thể tiêm bắp 1 ống Glucagon 1mg. Nếu sau 10 phút, có thể tiêm nhắc lại nếu không có kết quả."
+        "title": "Nhận biết triệu chứng và kiểm tra nhanh",
+        "desc": "Nếu có máy đo đường huyết cá nhân, đo kiểm tra (mức dưới 3.9 mmol/L hoặc dưới 70 mg/dL thường được xem là hạ đường huyết)."
       },
       {
         "stepNumber": 2,
-        "title": "Trường hợp bệnh nhân được phát hiện và điều trị quá muộn",
-        "desc": "Trường hợp bệnh nhân được phát hiện và điều trị quá muộn hoặc đã bị biến chứng phù não , đột quỵ gây hôn mê kéo dài: Sử dụng glucose 10% để duy trì đường huyết 2g/l và điều trị chống phù não bằng Manitol hoặc Hydrocortisone 100mg 4 giờ/lần. Uống thuốc, tiêm thuốc đúng giờ, đúng thuốc, đúng liều lượng theo chỉ định."
+        "title": "Áp dụng quy tắc 15 (khi người bệnh còn tỉnh táo)",
+        "desc": "Cho người bệnh ăn hoặc uống ngay khoảng 15g đường hấp thu nhanh: uống khoảng 120ml nước ép trái cây ngọt, hoặc 3 viên đường, hoặc 1 thìa canh mật ong, hoặc một cốc nước đường ấm."
       },
       {
         "stepNumber": 3,
-        "title": "Nên chuẩn bị máy đo đường huyết tại nhà để có thể kiểm tra",
-        "desc": "Nên chuẩn bị máy đo đường huyết tại nhà để có thể kiểm tra khi cần. Cuối cùng, hãy luôn ý thức nguy cơ xảy ra hạ đường huyết, nhất là khi đang điều trị đái tháo đường hoặc khi đã từng bị hạ đường huyết trước đó để chủ động phòng ngừa. Hạ đường huyết"
+        "title": "Nghỉ ngơi và kiểm tra lại sau 15 phút",
+        "desc": "Để người bệnh ngồi nghỉ ngơi. Sau 15 phút kiểm tra lại đường huyết; nếu vẫn thấp, có thể lặp lại việc bổ sung 15g đường."
       },
       {
         "stepNumber": 4,
-        "title": "Phòng ngừa hạ đường huyết",
-        "desc": "Phòng ngừa hạ đường huyết Kiểm soát tốt đường huyết Nội tiết"
+        "title": "Bổ sung bữa phụ duy trì",
+        "desc": "Khi đường huyết ổn định trở lại, người bệnh có thể ăn nhẹ tinh bột (bánh quy, bánh mì hoặc cháo) để duy trì mức đường huyết."
       },
       {
         "stepNumber": 5,
-        "title": "Đái tháo đường",
-        "desc": "Đái tháo đường"
+        "title": "Trường hợp người bệnh suy giảm ý thức",
+        "desc": "Đặt người bệnh nằm nghiêng an toàn và gọi 115. Không cho ăn uống qua đường miệng; nếu người bệnh có sẵn bút tiêm Glucagon được kê đơn, có thể sử dụng theo hướng dẫn y tế."
       }
     ],
     "dos": [
-      "Tiêm tĩnh mạch dung dịch đường glucose 20-30% để cung cấp.",
-      "Trường hợp bệnh nhân được phát hiện và điều trị quá muộn.",
-      "Nên chuẩn bị máy đo đường huyết tại nhà để có thể kiểm tra.",
-      "Phòng ngừa hạ đường huyết."
+      "Hỗ trợ bổ sung đường nhanh ngay khi nhận thấy các dấu hiệu sớm như run tay, vã mồ hôi.",
+      "Người bệnh đái tháo đường được nên mang theo vài viên kẹo hoặc gói đường bên mình.",
+      "Trao đổi với bác sĩ điều trị để rà soát lại phác đồ dùng thuốc nếu điều này lặp lại."
     ],
     "donts": [
-      "KHÔNG đây là một tình trạng cấp cứu nội khoa, nếu không được xử trí kịp thời có thể làm nguy hiểm đến tính mạng của người bệnh, thậm chí tử vong.",
-      "KHÔNG do ăn uống: Ở bệnh nhân tiêu đường, chế độ ăn phải cực kỳ nghiêm ngặt, đảm bảo khoa học để không làm tăng đường huyết khiến bệnh tình nặng hơn những không không được quá kiêng…",
-      "KHÔNG tuy nhiên, nhìn chung đều ảnh hưởng đến toàn thân và khi không được xử trí kịp thời, người bệnh sẽ nhanh chóng trở nặng và thậm chí nguy hiểm đến tính mạng.",
-      "KHÔNG lúc này cần chú ý rằng đừng cố gắng cho người đang ngất ăn hay uống thứ gì với mục đích bổ sung đường vì có thể gây sặc làm làm tắc nghẽn đường thở."
-    ]
+      "Tránh đưa thức ăn hoặc nước uống vào miệng người đang hôn mê, co giật vì có nguy cơ gây sặc đường thở.",
+      "Hạn chế dùng thực phẩm nhiều chất béo (như socola, kem) để xử trí cấp tốc vì chất béo làm chậm quá trình hấp thu đường.",
+      "Tránh tự ý tiêm thêm insulin khi đang có dấu hiệu nghi ngờ hạ đường huyết."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/xu-ly-ha-duong-huyet-o-nguoi-tieu-duong-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/cach-cap-cuu-khi-bi-ha-duong-huyet-dot-ngot-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bệnh viện Đa khoa Tâm Anh",
+      "youtubeUrl": "https://www.youtube.com/watch?v=xJH6RltjkPU"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "cach-lay-di-vat-trong-mat",
     "title": "Cách lấy dị vật trong mắt",
-    "fullTitle": "Hướng dẫn cách lấy dị vật trong mắt",
+    "fullTitle": "Sơ cứu khi có dị vật trong mắt",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Ngoài trời",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Tham khảo: www.vinmec.com",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
-    "shortDesc": "Bài viết được tham vấn chuyên môn cùng Thạc sĩ, Bác sĩ Vũ Hữu Thắng - Bác sĩ Hồi sức - Cấp cứu - Khoa Hồi sức cấp cứu - Bệnh viện Đa khoa Quốc tế…",
-    "lead": "Bài viết được tham vấn chuyên môn cùng Thạc sĩ, Bác sĩ Vũ Hữu Thắng - Bác sĩ Hồi sức - Cấp cứu - Khoa Hồi sức cấp cứu - Bệnh viện Đa khoa Quốc tế Vinmec Hạ Long .",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, ngừng thở hoặc tình trạng ngày càng nặng.",
+    "shortDesc": "Bài viết được tham vấn chuyên môn cùng thạc sĩ, bác sĩ vũ hữu thắng - bác sĩ hồi sức - cấp cứu - khoa hồi sức cấp cứu - Bệnh viện đa khoa quốc tế…",
+    "lead": "Bụi bẩn, côn trùng nhỏ hoặc hạt cát bay vào mắt là tai nạn hay gặp. Xử trí nhẹ nhàng và đúng cách giúp giảm nguy cơ trầy xước giác mạc hoặc nhiễm trùng mắt.",
+    "emergencyAlert": "Nên đưa đến cơ sở y tế chuyên khoa mắt ngay nếu dị vật là mảnh kim loại ghim sâu, mắt chảy máu hoặc đau nhức nhiều.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Những dị vật có kích thước lớn hơn hạt bụi có nguy cơ làm",
-        "desc": "Những dị vật có kích thước lớn hơn hạt bụi có nguy cơ làm tổn thương mắt rất cao, khi đó rất cần đến sự trợ giúp từ phía nhân viên y tế. Nếu dị vật sắc, kích thước lớn đâm vào mắt gây chảy máu, đau dữ dội thì việc đến gặp bác sĩ là điều cần thiết."
+        "title": "Vệ sinh tay sạch sẽ",
+        "desc": "Rửa tay bằng xà phòng và nước sạch trước khi chạm vào vùng mắt."
       },
       {
         "stepNumber": 2,
-        "title": "Cần quan sát kỹ sự thay đổi của mắt đặc biệt là màu sắc",
-        "desc": "Cần quan sát kỹ sự thay đổi của mắt đặc biệt là màu sắc, chảy máu, sự bất thường có trong mắt, thị lực giảm , xuất hiện dịch tiết ra từ mắt. Đối với các dị vật như mảnh thủy tinh, móng tay,..."
+        "title": "Rửa mắt bằng nước muối sinh lý hoặc nước sạch",
+        "desc": "Nghiêng đầu và dùng nước muối sinh lý (naCl 0.9%) nhỏ hoặc xối nhẹ từ góc trong mắt ra góc ngoài để dòng nước cuốn trôi dị vật."
       },
       {
         "stepNumber": 3,
-        "title": "cần phải được chuyên viên y tế xử lý",
-        "desc": "Cần phải được chuyên viên y tế xử lý. Nếu dị vật nằm bên trong mắt cần làm tiểu phẫu để loại bỏ."
+        "title": "Chớp mắt nhẹ nhàng trong nước sạch",
+        "desc": "Có thể ngâm nhẹ mắt vào cốc nước sạch hoặc nước muối sinh lý rồi chớp mắt nhiều lần."
       },
       {
         "stepNumber": 4,
-        "title": "Trong trường hợp này KHÔNG NÊN cố gắng tự lấy dị vật ra",
-        "desc": "Trong trường hợp này KHÔNG NÊN cố gắng tự lấy dị vật ra, điều này có thể làm cho tình trạng cảng nguy hiểm hơn."
+        "title": "Kiểm tra và đi khám nếu cần thiết",
+        "desc": "Nếu dị vật nằm ở kết mạc mi dưới và dễ thấy, có thể dùng tăm bông ẩm chạm nhẹ. Nếu dị vật bám trên tròng đen (giác mạc) hoặc vẫn cộm nhiều sau khi rửa, nên đến cơ sở y tế để bác sĩ xử lý."
       }
     ],
     "dos": [
-      "Đối với các dị vật như mảnh thủy tinh, móng tay,...",
-      "cần phải được chuyên viên y tế xử lý.",
-      "Nếu dị vật nằm bên trong mắt cần làm tiểu phẫu để loại bỏ.",
-      "Trong trường hợp này không nên cố gắng tự lấy dị vật ra, điều này có thể làm cho tình trạng cảng nguy hiểm hơn."
+      "Chớp mắt nhiều lần để nước mắt tự nhiên hỗ trợ đẩy dị vật ra ngoài.",
+      "Ưu tiên sử dụng nước muối sinh lý 0.9% chuyên dụng cho mắt.",
+      "Che nhẹ mắt bằng gạc sạch và đến khám bác sĩ nếu cảm giác cộm đau không giảm."
     ],
     "donts": [
-      "KHÔNG dụi mắt.",
-      "KHÔNG NÊN sử dụng móng tay để chạm vào mắt đặc biệt là con ngươi.",
-      "TUYỆT ĐỐI KHÔNG dùng nhíp hay các vật gắp khác để lấy dị vật trong mắt điều này rất dể làm tổn thương mắt của bạn."
-    ]
+      "Tránh dụi mắt bằng tay vì có nguy cơ làm dị vật chà xát gây xước giác mạc.",
+      "Tránh dùng nhíp, tăm nhọn hoặc vật cứng tự ý gắp dị vật trong mắt.",
+      "Không nên cố gắng cạy gỡ dị vật đã ghim chặt vào phần tròng đen."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-cach-lay-di-vat-trong-mat-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Tài liệu hướng dẫn đối chiếu",
+        "url": "https://vietngagroup.vn/cach-xu-ly-nhanh-khi-co-di-vat-roi-vao-mat/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Nghệ An TV",
+      "youtubeUrl": "https://www.youtube.com/watch?v=h3KYeNW0Mzc"
+    }
   },
   {
     "id": "cach-so-cuu-dong-kinh-xu-tri-dung",
@@ -1270,8 +1578,6 @@
     "fullTitle": "Sơ cứu người đang co giật",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Bệnh lý",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Tham khảo Epilepsy Foundation Australia",
@@ -1301,15 +1607,29 @@
       "Dọn vật nguy hiểm và trấn an người bệnh khi họ tỉnh."
     ],
     "donts": [
-      "Không ghì giữ người đang co giật.",
-      "Không đặt vật vào miệng hoặc cho ăn uống khi chưa hoàn toàn tỉnh."
+      "Tránh không ghì giữ người đang co giật.",
+      "Tránh không đặt vật vào miệng hoặc cho ăn uống khi chưa hoàn toàn tỉnh."
     ],
     "sources": [
       {
         "name": "Epilepsy Foundation Australia — Sơ cứu cơn co giật",
         "url": "https://epilepsyfoundation.org.au/understanding-epilepsy/seizure-first-aid/tonic-clonic-seizures/"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/?p=197275",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/cach-so-cuu-nguoi-bi-co-giat-vi",
+        "accessDate": "16/09/2026"
       }
-    ]
+    ],
+    "video": {
+      "creator": "Dr. Wynn Tran Official",
+      "youtubeUrl": "https://www.youtube.com/watch?v=U_nqzdiQ0bc"
+    }
   },
   {
     "id": "nhung-cach-so-cuu-nguoi-bi-ngat",
@@ -1317,8 +1637,6 @@
     "fullTitle": "Những cách sơ cứu người bị ngất xỉu và các lưu ý cần nhớ",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Ngoài trời",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "2 phút",
     "standard": "Tham khảo St John Ambulance",
@@ -1348,8 +1666,8 @@
       "Theo dõi mức tỉnh táo và nhịp thở."
     ],
     "donts": [
-      "Không giúp người bệnh đứng lên ngay khi vừa tỉnh.",
-      "Không tụ tập sát quanh người bệnh."
+      "Tránh không giúp người bệnh đứng lên ngay khi vừa tỉnh.",
+      "Tránh không tụ tập sát quanh người bệnh."
     ],
     "sources": [
       {
@@ -1359,107 +1677,153 @@
       {
         "name": "St John Ambulance — Tư thế nằm nghiêng an toàn",
         "url": "https://www.sja.org.uk/first-aid-advice/recovery-position/"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/?p=103141",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/bi-ngat-xiu-nen-uong-gi-cach-so-cuu-nguoi-ngat-xiu-vi",
+        "accessDate": "16/09/2026"
       }
-    ]
+    ],
+    "video": {
+      "creator": "Y học thường thức – BS Nguyễn Trung Thực",
+      "youtubeUrl": "https://www.youtube.com/watch?v=63NzApt2-UY"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "so-cuu-khi-bi-ran-can-ran-doc",
-    "title": "Sơ cứu khi bị rắn cắn (rắn độc):",
-    "fullTitle": "Cách sơ cứu khi bị rắn cắn (rắn độc): Điều NÊN và KHÔNG nên làm",
+    "title": "Sơ cứu khi bị rắn cắn",
+    "fullTitle": "Sơ cứu khi bị rắn cắn",
     "category": "ngoai-troi",
     "categoryLabel": "Ngoài trời",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container",
     "criticalLevel": "high",
     "readTime": "3 phút",
-    "standard": "Chưa ghi nhận nguồn cụ thể",
+    "standard": "Tham khảo: BVĐK Tâm Anh, Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
     "shortDesc": "Trong số khoảng 3.000 loài rắn trên thế giới, chỉ có 15% – 20% loài có nọc độc hoặc chất tiết nước bọt độc hại cho con người.",
-    "lead": "Trong số khoảng 3.000 loài rắn trên thế giới, chỉ có 15% – 20% loài có nọc độc hoặc chất tiết nước bọt độc hại cho con người. Việc t rang bị cách sơ cứu khi bị rắn cắn nhằm ngăn chặn chất độc từ nọc rắn phát tán và gây ra những hậu quả đáng tiếc,…",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu bị rắn tấn công, nạn nhân cần được nhanh chóng.",
+    "lead": "Vết cắn của rắn độc có nguy cơ ảnh hưởng nghiêm trọng đến hệ thần kinh hoặc cơ chế đông máu. Việc sơ cứu đúng cách để làm chậm quá trình lan truyền nọc độc trong khi chờ điều trị chuyên khoa.",
+    "emergencyAlert": "Cần đưa nạn nhân đến cơ sở y tế gần nhất càng sớm càng tốt để được thăm khám và truyền huyết thanh kháng nọc độc (nếu cần).",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Men tiền đông",
-        "desc": "Kích hoạt các bước khác nhau của quá trình đông – cầm máu, hình thành sợi tơ huyết, khiến hệ tiêu huyết cơ thể bẻ gãy, máu không đông. Tổn thương nội mô thành mao mạch, gây chảy máu toàn thân tự phát. Tăng tính thấm, gây phù nề cục bộ; hủy hoại màng tế bào và mô."
+        "title": "Rời khỏi khu vực nguy hiểm và trấn an",
+        "desc": "Đưa nạn nhân ra xa tầm hoạt động của rắn. Hỗ trợ họ giữ bình tĩnh và nằm yên, hạn chế vận động vì lo lắng và cử động mạnh có thể làm độc tố lan nhanh hơn."
       },
       {
         "stepNumber": 2,
-        "title": "Phospholipase A (độc tố tiền synapse thần kinh)",
-        "desc": "Tổn thương tận cùng thần kinh, nơi dẫn truyền acetylcholine vừa được giải phóng, can thiệp vào quá trình giải phóng acetylchilone. Tranh chấp thụ thể thần kinh tại tấm động thần kinh – cơ, gây liệt cơ. Di chuyển nạn nhân xa ra khỏi tầm hoạt động của con rắn."
+        "title": "Tháo bỏ đồ trang sức và nới lỏng trang phục",
+        "desc": "Nhanh chóng tháo nhẫn, vòng tay, đồng hồ ở vùng chi bị cắn trước khi vết thương sưng nề."
       },
       {
         "stepNumber": 3,
-        "title": "Trấn an người bị rắn cắn",
-        "desc": "Trấn an người bị rắn cắn, giữ tâm lý bình tĩnh, hạn chế cử động, bất động chi bị cắn bằng nẹp, để làm chậm sự lây lan của nọc độc. Tháo bỏ đồ trang sức và nới lỏng quần áo nhằm tránh gây chèn ép và làm sưng vết thương."
+        "title": "Làm sạch nhẹ và hạn chế cử động chi",
+        "desc": "Có thể rửa nhẹ bề mặt vết cắn bằng nước sạch hoặc nước muối sinh lý, che bằng gạc sạch. Dùng nẹp cố định nhẹ nhàng chi bị cắn và giữ chi thấp hơn mức tim."
       },
       {
         "stepNumber": 4,
-        "title": "Làm sạch vết thương bằng xà phòng và nước muối sinh lý",
-        "desc": "Làm sạch vết thương bằng xà phòng và nước muối sinh lý. Dùng một miếng gạc khô và sạch để băng kín vùng bị cắn."
+        "title": "Vận chuyển đến cơ sở y tế",
+        "desc": "Hỗ trợ vận chuyển nạn nhân bằng cáng hoặc phương tiện phù hợp, hạn chế để họ tự đi bộ. Nếu an toàn, có thể ghi nhớ đặc điểm hoặc chụp ảnh con rắn từ xa để cung cấp thông tin cho bác sĩ."
       }
     ],
     "dos": [
-      "Men tiền đông.",
-      "Phospholipase A (độc tố tiền synapse thần kinh).",
-      "Trấn an người bị rắn cắn.",
-      "Làm sạch vết thương bằng xà phòng và nước muối sinh lý."
+      "Giữ nạn nhân nằm yên và hạn chế tối đa cử động ở chi bị cắn.",
+      "Tháo bỏ vật dụng gây chèn ép (nhẫn, đồng hồ) sớm.",
+      "Đưa đến cơ sở y tế có khả năng cấp cứu chống độc trong thời gian sớm nhất."
     ],
     "donts": [
-      "KHÔNG có móc độc.",
-      "KHÔNG để bảo vệ tính mạng của bản thân và những người xung quanh, cần ghi nhớ một số lưu ý sau khi bị rắn cắn:.",
-      "KHÔNG khi thấy người bị rắn cắn không nên chờ đợi mà đưa ngay người bệnh đến các cơ sở y tế thăm khám; không nên có tâm lý chủ quan, chỉ khi thấy những biểu hiện nghiêm trọng như suy hô…",
-      "KHÔNG NÊN áp dụng những bài thuốc dân gian để sơ cứu người bị rắn cắn nếu chưa tham khảo ý kiến bác sĩ."
-    ]
+      "Tránh rạch da, trích nặn máu tại vết cắn vì dễ làm tăng nguy cơ nhiễm trùng và tổn thương mạch máu.",
+      "Tránh dùng miệng hút nọc độc để bảo vệ an toàn cho cả người hỗ trợ.",
+      "Không nên buộc garô quá chặt gây cản trở hoàn toàn máu lưu thông dẫn đến nguy cơ hoại tử chi.",
+      "Tránh đắp lá cây hoặc áp dụng các mẹo dân gian chưa được kiểm chứng làm chậm thời gian đến bệnh viện."
+    ],
+    "sources": [
+      {
+        "name": "Bệnh viện Đa khoa Tâm Anh",
+        "url": "https://tamanhhospital.vn/cach-so-cuu-khi-bi-ran-can/",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-khi-bi-ran-can-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "VTV Sức khỏe",
+      "youtubeUrl": "https://suckhoe.vtv.vn/video/so-cuu-khi-bi-ran-can-108672762.htm"
+    }
   },
   {
-    "needsMedicalReview": true,
     "id": "nghiem-phap-heimlich-la-gi-cach",
-    "title": "Nghiệm pháp Heimlich là gì? Cách",
-    "fullTitle": "Nghiệm pháp Heimlich là gì? Cách thực hiện",
+    "title": "Nghiệm pháp Heimlich",
+    "fullTitle": "Tìm hiểu nghiệm pháp Heimlich: Xử trí dị vật đường thở",
     "category": "tre-em",
     "categoryLabel": "Trẻ em",
-    "badgeType": "Trẻ em",
-    "badgeClass": "bg-secondary-container text-on-secondary-container",
     "criticalLevel": "medium",
     "readTime": "2 phút",
-    "standard": "Chưa ghi nhận nguồn cụ thể",
+    "standard": "Tham khảo: Long Châu, Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
     "shortDesc": "Nghiệm pháp Heimlich là một biện pháp cấp cứu đầu tiên nhằm loại bỏ dị vật gây tắc nghẽn đường thở.",
-    "lead": "Nghiệm pháp Heimlich là một biện pháp cấp cứu đầu tiên nhằm loại bỏ dị vật gây tắc nghẽn đường thở. Các dị vật thường gây tắc nghẽn bao gồm thức ăn, đồ chơi và các vật dụng khác.",
-    "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu nạn nhân bị tím tái, khó thở , không khóc hoặc khóc yếu.",
+    "lead": "Nghiệm pháp Heimlich (ép bụng đẩy dị vật) là kỹ thuật sơ cứu được áp dụng khi người lớn hoặc trẻ lớn bị tắc nghẽn đường thở do dị vật. Nguyên lý của kỹ thuật là tạo ra áp lực đẩy luồng khí từ phổi lên giúp tống dị vật ra ngoài.",
+    "emergencyAlert": "Nên thực hiện sớm khi nhận thấy nạn nhân có dấu hiệu tắc nghẽn đường thở nặng (ôm cổ, không nói, không ho được, tím tái) và nhờ người gọi 115.",
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Tiêu chuẩn GPP là gì và có vai trò như thế nào với nhà",
-        "desc": "Tiêu chuẩn GPP là gì và có vai trò như thế nào với nhà thuốc?"
+        "title": "Chuẩn bị tư thế đứng phía sau",
+        "desc": "Đứng vững phía sau nạn nhân (chân trước chân sau để tạo điểm tựa), vòng hai tay ôm quanh vùng eo của họ."
       },
       {
         "stepNumber": 2,
-        "title": "Nuốt răng giả vào bụng có sao không?",
-        "desc": "Nuốt răng giả vào bụng có sao không? Dấu hiệu cảnh báo nguy hiểm"
+        "title": "Xác định vị trí đặt tay",
+        "desc": "Nắm một bàn tay lại thành nắm đấm, đặt mặt ngón cái áp vào vùng bụng trên rốn và dưới mũi xương ức khoảng 2-3 cm."
       },
       {
         "stepNumber": 3,
-        "title": "Brainrot - Mối đe dọa với sức khỏe não bộ trong kỷ nguyên",
-        "desc": "Brainrot - Mối đe dọa với sức khỏe não bộ trong kỷ nguyên mạng xã hội"
+        "title": "Làm động tác ép bụng",
+        "desc": "Dùng bàn tay còn lại ôm lấy nắm đấm, kéo giật dứt khoát theo hướng VÀO TRONG VÀ CHẾCH LÊN TRÊN."
       },
       {
         "stepNumber": 4,
-        "title": "GSP là gì?",
-        "desc": "GSP là gì? Tiêu chuẩn vàng trong bảo quản và phân phối dược phẩm"
+        "title": "Luân phiên vỗ lưng và ép bụng",
+        "desc": "Theo nhiều hướng dẫn hiện hành (như ERC), có thể luân phiên 5 lần vỗ lưng và 5 lần ép bụng cho đến khi dị vật bật ra hoặc nạn nhân ho, thở trở lại."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Trường hợp nạn nhân bất tỉnh",
+        "desc": "Nhẹ nhàng đỡ nạn nhân nằm ngửa trên mặt phẳng cứng, gọi 115 và thực hiện quy trình hồi sinh tim phổi (CPR). Chỉ lấy dị vật trong miệng nếu nhìn thấy rõ."
       }
     ],
     "dos": [
-      "Tiêu chuẩn GPP là gì và có vai trò như thế nào với nhà.",
-      "Nuốt răng giả vào bụng có sao không?",
-      "Brainrot - Mối đe dọa với sức khỏe não bộ trong kỷ nguyên.",
-      "GSP là gì?"
+      "Tạo lực ép theo hướng chếch lên trên để tận dụng áp lực khí đẩy dị vật.",
+      "Nên khuyên người bệnh đi kiểm tra y tế sau khi dị vật đã được tống ra để đánh giá các chấn thương phần mềm nếu có.",
+      "Áp dụng linh hoạt luân phiên 5 vỗ lưng - 5 ép bụng theo hướng dẫn sơ cứu cập nhật."
     ],
     "donts": [
-      "KHÔNG thể hoặc không thể thở và nói chuyện."
-    ]
+      "Tránh áp dụng kỹ thuật ép bụng Heimlich cho trẻ sơ sinh dưới 1 tuổi (nên dùng kỹ thuật vỗ lưng và ấn ngực).",
+      "Tránh đặt nắm đấm trực tiếp lên mũi ức hoặc khung xương sườn.",
+      "Không nên ép bụng cho phụ nữ mang thai ở những tháng cuối (thay bằng kỹ thuật ép ngực).",
+      "Tránh đưa tay móc họng mù quáng khi không quan sát thấy dị vật."
+    ],
+    "sources": [
+      {
+        "name": "Nhà thuốc Long Châu",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/nghiem-phap-heimlich-la-gi-cach-thuc-hien.html",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Bệnh viện Đa khoa Quốc tế Vinmec",
+        "url": "https://www.vinmec.com/vie/chu-de/nghiem-phap-heimlich",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Sức khỏe & Đời sống (SKĐS)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HS4_SPZdp5g"
+    }
   },
   {
     "id": "so-cuu-nguoi-bi-nhoi-mau-co-tim-dau-tim-dot-ngot",
@@ -1467,8 +1831,6 @@
     "fullTitle": "Sơ cứu người bị nhồi máu cơ tim (đau tim đột ngột)",
     "category": "benh-ly",
     "categoryLabel": "Bệnh lý",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "5 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
@@ -1480,7 +1842,7 @@
     "steps": [
       {
         "stepNumber": 1,
-        "title": "Nghỉ ngơi tuyệt đối ở tư thế nửa nằm nửa ngồi",
+        "title": "Nghỉ ngơi hoàn toàn ở tư thế nửa nằm nửa ngồi",
         "desc": "Dừng ngay mọi việc đang làm, ngồi nghỉ hoặc nằm theo tư thế nửa nằm nửa ngồi (co đầu gối, nằm nghiêng 75 độ so với mặt đất) ở nơi thoáng đãng."
       },
       {
@@ -1491,7 +1853,7 @@
       {
         "stepNumber": 3,
         "title": "Dùng thuốc hỗ trợ theo chỉ định của bác sĩ",
-        "desc": "Nếu bệnh nhân có sẵn đơn thuốc, dùng ngay viên ngậm dưới lưỡi Nitroglycerin hoặc nhai 1 viên Aspirin chống đông máu theo hướng dẫn y tế."
+        "desc": "Nếu bệnh nhân có sẵn đơn thuốc, dùng ngay viên ngậm dưới lưỡi Nitroglycerin hoặc nhai 1 viên aspirin chống đông máu theo hướng dẫn y tế."
       },
       {
         "stepNumber": 4,
@@ -1502,13 +1864,13 @@
     "dos": [
       "Dừng ngay mọi việc, nằm tư thế nửa nằm nửa ngồi co nhẹ đầu gối.",
       "Buông lỏng vai và hai tay, nhắm mắt hít thở nhẹ nhàng bằng mũi.",
-      "Cho dùng thuốc ngậm Nitroglycerin hoặc nhai Aspirin nếu có chỉ định sẵn của bác sĩ.",
+      "Cho dùng thuốc ngậm Nitroglycerin hoặc nhai aspirin nếu có chỉ định sẵn của bác sĩ.",
       "Gọi ngay cấp cứu 115 và chuẩn bị ép tim ngoài lồng ngực nếu nạn nhân ngưng thở."
     ],
     "donts": [
-      "KHÔNG cố hít sâu hoặc nín thở (làm tăng gánh nặng và khiến tim mệt thêm).",
-      "KHÔNG nói to hay hỏi quá nhiều gây hoảng loạn, căng thẳng tâm lý cho nạn nhân.",
-      "KHÔNG để nạn nhân tự đi lại hoặc tự lái xe đến bệnh viện."
+      "Không nên cố hít sâu hoặc nín thở (làm tăng gánh nặng và khiến tim mệt thêm).",
+      "Không nên nói to hay hỏi quá nhiều gây hoảng loạn, căng thẳng tâm lý cho nạn nhân.",
+      "Không nên để nạn nhân tự đi lại hoặc tự lái xe đến bệnh viện."
     ],
     "sources": [
       {
@@ -1543,14 +1905,12 @@
     "fullTitle": "Sơ cứu chảy máu cam",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Phổ biến",
-    "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
     "criticalLevel": "medium",
     "readTime": "3 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
     "shortDesc": "Mao mạch niêm mạc mũi bị vỡ do thời tiết hanh khô hoặc chấn thương. Cần ngồi thẳng, hơi cúi đầu về phía trước, bóp chặt cánh mũi 10-15 phút để cầm máu.",
-    "lead": "Mao mạch niêm mạc mũi bị vỡ do thời tiết hanh khô, ngoáy mũi hoặc chấn thương. Cần cho nạn nhân ngồi thẳng, hơi cúi đầu về phía trước, bóp chặt cánh mũi 10-15 phút và thở bằng miệng. Tuyệt đối không ngửa cổ ra sau.",
+    "lead": "Mao mạch niêm mạc mũi bị vỡ do thời tiết hanh khô, ngoáy mũi hoặc chấn thương. Cần cho nạn nhân ngồi thẳng, hơi cúi đầu về phía trước, bóp chặt cánh mũi 10-15 phút và thở bằng miệng. không nên ngửa cổ ra sau.",
     "emergencyAlert": "GỌI 115 HOẶC ĐẾN BỆNH VIỆN NGAY nếu chảy máu mũi kéo dài trên 30 phút không cầm, nạn nhân ngất xỉu, choáng váng hoặc chảy máu sau tai nạn chấn thương vùng đầu mặt.",
     "timeline": [],
     "steps": [
@@ -1577,9 +1937,9 @@
       "Giữ phần đầu cao hơn ngực trong vài giờ sau khi máu đã cầm."
     ],
     "donts": [
-      "TUYỆT ĐỐI KHÔNG ngửa cổ ra sau (tránh máu chảy xuống họng gây sặc khí quản hoặc kích thích nôn).",
-      "KHÔNG ngoáy mũi, không xì mũi mạnh và không cúi gập người trong vài giờ sau sơ cứu.",
-      "KHÔNG nhét khăn giấy bẩn hay bông gòn thô ráp sâu vào hốc mũi."
+      "Khuyến cáo tránh ngửa cổ ra sau (tránh máu chảy xuống họng gây sặc khí quản hoặc kích thích nôn).",
+      "Không nên ngoáy mũi, không xì mũi mạnh và không cúi gập người trong vài giờ sau sơ cứu.",
+      "Không nên nhét khăn giấy bẩn hay bông gòn thô ráp sâu vào hốc mũi."
     ],
     "sources": [
       {
@@ -1604,8 +1964,6 @@
     "fullTitle": "Sơ cấp cứu chấn thương bụng theo hướng dẫn của Bộ Y tế",
     "category": "tai-nan",
     "categoryLabel": "Tai nạn",
-    "badgeType": "Khẩn cấp",
-    "badgeClass": "bg-error-container text-on-error-container font-bold",
     "criticalLevel": "high",
     "readTime": "5 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
@@ -1628,7 +1986,7 @@
       {
         "stepNumber": 3,
         "title": "Bảo vệ phần tạng lộ ra ngoài (nếu lòi ruột)",
-        "desc": "Tuyệt đối không cố gắng ấn nhét tạng vào trong. Dùng gạc sạch tẩm nước muối sinh lý đậy lên hoặc úp bát/chậu sạch lên trên để giữ ẩm và chống nhiễm trùng."
+        "desc": "Không nên cố gắng ấn nhét tạng vào trong. Dùng gạc sạch tẩm nước muối sinh lý đậy lên hoặc úp bát/chậu sạch lên trên để giữ ẩm và chống nhiễm trùng."
       },
       {
         "stepNumber": 4,
@@ -1643,10 +2001,10 @@
       "Thông báo rõ tình trạng lòi tạng hoặc dấu hiệu sốc cho tổng đài 115."
     ],
     "donts": [
-      "TUYỆT ĐỐI KHÔNG ấn nhét phần ruột, tạng bị lòi ra ngoài trở lại ổ bụng.",
-      "TUYỆT ĐỐI KHÔNG rút dị vật đâm xuyên tại hiện trường.",
-      "KHÔNG cho nạn nhân ăn hay uống bất kỳ thứ gì.",
-      "KHÔNG tự ý di chuyển nạn nhân khi chấn thương nặng chưa ổn định."
+      "Khuyến cáo tránh ấn nhét phần ruột, tạng bị lòi ra ngoài trở lại ổ bụng.",
+      "Khuyến cáo tránh rút dị vật đâm xuyên tại hiện trường.",
+      "Không nên cho nạn nhân ăn hay uống bất kỳ thứ gì.",
+      "Không nên tự ý di chuyển nạn nhân khi chấn thương nặng chưa ổn định."
     ],
     "sources": [
       {
@@ -1671,21 +2029,19 @@
     "fullTitle": "Nguyên tắc sơ cấp cứu và kế hoạch thực hiện",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Phổ biến",
-    "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
     "criticalLevel": "medium",
     "readTime": "4 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
-    "shortDesc": "04 nguyên tắc chính: Giữ bình tĩnh và an toàn, kiểm soát tình huống, tiến hành sơ cấp cứu ban đầu, và làm theo từng bước (Nhận định - Lập kế hoạch - Thực hiện - Đánh giá).",
-    "lead": "Có 04 nguyên tắc sơ cấp cứu chính cần tuân thủ: Giữ bình tĩnh và an toàn, kiểm soát tình huống, tiến hành sơ cứu ban đầu, và làm theo từng bước. Kế hoạch thực hiện gồm 4 bước cơ bản: Nhận định, Lập kế hoạch, Thực hiện và Đánh giá để tránh bỏ sót thông tin quan trọng.",
+    "shortDesc": "04 nguyên tắc chính: Giữ bình tĩnh và an toàn, kiểm soát tình huống, làm sơ cấp cứu ban đầu, và làm theo từng bước (nhận định - lập kế hoạch - thực hiện - đánh giá).",
+    "lead": "Có 04 nguyên tắc sơ cấp cứu chính cần tuân thủ: Giữ bình tĩnh và an toàn, kiểm soát tình huống, làm sơ cứu ban đầu, và làm theo từng bước. Kế hoạch thực hiện gồm 4 bước cơ bản: Nhận định, lập kế hoạch, thực hiện và đánh giá để tránh bỏ sót thông tin quan trọng.",
     "emergencyAlert": "GỌI 115 NGAY LẬP TỨC nếu hiện trường có nguy cơ tai nạn liên hoàn, cháy nổ hoặc nạn nhân bất tỉnh, ngừng thở, mất máu nhiều đe dọa trực tiếp tính mạng.",
     "timeline": [],
     "steps": [
       {
         "stepNumber": 1,
         "title": "Nhận định",
-        "desc": "Nhận định về tình huống để chắc chắn môi trường đã an toàn cho bạn và nạn nhân. Nhận định về tình trạng của nạn nhân để xác định loại sơ cấp cứu cần thiết nhất."
+        "desc": "Nhận định về tình huống để đảm bảo môi trường đã an toàn cho bạn và nạn nhân. Nhận định về tình trạng của nạn nhân để xác định loại sơ cấp cứu cần thiết nhất."
       },
       {
         "stepNumber": 2,
@@ -1705,14 +2061,14 @@
     ],
     "dos": [
       "Giữ bình tĩnh và không mạo hiểm với sự an toàn của chính bạn, của nạn nhân hoặc của những người xung quanh.",
-      "Kiểm soát tình huống để chắc chắn hiện trường là an toàn.",
-      "Tiến hành sơ cấp cứu ban đầu (bảo toàn tính mạng và thúc đẩy sự hồi phục).",
+      "Kiểm soát tình huống để đảm bảo hiện trường là an toàn.",
+      "Làm sơ cấp cứu ban đầu (bảo toàn tính mạng và thúc đẩy sự hồi phục).",
       "Làm theo từng bước, để tránh thiếu sót, tránh bị choáng ngợp do lo lắng, tránh bỏ sót các thông tin quan trọng."
     ],
     "donts": [
-      "KHÔNG mạo hiểm lao vào hiện trường nguy hiểm (điện hở, cháy nổ, khí độc).",
-      "KHÔNG di chuyển bệnh nhân nếu có nghi ngờ chấn thương cột sống.",
-      "KHÔNG tập trung vào một nạn nhân không đe dọa tính mạng mà bỏ quên người chấn thương nặng khác (nếu có nhiều nạn nhân)."
+      "Không nên mạo hiểm lao vào hiện trường nguy hiểm (điện hở, cháy nổ, khí độc).",
+      "Không nên di chuyển bệnh nhân nếu có nghi ngờ chấn thương cột sống.",
+      "Không nên tập trung vào một nạn nhân không đe dọa tính mạng mà bỏ quên người chấn thương nặng khác (nếu có nhiều nạn nhân)."
     ],
     "sources": [
       {
@@ -1733,21 +2089,19 @@
     "fullTitle": "Sơ cấp cứu bỏng ở trẻ em",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Phổ biến",
-    "badgeClass": "bg-secondary-container text-on-secondary-container font-bold",
     "criticalLevel": "high",
     "readTime": "4 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
     "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z\"></path></svg>",
     "shortDesc": "Bỏng nước sôi, thức ăn nóng, lửa ở trẻ em. Cần ngâm/xả ngay vùng bỏng dưới nước sạch mát 15-20 phút, băng gạc sạch và đưa ngay đến cơ sở y tế gần nhất.",
-    "lead": "Da trẻ mỏng và nhạy cảm nên bỏng nước sôi, thức ăn nóng, lửa dễ ăn sâu gây sốc bỏng và nhiễm trùng. Cần ngâm/xả ngay vùng bỏng dưới nước sạch mát 15-20 phút, giữ sạch bằng gạc và đưa đi viện. Tuyệt đối không bôi mỡ trăn, kem đánh răng.",
+    "lead": "Da trẻ mỏng và nhạy cảm nên bỏng nước sôi, thức ăn nóng, lửa dễ ăn sâu gây sốc bỏng và nhiễm trùng. Cần ngâm/xả ngay vùng bỏng dưới nước sạch mát 15-20 phút, giữ sạch bằng gạc và đưa đi viện. không nên bôi mỡ trăn, kem đánh răng.",
     "emergencyAlert": "ĐƯA TRẺ ĐẾN BỆNH VIỆN NGAY nếu vết bỏng có diện tích rộng (toàn bộ lưng, ngực, bụng hoặc một chi), bỏng ở mặt, vùng kín, bỏng từ độ 2 trở lên hoặc trẻ có biểu hiện sốc, hoảng loạn.",
     "timeline": [],
     "steps": [
       {
         "stepNumber": 1,
         "title": "Loại bỏ tác nhân gây bỏng và đưa trẻ ra nơi an toàn",
-        "desc": "Nhanh chóng cách ly trẻ khỏi nguồn nhiệt. Cởi bỏ nhẹ nhàng quần áo dính chất lỏng nóng (nếu quần áo dính chặt vào da, tuyệt đối không cố lột mà hãy dùng kéo cắt bỏ xung quanh)."
+        "desc": "Nhanh chóng cách ly trẻ khỏi nguồn nhiệt. Cởi bỏ nhẹ nhàng quần áo dính chất lỏng nóng (nếu quần áo dính chặt vào da, đặc biệt tránh cố lột mà hãy dùng kéo cắt bỏ xung quanh)."
       },
       {
         "stepNumber": 2,
@@ -1757,7 +2111,7 @@
       {
         "stepNumber": 3,
         "title": "Bảo vệ vết bỏng bằng gạc sạch vô khuẩn",
-        "desc": "Giữ vết bỏng sạch, băng nhẹ bằng gạc vô trùng để giảm đau tại chỗ. Tuyệt đối không bôi thuốc lạ hay hóa chất lên vết bỏng."
+        "desc": "Giữ vết bỏng sạch, băng nhẹ bằng gạc vô trùng để giảm đau tại chỗ. không nên bôi thuốc lạ hay hóa chất lên vết bỏng."
       },
       {
         "stepNumber": 4,
@@ -1771,10 +2125,10 @@
       "Động viên an ủi để trẻ không bị hoảng loạn tinh thần."
     ],
     "donts": [
-      "TUYỆT ĐỐI KHÔNG bôi kem đánh răng, kem trị bỏng, mỡ trăn hay thuốc lạ lên vết bỏng của trẻ.",
-      "TUYỆT ĐỐI KHÔNG ngâm nước đá quá lạnh (gây bỏng lạnh và hạ thân nhiệt ở trẻ).",
-      "KHÔNG chọc vỡ các bóng phỏng rộp của da.",
-      "KHÔNG cố lột giật quần áo dính chặt vào vết bỏng."
+      "Khuyến cáo tránh bôi kem đánh răng, kem trị bỏng, mỡ trăn hay thuốc lạ lên vết bỏng của trẻ.",
+      "Khuyến cáo tránh ngâm nước đá quá lạnh (gây bỏng lạnh và hạ thân nhiệt ở trẻ).",
+      "Không nên chọc vỡ các bóng phỏng rộp của da.",
+      "Không nên cố lột giật quần áo dính chặt vào vết bỏng."
     ],
     "sources": [
       {
@@ -1809,8 +2163,6 @@
     "fullTitle": "Sơ cứu và bảo quản chi bị đứt lìa trong cấp cứu",
     "category": "sinh-hoat",
     "categoryLabel": "Sinh hoạt",
-    "badgeType": "Sinh tử",
-    "badgeClass": "bg-tertiary-fixed text-tertiary font-bold",
     "criticalLevel": "critical",
     "readTime": "5 phút",
     "standard": "Chuẩn Y khoa tham chiếu từ Vinmec",
@@ -1823,22 +2175,22 @@
       {
         "stepNumber": 1,
         "title": "Bảo đảm đường thở và kiểm tra sinh hiệu",
-        "desc": "Bảo đảm đường thở luôn thông thoáng, không bị tắc nghẹt. Nếu bệnh nhân ngừng tuần hoàn hô hấp thì tiến hành hồi sinh tim phổi (CPR) ngay lập tức."
+        "desc": "Bảo đảm đường thở luôn thông thoáng, không bị tắc nghẹt. Nếu bệnh nhân ngừng tuần hoàn hô hấp thì làm hồi sinh tim phổi (CPR) ngay lập tức."
       },
       {
         "stepNumber": 2,
         "title": "Cầm máu mỏm cụt cho nạn nhân trước tiên",
-        "desc": "Rửa vết thương bằng nước muối sinh lý hoặc nước sạch rồi băng kín. Băng ép mỏm cụt để cầm máu; nếu đứt lìa bàn tay, bàn chân hoặc băng ép không cầm máu được thì tiến hành đặt garo cách mỏm cụt 10cm và ghi nhận thời điểm."
+        "desc": "Rửa vết thương bằng nước muối sinh lý hoặc nước sạch rồi băng kín. Băng ép mỏm cụt để cầm máu; nếu đứt lìa bàn tay, bàn chân hoặc băng ép không cầm máu được thì làm đặt garo cách mỏm cụt 10cm và ghi nhận thời điểm."
       },
       {
         "stepNumber": 3,
         "title": "Rửa nhẹ và bọc gạc ẩm phần chi đứt rời",
-        "desc": "Cầm nắm nhẹ nhàng, rửa sạch phần chi bị đứt bằng nước muối sinh lý vô khuẩn hoặc nước sạch (tuyệt đối không dùng xà phòng hay hóa chất). Làm ẩm gạc vô khuẩn bằng nước muối sinh lý rồi bọc kín phần chi đứt (chú ý không bọc quá dày)."
+        "desc": "Cầm nắm nhẹ nhàng, rửa sạch phần chi bị đứt bằng nước muối sinh lý vô khuẩn hoặc nước sạch (đặc biệt tránh dùng xà phòng hay hóa chất). Làm ẩm gạc vô khuẩn bằng nước muối sinh lý rồi bọc kín phần chi đứt (chú ý không bọc quá dày)."
       },
       {
         "stepNumber": 4,
         "title": "Bảo quản gián tiếp trong túi kín và thùng đá lạnh",
-        "desc": "Đặt phần chi đã bọc gạc vào túi nilon sạch, cột kín lại để nước không thấm vào. Đặt túi nilon vào một thùng đá lạnh hoặc chậu nước đá (tuyệt đối không để chi tiếp xúc trực tiếp với đá)."
+        "desc": "Đặt phần chi đã bọc gạc vào túi nilon sạch, cột kín lại để nước không thấm vào. Đặt túi nilon vào một thùng đá lạnh hoặc chậu nước đá (đặc biệt tránh để chi tiếp xúc trực tiếp với đá)."
       },
       {
         "stepNumber": 5,
@@ -1853,9 +2205,9 @@
       "Nếu chi chưa đứt lìa hoàn toàn thì giữ nguyên không cắt rời."
     ],
     "donts": [
-      "TUYỆT ĐỐI KHÔNG để chi thể tiếp xúc trực tiếp với đá lạnh (nhiệt độ quá lạnh sẽ làm chết mô vi phẫu).",
-      "TUYỆT ĐỐI KHÔNG dùng xà phòng, cồn hay hóa chất để rửa phần chi đứt.",
-      "KHÔNG tự ý cắt rời phần chi nếu nó vẫn còn dính lại một phần trên da."
+      "Khuyến cáo tránh để chi thể tiếp xúc trực tiếp với đá lạnh (nhiệt độ quá lạnh sẽ làm chết mô vi phẫu).",
+      "Khuyến cáo tránh dùng xà phòng, cồn hay hóa chất để rửa phần chi đứt.",
+      "Không nên tự ý cắt rời phần chi nếu nó vẫn còn dính lại một phần trên da."
     ],
     "sources": [
       {

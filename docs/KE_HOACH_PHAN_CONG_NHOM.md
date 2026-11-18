@@ -78,7 +78,7 @@
 │  • docs/SEO_SCHEMA.md         │  • css/interactive-3d.css     │  • quiz.html + js/quiz.js   │
 │  • Cấu trúc Repo & README.md  │  • js/flashcard-controller.js │  • data/quiz.json           │
 ├───────────────────────────────┴───────────────────────────────┴─────────────────────────────┤
-│  THÀNH VIÊN 3 (KHẢI): Check & Thống nhất Data Schema, assets/images/* (offline),            │
+│  THÀNH VIÊN 3 (KHẢI): Check & Thống nhất Data Schema, images/* (offline),            │
 │                       components/medical-disclaimer.html, Báo cáo PDF (15-40 trang)         │
 └─────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -106,7 +106,7 @@
    * Thiết lập **System Prompt y tế**: *"Bạn là trợ lý phản xạ sơ cấp cứu MedFA. Khi nhận triệu chứng, hãy: (1) Nhắc gọi 115 nếu nguy kịch, (2) Đưa ra tối đa 3-4 bước sơ cứu sống còn theo chuẩn AHA/ERC, câu từ ngắn gọn, gạch đầu dòng, không lan man"*.
    * Cơ chế fallback: Nếu mất mạng hoặc hết quota API key, tự động chuyển về bộ phản xạ có sẵn.
 3. **Chuẩn hóa Cấu trúc Repository & Hoàn thiện `README.md` theo quy chuẩn Thầy Khoa:**
-   * Soát lại cây thư mục khớp 100% với mục 5 trong `IE104_Project_Guide.pdf` (gồm: `css/`, `js/`, `assets/images/`, `components/`, các file HTML gốc).
+   * Soát lại cây thư mục khớp 100% với mục 5 trong `IE104_Project_Guide.pdf` (gồm: `css/`, `js/`, `images/`, `components/`, các file HTML gốc).
    * Cập nhật `README.md` chuẩn chuyên nghiệp: Giới thiệu đề tài, kiến trúc không thư viện ngoài (Zero-dependency), bảng phân công nhiệm vụ và hướng dẫn chạy web trên VS Code Live Server / Python HTTP Server.
 4. **Tối ưu SEO & Schema.org cho Web Vệ Tinh:**
    * Xây dựng mẫu `JSON-LD` (`MedicalWebPage`, `HowTo`) để các trang chi tiết được Google hiển thị dạng Rich Results.
@@ -150,7 +150,7 @@
 * **Nhánh Git làm việc:** `feature/data-schema-offline-khai`
 * **File phụ trách độc lập:**
   1. `data/topics.json` & `docs/DATA_SCHEMA_SPEC.md` *(Check và thống nhất Data Schema)*
-  2. Thư mục `assets/images/*` *(Tải và lưu trữ toàn bộ ảnh offline)*
+  2. Thư mục `images/*` *(Tải và lưu trữ toàn bộ ảnh offline)*
   3. `components/medical-disclaimer.html` *(Khối minh bạch nguồn tin y khoa)*
   4. Khung Báo cáo đồ án `BaoCao_IE104_MedFA.docx/pdf` *(Soạn thảo cấu trúc 15-40 trang)*
 
@@ -162,7 +162,7 @@
    * Soạn thảo tài liệu đặc tả cấu trúc `docs/DATA_SCHEMA_SPEC.md` để các thành viên khác khi viết code lấy dữ liệu đều dùng chung một chuẩn thống nhất, không bị lỗi `undefined`.
 2. **Lưu trữ Offline toàn bộ Hình ảnh (Xóa bỏ rủi ro link chết):**
    * Tải toàn bộ các ảnh từ link tạm `https://lh3.googleusercontent.com/...` về máy.
-   * Chuyển đổi sang định dạng WebP/JPG tối ưu dung lượng (< 150KB/ảnh), đặt tên rõ ràng (ví dụ: `hero-cpr.webp`, `first-aid-child.webp`) và lưu vào `assets/images/`.
+   * Chuyển đổi sang định dạng WebP/JPG tối ưu dung lượng (< 150KB/ảnh), đặt tên rõ ràng (ví dụ: `hero-cpr.webp`, `first-aid-child.webp`) và lưu vào `images/`.
    * Cập nhật đường dẫn nội bộ trong `index.html`, `about.html`, `social-impact.html`.
 3. **Xây dựng Module Minh Bạch Nguồn Tin & Tuyên Bố Miễn Trừ Y Khoa:**
    * Tạo component `components/medical-disclaimer.html`:
@@ -212,7 +212,7 @@
 | :---: | :--- | :---: | :--- | :--- | :---: |
 | 1 | **Nguyễn Trung Kiên** | 24520888 | Trưởng nhóm, Logic & AI | `js/storage.js`, `js/chatbot-gemini.js`, Chuẩn hóa Repo & `README.md`, SEO Schema | **25%** |
 | 2 | **Trần Gia Phú** | 24521365 | UI/UX & Motion | `flashcards.html`, `timed-practice.html`, `css/interactive-3d.css`, Responsive tuning | **25%** |
-| 3 | **Hồ Tấn Khải** | 24520721 | Content & Data Schema | Check & thống nhất `topics.json`, `assets/images/*` (offline), Medical Disclaimer | **25%** |
+| 3 | **Hồ Tấn Khải** | 24520721 | Content & Data Schema | Check & thống nhất `topics.json`, `images/*` (offline), Medical Disclaimer | **25%** |
 | 4 | **Trương Đỗ Như Quỳnh**| 24521513 | Interactive & Form Dev | `contact.html`, `js/contact-validation.js`, `quiz.html`, `data/quiz.json`, `js/quiz-engine.js` | **25%** |
 | **TỔNG**| **4 thành viên** | | | | **100%** |
 

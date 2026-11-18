@@ -227,9 +227,10 @@ function cleanTitle(str) {
 function extractCardsFromTopics(topics) {
   if (!Array.isArray(topics) || topics.length === 0) return DEFAULT_CARDS;
 
-  // Lọc bỏ bài lỗi data / bài lý thuyết / bài dính tên tác giả
+  // Lọc bỏ bài chưa đối chiếu y khoa (needsMedicalReview), bài lỗi data, bài lý thuyết hoặc dính tên tác giả
   const validTopics = topics.filter(t => {
-    if (!t || !t.id || !Array.isArray(t.steps) || t.steps.length < 3) return false;
+    if (!t || !t.id || t.needsMedicalReview === true) return false;
+    if (!Array.isArray(t.steps) || t.steps.length < 3) return false;
     if (INVALID_TOPIC_IDS.has(t.id)) return false;
     if (isAuthorOrCrawlerJunk(t.lead) || isAuthorOrCrawlerJunk(t.shortDesc)) return false;
     return true;
@@ -427,7 +428,14 @@ function showCard() {
       current.steps.forEach((stepText, idx) => {
         const stepEl = document.createElement('div');
         stepEl.className = 'step-item';
-        stepEl.innerHTML = `<span class="step-num">${idx + 1}</span><span class="step-txt">${stepText}</span>`;
+        // Tạo DOM node thuần bằng textContent để tránh rủi ro XSS từ dữ liệu JSON
+        const numSpan = document.createElement('span');
+        numSpan.className = 'step-num';
+        numSpan.textContent = String(idx + 1);
+        const txtSpan = document.createElement('span');
+        txtSpan.className = 'step-txt';
+        txtSpan.textContent = stepText;
+        stepEl.append(numSpan, txtSpan);
         backSteps.appendChild(stepEl);
       });
       backSteps.style.display = 'grid';

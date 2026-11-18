@@ -37,13 +37,13 @@ h1, h2, h3, h4, h5, h6, p, span, a {
    2. MOBILE BREAKPOINT (< 640px)
    -------------------------------------------------------------------------- */
 @media (max-width: 639.98px) {
-  /* Header & Main Offset */
+  /* Header & Main Offset: Chỉ áp dụng cho main dùng pt-20, tránh ghi đè trang Quiz/Contact/Practice */
   .site-header {
     height: var(--header-height-mobile) !important;
   }
 
   .site-main,
-  main {
+  main.pt-20 {
     padding-top: var(--header-height-mobile) !important;
   }
 
@@ -52,10 +52,12 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     padding-inline: 0.75rem !important;
   }
 
-  /* Compact Brand Logo on Mobile */
+  /* Brand Logo on Mobile */
+  #header-placeholder svg.h-14,
   #header-placeholder svg.h-10,
+  header svg.h-14,
   header svg.h-10 {
-    height: 34px !important;
+    height: 44px !important;
     width: auto !important;
   }
 
@@ -96,10 +98,9 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     padding-bottom: 3rem !important;
   }
 
-  /* Mobile Full-width CTA Action Buttons */
+  /* Mobile Full-width CTA Action Buttons: Chỉ áp dụng cho nhóm CTA Hero, tránh ảnh hưởng khối link khác */
   .hero-cta-buttons,
-  .hero-cta-group,
-  div:has(> a[href="topics.html"]) {
+  .hero-cta-group {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -257,7 +258,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
   }
 
   .site-main,
-  main {
+  main.pt-20 {
     padding-top: 76px;
   }
 

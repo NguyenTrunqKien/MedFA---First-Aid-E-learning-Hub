@@ -1,0 +1,9 @@
+# Robots.txt cho Website Vệ tinh Y tế MedFA
+User-agent: *
+Allow: /
+
+# Không index thư mục tài liệu nội bộ / lưu trữ mã cũ
+Disallow: /docs/
+Disallow: /archive/
+
+Sitemap: https://nguyentrunqkien.github.io/MedFA---First-Aid-E-learning-Hub/sitemap.xml

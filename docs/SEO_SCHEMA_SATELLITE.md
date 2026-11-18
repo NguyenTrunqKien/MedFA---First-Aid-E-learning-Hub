@@ -33,7 +33,7 @@ Mọi trang HTML trong MedFA đều được thiết lập bộ thẻ chuẩn sa
 <meta property="og:site_name" content="MedFA">
 <meta property="og:title" content="MedFA - Cẩm nang & Phản xạ Sơ cấp cứu Y tế Vì Cộng Đồng">
 <meta property="og:description" content="Học kỹ năng sơ cấp cứu, xử trí chính xác trong 4 phút vàng cứu sống người thân. Thư viện chuẩn y khoa, Flashcard 3D và thử thách đếm ngược.">
-<meta property="og:image" content="https://nguyentrunqkien.github.io/MedFA/assets/images/hero-cpr.webp">
+<meta property="og:image" content="https://nguyentrunqkien.github.io/MedFA/images/hero-cpr.webp">
 <meta property="og:url" content="https://nguyentrunqkien.github.io/MedFA/">
 ```
 

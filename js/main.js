@@ -1,16 +1,19 @@
 /**
- * MedFA Main Entry Point
- * Handles Header & Footer injection, Active Nav highlighting,
- * Mobile navigation, Language switcher, and AI Chat Assistant.
+ * MedFA Main Entry Point (Pure Vanilla JavaScript)
+ * Điều phối toàn cục: Nạp Header/Footer tái sử dụng (DRY), đồng bộ trạng thái menu active,
+ * điều khiển menu mobile, dropdown luyện tập/ngôn ngữ, hiệu ứng cuộn trang (scroll)
+ * và kết nối module Chatbot AI Gemini (js/chatbot-gemini.js).
  */
 
-// Fallback Header HTML template
+// HTML dự phòng đồng bộ 100% với components/header.html khi mở trực tiếp bằng giao thức file://
 const FALLBACK_HEADER_HTML = `
+<!-- MedFA Shared Header Component -->
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-  <div class="h-20 max-w-7xl mx-auto px-margin-sm lg:px-margin flex items-center justify-between gap-space-md">
+  <div class="h-20 w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-space-md">
+    <!-- Brand Logo -->
     <div class="flex items-center gap-space-md">
       <a aria-label="Trang chủ MedFA" class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-10 w-auto" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-14 w-auto" fill="none">
           <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
           <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
           <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
@@ -20,6 +23,8 @@ const FALLBACK_HEADER_HTML = `
         </svg>
       </a>
     </div>
+
+    <!-- Desktop Navigation Links -->
     <nav aria-label="Menu điều hướng chính" class="hidden items-center gap-space-md 2xl:gap-space-lg lg:flex justify-end flex-1" id="main-nav">
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html">Trang chủ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
@@ -27,11 +32,11 @@ const FALLBACK_HEADER_HTML = `
 
       <!-- Dropdown Luyện tập & Phản xạ -->
       <div class="relative group" id="practice-dropdown-container">
-        <button id="practice-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full inline-flex items-center gap-1 focus:outline-none cursor-pointer" data-page="practice">
+        <button id="practice-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="practice-dropdown-menu" class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full inline-flex items-center gap-1 focus:outline-none cursor-pointer" data-page="practice">
           <span>Luyện tập</span>
           <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
         </button>
-        <div class="hidden group-hover:flex hover:flex absolute left-0 top-full mt-1.5 w-64 rounded-2xl bg-surface-container-lowest shadow-2xl border border-outline-variant/30 p-2 z-50 flex-col gap-1 transition-all">
+        <div id="practice-dropdown-menu" class="hidden group-hover:flex hover:flex absolute left-0 top-full mt-1.5 w-64 rounded-2xl bg-surface-container-lowest shadow-2xl border border-outline-variant/30 p-2 z-50 flex-col gap-1 transition-all">
           <a href="flashcards.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="flashcards">
             <span class="material-symbols-outlined text-primary text-[20px]">style</span>
             <div class="flex flex-col">
@@ -59,25 +64,59 @@ const FALLBACK_HEADER_HTML = `
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="contact" href="contact.html">Liên hệ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html">Về MedFA</a>
     </nav>
+
+    <!-- Header Actions (Search, Language, Mobile Toggle) -->
     <div class="flex items-center gap-2 sm:gap-space-sm md:gap-space-md">
       <a href="topics.html" aria-label="Tìm kiếm tình huống sơ cứu" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
         <span class="material-symbols-outlined">search</span>
       </a>
+
+      <!-- Language Switcher -->
       <div class="relative inline-block text-left" id="language-dropdown-container">
-        <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
+        <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
           <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
             <rect fill="#DA251D" height="20" width="30"></rect>
             <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
           </svg>
           <span class="font-label-md text-label-md font-bold text-primary">VN</span>
-          <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200">expand_more</span>
+          <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200" id="lang-arrow">expand_more</span>
         </button>
+        <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
+          <button type="button" data-language="vi" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                <rect fill="#DA251D" height="20" width="30"></rect>
+                <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+              </svg>
+              <span class="font-label-md text-label-md font-bold text-primary">Tiếng Việt</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">VN</span>
+              <span class="material-symbols-outlined text-primary text-[18px]">check</span>
+            </div>
+          </button>
+          <button type="button" data-language="en" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                <clipPath id="uk-flag-clip"><rect width="60" height="30"></rect></clipPath>
+                <g clip-path="url(#uk-flag-clip)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></g>
+              </svg>
+              <span class="font-label-md text-label-md font-medium text-on-surface">English</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">ENG</span>
+            </div>
+          </button>
+        </div>
       </div>
+
+      <!-- Mobile menu toggle button -->
       <button id="mobile-menu-btn" aria-label="Mở menu di động" class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
   </div>
+
   <!-- Mobile Dropdown Navigation Drawer -->
   <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
     <div class="flex items-center justify-between pb-2 mb-1 border-b border-outline-variant/20">
@@ -154,10 +193,10 @@ const FALLBACK_HEADER_HTML = `
 </header>
 `;
 
-// Fallback Footer HTML template (4-column layout)
+// HTML dự phòng đồng bộ 100% với components/footer.html (bao gồm nút cài đặt #chat-settings-btn)
 const FALLBACK_FOOTER_HTML = `
 <footer class="w-full bg-surface-container-low text-on-surface mt-auto border-t border-outline-variant/30">
-  <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin pt-space-xl pb-space-lg">
+  <div class="w-full px-4 sm:px-6 lg:px-8 pt-space-xl pb-space-lg">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-space-xl">
       <!-- Cột 1: Thương hiệu & Sứ mệnh -->
       <div class="flex flex-col gap-space-md">
@@ -177,7 +216,7 @@ const FALLBACK_FOOTER_HTML = `
         <div class="flex flex-wrap items-center gap-2 pt-1">
           <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container">
             <span class="material-symbols-outlined text-[14px]">volunteer_activism</span>
-            100% Phi lợi nhuận
+            Dự án phi lợi nhuận
           </span>
           <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-primary-fixed text-primary">
             <span class="material-symbols-outlined text-[14px]">school</span>
@@ -285,6 +324,12 @@ const FALLBACK_FOOTER_HTML = `
       </div>
     </div>
 
+    <!-- Mạng lưới Nguồn Y khoa Chính thống & Cấu hình Website chính (Satellite Network) -->
+    <div class="pb-space-lg pt-space-md border-t border-outline-variant/20 flex flex-col gap-2">
+      <span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Nguồn tham chiếu y khoa & Đối tác chuyên môn</span>
+      <div id="satellite-authority-links"></div>
+    </div>
+
     <!-- Bottom Copyright -->
     <div class="pt-space-lg border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
       <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid. Đồ án môn học IE104 - UIT.</span>
@@ -298,8 +343,12 @@ const FALLBACK_FOOTER_HTML = `
     </div>
   </div>
 </footer>
+
+<!-- FLOATING COMPONENT: MEDFA AI FIRST AID ASSISTANT -->
 <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+  <!-- Chat Window -->
   <div id="medfa-chat-window" class="pointer-events-auto w-[380px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 flex flex-col overflow-hidden mb-3 transition-all duration-300 origin-bottom-right hidden">
+    <!-- Chat Header -->
     <div class="bg-gradient-to-r from-primary-container to-primary px-4 py-3.5 text-on-primary flex items-center justify-between shadow-sm">
       <div class="flex items-center gap-3">
         <div class="relative">
@@ -319,11 +368,14 @@ const FALLBACK_FOOTER_HTML = `
         </div>
       </div>
       <div class="flex items-center gap-1 text-white/90">
+        <button id="chat-settings-btn" type="button" title="Cài đặt API Key Gemini" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none"><span class="material-symbols-outlined text-[18px]">settings</span></button>
         <button id="chat-close-btn" type="button" title="Thu nhỏ" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
           <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
     </div>
+
+    <!-- Messages Container -->
     <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto bg-surface-container-low flex flex-col gap-3">
       <div class="flex justify-center my-1">
         <span class="text-[11px] font-medium text-on-surface-variant/70 bg-surface-container-high px-2.5 py-0.5 rounded-full">Trợ lý y tế phản hồi tức thì</span>
@@ -340,6 +392,7 @@ const FALLBACK_FOOTER_HTML = `
           <span class="text-[10px] text-on-surface-variant/60 font-medium ml-1">Vừa xong</span>
         </div>
       </div>
+      <!-- Quick Suggestions -->
       <div class="flex flex-col gap-1.5 pl-9 mt-1">
         <span class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Gợi ý tình huống nhanh:</span>
         <div class="flex flex-wrap gap-1.5">
@@ -358,6 +411,8 @@ const FALLBACK_FOOTER_HTML = `
         </div>
       </div>
     </div>
+
+    <!-- Chat Input Area -->
     <div class="p-3 bg-surface-container-lowest border-t border-outline-variant/30">
       <form id="chat-input-form" class="flex items-center gap-2 bg-surface-container-low rounded-xl px-3 py-2 border border-outline-variant/40 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
         <input id="chat-user-input" type="text" placeholder="Nhập tình huống sơ cứu..." class="flex-1 bg-transparent border-none text-body-sm text-on-surface focus:outline-none placeholder:text-on-surface-variant/50 p-0" />
@@ -373,6 +428,8 @@ const FALLBACK_FOOTER_HTML = `
       </div>
     </div>
   </div>
+
+  <!-- Chat Floating Trigger Button -->
   <button id="medfa-chat-toggle-btn" type="button" aria-label="Mở trợ lý sơ cứu AI" class="pointer-events-auto relative w-14 h-14 rounded-full bg-primary-container hover:bg-primary text-on-primary shadow-2xl flex items-center justify-center transition-all duration-200 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/40 group">
     <span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-30 animate-ping -z-10"></span>
     <span class="material-symbols-outlined text-[26px]">smart_toy</span>
@@ -382,7 +439,8 @@ const FALLBACK_FOOTER_HTML = `
 `;
 
 /**
- * Determine the current page key
+ * Xác định khóa trang hiện tại dựa trên thuộc tính data-page của <body> hoặc URL
+ * @returns {string}
  */
 function getCurrentPageKey() {
   const bodyPage = document.body.getAttribute('data-page');
@@ -391,8 +449,7 @@ function getCurrentPageKey() {
   const path = window.location.pathname.toLowerCase();
   if (path.endsWith('index.html') || path.endsWith('/') || path === '') return 'home';
   if (path.includes('social-impact')) return 'social-impact';
-  if (path.includes('topic-detail')) return 'topics';
-  if (path.includes('topics')) return 'topics';
+  if (path.includes('topic-detail') || path.includes('topics')) return 'topics';
   if (path.includes('flashcards')) return 'flashcards';
   if (path.includes('timed-practice')) return 'timed-practice';
   if (path.includes('quiz')) return 'quiz';
@@ -402,15 +459,14 @@ function getCurrentPageKey() {
 }
 
 /**
- * Update active state on navigation elements
+ * Đánh dấu mục điều hướng đang kích hoạt (Desktop & Mobile) bằng aria-current="page"
  */
 function highlightActiveNav() {
   const currentKey = getCurrentPageKey();
   const isPracticePage = ['flashcards', 'timed-practice', 'quiz'].includes(currentKey);
 
-  // Desktop links
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
+  // Điều hướng Desktop
+  document.querySelectorAll('.nav-link').forEach(link => {
     const page = link.getAttribute('data-page');
     if (page === currentKey || (page === 'practice' && isPracticePage)) {
       link.setAttribute('aria-current', 'page');
@@ -419,9 +475,8 @@ function highlightActiveNav() {
     }
   });
 
-  // Mobile links
-  const mobileLinks = document.querySelectorAll('.nav-link-mobile');
-  mobileLinks.forEach(link => {
+  // Điều hướng Mobile Drawer
+  document.querySelectorAll('.nav-link-mobile').forEach(link => {
     const page = link.getAttribute('data-page');
     if (page === currentKey) {
       link.classList.add('bg-primary/10', 'text-primary', 'font-bold');
@@ -432,20 +487,43 @@ function highlightActiveNav() {
 }
 
 /**
- * Bind interactive events for Header & Footer
+ * Hiển thị thông báo nổi nhẹ nhàng (Toast) cho các phản hồi giao diện toàn cục
+ * @param {string} message
+ */
+let globalToastTimer = null;
+function showGlobalToast(message) {
+  let toast = document.getElementById('medfa-global-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'medfa-global-toast';
+    toast.className = 'medfa-global-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.hidden = false;
+  window.clearTimeout(globalToastTimer);
+  globalToastTimer = window.setTimeout(() => {
+    toast.hidden = true;
+  }, 3500);
+}
+
+/**
+ * Gắn toàn bộ sự kiện tương tác cho Header, Footer & AI Chatbot sau khi inject DOM
  */
 function bindHeaderFooterEvents() {
-  // 1. Mobile Menu Toggle with icon swap & auto-close
+  // 1. Điều khiển Mobile Navigation Drawer
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
     const iconSpan = mobileBtn.querySelector('.material-symbols-outlined');
 
-    function closeMobileMenu() {
+    const closeMobileMenu = () => {
       mobileMenu.classList.add('hidden');
       mobileMenu.classList.remove('flex');
       if (iconSpan) iconSpan.textContent = 'menu';
-    }
+    };
 
     mobileBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -459,51 +537,118 @@ function bindHeaderFooterEvents() {
       }
     });
 
-    // Close when clicking any nav link
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
+    mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMobileMenu);
     });
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
         closeMobileMenu();
       }
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeMobileMenu();
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) closeMobileMenu();
+    });
+  }
+
+  // 2. Dropdown Luyện tập (Kéo dài thời gian chờ hover 450ms & hỗ trợ click/keyboard để kịp chọn 3 mục nhỏ)
+  const practiceContainer = document.getElementById('practice-dropdown-container');
+  const practiceBtn = document.getElementById('practice-dropdown-btn');
+  const practiceMenu = document.getElementById('practice-dropdown-menu');
+
+  if (practiceContainer && practiceBtn) {
+    let hoverTimer = null;
+
+    const openPractice = () => {
+      if (hoverTimer) {
+        clearTimeout(hoverTimer);
+        hoverTimer = null;
+      }
+      practiceContainer.classList.add('is-hovered');
+      practiceBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closePracticeWithDelay = (delay = 450) => {
+      if (hoverTimer) clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(() => {
+        practiceContainer.classList.remove('is-hovered', 'is-open');
+        practiceBtn.setAttribute('aria-expanded', 'false');
+        hoverTimer = null;
+      }, delay);
+    };
+
+    // Khi di chuột vào container hoặc menu: Mở ngay và hủy bộ đếm đóng
+    practiceContainer.addEventListener('mouseenter', openPractice);
+    if (practiceMenu) practiceMenu.addEventListener('mouseenter', openPractice);
+
+    // Khi di chuột ra ngoài: Giữ menu mở thêm 450ms để người dùng kịp lia chuột chọn 3 mục
+    practiceContainer.addEventListener('mouseleave', () => closePracticeWithDelay(450));
+    if (practiceMenu) practiceMenu.addEventListener('mouseleave', () => closePracticeWithDelay(450));
+
+    // Hỗ trợ click toggle cho màn hình cảm ứng hoặc phím
+    practiceBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = practiceContainer.classList.contains('is-open') || practiceContainer.classList.contains('is-hovered');
+      if (isOpen) {
+        practiceContainer.classList.remove('is-hovered', 'is-open');
+        practiceBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        openPractice();
+        practiceContainer.classList.add('is-open');
       }
     });
 
-    // Close when resizing to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) {
-        closeMobileMenu();
+    document.addEventListener('click', (e) => {
+      if (!practiceContainer.contains(e.target)) {
+        practiceContainer.classList.remove('is-hovered', 'is-open');
+        practiceBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        practiceContainer.classList.remove('is-hovered', 'is-open');
+        practiceBtn.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
-  // 2. Language Dropdown Toggle
+  // 3. Language Switcher Dropdown (VN / ENG)
   const langBtn = document.getElementById('language-switcher-btn');
   const langMenu = document.getElementById('language-dropdown-menu');
   if (langBtn && langMenu) {
+    const closeLangMenu = () => {
+      langMenu.classList.add('hidden');
+      langBtn.setAttribute('aria-expanded', 'false');
+    };
+
     langBtn.addEventListener('click', (e) => {
       e.stopPropagation();
+      const willOpen = langMenu.classList.contains('hidden');
       langMenu.classList.toggle('hidden');
+      langBtn.setAttribute('aria-expanded', String(willOpen));
     });
 
-    document.addEventListener('click', () => {
-      if (!langMenu.classList.contains('hidden')) {
-        langMenu.classList.add('hidden');
-      }
+    langMenu.querySelectorAll('button[data-language]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lang = btn.getAttribute('data-language');
+        closeLangMenu();
+        if (lang === 'en') {
+          showGlobalToast('Phiên bản tiếng Anh đang được phát triển. Website hiện hiển thị chuẩn Tiếng Việt.');
+        }
+      });
     });
+
+    document.addEventListener('click', () => closeLangMenu());
   }
 
-  // 3. AI Chat Floating Assistant Toggle
+  // 4. Mở / Thu gọn cửa sổ Chatbot AI nổi
   const chatToggleBtn = document.getElementById('medfa-chat-toggle-btn');
   const chatWindow = document.getElementById('medfa-chat-window');
   const chatCloseBtn = document.getElementById('chat-close-btn');
@@ -520,139 +665,139 @@ function bindHeaderFooterEvents() {
     });
   }
 
-  // 4. AI Chat Assistant Messaging
-  const chatForm = document.getElementById('chat-input-form');
-  const chatInput = document.getElementById('chat-user-input');
-  const messagesContainer = document.getElementById('chat-messages-container');
-
-  if (chatForm && chatInput && messagesContainer) {
-    chatForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const text = chatInput.value.trim();
-      if (!text) return;
-
-      // Append User message
-      const userBubble = document.createElement('div');
-      userBubble.className = 'flex items-start justify-end gap-2 max-w-[90%] self-end';
-      userBubble.innerHTML = `
-        <div class="bg-primary text-on-primary p-3 rounded-2xl rounded-tr-sm text-body-sm shadow-sm">
-          <p>${escapeHTML(text)}</p>
-        </div>
-      `;
-      messagesContainer.appendChild(userBubble);
-      chatInput.value = '';
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-      // Simulated AI Response
-      setTimeout(() => {
-        const responseText = generateBotReply(text);
-        const botBubble = document.createElement('div');
-        botBubble.className = 'flex items-start gap-2.5 max-w-[90%]';
-        botBubble.innerHTML = `
-          <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-            <span class="material-symbols-outlined text-[16px]">smart_toy</span>
-          </div>
-          <div class="flex flex-col items-start gap-1">
-            <div class="bg-surface-container-lowest text-on-surface p-3.5 rounded-2xl rounded-tl-sm border border-outline-variant/30 shadow-sm text-body-sm leading-relaxed">
-              ${responseText}
-            </div>
-            <span class="text-[10px] text-on-surface-variant/60 font-medium ml-1">Vừa xong</span>
-          </div>
-        `;
-        messagesContainer.appendChild(botBubble);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      }, 600);
-    });
+  // 5. Kích hoạt module ChatbotGemini (Google Gemini API + 7 quy tắc phản xạ AHA/ERC ngoại tuyến + Modal Cài đặt API Key)
+  // Sửa lỗi trước đây js/main.js tự bắt submit với hàm cũ nên ChatbotGemini bị vô hiệu hóa ngầm.
+  if (window.ChatbotGemini && typeof window.ChatbotGemini.initChatbot === 'function') {
+    window.ChatbotGemini.initChatbot();
   }
 }
 
 /**
- * Simple bot reply generator for first aid emergency triage
+ * Xử lý sự kiện cuộn trang (window.scroll) bằng Vanilla JS thuần:
+ * - Tăng độ nổi (shadow/border) cho Header cố định khi cuộn xuống.
+ * - Cập nhật thanh tiến độ đọc bài (Reading Progress Bar) bằng scaleX tối ưu GPU.
+ * - Hiển thị nút "Lên đầu trang" (Back to Top) khi cuộn qua 360px.
  */
-function generateBotReply(query) {
-  const q = query.toLowerCase();
-  if (q.includes('cpr') || q.includes('ngừng tim') || q.includes('ép tim')) {
-    return `<p class="font-semibold text-error mb-1">🚨 Ép tim CPR khẩn cấp:</p>
-            <p>1. Gọi 115 ngay!</p>
-            <p>2. Đặt gót bàn tay giữa ngực, ép sâu 5-6cm với tốc độ 100-120 lần/phút.</p>
-            <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="text-primary font-bold underline mt-1.5 inline-block">Xem chi tiết bài CPR & AED →</a>`;
-  }
-  if (q.includes('hóc') || q.includes('nghẹn') || q.includes('heimlich')) {
-    return `<p class="font-semibold text-primary mb-1">👶 Hóc dị vật đường thở:</p>
-            <p>Thực hiện ngay 5 vỗ lưng dứt khoát kết hợp 5 lần ép bụng Heimlich.</p>
-            <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="text-primary font-bold underline mt-1.5 inline-block">Xem quy trình Heimlich chi tiết →</a>`;
-  }
-  if (q.includes('bỏng') || q.includes('cháy')) {
-    return `<p class="font-semibold text-primary mb-1">🔥 Sơ cứu bỏng:</p>
-            <p>Xả nước mát sạch (15-25°C) liên tục trong 15-20 phút. KHÔNG bôi kem đánh răng hay chườm đá lạnh.</p>
-            <a href="topic-detail.html?id=bong-nhiet" class="text-primary font-bold underline mt-1.5 inline-block">Xem hướng dẫn xử trí bỏng →</a>`;
-  }
-  if (q.includes('chảy máu') || q.includes('máu') || q.includes('vết thương')) {
-    return `<p class="font-semibold text-primary mb-1">🩸 Cầm máu:</p>
-            <p>Dùng gạc sạch đè chặt trực tiếp lên miệng vết thương trong 5-10 phút. Nâng cao chi bị thương.</p>
-            <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="text-primary font-bold underline mt-1.5 inline-block">Xem kỹ thuật băng ép và ga-rô →</a>`;
-  }
-  return `<p>MedFA đã ghi nhận câu hỏi của bạn: <em>"${escapeHTML(query)}"</em>.</p>
-          <p class="mt-1">Bạn có thể tra cứu toàn bộ tình huống chuẩn Y khoa trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a> hoặc gọi ngay <strong class="text-error">115</strong> nếu đang trong tình trạng khẩn cấp!</p>`;
-}
+function initScrollFeatures() {
+  const headerEl = document.querySelector('#header-placeholder > header');
 
-function escapeHTML(str) {
-  return str.replace(/[&<>'"]/g, 
-    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-  );
+  let progressBar = document.getElementById('medfa-reading-progress');
+  if (!progressBar) {
+    progressBar = document.createElement('div');
+    progressBar.id = 'medfa-reading-progress';
+    progressBar.className = 'medfa-reading-progress';
+    progressBar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(progressBar);
+  }
+
+  let backTopBtn = document.getElementById('medfa-back-top');
+  if (!backTopBtn) {
+    backTopBtn = document.createElement('button');
+    backTopBtn.id = 'medfa-back-top';
+    backTopBtn.type = 'button';
+    backTopBtn.className = 'medfa-back-top';
+    backTopBtn.setAttribute('aria-label', 'Cuộn lên đầu trang');
+    backTopBtn.setAttribute('title', 'Lên đầu trang');
+    backTopBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">arrow_upward</span>';
+    backTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.body.appendChild(backTopBtn);
+  }
+
+  const onScroll = () => {
+    const y = window.scrollY || document.documentElement.scrollTop;
+    const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = maxScroll > 0 ? Math.min(1, Math.max(0, y / maxScroll)) : 0;
+
+    progressBar.style.transform = `scaleX(${ratio.toFixed(4)})`;
+
+    if (headerEl) {
+      headerEl.classList.toggle('site-header--scrolled', y > 20);
+    }
+    backTopBtn.classList.toggle('is-visible', y > 360);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 /**
- * Fetch and inject Header & Footer components into HTML placeholders
+ * Hiệu ứng Scroll-Reveal bằng IntersectionObserver thuần:
+ * Chỉ áp dụng cho các section/card tĩnh bên dưới màn hình đầu tiên để không trì hoãn LCP
+ * và không làm gián đoạn kết quả lọc động trong #topics-container.
+ */
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const candidates = document.querySelectorAll(
+    'main section:not(#topics-container section), main article:not(#topics-container article), .cq-card'
+  );
+  const viewH = window.innerHeight || document.documentElement.clientHeight;
+  const targets = [];
+
+  candidates.forEach(el => {
+    if (el.closest('#topics-container')) return;
+    const rect = el.getBoundingClientRect();
+    // Giữ nguyên hiển thị tức thì cho phần tử đã nằm trong khung nhìn ban đầu
+    if (rect.top > viewH * 0.92) {
+      el.classList.add('medfa-reveal');
+      targets.push(el);
+    }
+  });
+
+  if (targets.length === 0) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  targets.forEach(el => observer.observe(el));
+}
+
+/**
+ * Fetch và chèn Header & Footer dùng chung vào các thẻ placeholder trên mỗi trang HTML.
+ * Tự động dùng FALLBACK_HEADER_HTML / FALLBACK_FOOTER_HTML nếu chạy offline qua file://.
  */
 async function injectHeaderAndFooter() {
   const headerPlaceholder = document.getElementById('header-placeholder');
   const footerPlaceholder = document.getElementById('footer-placeholder');
 
-  // Inject Header
   if (headerPlaceholder) {
     try {
       const res = await fetch('components/header.html');
-      if (res.ok) {
-        headerPlaceholder.innerHTML = await res.text();
-      } else {
-        const resRoot = await fetch('header.html');
-        if (resRoot.ok) {
-          headerPlaceholder.innerHTML = await resRoot.text();
-        } else {
-          headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
-        }
-      }
-    } catch (err) {
+      headerPlaceholder.innerHTML = res.ok ? await res.text() : FALLBACK_HEADER_HTML;
+    } catch {
       headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
     }
   }
 
-  // Inject Footer (only if empty)
   if (footerPlaceholder && footerPlaceholder.children.length === 0) {
     try {
       const res = await fetch('components/footer.html');
-      if (res.ok) {
-        footerPlaceholder.innerHTML = await res.text();
-      } else {
-        const resRoot = await fetch('footer.html');
-        if (resRoot.ok) {
-          footerPlaceholder.innerHTML = await resRoot.text();
-        } else {
-          footerPlaceholder.innerHTML = FALLBACK_FOOTER_HTML;
-        }
-      }
-    } catch (err) {
+      footerPlaceholder.innerHTML = res.ok ? await res.text() : FALLBACK_FOOTER_HTML;
+    } catch {
       footerPlaceholder.innerHTML = FALLBACK_FOOTER_HTML;
     }
   }
 
-  // Once injected, bind events and highlight active nav
   highlightActiveNav();
   bindHeaderFooterEvents();
+  initScrollFeatures();
+  initScrollReveal();
+
+  if (window.MedFASeoHelper) {
+    window.MedFASeoHelper.renderSatelliteNetworkBlock(document.getElementById('satellite-authority-links'));
+  }
 }
 
-// Global initialization
+// Khởi chạy toàn cục khi DOM sẵn sàng
 document.addEventListener('DOMContentLoaded', () => {
   injectHeaderAndFooter();
 });

@@ -79,7 +79,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
         'Nếu máu phun thành tia (đứt động mạch) hoặc không cầm được sau 10 phút: **Gọi 115 ngay**.'
       ],
       warning: 'Chỉ đặt ga-rô khi có chảy máu đe dọa tính mạng ở tay chân hoặc đứt lìa chi, ghi rõ giờ đặt ga-rô.',
-      link: { url: 'topic-detail.html?id=chay-mau-cam-mau', text: 'Xem kỹ thuật băng ép và cầm máu' }
+      link: { url: 'topic-detail.html?id=chay-mau-va-cam-mau', text: 'Xem kỹ thuật băng ép và cầm máu' }
     },
     {
       keywords: ['sốc nhiệt', 'say nắng', 'nắng nóng', 'thân nhiệt cao'],
@@ -121,7 +121,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
         'Nếu sau 1 - 2 phút nạn nhân chưa tỉnh lại: Gọi 115 ngay.'
       ],
       warning: 'KHÔNG châm kim vào 10 đầu ngón tay, KHÔNG giật tóc hay tát mạnh vào mặt nạn nhân.',
-      link: { url: 'topic-detail.html?id=so-cuu-nguoi-bi-ngat-xiu', text: 'Xem kỹ thuật xử trí khi ngất' }
+      link: { url: 'topic-detail.html?id=nhung-cach-so-cuu-nguoi-bi-ngat', text: 'Xem kỹ thuật xử trí khi ngất' }
     }
   ];
 
@@ -214,13 +214,13 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
   }
 
   /**
-   * Gọi REST API Google Gemini
+   * Gọi REST API Google Gemini (sử dụng gemini-2.5-flash với fallback tự động khi lỗi)
    * @param {string} prompt 
    * @param {string} apiKey 
    * @returns {Promise<string>}
    */
   async function callGeminiApi(prompt, apiKey) {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
 
     const body = {
       contents: [
@@ -280,10 +280,11 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
     // Italic *text*
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-    // Bullet points
+    // Bullet points: Gom các <li> liên tiếp vào trong <ul> hợp chuẩn HTML5 thay vì để <li> rời rạc
     html = html.replace(/^\s*[-*]\s+(.*$)/gim, '<li class="flex items-start gap-1.5 my-0.5"><span class="material-symbols-outlined text-primary text-[14px] shrink-0 mt-0.5">check_small</span><span>$1</span></li>');
+    html = html.replace(/(?:<li[\s\S]*?<\/li>\n?)+/g, match => `<ul class="space-y-1 my-1">${match.replace(/\n/g, '')}</ul>`);
 
-    // Replace newlines with breaks if not in li
+    // Replace newlines with breaks outside list
     html = html.replace(/\n\n/g, '<div class="h-2"></div>');
     html = html.replace(/\n/g, '<br/>');
 
@@ -326,8 +327,8 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
           </div>
           <div class="flex items-center gap-1.5 ml-1">
             <span class="text-[10px] text-on-surface-variant/60 font-medium">Vừa xong</span>
-            <span class="text-[9px] px-1.5 py-0.2 rounded font-bold ${isLiveGemini ? 'bg-secondary-container/40 text-secondary' : 'bg-surface-container-high text-on-surface-variant'}">
-              ${isLiveGemini ? 'Gemini 1.5 Flash Live' : 'Bộ Phản Xạ AHA/ERC'}
+            <span class="text-[9px] px-1.5 py-0.5 rounded font-bold ${isLiveGemini ? 'bg-secondary-container/40 text-secondary' : 'bg-surface-container-high text-on-surface-variant'}">
+              ${isLiveGemini ? 'Gemini Flash Live' : 'Bộ Phản Xạ AHA/ERC'}
             </span>
           </div>
         </div>
@@ -449,7 +450,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
               Cơ chế Hoạt động:
             </span>
             <p class="text-on-surface-variant text-[11px] leading-relaxed">
-              • <strong>Có Key:</strong> Gọi trực tiếp Gemini 1.5 Flash với System Prompt y khoa chuyên sâu.<br/>
+              • <strong>Có Key:</strong> Gọi trực tiếp Google Gemini Flash với System Prompt y khoa chuyên sâu.<br/>
               • <strong>Không có Key / Mất mạng:</strong> Tự động chuyển về Bộ phản xạ y tế AHA/ERC ngoại tuyến 100%.
             </p>
           </div>
@@ -482,7 +483,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       modal.classList.add('hidden');
       appendMessage('bot', `
         <p class="text-xs text-secondary font-bold">✅ Đã cập nhật cấu hình!</p>
-        <p class="text-xs text-on-surface-variant mt-1">${keyVal ? 'Trợ lý đã chuyển sang chế độ <strong>Google Gemini 1.5 Flash Live</strong>.' : 'Đã xóa Key. Trợ lý sử dụng <strong>Bộ phản xạ sơ cấp cứu y khoa MedFA (Offline)</strong>.'}</p>
+        <p class="text-xs text-on-surface-variant mt-1">${keyVal ? 'Trợ lý đã chuyển sang chế độ <strong>Google Gemini Flash Live</strong>.' : 'Đã xóa Key. Trợ lý sử dụng <strong>Bộ phản xạ sơ cấp cứu y khoa MedFA (Offline)</strong>.'}</p>
       `);
     });
 
@@ -501,14 +502,15 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
   }
 
   /**
-   * Khởi tạo liên kết sự kiện Chatbot
+   * Khởi tạo liên kết sự kiện Chatbot (chống gắn trùng listener nếu gọi lại nhiều lần)
    */
   function initChatbot() {
     const chatForm = document.getElementById('chat-input-form');
     const chatInput = document.getElementById('chat-user-input');
     const settingsBtn = document.getElementById('chat-settings-btn');
 
-    if (chatForm && chatInput) {
+    if (chatForm && chatInput && !chatForm.dataset.chatbotBound) {
+      chatForm.dataset.chatbotBound = '1';
       chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const text = chatInput.value.trim();
@@ -518,7 +520,8 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       });
     }
 
-    if (settingsBtn) {
+    if (settingsBtn && !settingsBtn.dataset.settingsBound) {
+      settingsBtn.dataset.settingsBound = '1';
       settingsBtn.addEventListener('click', () => {
         initSettingsModal();
         const modal = document.getElementById('chat-settings-modal');

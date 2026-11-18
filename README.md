@@ -60,9 +60,9 @@ project MedFA/
 │   ├── topics.json            # Ngân hàng 33 tình huống cấp cứu chuẩn hóa y khoa
 │   ├── quiz.json              # Ngân hàng 10 câu trắc nghiệm case-study
 │   └── timed_practice.json    # Ngân hàng 32 câu hỏi phản xạ áp lực thời gian
+├── images/                    # Hình ảnh nén WebP nội bộ (<150KB): hero-cpr, child, team (Chuẩn Mục 5)
 ├── assets/
-│   ├── icons/                 # Logo SVG MedFA và biểu tượng nhận diện
-│   └── images/                # Hình ảnh nén WebP nội bộ (<150KB): hero-cpr, child, team
+│   └── icons/                 # Logo SVG MedFA và biểu tượng nhận diện
 ├── docs/
 │   ├── KE_HOACH_PHAN_CONG_NHOM.md # Kế hoạch phân công & ma trận đóng góp của nhóm
 │   ├── DATA_SCHEMA_SPEC.md        # Đặc tả cấu trúc Schema JSON cho dữ liệu sơ cứu
@@ -99,7 +99,7 @@ Tuân thủ quy định không sử dụng Framework nặng nhằm đảm bảo 
 | :---: | :--- | :---: | :--- | :--- | :---: |
 | 1 | **Nguyễn Trung Kiên** | 24520888 | Trưởng nhóm, Logic & AI | `js/storage.js`, `js/chatbot-gemini.js`, `docs/SEO_SCHEMA_SATELLITE.md`, Chuẩn hóa Repo & `README.md`, Merge & Đồng bộ toàn dự án | **25%** |
 | 2 | **Trần Gia Phú** | 24521365 | UI/UX & Motion 3D | `flashcards.html`, `timed-practice.html`, `css/interactive-3d.css`, `js/flashcard-controller.js`, `js/timed-practice.js`, `data/timed_practice.json` | **25%** |
-| 3 | **Hồ Tấn Khải** | 24520721 | Quản lý Dữ liệu Y tế | Chuẩn hóa `data/topics.json`, `docs/DATA_SCHEMA_SPEC.md`, Ảnh offline `assets/images/*`, `components/medical-disclaimer.html`, Khung Báo cáo đồ án | **25%** |
+| 3 | **Hồ Tấn Khải** | 24520721 | Quản lý Dữ liệu Y tế | Chuẩn hóa `data/topics.json`, `docs/DATA_SCHEMA_SPEC.md`, Ảnh offline `images/*`, `components/medical-disclaimer.html`, Khung Báo cáo đồ án | **25%** |
 | 4 | **Trương Đỗ Như Quỳnh** | 24521513 | Tương tác & Form Dev | `contact.html`, `js/contact-validation.js`, `quiz.html`, `data/quiz.json`, `js/quiz-engine.js`, `css/contact-quiz.css`, Menu navigation | **25%** |
 | **TỔNG** | **4 thành viên** | | | | **100%** |
 

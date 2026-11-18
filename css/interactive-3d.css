@@ -971,6 +971,37 @@
   #question { min-height: auto; }
   .clock { width: 5.5rem; }
 }
+
+/* Tối ưu Flashcard 3D trên màn hình di động nhỏ (< 480px): Tránh cắt chữ và tràn nút hành động */
+@media (max-width: 30rem) {
+  .flashcard {
+    height: auto;
+    min-height: 20rem;
+  }
+  .card-face {
+    min-height: 20rem;
+    padding: 0.9rem;
+  }
+  .card-face-body {
+    overflow-y: auto;
+  }
+  .card-steps-container {
+    max-height: 11.5rem;
+  }
+  .completion-card-actions,
+  .session-complete-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ctrl-flip {
+    min-width: 8.5rem;
+    padding: 0 1.1rem;
+  }
+  .review-opt-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .card-inner { transition: none; }
   .clock.warning, [data-result] .result-icon { animation: none; }

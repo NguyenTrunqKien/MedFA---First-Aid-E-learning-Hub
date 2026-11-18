@@ -2,8 +2,8 @@
   {
     "id": "tp-01",
     "topicId": "ngung-tuan-hoan-cpr",
-    "topicTitle": "Ngừng tuần hoàn (Ép tim CPR)",
-    "prompt": "Thời gian vàng tối đa để cấp cứu hồi sinh tế bào não trước khi bị tổn thương không thể hồi phục khi ngừng tuần hoàn là bao lâu?",
+    "topicTitle": "Ngừng tuần hoàn (ép tim CPR)",
+    "prompt": "Thời gian vàng cao nhất có thể để cấp cứu hồi sinh tế bào não trước khi bị tổn thương khó có khả năng hồi phục khi ngừng tuần hoàn là bao lâu?",
     "options": [
       "4 phút",
       "10 phút",
@@ -11,13 +11,13 @@
       "30 phút"
     ],
     "answer": 0,
-    "explanation": "Theo cẩm nang MedFA và khuyến cáo ERC/AHA, não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu tim ngừng đập.",
+    "explanation": "Theo cẩm nang medFA và khuyến cáo ERC/AHA, não bộ sẽ bắt đầu tổn thương khó có khả năng phục hồi chỉ sau 4 phút thiếu oxy nếu tim ngừng đập.",
     "standard": "Chuẩn ERC & AHA 2025"
   },
   {
     "id": "tp-02",
     "topicId": "ngung-tuan-hoan-cpr",
-    "topicTitle": "Ngừng tuần hoàn (Ép tim CPR)",
+    "topicTitle": "Ngừng tuần hoàn (ép tim CPR)",
     "prompt": "Khi thực hiện ép tim ngoài lồng ngực (CPR) cho người lớn theo khuyến cáo, tần số ép ngực đạt chuẩn là bao nhiêu?",
     "options": [
       "60 - 80 lần/phút",
@@ -32,13 +32,13 @@
   {
     "id": "tp-03",
     "topicId": "ngung-tuan-hoan-cpr",
-    "topicTitle": "Ngừng tuần hoàn (Ép tim CPR)",
+    "topicTitle": "Ngừng tuần hoàn (ép tim CPR)",
     "prompt": "Trong quy trình hồi sinh tim phổi (CPR) kết hợp ép tim và thổi ngạt, tỉ lệ chu kỳ chuẩn là:",
     "options": [
-      "15 lần ép tim : 2 lần thổi ngạt",
-      "30 lần ép tim : 2 lần thổi ngạt",
-      "30 lần ép tim : 5 lần thổi ngạt",
-      "50 lần ép tim : 1 lần thổi ngạt"
+      "15 lần ép tim: 2 lần thổi ngạt",
+      "30 lần ép tim: 2 lần thổi ngạt",
+      "30 lần ép tim: 5 lần thổi ngạt",
+      "50 lần ép tim: 1 lần thổi ngạt"
     ],
     "answer": 1,
     "explanation": "Chu kỳ chuẩn theo AHA/ERC là 30 lần ép tim liên tục xen kẽ 2 lần thổi ngạt hiệu quả, gián đoạn ép tim không quá 10 giây.",
@@ -47,7 +47,7 @@
   {
     "id": "tp-04",
     "topicId": "hoc-di-vat",
-    "topicTitle": "Hóc dị vật (Nghẹn)",
+    "topicTitle": "Hóc dị vật (nghẹn)",
     "prompt": "Phát hiện một người lớn đang bị nghẹn thức ăn nhưng vẫn còn nói được và đang cố ho mạnh. Bạn nên làm gì?",
     "options": [
       "Lao vào thực hiện nghiệm pháp Heimlich ngay lập tức",
@@ -56,13 +56,13 @@
       "Cho nạn nhân uống ngay một cốc nước đầy"
     ],
     "answer": 2,
-    "explanation": "Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được, phản xạ ho tự nhiên là cách tống dị vật tốt nhất. Khuyến khích ho mạnh, tuyệt đối không vỗ lưng hay ép bụng lúc này.",
+    "explanation": "Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được, phản xạ ho tự nhiên là cách tống dị vật tốt nhất. Khuyến khích ho mạnh, đặc biệt tránh vỗ lưng hay ép bụng lúc này.",
     "standard": "Chuẩn ERC & AHA 2025"
   },
   {
     "id": "tp-05",
     "topicId": "hoc-di-vat",
-    "topicTitle": "Hóc dị vật (Nghẹn)",
+    "topicTitle": "Hóc dị vật (nghẹn)",
     "prompt": "Khi thực hiện nghiệm pháp Heimlich cho người lớn bị tắc nghẽn đường thở hoàn toàn, vị trí đặt nắm đấm tay là:",
     "options": [
       "Chính giữa xương ức",
@@ -78,7 +78,7 @@
     "id": "tp-06",
     "topicId": "hoc-di-vat-o-tre-em",
     "topicTitle": "Hóc dị vật ở trẻ em",
-    "prompt": "Trẻ sơ sinh dưới 1 tuổi bị sặc dị vật tím tái, không khóc được. Hành động nào sau đây bị CẤM tuyệt đối vì gây nguy cơ dập vỡ nội tạng?",
+    "prompt": "Trẻ sơ sinh dưới 1 tuổi bị sặc dị vật tím tái, không khóc được. Hành động nào sau đây cần tránh vì gây nguy cơ dập vỡ nội tạng?",
     "options": [
       "Thực hiện 5 lần vỗ lưng",
       "Thực hiện 5 lần ấn ngực",
@@ -86,7 +86,7 @@
       "Gọi cấp cứu 115"
     ],
     "answer": 2,
-    "explanation": "Đối với trẻ dưới 1 tuổi, gan và các cơ quan nội tạng còn rất non nớt. TUYỆT ĐỐI KHÔNG ép bụng Heimlich, chỉ dùng chu kỳ 5 vỗ lưng và 5 ấn ngực.",
+    "explanation": "Đối với trẻ dưới 1 tuổi, gan và các cơ quan nội tạng còn rất non nớt. khuyến cáo tránh ép bụng Heimlich, chỉ dùng chu kỳ 5 vỗ lưng và 5 ấn ngực.",
     "standard": "Chuẩn ERC & AHA 2025"
   },
   {
@@ -116,14 +116,14 @@
       "Nới lỏng băng để máu lưu thông tốt hơn"
     ],
     "answer": 1,
-    "explanation": "Tuyệt đối KHÔNG tháo lớp băng cũ vì sẽ làm vỡ các cục máu đông đang hình thành. Hãy đặt thêm lớp gạc mới lên trên và tiếp tục đè ép cố định.",
+    "explanation": "Tối đa không nên tháo lớp băng cũ vì sẽ làm vỡ các cục máu đông đang hình thành. Hãy đặt thêm lớp gạc mới lên trên và tiếp tục đè ép cố định.",
     "standard": "Chuẩn IFRC / Hội Chữ Thập Đỏ"
   },
   {
     "id": "tp-09",
     "topicId": "chay-mau-va-cam-mau",
     "topicTitle": "Chảy máu và cầm máu",
-    "prompt": "Khi nào người sơ cứu bắt buộc phải sử dụng phương pháp đặt Ga-rô (Tourniquet)?",
+    "prompt": "Khi nào người sơ cứu cần thiết phải sử dụng phương pháp đặt ga-rô (tourniquet)?",
     "options": [
       "Mọi vết thương chảy máu ở tay chân",
       "Chỉ khi chảy máu động mạch dữ dội phun thành tia hoặc đứt lìa chi mà băng ép trực tiếp không kiểm soát được",
@@ -137,8 +137,8 @@
   {
     "id": "tp-10",
     "topicId": "co-giat-dong-kinh",
-    "topicTitle": "Co giật & Động kinh",
-    "prompt": "Gặp nạn nhân đang lên cơn co giật dữ dội, hành vi nào sau đây TUYỆT ĐỐI KHÔNG ĐƯỢC LÀM?",
+    "topicTitle": "Co giật & động kinh",
+    "prompt": "Gặp nạn nhân đang lên cơn co giật dữ dội, hành vi nào sau đây không nên LÀM?",
     "options": [
       "Kê đệm mềm dưới đầu nạn nhân và gạt bỏ các vật sắc nhọn xung quanh",
       "Cố gắng nhét thìa, đũa, chanh hoặc ngón tay vào miệng nạn nhân",
@@ -153,24 +153,24 @@
     "id": "tp-11",
     "topicId": "dot-quy",
     "topicTitle": "Đột quỵ",
-    "prompt": "Quy tắc F.A.S.T dùng để nhận diện nhanh cơn Đột quỵ bao gồm những dấu hiệu nào?",
+    "prompt": "Quy tắc F. A. S. T dùng để nhận diện nhanh cơn đột quỵ bao gồm những dấu hiệu nào?",
     "options": [
-      "Face (Méo mặt), Arms (Yếu liệt tay chân), Speech (Nói khó/ngọng), Time (Thời gian vàng gọi 115)",
-      "Fever (Sốt cao), Allergy (Dị ứng), Shock (Sốc), Tremor (Run tay)",
-      "Food (Ngộ độc), Airway (Tắc thở), Skin (Tái nhợt), Temperature (Hạ thân nhiệt)",
-      "Fracture (Gãy xương), Ache (Đau đầu), Sleep (Mơ màng), Tension (Tăng huyết áp)"
+      "Face (méo mặt), arms (yếu liệt tay chân), speech (nói khó/ngọng), time (thời gian vàng gọi 115)",
+      "Fever (sốt cao), allergy (dị ứng), shock (sốc), tremor (run tay)",
+      "Food (ngộ độc), airway (tắc thở), skin (tái nhợt), temperature (Hạ thân nhiệt)",
+      "Fracture (gãy xương), ache (đau đầu), sleep (mơ màng), tension (tăng huyết áp)"
     ],
     "answer": 0,
-    "explanation": "FAST là bộ quy tắc chuẩn quốc tế: F - Face (cười lệch mặt), A - Arms (yếu một bên tay), S - Speech (nói khó, phát âm không rõ), T - Time (khẩn cấp gọi 115).",
+    "explanation": "FAST là bộ quy tắc chuẩn quốc tế: F - face (cười lệch mặt), A - arms (yếu một bên tay), S - speech (nói khó, phát âm không rõ), T - time (khẩn cấp gọi 115).",
     "standard": "Chuẩn Hội Đột Quỵ Thế Giới (WSO)"
   },
   {
     "id": "tp-12",
     "topicId": "duoi-nuoc-o-tre-em",
     "topicTitle": "Đuối nước ở trẻ em",
-    "prompt": "Sau khi vớt một nạn nhân đuối nước ngừng thở lên bờ cát, hành vi sai lầm nguy hiểm nào cần TUYỆT ĐỐI TRÁNH?",
+    "prompt": "Sau khi vớt một nạn nhân đuối nước ngừng thở lên bờ cát, hành vi sai lầm nguy hiểm nào cần đặc biệt tránh?",
     "options": [
-      "Lập tức tiến hành khai thông đường thở và hà hơi thổi ngạt",
+      "Lập tức làm khai thông đường thở và hà hơi thổi ngạt",
       "Ép tim ngoài lồng ngực kết hợp thổi ngạt",
       "Vác nạn nhân chạy vòng quanh để xốc nước ra khỏi phổi",
       "Gọi hỗ trợ y tế 115 ngay lập tức"
@@ -183,7 +183,7 @@
     "id": "tp-13",
     "topicId": "dien-giat",
     "topicTitle": "Điện giật",
-    "prompt": "Phát hiện nạn nhân bị điện giật tại nhà đang dính chặt vào dây điện hở, hành động ĐẦU TIÊN bắt buộc phải làm là:",
+    "prompt": "Phát hiện nạn nhân bị điện giật tại nhà đang dính chặt vào dây điện hở, hành động ĐẦU TIÊN cần thiết phải làm là:",
     "options": [
       "Lao vào dùng hai tay kéo nạn nhân ra ngay",
       "Ngắt ngay nguồn điện (cầu dao, aptomat) hoặc dùng vật liệu cách điện khô gạt dây điện ra",
@@ -206,14 +206,14 @@
       "Chườm nóng và xoa bóp dầu cao liên tục"
     ],
     "answer": 0,
-    "explanation": "Nguyên tắc bất động xương gãy là nẹp cố định qua 2 khớp liền kề (khớp trên và khớp dưới ổ gãy). Tuyệt đối không nắn chỉnh xương vì có thể đâm thủng mạch máu và biến gãy kín thành gãy hở.",
+    "explanation": "Nguyên tắc bất động xương gãy là nẹp cố định qua 2 khớp liền kề (khớp trên và khớp dưới ổ gãy). không nên nắn chỉnh xương vì có thể đâm thủng mạch máu và biến gãy kín thành gãy hở.",
     "standard": "Chuẩn Chấn thương Chỉnh hình & Cấp cứu"
   },
   {
     "id": "tp-15",
     "topicId": "soc-nhiet-say-nang",
     "topicTitle": "Sốc nhiệt, say nắng",
-    "prompt": "Đối với nạn nhân bị sốc nhiệt nặng kèm lú lẫn hoặc bất tỉnh, điều nào sau đây bị CẤM thực hiện?",
+    "prompt": "Đối với nạn nhân bị sốc nhiệt nặng kèm lú lẫn hoặc bất tỉnh, điều nào sau đây cần tránh làm?",
     "options": [
       "Đưa nạn nhân vào nơi râm mát, thoáng khí",
       "Cởi bớt quần áo ngoài và chườm mát vùng cổ, nách, bẹn",
@@ -228,9 +228,9 @@
     "id": "tp-16",
     "topicId": "xu-ly-khi-bi-soc-phan-ve",
     "topicTitle": "Xử lý khi bị sốc phản vệ",
-    "prompt": "Thuốc đầu tay và quan trọng nhất có tác dụng cứu sống tính mạng người bị sốc phản vệ nặng là gì?",
+    "prompt": "Thuốc đầu tay và quan trọng nhất có tác dụng giúp bảo vệ tính mạng tính mạng người bị sốc phản vệ nặng là gì?",
     "options": [
-      "Thuốc giảm đau Paracetamol",
+      "Thuốc giảm đau paracetamol",
       "Adrenaline (Epinephrine) tiêm bắp",
       "Kháng sinh đường uống",
       "Vitamin C liều cao"
@@ -275,13 +275,13 @@
     "topicTitle": "Sơ cấp cứu chấn thương đầu và tủy",
     "prompt": "Nạn nhân ngã từ trên cao nghi ngờ chấn thương cột sống cổ, nguyên tắc cố định bất động sống còn là:",
     "options": [
-      "Luôn giữ thẳng trục Đầu - Cổ - Thân mình, không cúi gập hay xoay lắc đầu nạn nhân",
+      "Luôn giữ thẳng trục đầu - cổ - thân mình, không cúi gập hay xoay lắc đầu nạn nhân",
       "Nâng đầu nạn nhân gối thật cao lên",
       "Cho nạn nhân ngồi dậy uống nước đường",
       "Xoay đầu nạn nhân sang hai bên để kiểm tra biên độ cổ"
     ],
     "answer": 0,
-    "explanation": "Mọi cử động gập hoặc xoay cổ có thể khiến mảnh xương vỡ chèn ép cắt đứt tủy sống gây liệt toàn thân vĩnh viễn hoặc tử vong ngay lập tức.",
+    "explanation": "Mọi cử động gập hoặc xoay cổ có thể khiến mảnh xương vỡ chèn ép cắt đứt tủy sống gây liệt toàn thân lâu dài hoặc tử vong ngay lập tức.",
     "standard": "Hướng dẫn Cấp cứu Chấn thương Đầu & Tủy sống"
   },
   {
@@ -296,7 +296,7 @@
       "Băng ép nhẹ bằng băng thun để giảm sưng"
     ],
     "answer": 2,
-    "explanation": "Nhiệt nóng từ dầu gió, rượu thuốc làm giãn mạch máu khiến máu dồn về vùng tổn thương nhiều hơn, gây sưng phù nề và tụ máu nặng nề hơn (Tuân thủ nguyên tắc R.I.C.E).",
+    "explanation": "Nhiệt nóng từ dầu gió, rượu thuốc làm giãn mạch máu khiến máu dồn về vùng tổn thương nhiều hơn, gây sưng phù nề và tụ máu nặng nề hơn (tuân thủ nguyên tắc R.I.C.E).",
     "standard": "Phục hồi chức năng & Y học Thể thao"
   },
   {
@@ -306,7 +306,7 @@
     "prompt": "Phát hiện bệnh nhân tiểu đường có biểu hiện hạ đường huyết (run rẩy, vã mồ hôi, hoa mắt) nhưng VẪN CÒN TỈNH TÁO, xử trí nhanh là:",
     "options": [
       "Cho uống ngay 1 ly nước đường, nước ngọt có ga hoặc ngậm vài viên kẹo ngọt",
-      "Tiêm thêm một liều Insulin ngay lập tức",
+      "Tiêm thêm một liều insulin ngay lập tức",
       "Để nạn nhân nhịn ăn thêm 2 giờ để cơ thể tự cân bằng",
       "Bắt nạn nhân chạy bộ nhẹ để tăng tuần hoàn máu"
     ],
@@ -348,7 +348,7 @@
     "id": "tp-24",
     "topicId": "so-cuu-khi-bi-ran-can-ran-doc",
     "topicTitle": "Sơ cứu khi bị rắn cắn (rắn độc):",
-    "prompt": "Khi bị rắn độc cắn vào cẳng chân, phương pháp sơ cứu nào sau đây được y học khuyến cáo KHÔNG NÊN làm?",
+    "prompt": "Khi bị rắn độc cắn vào cẳng chân, phương pháp sơ cứu nào sau đây được y học không nên làm?",
     "options": [
       "Cố định bất động chi bị cắn và để thấp hơn tim",
       "Rửa sạch nhẹ nhàng bằng nước muối hoặc xà phòng",
@@ -366,7 +366,7 @@
     "prompt": "Nạn nhân xuất hiện cơn đau thắt ngực dữ dội đè nặng sau xương ức, vã mồ hôi nghi do nhồi máu cơ tim. Tư thế nghỉ ngơi phù hợp nhất là:",
     "options": [
       "Nằm sấp buông thõng hai tay",
-      "Tư thế nửa nằm nửa ngồi (tựa lưng góc 45 độ), nới lỏng trang phục và nghỉ ngơi tuyệt đối",
+      "Tư thế nửa nằm nửa ngồi (tựa lưng góc 45 độ), nới lỏng trang phục và nghỉ ngơi hoàn toàn",
       "Đi bộ nhẹ nhàng xung quanh phòng",
       "Nằm dốc ngược chân lên cao"
     ],
@@ -401,7 +401,7 @@
       "Cho nạn nhân uống nước đá để giảm đau"
     ],
     "answer": 1,
-    "explanation": "Tuyệt đối KHÔNG cố ấn nhét tạng trở lại vì gây nhiễm trùng phúc mạc toàn thể. Hãy bảo vệ bằng gạc ẩm vô khuẩn để giữ ruột không bị khô hoại tử.",
+    "explanation": "Tối đa không nên cố ấn nhét tạng trở lại vì gây nhiễm trùng phúc mạc toàn thể. Hãy bảo vệ bằng gạc ẩm vô khuẩn để giữ ruột không bị khô hoại tử.",
     "standard": "Hướng dẫn Sơ cấp cứu Chấn thương - Bộ Y tế"
   },
   {
@@ -438,7 +438,7 @@
     "id": "tp-30",
     "topicId": "so-cap-cuu-bong-o-tre-em",
     "topicTitle": "Bỏng ở trẻ em",
-    "prompt": "Trẻ em bị bỏng nước sôi ở vùng đùi, tại sao TUYỆT ĐỐI KHÔNG dùng nước đá đóng băng để chườm?",
+    "prompt": "Trẻ em bị bỏng nước sôi ở vùng đùi, tại sao khuyến cáo tránh dùng nước đá đóng băng để chườm?",
     "options": [
       "Vì đá lạnh làm nước sôi bốc hơi nhanh hơn",
       "Vì diện tích da trẻ mỏng, chườm đá lạnh đột ngột dễ gây bỏng lạnh cục bộ và hạ thân nhiệt nguy hiểm",
@@ -461,7 +461,7 @@
       "Băng kín lại ngay lập tức để cách ly không khí"
     ],
     "answer": 1,
-    "explanation": "Rửa xối nước sạch liên tục giúp pha loãng và cuốn trôi hóa chất. Tuyệt đối không dùng chất trung hòa vì phản ứng tỏa nhiệt sẽ gây bỏng nhiệt sâu thêm.",
+    "explanation": "Rửa xối nước sạch liên tục giúp pha loãng và cuốn trôi hóa chất. không nên dùng chất trung hòa vì phản ứng tỏa nhiệt sẽ gây bỏng nhiệt sâu thêm.",
     "standard": "Chuẩn Cấp cứu Độc chất & Hóa chất"
   },
   {
