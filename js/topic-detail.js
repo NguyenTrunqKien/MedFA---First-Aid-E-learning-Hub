@@ -106,24 +106,30 @@
   }
 
   /**
-   * Nạp component Miễn trừ trách nhiệm y khoa và render danh sách nguồn đối chiếu chính thống
-   * @param {Object|null} topic
+   * Nạp component miễn trừ trách nhiệm y khoa một lần cho mỗi trang.
    */
-  async function loadMedicalDisclaimer(topic) {
+  let disclaimerRequest;
+  function loadMedicalDisclaimer() {
+    disclaimerRequest ??= fetch('components/medical-disclaimer.html')
+      .then(response => response.ok ? response.text() : null)
+      .catch(() => null);
+    return disclaimerRequest;
+  }
+
+  function renderMedicalDisclaimer(markup, topic) {
     const disclaimer = document.getElementById('medical-disclaimer');
-    if (disclaimer) {
-      try {
-        const response = await fetch('components/medical-disclaimer.html');
-        if (response.ok) disclaimer.innerHTML = await response.text();
-      } catch {
-        // Giữ lại thông báo mặc định trong HTML khi mở trực tiếp qua file://
-      }
+    if (!disclaimer) return;
+    if (markup && !disclaimer.dataset.loaded) {
+      disclaimer.innerHTML = markup;
+      disclaimer.dataset.loaded = 'true';
     }
+    window.I18n?.applyTranslations(disclaimer);
 
     const list = document.getElementById('detail-source-list');
-    if (!list || !Array.isArray(topic?.sources)) return;
+    if (!list) return;
+    list.replaceChildren();
 
-    for (const source of topic.sources) {
+    for (const source of topic?.sources || []) {
       if (!source?.name && !source?.url) continue;
       let url;
       try {
@@ -145,15 +151,16 @@
       if (source.accessDate) {
         const dateNote = document.createElement('span');
         dateNote.className = 'text-xs text-on-surface-variant ml-1.5';
-        dateNote.textContent = `(Đối chiếu: ${source.accessDate})`;
+        const accessedPrefix = window.t ? t('disclaimer.accessedDate', { date: source.accessDate }) : `(Đối chiếu: ${source.accessDate})`;
+        dateNote.textContent = accessedPrefix;
         item.append(dateNote);
       }
       list.append(item);
     }
 
     const emptyNotice = document.getElementById('detail-sources-empty');
-    if (emptyNotice && list.childElementCount > 0) {
-      emptyNotice.hidden = true;
+    if (emptyNotice) {
+      emptyNotice.hidden = list.childElementCount > 0;
     }
   }
 
@@ -204,6 +211,33 @@
     timelineBox.hidden = false;
   }
 
+  const CREATOR_EN_MAP = {
+    'Bệnh viện Đa Khoa Tâm Anh': 'Tam Anh General Hospital',
+    'Bệnh viện Đa khoa Tâm Anh': 'Tam Anh General Hospital',
+    'Bệnh viện Bạch Mai / Báo Sức khỏe & Đời sống': 'Bach Mai Hospital / Health & Life Newspaper',
+    'Bệnh viện Đại học Y dược TP.HCM': 'University Medical Center HCMC',
+    'Bệnh viện Bỏng quốc gia Lê Hữu Trác': 'Le Huu Trac National Burn Hospital',
+    'Bệnh viện Chấn thương Chỉnh hình TP.HCM': 'Hospital for Traumatology and Orthopaedics HCMC',
+    'Bệnh viện Đa khoa tỉnh Phú Thọ': 'Phu Tho Provincial General Hospital',
+    'Bệnh viện Hoàn Mỹ Sài Gòn': 'Hoan My Saigon Hospital',
+    'Bệnh viện Nam Sài Gòn': 'South Saigon International General Hospital',
+    'Sức khỏe & Đời sống (SKĐS)': 'Health & Life Newspaper (SKDS)',
+    'Báo Sức khỏe & Đời sống': 'Health & Life Newspaper',
+    'Báo Pháp Luật TP HCM': 'Ho Chi Minh City Law Newspaper',
+    'Dr. Wynn Tran Official': 'Dr. Wynn Tran Official',
+    'CDC Đồng Nai': 'Dong Nai CDC',
+    'VTV24': 'VTV24',
+    'THVL Tổng Hợp': 'THVL General',
+    'Truyền hình Quảng Trị': 'Quang Tri Television',
+    'Kênh sức khỏe cộng đồng': 'Community Health Channel',
+    'HTV7': 'HTV7',
+    '1LIFE FIRST AID (BS. Phạm Quang Vinh)': '1LIFE FIRST AID (Dr. Pham Quang Vinh)',
+    'Nghệ An TV': 'Nghe An TV',
+    'Y học thường thức – BS Nguyễn Trung Thực': 'General Medicine – Dr. Nguyen Trung Thuc',
+    'VTV Sức khỏe': 'VTV Health',
+    'Học Y Cùng Tui': 'Study Medicine With Me'
+  };
+
   /**
    * Render liên kết video hướng dẫn nếu bài học có trường video hợp lệ (HTTPS)
    * @param {Object} topic
@@ -227,12 +261,27 @@
       linkEl.href = parsed.href;
       if (linkLabelEl) {
         const isYouTube = parsed.hostname.includes('youtube.com') || parsed.hostname.includes('youtu.be');
-        linkLabelEl.textContent = isYouTube ? 'Xem trên YouTube' : 'Xem video hướng dẫn';
+        const ytText = window.t ? t('detail.youtubeView') : 'Xem trên YouTube';
+        const vidText = window.t ? t('detail.videoGuide') : 'Xem video hướng dẫn';
+        linkLabelEl.textContent = isYouTube ? ytText : vidText;
       }
       if (creatorEl) {
-        creatorEl.textContent = topic.video.creator
-          ? `Nguồn chuyên môn: ${topic.video.creator}`
-          : 'Video minh họa trực quan quy trình sơ cấp cứu.';
+        const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+        const prefix = (typeof window !== 'undefined' && typeof window.t === 'function')
+          ? window.t('detail.videoSourcePrefix')
+          : (isEn ? 'Professional Source: ' : 'Nguồn chuyên môn: ');
+        const fallback = (typeof window !== 'undefined' && typeof window.t === 'function')
+          ? window.t('detail.videoFallbackDesc')
+          : (isEn ? 'Visual instructional video for first aid procedure.' : 'Video minh họa trực quan quy trình sơ cấp cứu.');
+
+        let creatorName = topic.video.creator || '';
+        if (isEn && CREATOR_EN_MAP[creatorName]) {
+          creatorName = CREATOR_EN_MAP[creatorName];
+        }
+
+        creatorEl.textContent = creatorName
+          ? `${prefix}${creatorName}`
+          : fallback;
       }
       videoSection.hidden = false;
     } catch {
@@ -356,18 +405,29 @@
       }
     }
 
+    function updateMetronomeText() {
+      const cycleBeat = totalBeats ? ((totalBeats - 1) % 30) + 1 : 0;
+      const cycle = Math.floor((totalBeats - 1) / 30) + 1;
+      counterEl.textContent = window.t
+        ? (cycleBeat ? t('detail.cprBeatFormat', { beat: cycleBeat, cycle }) : t('detail.cprBeatIdle'))
+        : (cycleBeat ? `${cycleBeat} / 30 nhịp · Chu kỳ ${cycle}` : '0 / 30 nhịp');
+      if (hintEl && window.t) {
+        const key = !cycleBeat ? 'detail.cprMetronomeDesc'
+          : cycleBeat === 30 ? 'detail.cprCycleHintEnd' : 'detail.cprCycleHintDefault';
+        hintEl.textContent = t(key);
+      }
+      if (btnText) btnText.textContent = window.t
+        ? t(timerId ? 'detail.cprStop' : 'detail.cprStart')
+        : (timerId ? 'Dừng đếm nhịp' : 'Bắt đầu nhịp 110 BPM');
+      if (soundText) soundText.textContent = window.t
+        ? t(soundEnabled ? 'detail.soundOn' : 'detail.soundOff')
+        : (soundEnabled ? 'Âm thanh: Bật' : 'Âm thanh: Tắt');
+    }
+
     function triggerBeat() {
       totalBeats += 1;
-      const cycleBeat = ((totalBeats - 1) % 30) + 1;
-      const cycleNum = Math.floor((totalBeats - 1) / 30) + 1;
-      const isCycleEnd = cycleBeat === 30;
-
-      counterEl.textContent = `${cycleBeat} / 30 nhịp · Chu kỳ ${cycleNum}`;
-      if (hintEl) {
-        hintEl.textContent = isCycleEnd
-          ? 'Hoàn thành 30 lần ép tim! Nếu đã qua huấn luyện, thổi ngạt 2 lần rồi tiếp tục ngay.'
-          : `Giữ thẳng tay, ép sâu 5–6 cm và để lồng ngực nở hoàn toàn sau mỗi nhịp (${BPM} nhịp/phút).`;
-      }
+      const isCycleEnd = totalBeats % 30 === 0;
+      updateMetronomeText();
 
       playBeep(isCycleEnd);
       indicator.classList.add('is-beat');
@@ -382,7 +442,7 @@
       indicator.classList.remove('is-beat');
       const btnIcon = toggleBtn.querySelector('.material-symbols-outlined');
       if (btnIcon) btnIcon.textContent = 'play_arrow';
-      if (btnText) btnText.textContent = 'Bắt đầu nhịp 110 BPM';
+      updateMetronomeText();
     }
 
     toggleBtn.addEventListener('click', () => {
@@ -395,11 +455,10 @@
         ctx.resume().catch(() => {});
       }
       totalBeats = 0;
-      triggerBeat();
       timerId = window.setInterval(triggerBeat, INTERVAL_MS);
+      triggerBeat();
       const btnIcon = toggleBtn.querySelector('.material-symbols-outlined');
       if (btnIcon) btnIcon.textContent = 'stop';
-      if (btnText) btnText.textContent = 'Dừng đếm nhịp';
     });
 
     if (soundBtn) {
@@ -407,36 +466,46 @@
         soundEnabled = !soundEnabled;
         soundBtn.setAttribute('aria-pressed', String(soundEnabled));
         if (soundIcon) soundIcon.textContent = soundEnabled ? 'volume_up' : 'volume_off';
-        if (soundText) soundText.textContent = soundEnabled ? 'Âm thanh: Bật' : 'Âm thanh: Tắt';
+        updateMetronomeText();
       });
     }
 
+    updateMetronomeText();
+    window.addEventListener('medfa:languageChanged', updateMetronomeText);
     window.addEventListener('pagehide', stopMetronome);
   }
 
   /**
    * Điểm khởi chạy chính của trang Chi tiết tình huống
    */
-  document.addEventListener('DOMContentLoaded', async () => {
+  let metronomeInitialized = false;
+  let renderRevision = 0;
+
+  async function renderCurrentTopicDetail() {
+    const revision = ++renderRevision;
     const urlParams = new URLSearchParams(window.location.search);
     const topicId = urlParams.get('id') || 'hoc-di-vat';
-    const allTopics = await window.DataLoader?.loadTopics();
+    const [allTopics, disclaimerMarkup] = await Promise.all([
+      window.DataLoader?.loadTopics(),
+      loadMedicalDisclaimer()
+    ]);
     const topic = Array.isArray(allTopics)
       ? allTopics.find(t => t.id === topicId)
       : await window.DataLoader?.getTopicById(topicId);
     const matchesTopic = topic?.id === topicId;
 
-    await loadMedicalDisclaimer(matchesTopic ? topic : null);
+    if (revision !== renderRevision) return;
+    renderMedicalDisclaimer(disclaimerMarkup, matchesTopic ? topic : null);
 
     if (!matchesTopic || !topic) {
-      const title = 'Chủ đề hiện không khả dụng';
+      const title = window.t ? t('detail.unavailableTitle') : 'Chủ đề hiện không khả dụng';
       document.title = `${title} - MedFA`;
       const breadcrumbEl = document.getElementById('breadcrumb-topic-title');
       const detailTitleEl = document.getElementById('detail-title');
       const detailLeadEl = document.getElementById('detail-lead');
       if (breadcrumbEl) breadcrumbEl.textContent = title;
       if (detailTitleEl) detailTitleEl.textContent = title;
-      if (detailLeadEl) detailLeadEl.textContent = 'Quay lại thư viện để chọn một chủ đề đang có.';
+      if (detailLeadEl) detailLeadEl.textContent = window.t ? t('detail.unavailableDesc') : 'Quay lại thư viện để chọn một chủ đề đang có.';
       const catBadge = document.getElementById('detail-category-badge');
       const readTimeBadge = document.getElementById('detail-read-time');
       if (catBadge) catBadge.hidden = true;
@@ -462,8 +531,8 @@
         canonicalUrl
       });
       window.MedFASeoHelper.injectBreadcrumbSchema([
-        { name: 'Trang chủ', url: window.MedFASeoHelper.buildCanonicalUrl('index.html') },
-        { name: 'Thư viện sơ cấp cứu', url: window.MedFASeoHelper.buildCanonicalUrl('topics.html') },
+        { name: window.t ? t('detail.breadcrumbHome') : 'Trang chủ', url: window.MedFASeoHelper.buildCanonicalUrl('index.html') },
+        { name: window.t ? t('detail.breadcrumbTopics') : 'Thư viện sơ cấp cứu', url: window.MedFASeoHelper.buildCanonicalUrl('topics.html') },
         { name: displayTitle, url: canonicalUrl }
       ]);
     } else {
@@ -487,12 +556,12 @@
 
     const readTime = document.getElementById('detail-read-time');
     if (readTime && topic.readTime) {
-      readTime.innerHTML = `<span class="material-symbols-outlined text-[15px]">timer</span><span>Đọc ${escapeTopicHTML(topic.readTime)}</span>`;
+      readTime.innerHTML = `<span class="material-symbols-outlined text-[15px]">timer</span><span>${window.t ? t('detail.readPrefix') + ' ' : 'Đọc '}${escapeTopicHTML(topic.readTime)}</span>`;
     }
 
     // Khóa hiển thị hướng dẫn thao tác đối với bài chưa qua đối chiếu y khoa
     if (topic.needsMedicalReview) {
-      if (leadEl) leadEl.textContent = 'Bài này đang chờ đối chiếu nội dung y khoa. Xem hướng dẫn chính thức bên dưới.';
+      if (leadEl) leadEl.textContent = window.t ? t('detail.reviewNotice') : 'Bài này đang chờ đối chiếu nội dung y khoa. Xem hướng dẫn chính thức bên dưới.';
       return;
     }
 
@@ -501,7 +570,10 @@
 
     renderTopicTimeline(topic);
     renderTopicVideo(topic);
-    initCprMetronome(topic);
+    if (!metronomeInitialized) {
+      initCprMetronome(topic);
+      metronomeInitialized = true;
+    }
     renderRelatedTopics(topic, allTopics);
 
     const alertEl = document.getElementById('detail-alert-text');
@@ -548,5 +620,16 @@
 
     const guidanceEl = document.getElementById('topic-guidance');
     if (guidanceEl) guidanceEl.hidden = false;
+
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.t) document.title = t('detail.pageTitle');
+    renderCurrentTopicDetail();
   });
+
+  window.addEventListener('medfa:languageChanged', () => {
+    renderCurrentTopicDetail();
+  });
+
 })();

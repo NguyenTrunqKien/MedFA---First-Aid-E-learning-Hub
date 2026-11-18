@@ -7,6 +7,7 @@
 // Bộ dữ liệu Flashcard dự phòng (trích xuất nguyên văn từ 8 bài học cốt lõi trong data/topics.json nếu fetch gặp lỗi)
 const DEFAULT_CARDS = [
   {
+    id: 'hoc-di-vat',
     category: 'Trẻ em',
     front: 'Hóc dị vật (Nghẹn)',
     frontDesc: 'Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu tổn thương không thể phục hồi chỉ sau 4 phút thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.',
@@ -18,6 +19,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'bong-cap-do-1-2',
     category: 'Sinh hoạt',
     front: 'Bỏng cấp độ 1 & 2',
     frontDesc: 'Tổn thương da do nhiệt độ cao gây đau đớn dữ dội, thoát dịch huyết tương và nguy cơ nhiễm trùng cao. Việc ngâm rửa đúng cách trong 15-20 phút đầu quyết định 80% mức độ để lại sẹo.',
@@ -29,6 +31,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'chay-mau-nghiem-trong',
     category: 'Chấn thương',
     front: 'Chảy máu nghiêm trọng',
     frontDesc: 'Chảy máu động mạch có thể dẫn đến sốc mất máu tử vong chỉ trong vòng vài phút. Hành động cầm máu tại chỗ bằng lực ép trực tiếp là kỹ năng then chốt cứu mạng.',
@@ -40,6 +43,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'ngung-tuan-hoan-cpr',
     category: 'Bệnh lý',
     front: 'Ngừng tuần hoàn (Ép tim CPR)',
     frontDesc: 'Khi tim ngừng đập, dòng máu nuôi dưỡng não bộ ngưng trệ ngay lập tức. Mỗi phút trôi qua không có CPR làm giảm 10% cơ hội sống sót của nạn nhân.',
@@ -51,6 +55,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'soc-nhiet-say-nang',
     category: 'Ngoài trời',
     front: 'Sốc nhiệt, say nắng',
     frontDesc: 'Sốc nhiệt là cấp cứu nguy hiểm, có thể kèm lú lẫn hoặc ngất. Kiệt sức vì nóng nhẹ hơn nhưng có thể tiến triển nặng; cách cho uống nước phụ thuộc mức tỉnh táo và tình trạng.',
@@ -62,6 +67,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'duoi-nuoc-o-tre-em',
     category: 'Ngoài trời',
     front: 'Đuối nước ở trẻ em',
     frontDesc: 'Đuối nước gây thiếu oxy. Ưu tiên cứu hộ an toàn, gọi cấp cứu và hỗ trợ hô hấp sớm; không mất thời gian tìm cách đẩy nước ra khỏi phổi.',
@@ -73,6 +79,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'dot-quy',
     category: 'Bệnh lý',
     front: 'Đột quỵ',
     frontDesc: 'Đột quỵ có thể biểu hiện bằng méo mặt, yếu tay chân, nói khó, rối loạn thị giác hoặc mất thăng bằng đột ngột. Cấp cứu sớm giúp giảm nguy cơ tổn thương lâu dài.',
@@ -84,6 +91,7 @@ const DEFAULT_CARDS = [
     ]
   },
   {
+    id: 'dien-giat',
     category: 'Sinh hoạt',
     front: 'Điện giật',
     frontDesc: 'Điện giật có thể gây rối loạn tim hoặc ngừng thở dù vết bỏng ngoài da nhỏ. Người cứu phải chắc chắn nguồn điện đã được ngắt trước khi tiếp cận.',
@@ -95,6 +103,110 @@ const DEFAULT_CARDS = [
     ]
   }
 ];
+
+const DEFAULT_CARDS_EN = [
+  {
+    id: 'hoc-di-vat',
+    category: 'Pediatric',
+    front: 'Choking (Airway Obstruction)',
+    frontDesc: 'Foreign object causes acute airway blockage. Brain damage begins after 4 minutes without oxygen.',
+    back: 'Action: Choking (Airway Obstruction)',
+    steps: [
+      'Assess airway obstruction level',
+      'Deliver 5 firm Back Blows',
+      'Perform 5 Abdominal Thrusts (Heimlich)'
+    ]
+  },
+  {
+    id: 'bong-cap-do-1-2',
+    category: 'Daily Life',
+    front: '1st & 2nd Degree Burns',
+    frontDesc: 'Thermal skin damage causes severe pain and high infection risk. Proper cooling for 15-20 minutes reduces scar severity by 80%.',
+    back: 'Action: 1st & 2nd Degree Burns',
+    steps: [
+      'Remove heat source and constrictions',
+      'Cool under clean running water for 15-20 mins',
+      'Protect burn with sterile dressing'
+    ]
+  },
+  {
+    id: 'chay-mau-nghiem-trong',
+    category: 'Trauma',
+    front: 'Severe Bleeding',
+    frontDesc: 'Arterial bleeding can cause fatal hemorrhagic shock within minutes. Direct firm pressure is the critical life-saving skill.',
+    back: 'Action: Severe Bleeding',
+    steps: [
+      'Safety precautions and direct firm pressure',
+      'Pressure bandage and limb elevation',
+      'If blood soaks through: add new layer, DO NOT remove old'
+    ]
+  },
+  {
+    id: 'ngung-tuan-hoan-cpr',
+    category: 'Medical',
+    front: 'Cardiac Arrest (CPR)',
+    frontDesc: 'When the heart stops, cerebral circulation halts immediately. Every minute without CPR reduces survival chances by 10%.',
+    back: 'Action: Cardiac Arrest (CPR)',
+    steps: [
+      'Check scene safety and responsiveness',
+      'Call 115 and locate an AED',
+      'Compress chest at standard rate 100-120 bpm'
+    ]
+  },
+  {
+    id: 'soc-nhiet-say-nang',
+    category: 'Outdoors',
+    front: 'Heat Stroke & Sunstroke',
+    frontDesc: 'Heat stroke is a medical emergency with confusion or collapse. Rapid active cooling is vital.',
+    back: 'Action: Heat Stroke & Sunstroke',
+    steps: [
+      'Call 115 for suspected heat stroke',
+      'Move victim to a cool area',
+      'Initiate rapid active cooling'
+    ]
+  },
+  {
+    id: 'duoi-nuoc-o-tre-em',
+    category: 'Outdoors',
+    front: 'Pediatric Drowning',
+    frontDesc: 'Drowning induces severe hypoxia. Rescuer safety, calling emergency services, and early rescue breaths are crucial.',
+    back: 'Action: Pediatric Drowning',
+    steps: [
+      'Safely remove child from water',
+      'Call 115, assess response and breathing',
+      'If not breathing: begin rescue breathing and CPR'
+    ]
+  },
+  {
+    id: 'dot-quy',
+    category: 'Medical',
+    front: 'Stroke (Cerebrovascular Accident)',
+    frontDesc: 'Identified by facial drooping, arm weakness, and speech difficulty. Early intervention prevents permanent brain damage.',
+    back: 'Action: Stroke (Cerebrovascular Accident)',
+    steps: [
+      'Identify FAST symptoms',
+      'Call 115 immediately & record symptom onset',
+      'Position patient safely and monitor vitals'
+    ]
+  },
+  {
+    id: 'dien-giat',
+    category: 'Daily Life',
+    front: 'Electrical Shock',
+    frontDesc: 'Electric current can cause fatal arrhythmias and internal tissue burns. Power source must be safely cut before touching the victim.',
+    back: 'Action: Electrical Shock',
+    steps: [
+      'Turn off power breaker and secure scene',
+      'Call 115 and assess patient responsiveness',
+      'Begin CPR if victim is not breathing normally'
+    ]
+  }
+];
+
+function getDefaultCards() {
+  const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+  return isEn ? DEFAULT_CARDS_EN : DEFAULT_CARDS;
+}
 
 let allTopicsCards = [...DEFAULT_CARDS];
 let cards = [];
@@ -207,7 +319,11 @@ function stripAuthorAndJunk(str) {
  * Làm sạch và chuẩn hóa tiêu đề tình huống
  */
 function cleanTitle(str) {
-  if (!str) return 'Tình huống khẩn cấp';
+  if (!str) {
+    return (typeof window !== 'undefined' && typeof window.t === 'function')
+      ? window.t('flashcard.defaultTitle')
+      : 'Tình huống khẩn cấp';
+  }
   let t = str.trim();
   t = t.replace(/^Hướng dẫn sơ cứu trẻ bị\s*/i, 'Trẻ bị ');
   t = t.replace(/^Hướng dẫn sơ cứu\s*/i, 'Sơ cứu ');
@@ -225,7 +341,7 @@ function cleanTitle(str) {
  * Chuyển đổi dữ liệu trực tiếp từ topics.json thành thẻ Flashcard
  */
 function extractCardsFromTopics(topics) {
-  if (!Array.isArray(topics) || topics.length === 0) return DEFAULT_CARDS;
+  if (!Array.isArray(topics) || topics.length === 0) return getDefaultCards();
 
   // Lọc bỏ bài chưa đối chiếu y khoa (needsMedicalReview), bài lỗi data, bài lý thuyết hoặc dính tên tác giả
   const validTopics = topics.filter(t => {
@@ -236,13 +352,21 @@ function extractCardsFromTopics(topics) {
     return true;
   });
 
+  const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+  const actionPrefix = (typeof window !== 'undefined' && typeof window.t === 'function')
+    ? window.t('flashcard.actionPrefix')
+    : (isEn ? 'Action: ' : 'Xử trí: ');
+  const stepPrefix = (typeof window !== 'undefined' && typeof window.t === 'function')
+    ? window.t('flashcard.stepPrefix')
+    : (isEn ? 'Step ' : 'Bước ');
+
   return validTopics.map(t => {
     const frontTitle = cleanTitle(t.title || t.fullTitle);
-    const category = t.categoryLabel || 'Phản xạ sơ cứu';
+    const category = t.categoryLabel || (typeof window !== 'undefined' && typeof window.t === 'function' ? window.t('flashcard.deckTag') : (isEn ? 'First Aid Reflex' : 'Phản xạ sơ cứu'));
     const situation = stripAuthorAndJunk(t.lead || t.shortDesc || t.emergencyAlert || '');
 
     // Mặt sau: Tiêu đề hành động xử trí và tối đa 3 bước sơ cứu từ topics.json
-    const backTitle = `Xử trí: ${frontTitle}`;
+    const backTitle = `${actionPrefix}${frontTitle}`;
     const stepsList = t.steps.slice(0, 3).map(s => {
       let txt = (s.title || '').trim();
       // Chuẩn hóa câu chữ tránh số đứng đầu cạnh số thứ tự bước (VD: "2  5 vỗ lưng" -> "2  Vỗ lưng 5 lần")
@@ -253,12 +377,13 @@ function extractCardsFromTopics(topics) {
     });
 
     return {
+      id: t.id,
       category: category,
       front: frontTitle,
       frontDesc: situation,
       back: backTitle,
       steps: stepsList,
-      backDesc: stepsList.map((s, idx) => `Bước ${idx + 1}: ${s}`).join('\n')
+      backDesc: stepsList.map((s, idx) => `${stepPrefix}${idx + 1}: ${s}`).join('\n')
     };
   });
 }
@@ -280,13 +405,22 @@ function shuffleArray(arr) {
  */
 function setFlipped(flipped) {
   if (flipText) {
-    flipText.textContent = flipped ? 'Xem câu hỏi' : 'Lật thẻ';
+    const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+    const label = (typeof window !== 'undefined' && typeof window.t === 'function')
+      ? window.t(flipped ? 'flashcard.flipBackBtn' : 'flashcard.flipBtn')
+      : (flipped ? (isEn ? 'Show question' : 'Xem câu hỏi') : (isEn ? 'Flip card' : 'Lật thẻ'));
+    flipText.textContent = label;
   }
   card.classList.toggle('is-flipped', flipped);
   card.setAttribute('aria-pressed', String(flipped));
   const current = cards[index];
-  const activeText = flipped ? (current.back + '. ' + (current.backDesc || '')) : (current.front + '. ' + (current.frontDesc || ''));
-  card.setAttribute('aria-label', 'Lật thẻ. ' + activeText);
+  if (current) {
+    const activeText = flipped ? (current.back + '. ' + (current.backDesc || '')) : (current.front + '. ' + (current.frontDesc || ''));
+    const flipAria = (typeof window !== 'undefined' && typeof window.t === 'function')
+      ? window.t('flashcard.cardAria')
+      : 'Lật thẻ';
+    card.setAttribute('aria-label', `${flipAria}. ${activeText}`);
+  }
 }
 
 /**
@@ -370,22 +504,22 @@ function showCompletionScreen() {
     progress.value = cards.length;
     progress.classList.add('is-completed');
   }
-  if (count) count.textContent = '🏆 Hoàn thành';
+  if (count) count.textContent = window.t ? t('flashcard.completedBadge') : '🏆 Hoàn thành';
 
   if (currentMode === 'quick') {
-    if (completionTitle) completionTitle.textContent = 'Tuyệt vời! Bạn đã hoàn thành 10 phản xạ!';
-    if (completionSubtitle) completionSubtitle.textContent = '10 phản xạ y khoa sống còn đã được kích hoạt. Hãy duy trì luyện tập mỗi ngày nhé!';
-    if (completionStatCount) completionStatCount.textContent = '10 / 10 Thẻ';
-    if (btnCompletionRepeatText) btnCompletionRepeatText.textContent = 'Luyện 10 thẻ khác';
+    if (completionTitle) completionTitle.textContent = window.t ? t('flashcard.compQuickTitle') : 'Tuyệt vời! Bạn đã hoàn thành 10 phản xạ!';
+    if (completionSubtitle) completionSubtitle.textContent = window.t ? t('flashcard.compQuickSub') : '10 phản xạ y khoa sống còn đã được kích hoạt. Hãy duy trì luyện tập mỗi ngày nhé!';
+    if (completionStatCount) completionStatCount.textContent = window.t ? t('flashcard.compQuickStat') : '10 / 10 Thẻ';
+    if (btnCompletionRepeatText) btnCompletionRepeatText.textContent = window.t ? t('flashcard.compQuickRepeat') : 'Luyện 10 thẻ khác';
     if (btnCompletionSecondaryIcon) btnCompletionSecondaryIcon.textContent = 'library_books';
-    if (btnCompletionSecondaryText) btnCompletionSecondaryText.textContent = 'Học tất cả dữ liệu';
+    if (btnCompletionSecondaryText) btnCompletionSecondaryText.textContent = window.t ? t('flashcard.compQuickAll') : 'Học tất cả dữ liệu';
   } else {
-    if (completionTitle) completionTitle.textContent = 'Xuất sắc! Bạn đã làm chủ toàn bộ bài học!';
-    if (completionSubtitle) completionSubtitle.textContent = `Bạn đã hoàn thành trọn vẹn ${cards.length} quy trình sơ cấp cứu chuẩn y tế MedFA!`;
-    if (completionStatCount) completionStatCount.textContent = `${cards.length} / ${cards.length} Thẻ`;
-    if (btnCompletionRepeatText) btnCompletionRepeatText.textContent = 'Luyện lại từ đầu';
+    if (completionTitle) completionTitle.textContent = window.t ? t('flashcard.compAllTitle') : 'Xuất sắc! Bạn đã làm chủ toàn bộ bài học!';
+    if (completionSubtitle) completionSubtitle.textContent = window.t ? t('flashcard.compAllSub', { count: cards.length }) : `Bạn đã hoàn thành trọn vẹn ${cards.length} quy trình sơ cấp cứu chuẩn y tế MedFA!`;
+    if (completionStatCount) completionStatCount.textContent = `${cards.length} / ${cards.length} ${window.t ? t('flashcard.cardsWord') : 'Thẻ'}`;
+    if (btnCompletionRepeatText) btnCompletionRepeatText.textContent = window.t ? t('flashcard.compAllRepeat') : 'Luyện lại từ đầu';
     if (btnCompletionSecondaryIcon) btnCompletionSecondaryIcon.textContent = 'bolt';
-    if (btnCompletionSecondaryText) btnCompletionSecondaryText.textContent = 'Luyện nhanh (10 thẻ)';
+    if (btnCompletionSecondaryText) btnCompletionSecondaryText.textContent = window.t ? t('flashcard.compAllQuick') : 'Luyện nhanh (10 thẻ)';
   }
 
   previous.disabled = false;
@@ -414,7 +548,8 @@ function showCard() {
   const current = cards[index];
 
   if (cardCategory) {
-    cardCategory.textContent = current.category || 'Phản xạ sơ cứu';
+    const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+    cardCategory.textContent = current.category || (typeof window.t === 'function' ? window.t('flashcard.deckTag') : (isEn ? 'First Aid Reflex' : 'Phản xạ sơ cứu'));
   }
 
   front.textContent = current.front;
@@ -456,15 +591,18 @@ function showCard() {
   progress.value = index + 1;
 
   previous.disabled = index === 0;
+  if (previous) {
+    previous.title = typeof window.t === 'function' ? window.t('flashcard.btnPrevTitle') : 'Thẻ trước (Phím ←)';
+  }
 
   // Nút Next: Khi đến thẻ cuối cùng sẽ sáng lên với icon Cúp để bấm xem tổng kết
   if (index === cards.length - 1) {
     next.disabled = false;
-    next.title = 'Xem kết quả hoàn thành! 🏆';
+    next.title = typeof window.t === 'function' ? window.t('flashcard.viewResultTitle') : 'Xem kết quả hoàn thành! 🏆';
     next.innerHTML = '<span class="material-symbols-outlined text-amber-500">emoji_events</span>';
   } else {
     next.disabled = false;
-    next.title = 'Thẻ tiếp (Phím →)';
+    next.title = typeof window.t === 'function' ? window.t('flashcard.btnNextTitle') : 'Thẻ tiếp (Phím →)';
     next.innerHTML = '<span class="material-symbols-outlined">arrow_forward</span>';
   }
 
@@ -628,10 +766,12 @@ async function initFlashcards() {
       if (extracted && extracted.length > 0) {
         allTopicsCards = extracted;
       }
+    } else {
+      allTopicsCards = [...getDefaultCards()];
     }
   } catch (err) {
     console.warn('Sử dụng bộ Flashcard mặc định:', err);
-    allTopicsCards = [...DEFAULT_CARDS];
+    allTopicsCards = [...getDefaultCards()];
   }
 
   // Khởi động mặc định với chế độ luyện nhanh (10 thẻ ngẫu nhiên)
@@ -643,4 +783,59 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initFlashcards);
 } else {
   initFlashcards();
+}
+
+// Cập nhật nội dung thẻ khi ngôn ngữ thay đổi nhưng giữ nguyên thẻ hiện tại, mặt đang lật và thứ tự
+if (typeof window !== 'undefined') {
+  window.addEventListener('medfa:languageChanged', async () => {
+    try {
+      let rawTopics = null;
+      if (window.DataLoader && typeof window.DataLoader.loadTopics === 'function') {
+        rawTopics = await window.DataLoader.loadTopics();
+      } else {
+        const res = await fetch('data/topics.json');
+        if (res.ok) {
+          rawTopics = await res.json();
+        }
+      }
+
+      const newExtracted = extractCardsFromTopics(rawTopics);
+      const newMap = new Map();
+      newExtracted.forEach(c => {
+        if (c && c.id) newMap.set(c.id, c);
+      });
+
+      allTopicsCards = allTopicsCards.map((c, idx) => {
+        if (c && c.id && newMap.has(c.id)) {
+          return { ...newMap.get(c.id) };
+        }
+        if (newExtracted[idx]) {
+          return { ...newExtracted[idx] };
+        }
+        return c;
+      });
+
+      const isFlipped = card ? card.classList.contains('is-flipped') : false;
+      cards = cards.map((c, idx) => {
+        if (c && c.id && newMap.has(c.id)) {
+          return { ...newMap.get(c.id) };
+        }
+        if (newExtracted[idx]) {
+          return { ...newExtracted[idx] };
+        }
+        return c;
+      });
+
+      if (isCompletedScreen) {
+        showCompletionScreen();
+      } else {
+        const curIdx = index;
+        showCard();
+        index = curIdx;
+        setFlipped(isFlipped);
+      }
+    } catch (err) {
+      console.warn('[Flashcard] Lỗi cập nhật ngôn ngữ:', err);
+    }
+  });
 }

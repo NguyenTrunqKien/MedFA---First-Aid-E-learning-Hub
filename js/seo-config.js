@@ -34,30 +34,35 @@
     officialAuthorities: [
       {
         shortName: 'AHA',
+        titleKey: 'footer.authorityAha',
         name: 'Hiệp hội Tim mạch Hoa Kỳ (AHA)',
         url: 'https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines',
         role: 'Chuẩn ép tim CPR & ECC'
       },
       {
         shortName: 'ERC',
+        titleKey: 'footer.authorityErc',
         name: 'Hội đồng Hồi sinh Châu Âu (ERC)',
         url: 'https://www.erc.edu/science-research/guidelines/',
         role: 'Khuyến cáo hồi sinh cấp cứu'
       },
       {
         shortName: 'HCDC',
+        titleKey: 'footer.authorityHcdc',
         name: 'Trung tâm Kiểm soát Bệnh tật TP.HCM',
         url: 'https://hcdc.vn/',
         role: 'Hướng dẫn y tế dự phòng'
       },
       {
         shortName: 'Vinmec',
+        titleKey: 'footer.authorityVinmec',
         name: 'Hệ thống Y tế Vinmec',
         url: 'https://www.vinmec.com/vie/bai-viet/',
         role: 'Tài liệu đối chiếu sơ cứu'
       },
       {
         shortName: 'Tâm Anh',
+        titleKey: 'footer.authorityTamAnh',
         name: 'Bệnh viện Đa khoa Tâm Anh',
         url: 'https://tamanhhospital.vn/',
         role: 'Tài liệu chuyên môn y khoa'
@@ -194,7 +199,8 @@
       a.href = auth.url;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      a.title = `${auth.name} — ${auth.role}`;
+      a.dataset.i18nTitle = auth.titleKey;
+      a.title = global.t ? global.t(auth.titleKey) : `${auth.name} — ${auth.role}`;
       a.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container hover:bg-primary-fixed hover:text-primary text-on-surface-variant border border-outline-variant/40 transition-colors';
       a.textContent = auth.shortName;
       listWrap.appendChild(a);

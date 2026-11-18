@@ -5,6 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="description" content="Thư viện tra cứu các tình huống sơ cấp cứu chuẩn y khoa quốc tế AHA & ERC: tìm kiếm nhanh, lọc theo danh mục và lưu bài học.">
   <title>Thư viện Sơ cấp cứu - MedFA</title>
+  <meta name="i18n-title" content="topics.pageTitle">
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
 
   <!-- Google Fonts -->
@@ -86,16 +87,16 @@
           <!-- Badge -->
           <span class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-secondary-container/40 text-secondary text-xs font-bold tracking-wide uppercase shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-            CẨM NANG Y KHOA KHẨN CẤP
+            <span data-i18n="topics.heroBadge">CẨM NANG Y KHOA KHẨN CẤP</span>
           </span>
 
           <!-- Primary Title -->
-          <h1 class="text-3xl md:text-5xl text-primary tracking-tight font-extrabold mt-4">
+          <h1 class="text-3xl md:text-5xl text-primary tracking-tight font-extrabold mt-4" data-i18n="topics.heroTitle">
             Thư viện tình huống sơ cấp cứu
           </h1>
 
           <!-- Subtitle -->
-          <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mt-3">
+          <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mt-3" data-i18n="topics.heroSubtitle">
             Tra cứu nhanh chóng các bước xử lý chuẩn y khoa quốc tế cho mọi tình huống khẩn cấp thường gặp.
           </p>
 
@@ -110,41 +111,31 @@
               </span>
               <input 
                 class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline rounded-full text-base outline-none focus:ring-2 focus:ring-secondary/40"
-                id="search-input" 
+                id="search-input"
                 aria-label="Tìm tình huống sơ cứu"
+                data-i18n-aria-label="topics.searchPlaceholder"
                 placeholder="Tìm tình huống sơ cứu"
+                data-i18n-placeholder="topics.searchPlaceholder"
                 type="text"
               >
             </div>
-            <button class="rounded-full bg-secondary hover:bg-secondary/90 text-on-secondary font-semibold text-sm transition-all shadow-sm active:scale-95" id="search-btn" type="button">
+            <button class="rounded-full bg-secondary hover:bg-secondary/90 text-on-secondary font-semibold text-sm transition-all shadow-sm active:scale-95" id="search-btn" type="button" data-i18n="topics.searchBtn">
               Tìm kiếm
             </button>
           </div>
 
           <!-- Category Filter Pills -->
           <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-6 w-full" id="category-filter-group">
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-secondary text-on-secondary" data-category="all" type="button">
-              Tất cả
-            </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="sinh-hoat" type="button">
-              Tai nạn sinh hoạt
-            </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="tre-em" type="button">
-              Trẻ em
-            </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="ngoai-troi" type="button">
-              Ngoài trời
-            </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="benh-ly" type="button">
-              Bệnh lý
-            </button>
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-sm bg-secondary text-on-secondary" data-category="all" type="button" data-i18n="topics.catAll">Tất cả</button>
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="sinh-hoat" type="button" data-i18n="topics.catEveryday">Tai nạn sinh hoạt</button>
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="tre-em" type="button" data-i18n="topics.catChildren">Trẻ em</button>
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="ngoai-troi" type="button" data-i18n="topics.catOutdoor">Ngoài trời</button>
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="benh-ly" type="button" data-i18n="topics.catMedical">Bệnh lý</button>
             <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface inline-flex items-center gap-1.5" data-category="bookmarks" type="button">
               <span class="material-symbols-outlined text-[16px]">bookmark</span>
-              <span>Đã lưu</span>
+              <span data-i18n="topics.catBookmarks">Đã lưu</span>
             </button>
-            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="tai-nan" type="button">
-              Tai nạn
-            </button>
+            <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface" data-category="tai-nan" type="button" data-i18n="topics.catTrauma">Tai nạn</button>
           </div>
         </div>
       </section>
@@ -158,16 +149,16 @@
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
               <span class="font-semibold text-on-surface">
-                Hiển thị <span class="text-primary font-bold" id="card-counter">0</span> tình huống sơ cấp cứu ưu tiên
+                <span data-i18n="topics.counterPrefix">Hiển thị</span> <span class="text-primary font-bold" id="card-counter">0</span> <span data-i18n="topics.counterSuffix">tình huống sơ cấp cứu ưu tiên</span>
               </span>
             </div>
             <div class="flex items-center gap-2 text-on-surface-variant self-end sm:self-auto">
-              <span class="text-xs uppercase tracking-wider text-outline font-semibold">Sắp xếp:</span>
+              <span class="text-xs uppercase tracking-wider text-outline font-semibold" data-i18n="topics.sortLabel">Sắp xếp:</span>
               <div class="relative inline-block">
-                  <select class="appearance-none bg-surface-container-lowest text-on-surface text-sm pl-4 pr-8 py-1.5 rounded-lg shadow-sm outline-none cursor-pointer focus:ring-1 focus:ring-primary border border-outline-variant/30" id="sort-select" aria-label="Sắp xếp tình huống">
-                  <option value="popular">Phổ biến nhất</option>
-                  <option value="newest">Mới cập nhật</option>
-                  <option value="critical">Mức độ khẩn cấp</option>
+                  <select class="appearance-none bg-surface-container-lowest text-on-surface text-sm pl-4 pr-8 py-1.5 rounded-lg shadow-sm outline-none cursor-pointer focus:ring-1 focus:ring-primary border border-outline-variant/30" id="sort-select" aria-label="Sắp xếp tình huống" data-i18n-aria-label="topics.sortAria">
+                  <option value="popular" data-i18n="topics.sortPopular">Phổ biến nhất</option>
+                  <option value="newest" data-i18n="topics.sortNewest">Mới cập nhật</option>
+                  <option value="critical" data-i18n="topics.sortCritical">Mức độ khẩn cấp</option>
                 </select>
                 <span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[18px]">expand_more</span>
               </div>
@@ -184,9 +175,9 @@
             <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
               <span class="material-symbols-outlined text-[32px]">manage_search</span>
             </div>
-            <h4 class="text-xl font-bold text-on-surface">Không tìm thấy hướng dẫn phù hợp</h4>
-            <p class="text-sm text-on-surface-variant mt-1 max-w-md mx-auto">Vui lòng thử từ khoá khác hoặc xem danh mục tổng hợp các bước cấp cứu tiêu chuẩn.</p>
-            <button class="mt-4 px-6 py-2 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow-sm hover:bg-secondary/90 transition-colors" id="reset-filter-btn" type="button">
+            <h4 class="text-xl font-bold text-on-surface" data-i18n="topics.emptyTitle">Không tìm thấy hướng dẫn phù hợp</h4>
+            <p class="text-sm text-on-surface-variant mt-1 max-w-md mx-auto" data-i18n="topics.emptyDesc">Vui lòng thử từ khoá khác hoặc xem danh mục tổng hợp các bước cấp cứu tiêu chuẩn.</p>
+            <button class="mt-4 px-6 py-2 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow-sm hover:bg-secondary/90 transition-colors" id="reset-filter-btn" type="button" data-i18n="topics.resetFilters">
               Hiện toàn bộ tình huống
             </button>
           </div>
@@ -209,15 +200,15 @@
                   <span class="material-symbols-outlined text-white text-[28px]">phone_in_talk</span>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-white">Bạn đang đối mặt với ca khẩn cấp ngay lúc này?</h3>
-                  <p class="text-sm text-white/90 mt-1 max-w-xl">
+                  <h3 class="text-xl font-bold text-white" data-i18n="topics.emBannerTitle">Bạn đang đối mặt với ca khẩn cấp ngay lúc này?</h3>
+                  <p class="text-sm text-white/90 mt-1 max-w-xl" data-i18n="topics.emBannerDesc">
                     Đừng lúng túng! Gọi ngay tổng đài cấp cứu quốc gia 115 hoặc bật loa ngoài để nhân viên y tế hướng dẫn bạn ép tim CPR qua điện thoại.
                   </p>
                 </div>
               </div>
               <a href="tel:115" class="px-6 py-3 rounded-xl bg-error hover:bg-red-700 text-white font-bold text-base shadow-lg transition-colors flex items-center gap-2 whitespace-nowrap">
                 <span class="material-symbols-outlined">call</span>
-                GỌI 115 NGAY
+                <span data-i18n="topics.emBannerBtn">GỌI 115 NGAY</span>
               </a>
             </div>
           </div>
@@ -231,6 +222,8 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript Modules -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/data-loader.js"></script>
   <script src="js/chatbot-gemini.js"></script>

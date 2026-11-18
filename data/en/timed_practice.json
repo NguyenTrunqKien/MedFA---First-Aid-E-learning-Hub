@@ -1,0 +1,418 @@
+[
+  {
+    "id": "tp-01",
+    "topicTitle": "Cardiac Arrest (CPR)",
+    "prompt": "What is the maximum golden time window to resuscitate brain cells before irreversible damage occurs during cardiac arrest?",
+    "options": [
+      "4 minutes",
+      "10 minutes",
+      "15 minutes",
+      "30 minutes"
+    ],
+    "explanation": "According to ERC and AHA guidelines, brain damage begins and quickly becomes irreversible after just 4 minutes of oxygen deprivation if CPR is not started.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-02",
+    "topicTitle": "Cardiac Arrest (CPR)",
+    "prompt": "When performing external chest compressions (CPR) on an adult, what is the recommended standard compression rate?",
+    "options": [
+      "60 - 80 compressions/min",
+      "100 - 120 compressions/min",
+      "130 - 150 compressions/min",
+      "Dependent on rescuer breathing rate"
+    ],
+    "explanation": "The standard chest compression rate is 100 - 120 compressions/min, at a depth of 5 - 6 cm for adults, allowing full chest recoil after each compression.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-03",
+    "topicTitle": "Cardiac Arrest (CPR)",
+    "prompt": "In standard cardiopulmonary resuscitation (CPR) combining chest compressions and rescue breaths, what is the recommended ratio?",
+    "options": [
+      "15 compressions : 2 rescue breaths",
+      "30 compressions : 2 rescue breaths",
+      "30 compressions : 5 rescue breaths",
+      "50 compressions : 1 rescue breath"
+    ],
+    "explanation": "The standard cycle recommended by AHA/ERC is 30 continuous compressions followed by 2 effective rescue breaths, minimizing interruptions to less than 10 seconds.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-04",
+    "topicTitle": "Choking (Airway Obstruction)",
+    "prompt": "An adult is choking on food but can still speak and is attempting to cough forcefully. What should you do?",
+    "options": [
+      "Immediately rush in and perform abdominal thrusts (Heimlich)",
+      "Insert your finger deeply into the throat to fish for the object",
+      "Encourage the victim to keep coughing forcefully; do not intervene with back blows or abdominal thrusts yet",
+      "Give the victim a full glass of water to swallow"
+    ],
+    "explanation": "If the person can still speak, cry, or cough forcefully, the natural cough reflex is the most effective way to clear the airway. Encourage vigorous coughing and avoid physical intervention at this stage.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-05",
+    "topicTitle": "Choking (Airway Obstruction)",
+    "prompt": "When performing the Heimlich maneuver on an adult with complete airway obstruction, where should you position your fist?",
+    "options": [
+      "Directly on the center of the breastbone (sternum)",
+      "The epigastric region (above the navel, well below the xiphoid process)",
+      "5 cm below the navel",
+      "The right lower rib cage"
+    ],
+    "explanation": "Position your fist in the epigastric area (just above the navel and well below the tip of the breastbone), grasp with the other hand, and give quick upward and inward thrusts.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-06",
+    "topicTitle": "Pediatric Choking",
+    "prompt": "An infant under 1 year is choking, turning blue, and unable to cry. Which of the following actions should be avoided due to risk of internal organ rupture?",
+    "options": [
+      "Delivering 5 back blows",
+      "Delivering 5 chest thrusts",
+      "Performing abdominal thrusts (Heimlich maneuver)",
+      "Calling emergency services 115"
+    ],
+    "explanation": "In infants under 1 year, abdominal thrusts must be avoided because their liver and abdominal organs are fragile and vulnerable to rupture. Use alternating 5 back blows and 5 chest thrusts instead.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-07",
+    "topicTitle": "1st & 2nd Degree Burns",
+    "prompt": "A person sustains a scald burn on the forearm resulting in blister formation. What is the standard first-line cooling procedure?",
+    "options": [
+      "Gently rinse under clean, cool running tap water (15-25°C) continuously for 15-20 minutes",
+      "Apply freezing ice packs directly onto the burn",
+      "Immediately apply toothpaste or lard to soothe the skin",
+      "Puncture all blisters to release fluid rapidly"
+    ],
+    "explanation": "Cooling the burn with clean running tap water for 15-20 minutes dissipates heat and limits deep tissue injury. Avoid ice (which causes frostbite necrosis) and never apply home remedies.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-08",
+    "topicTitle": "Severe Bleeding",
+    "prompt": "While applying a pressure bandage on a bleeding forearm wound, blood soaks completely through the first dressing. What should you do?",
+    "options": [
+      "Remove the soaked bandage immediately and replace it with a fresh one",
+      "Leave the initial dressing in place, apply an additional clean layer on top, and maintain firm pressure",
+      "Loosen the bandage to let the wound breathe",
+      "Apply flour to help clot the blood"
+    ],
+    "explanation": "Never remove the first layer of gauze because doing so tears away newly formed blood clots. Always layer additional clean dressings on top and maintain firm direct pressure.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-09",
+    "topicTitle": "Bleeding & Hemorrhage Control",
+    "prompt": "When is it appropriate and necessary for a first responder to apply a tourniquet (garrot)?",
+    "options": [
+      "For any minor cut or scratch on an arm or leg",
+      "Only for life-threatening extremity arterial hemorrhage when direct pressure fails or in traumatic amputation",
+      "Whenever sterile gauze is unavailable",
+      "Before attempting direct pressure on any wound"
+    ],
+    "explanation": "A tourniquet is reserved for severe, life-threatening arterial bleeding from limbs that cannot be controlled with direct pressure, or in traumatic amputations.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-10",
+    "topicTitle": "Seizures & Epilepsy",
+    "prompt": "When encountering a person actively having a generalized convulsive seizure, which of the following must NOT be done?",
+    "options": [
+      "Moving nearby hard, sharp objects away from the victim",
+      "Forcing a spoon, chopstick, or fingers into the mouth to prevent tongue biting",
+      "Placing a soft jacket or cushion under the head",
+      "Timing the duration of the convulsion"
+    ],
+    "explanation": "Never force any object into the mouth of a seizing person. This can break teeth, cause airway obstruction, or induce vomiting. The tongue cannot be swallowed.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-11",
+    "topicTitle": "Stroke",
+    "prompt": "The F.A.S.T mnemonic used for rapid stroke recognition stands for:",
+    "options": [
+      "Face drooping, Arm weakness, Speech difficulty, Time to call 115",
+      "Fever, Asthma, Stomach pain, Temperature check",
+      "First Aid Steps and Transport",
+      "Fast Action Saves Time"
+    ],
+    "explanation": "FAST stands for: F (Face drooping), A (Arm weakness), S (Speech difficulty), T (Time to call 115 immediately). Prompt recognition and emergency transport save brain tissue.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-12",
+    "topicTitle": "Pediatric Drowning",
+    "prompt": "After pulling an unresponsive, non-breathing drowning victim onto the sand, which common practice is dangerous and contraindicated?",
+    "options": [
+      "Checking breathing and starting rescue breaths and CPR immediately",
+      "Calling emergency services 115 and asking for an AED",
+      "Carrying the victim upside down or over the shoulder to run around and empty water from the lungs",
+      "Keeping the airway clear of visible debris"
+    ],
+    "explanation": "Carrying the victim upside down to expel water delays critical ventilation, increases the risk of vomiting and aspiration, and wastes vital oxygenation time. Start CPR immediately.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-13",
+    "topicTitle": "Electrical Injury",
+    "prompt": "A domestic electrocution victim is in contact with an active, live exposed wire. What is your immediate first step?",
+    "options": [
+      "Grab the victim by the hands to pull them away immediately",
+      "Immediately switch off the main circuit breaker / power source, or use a dry non-conductive object to separate the wire before touching the victim",
+      "Throw a bucket of water over the victim to extinguish sparks",
+      "Immediately check the victim pulse"
+    ],
+    "explanation": "Safety is paramount. Touching a victim still in contact with an energized electrical source will electrocute the rescuer. Turn off power or use dry non-conductive material first.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-14",
+    "topicTitle": "Bone Fractures",
+    "prompt": "What is the most critical first aid principle when managing a suspected closed bone fracture of an extremity?",
+    "options": [
+      "Immobilize the limb in the position found, immobilizing both the joint above and the joint below the fracture site",
+      "Attempt to forcibly pull and straighten the crooked bone back into normal alignment",
+      "Massage vigorously with herbal alcohol to relieve pain and swelling",
+      "Encourage the patient to walk to test mobility"
+    ],
+    "explanation": "Splint and immobilize the fracture site including the joint above and below in the position found. Never attempt to force a deformed bone back into place.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-15",
+    "topicTitle": "Heat Stroke & Sunstroke",
+    "prompt": "For a severe heat stroke victim exhibiting confusion, hot dry skin, or loss of consciousness, what action should be avoided?",
+    "options": [
+      "Moving the victim to a cool, shaded environment",
+      "Applying cool wet cloths or ice packs to the neck, armpits, and groin",
+      "Forcing the confused or unconscious victim to drink large gulps of water",
+      "Calling emergency services 115 immediately"
+    ],
+    "explanation": "Never give drinks to someone who is confused, lethargic, or unconscious, as this creates a severe risk of fluid aspiration into the lungs.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-16",
+    "topicTitle": "Anaphylaxis Management",
+    "prompt": "What is the first-line, life-saving medication that must be administered promptly in severe anaphylaxis?",
+    "options": [
+      "Oral paracetamol",
+      "Intramuscular Epinephrine (Adrenaline) auto-injector",
+      "Vitamin C effervescent tablets",
+      "Topical anti-itch cream"
+    ],
+    "explanation": "Intramuscular epinephrine (adrenaline) injected into the anterolateral mid-thigh is the first-line medication for anaphylaxis, reversing airway constriction and hypotension.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-17",
+    "topicTitle": "Infant Milk Aspiration",
+    "prompt": "An infant chokes on milk with regurgitation through the nose and mouth, turns cyanotic, and struggles to breathe. What is the correct protocol?",
+    "options": [
+      "Hold the baby upright and pat their head gently",
+      "Immediately give the baby water to wash the milk down",
+      "Position the infant prone head-down along your forearm and perform 5 back blows, followed by 5 chest thrusts if still obstructed",
+      "Put the infant to bed on their back to sleep it off"
+    ],
+    "explanation": "Wipe the mouth, position the infant prone with the head lower than the chest along your forearm, deliver 5 firm back blows between the shoulder blades, then turn supine for 5 chest thrusts.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-18",
+    "topicTitle": "Bee Stings First Aid",
+    "prompt": "What is the safest and most effective method to remove a bee stinger embedded in the skin?",
+    "options": [
+      "Squeeze the venom sac with your fingernails or tweezers to pull it out",
+      "Use a rigid edge (such as a clean credit card or dull blade) to scrape gently across the skin surface",
+      "Burn the stinger with a lighted match",
+      "Rub mud or toothpaste over the stinger"
+    ],
+    "explanation": "Scrape gently with a rigid card edge to flick the stinger out. Pinching or squeezing the stinger with tweezers or fingers compresses the venom sac, injecting more venom into the body.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-19",
+    "topicTitle": "Head & Spinal Trauma",
+    "prompt": "A victim falls from height with suspected cervical spine trauma. What is the key management rule?",
+    "options": [
+      "Maintain in-line manual cervical stabilization, strictly preventing head and neck twisting or flexion",
+      "Quickly lift the victim into a sitting position to check for dizziness",
+      "Twist the neck left and right to test mobility",
+      "Transport immediately on a motorcycle without a backboard"
+    ],
+    "explanation": "Any movement of an unstable cervical spine fracture can sever the spinal cord, causing permanent quadriplegia or respiratory arrest. Maintain strict neutral alignment.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-20",
+    "topicTitle": "Sprains (R.I.C.E)",
+    "prompt": "In the first 48 hours following an acute ankle or wrist sprain, which of the following is contraindicated (harmful)?",
+    "options": [
+      "Resting and elevating the injured limb",
+      "Applying cold compresses or ice packs wrapped in a cloth",
+      "Applying hot compresses, heat rubs, or vigorously massaging with medicated wine",
+      "Applying a gentle elastic compression bandage"
+    ],
+    "explanation": "Heat and vigorous massage cause vasodilation, increasing capillary bleeding, edema, and tissue damage. Use the R.I.C.E protocol (Rest, Ice, Compression, Elevation) instead.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-21",
+    "topicTitle": "Hypoglycemia in Diabetes",
+    "prompt": "A conscious diabetic patient shows signs of hypoglycemia (trembling, sweating, dizziness, pallor). What should you do first?",
+    "options": [
+      "Give 15 - 20 grams of fast-acting sugar (e.g., 3-4 candies, half a cup of fruit juice or sugar water) immediately",
+      "Administer an extra dose of insulin immediately",
+      "Instruct them to exercise intensely to raise body temperature",
+      "Keep them fasting and withhold all foods"
+    ],
+    "explanation": "Conscious hypoglycemic patients require prompt administration of 15-20g of fast-acting carbohydrates. Never administer insulin, which would drive blood glucose to fatal lows.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-22",
+    "topicTitle": "Foreign Body in Eye",
+    "prompt": "Dust or grit enters the eye causing irritation and tearing. What is the correct first aid technique?",
+    "options": [
+      "Vigorously rub the eye with knuckles or a cloth",
+      "Flush gently with clean saline or running clean water; blink gently under irrigation",
+      "Use a pointed needle to pick out the particle",
+      "Blow forcefully into the open eye"
+    ],
+    "explanation": "Rubbing the eye scratches the delicate corneal epithelium. Rinse generously with sterile saline or clean running water, blinking repeatedly to let the particle wash out naturally.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-23",
+    "topicTitle": "Fainting (Syncope)",
+    "prompt": "When helping someone who just fainted (and is confirmed to be breathing normally), what is the proper recovery position?",
+    "options": [
+      "Hold them in an upright seated position immediately",
+      "Keep them lying flat on their back and elevate both legs 20-30 cm to improve blood flow to the brain",
+      "Splash buckets of cold water on their chest and face",
+      "Force them to drink hot coffee immediately"
+    ],
+    "explanation": "Place the person supine and elevate the legs 20-30 cm above heart level. This uses gravity to promote venous return to the heart and restore cerebral perfusion.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-24",
+    "topicTitle": "Venomous Snakebite",
+    "prompt": "When someone is bitten on the lower leg by a venomous snake, which of the following is recommended?",
+    "options": [
+      "Cut an X incision across the fangs and suck out the venom by mouth",
+      "Apply a tight arterial tourniquet that completely halts limb blood circulation",
+      "Immobilize the limb below heart level, apply broad elastic pressure immobilization bandage (for neurotoxic venom), and transport to hospital quickly",
+      "Apply electrical shocks or kerosene to neutralize the venom"
+    ],
+    "explanation": "Incisions, mouth suction, and arterial tourniquets cause tissue necrosis and infection. Keep the victim calm, immobilize the limb with a splint, and transport urgently with a snake photo/description.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-25",
+    "topicTitle": "Myocardial Infarction (Heart Attack)",
+    "prompt": "A victim experiences crushing retrosternal chest pain radiating to the left arm and jaw, accompanied by cold sweat and dyspnea. What is your priority action?",
+    "options": [
+      "Encourage the victim to walk around to relieve chest tightness",
+      "Help the victim sit in a comfortable half-reclined position, loosen tight clothing, and call emergency 115 immediately",
+      "Give them a large glass of cold water to drink quickly",
+      "Administer arbitrary leftover heart medication from a neighbor"
+    ],
+    "explanation": "Allow the patient to rest in a comfortable semi-upright (Fowler) position to reduce cardiac workload, keep them calm, and call 115 immediately without delay.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-26",
+    "topicTitle": "Nosebleed (Epistaxis)",
+    "prompt": "What is the correct physical posture and first aid action for an active nosebleed?",
+    "options": [
+      "Tilt the head backwards and pack dry paper tissues deeply into both nostrils",
+      "Sit upright, lean the head slightly forward, and pinch the soft part of the nose continuously for 10-15 minutes",
+      "Lie completely flat and breathe rapidly through the nose",
+      "Blow the nose forcefully to dislodge blood clots"
+    ],
+    "explanation": "Tilting the head back causes blood to run down the throat into the stomach, triggering vomiting or aspiration. Lean forward and pinch the soft nostrils firmly for 10-15 minutes.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-27",
+    "topicTitle": "Abdominal Trauma (Evisceration)",
+    "prompt": "In severe open abdominal trauma where a loop of intestine is protruding from the wound, what is the correct first aid procedure?",
+    "options": [
+      "Attempt to push the protruding intestine back into the abdominal cavity by hand",
+      "Cover the exposed bowel gently with clean, sterile saline-soaked moist dressings and secure loosely",
+      "Sprinkle powdered antibiotics directly onto the bowel loop",
+      "Give the victim ice water to relieve abdominal pain"
+    ],
+    "explanation": "Never attempt to reinsert eviscerated organs, as this spreads catastrophic infection. Cover the organs with moist, sterile dressings to prevent tissue desiccation and necrosis.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-28",
+    "topicTitle": "Penetrating Abdominal Injury",
+    "prompt": "A victim has a large metal bar impaled into the abdomen at an accident scene. What must you do?",
+    "options": [
+      "Immediately pull the metal bar out to disinfect the puncture wound",
+      "Leave the object in place, stabilize it by packing bulky dressings around it, and transport urgently",
+      "Rotate the metal object to check if it penetrates bone",
+      "Give the victim a snack before moving"
+    ],
+    "explanation": "An impaled object acts as a mechanical tamponade against damaged blood vessels. Removing it in the field causes uncontrolled, fatal internal hemorrhage. Stabilize it in place.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-29",
+    "topicTitle": "Amputated Extremity Preservation",
+    "prompt": "What is the correct standard protocol to preserve an amputated body part (finger, hand) for microsurgical replantation?",
+    "options": [
+      "Place the amputated part directly submerged into a bucket of ice cubes",
+      "Rinse gently with saline, wrap in clean damp gauze, place in a sealed watertight plastic bag, and put that bag into a cold ice-water container",
+      "Immerse the body part in 90-degree alcohol antiseptic solution",
+      "Place the severed part into a household freezer to freeze solid"
+    ],
+    "explanation": "Indirect cooling is essential: wrap in damp gauze, place in a sealed watertight bag, and place the bag in an ice-water bath. Direct contact with ice causes irreversible frostbite tissue necrosis.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-30",
+    "topicTitle": "Pediatric Scald Burns",
+    "prompt": "A young child suffers a scald burn on the thigh. Why is applying freezing ice cubes strictly contraindicated?",
+    "options": [
+      "Because ice accelerates evaporation of water",
+      "Because children have thin skin and immature thermoregulation; ice causes rapid local frostbite and dangerous systemic hypothermia",
+      "Because ice makes the burn heal too rapidly with scar contracture",
+      "Because it dilutes skin surface enzymes"
+    ],
+    "explanation": "Children have a high body surface area to mass ratio and thin skin. Direct ice causes severe vasoconstriction, deep tissue necrosis, and triggers rapid systemic hypothermia.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-31",
+    "topicTitle": "Chemical Burns",
+    "prompt": "When industrial cleaning chemicals splash onto a victims skin or eyes, what is the crucial initial first aid step?",
+    "options": [
+      "Find an opposing neutralizing chemical (acid to neutralize alkali or vice versa)",
+      "Flush immediately and continuously under gentle, clean running water for at least 15-20 minutes",
+      "Coat the area with coconut oil or lard to seal the skin surface",
+      "Bandage tightly right away to seal off air"
+    ],
+    "explanation": "Copious irrigation with running water dilutes and removes the chemical agent. Neutralizing chemicals trigger an exothermic (heat-releasing) reaction that causes severe thermal burns on top of chemical damage.",
+    "standard": "ERC & AHA 2025 Standard"
+  },
+  {
+    "id": "tp-32",
+    "topicTitle": "Core First Aid Principles",
+    "prompt": "Before approaching any injured victim at an accident scene, what is the very first priority for a first responder?",
+    "options": [
+      "Observe and assess the safety of the scene for yourself first",
+      "Immediately rush in and lift the victim to their feet",
+      "Search for the victims phone and wallet",
+      "Focus solely on the most heavily bleeding person regardless of environmental hazards"
+    ],
+    "explanation": "The fundamental golden rule of first aid: ensure scene safety (check for live wires, toxic fumes, collapse, fire). Rescuers must never become secondary victims.",
+    "standard": "ERC & AHA 2025 Standard"
+  }
+]

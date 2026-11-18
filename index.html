@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>MedFA - Cẩm nang & Sơ cấp cứu Y tế Vì Cộng Đồng</title>
+  <meta name="i18n-title" content="home.pageTitle">
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
 
   <!-- Google Fonts -->
@@ -72,7 +73,7 @@
 
       <!-- SECTION 1: HERO SECTION -->
       <section class="relative w-full min-h-[640px] lg:min-h-[720px] flex items-center overflow-hidden bg-[#0A192F]">
-        <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" src="images/hero-cpr.webp" fetchpriority="high" decoding="async">
+        <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" data-i18n-alt="home.heroAlt" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" src="images/hero-cpr.webp" fetchpriority="high" decoding="async">
         <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F]/95 via-[#0F1E3C]/80 sm:via-[#0F1E3C]/70 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F]/60 via-transparent to-black/20"></div>
 
@@ -81,27 +82,27 @@
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/40 text-secondary-fixed backdrop-blur-0 mb-space-md">
               <span class="material-symbols-outlined text-[18px] text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
-              <span class="font-label-sm text-xs font-bold uppercase tracking-wider">SÁNG KIẾN PHỔ CẬP SƠ CẤP CỨU VIỆT NAM</span>
+              <span class="font-label-sm text-xs font-bold uppercase tracking-wider" data-i18n="home.heroBadge">SÁNG KIẾN PHỔ CẬP SƠ CẤP CỨU VIỆT NAM</span>
             </div>
 
             <!-- Title -->
-            <h1 class="font-display-lg text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-space-md">
+            <h1 class="font-display-lg text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-space-md" data-i18n="home.heroTitle">
               Học kỹ năng sơ cấp cứu,&nbsp;<span class="block text-secondary-fixed">bảo vệ người thân yêu.</span>
             </h1>
 
             <!-- Description -->
-            <p class="text-lg text-white/90 max-w-xl font-normal leading-relaxed mb-space-lg">
+            <p class="text-lg text-white/90 max-w-xl font-normal leading-relaxed mb-space-lg" data-i18n="home.heroDesc">
               Trang bị kỹ năng phản xạ sơ cấp cứu chuẩn y khoa quốc tế cho mọi gia đình, học sinh và cộng đồng Việt Nam. Đơn giản, thực tế và hoàn toàn miễn phí.
             </p>
 
             <!-- 2 CTA Buttons -->
             <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-space-lg w-full hero-cta-buttons">
               <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#E63946] hover:bg-[#D62839] text-white font-bold shadow-lg shadow-red-500/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0" href="topics.html">
-                <span class="material-symbols-outlined text-[22px]">how_to_reg</span>Tra cứu tình huống ngay
+                <span class="material-symbols-outlined text-[22px]">how_to_reg</span><span data-i18n="home.heroCtaExplore">Tra cứu tình huống ngay</span>
               </a>
               <button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/60 text-white font-semibold transition-all duration-200" onclick="document.getElementById('demo-modal').classList.remove('hidden')" type="button">
                 <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                Xem video hướng dẫn
+                <span data-i18n="home.heroCtaVideo">Xem video hướng dẫn</span>
               </button>
             </div>
 
@@ -109,12 +110,12 @@
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-white/80 text-sm pt-2">
               <div class="flex items-center text-amber-400">
                 <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                <span class="font-bold text-white ml-1">Dữ liệu chuẩn Y khoa</span>
+                <span class="font-bold text-white ml-1" data-i18n="home.trustData">Dữ liệu chuẩn Y khoa</span>
               </div>
               <span class="text-white/40 hidden sm:inline">•</span>
-              <span class="font-medium text-white">Tổng hợp các tình huống khẩn cấp thường gặp</span>
+              <span class="font-medium text-white" data-i18n="home.trustTopics">Tổng hợp các tình huống khẩn cấp thường gặp</span>
               <span class="text-white/40 hidden sm:inline">•</span>
-              <span class="hidden sm:inline text-secondary-fixed font-medium">Nền tảng mở phi lợi nhuận vì cộng đồng</span>
+              <span class="hidden sm:inline text-secondary-fixed font-medium" data-i18n="home.trustNonprofit">Nền tảng mở phi lợi nhuận vì cộng đồng</span>
             </div>
           </div>
         </div>
@@ -124,7 +125,7 @@
       <section class="w-full bg-surface-container-lowest py-space-xl">
         <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin">
           <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-xl">
-            <span class="bg-primary-container text-on-primary px-4 py-1.5 rounded-full text-xs uppercase tracking-wider font-bold mb-space-sm">
+            <span class="bg-primary-container text-on-primary px-4 py-1.5 rounded-full text-xs uppercase tracking-wider font-bold mb-space-sm" data-i18n="home.statHeadingBadge">
               HẬU QUẢ TỪ VIỆC THIẾU KỸ NĂNG SƠ CỨU
             </span>
             <div class="flex items-center justify-center gap-4 w-full max-w-xs my-space-xs">
@@ -132,7 +133,7 @@
               <span class="material-symbols-outlined text-secondary shrink-0 text-[24px]">ambulance</span>
               <div class="h-0.5 w-full bg-outline-variant"></div>
             </div>
-            <h2 class="text-2xl md:text-3xl font-bold text-on-surface mt-space-xs">
+            <h2 class="text-2xl md:text-3xl font-bold text-on-surface mt-space-xs" data-i18n="home.statTitle">
               Thống kê sơ bộ tình hình tại Việt Nam
             </h2>
             <div class="w-20 h-1 bg-secondary rounded-full mt-2"></div>
@@ -146,7 +147,7 @@
               </div>
               <div>
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">3.600</div>
-                <p class="text-sm text-on-surface-variant font-medium">Nạn nhân tai nạn thương tích mỗi ngày tại VN</p>
+                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat1Desc">Nạn nhân tai nạn thương tích mỗi ngày tại VN</p>
               </div>
             </article>
 
@@ -156,7 +157,7 @@
               </div>
               <div>
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">90</div>
-                <p class="text-sm text-on-surface-variant font-medium">Ca tử vong mỗi ngày do chấn thương tai nạn có thể ngăn ngừa</p>
+                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat2Desc">Ca tử vong mỗi ngày do chấn thương tai nạn có thể ngăn ngừa</p>
               </div>
             </article>
 
@@ -166,7 +167,7 @@
               </div>
               <div>
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">200.000</div>
-                <p class="text-sm text-on-surface-variant font-medium">Ca đột quỵ mỗi năm, chỉ 10% bình phục hoàn toàn</p>
+                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat3Desc">Ca đột quỵ mỗi năm, chỉ 10% bình phục hoàn toàn</p>
               </div>
             </article>
 
@@ -176,7 +177,7 @@
               </div>
               <div>
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">95%</div>
-                <p class="text-sm text-on-surface-variant font-medium">Nạn nhân tai nạn giao thông không được sơ cấp cứu đúng cách ban đầu</p>
+                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat4Desc">Nạn nhân tai nạn giao thông không được sơ cấp cứu đúng cách ban đầu</p>
               </div>
             </article>
 
@@ -186,7 +187,7 @@
               </div>
               <div>
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">2.000+</div>
-                <p class="text-sm text-on-surface-variant font-medium">Trẻ em tử vong do đuối nước thương tâm mỗi năm</p>
+                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat5Desc">Trẻ em tử vong do đuối nước thương tâm mỗi năm</p>
               </div>
             </article>
 
@@ -196,7 +197,7 @@
               </div>
               <div>
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">51%</div>
-                <p class="text-sm text-on-surface-variant font-medium">Nạn nhân ngừng tim tử vong trước khi kịp đến bệnh viện</p>
+                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat6Desc">Nạn nhân ngừng tim tử vong trước khi kịp đến bệnh viện</p>
               </div>
             </article>
           </div>
@@ -209,12 +210,12 @@
           <div class="text-center max-w-3xl mx-auto mb-12">
             <span class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-secondary-container/50 text-secondary text-xs font-bold uppercase tracking-wider mb-3">
               <span class="material-symbols-outlined text-[15px]">bolt</span>
-              Luyện phản xạ trong "4 Phút Vàng"
+              <span data-i18n="home.practiceBadge">Luyện phản xạ trong "4 Phút Vàng"</span>
             </span>
-            <h2 class="text-2xl md:text-4xl font-extrabold text-primary tracking-tight">
+            <h2 class="text-2xl md:text-4xl font-extrabold text-primary tracking-tight" data-i18n="home.practiceTitle">
               Rèn luyện kiến thức thành kỹ năng thực hành
             </h2>
-            <p class="text-on-surface-variant text-base mt-2">
+            <p class="text-on-surface-variant text-base mt-2" data-i18n="home.practiceSubtitle">
               Não bộ chỉ chịu được tối đa 4 phút thiếu oxy. Hãy rèn luyện phản xạ cấp cứu tức thì qua 3 chế độ tương tác chuyên sâu.
             </p>
           </div>
@@ -226,14 +227,14 @@
                 <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-on-primary transition-colors">
                   <span class="material-symbols-outlined text-[26px]">style</span>
                 </div>
-                <span class="text-xs font-bold text-primary uppercase tracking-wider">Thị giác không gian</span>
-                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-primary transition-colors">Flashcard sơ cứu 3D</h3>
-                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                <span class="text-xs font-bold text-primary uppercase tracking-wider" data-i18n="home.fcTag">Thị giác không gian</span>
+                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-primary transition-colors" data-i18n="home.fcTitle">Flashcard sơ cứu 3D</h3>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="home.fcDesc">
                   Lật thẻ 3D hai mặt mô phỏng tình huống khẩn cấp và hành động xử trí sống còn. Hỗ trợ phím tắt và chế độ luyện nhanh 10 thẻ.
                 </p>
               </div>
               <div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center justify-between text-primary font-bold text-sm">
-                <span>Luyện thẻ ngay</span>
+                <span data-i18n="home.fcCta">Luyện thẻ ngay</span>
                 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </div>
             </a>
@@ -244,14 +245,14 @@
                 <div class="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
                   <span class="material-symbols-outlined text-[26px]">timer</span>
                 </div>
-                <span class="text-xs font-bold text-secondary uppercase tracking-wider">Áp lực đếm ngược</span>
-                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-secondary transition-colors">Thử thách 4 phút vàng</h3>
-                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                <span class="text-xs font-bold text-secondary uppercase tracking-wider" data-i18n="home.tpTag">Áp lực đếm ngược</span>
+                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-secondary transition-colors" data-i18n="home.tpTitle">Thử thách 4 phút vàng</h3>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="home.tpDesc">
                   Đồng hồ đếm ngược 240 giây liên tục thử thách phản xạ với 12 ca cấp cứu khẩn cấp. Kiểm tra xem bạn có đủ bình tĩnh xử trí?
                 </p>
               </div>
               <div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center justify-between text-secondary font-bold text-sm">
-                <span>Vào thử thách</span>
+                <span data-i18n="home.tpCta">Vào thử thách</span>
                 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </div>
             </a>
@@ -262,14 +263,14 @@
                 <div class="w-12 h-12 rounded-2xl bg-tertiary/10 text-tertiary flex items-center justify-center mb-4 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
                   <span class="material-symbols-outlined text-[26px]">quiz</span>
                 </div>
-                <span class="text-xs font-bold text-tertiary uppercase tracking-wider">Đánh giá chuẩn AHA</span>
-                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-tertiary transition-colors">Trắc nghiệm tình huống</h3>
-                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                <span class="text-xs font-bold text-tertiary uppercase tracking-wider" data-i18n="home.quizTag">Đánh giá chuẩn AHA</span>
+                <h3 class="text-xl font-bold text-on-surface mt-1 group-hover:text-tertiary transition-colors" data-i18n="home.quizTitle">Trắc nghiệm tình huống</h3>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="home.quizDesc">
                   10 câu hỏi case-study thực tế có giải thích cơ chế y khoa ngay lập tức. Tính điểm, cấp huy hiệu và lưu tiến độ học tập.
                 </p>
               </div>
               <div class="mt-6 pt-4 border-t border-outline-variant/10 flex items-center justify-between text-tertiary font-bold text-sm">
-                <span>Làm bài thi</span>
+                <span data-i18n="home.quizCta">Làm bài thi</span>
                 <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </div>
             </a>
@@ -288,14 +289,14 @@
           <div class="w-16 h-16 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm flex items-center justify-center mb-space-md">
             <span class="material-symbols-outlined text-on-primary text-[32px]">monitor_heart</span>
           </div>
-          <h2 class="text-2xl md:text-4xl text-on-primary uppercase tracking-tight font-extrabold">
+          <h2 class="text-2xl md:text-4xl text-on-primary uppercase tracking-tight font-extrabold" data-i18n="home.calloutBadge">
             ĐẰNG SAU NHỮNG CON SỐ LÀ SINH MẠNG
           </h2>
-          <p class="text-sm md:text-base text-secondary-fixed uppercase tracking-wider font-semibold max-w-2xl mt-space-sm leading-relaxed">
+          <p class="text-sm md:text-base text-secondary-fixed uppercase tracking-wider font-semibold max-w-2xl mt-space-sm leading-relaxed" data-i18n="home.calloutHeadline">
             ĐÓ CÓ THỂ LÀ BẠN BÈ, ĐỒNG NGHIỆP, HÀNG XÓM, HOẶC CHÍNH NGƯỜI THÂN YÊU CỦA BẠN
           </p>
           <a class="mt-space-lg inline-flex items-center gap-2 px-8 py-4 rounded-full bg-surface-container-lowest text-primary font-bold shadow-xl hover:bg-surface-container-low transition-all duration-300 transform hover:-translate-y-0.5" href="topics.html">
-            <span class="material-symbols-outlined text-[22px]">search</span>Khám phá cẩm nang sơ cứu
+            <span class="material-symbols-outlined text-[22px]">search</span><span data-i18n="home.calloutCta">Khám phá cẩm nang sơ cứu</span>
           </a>
         </div>
       </section>
@@ -306,11 +307,11 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
             <!-- Left column -->
             <div class="lg:col-span-6 flex flex-col items-start">
-              <h2 class="text-2xl md:text-3xl font-bold text-on-surface">
+              <h2 class="text-2xl md:text-3xl font-bold text-on-surface" data-i18n="home.priorityTitle">
                 Chủ động trang bị kiến thức sơ cấp cứu vì sức khỏe gia đình!
               </h2>
               <div class="w-16 h-1 bg-secondary rounded-full mt-3 mb-space-md"></div>
-              <p class="text-lg text-secondary font-medium mb-space-lg">
+              <p class="text-lg text-secondary font-medium mb-space-lg" data-i18n="home.prioritySubtitle">
                 Sự cố sức khỏe có thể ập đến bất ngờ, không có dấu hiệu báo trước. Bạn sẽ làm gì nếu...
               </p>
               <div class="flex flex-col gap-space-md w-full">
@@ -320,8 +321,8 @@
                     <span class="material-symbols-outlined text-secondary text-[24px]">child_care</span>
                   </div>
                   <div class="flex flex-col gap-1">
-                    <h3 class="text-lg font-bold text-on-surface">Trẻ bị hóc dị vật, tắc đường thở</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                    <h3 class="text-lg font-bold text-on-surface" data-i18n="home.priChokingTitle">Trẻ bị hóc dị vật, tắc đường thở</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="home.priChokingDesc">
                       Trẻ ngậm kẹo hoặc đồ chơi bị tắc thở. Não bắt đầu tổn thương không hồi phục sau 4 phút thiếu oxy nếu không xử lý đúng kỹ thuật.
                     </p>
                   </div>
@@ -332,8 +333,8 @@
                     <span class="material-symbols-outlined text-secondary text-[24px]">ambulance</span>
                   </div>
                   <div class="flex flex-col gap-1">
-                    <h3 class="text-lg font-bold text-on-surface">Đột quỵ & Tai biến mạch máu não</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                    <h3 class="text-lg font-bold text-on-surface" data-i18n="home.priStrokeTitle">Đột quỵ & Tai biến mạch máu não</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="home.priStrokeDesc">
                       Thời gian vàng để nhận biết sớm theo quy tắc FAST và chuyển viện an toàn để cứu tế bào não trước khi di chứng vĩnh viễn xảy ra.
                     </p>
                   </div>
@@ -344,8 +345,8 @@
                     <span class="material-symbols-outlined text-secondary text-[24px]">local_fire_department</span>
                   </div>
                   <div class="flex flex-col gap-1">
-                    <h3 class="text-lg font-bold text-on-surface">Bỏng nước sôi, hóa chất và lửa nặng</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                    <h3 class="text-lg font-bold text-on-surface" data-i18n="home.priBurnsTitle">Bỏng nước sôi, hóa chất và lửa nặng</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="home.priBurnsDesc">
                       Sơ cứu hạ nhiệt dưới vòi nước sạch chảy đúng cách, khuyến cáo đặc biệt tránh các mẹo dân gian chưa kiểm chứng (nước mắm, kem đánh răng, mỡ trăn).
                     </p>
                   </div>
@@ -356,7 +357,7 @@
             <!-- Right column image -->
             <div class="lg:col-span-6 relative">
               <div class="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
-                <img alt="Bác sĩ khám và chăm sóc bé gái cùng mẹ" class="w-full h-full object-cover object-center rounded-2xl aspect-[4/3]" src="images/first-aid-child.webp" loading="lazy" decoding="async">
+                <img alt="Bác sĩ khám và chăm sóc bé gái cùng mẹ" data-i18n-alt="home.childAlt" class="w-full h-full object-cover object-center rounded-2xl aspect-[4/3]" src="images/first-aid-child.webp" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -367,7 +368,7 @@
       <section class="w-full py-space-xl bg-surface-container-lowest">
         <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin">
           <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl">
-            <h2 class="text-2xl md:text-3xl text-on-surface font-bold">
+            <h2 class="text-2xl md:text-3xl text-on-surface font-bold" data-i18n="home.sec5Heading">
               Các Tình Huống Nguy Cấp Trọng Yếu Cần Nắm Vững
             </h2>
             <div class="w-16 h-1 bg-secondary rounded-full mt-2"></div>
@@ -381,11 +382,11 @@
                 <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
                   <span class="material-symbols-outlined text-secondary text-[24px]">air</span>
                 </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2">Hóc dị vật & Tắc nghẽn đường thở</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md">Nghiệm pháp Heimlich cho người lớn, kỹ thuật vỗ lưng ấn ngực cho trẻ sơ sinh và xử lý dị vật đường thở khẩn cấp.</p>
+                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5ChokingTitle">Hóc dị vật & Tắc nghẽn đường thở</h3>
+                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5ChokingDesc">Nghiệm pháp Heimlich cho người lớn, kỹ thuật vỗ lưng ấn ngực cho trẻ sơ sinh và xử lý dị vật đường thở khẩn cấp.</p>
               </div>
               <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=hoc-di-vat-o-tre-em">
-                Xem hướng dẫn chi tiết <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </article>
 
@@ -395,11 +396,11 @@
                 <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
                   <span class="material-symbols-outlined text-secondary text-[24px]">blood_pressure</span>
                 </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2">Chảy máu & Kỹ thuật cầm máu</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md">Kỹ thuật băng ép trực tiếp, chèn ép cầm máu, cố định vết thương sâu và xử trí chảy máu cấp cứu.</p>
+                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5BleedingTitle">Chảy máu & Kỹ thuật cầm máu</h3>
+                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5BleedingDesc">Kỹ thuật băng ép trực tiếp, chèn ép cầm máu, cố định vết thương sâu và xử trí chảy máu cấp cứu.</p>
               </div>
               <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=chay-mau-va-cam-mau">
-                Xem hướng dẫn chi tiết <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </article>
 
@@ -409,11 +410,11 @@
                 <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
                   <span class="material-symbols-outlined text-secondary text-[24px]">local_fire_department</span>
                 </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2">Bỏng nhiệt & Sơ cứu an toàn</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md">Làm mát vết bỏng bằng nước sạch, băng vô trùng, loại bỏ biến chứng nhiễm trùng và hạ độ sâu tổn thương biểu mô.</p>
+                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5BurnsTitle">Bỏng nhiệt & Sơ cứu an toàn</h3>
+                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5BurnsDesc">Làm mát vết bỏng bằng nước sạch, băng vô trùng, loại bỏ biến chứng nhiễm trùng và hạ độ sâu tổn thương biểu mô.</p>
               </div>
               <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=bong-nhiet">
-                Xem hướng dẫn chi tiết <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </article>
 
@@ -423,11 +424,11 @@
                 <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
                   <span class="material-symbols-outlined text-secondary text-[24px]">ecg_heart</span>
                 </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2">Hồi sinh tim phổi người lớn CPR & AED</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md">Tần số ép tim 100-120 lần/phút, độ sâu chuẩn xác, kết hợp thông khí và vận hành máy sốc tim tự động AED ngoài cộng đồng.</p>
+                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5CprTitle">Hồi sinh tim phổi người lớn CPR & AED</h3>
+                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5CprDesc">Tần số ép tim 100-120 lần/phút, độ sâu chuẩn xác, kết hợp thông khí và vận hành máy sốc tim tự động AED ngoài cộng đồng.</p>
               </div>
               <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon">
-                Xem hướng dẫn chi tiết <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </article>
 
@@ -437,11 +438,11 @@
                 <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
                   <span class="material-symbols-outlined text-secondary text-[24px]">psychology</span>
                 </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2">Nhận biết & Sơ cứu Đột quỵ</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md">Nhận diện quy tắc FAST (mặt méo, yếu tay, nói khó), gọi 115 khẩn cấp và bảo vệ tính mạng trong giờ vàng.</p>
+                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5StrokeTitle">Nhận biết & Sơ cứu Đột quỵ</h3>
+                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5StrokeDesc">Nhận diện quy tắc FAST (mặt méo, yếu tay, nói khó), gọi 115 khẩn cấp và bảo vệ tính mạng trong giờ vàng.</p>
               </div>
               <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=dot-quy">
-                Xem hướng dẫn chi tiết <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </article>
 
@@ -451,11 +452,11 @@
                 <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
                   <span class="material-symbols-outlined text-secondary text-[24px]">wb_sunny</span>
                 </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2">Say nắng, Sốc nhiệt & Đột quỵ nhiệt</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md">Hạ nhiệt cấp tốc, bù điện giải, nhận diện sụp đổ thân nhiệt ở xứ nhiệt đới và phòng ngừa trụy mạch tuần hoàn.</p>
+                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5HeatstrokeTitle">Say nắng, Sốc nhiệt & Đột quỵ nhiệt</h3>
+                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5HeatstrokeDesc">Hạ nhiệt cấp tốc, bù điện giải, nhận diện sụp đổ thân nhiệt ở xứ nhiệt đới và phòng ngừa trụy mạch tuần hoàn.</p>
               </div>
               <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=soc-nhiet-say-nang">
-                Xem hướng dẫn chi tiết <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </article>
           </div>
@@ -471,15 +472,15 @@
                 <span class="material-symbols-outlined text-[32px]">health_and_safety</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-primary">Khám phá kho tàng sơ cấp cứu chuẩn y khoa</h3>
-                <p class="text-sm text-on-surface-variant max-w-xl mt-1">
+                <h3 class="text-xl font-bold text-primary" data-i18n="home.sec6Title">Khám phá kho tàng sơ cấp cứu chuẩn y khoa</h3>
+                <p class="text-sm text-on-surface-variant max-w-xl mt-1" data-i18n="home.sec6Desc">
                   Khám phá kho tàng cẩm nang, tài liệu và quy trình sơ cấp cứu chuẩn y khoa quốc tế hoàn toàn miễn phí cùng MedFA để chủ động bảo vệ gia đình và người thân.
                 </p>
               </div>
             </div>
             <div class="flex flex-wrap items-center gap-3">
               <a class="px-6 py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-semibold transition-colors flex items-center gap-2" href="topics.html">
-                <span class="material-symbols-outlined text-[20px]">menu_book</span>Vào thư viện kiến thức ngay
+                <span class="material-symbols-outlined text-[20px]">menu_book</span><span data-i18n="home.enterLibrary">Vào thư viện kiến thức ngay</span>
               </a>
             </div>
           </div>
@@ -491,7 +492,7 @@
   <!-- Interactive Demo Modal -->
   <div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4" id="demo-modal">
     <div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
-      <button aria-label="Đóng cửa sổ" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('demo-modal').classList.add('hidden')">
+      <button aria-label="Đóng cửa sổ" data-i18n-aria-label="common.closeModal" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('demo-modal').classList.add('hidden')">
         <span class="material-symbols-outlined">close</span>
       </button>
       <div class="flex items-center gap-3 mb-4">
@@ -499,20 +500,20 @@
           <span class="material-symbols-outlined">smart_display</span>
         </div>
         <div>
-          <h4 class="font-bold text-on-surface">Video 4 phút: Ép tim CPR & Xử lý hóc dị vật</h4>
-          <p class="text-xs text-on-surface-variant">Tổng quan chương trình sơ cấp cứu nền tảng MedFA</p>
+          <h4 class="font-bold text-on-surface" data-i18n="home.demoModalTitle">Video 4 phút: Ép tim CPR & Xử lý hóc dị vật</h4>
+          <p class="text-xs text-on-surface-variant" data-i18n="home.demoModalSub">Tổng quan chương trình sơ cấp cứu nền tảng MedFA</p>
         </div>
       </div>
       <div class="aspect-video bg-surface-container-highest rounded-xl flex items-center justify-center relative overflow-hidden">
         <div class="text-center p-4">
           <span class="material-symbols-outlined text-primary text-5xl mb-2" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-          <p class="font-semibold text-on-surface">Hệ thống học tập trực tuyến sẵn sàng</p>
-          <p class="text-xs text-on-surface-variant mt-1">Toàn bộ chuỗi bài học video cùng bài kiểm tra tương tác được mở miễn phí trong cổng học viên.</p>
+          <p class="font-semibold text-on-surface" data-i18n="home.demoReady">Hệ thống học tập trực tuyến sẵn sàng</p>
+          <p class="text-xs text-on-surface-variant mt-1" data-i18n="home.demoDesc">Toàn bộ chuỗi bài học video cùng bài kiểm tra tương tác được mở miễn phí trong cổng học viên.</p>
         </div>
       </div>
       <div class="mt-6 flex justify-end gap-3">
-        <button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" onclick="document.getElementById('demo-modal').classList.add('hidden')">Đóng</button>
-        <a class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-on-primary font-semibold" href="topics.html">Bắt đầu tra cứu ngay</a>
+        <button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" onclick="document.getElementById('demo-modal').classList.add('hidden')" data-i18n="home.demoClose">Đóng</button>
+        <a class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-on-primary font-semibold" href="topics.html" data-i18n="home.demoStart">Bắt đầu tra cứu ngay</a>
       </div>
     </div>
   </div>
@@ -521,6 +522,8 @@
   <div id="footer-placeholder"></div>
 
   <!-- Main JavaScript File -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/seo-config.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/chatbot-gemini.js"></script>

@@ -168,7 +168,16 @@ const Storage = (() => {
   function updateBookmarkButtonUI(btn, active) {
     btn.classList.toggle('is-bookmarked', active);
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-    btn.setAttribute('title', active ? 'Bỏ lưu bài học này' : 'Lưu vào cẩm nang của tôi');
+    const titleKey = active ? 'topics.bookmarkRemove' : 'detail.bookmarkTitle';
+    btn.dataset.i18nTitle = titleKey;
+    btn.title = window.t ? t(titleKey) : (active ? 'Bỏ lưu bài học này' : 'Lưu bài học này');
+
+    const textEl = btn.querySelector('.bookmark-text');
+    if (textEl) {
+      textEl.textContent = active
+        ? (window.t ? t('topics.bookmarkSaved') : 'Đã lưu')
+        : (window.t ? t('topics.bookmarkSave') : 'Lưu bài học');
+    }
 
     const icon = btn.querySelector('.material-symbols-outlined') || btn.querySelector('.bookmark-icon');
     if (icon) {
@@ -204,7 +213,7 @@ const Storage = (() => {
   function initEventDelegation() {
     if (typeof document === 'undefined') return;
 
-    // Lắng nghe click toàn document
+    // Capture bookmark clicks before the surrounding topic card handles navigation.
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('.btn-bookmark, [data-action="bookmark"]');
       if (!btn) return;
@@ -225,7 +234,7 @@ const Storage = (() => {
         updateBookmarkButtonUI(b, newState);
       });
       updateBookmarkButtonUI(btn, newState);
-    });
+    }, { capture: true });
 
     // Tự động kiểm tra và cập nhật icon khi DOM sẵn sàng
     if (document.readyState === 'loading') {

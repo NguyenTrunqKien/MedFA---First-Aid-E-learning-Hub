@@ -146,9 +146,14 @@
 }
 
 #medfa-chat-window {
+  position: relative;
   width: min(380px, calc(100vw - 2 * var(--chat-edge) - var(--safe-left, 0px) - var(--safe-right, 0px)));
   height: min(520px, calc(100vh - var(--medfa-header-height) - var(--chat-bottom) - 5rem));
   height: min(520px, calc(100dvh - var(--medfa-header-height) - var(--chat-bottom) - 5rem));
+}
+
+#chat-settings-modal {
+  overflow-y: auto;
 }
 
 #chat-messages-container {
@@ -385,4 +390,8 @@
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   color: var(--color-primary, #00288e);
+}
+
+#language-dropdown-menu [aria-pressed="true"] {
+  background-color: var(--color-surface-container-high);
 }

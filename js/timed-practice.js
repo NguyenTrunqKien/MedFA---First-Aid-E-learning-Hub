@@ -1,3 +1,39 @@
+
+let enTimedPool = null;
+
+async function getEnTimedPool() {
+  if (enTimedPool) return enTimedPool;
+  try {
+    const res = await fetch('data/en/timed_practice.json');
+    if (res.ok) {
+      enTimedPool = await res.json();
+      return enTimedPool;
+    }
+  } catch (e) {
+    console.warn('Cannot fetch data/en/timed_practice.json:', e);
+  }
+  return null;
+}
+
+function translateQuestionsList(list, enData) {
+  if (!Array.isArray(list) || !Array.isArray(enData)) return list;
+  const enMap = new Map();
+  enData.forEach(item => { if (item && item.id) enMap.set(item.id, item); });
+
+  return list.map(q => {
+    const en = enMap.get(q.id);
+    if (!en) return q;
+    return {
+      ...q,
+      topicTitle: en.topicTitle || q.topicTitle,
+      prompt: en.prompt || q.prompt,
+      options: Array.isArray(en.options) && en.options.length === q.options.length ? en.options : q.options,
+      explanation: en.explanation || q.explanation,
+      standard: en.standard || q.standard
+    };
+  });
+}
+
 /**
  * MedFA Timed Practice Controller - Thử thách phản xạ "4 Phút Vàng"
  * Chức năng: Đếm ngược 240 giây bằng SVG Circular Ring (stroke-dashoffset),
@@ -206,10 +242,12 @@ const DEFAULT_QUESTIONS = [
   }
 ];
 
+let baseQuestions = [];
 let questions = [];
 let index = 0;
 let score = 0;
 let deadline = 0;
+let elapsed = 0;
 let timer = null;
 let answers = [];
 
@@ -229,14 +267,15 @@ function shuffle(array) {
   return cloned;
 }
 
-function showReview(completed) {
-  const elapsed = completed ? Math.floor((Date.now() - deadline + duration * 1000) / 1000) : duration;
-  reviewTime.textContent = 'Thời gian làm bài · ' + formatTime(elapsed);
+function showReview() {
+  reviewTime.textContent = window.t
+    ? t('tp.timeElapsed', { time: formatTime(elapsed) })
+    : ('Thời gian làm bài · ' + formatTime(elapsed));
   const stats = [
-    ['Tỷ lệ đúng', Math.round(score / questions.length * 100) + '%'],
-    ['Đúng', score],
-    ['Sai', answers.length - score],
-    ['Bỏ trống', questions.length - answers.length]
+    [window.t ? t('tp.statAccuracy') : 'Tỷ lệ đúng', Math.round(score / questions.length * 100) + '%'],
+    [window.t ? t('tp.statCorrect') : 'Đúng', score],
+    [window.t ? t('tp.statWrong') : 'Sai', answers.length - score],
+    [window.t ? t('tp.statSkipped') : 'Bỏ trống', questions.length - answers.length]
   ];
   reviewStats.replaceChildren();
   for (const [label, value] of stats) {
@@ -257,14 +296,20 @@ function showReview(completed) {
     const selected = answers[position];
     const isAnswered = selected !== undefined;
     const isCorrect = isAnswered && selected === item.answer;
-    const state = !isAnswered ? 'Bỏ trống' : isCorrect ? 'Đúng' : 'Sai';
+    const stateAttr = !isAnswered ? 'Bỏ trống' : isCorrect ? 'Đúng' : 'Sai';
+    const stateLabel = !isAnswered
+      ? (window.t ? t('tp.statSkipped') : 'Bỏ trống')
+      : isCorrect
+        ? (window.t ? t('tp.statCorrect') : 'Đúng')
+        : (window.t ? t('tp.statWrong') : 'Sai');
 
     const entry = document.createElement('li');
     entry.id = 'review-question-' + (position + 1);
-    entry.dataset.state = state;
+    entry.dataset.state = stateAttr;
 
     const title = document.createElement('h3');
-    title.textContent = 'Câu ' + (position + 1) + ' · ' + state;
+    const qPrefix = window.t ? t('tp.questionNumber', { num: position + 1 }) : ('Câu ' + (position + 1));
+    title.textContent = qPrefix + ' · ' + stateLabel;
 
     const prompt = document.createElement('p');
     prompt.style.fontWeight = '700';
@@ -302,19 +347,19 @@ function showReview(completed) {
         optItem.classList.add('is-correct');
         const badge = document.createElement('span');
         badge.className = 'review-opt-badge badge-correct';
-        badge.textContent = '✓ Bạn chọn đúng';
+        badge.textContent = window.t ? t('tp.badgeCorrect') : '✓ Bạn chọn đúng';
         optItem.append(badge);
       } else if (optIdx === selected && !isCorrect) {
         optItem.classList.add('is-wrong');
         const badge = document.createElement('span');
         badge.className = 'review-opt-badge badge-wrong';
-        badge.textContent = '✗ Bạn đã chọn';
+        badge.textContent = window.t ? t('tp.badgeWrong') : '✗ Bạn đã chọn';
         optItem.append(badge);
       } else if (optIdx === item.answer && !isCorrect) {
         optItem.classList.add('is-correct');
         const badge = document.createElement('span');
         badge.className = 'review-opt-badge badge-correct';
-        badge.textContent = '✓ Đáp án đúng';
+        badge.textContent = window.t ? t('tp.badgeAnswer') : '✓ Đáp án đúng';
         optItem.append(badge);
       }
 
@@ -327,7 +372,7 @@ function showReview(completed) {
       const explainEl = document.createElement('p');
       explainEl.style.cssText = 'margin-top: 0.65rem; font-size: 0.9rem; color: var(--color-on-surface-variant); background: var(--color-surface-container-low); padding: 0.65rem 0.9rem; border-radius: 0.5rem; border-left: 3px solid var(--color-primary); line-height: 1.45;';
       const strongEl = document.createElement('strong');
-      strongEl.textContent = '💡 Giải thích chuyên môn: ';
+      strongEl.textContent = window.t ? t('tp.explanationPrefix') : '💡 Giải thích chuyên môn: ';
       explainEl.append(strongEl, document.createTextNode(item.explanation));
       entry.append(explainEl);
     }
@@ -343,7 +388,8 @@ function showReview(completed) {
       iconEl.className = 'material-symbols-outlined';
       iconEl.style.fontSize = '16px';
       iconEl.textContent = 'menu_book';
-      linkEl.append(iconEl, document.createTextNode(' Ôn lại bài học: ' + (item.topicTitle || 'Chi tiết chủ đề')));
+      const reviewTopicPrefix = window.t ? t('tp.reviewTopic') : ' Ôn lại bài học: ';
+      linkEl.append(iconEl, document.createTextNode(reviewTopicPrefix + (item.topicTitle || 'Chi tiết chủ đề')));
       topicEl.append(linkEl);
       entry.append(topicEl);
     }
@@ -352,32 +398,40 @@ function showReview(completed) {
 
     const link = document.createElement('a');
     link.href = '#' + entry.id;
-    link.dataset.state = state;
-    link.textContent = (position + 1) + ' · ' + state;
+    link.dataset.state = stateAttr;
+    link.textContent = (position + 1) + ' · ' + stateLabel;
     reviewLinks.append(link);
   });
   review.hidden = false;
 }
 
-function finish(completed) {
-  clearInterval(timer);
-  choices.replaceChildren();
-  const passed = completed && score >= Math.ceil(questions.length * 0.7);
-  const result = passed ? 'complete' : completed ? 'failed' : 'timeout';
+function renderOutcome(result) {
   const outcomes = {
-    complete: { icon: 'emoji_events', title: 'Đạt chuẩn phản xạ 4 Phút Vàng!' },
-    failed: { icon: 'cancel', title: 'Chưa đạt thử thách phản xạ' },
-    timeout: { icon: 'timer_off', title: 'Hết 4 phút vàng!' }
+    complete: { icon: 'emoji_events', title: window.t ? t('tp.outcomeComplete') : 'Đạt chuẩn phản xạ 4 Phút Vàng!' },
+    failed: { icon: 'cancel', title: window.t ? t('tp.outcomeFailed') : 'Chưa đạt thử thách phản xạ' },
+    timeout: { icon: 'timer_off', title: window.t ? t('tp.outcomeTimeout') : 'Hết 4 phút vàng!' }
   };
-  panel.dataset.result = result;
   resultIcon.textContent = outcomes[result].icon;
   resultIcon.hidden = false;
   resultIcon.style.display = '';
   question.style.display = 'block';
   question.textContent = outcomes[result].title;
-  feedback.textContent = 'Bạn trả lời chính xác ' + score + ' / ' + questions.length + ' tình huống phản xạ cấp cứu.';
+  feedback.textContent = window.t
+    ? t('tp.feedbackFormat', { score, total: questions.length })
+    : ('Bạn trả lời chính xác ' + score + ' / ' + questions.length + ' tình huống phản xạ cấp cứu.');
 
-  start.innerHTML = '<span class="material-symbols-outlined">restart_alt</span> Thử thách lại';
+  start.innerHTML = '<span class="material-symbols-outlined">restart_alt</span> <span>' + (window.t ? t('tp.restartBtn') : 'Thử thách lại') + '</span>';
+}
+
+function finish(completed) {
+  clearInterval(timer);
+  timer = null;
+  elapsed = completed ? Math.floor((Date.now() - deadline + duration * 1000) / 1000) : duration;
+  choices.replaceChildren();
+  const passed = completed && score >= Math.ceil(questions.length * 0.7);
+  const result = passed ? 'complete' : completed ? 'failed' : 'timeout';
+  panel.dataset.result = result;
+  renderOutcome(result);
   start.style.display = 'inline-flex';
   start.disabled = false;
 
@@ -391,7 +445,7 @@ function finish(completed) {
     });
   }
 
-  showReview(completed);
+  showReview();
 
   // Tự động cuộn mượt xuống phần xem thống kê và đáp án chi tiết
   setTimeout(() => {
@@ -432,7 +486,7 @@ function showQuestion() {
   question.replaceChildren();
   const badgeSpan = document.createElement('span');
   badgeSpan.className = 'q-progress-badge';
-  badgeSpan.textContent = `Tình huống ${index + 1} / ${questions.length}`;
+  badgeSpan.textContent = window.t ? t('tp.progressBadge', { current: index + 1, total: questions.length }) : `Tình huống ${index + 1} / ${questions.length}`;
   const textDiv = document.createElement('div');
   textDiv.className = 'q-text';
   textDiv.textContent = item.prompt;
@@ -473,21 +527,20 @@ start.addEventListener('click', async () => {
   feedback.textContent = '';
   clock.classList.remove('warning');
 
-  // Nạp dữ liệu câu hỏi phản xạ (Ưu tiên fetch timed_practice.json, tự động fallback nếu offline/CORS)
+  let pool = DEFAULT_QUESTIONS;
   try {
     const response = await fetch('data/timed_practice.json');
     if (response.ok) {
       const data = await response.json();
-      const pool = Array.isArray(data) && data.length > 0 ? data : DEFAULT_QUESTIONS;
-      // Lấy ngẫu nhiên 12 tình huống khẩn cấp cho mỗi lượt thử thách 4 phút vàng
-      questions = shuffle(pool).slice(0, 12);
-    } else {
-      questions = shuffle(DEFAULT_QUESTIONS).slice(0, 12);
+      if (Array.isArray(data) && data.length > 0) pool = data;
     }
-  } catch (err) {
-    console.warn('Đang chạy ở chế độ offline (local file://), nạp bộ câu hỏi phản xạ dự phòng.');
-    questions = shuffle(DEFAULT_QUESTIONS).slice(0, 12);
+  } catch (error) {
+    console.warn('[MedFA Timed Practice] Using backup questions.', error);
   }
+
+  baseQuestions = shuffle(pool).slice(0, 12);
+  const enData = window.I18n?.getLanguage() === 'en' ? await getEnTimedPool() : null;
+  questions = translateQuestionsList(baseQuestions, window.I18n?.getLanguage() === 'en' ? enData : null);
 
   delete panel.dataset.result;
   resultIcon.hidden = true;
@@ -509,3 +562,35 @@ start.addEventListener('click', async () => {
     challengeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 });
+
+// Lắng nghe sự kiện chuyển đổi ngôn ngữ
+if (typeof window !== 'undefined') {
+  window.addEventListener('medfa:languageChanged', async () => {
+    if (!questions.length) return;
+    const language = window.I18n.getLanguage();
+    const enData = language === 'en' ? await getEnTimedPool() : null;
+    if (window.I18n.getLanguage() !== language) return;
+    questions = translateQuestionsList(baseQuestions, enData);
+
+    // If in progress
+    if (timer && index < questions.length && choices.children.length > 0) {
+      const item = questions[index];
+      const badgeSpan = question.querySelector('.q-progress-badge');
+      const textDiv = question.querySelector('.q-text');
+      if (badgeSpan) badgeSpan.textContent = window.t ? t('tp.progressBadge', { current: index + 1, total: questions.length }) : `Tình huống ${index + 1} / ${questions.length}`;
+      if (textDiv) textDiv.textContent = item.prompt;
+      const choiceBtns = choices.querySelectorAll('.choice-btn');
+      choiceBtns.forEach((btn, optIdx) => {
+        const lbl = btn.querySelector('.choice-label');
+        if (lbl && item.options[optIdx]) lbl.textContent = item.options[optIdx];
+      });
+    }
+
+    // If review is visible
+    if (review && !review.hidden) {
+      showReview();
+      const resType = panel.dataset.result;
+      if (resType) renderOutcome(resType);
+    }
+  });
+}

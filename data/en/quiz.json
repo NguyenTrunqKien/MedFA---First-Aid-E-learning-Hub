@@ -1,0 +1,252 @@
+[
+  {
+    "id": "unresponsive",
+    "scenario": "You find an adult lying motionless, unresponsive to calling and gentle tapping. The surrounding area is safe.",
+    "question": "What should you do next?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Call for help, ask someone to call emergency (115) and bring an AED; check for normal breathing and start CPR if breathing is abnormal."
+      },
+      {
+        "id": "b",
+        "text": "Give the person water to help them regain consciousness."
+      },
+      {
+        "id": "c",
+        "text": "Leave the person alone for a few minutes and recheck later."
+      },
+      {
+        "id": "d",
+        "text": "Slap their face firmly to wake them up."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Calling emergency services early and initiating CPR when a person is unresponsive and not breathing normally is the top priority. Never give food or liquids to an unconscious person."
+  },
+  {
+    "id": "cpr",
+    "scenario": "An adult suddenly collapses, is unresponsive, and is only gasping (agonal breathing). Others are nearby.",
+    "question": "What is the most appropriate action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Place them on their side and wait for spontaneous recovery."
+      },
+      {
+        "id": "b",
+        "text": "Ask someone to call 115 and get an AED; immediately start hard and fast chest compressions in the center of the chest."
+      },
+      {
+        "id": "c",
+        "text": "Give them sugar water to drink."
+      },
+      {
+        "id": "d",
+        "text": "Only massage their hands and feet."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Agonal gasps are not normal breathing. Call 115, deploy an AED as soon as available, and begin continuous chest compressions in the center of the chest; if untrained, follow emergency dispatcher instructions."
+  },
+  {
+    "id": "choking",
+    "scenario": "An adult eating a meal suddenly cannot speak, cough, or breathe, appearing in severe panic.",
+    "question": "How should you respond?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Offer them water and urge them to swallow."
+      },
+      {
+        "id": "b",
+        "text": "Perform a blind finger sweep deep into the throat."
+      },
+      {
+        "id": "c",
+        "text": "Ask someone to call 115; deliver alternating back blows and abdominal thrusts according to first aid guidelines."
+      },
+      {
+        "id": "d",
+        "text": "Have the person lie flat on their back."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Severe airway obstruction requires urgent intervention. For a conscious adult, alternate 5 back blows and 5 abdominal thrusts; avoid blind finger sweeps. If the person loses consciousness, begin CPR."
+  },
+  {
+    "id": "bleeding",
+    "scenario": "A person has a severe forearm laceration with heavy, continuous bleeding. The scene is secure.",
+    "question": "What is the appropriate initial first aid measure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Apply firm, continuous direct pressure to the wound using clean gauze or cloth and call emergency if severe."
+      },
+      {
+        "id": "b",
+        "text": "Rinse the wound under running water for a prolonged period before stopping the bleeding."
+      },
+      {
+        "id": "c",
+        "text": "Repeatedly remove blood clots to inspect the wound."
+      },
+      {
+        "id": "d",
+        "text": "Apply unknown powder or herbal paste directly onto the wound."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Continuous direct pressure with clean material is the gold standard for hemorrhage control. Do not remove soaked gauze; layer additional dressings on top and call 115 for life-threatening bleeding."
+  },
+  {
+    "id": "burn",
+    "scenario": "A person sustains a scald burn on the forearm from hot water. The burned area is not adhering to clothing.",
+    "question": "What should you do immediately?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Apply ice directly onto the burn."
+      },
+      {
+        "id": "b",
+        "text": "Cool the burn under cool, clean running water and remove nearby jewelry if easily removable."
+      },
+      {
+        "id": "c",
+        "text": "Apply toothpaste to relieve pain."
+      },
+      {
+        "id": "d",
+        "text": "Puncture any blisters that form."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Cool the burn under clean running tap water (15–20°C) for 15–20 minutes as soon as possible. Avoid ice, which causes tissue necrosis. Never apply toothpaste, fish sauce, or burst blisters."
+  },
+  {
+    "id": "seizure",
+    "scenario": "A person suddenly falls to the ground and experiences generalized convulsive seizures. The area contains hard tables and chairs.",
+    "question": "What should you do during the active seizure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Firmly hold down their limbs to stop the movements."
+      },
+      {
+        "id": "b",
+        "text": "Insert a spoon or chopstick into their mouth to prevent tongue biting."
+      },
+      {
+        "id": "c",
+        "text": "Clear dangerous objects away, protect the head with something soft, time the seizure, and do not restrain or put anything into the mouth."
+      },
+      {
+        "id": "d",
+        "text": "Administer oral medicine or water immediately."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Ensure safety by clearing sharp hazards, cushion the head, and time the event. Never restrain the person or force objects into their mouth. Call emergency if the seizure lasts >5 minutes, repeats, or causes injury."
+  },
+  {
+    "id": "stroke",
+    "scenario": "A person suddenly exhibits facial drooping, one-sided arm weakness, and slurred speech.",
+    "question": "What is the top priority action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Offer food and water to regain energy."
+      },
+      {
+        "id": "b",
+        "text": "Note the exact time symptoms began and immediately call 115."
+      },
+      {
+        "id": "c",
+        "text": "Wait a few hours to see if symptoms resolve spontaneously."
+      },
+      {
+        "id": "d",
+        "text": "Administer someone else's blood pressure medication."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Facial droop, arm weakness, and slurred speech are hallmark signs of stroke (FAST). Immediately call 115 and record the last known normal time; do not give food, water, or medications."
+  },
+  {
+    "id": "fainting",
+    "scenario": "A person just fainted and has now regained consciousness, resting in a safe position with no obvious injuries.",
+    "question": "What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Make them stand up immediately."
+      },
+      {
+        "id": "b",
+        "text": "Force them to drink water while still drowsy."
+      },
+      {
+        "id": "c",
+        "text": "Keep them lying down to rest, monitor responsiveness and breathing; call emergency if they do not recover quickly or show severe symptoms."
+      },
+      {
+        "id": "d",
+        "text": "Slap their face or splash cold water on them."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Keep the individual lying down safely and monitor vitals. Do not offer drinks until fully alert. Call 115 if unconsciousness is prolonged, or accompanied by chest pain, shortness of breath, or head trauma."
+  },
+  {
+    "id": "anaphylaxis",
+    "scenario": "After trying a new dish, a person develops full-body hives, lip swelling, and severe difficulty breathing.",
+    "question": "This indicates a potentially life-threatening reaction. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Call 115 immediately; assist in using their prescribed epinephrine auto-injector if available and follow emergency instructions."
+      },
+      {
+        "id": "b",
+        "text": "Wait to see if the rash subsides on its own."
+      },
+      {
+        "id": "c",
+        "text": "Offer more food to test the allergy."
+      },
+      {
+        "id": "d",
+        "text": "Have the person walk by themselves to a clinic."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Breathing difficulty accompanied by facial/lip swelling following allergen exposure is anaphylaxis—a critical medical emergency. Help administer their own epinephrine auto-injector if prescribed and immediately call 115."
+  },
+  {
+    "id": "poisoning",
+    "scenario": "You discover a conscious individual who may have accidentally swallowed cleaning chemicals.",
+    "question": "What is the safest management course?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Induce vomiting to expel the chemical."
+      },
+      {
+        "id": "b",
+        "text": "Have them drink milk or vinegar to neutralize the poison."
+      },
+      {
+        "id": "c",
+        "text": "Call 115 or a poison control center; keep the product packaging and do not induce vomiting or give oral substances unless instructed."
+      },
+      {
+        "id": "d",
+        "text": "Allow them to go to sleep."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Poisoning cases require professional guidance from emergency services or poison control. Never induce vomiting or administer neutralizing liquids without medical direction, as caustic substances cause further esophageal damage."
+  }
+]

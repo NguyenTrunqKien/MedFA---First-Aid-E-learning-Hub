@@ -25,7 +25,7 @@ MedFA---First-Aid-E-learning-Hub/
 ├── js/
 │   ├── translations.js                [mới] Từ điển chữ giao diện vi/en
 │   ├── i18n.js                        [mới] Đọc, lưu và áp dụng ngôn ngữ
-│   ├── main.js                        [sửa] Header, footer, menu, tìm kiếm toàn cục
+│   ├── main.js                        [sửa] Header, footer, menu và lối vào Thư viện
 │   ├── data-loader.js                 [sửa] Nạp và ghép nội dung dịch
 │   ├── render-topics.js               [sửa] Thư viện, tìm kiếm và bộ lọc
 │   ├── topic-detail.js                [sửa] Nội dung bài và lưu ý y khoa
@@ -64,11 +64,11 @@ Khóa `nav.topics` ánh xạ tới `Chủ đề sơ cứu` trong `vi` và `First
 
 ## 2. Dữ liệu học tập và trạng thái
 
-Các file trong `data/en/` lưu ID và những trường chữ cần dịch. Nạp bản dịch của bộ dữ liệu đang dùng khi vào chế độ tiếng Anh và tái sử dụng kết quả trong trang. Ghép bản dịch vào dữ liệu hiển thị theo ID. Dữ liệu gốc tiếp tục cung cấp các mã danh mục, mức khẩn cấp, đáp án đúng, liên kết, ID dùng cho bookmark và giá trị dùng để lưu tiến độ. Khi thiếu trường dịch hoặc không tải được file dịch, dùng chữ tiếng Việt tương ứng. Với bước hướng dẫn và danh sách theo thứ tự, kiểm tra số mục và thứ tự trước khi áp dụng bản dịch.
+Các file trong `data/en/` lưu ID và những trường chữ cần dịch. Nạp bản dịch của bộ dữ liệu đang dùng khi vào chế độ tiếng Anh và tái sử dụng kết quả trong trang. Ghép bản dịch vào dữ liệu hiển thị theo ID. Dữ liệu gốc tiếp tục cung cấp các mã danh mục, mức khẩn cấp, đáp án đúng, liên kết, ID dùng cho bookmark và giá trị dùng để lưu tiến độ. Khi thiếu trường dịch hoặc không tải được file dịch, dùng chữ tiếng Việt tương ứng. Với `steps`, `timeline`, `dos` và `donts`, giữ cùng số mục và thứ tự nội dung như bản gốc. Khi nạp dữ liệu, kiểm tra độ dài và nội dung trống, đồng thời đối chiếu số thứ tự của từng bước và mức của từng mốc thời gian. Nếu một danh sách không hợp lệ, dùng danh sách tiếng Việt tương ứng. Người rà soát bản dịch cần đối chiếu thứ tự và ý nghĩa của những mục không có mã riêng.
 
 | Phần | Cách triển khai | Trạng thái cần giữ khi đổi ngôn ngữ |
 |---|---|---|
-| Thư viện và tìm kiếm | Dịch tiêu đề, mô tả và nhãn danh mục. Tìm kiếm bằng chữ đang hiển thị, kể cả trong tìm kiếm toàn cục ở header. Lọc theo mã danh mục gốc. | Từ khóa đang nhập, danh mục đang chọn và danh sách bài đã lưu. |
+| Thư viện và tìm kiếm | Kính lúp trên header mở trang Thư viện. Ô tìm kiếm tại Thư viện tìm theo nội dung ở ngôn ngữ đang chọn. Bộ lọc dùng mã danh mục gốc. | Từ khóa đang nhập, danh mục đang chọn và danh sách bài đã lưu. |
 | Chi tiết bài học | Ghép theo `id`. Dịch phần mở đầu, cảnh báo, các bước, điều nên làm và nên tránh, cùng các nhãn có hiển thị. Giữ `stepNumber`, liên kết nguồn và video theo dữ liệu gốc. | ID trên URL `topic-detail.html?id=…` và trạng thái bài đã lưu. |
 | Flashcard | Tái sử dụng bản dịch từ dữ liệu chủ đề để cập nhật hai mặt thẻ. | Thứ tự bộ thẻ, thẻ hiện tại, mặt đang mở và tiến độ. |
 | Quiz | Ghép `scenario`, `question` và `explanation` theo ID câu hỏi. Ghép `options[].text` theo `options[].id`, chẳng hạn `a` hoặc `b`. Chấm theo `answer` gốc. | Câu hiện tại, thứ tự câu và lựa chọn, đáp án đã chọn, điểm và trạng thái đã nộp. |
