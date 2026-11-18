@@ -8,12 +8,12 @@
 // HTML dự phòng đồng bộ 100% với components/header.html khi mở trực tiếp bằng giao thức file://
 const FALLBACK_HEADER_HTML = `
 <!-- MedFA Shared Header Component -->
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-  <div class="h-20 w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-space-md">
+<header class="medfa-header fixed top-0 left-0 right-0 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="medfa-header__inner">
     <!-- Brand Logo -->
-    <div class="flex items-center gap-space-md">
+    <div class="medfa-header__brand">
       <a aria-label="Trang chủ MedFA" class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-14 w-auto" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 80" class="medfa-header__logo" fill="none">
           <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
           <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
           <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
@@ -25,7 +25,7 @@ const FALLBACK_HEADER_HTML = `
     </div>
 
     <!-- Desktop Navigation Links -->
-    <nav aria-label="Menu điều hướng chính" class="hidden items-center gap-space-md 2xl:gap-space-lg lg:flex justify-end flex-1" id="main-nav">
+    <nav aria-label="Menu điều hướng chính" class="items-center justify-end flex-1" id="main-nav">
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html">Trang chủ</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="topics" href="topics.html">Thư viện sơ cấp cứu</a>
@@ -34,7 +34,7 @@ const FALLBACK_HEADER_HTML = `
       <div class="relative group" id="practice-dropdown-container">
         <button id="practice-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="practice-dropdown-menu" class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full inline-flex items-center gap-1 focus:outline-none cursor-pointer" data-page="practice">
           <span>Luyện tập</span>
-          <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+          <svg class="medfa-header__chevron transition-transform duration-200" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div id="practice-dropdown-menu" class="hidden group-hover:flex hover:flex absolute left-0 top-full mt-1.5 w-64 rounded-2xl bg-surface-container-lowest shadow-2xl border border-outline-variant/30 p-2 z-50 flex-col gap-1 transition-all">
           <a href="flashcards.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="flashcards">
@@ -66,20 +66,20 @@ const FALLBACK_HEADER_HTML = `
     </nav>
 
     <!-- Header Actions (Search, Language, Mobile Toggle) -->
-    <div class="flex items-center gap-2 sm:gap-space-sm md:gap-space-md">
+    <div class="medfa-header__actions">
       <a href="topics.html" aria-label="Tìm kiếm tình huống sơ cứu" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">search</span>
+        <svg class="shrink-0" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></svg>
       </a>
 
       <!-- Language Switcher -->
       <div class="relative inline-block text-left" id="language-dropdown-container">
-        <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
+        <button id="language-switcher-btn" aria-controls="language-dropdown-menu" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
           <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
             <rect fill="#DA251D" height="20" width="30"></rect>
             <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
           </svg>
           <span class="font-label-md text-label-md font-bold text-primary">VN</span>
-          <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200" id="lang-arrow">expand_more</span>
+          <svg class="medfa-header__chevron text-on-surface-variant transition-transform duration-200" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
           <button type="button" data-language="vi" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
@@ -111,14 +111,14 @@ const FALLBACK_HEADER_HTML = `
       </div>
 
       <!-- Mobile menu toggle button -->
-      <button id="mobile-menu-btn" aria-label="Mở menu di động" class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
-        <span class="material-symbols-outlined">menu</span>
+      <button id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Mở menu di động" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
+        <svg class="shrink-0" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="medfa-header__menu-icon" d="M4 6h16M4 12h16M4 18h16"/><path class="medfa-header__close-icon" d="m6 6 12 12M18 6 6 18"/></svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Dropdown Navigation Drawer -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
+  <div id="mobile-menu" class="hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
     <div class="flex items-center justify-between pb-2 mb-1 border-b border-outline-variant/20">
       <span class="text-xs font-bold text-primary tracking-wider uppercase">Menu Điều Hướng</span>
       <span class="text-xs text-on-surface-variant font-medium">MedFA Mobile</span>
@@ -345,11 +345,11 @@ const FALLBACK_FOOTER_HTML = `
 </footer>
 
 <!-- FLOATING COMPONENT: MEDFA AI FIRST AID ASSISTANT -->
-<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+<div id="medfa-chat-dock" class="fixed z-50 flex flex-col items-end pointer-events-none">
   <!-- Chat Window -->
-  <div id="medfa-chat-window" class="pointer-events-auto w-[380px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 flex flex-col overflow-hidden mb-3 transition-all duration-300 origin-bottom-right hidden">
+  <div id="medfa-chat-window" class="pointer-events-auto bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right hidden">
     <!-- Chat Header -->
-    <div class="bg-gradient-to-r from-primary-container to-primary px-4 py-3.5 text-on-primary flex items-center justify-between shadow-sm">
+    <div class="bg-gradient-to-r from-primary-container to-primary px-4 py-3.5 text-on-primary flex shrink-0 items-center justify-between shadow-sm">
       <div class="flex items-center gap-3">
         <div class="relative">
           <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white font-bold text-lg shadow-sm">
@@ -367,7 +367,7 @@ const FALLBACK_FOOTER_HTML = `
           </span>
         </div>
       </div>
-      <div class="flex items-center gap-1 text-white/90">
+      <div class="flex shrink-0 items-center gap-1 text-white/90">
         <button id="chat-settings-btn" type="button" title="Cài đặt API Key Gemini" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none"><span class="material-symbols-outlined text-[18px]">settings</span></button>
         <button id="chat-close-btn" type="button" title="Thu nhỏ" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
           <span class="material-symbols-outlined text-[20px]">close</span>
@@ -413,7 +413,7 @@ const FALLBACK_FOOTER_HTML = `
     </div>
 
     <!-- Chat Input Area -->
-    <div class="p-3 bg-surface-container-lowest border-t border-outline-variant/30">
+    <div class="shrink-0 p-3 bg-surface-container-lowest border-t border-outline-variant/30">
       <form id="chat-input-form" class="flex items-center gap-2 bg-surface-container-low rounded-xl px-3 py-2 border border-outline-variant/40 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
         <input id="chat-user-input" type="text" placeholder="Nhập tình huống sơ cứu..." class="flex-1 bg-transparent border-none text-body-sm text-on-surface focus:outline-none placeholder:text-on-surface-variant/50 p-0" />
         <button type="submit" class="w-8 h-8 rounded-lg bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-colors shadow-xs shrink-0">
@@ -517,21 +517,18 @@ function bindHeaderFooterEvents() {
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
-    const iconSpan = mobileBtn.querySelector('.material-symbols-outlined');
-
     const closeMobileMenu = () => {
       mobileMenu.classList.add('hidden');
       mobileMenu.classList.remove('flex');
-      if (iconSpan) iconSpan.textContent = 'menu';
+      mobileBtn.setAttribute('aria-expanded', 'false');
     };
 
-    mobileBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    mobileBtn.addEventListener('click', () => {
       const isClosed = mobileMenu.classList.contains('hidden');
       if (isClosed) {
         mobileMenu.classList.remove('hidden');
         mobileMenu.classList.add('flex');
-        if (iconSpan) iconSpan.textContent = 'close';
+        mobileBtn.setAttribute('aria-expanded', 'true');
       } else {
         closeMobileMenu();
       }
@@ -548,11 +545,14 @@ function bindHeaderFooterEvents() {
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMobileMenu();
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
+        mobileBtn.focus();
+      }
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) closeMobileMenu();
+      if (getComputedStyle(mobileBtn).display === 'none') closeMobileMenu();
     });
   }
 
@@ -627,8 +627,7 @@ function bindHeaderFooterEvents() {
       langBtn.setAttribute('aria-expanded', 'false');
     };
 
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    langBtn.addEventListener('click', () => {
       const willOpen = langMenu.classList.contains('hidden');
       langMenu.classList.toggle('hidden');
       langBtn.setAttribute('aria-expanded', String(willOpen));
@@ -645,7 +644,18 @@ function bindHeaderFooterEvents() {
       });
     });
 
-    document.addEventListener('click', () => closeLangMenu());
+    document.addEventListener('click', (e) => {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+        closeLangMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !langMenu.classList.contains('hidden')) {
+        closeLangMenu();
+        langBtn.focus();
+      }
+    });
   }
 
   // 4. Mở / Thu gọn cửa sổ Chatbot AI nổi

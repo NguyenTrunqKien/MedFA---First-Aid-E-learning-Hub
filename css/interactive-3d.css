@@ -844,6 +844,7 @@
 /* Đáp án trắc nghiệm A, B, C, D */
 #choices {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: .65rem;
   margin-block: .75rem;
 }
@@ -892,6 +893,8 @@
 }
 .choice-label {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 /* Đồng hồ đếm ngược SVG: Ban đầu XANH TEAL y tế */

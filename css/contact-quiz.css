@@ -426,7 +426,13 @@
 
 .quiz-options {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.7rem;
+}
+
+.quiz-option-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .quiz-option {
@@ -650,6 +656,10 @@
 
   .contact-fields {
     grid-template-columns: 1fr;
+  }
+
+  .quiz-controls {
+    justify-content: flex-start;
   }
 
   .cq-field-wide {
