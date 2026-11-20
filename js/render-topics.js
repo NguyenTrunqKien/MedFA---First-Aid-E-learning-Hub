@@ -54,10 +54,10 @@ const TopicsRenderer = (() => {
             </div>
           </div>
 
-          <!-- Title -->
-          <h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-space-md font-bold">
+          <!-- Title (Semantic H2 for Collection Items) -->
+          <h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-space-md font-bold">
             ${escapeHTML(topic.title)}
-          </h3>
+          </h2>
 
           <!-- Short Description -->
           <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-space-xs leading-relaxed">

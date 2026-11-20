@@ -133,6 +133,11 @@ main.pt-20,
   padding-inline: 1rem;
 }
 
+#header-placeholder {
+  min-height: var(--medfa-header-height);
+  display: block;
+}
+
 #header-placeholder #main-nav {
   display: none;
   gap: 1rem;
@@ -149,7 +154,7 @@ main.pt-20,
   line-height: 1.5rem;
   font-weight: 600;
   color: var(--color-on-surface-variant);
-  transition: background-color 150ms ease, color 150ms ease;
+  transition: background-color 150ms ease;
 }
 
 #header-placeholder .nav-link:hover,
@@ -161,6 +166,7 @@ main.pt-20,
 #header-placeholder .nav-link[aria-current="page"] {
   background-color: var(--color-primary-container);
   color: var(--color-on-primary);
+  transition: none;
 }
 
 #header-placeholder .nav-link[aria-current="page"]:hover,
