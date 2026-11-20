@@ -199,7 +199,7 @@ const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low tex
       <!-- Cột 1: Thương hiệu & Sứ mệnh -->
       <div class="flex flex-col gap-space-md">
         <div class="flex items-center gap-space-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-9 w-auto" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 80" class="h-14 w-auto" fill="none">
             <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
             <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
             <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
