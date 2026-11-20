@@ -1,26 +1,64 @@
 /**
  * MedFA AI Triage Chatbot Module (Google Gemini API & Offline Medical Reflex)
  * Trợ lý phản xạ sơ cấp cứu y tế MedFA:
- * - Hỗ trợ gọi trực tiếp Google Gemini API (gemini-1.5-flash) với System Prompt chuẩn y khoa AHA/ERC.
- * - Cho phép lưu trữ và cấu hình API Key cá nhân cục bộ trong LocalStorage.
+ * - Đọc cấu hình GEMINI_API_KEY và GEMINI_DEFAULT_MODEL từ tệp .env (không hardcode model trong code).
+ * - Cho phép người dùng chọn mô hình Gemini sử dụng và lưu tùy chọn vào LocalStorage.
  * - Cơ chế Graceful Fallback tự động: Chuyển sang bộ quy tắc phản xạ y tế ngoại tuyến
- *   khi không có API Key hoặc khi mất kết nối mạng.
+ *   khi chưa cấu hình API Key trong .env hoặc khi mất kết nối mạng.
  * 
  * Tác giả phụ trách: Nguyễn Trung Kiên (MSSV: 24520888)
  */
 
 const ChatbotGemini = (() => {
-  const STORAGE_KEY_API = 'medfa_gemini_api_key';
-  
-  // System Prompt y khoa chuẩn hóa theo khuyến cáo ERC 2025 và AHA 2024/2025
+  const STORAGE_KEY_MODEL = 'medfa_gemini_model';
+
+  // Danh sách các mô hình Gemini miễn phí hỗ trợ lựa chọn trong giao diện
+  const AVAILABLE_MODELS = [
+    { id: 'gemini-3.5-flash-lite', label: 'Gemini 3.5 Flash Lite' },
+    { id: 'gemini-3.1-flash-lite', label: 'Gemini 3.1 Flash Lite' },
+    { id: 'gemini-3.6-flash', label: 'Gemini 3.6 Flash' },
+    { id: 'gemini-3.8-flash', label: 'Gemini 3.8 Flash' }
+  ];
+
+  let envConfig = { apiKey: '', defaultModel: '' };
+  let envLoadPromise = null;
+
+  // Bộ nhớ đệm thư viện bài học theo ngôn ngữ ('vi' -> data/topics.json, 'en' -> data/en/topics.json)
+  const topicsCacheByLang = { vi: null, en: null };
+  const topicsPromiseByLang = { vi: null, en: null };
+
+  // Lịch sử hội thoại ngắn (tối đa 3 lượt hỏi-đáp gần nhất) giúp AI hiểu câu hỏi nối tiếp
+  const MAX_HISTORY_TURNS = 3;
+  let chatHistory = [];
+
+  // System Prompt y khoa chuẩn hóa theo khuyến cáo ERC 2025 và AHA 2024/2025 (Tiếng Việt)
   const SYSTEM_INSTRUCTION = `
 Bạn là Trợ lý Phản xạ Sơ cấp cứu Y tế MedFA (Medical First Aid Assistant) - tuân thủ hướng dẫn chuyên môn của Hiệp hội Tim mạch Hoa Kỳ (AHA) và Hội đồng Hồi sinh Châu Âu (ERC).
 Nguyên tắc cốt lõi:
-1. NGUY CẤP SỐNG CÒN: Nếu người dùng hỏi về tình trạng khẩn cấp (ngừng tim, ngưng thở, bất tỉnh, hóc nghẹn tím tái, bỏng nặng, co giật, sốc nhiệt >40°C, chảy máu ồ ạt...), LUÔN nhắc nhở to rõ "GỌI CẤP CỨU 115 NGAY LẬP TỨC" ở dòng đầu tiên.
-2. 3-4 BƯỚC HÀNH ĐỘNG TỨC THÌ: Trình bày quy trình sơ cứu tối đa 3-4 bước gạch đầu dòng ngắn gọn, chuẩn xác, dễ làm tại hiện trường trong "4 Phút Vàng". Không viết đoạn văn dài.
-3. KHÔNG ĐƯỢC LÀM (LƯU Ý NGUY HIỂM): Nêu ngắn gọn 1-2 điều tối kỵ (ví dụ: không bôi kem đánh răng/nước mắm lên vết bỏng, không châm kim đầu ngón tay khi ngất, không móc họng mù khi hóc dị vật).
-4. TÍNH CHÍNH XÁC & PHÁP LÝ: Ngôn từ bình tĩnh, dứt khoát. Cuối câu trả lời kèm nhắc nhở: "Thông tin hỗ trợ phản xạ ban đầu, không thay thế nhân viên y tế chuyên nghiệp".
+1. GIỚI HẠN PHẠM VI (SCOPE GUARDRAIL): Bạn CHỈ hỗ trợ các câu hỏi về sơ cấp cứu ban đầu, xử trí tai nạn/tình huống y tế khẩn cấp và cách sử dụng nền tảng học tập MedFA. Nếu người dùng hỏi chủ đề hoàn toàn ngoài phạm vi (lập trình, giải toán, nấu ăn, giải trí, chính trị, tin tức...), hãy TỪ CHỐI LỊCH SỰ trong 1-2 câu ngắn gọn và mời họ quay lại hỏi về các tình huống sơ cấp cứu. (Với lời chào xã giao ngắn như "xin chào", hãy chào lại thân thiện và hỏi họ cần hỗ trợ tình huống sơ cứu nào).
+2. NGUY CẤP SỐNG CÒN: Nếu người dùng hỏi về tình trạng khẩn cấp (ngừng tim, ngưng thở, bất tỉnh, hóc nghẹn tím tái, bỏng nặng, co giật, sốc nhiệt >40°C, chảy máu ồ ạt...), LUÔN nhắc nhở to rõ "GỌI CẤP CỨU 115 NGAY LẬP TỨC" ở dòng đầu tiên.
+3. ƯU TIÊN DỮ LIỆU THƯ VIỆN MEDFA & MINH BẠCH TRI THỨC:
+   - Nếu có mục [TÀI LIỆU THƯ VIỆN MEDFA LIÊN QUAN] đính kèm: hãy bám sát nội dung đó để trả lời nhất quán với cẩm nang trên website (không tự bịa URL vì hệ thống tự hiển thị thẻ liên kết bên dưới).
+   - Nếu là câu hỏi y tế/sơ cấp cứu nhưng KHÔNG có mục [TÀI LIỆU THƯ VIỆN MEDFA LIÊN QUAN] đính kèm: hãy nêu rõ ngắn gọn ở đầu rằng "Tình huống này hiện chưa có trong thư viện bài học chuẩn hóa của MedFA", sau đó chỉ đưa ra các nguyên tắc sơ cứu/lời khuyên an toàn chung theo chuẩn AHA/ERC và khuyến cáo liên hệ bác sĩ hoặc gọi 115 nếu diễn biến nặng. Không tự chẩn đoán bệnh hay kê đơn thuốc.
+4. 3-4 BƯỚC HÀNH ĐỘNG TỨC THÌ: Trình bày quy trình sơ cứu tối đa 3-4 bước gạch đầu dòng ngắn gọn, chuẩn xác, dễ làm tại hiện trường trong "4 Phút Vàng". Không viết đoạn văn dài.
+5. KHÔNG ĐƯỢC LÀM (LƯU Ý NGUY HIỂM): Nêu ngắn gọn 1-2 điều tối kỵ (ví dụ: không bôi kem đánh răng/nước mắm lên vết bỏng, không châm kim đầu ngón tay khi ngất, không móc họng mù khi hóc dị vật).
+6. TÍNH CHÍNH XÁC & PHÁP LÝ: Ngôn từ bình tĩnh, dứt khoát. Cuối câu trả lời y tế kèm nhắc nhở: "Thông tin hỗ trợ phản xạ ban đầu, không thay thế nhân viên y tế chuyên nghiệp".
 Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc gạch đầu dòng rõ ràng.
+`;
+
+  // System Prompt y khoa chuẩn hóa (English)
+  const SYSTEM_INSTRUCTION_EN = `
+You are the MedFA Medical First Aid Reflex Assistant, following American Heart Association (AHA) and European Resuscitation Council (ERC) guidelines.
+Core rules:
+1. SCOPE GUARDRAIL: You ONLY assist with first aid, emergency medical response, and using the MedFA learning platform. If the user asks about unrelated topics (coding, math, cooking, entertainment, politics, etc.), POLITELY DECLINE in 1-2 brief sentences and invite them to ask about first aid situations instead. (For simple greetings like "hello", reply warmly and ask what first aid topic they need help with.)
+2. LIFE-THREATENING EMERGENCIES: For critical conditions (cardiac arrest, not breathing, unconsciousness, severe choking, major burns, seizures, heat stroke, severe bleeding...), ALWAYS state "CALL 115 / LOCAL EMERGENCY IMMEDIATELY" on the first line.
+3. MEDFA LIBRARY & KNOWLEDGE TRANSPARENCY:
+   - If [RELATED MEDFA LIBRARY ARTICLES] are provided: align your steps with them (do not invent URLs; clickable article cards are rendered automatically below your answer).
+   - If it is a first aid/medical question WITHOUT [RELATED MEDFA LIBRARY ARTICLES] attached: briefly state upfront that "This topic is not yet in the standardized MedFA Library", then offer general AHA/ERC safety guidance and advise consulting a healthcare professional or calling 115 if symptoms worsen. Never diagnose diseases or prescribe medication.
+4. 3-4 IMMEDIATE ACTION STEPS: Present 3-4 concise, actionable bullet points suitable for the "Golden 4 Minutes". Avoid long paragraphs.
+5. DO NOT (DANGEROUS MISTAKES): List 1-2 critical things to avoid (e.g., no toothpaste/ice on burns, no blind finger sweeps for choking).
+6. DISCLAIMER: Keep a calm, decisive tone and end medical answers with: "This guidance supports initial first aid reflexes and does not replace professional medical care."
+Format: Concise Markdown with clear bullet points.
 `;
 
   /**
@@ -227,53 +265,471 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
   ];
 
   /**
-   * Lấy API Key từ LocalStorage
-   * @returns {string|null}
+   * Phân tích nội dung tệp .env (KEY=VALUE)
+   * @param {string} text
+   * @returns {Record<string, string>}
    */
-  function getApiKey() {
-    return localStorage.getItem(STORAGE_KEY_API) || null;
+  function parseEnvText(text) {
+    const result = {};
+    if (!text) return result;
+    const lines = text.split(/\r?\n/);
+    for (const rawLine of lines) {
+      const line = rawLine.trim();
+      if (!line || line.startsWith('#')) continue;
+      const eqIndex = line.indexOf('=');
+      if (eqIndex === -1) continue;
+      const key = line.slice(0, eqIndex).trim();
+      let value = line.slice(eqIndex + 1).trim();
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1).trim();
+      }
+      if (key) result[key] = value;
+    }
+    return result;
   }
 
   /**
-   * Lưu API Key vào LocalStorage
-   * @param {string} key 
+   * Nạp cấu hình GEMINI_API_KEY và GEMINI_DEFAULT_MODEL từ tệp env.local (tương thích VS Code Live Server, fallback .env)
+   * @param {boolean} [forceReload=false]
+   * @returns {Promise<{apiKey: string, defaultModel: string}>}
+   */
+  async function loadEnvConfig(forceReload = false) {
+    if (envLoadPromise && !forceReload) return envLoadPromise;
+    envLoadPromise = (async () => {
+      const candidates = ['env.local', '.env'];
+      for (const file of candidates) {
+        try {
+          const res = await fetch(file, { cache: 'no-store' });
+          if (!res.ok) continue;
+          const text = await res.text();
+          const parsed = parseEnvText(text);
+          const rawKey = (parsed.GEMINI_API_KEY || '').trim();
+          const apiKey = rawKey && rawKey !== 'your_gemini_api_key_here' ? rawKey : '';
+          const defaultModel = (parsed.GEMINI_DEFAULT_MODEL || '').trim();
+          if (apiKey || defaultModel) {
+            envConfig = { apiKey, defaultModel };
+            return envConfig;
+          }
+        } catch (_) {
+          // Thử nguồn tiếp theo hoặc chuyển sang chế độ ngoại tuyến
+        }
+      }
+      console.warn('[MedFA Chatbot] Không thể nạp tệp env.local (có thể chưa tạo env.local hoặc mở trực tiếp file://). Dùng chế độ ngoại tuyến.');
+      return envConfig;
+    })();
+    return envLoadPromise;
+  }
+
+  /**
+   * Lấy mô hình Gemini hiện đang chọn (ưu tiên localStorage, nếu không có dùng GEMINI_DEFAULT_MODEL từ .env)
+   * @returns {string}
+   */
+  function getSelectedModel() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY_MODEL);
+      if (saved && saved.trim()) return saved.trim();
+    } catch (_) {}
+    return envConfig.defaultModel || '';
+  }
+
+  /**
+   * Lưu mô hình Gemini được chọn vào LocalStorage
+   * @param {string} modelId
    * @returns {boolean}
    */
-  function setApiKey(key) {
-    if (!key || !key.trim()) {
-      localStorage.removeItem(STORAGE_KEY_API);
+  function setSelectedModel(modelId) {
+    const clean = (modelId || '').trim();
+    try {
+      if (!clean) {
+        localStorage.removeItem(STORAGE_KEY_MODEL);
+        return false;
+      }
+      localStorage.setItem(STORAGE_KEY_MODEL, clean);
+      return true;
+    } catch (_) {
       return false;
     }
-    localStorage.setItem(STORAGE_KEY_API, key.trim());
-    return true;
   }
 
   /**
-   * Xóa API Key
+   * Đặt lại mô hình về mặc định theo .env
    */
-  function removeApiKey() {
-    localStorage.removeItem(STORAGE_KEY_API);
+  function resetSelectedModel() {
+    try {
+      localStorage.removeItem(STORAGE_KEY_MODEL);
+    } catch (_) {}
   }
 
   /**
-   * Trả lời bằng quy tắc ngoại tuyến (Rule-based Fallback)
+   * Lấy tên hiển thị của mô hình
+   * @param {string} modelId
+   * @returns {string}
+   */
+  function getModelLabel(modelId) {
+    const found = AVAILABLE_MODELS.find(m => m.id === modelId);
+    return found ? found.label : (modelId || 'Gemini');
+  }
+
+  /**
+   * Lấy ngôn ngữ hiện hành ('vi' hoặc 'en')
+   * @returns {'vi'|'en'}
+   */
+  function getCurrentLang() {
+    return (typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en')
+      ? 'en'
+      : 'vi';
+  }
+
+  /**
+   * Chuẩn hóa chuỗi (bỏ dấu tiếng Việt, chữ thường, bỏ ký tự đặc biệt)
+   * @param {string} str
+   * @returns {string}
+   */
+  function normalizeText(str) {
+    return String(str || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd')
+      .replace(/Đ/g, 'D')
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  // Các từ đệm / xã giao phổ biến không mang nghĩa y khoa để tránh khớp nhầm bài
+  const STOP_WORDS = new Set([
+    'xin', 'chao', 'alo', 'hello', 'hi', 'hey', 'bye', 'thanks', 'thank', 'cam', 'on', 'ok', 'oke',
+    'la', 'gi', 'sao', 'the', 'nao', 'khi', 'bi', 'thi', 'con', 'va', 'hay', 'hoac', 'cho', 'voi',
+    'cua', 'can', 'phai', 'lam', 'xu', 'ly', 'tri', 'cach', 'huong', 'dan', 'so', 'cuu', 'cap',
+    'nguoi', 'toi', 'ban', 'minh', 'neu', 'co', 'khong', 'duoc', 'o', 'tai', 'tren', 'duoi',
+    'nha', 'nhe', 'roi', 'oi', 'anh', 'chi', 'em', 'nay', 'kia', 'nay', 'giup', 'hoi', 've',
+    'what', 'how', 'when', 'if', 'is', 'are', 'to', 'do', 'for', 'with', 'the', 'a', 'an', 'of',
+    'and', 'or', 'in', 'on', 'about', 'help', 'first', 'aid', 'someone', 'person', 'gets', 'get'
+  ]);
+
+  const GREETING_PATTERNS = /^(xin chao|chao|chao ban|chao ad|chao bot|hello|hi|hey|alo|good morning|good afternoon|good evening)$/;
+
+  function tokenize(str) {
+    return normalizeText(str)
+      .split(' ')
+      .filter(w => w.length >= 2 && !STOP_WORDS.has(w));
+  }
+
+  /**
+   * Kiểm tra khoảng cách chỉnh sửa <= 1 (giúp bắt lỗi gõ thiếu/nhầm 1 ký tự như "bỏn" -> "bỏng")
+   * @param {string} a
+   * @param {string} b
+   * @returns {boolean}
+   */
+  function isEditDistanceAtMost1(a, b) {
+    if (a === b) return true;
+    const lenDiff = Math.abs(a.length - b.length);
+    if (lenDiff > 1) return false;
+    let i = 0, j = 0, edits = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++; j++;
+      } else {
+        edits++;
+        if (edits > 1) return false;
+        if (a.length > b.length) i++;
+        else if (b.length > a.length) j++;
+        else { i++; j++; }
+      }
+    }
+    if (i < a.length || j < b.length) edits++;
+    return edits <= 1;
+  }
+
+  /**
+   * Nạp và cache danh sách bài học từ thư viện theo ngôn ngữ ('vi' -> data/topics.json, 'en' -> data/en/topics.json)
+   * @param {'vi'|'en'} [lang]
+   * @returns {Promise<Array>}
+   */
+  async function loadLibraryTopics(lang = getCurrentLang()) {
+    const targetLang = lang === 'en' ? 'en' : 'vi';
+    if (topicsCacheByLang[targetLang]) return topicsCacheByLang[targetLang];
+    if (topicsPromiseByLang[targetLang]) return topicsPromiseByLang[targetLang];
+
+    const url = targetLang === 'en' ? 'data/en/topics.json' : 'data/topics.json';
+    topicsPromiseByLang[targetLang] = (async () => {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          topicsCacheByLang[targetLang] = data;
+          return data;
+        }
+      } catch (_) {
+        // Fallback nếu mở file:// và có sẵn DataLoader
+        if (typeof window !== 'undefined' && window.DataLoader && Array.isArray(window.DataLoader.FALLBACK_TOPICS)) {
+          return window.DataLoader.FALLBACK_TOPICS;
+        }
+      }
+      return [];
+    })();
+
+    return topicsPromiseByLang[targetLang];
+  }
+
+  function hasVietnameseDiacritics(str) {
+    return /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(String(str || ''));
+  }
+
+  function tokenizeRaw(str) {
+    return String(str || '')
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .split(' ')
+      .filter(Boolean);
+  }
+
+  /**
+   * Tìm tối đa top N bài viết liên quan nhất trong thư viện (chỉ đọc ít bài liên quan thay vì nhồi hết 33 bài)
+   * Có phân biệt dấu thanh khi người dùng gõ có dấu (tránh "sứa" khớp nhầm "sữa"), vẫn hỗ trợ gõ không dấu.
+   * @param {string} query
+   * @param {Array} topics
+   * @param {number} [maxResults=3]
+   * @returns {Array}
+   */
+  function findRelevantTopics(query, topics, maxResults = 3) {
+    if (!query || !Array.isArray(topics) || topics.length === 0) return [];
+    const normQuery = normalizeText(query);
+    const rawQueryTokens = tokenizeRaw(query).filter(w => {
+      const n = normalizeText(w);
+      return n.length >= 2 && !STOP_WORDS.has(n);
+    });
+    if (rawQueryTokens.length === 0) return [];
+
+    const scored = [];
+    for (const topic of topics) {
+      const titleRaw = `${topic.title || ''} ${topic.fullTitle || ''}`;
+      const descRaw = `${topic.shortDesc || ''} ${topic.lead || ''} ${topic.categoryLabel || ''}`;
+      const titleNorm = normalizeText(titleRaw);
+      const titleRawTokens = tokenizeRaw(titleRaw);
+      const descRawTokens = tokenizeRaw(descRaw);
+
+      let score = 0;
+
+      // Khớp nguyên cụm tiêu đề
+      if (titleNorm && normQuery.length >= 4 && (normQuery.includes(titleNorm) || titleNorm.includes(normQuery))) {
+        score += 12;
+      }
+
+      for (const rawQt of rawQueryTokens) {
+        const qt = normalizeText(rawQt);
+        const qtHasAccent = hasVietnameseDiacritics(rawQt);
+
+        // Khớp trong tiêu đề (trọng số cao nhất)
+        let titleHit = 0;
+        for (const rawTt of titleRawTokens) {
+          const tt = normalizeText(rawTt);
+          if (qtHasAccent) {
+            // Người dùng gõ có dấu: so khớp tôn trọng dấu thanh (vd: "sứa" != "sữa", nhưng "bỏn" khớp "bỏng")
+            if (rawTt === rawQt) {
+              titleHit = Math.max(titleHit, 6);
+            } else if (rawQt.length >= 3 && rawTt.startsWith(rawQt) && rawTt.length - rawQt.length <= 1) {
+              titleHit = Math.max(titleHit, 4.5);
+            } else if (qt.length >= 5 && tt.length >= 5 && isEditDistanceAtMost1(qt, tt)) {
+              titleHit = Math.max(titleHit, 4);
+            }
+          } else {
+            // Người dùng gõ không dấu hoặc tiếng Anh
+            if (tt === qt) {
+              titleHit = Math.max(titleHit, 6);
+            } else if (qt.length >= 3 && tt.startsWith(qt) && tt.length - qt.length <= 1) {
+              titleHit = Math.max(titleHit, 4.5);
+            } else if (qt.length >= 4 && tt.includes(qt)) {
+              titleHit = Math.max(titleHit, 4.5);
+            } else if (qt.length >= 5 && tt.length >= 5 && isEditDistanceAtMost1(qt, tt)) {
+              titleHit = Math.max(titleHit, 4);
+            }
+          }
+        }
+        score += titleHit;
+
+        // Khớp trong mô tả ngắn / lead
+        let descHit = 0;
+        for (const rawDt of descRawTokens) {
+          const dt = normalizeText(rawDt);
+          if (qtHasAccent) {
+            if (rawDt === rawQt) descHit = Math.max(descHit, 2);
+          } else {
+            if (dt === qt) {
+              descHit = Math.max(descHit, 2);
+            } else if (qt.length >= 4 && dt.includes(qt)) {
+              descHit = Math.max(descHit, 1.5);
+            } else if (qt.length >= 5 && dt.length >= 5 && isEditDistanceAtMost1(qt, dt)) {
+              descHit = Math.max(descHit, 1);
+            }
+          }
+        }
+        score += descHit;
+      }
+
+      if (score >= 4.5) {
+        scored.push({ topic, score });
+      }
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, maxResults).map(item => item.topic);
+  }
+
+  /**
+   * Tạo ngữ cảnh rút gọn (chỉ 2-3 bài liên quan nhất) để gửi kèm cho Gemini, tiết kiệm token
+   * @param {Array} matchedTopics
+   * @param {'vi'|'en'} lang
+   * @returns {string}
+   */
+  function buildCompactTopicsContext(matchedTopics, lang) {
+    if (!matchedTopics || matchedTopics.length === 0) return '';
+    const isEn = lang === 'en';
+    const header = isEn ? '[RELATED MEDFA LIBRARY ARTICLES]' : '[TÀI LIỆU THƯ VIỆN MEDFA LIÊN QUAN]';
+
+    const blocks = matchedTopics.slice(0, 2).map((t, idx) => {
+      const stepsSummary = (t.steps || [])
+        .slice(0, 4)
+        .map(s => `  ${s.stepNumber || ''}. ${s.title}: ${s.desc}`)
+        .join('\n');
+      const dontsSummary = (t.donts || []).slice(0, 2).join('; ');
+      return [
+        `${idx + 1}. ${t.title} (${t.fullTitle || t.title})`,
+        t.emergencyAlert ? `   - Alert: ${t.emergencyAlert}` : '',
+        stepsSummary ? `   - Steps:\n${stepsSummary}` : '',
+        dontsSummary ? `   - Avoid: ${dontsSummary}` : ''
+      ].filter(Boolean).join('\n');
+    });
+
+    return `${header}\n${blocks.join('\n\n')}`;
+  }
+
+  /**
+   * Tạo khối gợi ý liên kết trực tiếp tới các bài liên quan trong Thư viện MedFA
+   * @param {Array} matchedTopics
+   * @param {'vi'|'en'} lang
+   * @returns {string}
+   */
+  function renderTopicSuggestionsHtml(matchedTopics, lang) {
+    if (!matchedTopics || matchedTopics.length === 0) return '';
+    const isEn = lang === 'en';
+    const heading = isEn ? 'Related guides in MedFA Library:' : 'Bài viết liên quan trong Thư viện MedFA:';
+
+    const linksHtml = matchedTopics.map(t => `
+      <a href="topic-detail.html?id=${encodeURIComponent(t.id)}" class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-surface-container-low hover:bg-primary/10 border border-outline-variant/30 transition-colors text-xs text-primary font-semibold group">
+        <span class="truncate">${escapeHTML(t.title)}</span>
+        <span class="material-symbols-outlined text-[14px] shrink-0 group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+      </a>
+    `).join('');
+
+    return `
+      <div class="mt-2.5 pt-2.5 border-t border-outline-variant/25 flex flex-col gap-1.5">
+        <span class="text-[11px] font-bold text-on-surface-variant flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px] text-secondary">menu_book</span>
+          <span>${heading}</span>
+        </span>
+        <div class="flex flex-col gap-1">
+          ${linksHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Render câu trả lời ngoại tuyến trực tiếp từ bài học khớp nhất trong thư viện 33 bài (song ngữ)
+   * @param {Array} matchedTopics
+   * @param {'vi'|'en'} lang
+   * @returns {string}
+   */
+  function renderOfflineTopicHtml(matchedTopics, lang) {
+    const primary = matchedTopics[0];
+    const isEn = lang === 'en';
+    const isCritical = primary.criticalLevel === 'critical' || primary.criticalLevel === 'high';
+    const stepsHtml = (primary.steps || []).slice(0, 4).map(s => `
+      <li class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check_circle</span>
+        <span><strong>${escapeHTML(s.title)}:</strong> ${escapeHTML(s.desc)}</span>
+      </li>
+    `).join('');
+
+    const warningText = (primary.donts && primary.donts.length > 0)
+      ? primary.donts[0]
+      : '';
+    const warningLabel = isEn ? 'Avoid:' : 'Lưu ý tránh:';
+
+    return `
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <span class="font-bold ${isCritical ? 'text-error' : 'text-primary'} text-sm">${escapeHTML(primary.fullTitle || primary.title)}</span>
+        </div>
+        ${primary.emergencyAlert ? `
+          <div class="p-2 rounded-lg bg-error-container/25 border border-error/30 text-[11px] text-error font-semibold">
+            🚨 ${escapeHTML(primary.emergencyAlert)}
+          </div>
+        ` : ''}
+        ${stepsHtml ? `<ul class="flex flex-col gap-1.5 text-xs text-on-surface my-1">${stepsHtml}</ul>` : ''}
+        ${warningText ? `
+          <div class="p-2 rounded-lg bg-error-container/15 border border-error/20 text-[11px] text-error font-medium flex items-start gap-1.5">
+            <span class="material-symbols-outlined text-[15px] shrink-0">warning</span>
+            <span><strong>${warningLabel}</strong> ${escapeHTML(warningText)}</span>
+          </div>
+        ` : ''}
+        ${renderTopicSuggestionsHtml(matchedTopics, lang)}
+      </div>
+    `;
+  }
+
+  /**
+   * Trả lời bằng quy tắc ngoại tuyến (ưu tiên thư viện 33 bài theo ngôn ngữ, sau đó fallback 7 bộ quy tắc nội bộ)
    * @param {string} query 
+   * @param {Array} [matchedTopics=[]]
    * @returns {string} HTML response
    */
-  function generateOfflineResponse(query) {
-    const isEn = (typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en');
-    const q = query.toLowerCase();
+  function generateOfflineResponse(query, matchedTopics = []) {
+    const lang = getCurrentLang();
+    const isEn = lang === 'en';
+    const q = normalizeText(query);
+
+    // 0. Phản hồi tự nhiên cho câu chào hỏi ngắn
+    if (GREETING_PATTERNS.test(q)) {
+      if (isEn) {
+        return `
+          <div class="flex flex-col gap-1.5 text-xs leading-relaxed">
+            <p class="font-semibold text-primary">Hello! I'm the MedFA First Aid Assistant 🩺</p>
+            <p>Tell me the emergency or first aid situation you need help with (e.g., <em>burns, choking, bleeding, CPR, snakebite, fainting</em>), and I'll guide you step by step.</p>
+          </div>
+        `;
+      }
+      return `
+        <div class="flex flex-col gap-1.5 text-xs leading-relaxed">
+          <p class="font-semibold text-primary">Xin chào bạn! Mình là Trợ lý Sơ cấp cứu MedFA 🩺</p>
+          <p>Bạn đang cần hướng dẫn xử trí tình huống nào? Hãy nhập triệu chứng hoặc tai nạn (vd: <em>bỏng nhiệt, hóc dị vật, chảy máu, ép tim CPR, rắn cắn, ngất xỉu...</em>) để mình hỗ trợ ngay nhé!</p>
+        </div>
+      `;
+    }
+
+    // 1. Ưu tiên trả lời trực tiếp từ thư viện 33 bài (đúng ngôn ngữ hiện hành)
+    if (Array.isArray(matchedTopics) && matchedTopics.length > 0) {
+      return renderOfflineTopicHtml(matchedTopics, lang);
+    }
     
-    // Tìm rule khớp từ khóa (ưu tiên bộ quy tắc phù hợp với ngôn ngữ hiện hành)
+    // 2. Fallback về 7 quy tắc phản xạ nội bộ nếu chưa tải được topics.json (ví dụ mở file://)
     const primaryRules = isEn ? OFFLINE_RULES_EN : OFFLINE_RULES;
     const secondaryRules = isEn ? OFFLINE_RULES : OFFLINE_RULES_EN;
 
     let matchedRule = primaryRules.find(rule =>
-      rule.keywords.some(keyword => q.includes(keyword))
+      rule.keywords.some(keyword => q.includes(normalizeText(keyword)))
     );
     if (!matchedRule) {
       matchedRule = secondaryRules.find(rule =>
-        rule.keywords.some(keyword => q.includes(keyword))
+        rule.keywords.some(keyword => q.includes(normalizeText(keyword)))
       );
     }
 
@@ -321,7 +777,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
             <li>Explore standardized step-by-step procedures in the <a href="topics.html" class="text-primary font-bold underline">First Aid Library</a>.</li>
             <li>Sharpen your reflexes with <a href="flashcards.html" class="text-secondary font-bold underline">3D Flashcards</a> or the <a href="quiz.html" class="text-tertiary font-bold underline">Scenario Quiz</a>.</li>
           </ul>
-          <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Note: You can enter your Gemini API Key via the Settings icon ⚙️ in the chat header to enable live AI reasoning.</p>
+          <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Note: Configure <code>GEMINI_API_KEY</code> in <code>env.local</code> and pick a Gemini model via the Settings icon ⚙️ to enable live AI reasoning.</p>
         </div>
       `;
     }
@@ -335,33 +791,46 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
           <li>Bạn có thể tra cứu nhanh quy trình chuẩn từng bước trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a>.</li>
           <li>Thử phản xạ kiến thức với <a href="flashcards.html" class="text-secondary font-bold underline">Flashcard 3D</a> hoặc <a href="quiz.html" class="text-tertiary font-bold underline">Bài thi trắc nghiệm</a>.</li>
         </ul>
-        <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Lưu ý: Bạn có thể nhập Gemini API Key ở biểu tượng Cài đặt ⚙️ trên thanh tiêu đề chat để hỏi đáp AI mở rộng.</p>
+        <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Lưu ý: Cấu hình <code>GEMINI_API_KEY</code> trong tệp <code>env.local</code> và chọn mô hình AI ở biểu tượng Cài đặt ⚙️ để hỏi đáp trực tiếp.</p>
       </div>
     `;
   }
 
   /**
-   * Gọi REST API Google Gemini (sử dụng gemini-2.5-flash với fallback tự động khi lỗi)
+   * Gọi REST API Google Gemini với model động + ngữ cảnh rút gọn từ thư viện + lịch sử ngắn
    * @param {string} prompt 
    * @param {string} apiKey 
+   * @param {string} model
+   * @param {{ lang?: 'vi'|'en', topicsContext?: string }} [options={}]
    * @returns {Promise<string>}
    */
-  async function callGeminiApi(prompt, apiKey) {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+  async function callGeminiApi(prompt, apiKey, model, options = {}) {
+    if (!model) {
+      throw new Error('Chưa cấu hình mô hình Gemini (GEMINI_DEFAULT_MODEL trong .env hoặc chọn trong Cài đặt).');
+    }
+    const lang = options.lang === 'en' ? 'en' : 'vi';
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+
+    const userPromptWithContext = options.topicsContext
+      ? `${options.topicsContext}\n\n${lang === 'en' ? 'User question' : 'Câu hỏi người dùng'}: ${prompt}`
+      : prompt;
+
+    const contents = [
+      ...chatHistory,
+      {
+        role: 'user',
+        parts: [{ text: userPromptWithContext }]
+      }
+    ];
 
     const body = {
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: prompt }]
-        }
-      ],
+      contents,
       systemInstruction: {
-        parts: [{ text: SYSTEM_INSTRUCTION }]
+        parts: [{ text: lang === 'en' ? SYSTEM_INSTRUCTION_EN : SYSTEM_INSTRUCTION }]
       },
       generationConfig: {
         temperature: 0.2,
-        maxOutputTokens: 600,
+        maxOutputTokens: 2048,
         topP: 0.8
       }
     };
@@ -429,8 +898,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
    * @param {string} sender 'user' | 'bot'
    * @param {string} htmlContent 
    * @param {boolean} isLiveGemini 
+   * @param {string} [modelId='']
    */
-  function appendMessage(sender, htmlContent, isLiveGemini = false) {
+  function appendMessage(sender, htmlContent, isLiveGemini = false, modelId = '') {
     const container = document.getElementById('chat-messages-container');
     if (!container) return;
 
@@ -443,6 +913,11 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
         </div>
       `;
     } else {
+      const liveBadgeText = modelId
+        ? `${escapeHTML(getModelLabel(modelId))} Live`
+        : (typeof window !== 'undefined' && window.t ? window.t('chat.geminiLive') : 'Gemini Live');
+      const offlineBadgeText = typeof window !== 'undefined' && window.t ? window.t('chat.offlineReflex') : 'Bộ Phản Xạ AHA/ERC';
+
       row.className = 'flex items-start gap-2.5 max-w-[95%]';
       row.innerHTML = `
         <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
@@ -454,8 +929,8 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
           </div>
           <div class="flex items-center gap-1.5 ml-1">
             <span class="text-[10px] text-on-surface-variant/60 font-medium" data-i18n="chat.justNow">${typeof window !== 'undefined' && window.t ? window.t('chat.justNow') : 'Vừa xong'}</span>
-            <span class="text-[9px] px-1.5 py-0.5 rounded font-bold ${isLiveGemini ? 'bg-secondary-container/40 text-secondary' : 'bg-surface-container-high text-on-surface-variant'}" data-i18n="${isLiveGemini ? 'chat.geminiLive' : 'chat.offlineReflex'}">
-              ${isLiveGemini ? (typeof window !== 'undefined' && window.t ? window.t('chat.geminiLive') : 'Gemini Flash Live') : (typeof window !== 'undefined' && window.t ? window.t('chat.offlineReflex') : 'Bộ Phản Xạ AHA/ERC')}
+            <span class="text-[9px] px-1.5 py-0.5 rounded font-bold ${isLiveGemini ? 'bg-secondary-container/40 text-secondary' : 'bg-surface-container-high text-on-surface-variant'}" ${isLiveGemini ? '' : 'data-i18n="chat.offlineReflex"'}>
+              ${isLiveGemini ? liveBadgeText : offlineBadgeText}
             </span>
           </div>
         </div>
@@ -500,29 +975,48 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
     // 2. Hiện trạng thái đang suy nghĩ
     const thinkingEl = showThinkingIndicator();
 
-    const apiKey = getApiKey();
+    const lang = getCurrentLang();
+    const [, topics] = await Promise.all([loadEnvConfig(), loadLibraryTopics(lang)]);
+    const matchedTopics = findRelevantTopics(cleanQuery, topics, 3);
+    const topicsContext = buildCompactTopicsContext(matchedTopics, lang);
+    const suggestionsHtml = renderTopicSuggestionsHtml(matchedTopics, lang);
+
+    const apiKey = envConfig.apiKey;
+    const activeModel = getSelectedModel();
     let finalHtml = '';
     let isLiveGemini = false;
 
-    if (apiKey) {
+    if (apiKey && activeModel) {
       try {
-        const geminiText = await callGeminiApi(cleanQuery, apiKey);
-        finalHtml = formatMarkdownToHTML(geminiText);
+        const geminiText = await callGeminiApi(cleanQuery, apiKey, activeModel, { lang, topicsContext });
+        finalHtml = formatMarkdownToHTML(geminiText) + suggestionsHtml;
         isLiveGemini = true;
+
+        // Cập nhật lịch sử hội thoại ngắn (chỉ lưu câu hỏi gọn và câu trả lời)
+        chatHistory.push(
+          { role: 'user', parts: [{ text: cleanQuery }] },
+          { role: 'model', parts: [{ text: geminiText }] }
+        );
+        if (chatHistory.length > MAX_HISTORY_TURNS * 2) {
+          chatHistory = chatHistory.slice(-MAX_HISTORY_TURNS * 2);
+        }
       } catch (err) {
-        console.warn('[MedFA Chatbot] Lỗi gọi Gemini API, chuyển sang chế độ phản xạ y khoa nội bộ:', err.message);
+        console.warn(`[MedFA Chatbot] Lỗi gọi Gemini API (${activeModel}), chuyển sang chế độ phản xạ y khoa nội bộ:`, err.message);
+        const fallbackBanner = lang === 'en'
+          ? `Could not connect to ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Switched to AHA/ERC offline guide:`
+          : `Không kết nối được ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Đã tự động chuyển về phản xạ chuẩn AHA/ERC:`;
         finalHtml = `
           <div class="p-2 mb-2 rounded bg-error-container/20 text-error text-[11px] font-semibold flex items-center gap-1">
             <span class="material-symbols-outlined text-[14px]">info</span>
-            <span>Không kết nối được Gemini (${escapeHTML(err.message)}). Đã tự động chuyển về phản xạ chuẩn AHA/ERC:</span>
+            <span>${fallbackBanner}</span>
           </div>
-          ${generateOfflineResponse(cleanQuery)}
+          ${generateOfflineResponse(cleanQuery, matchedTopics)}
         `;
       }
     } else {
       // Giả lập độ trễ ngắn 400ms cho tự nhiên
       await new Promise(r => setTimeout(r, 400));
-      finalHtml = generateOfflineResponse(cleanQuery);
+      finalHtml = generateOfflineResponse(cleanQuery, matchedTopics);
     }
 
     // 3. Xóa chỉ báo suy nghĩ và hiển thị câu trả lời
@@ -530,11 +1024,39 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       thinkingEl.remove();
     }
 
-    appendMessage('bot', finalHtml, isLiveGemini);
+    appendMessage('bot', finalHtml, isLiveGemini, activeModel);
   }
 
   /**
-   * Khởi tạo giao diện cấu hình API Key (Modal Settings trong Chatbox)
+   * Cập nhật danh sách tùy chọn model trong dropdown theo .env và localStorage
+   * @param {HTMLSelectElement} selectEl
+   */
+  function populateModelOptions(selectEl) {
+    if (!selectEl) return;
+    const defaultModel = envConfig.defaultModel;
+    const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
+    const defaultTag = isEn ? ' (Default)' : ' (Mặc định)';
+
+    const models = AVAILABLE_MODELS.slice();
+    if (defaultModel && !models.some(m => m.id === defaultModel)) {
+      models.unshift({ id: defaultModel, label: defaultModel });
+    }
+
+    selectEl.innerHTML = models.map(m => {
+      const suffix = m.id === defaultModel ? defaultTag : '';
+      return `<option value="${escapeHTML(m.id)}">${escapeHTML(m.label + suffix)}</option>`;
+    }).join('');
+
+    const currentModel = getSelectedModel();
+    if (currentModel && models.some(m => m.id === currentModel)) {
+      selectEl.value = currentModel;
+    } else if (models.length > 0) {
+      selectEl.value = models[0].id;
+    }
+  }
+
+  /**
+   * Khởi tạo giao diện chọn Mô hình AI (Modal Settings trong Chatbox)
    */
   function initSettingsModal() {
     const chatWindow = document.getElementById('medfa-chat-window');
@@ -548,7 +1070,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
         <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-primary text-[20px]">tune</span>
-            <h4 class="font-bold text-on-surface text-sm" data-i18n="chat.settingsTitle">Cài đặt Trợ lý AI</h4>
+            <h4 class="font-bold text-on-surface text-sm" data-i18n="chat.settingsTitle">Cài Đặt Mô Hình AI</h4>
           </div>
           <button id="btn-close-settings" data-i18n-aria-label="chat.closeTitle" type="button" class="p-1 hover:bg-surface-container rounded-lg text-outline">
             <span class="material-symbols-outlined text-[18px]">close</span>
@@ -557,17 +1079,15 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
 
         <div class="mt-4 flex flex-col gap-3">
           <div>
-            <label for="input-gemini-key" class="block text-xs font-bold text-on-surface mb-1">
-              Google Gemini API Key:
+            <label for="select-gemini-model" class="block text-xs font-bold text-on-surface mb-1" data-i18n="chat.modelLabel">
+              Chọn mô hình Google Gemini:
             </label>
-            <input 
-              id="input-gemini-key" 
-              type="password" 
-              placeholder="AIzaSy..." 
-              class="w-full bg-surface-container-low border border-outline-variant/40 rounded-xl px-3 py-2 text-xs text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30"
-            />
+            <select
+              id="select-gemini-model"
+              class="w-full bg-surface-container-low border border-outline-variant/40 rounded-xl px-3 py-2 text-xs text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer"
+            ></select>
             <p class="text-[11px] text-on-surface-variant/70 mt-1.5 leading-relaxed" data-i18n-html="chat.keyPrivacy">
-              API Key được lưu bảo mật trong <code>localStorage</code> của trình duyệt bạn. MedFA không truyền key lên máy chủ trung gian.
+              Lựa chọn mô hình được lưu trong <code>localStorage</code> của trình duyệt. Khóa API và mô hình mặc định được quản lý trong tệp <code>env.local</code>.
             </p>
           </div>
 
@@ -577,19 +1097,19 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
               <span data-i18n="chat.howItWorks">Cơ chế hoạt động</span>
             </span>
             <p class="text-on-surface-variant text-[11px] leading-relaxed" data-i18n-html="chat.keyModes">
-              • <strong>Có Key:</strong> Gọi trực tiếp Google Gemini Flash với System Prompt y khoa chuyên sâu.<br/>
-              • <strong>Không có Key / Mất mạng:</strong> Tự động chuyển về Bộ phản xạ y tế AHA/ERC ngoại tuyến 100%.
+              <strong>Chế độ AI trực tuyến:</strong> Kết nối trực tiếp Google Gemini theo mô hình bạn chọn (API Key lấy từ <code>env.local</code>).<br/>
+              <strong>Chưa cấu hình env.local hoặc mất mạng:</strong> Tự động dùng Bộ phản xạ y tế AHA/ERC ngoại tuyến.
             </p>
           </div>
         </div>
       </div>
 
       <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/30">
-        <button id="btn-save-key" data-i18n="chat.saveSettingsBtn" type="button" class="flex-1 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-bold text-xs transition-colors shadow-sm">
+        <button id="btn-save-model" data-i18n="chat.saveSettingsBtn" type="button" class="flex-1 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-bold text-xs transition-colors shadow-sm">
           Lưu Cài Đặt
         </button>
-        <button id="btn-clear-key" data-i18n="chat.clearKeyBtn" type="button" class="py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold transition-colors">
-          Xóa Key
+        <button id="btn-reset-model" data-i18n="chat.resetModelBtn" type="button" class="py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold transition-colors">
+          Mặc định
         </button>
       </div>
     `;
@@ -599,45 +1119,63 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
 
     // Bind events
     const closeBtn = modal.querySelector('#btn-close-settings');
-    const saveBtn = modal.querySelector('#btn-save-key');
-    const clearBtn = modal.querySelector('#btn-clear-key');
-    const keyInput = modal.querySelector('#input-gemini-key');
+    const saveBtn = modal.querySelector('#btn-save-model');
+    const resetBtn = modal.querySelector('#btn-reset-model');
+    const modelSelect = modal.querySelector('#select-gemini-model');
 
     closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
 
     saveBtn.addEventListener('click', () => {
-      const keyVal = keyInput.value.trim();
-      setApiKey(keyVal);
+      const selectedId = modelSelect.value;
+      setSelectedModel(selectedId);
       modal.classList.add('hidden');
+      const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
       const title = typeof window !== 'undefined' && window.t ? window.t('chat.keyUpdated') : '✅ Đã cập nhật cấu hình!';
-      const desc = keyVal
-        ? (typeof window !== 'undefined' && window.t ? window.t('chat.switchedLive') : 'Trợ lý đã chuyển sang chế độ <strong>Google Gemini Flash Live</strong>.')
-        : (typeof window !== 'undefined' && window.t ? window.t('chat.switchedOffline') : 'Đã xóa Key. Trợ lý sử dụng <strong>Bộ phản xạ sơ cấp cứu y khoa MedFA (Offline)</strong>.');
+      const label = escapeHTML(getModelLabel(selectedId));
+      const desc = isEn
+        ? `Assistant will use <strong>${label}</strong>.`
+        : `Trợ lý sẽ sử dụng mô hình <strong>${label}</strong>.`;
       appendMessage('bot', `
         <p class="text-xs text-secondary font-bold" data-i18n="chat.keyUpdated">${title}</p>
-        <p class="text-xs text-on-surface-variant mt-1" data-i18n-html="${keyVal ? 'chat.switchedLive' : 'chat.switchedOffline'}">${desc}</p>
+        <p class="text-xs text-on-surface-variant mt-1">${desc}</p>
       `);
     });
 
-    clearBtn.addEventListener('click', () => {
-      removeApiKey();
-      keyInput.value = '';
+    resetBtn.addEventListener('click', () => {
+      resetSelectedModel();
+      populateModelOptions(modelSelect);
       modal.classList.add('hidden');
-      const clearedMsg = typeof window !== 'undefined' && window.t ? window.t('chat.keyCleared') : 'ℹ️ Đã xóa API Key. Trợ lý đang hoạt động ở chế độ <strong>Bộ phản xạ y khoa ngoại tuyến chuẩn AHA/ERC</strong>.';
+      const defaultId = envConfig.defaultModel || modelSelect.value;
+      const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
+      const msg = isEn
+        ? `ℹ️ Reset to default model from <code>env.local</code>: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`
+        : `ℹ️ Đã khôi phục mô hình mặc định từ <code>env.local</code>: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`;
       appendMessage('bot', `
-        <p class="text-xs text-on-surface font-semibold" data-i18n-html="chat.keyCleared">${clearedMsg}</p>
+        <p class="text-xs text-on-surface font-semibold">${msg}</p>
       `);
     });
 
-    // Populate existing key
-    const currentKey = getApiKey();
-    if (currentKey) keyInput.value = currentKey;
+    populateModelOptions(modelSelect);
   }
+
+  let langListenerBound = false;
 
   /**
    * Khởi tạo liên kết sự kiện Chatbot (chống gắn trùng listener nếu gọi lại nhiều lần)
    */
   function initChatbot() {
+    // Nạp trước cấu hình .env và thư viện bài học theo ngôn ngữ hiện hành
+    loadEnvConfig();
+    loadLibraryTopics(getCurrentLang());
+
+    if (!langListenerBound && typeof window !== 'undefined') {
+      langListenerBound = true;
+      window.addEventListener('medfa:languageChanged', (e) => {
+        const nextLang = e?.detail?.language === 'en' ? 'en' : getCurrentLang();
+        loadLibraryTopics(nextLang);
+      });
+    }
+
     const chatForm = document.getElementById('chat-input-form');
     const chatInput = document.getElementById('chat-user-input');
     const settingsBtn = document.getElementById('chat-settings-btn');
@@ -657,13 +1195,14 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
     if (settingsBtn && (!settingsBtn.dataset || !settingsBtn.dataset.settingsBound)) {
       if (settingsBtn.dataset) settingsBtn.dataset.settingsBound = '1';
 
-      settingsBtn.addEventListener('click', () => {
+      settingsBtn.addEventListener('click', async () => {
+        await loadEnvConfig();
         initSettingsModal();
         const modal = document.getElementById('chat-settings-modal');
         if (modal) {
           modal.classList.remove('hidden');
-          const keyInput = modal.querySelector('#input-gemini-key');
-          if (keyInput) keyInput.value = getApiKey() || '';
+          const modelSelect = modal.querySelector('#select-gemini-model');
+          populateModelOptions(modelSelect);
         }
       });
     }
@@ -672,9 +1211,11 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
   return {
     initChatbot,
     handleUserQuery,
-    getApiKey,
-    setApiKey,
-    removeApiKey
+    loadEnvConfig,
+    getSelectedModel,
+    setSelectedModel,
+    resetSelectedModel,
+    getAvailableModels: () => AVAILABLE_MODELS.slice()
   };
 })();
 
