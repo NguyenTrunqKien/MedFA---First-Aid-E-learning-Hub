@@ -392,6 +392,37 @@
   color: var(--color-primary, #00288e);
 }
 
+#language-dropdown-menu {
+  min-width: 12rem;
+  padding: 0.375rem 0;
+}
+
+#language-dropdown-menu button[data-language] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.875rem;
+  color: var(--color-on-surface);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+#language-dropdown-menu button[data-language]:hover {
+  background-color: var(--color-surface-container, #e2e8f0);
+}
+
 #language-dropdown-menu [aria-pressed="true"] {
-  background-color: var(--color-surface-container-high);
+  background-color: var(--color-surface-container-high, #cbd5e1);
+  font-weight: 700;
+}
+
+#language-dropdown-menu .lang-status span {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
 }

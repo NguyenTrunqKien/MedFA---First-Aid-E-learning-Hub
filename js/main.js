@@ -798,7 +798,14 @@ async function injectHeaderAndFooter() {
   if (headerPlaceholder) {
     try {
       const res = await fetch('components/header.html');
-      headerPlaceholder.innerHTML = res.ok ? await res.text() : FALLBACK_HEADER_HTML;
+      let html = res.ok ? await res.text() : FALLBACK_HEADER_HTML;
+      // Live Server của VS Code tự động inject script vào trong từng thẻ <svg>,
+      // làm phình kích thước payload vượt quá header Content-Length khiến file bị cắt cụt (truncation).
+      // Nếu phát hiện phần đuôi bị cắt (không có đủ thẻ đóng </header>), dùng ngay FALLBACK_HEADER_HTML đầy đủ chuẩn.
+      if (!html || !html.includes('data-language="en"') || !html.includes('</header>')) {
+        html = FALLBACK_HEADER_HTML;
+      }
+      headerPlaceholder.innerHTML = html;
     } catch {
       headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
     }
