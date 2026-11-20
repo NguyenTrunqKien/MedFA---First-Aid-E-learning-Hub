@@ -43,14 +43,86 @@
   gap: var(--space-md);
 }
 
-/* Keep the shared header full-width across edges on every page. */
-#header-placeholder > header > div:first-child {
-  height: 80px;
-  width: 100%;
-  max-width: none;
-  margin-inline: 0;
-  padding-inline: 1rem;
-  gap: 1rem;
+:root {
+  --medfa-header-height: 68px;
+}
+
+.medfa-header {
+  z-index: 60;
+}
+
+.medfa-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: var(--medfa-header-height);
+  padding-inline: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.medfa-header__brand,
+.medfa-header__actions {
+  flex: 0 0 auto;
+}
+
+.medfa-header__logo {
+  display: block;
+  inline-size: auto;
+  block-size: 44px;
+}
+
+.medfa-header__brand a {
+  min-block-size: 44px;
+}
+
+.medfa-header__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.25rem, 1vw, 1rem);
+}
+
+.medfa-header__chevron {
+  inline-size: 18px;
+  block-size: 18px;
+  flex: 0 0 auto;
+}
+
+#language-switcher-btn[aria-expanded="true"] .medfa-header__chevron {
+  transform: rotate(180deg);
+}
+
+#mobile-menu-btn[aria-expanded="false"] .medfa-header__close-icon,
+#mobile-menu-btn[aria-expanded="true"] .medfa-header__menu-icon {
+  display: none;
+}
+
+.medfa-header__actions > a,
+.medfa-header__actions > button,
+#language-switcher-btn {
+  min-inline-size: 44px;
+  min-block-size: 44px;
+}
+
+.medfa-header__actions :focus-visible,
+.medfa-header__brand a:focus-visible {
+  outline: 2px solid var(--color-primary-container);
+  outline-offset: 2px;
+}
+
+#mobile-menu {
+  max-block-size: calc(100vh - var(--medfa-header-height));
+  max-block-size: calc(100dvh - var(--medfa-header-height));
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+
+#mobile-menu > * {
+  flex-shrink: 0;
+}
+
+main.pt-20,
+.site-main {
+  padding-top: var(--medfa-header-height);
 }
 
 /* Keep the shared footer full-width across edges on every page. */
@@ -62,6 +134,7 @@
 }
 
 #header-placeholder #main-nav {
+  display: none;
   gap: 1rem;
 }
 
@@ -100,21 +173,32 @@
   outline-offset: 2px;
 }
 
-#header-placeholder header > div:first-child > div:last-child {
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
+@media (min-width: 640px) {
+  :root {
+    --medfa-header-height: 80px;
+  }
 
-@media (min-width: 768px) {
-  #header-placeholder header > div:first-child > div:last-child {
-    gap: 1rem;
+  .medfa-header__logo {
+    block-size: 56px;
   }
 }
 
 @media (min-width: 1024px) {
-  #header-placeholder > header > div:first-child,
   #footer-placeholder > footer > div:first-child {
     padding-inline: 1.25rem;
+  }
+}
+
+/* Each navigation label stays on one line, so keep the compact menu
+   until there is room for the logo, full navigation and action buttons. */
+@media (min-width: 1280px) {
+  #header-placeholder #main-nav {
+    display: flex;
+  }
+
+  #header-placeholder #mobile-menu-btn,
+  #header-placeholder #mobile-menu {
+    display: none;
   }
 }
 
@@ -152,9 +236,9 @@
   display: flex !important;
 }
 
-#practice-dropdown-container:hover #practice-dropdown-btn .material-symbols-outlined,
-#practice-dropdown-container.is-hovered #practice-dropdown-btn .material-symbols-outlined,
-#practice-dropdown-container.is-open #practice-dropdown-btn .material-symbols-outlined {
+#practice-dropdown-container:hover .medfa-header__chevron,
+#practice-dropdown-container.is-hovered .medfa-header__chevron,
+#practice-dropdown-container.is-open .medfa-header__chevron {
   transform: rotate(180deg);
 }
 
@@ -162,7 +246,6 @@
 .site-main {
   flex: 1 0 auto;
   width: 100%;
-  padding-top: 80px;
 }
 
 /* App Footer Layout */

@@ -27,6 +27,10 @@ const TopicsRenderer = (() => {
    */
   function createTopicCardHTML(topic) {
     const safeId = encodeURIComponent(topic.id);
+    const viewText = topic.needsMedicalReview
+      ? (window.t ? t('topics.viewReviewStatus') : 'Xem trạng thái rà soát')
+      : (window.t ? t('topics.viewGuide') : 'Xem hướng dẫn');
+    const bookmarkLabel = window.t ? t('topics.bookmarkSave') : 'Lưu bài học';
 
     return `
       <article 
@@ -44,7 +48,7 @@ const TopicsRenderer = (() => {
             </div>
             <!-- Bookmark Action -->
             <div class="flex items-center">
-              <button type="button" class="btn-bookmark w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-high text-outline hover:text-primary transition-colors focus:outline-none" data-topic-id="${escapeHTML(topic.id)}" title="Lưu bài học" aria-label="Lưu bài học" onclick="event.stopPropagation();">
+              <button type="button" class="btn-bookmark w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-high text-outline hover:text-primary transition-colors focus:outline-none" data-topic-id="${escapeHTML(topic.id)}" title="${escapeHTML(bookmarkLabel)}" aria-label="${escapeHTML(bookmarkLabel)}">
                 <span class="material-symbols-outlined text-[19px]">bookmark_add</span>
               </button>
             </div>
@@ -64,7 +68,7 @@ const TopicsRenderer = (() => {
         <!-- Footer / CTA -->
         <div class="mt-space-lg pt-space-md flex items-center justify-between bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-3 rounded-b-xl border-t border-outline-variant/10">
           <a href="topic-detail.html?id=${safeId}" onclick="event.stopPropagation();" class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary group-hover:text-secondary-fixed-variant font-bold transition-colors">
-            ${topic.needsMedicalReview ? 'Xem trạng thái rà soát' : 'Xem hướng dẫn'}
+            ${viewText}
             <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <line x1="5" x2="19" y1="12" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -72,7 +76,7 @@ const TopicsRenderer = (() => {
           </a>
           <div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
             <span class="material-symbols-outlined text-[16px]">schedule</span>
-            <span>${escapeHTML(topic.readTime || '3 phút')}</span>
+            <span>${escapeHTML(topic.readTime || (window.t ? t('topics.readTimeDefault') : '3 phút'))}</span>
           </div>
         </div>
       </article>
@@ -264,14 +268,32 @@ const TopicsRenderer = (() => {
       });
     }
 
+    window.addEventListener('medfa:bookmark-changed', () => {
+      if (currentCategory === 'bookmarks') applyFiltersAndRender();
+    });
+
     // First render
     applyFiltersAndRender();
+
+    // Re-render when language changes
+    window.addEventListener('medfa:languageChanged', async () => {
+      if (window.DataLoader) {
+        allTopics = await window.DataLoader.loadTopics();
+        applyFiltersAndRender();
+      }
+    });
   }
 
   return {
     init,
     renderTopics,
-    createTopicCardHTML
+    createTopicCardHTML,
+    reloadTopics: async () => {
+      if (window.DataLoader) {
+        allTopics = await window.DataLoader.loadTopics();
+        applyFiltersAndRender();
+      }
+    }
   };
 })();
 

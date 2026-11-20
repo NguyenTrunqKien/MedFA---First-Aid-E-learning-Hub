@@ -52,19 +52,19 @@
             <li class="flex items-center gap-1">
               <a class="hover:text-primary transition-colors flex items-center gap-1" href="index.html">
                 <span class="material-symbols-outlined text-[16px]">home</span>
-                <span>Trang chủ</span>
+                <span data-i18n="detail.breadcrumbHome">Trang chủ</span>
               </a>
               <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
             </li>
             <li class="flex items-center gap-1">
               <a class="hover:text-primary transition-colors" href="topics.html">
-                Thư viện sơ cấp cứu
+                <span data-i18n="detail.breadcrumbTopics">Thư viện sơ cấp cứu</span>
               </a>
               <span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
             </li>
             <li class="font-bold text-on-surface flex items-center gap-1">
               <span class="w-2 h-2 rounded-full bg-tertiary inline-block animate-ping"></span>
-              <span id="breadcrumb-topic-title">Hóc dị vật (Nghẹn & Tắc đường thở)</span>
+              <span id="breadcrumb-topic-title" data-i18n="detail.breadcrumbDefault">Hóc dị vật (Nghẹn & Tắc đường thở)</span>
             </li>
           </ol>
         </nav>
@@ -91,9 +91,9 @@
                   </span>
                 </div>
                 <!-- Bookmark button -->
-                <button id="detail-bookmark-btn" type="button" class="btn-bookmark inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-outline-variant/30 text-xs font-bold hover:bg-surface-container transition-colors text-on-surface cursor-pointer shadow-xs" title="Lưu bài học này">
+                <button id="detail-bookmark-btn" type="button" class="btn-bookmark inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-outline-variant/30 text-xs font-bold hover:bg-surface-container transition-colors text-on-surface cursor-pointer shadow-xs" title="Lưu bài học này" data-i18n-title="detail.bookmarkTitle">
                   <span class="material-symbols-outlined text-[18px] text-outline">bookmark_add</span>
-                  <span class="bookmark-text">Lưu bài học</span>
+                  <span class="bookmark-text" data-i18n="topics.bookmarkSave">Lưu bài học</span>
                 </button>
               </div>
 
@@ -109,19 +109,19 @@
 
               <!-- CRITICAL ALERT BANNER -->
               <div id="topic-guidance" hidden>
-              <section aria-label="Cảnh báo sinh mạng" class="mt-6 bg-tertiary-fixed rounded-xl p-4 flex items-start gap-4 shadow-sm border border-tertiary/20">
+              <section aria-label="Cảnh báo sinh mạng" data-i18n-aria-label="detail.alertAria" class="mt-6 bg-tertiary-fixed rounded-xl p-4 flex items-start gap-4 shadow-sm border border-tertiary/20">
                 <div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
                   <span class="material-symbols-outlined text-[24px]">crisis_alert</span>
                 </div>
                 <div class="flex flex-col gap-1">
                   <div class="flex items-center gap-2">
-                    <span class="text-sm font-bold text-on-tertiary-fixed uppercase tracking-wider">Báo động khẩn cấp</span>
+                    <span class="text-sm font-bold text-on-tertiary-fixed uppercase tracking-wider" data-i18n="detail.emergencyNotice">Báo động khẩn cấp</span>
                     <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
                   </div>
                   <p id="detail-alert-text" class="text-sm md:text-base font-bold text-on-tertiary-fixed leading-snug">
                     GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.
                   </p>
-                  <p id="choking-alert-note" class="text-xs text-on-tertiary-fixed-variant">
+                  <p id="choking-alert-note" class="text-xs text-on-tertiary-fixed-variant" data-i18n="detail.chokingAlertNote">
                     Đồng thời chuẩn bị tiến hành hồi sinh tim phổi (CPR 30 ép tim : 2 thổi ngạt) ngay trên mặt sàn phẳng và cứng.
                   </p>
                 </div>
@@ -132,9 +132,9 @@
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-1.5 text-sm text-on-surface font-bold">
                     <span class="material-symbols-outlined text-primary text-[18px]">acute</span>
-                    <span>Thước đo 4 Phút Vàng (Hypoxia Timeline)</span>
+                    <span data-i18n="detail.timelineHeading">Thước đo 4 Phút Vàng (Hypoxia Timeline)</span>
                   </div>
-                  <span class="text-xs text-tertiary font-bold">Não thiếu oxy</span>
+                  <span class="text-xs text-tertiary font-bold" data-i18n="detail.timelineSub">Não thiếu oxy</span>
                 </div>
                 <div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex">
                   <div class="h-full bg-secondary-container transition-all" style="width: 25%" title="0-1 phút: Bắt đầu ngạt, hoảng loạn"></div>
@@ -151,17 +151,17 @@
               </div>
 
               <!-- CPR 110 BPM METRONOME WIDGET (Tự động bật cho các ca có quy trình Ép tim CPR) -->
-              <section id="cpr-metronome-widget" class="mt-6 cpr-metronome-card" aria-label="Bộ đếm nhịp ép tim CPR" hidden>
+              <section id="cpr-metronome-widget" class="mt-6 cpr-metronome-card" aria-label="Bộ đếm nhịp ép tim CPR" data-i18n-aria="detail.cprMetronomeTitle" hidden>
                 <div class="flex items-center gap-3">
                   <div id="cpr-beat-indicator" class="cpr-beat-indicator" aria-hidden="true">
                     <span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
                   </div>
                   <div class="flex flex-col gap-1">
                     <div class="flex flex-wrap items-center gap-2">
-                      <h2 class="text-sm md:text-base font-bold text-on-surface">Nhịp ép tim CPR chuẩn AHA/ERC (110 nhịp/phút)</h2>
+                      <h2 class="text-sm md:text-base font-bold text-on-surface" data-i18n="detail.cprMetronomeTitle">Nhịp ép tim CPR chuẩn AHA/ERC (110 nhịp/phút)</h2>
                       <span id="cpr-beat-counter" class="cpr-beat-counter">0 / 30 nhịp</span>
                     </div>
-                    <p id="cpr-cycle-hint" class="text-xs text-on-surface-variant">
+                    <p id="cpr-cycle-hint" class="text-xs text-on-surface-variant" data-i18n="detail.cprMetronomeDesc">
                       Bấm Bắt đầu để nghe tiếng bíp & nhịp đập trực quan giữ tốc độ 100–120 lần/phút (30 ép tim : 2 thổi ngạt).
                     </p>
                   </div>
@@ -169,11 +169,11 @@
                 <div class="flex flex-wrap items-center gap-2">
                   <button id="cpr-metronome-btn" type="button" class="btn btn-danger text-xs py-2 px-4">
                     <span class="material-symbols-outlined text-[18px]">play_arrow</span>
-                    <span id="cpr-metronome-btn-text">Bắt đầu nhịp 110 BPM</span>
+                    <span id="cpr-metronome-btn-text" data-i18n="detail.cprStart">Bắt đầu nhịp 110 BPM</span>
                   </button>
-                  <button id="cpr-sound-btn" type="button" aria-pressed="true" title="Bật / Tắt âm thanh bíp" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container text-xs font-semibold text-on-surface transition-colors">
+                  <button id="cpr-sound-btn" data-i18n-title="detail.cprSoundTitle" type="button" aria-pressed="true" title="Bật / Tắt âm thanh bíp" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container text-xs font-semibold text-on-surface transition-colors">
                     <span id="cpr-sound-icon" class="material-symbols-outlined text-[18px] text-primary">volume_up</span>
-                    <span id="cpr-sound-text">Âm thanh: Bật</span>
+                    <span id="cpr-sound-text" data-i18n="detail.soundOn">Âm thanh: Bật</span>
                   </button>
                 </div>
               </section>
@@ -185,15 +185,15 @@
                     <div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
                       <span class="material-symbols-outlined text-[20px]">e911_emergency</span>
                     </div>
-                    <h2 class="text-xl text-on-surface font-bold">
+                    <h2 class="text-xl text-on-surface font-bold" data-i18n="detail.stepsHeading">
                       Các bước sơ cứu
                     </h2>
                   </div>
-                  <span class="px-3 py-1 rounded-full bg-primary-fixed text-primary text-xs font-bold">
+                  <span class="px-3 py-1 rounded-full bg-primary-fixed text-primary text-xs font-bold" data-i18n="detail.stepsSequential">
                     Thao tác tuần tự
                   </span>
                 </div>
-                <p class="text-sm text-on-surface-variant mt-2">
+                <p class="text-sm text-on-surface-variant mt-2" data-i18n="detail.stepsSubtitle">
                   Áp dụng tuần tự các bước dưới đây. Luôn giữ bình tĩnh, thực hiện dứt khoát đến khi tình trạng nguy cấp được giải tỏa.
                 </p>
 
@@ -244,14 +244,14 @@
               <section class="mt-8 pt-6 border-t border-outline-variant/20">
                 <h3 class="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
                   <span class="material-symbols-outlined text-primary">flaky</span>
-                  Những điều nên làm và cần tránh
+                  <span data-i18n="detail.dosDontsHeading">Những điều nên làm và cần tránh</span>
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- DO Column -->
                   <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
                     <div class="flex items-center gap-2 font-bold text-emerald-800 text-sm mb-3">
                       <span class="material-symbols-outlined text-emerald-600">check_circle</span>
-                      NÊN LÀM (CHUẨN Y KHOA)
+                      <span data-i18n="detail.dosTitle">NÊN LÀM (CHUẨN Y KHOA)</span>
                     </div>
                     <ul class="flex flex-col gap-2 text-sm text-emerald-950" id="detail-dos-list">
                       <li class="flex items-start gap-2">
@@ -273,7 +273,7 @@
                   <div class="p-4 rounded-xl bg-rose-50 border border-rose-200">
                     <div class="flex items-center gap-2 font-bold text-rose-800 text-sm mb-3">
                       <span class="material-symbols-outlined text-rose-600">cancel</span>
-                      Cần tránh
+                      <span data-i18n="detail.dontsTitle">Cần tránh</span>
                     </div>
                     <ul class="flex flex-col gap-2 text-sm text-rose-950" id="detail-donts-list">
                       <li class="flex items-start gap-2">
@@ -301,21 +301,21 @@
                       <span class="material-symbols-outlined text-[22px]">smart_display</span>
                     </div>
                     <div>
-                      <h3 class="text-sm md:text-base font-bold text-on-surface">Video hướng dẫn thực hành</h3>
+                      <h3 class="text-sm md:text-base font-bold text-on-surface" data-i18n="detail.videoHeading">Video hướng dẫn thực hành</h3>
                       <p id="detail-video-creator" class="text-xs text-on-surface-variant mt-0.5"></p>
                     </div>
                   </div>
                   <a id="detail-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs py-2.5 px-4 self-start sm:self-auto">
                     <span class="material-symbols-outlined text-[18px]">play_circle</span>
-                    <span id="detail-video-link-label">Xem trên YouTube</span>
+                    <span id="detail-video-link-label" data-i18n="detail.youtubeView">Xem trên YouTube</span>
                   </a>
                 </div>
               </section>
 
               </div>
               <section id="medical-disclaimer" aria-labelledby="medical-disclaimer-title" class="mt-8 p-4 md:p-6 rounded-xl border border-outline-variant/30 bg-surface-container-low">
-                <h2 id="medical-disclaimer-title" class="text-xl font-bold text-on-surface">Lưu ý y khoa</h2>
-                <p class="mt-2 text-sm text-on-surface-variant">
+                <h2 id="medical-disclaimer-title" class="text-xl font-bold text-on-surface" data-i18n="disclaimer.briefTitle">Lưu ý y khoa</h2>
+                <p class="mt-2 text-sm text-on-surface-variant" data-i18n-html="disclaimer.briefText">
                   Nội dung MedFA phục vụ học tập và không thay thế tư vấn y tế hoặc đào tạo thực hành.
                   Trong tình huống khẩn cấp tại Việt Nam, hãy <a class="font-bold underline" href="tel:115">gọi 115</a> và làm theo hướng dẫn của nhân viên cấp cứu.
                 </p>
@@ -324,8 +324,8 @@
               <!-- TÌNH HUỐNG SƠ CẤP CỨU LIÊN QUAN (Internal Linking SEO) -->
               <section id="related-topics-section" aria-labelledby="related-topics-title" class="mt-8 pt-6 border-t border-outline-variant/30" hidden>
                 <div class="flex items-center justify-between gap-2 mb-4">
-                  <h2 id="related-topics-title" class="text-lg font-bold text-on-surface">Tình huống sơ cấp cứu liên quan</h2>
-                  <a href="topics.html" class="text-xs font-bold text-primary hover:underline">Xem toàn bộ tình huống →</a>
+                  <h2 id="related-topics-title" class="text-lg font-bold text-on-surface" data-i18n="detail.relatedHeading">Tình huống sơ cấp cứu liên quan</h2>
+                  <a href="topics.html" class="text-xs font-bold text-primary hover:underline" data-i18n="detail.viewAllTopics">Xem toàn bộ tình huống →</a>
                 </div>
                 <div id="related-topics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
               </section>
@@ -340,18 +340,18 @@
             <div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/30 flex flex-col gap-4">
               <h3 class="text-lg font-bold text-on-surface flex items-center gap-2">
                 <span class="material-symbols-outlined text-error">phone_in_talk</span>
-                Cần trợ giúp y tế khẩn cấp?
+                <span data-i18n="detail.sidebarHelpTitle">Cần trợ giúp y tế khẩn cấp?</span>
               </h3>
-              <p class="text-sm text-on-surface-variant">
+              <p class="text-sm text-on-surface-variant" data-i18n="detail.sidebarHelpDesc">
                 Nếu bạn đang ở hiện trường và cần hỗ trợ, hãy gọi cấp cứu hoặc mở Trợ lý AI để tra cứu quy trình khẩn cấp.
               </p>
               <a href="tel:115" class="btn btn-danger w-full py-3 font-bold text-center">
                 <span class="material-symbols-outlined">call</span>
-                GỌI 115 NGAY
+                <span data-i18n="detail.sidebarCallBtn">GỌI 115 NGAY</span>
               </a>
               <button onclick="document.getElementById('medfa-chat-window')?.classList.remove('hidden')" type="button" class="btn btn-secondary w-full py-3 font-bold text-center">
                 <span class="material-symbols-outlined">smart_toy</span>
-                Hỏi Trợ lý AI MedFA
+                <span data-i18n="detail.sidebarAiBtn">Hỏi Trợ lý AI MedFA</span>
               </button>
             </div>
 
@@ -360,11 +360,11 @@
               <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">
                 <span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
               </div>
-              <h4 class="text-base font-bold text-primary">Lan tỏa kỹ năng vàng</h4>
-              <p class="text-xs text-on-surface-variant leading-relaxed">
+              <h4 class="text-base font-bold text-primary" data-i18n="detail.sidebarSpreadTitle">Lan tỏa kỹ năng vàng</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="detail.sidebarSpreadDesc">
                 Hơn 90% người gặp nạn có thể bình phục nếu người xung quanh biết kỹ năng sơ cấp cứu chuẩn. Cùng MedFA bảo vệ sức khỏe cộng đồng!
               </p>
-              <a href="social-impact.html" class="btn btn-primary text-xs py-2.5 px-4 font-bold self-start mt-1">
+              <a href="social-impact.html" class="btn btn-primary text-xs py-2.5 px-4 font-bold self-start mt-1" data-i18n="detail.sidebarSpreadLink">
                 Xem tác động xã hội →
               </a>
             </div>
@@ -372,7 +372,7 @@
             <!-- Back to topics button -->
             <a href="topics.html" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-sm font-semibold text-on-surface">
               <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-              Quay lại danh mục tình huống
+              <span data-i18n="detail.sidebarBackTopics">Quay lại danh mục tình huống</span>
             </a>
 
           </aside>
@@ -383,7 +383,7 @@
       <div class="lg:hidden fixed bottom-4 left-4 right-20 z-40 flex items-center gap-2 pointer-events-none">
         <a href="tel:115" class="pointer-events-auto flex-1 py-3 px-4 rounded-full bg-error hover:bg-red-700 text-white font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all active:scale-95 border-2 border-white/20">
           <span class="material-symbols-outlined text-[18px]">call</span>
-          <span>GỌI CẤP CỨU 115</span>
+          <span data-i18n="detail.mobileCallBar">GỌI CẤP CỨU 115</span>
         </a>
       </div>
 
@@ -394,6 +394,8 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript Modules -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/seo-config.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/data-loader.js"></script>

@@ -7,6 +7,7 @@
 const DataLoader = (() => {
   // In-memory cache
   let topicsCache = null;
+  let englishTopicsRequest;
 
   // Embedded Fallback Data (ensures site works even if opened directly via file://)
   const FALLBACK_TOPICS = [
@@ -549,7 +550,7 @@ const DataLoader = (() => {
    * Load all first aid topics from data/topics.json
    * @returns {Promise<Array>} Array of topic objects
    */
-  async function loadTopics() {
+  async function loadBaseTopics() {
     if (topicsCache && topicsCache.length > 0) {
       return topicsCache;
     }
@@ -566,6 +567,70 @@ const DataLoader = (() => {
       topicsCache = FALLBACK_TOPICS;
       return topicsCache;
     }
+  }
+
+  function hasText(value) {
+    return typeof value === 'string' && value.trim().length > 0;
+  }
+
+  function matchesList(baseList, translations, matchesItem) {
+    return Array.isArray(baseList) && Array.isArray(translations) &&
+      baseList.length === translations.length &&
+      baseList.every((item, index) => matchesItem(item, translations[index]));
+  }
+
+  function mergeTopicTranslations(base, en) {
+    if (!en) return base;
+    const topic = { ...base };
+    for (const key of ['title', 'fullTitle', 'categoryLabel', 'readTime', 'standard', 'shortDesc', 'lead', 'emergencyAlert']) {
+      if (hasText(en[key])) topic[key] = en[key];
+    }
+    if (matchesList(base.steps, en.steps, (step, translation) =>
+      translation?.stepNumber === step.stepNumber && hasText(translation?.title) && hasText(translation?.desc))) {
+      topic.steps = base.steps.map((step, index) => ({
+        ...step, title: en.steps[index].title, desc: en.steps[index].desc
+      }));
+    }
+    if (matchesList(base.timeline, en.timeline, (entry, translation) =>
+      translation?.level === entry.level && hasText(translation?.time) && hasText(translation?.status))) {
+      topic.timeline = base.timeline.map((entry, index) => ({
+        ...entry, time: en.timeline[index].time, status: en.timeline[index].status
+      }));
+    }
+    for (const field of ['dos', 'donts']) {
+      if (matchesList(base[field], en[field], (_, text) => hasText(text))) topic[field] = en[field];
+    }
+    if (base.video && hasText(en.video?.creator)) {
+      topic.video = { ...base.video, creator: en.video.creator };
+    }
+    if (Array.isArray(base.sources) && Array.isArray(en.sources)) {
+      const names = new Map(en.sources.filter(source => source?.url).map(source => [source.url, source.name]));
+      topic.sources = base.sources.map(source => ({...source, name: names.get(source.url) || source.name}));
+    }
+    return topic;
+  }
+
+  async function loadEnglishTopics(base) {
+    try {
+      const response = await fetch('data/en/topics.json');
+      if (!response.ok) throw new Error('Could not load English topics');
+      const translations = await response.json();
+      if (!Array.isArray(translations)) throw new Error('Invalid English topic data');
+      const byId = new Map(translations.filter(item => item?.id).map(item => [item.id, item]));
+      return base.map(topic => mergeTopicTranslations(topic, byId.get(topic.id)));
+    } catch (error) {
+      console.warn('[DataLoader] Using Vietnamese topics as fallback.', error);
+      englishTopicsRequest = undefined;
+      return base;
+    }
+  }
+
+  async function loadTopics() {
+    const base = await loadBaseTopics();
+    if (globalThis.window?.I18n?.getLanguage() !== 'en') return base;
+    englishTopicsRequest ??= loadEnglishTopics(base);
+    const localized = await englishTopicsRequest;
+    return globalThis.window?.I18n?.getLanguage() === 'en' ? localized : base;
   }
 
   /**

@@ -5,18 +5,14 @@
    - Small Mobile (sm-mobile): 375px - 479px
    - Standard Mobile: < 640px
    - Tablet (sm to md): 640px - 1023px
-   - Desktop (lg): 1024px - 1439px
+   - Desktop content (lg): starts at 1024px
+   - Full navigation: starts at 1280px (layout.css)
    - Large Desktop (2K/xl): ≥ 1440px
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. FLUID ROOT & GLOBAL ADAPTATIONS
    -------------------------------------------------------------------------- */
-:root {
-  --header-height-mobile: 68px;
-  --header-height-desktop: 80px;
-}
-
 /* Fluid Container Padding */
 .site-container,
 .max-w-7xl {
@@ -37,37 +33,13 @@ h1, h2, h3, h4, h5, h6, p, span, a {
    2. MOBILE BREAKPOINT (< 640px)
    -------------------------------------------------------------------------- */
 @media (max-width: 639.98px) {
-  /* Header & Main Offset: Chỉ áp dụng cho main dùng pt-20, tránh ghi đè trang Quiz/Contact/Practice */
-  .site-header {
-    height: var(--header-height-mobile) !important;
-  }
-
-  .site-main,
-  main.pt-20 {
-    padding-top: var(--header-height-mobile) !important;
-  }
-
-  #header-placeholder > header > div:first-child {
-    height: var(--header-height-mobile) !important;
-    padding-inline: 0.75rem !important;
-  }
-
-  /* Brand Logo on Mobile */
-  #header-placeholder svg.h-14,
-  #header-placeholder svg.h-10,
-  header svg.h-14,
-  header svg.h-10 {
-    height: 44px !important;
-    width: auto !important;
-  }
-
   /* Compact Language Selector on Mobile */
   #language-switcher-btn {
     padding: 0.25rem 0.5rem !important;
     gap: 0.25rem !important;
   }
 
-  #language-switcher-btn svg {
+  #language-switcher-btn svg:first-child {
     width: 16px !important;
     height: 11px !important;
   }
@@ -117,53 +89,13 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     text-align: center;
   }
 
-  /* Mobile Category Filter Pills (Horizontal Touch Swipe) */
-  #category-filter-group,
-  .category-filter-scroll {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    gap: 0.5rem !important;
-    padding: 0.5rem 0.5rem 0.75rem !important;
-    margin-inline: -0.5rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  #category-filter-group .category-btn {
+    padding-inline: 1rem;
+    font-size: 0.8125rem;
   }
 
-  #category-filter-group::-webkit-scrollbar,
-  .category-filter-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  #category-filter-group .category-btn,
-  .category-filter-scroll .category-btn {
-    flex-shrink: 0 !important;
-    scroll-snap-align: start;
-    white-space: nowrap !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.8125rem !important;
-    min-height: 38px;
-  }
-
-  /* Mobile Search Bar optimization */
-  #search-input {
-    font-size: 0.875rem !important;
-    padding-left: 2.75rem !important;
-    padding-right: 5.5rem !important;
-  }
-
-  #search-btn {
-    padding: 0.375rem 0.875rem !important;
-    font-size: 0.8125rem !important;
-  }
-
-  /* Mobile Cards Grid: Clean 1-Column */
-  #topics-container,
-  .grid-cols-1 {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+  #topics-container {
+    gap: 1rem;
   }
 
   .first-aid-card {
@@ -187,21 +119,9 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     border: 1px solid rgba(196, 197, 213, 0.3);
   }
 
-  /* Mobile Floating AI Chat Assistant Window */
-  #medfa-chat-window {
-    width: calc(100vw - 1.25rem) !important;
-    max-width: 400px !important;
-    right: 0.625rem !important;
-    bottom: 4.75rem !important;
-    height: min(520px, calc(100vh - 6rem)) !important;
-    max-height: calc(100vh - 6rem) !important;
-  }
-
   #medfa-chat-toggle-btn {
-    right: 1rem !important;
-    bottom: 1rem !important;
-    width: 3.25rem !important;
-    height: 3.25rem !important;
+    width: 3rem;
+    height: 3rem;
   }
 
   /* Mobile Menu Drawer Styling */
@@ -228,9 +148,8 @@ h1, h2, h3, h4, h5, h6, p, span, a {
    3. EXTRA SMALL MOBILE (< 375px)
    -------------------------------------------------------------------------- */
 @media (max-width: 374.98px) {
-  #header-placeholder svg.h-10,
-  header svg.h-10 {
-    height: 28px !important;
+  .medfa-header__logo {
+    block-size: 40px;
   }
 
   .font-display-lg,
@@ -238,13 +157,9 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     font-size: 1.6rem !important;
   }
 
-  #search-input {
-    padding-right: 4.75rem !important;
-  }
-
-  #search-btn {
-    padding: 0.35rem 0.65rem !important;
-    font-size: 0.75rem !important;
+  .topics-search {
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 1.25rem;
   }
 }
 
@@ -252,22 +167,9 @@ h1, h2, h3, h4, h5, h6, p, span, a {
    4. TABLET BREAKPOINT (640px to 1023px)
    -------------------------------------------------------------------------- */
 @media (min-width: 640px) and (max-width: 1023.98px) {
-  /* Site header & main */
-  .site-header {
-    height: 76px;
-  }
-
-  .site-main,
-  main.pt-20 {
-    padding-top: 76px;
-  }
-
-  /* 2-Column Responsive Card Grids */
-  #topics-container,
-  .topics-grid,
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.25rem !important;
+  #topics-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 
   /* Stats grid: 2 columns on tablet */
@@ -280,40 +182,10 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     grid-template-columns: 1fr !important;
   }
 
-  /* Chat window positioning on tablet */
-  #medfa-chat-window {
-    width: 360px !important;
-    right: 1.25rem !important;
-    bottom: 5.5rem !important;
-  }
 }
 
 /* --------------------------------------------------------------------------
-   5. DESKTOP BREAKPOINT (≥ 1024px)
-   -------------------------------------------------------------------------- */
-@media (min-width: 1024px) {
-  /* 3-Column Topic Cards Grid */
-  #topics-container {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.5rem !important;
-  }
-
-  /* Category Filter Pills Centered */
-  #category-filter-group {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-  }
-
-  /* Floating chat default desktop size */
-  #medfa-chat-window {
-    width: 380px;
-    height: 520px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   6. ULTRA-WIDE & 2K BREAKPOINT (≥ 1440px)
+   5. ULTRA-WIDE & 2K BREAKPOINT (≥ 1440px)
    -------------------------------------------------------------------------- */
 @media (min-width: 1440px) {
   .max-w-7xl {
@@ -322,7 +194,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
 }
 
 /* --------------------------------------------------------------------------
-   7. INTERACTIVE TOUCH VS MOUSE INTERACTIONS
+   6. INTERACTIVE TOUCH VS MOUSE INTERACTIONS
    -------------------------------------------------------------------------- */
 /* Only apply hover lifts on devices with fine pointer (mouse), avoiding mobile sticky hover */
 @media (hover: hover) and (pointer: fine) {
@@ -352,7 +224,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
 }
 
 /* --------------------------------------------------------------------------
-   8. ACCESSIBILITY & PREFERENCES
+   7. ACCESSIBILITY & PREFERENCES
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -366,7 +238,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
 }
 
 /* --------------------------------------------------------------------------
-   9. PRINT STYLES FOR FIRST AID ACTION SHEETS
+   8. PRINT STYLES FOR FIRST AID ACTION SHEETS
    -------------------------------------------------------------------------- */
 @media print {
   header,

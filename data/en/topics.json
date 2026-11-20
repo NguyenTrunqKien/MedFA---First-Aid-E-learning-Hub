@@ -1,0 +1,2240 @@
+[
+  {
+    "id": "hoc-di-vat",
+    "title": "Choking (Airway Obstruction)",
+    "fullTitle": "Choking & Foreign Body Airway Obstruction",
+    "category": "tre-em",
+    "categoryLabel": "Pediatric",
+    "criticalLevel": "high",
+    "readTime": "2 mins",
+    "standard": "ERC & AHA 2025 guidelines",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
+    "shortDesc": "How the Heimlich maneuver clears an airway obstruction in adults and children.",
+    "lead": "An object can suddenly block the airway. Without appropriate first aid at the scene, brain damage that is difficult to reverse can begin after just four minutes without oxygen.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if the person becomes unconscious, their lips or extremities turn blue, or they no longer make breathing sounds.",
+    "timeline": [
+      {
+        "time": "0–1 minute",
+        "status": "Difficulty breathing, panic, and clutching the throat",
+        "level": "safe"
+      },
+      {
+        "time": "1–2 minutes",
+        "status": "Blue lips and a weakening cough reflex",
+        "level": "warning"
+      },
+      {
+        "time": "2–4 minutes",
+        "status": "Fainting, loss of consciousness, and stopped breathing",
+        "level": "danger"
+      },
+      {
+        "time": "More than 4 minutes",
+        "status": "Permanent brain damage or death",
+        "level": "critical"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Assess the obstruction",
+        "desc": "Ask, “Are you choking?” If the person can still speak, cry, or cough forcefully, encourage them to keep coughing. Avoid back blows or abdominal thrusts at this point."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Give five firm back blows",
+        "desc": "If the person cannot breathe or can only cough weakly, stand slightly behind them, support their chest with one hand, and lean them forward. With the heel of your other hand, deliver five firm upward blows between the shoulder blades."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Give five abdominal thrusts (Heimlich maneuver)",
+        "desc": "Wrap both arms around the person's waist. Make a fist and place it thumb-side inward on the upper abdomen, above the navel and below the tip of the breastbone. Grasp the fist with your other hand and pull sharply inward and upward."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Repeat five back blows and five abdominal thrusts",
+        "desc": "Continue alternating five back blows and five abdominal thrusts until the object comes out or the person breathes normally again."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Start CPR if the person becomes unresponsive",
+        "desc": "Lay the person on their back on a firm, flat surface, call 115, and start chest compressions (30 compressions to two rescue breaths). Before each rescue breath, check the mouth for a visible object."
+      }
+    ],
+    "dos": [
+      "Encourage the person to keep coughing forcefully if they can still cough.",
+      "Lean the person forward during back blows to help the object fall out.",
+      "For infants under one year, use five back blows and five two-finger chest thrusts. Avoid abdominal thrusts."
+    ],
+    "donts": [
+      "Do not perform a blind finger sweep if you cannot see the object clearly.",
+      "Do not give water or rice in an attempt to push the object down.",
+      "Avoid abdominal thrusts in late pregnancy. Use chest thrusts instead."
+    ],
+    "sources": [
+      {
+        "name": "Long Châu Pharmacy",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/nghiem-phap-heimlich-la-gi-cach-thuc-hien.html",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/chu-de/nghiem-phap-heimlich",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Health & Life Newspaper (SKDS)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HS4_SPZdp5g"
+    }
+  },
+  {
+    "id": "bong-cap-do-1-2",
+    "title": "1st & 2nd Degree Burns",
+    "fullTitle": "First Aid for Superficial & Partial Thickness Burns",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "medium",
+    "readTime": "3 mins",
+    "standard": "International Society for Burn Injuries (ISBI) guidelines",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"></path></svg>",
+    "shortDesc": "How to cool a burn, help prevent infection, and avoid common mistakes.",
+    "lead": "Heat damage to the skin can cause severe pain, fluid loss, and a high risk of infection. Proper cooling in the first 15–20 minutes accounts for 80% of the eventual scarring outcome.",
+    "emergencyAlert": "Seek medical care immediately if the burn is larger than one hand, affects the face, a joint, a hand, or the genitals, or if the injured person is a young child.",
+    "timeline": [
+      {
+        "time": "0–20 minutes",
+        "status": "Key period for cooling with water",
+        "level": "safe"
+      },
+      {
+        "time": "20–60 minutes",
+        "status": "Protect intact blisters and dress with sterile gauze",
+        "level": "warning"
+      },
+      {
+        "time": "More than 1 hour",
+        "status": "Risk of fluid loss and tissue infection",
+        "level": "danger"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Remove the heat source and nearby items",
+        "desc": "Move the person quickly away from danger. Before swelling starts, gently remove clothing contaminated by the hot substance and jewelry near the burn. If clothing is stuck to the skin, cut around it rather than pulling it away."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cool with gently running clean water for 15–20 minutes",
+        "desc": "Run clean, cool water (about 15–25°C) gently over the burn for at least 15–20 minutes, until the pain eases. Avoid applying ice directly."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Protect the burn with a sterile dressing",
+        "desc": "Cover the burn loosely with sterile gauze or clean plastic wrap. Avoid tight bandaging to prevent rubbing and injury to swollen tissue."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Replace fluids and seek medical care",
+        "desc": "If the person is alert, offer an electrolyte drink or warm water. Take them to the nearest hospital if the burn covers a large area or has large blisters."
+      }
+    ],
+    "dos": [
+      "Immerse or rinse the burn continuously in clean water for 15–20 minutes immediately after the injury.",
+      "Leave burn blisters intact and avoid puncturing them.",
+      "Cover the burn with moist sterile gauze or clean plastic wrap."
+    ],
+    "donts": [
+      "Do not apply toothpaste, fish sauce, python fat, or raw egg to the burn.",
+      "Do not apply ice directly. It can cause cold injury and constrict blood vessels, damaging tissue.",
+      "Do not burst natural skin blisters."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Nguyễn Tri Phương Hospital",
+        "url": "https://bvnguyentriphuong.com.vn/chan-thuong-chinh-hinh/quy-trinh-so-cuu-cap-cuu-ton-thuong-bong-nhiet",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Ho Chi Minh City Law Newspaper",
+      "youtubeUrl": "https://www.youtube.com/watch?v=cwpPymepUgE"
+    }
+  },
+  {
+    "id": "chay-mau-nghiem-trong",
+    "title": "Severe Bleeding",
+    "fullTitle": "First Aid Protocol for Severe External Hemorrhage",
+    "category": "sinh-hoat",
+    "categoryLabel": "Trauma",
+    "criticalLevel": "high",
+    "readTime": "4 mins",
+    "standard": "Stop the Bleed and Red Cross recommendations",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"></path><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"></path></svg>",
+    "shortDesc": "How to use direct pressure and apply a tourniquet in an emergency.",
+    "lead": "Arterial bleeding can cause fatal shock from blood loss within minutes. Applying direct pressure at the scene is a key lifesaving skill.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if blood is spurting or soaking through multiple layers, or the person has cold skin, is sweating, or becomes drowsy.",
+    "timeline": [
+      {
+        "time": "0–3 minutes",
+        "status": "Acute blood loss and rapid heartbeat",
+        "level": "warning"
+      },
+      {
+        "time": "3–5 minutes",
+        "status": "Falling blood pressure, shock from blood loss, and fainting",
+        "level": "danger"
+      },
+      {
+        "time": "More than 5 minutes",
+        "status": "Circulatory collapse and risk of death",
+        "level": "critical"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Use protection and apply direct pressure",
+        "desc": "Wear medical gloves if available. Press a clean dressing or thick cloth firmly against the bleeding wound. Keep continuous pressure for at least 5–10 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Secure a pressure dressing and elevate the limb",
+        "desc": "Wrap an elastic bandage firmly around the wound to maintain pressure. Raise the injured limb above heart level if a fracture is not suspected."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add a dressing if blood soaks through",
+        "desc": "If blood keeps soaking through the first dressing, leave it in place to avoid disturbing the forming clot. Add a fresh dressing on top and wrap more firmly."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Use a tourniquet for spurting bleeding from a limb",
+        "desc": "If heavy arterial bleeding from an arm or leg cannot be controlled with pressure, place the tourniquet 5–7 cm above the wound toward the body and clear of any joint. Tighten it until the bleeding stops completely and write the application time clearly on the person's forehead."
+      }
+    ],
+    "dos": [
+      "Press firmly and continuously on the wound for at least five minutes.",
+      "Record the exact tourniquet application time for emergency staff.",
+      "Keep the person warm to help prevent shock associated with hypothermia."
+    ],
+    "donts": [
+      "Do not remove the first dressing to inspect a wound while the bleeding is coming under control.",
+      "Do not place a tourniquet directly over an elbow or knee.",
+      "Do not loosen a tourniquet without help from medical personnel."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-chay-mau-cam-mau-nhung-dieu-can-biet-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-vet-thuong-chay-mau-bang-cach-de-ep-va-bang-vet-thuong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Health & Life Newspaper",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qix-Gb1DZvA"
+    }
+  },
+  {
+    "id": "ngung-tuan-hoan-cpr",
+    "title": "Cardiac Arrest (CPR)",
+    "fullTitle": "Cardiopulmonary Resuscitation (CPR) & AED Protocol",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "critical",
+    "readTime": "5 mins",
+    "standard": "AHA & ERC 2025 international protocol",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"></path><path d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"></path></svg>",
+    "shortDesc": "How to perform CPR with rescue breaths and maintain the correct pace.",
+    "lead": "When the heart stops, blood flow to the brain stops immediately. Every minute without CPR reduces the person's chance of survival by 10%.",
+    "emergencyAlert": "SHOUT FOR HELP, CALL 115, AND GET AN AED IMMEDIATELY. Start chest compressions without delay.",
+    "timeline": [
+      {
+        "time": "0–4 minutes",
+        "status": "Key window for optimal brain recovery",
+        "level": "safe"
+      },
+      {
+        "time": "4–6 minutes",
+        "status": "Brain cell damage begins",
+        "level": "warning"
+      },
+      {
+        "time": "6–10 minutes",
+        "status": "Widespread irreversible brain damage",
+        "level": "danger"
+      },
+      {
+        "time": "More than 10 minutes",
+        "status": "Clinical brain death and death",
+        "level": "critical"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Check the scene and the person's response",
+        "desc": "Make sure the scene is safe. Tap both shoulders firmly and ask loudly if the person is all right. Watch their chest for 5–10 seconds for normal breathing. Gasping does not count as breathing."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Call 115 and get an AED",
+        "desc": "Ask someone nearby specifically to call 115 and bring an AED. If you are alone, call 115 on speakerphone and start chest compressions immediately."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Compress the chest at 100–120 compressions per minute",
+        "desc": "Place the heel of one hand on the lower half of the breastbone, at the center of the chest. Put your other hand on top and interlock your fingers. Keep your arms straight and perpendicular to the chest. Use your upper body weight to press down 5–6 cm and allow full recoil after each compression."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Give rescue breaths (30 compressions to two breaths)",
+        "desc": "After 30 compressions, tilt the head back, lift the chin, pinch the nose, and give two breaths, each lasting one second and making the chest rise. If you are unfamiliar with rescue breaths or have no protective barrier, continue hands-only CPR without stopping."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Turn on the AED as soon as it is available",
+        "desc": "Turn on the AED, follow its voice prompts, and apply both pads as shown. Make sure nobody touches the person during analysis or shock delivery."
+      }
+    ],
+    "dos": [
+      "Push hard and fast at 100–120 compressions per minute, roughly to the beat of “Stayin' Alive.”",
+      "Compress 5–6 cm deep in an adult and allow the chest to recoil fully.",
+      "Change the person doing compressions every two minutes to avoid fatigue and loss of quality."
+    ],
+    "donts": [
+      "Do not lean on the chest between compressions.",
+      "Do not pause compressions for more than 10 seconds between cycles.",
+      "Do not touch the person when the AED delivers a shock."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/hoi-sinh-tim-phoi-co-ban-cho-nguoi-lon-khi-bi-tai-nan-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-ho-hap-nhan-tao-cho-nguoi-lon-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bach Mai Hospital / Health & Life Newspaper",
+      "youtubeUrl": "https://www.youtube.com/watch?v=e7GsqN19s1g"
+    }
+  },
+  {
+    "id": "soc-nhiet-say-nang",
+    "title": "Heat Stroke & Sunstroke",
+    "fullTitle": "First Aid for Severe Heat Stroke & Exertional Hyperthermia",
+    "category": "ngoai-troi",
+    "categoryLabel": "Outdoors",
+    "criticalLevel": "high",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"7\" r=\"3\"/><path d=\"M12 1v2M4 7h2m12 0h2M6.3 1.3l1.4 1.4m8.6 0 1.4-1.4M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/></svg>",
+    "shortDesc": "Recognize heat illness and heatstroke, call for help if alertness changes, and start cooling immediately.",
+    "lead": "Heatstroke is a medical emergency and can cause confusion or fainting. Heat exhaustion is milder but can worsen. Whether to offer water depends on the person's alertness and condition.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY for suspected heatstroke, including confusion, fainting, seizures, very high body temperature, or rapid deterioration.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Call 115 if you suspect heatstroke",
+        "desc": "Call 115 immediately if the person is confused, faints, has a seizure, or is very hot. Start helping without waiting for a thermometer."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Move the person to a cool place",
+        "desc": "Get the person out of the sun or heat. Loosen clothing and remove unnecessary layers."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Start cooling immediately",
+        "desc": "Wet the skin with cool water and fan the person. You can apply cold towels to the neck, armpits, and groin, or use a cool bath if it is safe and they are supervised."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Monitor the person and decide whether to offer water",
+        "desc": "Watch their breathing and alertness until help arrives. With heat exhaustion, someone who is alert and can swallow can sip water. With suspected heatstroke, do not give them anything to drink."
+      }
+    ],
+    "dos": [
+      "Call 115 immediately for altered consciousness or suspected heatstroke.",
+      "Move the person somewhere cool and begin cooling immediately.",
+      "Keep checking breathing and alertness while waiting for help."
+    ],
+    "donts": [
+      "Do not delay cooling while waiting for an ambulance.",
+      "Do not give water to someone with suspected heatstroke or who is confused or unconscious.",
+      "Do not leave a drowsy person alone in a bath."
+    ],
+    "sources": [
+      {
+        "name": "CDC — Recognizing and responding to heat-related illness",
+        "url": "https://stacks.cdc.gov/view/cdc/59395"
+      },
+      {
+        "name": "Tâm Anh Hospital",
+        "url": "https://tamanhhospital.vn/benh/say-nang-say-nong/",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Ho Chi Minh City Department of Health (Medinet)",
+        "url": "https://trungtamytequan12.medinet.gov.vn/chuyen-muc/4-buoc-so-cuu-say-nang-soc-nhiet-don-gian-cmobile14390-239756.aspx",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Tam Anh General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=UCHbYZjZ4vg"
+    }
+  },
+  {
+    "id": "co-giat-dong-kinh",
+    "title": "Seizures & Epilepsy",
+    "fullTitle": "First Aid Management During & After Epileptic Seizures",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "medium",
+    "readTime": "4 mins",
+    "standard": "International League Against Epilepsy (ILAE)",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3\"></path><path d=\"M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4\"></path><circle cx=\"20\" cy=\"10\" r=\"2\"></circle></svg>",
+    "shortDesc": "Protect the person from injury during a seizure and learn about the recovery position once they regain consciousness.",
+    "lead": "A seizure is a sudden, abnormal discharge of electrical activity in the brain. Most seizures stop on their own after one to three minutes. The first aider's main role is to protect the person from injury.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if a seizure lasts more than five minutes or if seizures repeat without the person regaining consciousness between them.",
+    "timeline": [
+      {
+        "time": "0–1 minute",
+        "status": "Whole-body stiffening, with possible blue lips",
+        "level": "warning"
+      },
+      {
+        "time": "1–3 minutes",
+        "status": "Rhythmic muscle jerking and foaming at the mouth",
+        "level": "danger"
+      },
+      {
+        "time": "After the seizure",
+        "status": "Confusion, deep breathing, and drowsiness during recovery",
+        "level": "safe"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Protect the head and move sharp objects away",
+        "desc": "Gently help the person down onto a safe, flat surface. Place a soft cushion or folded clothing under their head to protect it from impact. Move hard or sharp objects and nearby furniture away."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Loosen clothing and time the seizure",
+        "desc": "Loosen the tie, collar, and belt to make breathing easier. Use a clock to time the seizure accurately."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Avoid restraint and keep objects out of the mouth",
+        "desc": "Let the seizure run its course. Holding the limbs down can cause fractures or muscle tears. Keep cloths, chopsticks, and fingers out of the person's mouth."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Turn the person onto their side in the recovery position",
+        "desc": "As soon as the seizure ends, gently roll the whole body onto one side. This allows saliva and vomit to drain and helps keep the airway clear."
+      }
+    ],
+    "dos": [
+      "Put something soft under the person's head to protect it from impact.",
+      "Record the time the seizure starts and ends.",
+      "Turn the person safely onto their side as soon as the seizure ends."
+    ],
+    "donts": [
+      "Keep objects such as chopsticks, spoons, lemons, or fingers out of the person's mouth.",
+      "Do not hold the person down or restrain their limbs during the seizure.",
+      "Do not give food or drink until the person is fully alert."
+    ],
+    "sources": [
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/?p=197275",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/cach-so-cuu-nguoi-bi-co-giat-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Dr. Wynn Tran Official",
+      "youtubeUrl": "https://www.youtube.com/watch?v=U_nqzdiQ0bc"
+    }
+  },
+  {
+    "id": "hoc-di-vat-o-tre-em",
+    "title": "Pediatric Choking",
+    "fullTitle": "First Aid Protocol for Choking in Infants & Children",
+    "category": "tre-em",
+    "categoryLabel": "Pediatric",
+    "criticalLevel": "high",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"8\" cy=\"5\" r=\"2\"/><path d=\"M8 7v6m-3 0 3-2 3 2m-3-2v9m7-13h6m-3-3 3 3-3 3\"/></svg>",
+    "shortDesc": "Recognize choking and learn how first aid differs for infants under one year and older children.",
+    "lead": "An object can block the airway very quickly. What to do depends on whether the child can still cough and whether they are at least one year old.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if the child cannot cough, cry, or breathe, turns blue, or loses consciousness. Ask someone else to call while you start first aid.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Check whether the child can cough and breathe",
+        "desc": "If the child can still cough forcefully or cry, encourage coughing and watch closely. If the cough is weak or the child makes no sound or cannot breathe, act immediately to clear the obstruction."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Give back blows to infants under one year",
+        "desc": "Support the head and neck and lay the infant face down along your forearm with their head below their chest. Give five blows between the shoulder blades with the heel of your hand."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Give chest thrusts to infants under one year",
+        "desc": "Turn the infant face up, keeping the head lower than the chest. With two fingers, give five quick thrusts to the center of the chest just below the nipple line. Repeat five back blows and five chest thrusts if needed."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Use back blows and abdominal thrusts for children aged one and over",
+        "desc": "Lean the child forward and give five blows between the shoulder blades. If the obstruction remains, stand or kneel behind the child and give five inward and upward abdominal thrusts. Repeat until the child can breathe or becomes unresponsive."
+      },
+      {
+        "stepNumber": 5,
+        "title": "If the child becomes unresponsive",
+        "desc": "Lay the child on a firm surface, call 115 if nobody has called, and start CPR using the dispatcher's guidance or your training. Remove an object only if you can see it clearly in the mouth."
+      }
+    ],
+    "dos": [
+      "Encourage an effective cough and watch the child continuously.",
+      "For infants under one year, alternate five back blows with five chest thrusts.",
+      "For severe choking in children aged one and over, alternate five back blows with five abdominal thrusts."
+    ],
+    "donts": [
+      "Do not give abdominal thrusts to infants under one year.",
+      "Do not sweep the mouth with a finger if you cannot clearly see the object.",
+      "Do not leave the child alone or wait if they cannot breathe, cough, or cry."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-tre-bi-hoc-di-vat-duong-tho-vi",
+        "accessDate": "10/9/2026"
+      },
+      {
+        "name": "Survival Skills Vietnam (SSVN)",
+        "url": "https://survivalskills.vn/2024/07/10/xu-ly-tre-em-hoc-thuc-an-di-vat/",
+        "accessDate": "10/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Dong Nai CDC",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6HOgkJmfoyM"
+    }
+  },
+  {
+    "id": "duoi-nuoc-o-tre-em",
+    "title": "Pediatric Drowning",
+    "fullTitle": "Initial First Aid & Resuscitation for Drowning in Children",
+    "category": "ngoai-troi",
+    "categoryLabel": "Outdoors",
+    "criticalLevel": "critical",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"5\" r=\"2\"/><path d=\"M4 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0m-9-8 2-3 4 4\"/></svg>",
+    "shortDesc": "Get the child out of the water safely, call for help, and support breathing if the child is not breathing normally.",
+    "lead": "Drowning deprives the body of oxygen. Prioritize a safe rescue, call for help, and support breathing early. Do not spend time trying to force water out of the lungs.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if the child is unconscious, is not breathing, or is only gasping. A child with persistent coughing, trouble breathing, or other unusual symptoms after rescue should also be assessed by medical staff.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Get the child out of the water safely",
+        "desc": "Call for a lifeguard and bring the child to shore without putting yourself at risk. Stay out of the water if you lack the skills and equipment to enter safely."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Call 115 and check responsiveness and breathing",
+        "desc": "Ask someone to call 115 and find an AED. Check whether the child responds and breathes normally. Gasping is not normal breathing."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Support breathing and start CPR if the child is not breathing",
+        "desc": "If you know how, open the airway, give two initial rescue breaths, and then alternate 30 chest compressions with two breaths. If you cannot give breaths, perform continuous chest compressions following the 115 dispatcher's instructions."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Use an AED and keep monitoring",
+        "desc": "Use an AED as soon as one is available and follow its prompts. Continue helping until medical staff take over. If the child starts breathing normally, monitor their breathing and alertness."
+      }
+    ],
+    "dos": [
+      "Make sure the rescuer is safe before approaching the child.",
+      "Call 115 early and start CPR if the child is not breathing normally.",
+      "Use an AED when available and continue monitoring the child after getting them out of the water."
+    ],
+    "donts": [
+      "Do not jump in to rescue the child without the skills or equipment to do so safely.",
+      "Do not use abdominal thrusts or turn the child upside down to try to remove water.",
+      "Do not delay CPR to sweep the throat or try to suction water from the lungs."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/cac-buoc-so-cuu-ban-dau-tre-bi-duoi-nuoc-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/so-cuu-duoi-nuoc/",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "VTV24",
+      "youtubeUrl": "https://www.youtube.com/watch?v=uRQwZ2QX7Vc"
+    }
+  },
+  {
+    "id": "dot-quy",
+    "title": "Stroke (Cerebrovascular Accident)",
+    "fullTitle": "Recognizing FAST Signs & Emergency Response for Stroke",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "critical",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 18V6a3 3 0 0 0-5.7-1.3A3 3 0 0 0 4 9a3 3 0 0 0 .2 5A3 3 0 0 0 7 19a3 3 0 0 0 5-1Zm0 0V6a3 3 0 0 1 5.7-1.3A3 3 0 0 1 20 9a3 3 0 0 1-.2 5A3 3 0 0 1 17 19a3 3 0 0 1-5-1Z\"/><path d=\"M8 8c0 2 2 2 2 4m6-4c0 2-2 2-2 4\"/></svg>",
+    "shortDesc": "Recognize FAST, call 115 immediately, and note when the stroke symptoms started.",
+    "lead": "A stroke can cause facial drooping, limb weakness, difficulty speaking, sudden vision problems, or sudden loss of balance. Getting help early reduces the risk of lasting harm.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY for suspected stroke, including facial droop, weakness in one arm, difficulty speaking, or sudden neurological symptoms. Call even if the symptoms have passed.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Recognize the FAST signs",
+        "desc": "Check for facial drooping, uneven arm lift, and slurred or hard-to-understand speech. Also watch for loss of balance, blurred vision, or a sudden severe headache."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Call 115 and note when symptoms started",
+        "desc": "Call emergency services immediately. Record when the symptoms began or the last time the person was known to be well, and tell medical staff."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Keep the person safe",
+        "desc": "Let them rest, reassure them, and loosen tight clothing. If they are drowsy, drooling, or having trouble swallowing but are still breathing, turn them onto their side if you do not suspect a spinal injury."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Monitor while waiting for help",
+        "desc": "Watch breathing and alertness. If the person stops breathing normally, start CPR as directed by the dispatcher."
+      }
+    ],
+    "dos": [
+      "Call 115 immediately for a suspected stroke, even if the signs pass quickly.",
+      "Record when symptoms began or the last time the person was known to be well.",
+      "Stay with the person, reassure them, and monitor their breathing and consciousness."
+    ],
+    "donts": [
+      "Do not wait for the symptoms to pass before calling emergency services.",
+      "Do not give food or drink if there is a risk of swallowing difficulty or choking.",
+      "Do not put chopsticks, cloth, or any object into the person's mouth if they have a seizure."
+    ],
+    "sources": [
+      {
+        "name": "Tâm Anh Hospital",
+        "url": "https://tamanhhospital.vn/dot-quy-co-cuu-duoc-khong/",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-dot-quy-tai-nha-vi",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "University Medical Center HCMC",
+      "youtubeUrl": "https://www.youtube.com/watch?v=SKs8EKh_3SQ"
+    }
+  },
+  {
+    "id": "bong-nhiet",
+    "title": "Thermal Burns",
+    "fullTitle": "First Aid for Scald & Thermal Contact Burns",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "medium",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"></path></svg>",
+    "shortDesc": "Cool a burn under cool running water, cover it with clean material, and recognize when to call for help.",
+    "lead": "For burns from scalding water or fire, stop exposure to heat and cool the burn early. Protect the skin after cooling and assess how serious the burn is.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY for extensive or deep burns, burns to the face or neck, or burns that cause difficulty breathing. Burns to the hands, feet, joints, or genitals also need urgent medical assessment.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Stop exposure to the heat source",
+        "desc": "Move the person away from the heat safely. If their clothing is on fire, put out the flames with water or have them drop and roll."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cool for 20 minutes",
+        "desc": "Hold the burn under cool running water for about 20 minutes. Keep the rest of the body warm, especially for children or large burns."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Remove items that are not stuck to the burn",
+        "desc": "Take off jewelry and clothing near the burn before swelling starts. Leave anything stuck to the skin in place."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Cover and assess the burn",
+        "desc": "After cooling, cover loosely with clean plastic wrap or a clean non-stick dressing. Seek medical care if the burn is large, deep, or in a sensitive area."
+      }
+    ],
+    "dos": [
+      "Cool the burn with cool running water for about 20 minutes.",
+      "Remove jewelry near the burn if it is not stuck to the skin.",
+      "Cover the cooled burn loosely with clean material."
+    ],
+    "donts": [
+      "Do not put ice directly on the burn.",
+      "Do not peel away clothing stuck to burned skin.",
+      "Do not apply toothpaste, oil, or butter, or burst blisters."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Nguyễn Tri Phương Hospital",
+        "url": "https://bvnguyentriphuong.com.vn/chan-thuong-chinh-hinh/quy-trinh-so-cuu-cap-cuu-ton-thuong-bong-nhiet",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Ho Chi Minh City Law Newspaper",
+      "youtubeUrl": "https://www.youtube.com/watch?v=cwpPymepUgE"
+    }
+  },
+  {
+    "id": "bong-hoa-chat",
+    "title": "Chemical Burns",
+    "fullTitle": "First Aid Protocol for Acid & Alkali Chemical Exposures",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "high",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M9 3h6m-4 0v7l-5 8a2 2 0 0 0 1.7 3h8.6a2 2 0 0 0 1.7-3l-5-8V3M8 16h8\"/><path d=\"M11 18h.01m3 1h.01\"/></svg>",
+    "shortDesc": "Protect the rescuer, remove the chemical, rinse continuously, and seek emergency care.",
+    "lead": "Chemicals can continue to cause damage while they remain on the skin or in the eyes. Stop exposure immediately and seek a medical assessment.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if chemicals get on the skin or in the eyes, especially for a large burn, increasing pain, difficulty breathing, or an unknown chemical.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Protect the rescuer and call 115",
+        "desc": "Avoid direct contact with the chemical. Wear gloves if available, leave the exposed area, and call emergency services."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Remove contaminated items",
+        "desc": "Remove contaminated clothes and jewelry if it is safe. Gently brush dry chemical powder off the skin before rinsing."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Rinse continuously",
+        "desc": "Flush the area continuously with plenty of cool or lukewarm running water for at least 20 minutes and follow instructions from 115. If the eyes are affected, keep rinsing until medical staff take over."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Monitor the person and seek medical care",
+        "desc": "Monitor breathing and alertness, and take the person to a medical facility. Bring the label or name of the chemical if available and avoid exposing the rescuer again."
+      }
+    ],
+    "dos": [
+      "Wear gloves and protect the rescuer from exposure.",
+      "Remove contaminated clothing and brush away dry powder before rinsing.",
+      "Rinse continuously with plenty of water and get a medical assessment."
+    ],
+    "donts": [
+      "Do not use another chemical to try to neutralize the burn.",
+      "Do not apply creams, oils, or medication to the burn while waiting for help.",
+      "Do not touch contaminated skin or clothing with bare hands."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-hoa-chat-vi",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Lê Hữu Trác National Burn Hospital",
+        "url": "https://vienbongquocgia.vn/huong-dan-so-cap-cuu-bong/huong-dan-so-cap-cuu-bong-hoa-chat-o-tre-em",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Le Huu Trac National Burn Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gCrAxTJC3w8"
+    }
+  },
+  {
+    "id": "ngo-doc-thuc-pham",
+    "title": "Food Poisoning",
+    "fullTitle": "First Aid for Acute Foodborne Illness & Intoxication",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "medium",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 7c-3-3-9-1-9 5 0 4 3 9 6 9 1.5 0 2-1 3-1s1.5 1 3 1c3 0 6-5 6-9 0-6-6-8-9-5Zm0 0c0-2 1-4 3-5m-3 5c2-2 4-2 6-1\"/><path d=\"M12 10v5m0 3h.01\"/></svg>",
+    "shortDesc": "Replace fluids safely, watch for dehydration, and recognize when to seek urgent care.",
+    "lead": "Food poisoning can cause vomiting, diarrhea, and dehydration. The first priorities are safe rehydration, watching for severe symptoms, and getting medical help when needed.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if the person is unconscious, has a seizure, or has difficulty breathing. Seek medical care promptly for bloody stool, high fever, inability to keep fluids down, or signs of dehydration.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Assess severity",
+        "desc": "Check alertness, breathing, and how often the person has vomited or had diarrhea. Call 115 if they are unconscious, have a seizure, or have trouble breathing."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Offer fluids in small sips",
+        "desc": "If the person is alert and can swallow, offer small, frequent sips of water. If diarrhea is frequent, prioritize oral rehydration solution mixed according to its instructions."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Watch for dehydration",
+        "desc": "Watch for a dry mouth, reduced urination, dizziness on standing, and extreme fatigue. Young children may have fewer tears or become lethargic."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Seek medical care for severe symptoms",
+        "desc": "Contact a healthcare facility for bloody stool, high fever, vomiting that prevents keeping fluids down, persistent diarrhea, or signs of dehydration. Note what the person ate and tell medical staff."
+      }
+    ],
+    "dos": [
+      "Offer an alert person frequent small sips of water.",
+      "Prepare oral rehydration solution according to its instructions if needed.",
+      "Watch for dehydration and seek medical care if symptoms are severe."
+    ],
+    "donts": [
+      "Do not induce vomiting or stimulate the throat to make the person vomit.",
+      "Do not force an unconscious person or someone with difficulty swallowing to drink water.",
+      "Do not use anti-diarrheal medicine for high fever or bloody stool without medical guidance."
+    ],
+    "sources": [
+      {
+        "name": "Tâm Anh Hospital",
+        "url": "https://tamanhhospital.vn/so-cuu-ngo-doc-thuc-pham/",
+        "accessDate": "13/9/2026"
+      },
+      {
+        "name": "Ho Chi Minh City Center for Disease Control (HCDC)",
+        "url": "https://hcdc.vn/cach-so-cap-cuu-tam-thoi-khi-bi-ngo-doc-thuc-pham-GFkYsi.html",
+        "accessDate": "13/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "THVL General",
+      "youtubeUrl": "https://www.youtube.com/watch?v=lHw-YZfyvdY"
+    }
+  },
+  {
+    "id": "dien-giat",
+    "title": "Electrical Shock",
+    "fullTitle": "First Aid Response for High & Low Voltage Electrical Injury",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "high",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"m13 2-9 12h7l-1 8 10-12h-7l1-8Z\"/></svg>",
+    "shortDesc": "Disconnect power safely, call for help, check breathing, and care for electrical burns.",
+    "lead": "An electrical shock can disturb the heart rhythm or stop breathing even if the skin burn looks small. Make sure the power is off before approaching the person.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY for unconsciousness, abnormal breathing, chest pain, severe burns, or exposure to high voltage. Anyone who has had an electrical shock should be assessed by medical staff.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Disconnect the power and make the area safe",
+        "desc": "Turn off the power at the switch or breaker before touching the person. For high voltage or an unsafe power source, stay away and call 115 and the relevant emergency service."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Call 115 and check the person",
+        "desc": "Once it is safe, check whether the person is alert and breathing normally. Ask someone to call 115 and find an AED."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Start CPR if normal breathing has stopped",
+        "desc": "If the person is unresponsive and is not breathing or is only gasping, start CPR as directed by 115. Use an AED as soon as one is available."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Care for burns and monitor the person",
+        "desc": "If there is a burn, cool it with clean, cool running water once you are certain the power is off. Monitor breathing and consciousness and seek medical assessment."
+      }
+    ],
+    "dos": [
+      "Disconnect the power before touching the person.",
+      "Call 115, monitor breathing, and start CPR if normal breathing stops.",
+      "Get a medical assessment after an electrical shock, even if the burn is small."
+    ],
+    "donts": [
+      "Do not touch someone who is still in contact with an electrical source.",
+      "Do not approach high-voltage lines or an area that has not been declared safe.",
+      "Do not judge the severity of the injury by the skin burn alone."
+    ],
+    "sources": [
+      {
+        "name": "Tâm Anh Hospital",
+        "url": "https://tamanhhospital.vn/cach-so-cuu-nguoi-bi-dien-giat/",
+        "accessDate": "16/9/2026"
+      },
+      {
+        "name": "Survival Skills Vietnam (SSVN)",
+        "url": "https://survivalskills.vn/2026/08/27/dien-giat-4-buoc-so-cuu-dung-cach-bao-ve-nguoi-than/",
+        "accessDate": "16/9/2026"
+      }
+    ],
+    "video": {
+      "creator": "Quang Tri Television",
+      "youtubeUrl": "https://www.youtube.com/watch?v=05CxQUoSSy0"
+    }
+  },
+  {
+    "id": "hoi-sinh-tim-phoi-nguoi-lon",
+    "title": "Adult CPR & AED",
+    "fullTitle": "Cardiopulmonary Resuscitation for Adults & AED Operation",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "critical",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"></path><path d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"></path></svg>",
+    "shortDesc": "Recognize cardiac arrest, call 115, give chest compressions at the right pace, and use an AED early.",
+    "lead": "If an adult is unconscious and is not breathing normally or is only gasping, call emergency services and start CPR immediately. Use an AED as soon as one is available.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if an adult is unresponsive and is not breathing normally or is only gasping. Ask someone nearby to bring an AED.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Check safety, responsiveness, and breathing",
+        "desc": "Make sure the scene is safe. Call out and tap the person's shoulder. Check for normal breathing for up to 10 seconds. Gasping is not normal breathing."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Call 115 and get an AED",
+        "desc": "Ask someone nearby to call 115 and get an AED. If you are alone, call on speakerphone for guidance and start CPR."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Give 30 chest compressions",
+        "desc": "Place both hands in the center of the chest with the person on a firm surface. Compress about 5–6 cm deep at 100–120 compressions per minute and let the chest recoil fully after each compression."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Give rescue breaths if trained",
+        "desc": "If you are trained and able, give two breaths after 30 compressions, taking about one second for each breath so the chest rises. Continue at 30:2. If you cannot give rescue breaths, continue chest compressions without stopping."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Use an AED and continue CPR",
+        "desc": "Turn on the AED, attach the pads as shown on the device, and follow its prompts. Make sure nobody touches the person while the AED analyzes the rhythm or delivers a shock. Resume CPR when prompted."
+      }
+    ],
+    "dos": [
+      "Call 115 and start chest compressions immediately when someone is unresponsive and not breathing normally.",
+      "Give 100–120 compressions per minute and let the chest recoil fully.",
+      "Use an AED early and follow its prompts."
+    ],
+    "donts": [
+      "Do not delay compressions to check for a pulse if you are not trained.",
+      "Do not pause compressions for more than 10 seconds between cycles.",
+      "Do not touch the person during AED analysis or shock delivery."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/hoi-sinh-tim-phoi-co-ban-cho-nguoi-lon-khi-bi-tai-nan-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-ho-hap-nhan-tao-cho-nguoi-lon-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Bach Mai Hospital / Health & Life Newspaper",
+      "youtubeUrl": "https://www.youtube.com/watch?v=e7GsqN19s1g"
+    }
+  },
+  {
+    "id": "chay-mau-va-cam-mau",
+    "title": "Bleeding & Hemorrhage Control",
+    "fullTitle": "Wound Dressing, Pressure Bandaging & Hemorrhage Control",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "high",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"></path><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"></path></svg>",
+    "shortDesc": "Apply direct pressure, call 115 for severe bleeding, and use a tourniquet when appropriate.",
+    "lead": "Heavy bleeding can quickly lead to shock. Apply direct pressure and call emergency services first. Tourniquets are used for life-threatening bleeding from an arm or leg.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if bleeding is heavy and continuous or spurting, does not stop with direct pressure, or the person is pale and cold, drowsy, or breathing rapidly.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Assess safety and call for help",
+        "desc": "Wear gloves or use a barrier if available. Call 115 immediately for severe bleeding and locate the source of bleeding."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Apply direct pressure",
+        "desc": "Place gauze or clean cloth on the source of bleeding and press firmly and continuously. If an object is embedded deeply, leave it in place and apply pressure around it."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Use a tourniquet for life-threatening bleeding from a limb",
+        "desc": "For severe bleeding from an arm or leg, if you have been taught to use a tourniquet, place it above the wound and away from joints. Tighten it until the bleeding stops and record the time."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Monitor while waiting for help",
+        "desc": "Keep applying pressure if bleeding continues. Keep the person warm, monitor breathing and alertness, and tell medical staff what you did."
+      }
+    ],
+    "dos": [
+      "Apply firm direct pressure to the source of bleeding with gauze or a clean cloth.",
+      "Call 115 immediately for severe bleeding or signs of shock.",
+      "If you applied a tourniquet, record the time and tell medical staff."
+    ],
+    "donts": [
+      "Do not pull an embedded object out of the wound.",
+      "If blood soaks through, do not remove the first dressing in contact with the wound.",
+      "Leave an applied tourniquet in place for medical staff to loosen or remove."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-chay-mau-cam-mau-nhung-dieu-can-biet-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-vet-thuong-chay-mau-bang-cach-de-ep-va-bang-vet-thuong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Health & Life Newspaper",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qix-Gb1DZvA"
+    }
+  },
+  {
+    "id": "gay-xuong",
+    "title": "Bone Fractures",
+    "fullTitle": "First Aid Splinting & Immobilization for Suspected Fractures",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "high",
+    "readTime": "1 min",
+    "standard": "Based on medical sources. Clinical review pending.",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M6.5 7.5 4 7a2.5 2.5 0 1 1 3-3l.5 2.5 9 10L19 17a2.5 2.5 0 1 1-3 3l-.5-2.5-9-10Z\"/><path d=\"m10 10 2 1-1 2 3 1\"/></svg>",
+    "shortDesc": "Keep a suspected fracture still, manage bleeding, and recognize when to call emergency services.",
+    "lead": "A fracture can be open or closed. Moving the person or trying to realign the bone incorrectly can cause further injury. Keep the area still and check for severe signs.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if bone is protruding, the limb is severely deformed, there is heavy bleeding, the area below the break feels numb or cold, or you suspect injury to the head, neck, back, or hip.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Assess the situation and call for help",
+        "desc": "Check the scene, breathing, bleeding, and signs of shock. Call 115 for an open fracture, severe deformity, or suspected head or spinal injury."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Keep the injured area still",
+        "desc": "Help the person stay still, lying or sitting in their current position. Support the injured limb with a towel or soft padding. Do not try to straighten the bone."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Manage bleeding and swelling",
+        "desc": "If there is bleeding, use clean gauze to press around the wound without pressing directly on protruding bone. For a closed injury, you can use a cold pack wrapped in a towel for up to 20 minutes if the person can tolerate it."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Monitor while waiting for medical staff",
+        "desc": "Check skin color and sensation below the fracture and monitor alertness. Keep the person warm and limit movement. Do not move them yourself if a spinal injury is suspected."
+      }
+    ],
+    "dos": [
+      "Keep the area still and support it in its current position.",
+      "Call 115 for an open fracture, severe deformity, or suspected spinal injury.",
+      "Check sensation and skin color below the injury."
+    ],
+    "donts": [
+      "Do not try to straighten or reposition a deformed limb.",
+      "Do not push protruding bone back in or press on it directly.",
+      "Do not move a person with a suspected neck or spinal injury unless the scene is unsafe."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-gay-xuong-dung-co-di-chuyen-nguoi-benh-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/phan-loai-va-nhung-bien-chung-sau-khi-gay-xuong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Hospital for Traumatology and Orthopaedics HCMC",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fJNjXeEV2yQ"
+    }
+  },
+  {
+    "id": "xu-ly-khi-bi-soc-phan-ve",
+    "title": "Anaphylaxis Management",
+    "fullTitle": "Emergency Response for Severe Allergic Reactions & Anaphylaxis",
+    "category": "tre-em",
+    "categoryLabel": "Pediatric",
+    "criticalLevel": "critical",
+    "readTime": "2 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
+    "shortDesc": "Anaphylaxis is a sudden, severe allergic reaction that can be life-threatening without prompt emergency care.",
+    "lead": "Anaphylaxis is a severe whole-body allergic reaction that can develop quickly after exposure to a trigger such as medicine, bee venom, seafood, or peanuts. Throat swelling or a drop in blood pressure can be life-threatening without prompt medical help.",
+    "emergencyAlert": "Call 115 immediately. Help the person use an epinephrine auto-injector prescribed for them in the front outer thigh if they have it with them.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Remove the suspected allergen",
+        "desc": "Stop exposure to the suspected trigger, such as food or medicine, or gently brush away a stinger if there was a bee sting."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Position the person appropriately",
+        "desc": "Lay the person on their back on a flat surface. You can raise both legs about 30 cm to support circulation. If the person is having severe difficulty breathing, they can sit partially upright with their back supported."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Help the person use their prescribed adrenaline (epinephrine)",
+        "desc": "If the person has a prescribed epinephrine auto-injector, help them inject it into the front outer thigh according to the device instructions."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Call 115 and monitor the person",
+        "desc": "Contact 115 immediately for transport to a medical facility. If breathing and heartbeat stop, give chest compressions as directed."
+      }
+    ],
+    "dos": [
+      "Help the person use their prescribed epinephrine early if they have trouble breathing or signs of falling blood pressure.",
+      "Keep the person still and warm, with legs raised if they are not having trouble breathing.",
+      "Follow the doctor's instructions to stay under observation at a medical facility for at least 24 hours in case of a biphasic reaction."
+    ],
+    "donts": [
+      "Do not let the person sit up suddenly, stand, or walk, as their blood pressure may drop.",
+      "Do not delay calling emergency services if there is throat swelling or difficulty breathing.",
+      "Do not give food, drink, or other oral medicine on your own if the person is having trouble breathing or has reduced consciousness."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/xu-ly-khi-bi-soc-phan-ve-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Long Châu Pharmacy Chain",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/so-cuu-soc-phan-ve-dung-cach-va-hieu-qua-54180.html",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Phu Tho Provincial General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=vdtyxGilk0w"
+    },
+    "timeline": []
+  },
+  {
+    "id": "sac-sua-o-tre-so-sinh-rat-nguy",
+    "title": "Infant Milk Aspiration",
+    "fullTitle": "First Aid for Severe Milk Aspiration & Choking in Newborns",
+    "category": "tre-em",
+    "categoryLabel": "Pediatric",
+    "criticalLevel": "medium",
+    "readTime": "3 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
+    "shortDesc": "Medical input for the original article came from Dr. Bùi Thị Hà, a pediatric and neonatal doctor at Vinmec International General Hospital.",
+    "lead": "Milk can enter an infant's or young child's airway and block it. Without prompt help, this can quickly deprive the child of oxygen.",
+    "emergencyAlert": "Call 115 immediately if the infant turns blue, stops breathing, or cannot cry after initial first aid.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Use back blows to help clear the milk",
+        "desc": "Lay the infant face down along your forearm with the head below the chest. Gently support the chin and cheeks. Use the heel of your other hand to give five firm blows between the shoulder blades."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Use chest thrusts if breathing difficulty continues",
+        "desc": "If the infant is still blue, gently turn them face up onto your other forearm and keep the head below the body. With your index and middle fingers, give five thrusts on the lower half of the breastbone, about 1 cm below the nipple line."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Clear milk from the mouth and nose",
+        "desc": "Use a nasal suction device or clean gauze to clear pooled milk from the mouth and nose. Clear the mouth before the nose."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Support breathing and seek emergency care",
+        "desc": "If the infant stops breathing, you can give gentle rescue breaths and chest compressions according to pediatric guidance. Take the infant to the nearest medical facility."
+      }
+    ],
+    "dos": [
+      "Keep the infant's head below the chest during back blows and chest thrusts to help the milk drain.",
+      "Clear the mouth before the nose.",
+      "During feeding, keep the infant's head raised, feed slowly, and burp the infant afterward."
+    ],
+    "donts": [
+      "Do not turn the infant upside down or lift them abruptly upright while they are choking on milk.",
+      "Do not sweep the infant's throat blindly with a finger. This can scratch the lining or push the milk deeper.",
+      "Do not continue feeding while the infant is crying, coughing, or showing signs of difficulty breathing."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/sac-sua-o-tre-so-sinh-rat-nguy-hiem-huong-dan-nhan-biet-va-so-cuu-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-xu-tri-sac-sua-cho-tre-so-sinh-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Tam Anh General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=TKGN00us97o"
+    },
+    "timeline": []
+  },
+  {
+    "id": "so-cuu-ong-dot",
+    "title": "Bee & Wasp Stings",
+    "fullTitle": "First Aid for Hymenoptera Stings & Prevention of Anaphylaxis",
+    "category": "ngoai-troi",
+    "categoryLabel": "Outdoors",
+    "criticalLevel": "medium",
+    "readTime": "3 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
+    "shortDesc": "Medical input for the original article came from Dr. Lê Thị Thanh Hương, an emergency and critical care doctor at Vinmec International General Hospital.",
+    "lead": "Bee and other insect stings can cause local pain, redness, and swelling. There is a risk of anaphylaxis with multiple stings, stings to the head, face, or neck, or an allergic predisposition.",
+    "emergencyAlert": "Call 115 immediately for multiple stings, stings to the head, face, or neck, or signs of anaphylaxis such as difficulty breathing, swollen lips or eyes, hives, or dizziness.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Move away from the bees promptly",
+        "desc": "Leave the area where the bees are as quickly as possible."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Gently remove the stinger",
+        "desc": "Gently scrape the stinger out, for example with a fingernail in the direction it points, or remove it with tweezers. Bees often leave a stinger and venom sac in the skin. Avoid squeezing it with your fingers, which can spread venom."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Wash the affected skin with soap and warm water",
+        "desc": "Wash the sting site with soap and warm water. Apply an antiseptic such as 10% povidone-iodine or 70% alcohol to the sting site twice a day."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Drink plenty of water to help flush out toxins",
+        "desc": "Drink plenty of water to help flush out toxins."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Cool the sting to reduce pain and swelling",
+        "desc": "Apply a cold compress to reduce pain and swelling."
+      }
+    ],
+    "dos": [
+      "Leave the area where the bees are promptly.",
+      "Gently scrape out the stinger.",
+      "Wash the affected skin with soap and warm water.",
+      "Drink plenty of water to help flush out toxins."
+    ],
+    "donts": [
+      "Do not assume all bee stings are harmless. Some bees carry enough venom for a sting to seriously affect health.",
+      "Do not overlook bee-sting prevention.",
+      "Avoid contact with bees and do not disturb their nests.",
+      "If a bee flies toward you, do not run. Stand or sit still without moving so the bee does not follow."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-ong-dot-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/so-cuu-ong-dot/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Community Health Channel",
+      "youtubeUrl": "https://www.youtube.com/watch?v=oTYpNw1JFcw"
+    },
+    "timeline": []
+  },
+  {
+    "id": "so-cap-cuu-chan-thuong-dau-va-tuy",
+    "title": "Head & Spinal Trauma",
+    "fullTitle": "First Aid for Suspected Traumatic Brain & Spinal Cord Injury",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "medium",
+    "readTime": "2 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
+    "shortDesc": "The original article was written by Dr. Trịnh Ngọc Duy, an emergency doctor at Vinmec Times City International General Hospital.",
+    "lead": "Head and cervical spine injuries are serious. Incorrect first aid or movement can be life-threatening or cause long-term problems with movement.",
+    "emergencyAlert": "Keep the neck still and call 115. Avoid lifting the person by the armpits, carrying them on your back, or twisting their neck.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Limit movement and keep the head and neck aligned",
+        "desc": "Keep the person's head and neck aligned in a neutral position without bending, extending, or turning them. Gently hold both sides of the head or support them with soft padding beside the ears."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Ask several people to help",
+        "desc": "If the person must be moved urgently away from danger, have at least three to four people work together to perform a coordinated log roll."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Prepare a rigid, flat stretcher",
+        "desc": "Place a rigid stretcher or flat board parallel to and close beside the person."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Move the person onto the stretcher together",
+        "desc": "The person holding the head coordinates the timing so everyone rolls the person onto their side as a unit, keeping the body aligned. Slide the stretcher under their back and gently lower them onto it."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Secure the person and transfer them to hospital",
+        "desc": "Gently secure the forehead, chest, and hips to the stretcher. Transfer the person to a facility with a trauma service."
+      }
+    ],
+    "dos": [
+      "Keep the head, neck, and torso aligned throughout.",
+      "Check the airway, breathing, and alertness regularly.",
+      "Loosen tight clothing and keep the person warm while waiting for medical staff."
+    ],
+    "donts": [
+      "Do not lift the person by the armpits or carry them on your back or across your arms. This can worsen a spinal injury.",
+      "Do not turn or bend the person's head to inspect a wound at the back of the neck.",
+      "Do not remove a helmet unless you have been trained in two-person neck stabilization."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-chan-thuong-dau-va-tuy-song-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Tuổi Trẻ News — Health",
+        "url": "https://tuoitre.vn/video/bac-si-huong-dan-cach-so-cuu-khi-bi-chan-thuong-vung-dau-tranh-sai-lam-nguy-hiem-155283.htm",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "HTV7",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Eu2Kt6Qdl0E"
+    },
+    "timeline": []
+  },
+  {
+    "id": "bi-bong-gan-co-tay-co-chan-phai",
+    "title": "Sprains & Strains (R.I.C.E)",
+    "fullTitle": "First Aid Protocol for Acute Ligament Sprains and Muscle Strains",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "low",
+    "readTime": "4 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"></path></svg>",
+    "shortDesc": "Early care is important. A sprain can get worse if it is not managed properly.",
+    "lead": "A sprain stretches or tears the ligaments around a joint after excessive movement or a fall. Rest, ice, compression, and elevation are commonly recommended to reduce early pain and swelling.",
+    "emergencyAlert": "Seek medical care if the joint is deformed, cannot bear weight, or is very painful and a fracture is suspected.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Rest",
+        "desc": "Stop physical activity and limit walking or movement of the injured joint."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Ice",
+        "desc": "Wrap ice in a soft cloth and apply it to the joint for about 15–20 minutes every two to three hours in the first 48 hours to help reduce swelling and pain."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Compression",
+        "desc": "Wrap the joint gently with an elastic bandage for support. Avoid wrapping so tightly that fingers or toes become numb or blue."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Elevation",
+        "desc": "Raise the injured joint above heart level while resting to support circulation and reduce swelling."
+      }
+    ],
+    "dos": [
+      "Use the four RICE steps during the first 48 hours after injury.",
+      "Always wrap ice in a cloth to avoid cold injury to the skin.",
+      "See a doctor to assess ligament damage or rule out a fracture."
+    ],
+    "donts": [
+      "Avoid rubbing with warming oils or medicated alcohol, or soaking in hot water immediately after the injury, as these can increase swelling.",
+      "Do not try to manipulate or pull the injured joint into place.",
+      "Do not resume vigorous activity before the joint has recovered and is stable."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/bi-bong-gan-co-tay-co-chan-phai-lam-sao-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/so-cuu-bong-gan-trat-khop/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "1LIFE FIRST AID (Dr. Pham Quang Vinh)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=K8Cf9g5EHgc"
+    },
+    "timeline": []
+  },
+  {
+    "id": "xu-ly-ha-duong-huyet-o-nguoi-tieu",
+    "title": "Hypoglycemia in Diabetes",
+    "fullTitle": "First Aid Management for Acute Hypoglycemic Episodes in Diabetes",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "medium",
+    "readTime": "4 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
+    "shortDesc": "Low blood sugar is a common complication in people with diabetes.",
+    "lead": "Low blood sugar can occur after too much medicine, missed meals, or increased activity. Shaky hands, cold sweats, and intense hunger are common. Prolonged low blood sugar can affect consciousness and the nervous system.",
+    "emergencyAlert": "Call 115 immediately if the person becomes drowsy, loses consciousness, or has a seizure. Never put food or drink into the mouth of an unconscious person.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Recognize symptoms and check blood sugar promptly",
+        "desc": "Use a personal glucose meter if available. A reading below 3.9 mmol/L or 70 mg/dL is generally considered low blood sugar."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Use the rule of 15 if the person is alert",
+        "desc": "Give about 15 g of fast-acting sugar immediately, such as 120 mL of sweet fruit juice, three sugar tablets, a tablespoon of honey, or a glass of warm sugar water."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Rest and recheck after 15 minutes",
+        "desc": "Let the person sit and rest. Check blood sugar again after 15 minutes and repeat 15 g of sugar if it is still low."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Offer a snack to maintain blood sugar",
+        "desc": "Once blood sugar has stabilized, the person can have a light starchy snack such as crackers, bread, or porridge."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Respond to reduced consciousness",
+        "desc": "Place the person on their side in the recovery position and call 115. Do not give anything by mouth. If they have a prescribed glucagon pen, use it according to medical guidance."
+      }
+    ],
+    "dos": [
+      "Give fast-acting sugar as soon as early signs such as shaky hands or sweating are noticed.",
+      "People with diabetes should carry a few candies or sugar packets.",
+      "If it happens repeatedly, talk to the treating doctor about reviewing the medication plan."
+    ],
+    "donts": [
+      "Do not put food or drink in the mouth of someone who is unconscious or having a seizure, as they may choke.",
+      "Avoid relying on high-fat foods such as chocolate or ice cream for fast treatment because fat slows sugar absorption.",
+      "Do not give extra insulin on your own if low blood sugar is suspected."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/xu-ly-ha-duong-huyet-o-nguoi-tieu-duong-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/cach-cap-cuu-khi-bi-ha-duong-huyet-dot-ngot-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Tam Anh General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=xJH6RltjkPU"
+    },
+    "timeline": []
+  },
+  {
+    "id": "cach-lay-di-vat-trong-mat",
+    "title": "Foreign Body in Eye",
+    "fullTitle": "First Aid for Superficial Ocular Foreign Bodies & Corneal Irritants",
+    "category": "ngoai-troi",
+    "categoryLabel": "Outdoors",
+    "criticalLevel": "medium",
+    "readTime": "3 mins",
+    "standard": "Reference: www.vinmec.com",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
+    "shortDesc": "Medical input for the original article came from Dr. Vũ Hữu Thắng, an emergency and critical care doctor at Vinmec International General Hospital.",
+    "lead": "Dust, small insects, or sand can get into the eye. Gentle handling helps reduce the risk of corneal scratches or infection.",
+    "emergencyAlert": "Seek specialist eye care immediately if a metal fragment is deeply embedded, the eye is bleeding, or there is severe pain.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Wash your hands thoroughly",
+        "desc": "Wash your hands with soap and clean water before touching the area around the eye."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Rinse with saline or clean water",
+        "desc": "Tilt the head and gently drip or pour 0.9% saline from the inner corner of the eye toward the outer corner so it washes the object out."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Blink gently in clean water",
+        "desc": "You can lower the eye gently into a cup of clean water or saline and blink several times."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Check the eye and seek care if needed",
+        "desc": "If the object is clearly visible on the inner surface of the lower eyelid, you can touch it gently with a damp cotton swab. If it is on the cornea or the gritty sensation remains strong after rinsing, visit a healthcare facility for treatment."
+      }
+    ],
+    "dos": [
+      "Blink several times to let natural tears help flush out the object.",
+      "Prefer 0.9% saline intended for use in the eyes.",
+      "Lightly cover the eye with clean gauze and see a doctor if irritation or pain does not improve."
+    ],
+    "donts": [
+      "Do not rub the eye. The object can scrape the cornea.",
+      "Do not try to remove an object with tweezers, a pointed stick, or a hard tool.",
+      "Do not try to pry out an object embedded in the cornea."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-cach-lay-di-vat-trong-mat-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Guidelines Document",
+        "url": "https://vietngagroup.vn/cach-xu-ly-nhanh-khi-co-di-vat-roi-vao-mat/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Nghe An TV",
+      "youtubeUrl": "https://www.youtube.com/watch?v=h3KYeNW0Mzc"
+    },
+    "timeline": []
+  },
+  {
+    "id": "cach-so-cuu-dong-kinh-xu-tri-dung",
+    "title": "Seizure Management",
+    "fullTitle": "Standardized First Aid Response for Convulsive Seizures",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "medium",
+    "readTime": "3 mins",
+    "standard": "Reference: Epilepsy Foundation Australia",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"></polyline></svg>",
+    "shortDesc": "Protect a person having a seizure from injury, time the seizure, and recognize when to call emergency services.",
+    "lead": "Stay calm and stay with the person. Protect them from injury during the seizure and monitor them until they regain consciousness.",
+    "emergencyAlert": "Call 115 if the seizure lasts five minutes or longer, another seizure follows, it is the person's first seizure, or the person does not recover afterward.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Protect the person from injury",
+        "desc": "Move hard and sharp objects away, place something soft under the person's head, and time the seizure."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Keep the airway clear",
+        "desc": "Gently turn the person onto their side when it is safe to do so. If there is food, fluid, or vomit in the mouth, turn them onto their side immediately."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Stay and monitor the person",
+        "desc": "Monitor breathing and stay until the person regains consciousness or emergency staff arrive."
+      }
+    ],
+    "dos": [
+      "Note when the seizure starts and ends.",
+      "Move hazards away and reassure the person once they are alert."
+    ],
+    "donts": [
+      "Do not hold someone down while they are having a seizure.",
+      "Do not put anything in their mouth or give food or drink until they are fully alert."
+    ],
+    "sources": [
+      {
+        "name": "Epilepsy Foundation Australia — Seizure first aid",
+        "url": "https://epilepsyfoundation.org.au/understanding-epilepsy/seizure-first-aid/tonic-clonic-seizures/"
+      },
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/?p=197275",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/cach-so-cuu-nguoi-bi-co-giat-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Dr. Wynn Tran Official",
+      "youtubeUrl": "https://www.youtube.com/watch?v=U_nqzdiQ0bc"
+    },
+    "timeline": []
+  },
+  {
+    "id": "nhung-cach-so-cuu-nguoi-bi-ngat",
+    "title": "Syncope & Fainting",
+    "fullTitle": "First Aid Management for Vasovagal Syncope & Sudden Fainting",
+    "category": "ngoai-troi",
+    "categoryLabel": "Outdoors",
+    "criticalLevel": "medium",
+    "readTime": "2 mins",
+    "standard": "Reference: St John Ambulance",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
+    "shortDesc": "Help the person about to faint lie down. Check their breathing if they remain unresponsive.",
+    "lead": "Fainting is usually brief. If the person remains unresponsive, check their breathing and call emergency services.",
+    "emergencyAlert": "Call 115 if the person does not come around or is not breathing normally. Follow the dispatcher's instructions.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Help the person lie down",
+        "desc": "Raise their legs slightly if you can. Ask others to step back so there is fresh air around the person."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Monitor the person as they come around",
+        "desc": "Reassure the person. Once they feel better, help them sit up gradually over a few minutes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Check the person if they are still unresponsive",
+        "desc": "Open the airway, check breathing, and call 115. If they are breathing normally, place them on their side in the recovery position and keep monitoring."
+      }
+    ],
+    "dos": [
+      "Keep the area around the person clear and well ventilated.",
+      "Monitor alertness and breathing."
+    ],
+    "donts": [
+      "Do not help the person stand immediately after they come around.",
+      "Do not crowd around the person."
+    ],
+    "sources": [
+      {
+        "name": "St John Ambulance — First aid for fainting",
+        "url": "https://www.sja.org.uk/first-aid-advice/fainting/"
+      },
+      {
+        "name": "St John Ambulance — The recovery position",
+        "url": "https://www.sja.org.uk/first-aid-advice/recovery-position/"
+      },
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/?p=103141",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/bi-ngat-xiu-nen-uong-gi-cach-so-cuu-nguoi-ngat-xiu-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "General Medicine – Dr. Nguyen Trung Thuc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=63NzApt2-UY"
+    },
+    "timeline": []
+  },
+  {
+    "id": "so-cuu-khi-bi-ran-can-ran-doc",
+    "title": "Venomous Snakebite",
+    "fullTitle": "First Aid Protocol for Venomous Snake Envenomation",
+    "category": "ngoai-troi",
+    "categoryLabel": "Outdoors",
+    "criticalLevel": "high",
+    "readTime": "3 mins",
+    "standard": "References: Tâm Anh General Hospital and Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"5\"></circle><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"></path></svg>",
+    "shortDesc": "Only 15–20% of the roughly 3,000 snake species worldwide have venom or saliva toxic to humans.",
+    "lead": "A venomous snakebite can seriously affect the nervous system or blood clotting. First aid aims to slow the spread of venom while waiting for specialist treatment.",
+    "emergencyAlert": "Get the person to the nearest healthcare facility as soon as possible for assessment and antivenom if needed.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Move to safety and reassure the person",
+        "desc": "Move the person out of the snake's reach. Help them stay calm and lie still. Limit movement because anxiety and vigorous movement can cause venom to spread faster."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Remove jewelry and loosen clothing",
+        "desc": "Promptly remove rings, bracelets, and watches from the bitten limb before swelling begins."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Clean gently and limit limb movement",
+        "desc": "You can gently rinse the surface of the bite with clean water or saline and cover it with clean gauze. Gently immobilize the bitten limb with a splint and keep it below heart level."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Transport the person to a healthcare facility",
+        "desc": "Use a stretcher or suitable transport so the person does not have to walk. If safe, remember the snake's markings or photograph it from a distance for the doctor."
+      }
+    ],
+    "dos": [
+      "Keep the person still and limit movement of the bitten limb as much as possible.",
+      "Remove items that might constrict the limb, such as rings or watches, early.",
+      "Get the person to a facility that can treat poisoning as soon as possible."
+    ],
+    "donts": [
+      "Do not cut the skin or squeeze blood from the bite. This can increase the risk of infection and blood vessel damage.",
+      "Do not suck venom out by mouth. Protect the rescuer as well.",
+      "Do not apply a tourniquet tight enough to stop circulation completely, as this can cause tissue death.",
+      "Do not apply leaves or use unproven folk remedies that delay getting to the hospital."
+    ],
+    "sources": [
+      {
+        "name": "Tâm Anh General Hospital",
+        "url": "https://tamanhhospital.vn/cach-so-cuu-khi-bi-ran-can/",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-khi-bi-ran-can-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "VTV Health",
+      "youtubeUrl": "https://suckhoe.vtv.vn/video/so-cuu-khi-bi-ran-can-108672762.htm"
+    },
+    "timeline": []
+  },
+  {
+    "id": "nghiem-phap-heimlich-la-gi-cach",
+    "title": "Heimlich Maneuver Guide",
+    "fullTitle": "Comprehensive Guide to Performing the Heimlich Maneuver",
+    "category": "tre-em",
+    "categoryLabel": "Pediatric",
+    "criticalLevel": "medium",
+    "readTime": "2 mins",
+    "standard": "References: Long Châu and Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 14s1.5 2 4 2 4-2 4-2\"></path><line x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"></line><line x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"></line></svg>",
+    "shortDesc": "The Heimlich maneuver is a first aid technique used to clear an airway obstruction.",
+    "lead": "The Heimlich maneuver uses abdominal thrusts when an object blocks the airway of an adult or an older child. Pressure pushes air up from the lungs to help expel the object.",
+    "emergencyAlert": "Act promptly when there are signs of severe airway obstruction, such as clutching the throat, inability to speak or cough, or blue skin. Ask someone to call 115.",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Stand securely behind the person",
+        "desc": "Stand behind them with one foot in front of the other for balance and wrap both arms around their waist."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Find the correct hand position",
+        "desc": "Make a fist. Put its thumb side against the upper abdomen, above the navel and about 2–3 cm below the tip of the breastbone."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Give abdominal thrusts",
+        "desc": "Grasp the fist with your other hand and pull sharply inward and diagonally upward."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Alternate back blows and abdominal thrusts",
+        "desc": "Many current guidelines, such as the ERC's, alternate five back blows with five abdominal thrusts until the object comes out or the person can cough or breathe again."
+      },
+      {
+        "stepNumber": 5,
+        "title": "If the person becomes unresponsive",
+        "desc": "Gently lower the person onto their back on a firm surface, call 115, and start CPR. Remove an object from the mouth only if you can clearly see it."
+      }
+    ],
+    "dos": [
+      "Direct the thrust diagonally upward to use air pressure to expel the object.",
+      "Encourage the person to get checked for possible soft-tissue injury after the object comes out.",
+      "Alternate five back blows with five abdominal thrusts as appropriate, following current first aid guidance."
+    ],
+    "donts": [
+      "Do not use abdominal thrusts on infants under one year. Use back blows and chest thrusts.",
+      "Do not place the fist directly on the tip of the breastbone or on the ribs.",
+      "Do not use abdominal thrusts in late pregnancy. Use chest thrusts instead.",
+      "Do not perform a blind finger sweep when you cannot see the object."
+    ],
+    "sources": [
+      {
+        "name": "Long Châu Pharmacy",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/nghiem-phap-heimlich-la-gi-cach-thuc-hien.html",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec International General Hospital",
+        "url": "https://www.vinmec.com/vie/chu-de/nghiem-phap-heimlich",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Health & Life Newspaper (SKDS)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=HS4_SPZdp5g"
+    },
+    "timeline": []
+  },
+  {
+    "id": "so-cuu-nguoi-bi-nhoi-mau-co-tim-dau-tim-dot-ngot",
+    "title": "Heart Attack (Infarction)",
+    "fullTitle": "First Aid Protocol for Acute Myocardial Infarction & Chest Pain",
+    "category": "benh-ly",
+    "categoryLabel": "Medical",
+    "criticalLevel": "critical",
+    "readTime": "5 mins",
+    "standard": "Medical guidance referenced from Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"></path><path d=\"m12 13-1-1 2-2-3-3 2-2\"></path></svg>",
+    "shortDesc": "A blocked coronary artery can cause severe chest pain that spreads to the shoulder or left arm. Rest, call 115, and be ready to start CPR.",
+    "lead": "A sudden coronary artery blockage cuts the blood supply to the heart muscle. Signs can include severe chest pain spreading to the shoulder, left arm, or jaw, difficulty breathing, and sweating. Help the person rest semi-reclined, call 115 immediately, and be ready to start CPR if the heart stops.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if severe chest pain lasts more than a few minutes and spreads to the shoulder, jaw, or left arm, or if the person faints or loses consciousness.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Rest completely in a semi-reclined position",
+        "desc": "Stop the activity immediately. Sit or rest in a semi-reclined position in an airy place, with the knees bent and the body at about 75 degrees to the ground."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Loosen clothing and breathe gently",
+        "desc": "Relax the shoulders and arms. Close the eyes and breathe gently through the nose. Loosen the collar, tie, or scarf to keep the airway clear."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Use medication as directed by a doctor",
+        "desc": "If there is an existing prescription, use a nitroglycerin tablet under the tongue or chew one aspirin tablet according to medical instructions."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Give chest compressions if the person becomes unresponsive",
+        "desc": "Lay the person on a firm surface. Stack your hands over the center of the chest on the breastbone, press firmly to one-third of the chest depth, and continue while waiting for the 115 ambulance."
+      }
+    ],
+    "dos": [
+      "Stop the activity and rest semi-reclined with the knees slightly bent.",
+      "Relax the shoulders and arms, close the eyes, and breathe gently through the nose.",
+      "Use nitroglycerin under the tongue or chew aspirin if a doctor has already instructed the person to do so.",
+      "Call 115 immediately and be prepared to give chest compressions if the person stops breathing."
+    ],
+    "donts": [
+      "Do not force deep breaths or hold the breath, which can increase strain on the heart.",
+      "Do not speak loudly or ask too many questions, as this can make the person anxious or frightened.",
+      "Do not let the person walk around or drive themselves to hospital."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/huong-dan-xu-tri-so-cuu-cho-nguoi-bi-nhoi-mau-co-tim-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Source 2",
+        "url": "https://tiemchunglongchau.com.vn/kien-thuc-tiem-chung/huong-dan-so-cuu-nhoi-mau-co-tim-va-bien-phap-phong-benh-hieu-qua",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Tâm Anh General Hospital — Heart attack warning signs",
+        "url": "https://tamanhhospital.vn/dau-hieu-dau-tim/",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Long Châu Pharmacy — Left-sided chest pain and how to respond",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/dau-nguc-trai-nguyen-nhan-dau-hieu-nhan-biet-va-cach-xu-tri-an-toan.html",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Hoan My Saigon Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=1VxQt1QBrSo"
+    }
+  },
+  {
+    "id": "so-cuu-chay-mau-cam",
+    "title": "Nosebleed (Epistaxis)",
+    "fullTitle": "First Aid Protocol for Anterior and Posterior Epistaxis",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "medium",
+    "readTime": "3 mins",
+    "standard": "Medical guidance referenced from Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M9.5 3v6.5L7.5 13a2.5 2.5 0 0 0 2.3 3.5h.7\"></path><path d=\"M14.5 3v6.5l2 3.5a2.5 2.5 0 0 1-2.3 3.5h-.7\"></path><path d=\"M12 16.5s-2 2-2 3.3a2 2 0 0 0 4 0c0-1.3-2-3.3-2-3.3Z\"></path></svg>",
+    "shortDesc": "Dry weather or injury can rupture small blood vessels in the nose. Sit upright, lean slightly forward, and pinch the soft part of the nose for 10–15 minutes.",
+    "lead": "Dry weather, nose picking, or injury can rupture small blood vessels in the nasal lining. Have the person sit upright, lean the head forward slightly, pinch the soft part of the nose for 10–15 minutes, and breathe through the mouth. Avoid tilting the head back.",
+    "emergencyAlert": "CALL 115 OR GO TO HOSPITAL IMMEDIATELY if bleeding continues for more than 30 minutes, the person faints or feels lightheaded, or the bleeding follows a head or facial injury.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sit upright and lean the head slightly forward",
+        "desc": "Have the person sit upright and lean the head forward slightly. This helps reduce pressure and keeps blood from running into the throat, where it can cause choking or vomiting."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Pinch the soft part of the nose for 10–15 minutes",
+        "desc": "Use the thumb and index finger to pinch both sides of the soft part of the nose. Keep steady pressure for 10–15 minutes while breathing through the mouth."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Check the bleeding and repeat if needed",
+        "desc": "Release the pressure slowly after 15 minutes. If bleeding continues, pinch for another 10–15 minutes. If it still does not stop, go to a healthcare facility immediately."
+      }
+    ],
+    "dos": [
+      "Sit leaning slightly forward so the blood drains out through the nostrils.",
+      "Pinch the soft part of the nose with the thumb and index finger for 10–15 minutes without letting go.",
+      "Breathe steadily through the mouth while pinching the nose.",
+      "Keep the head above the chest for several hours after bleeding stops."
+    ],
+    "donts": [
+      "Do not tilt the head backward. Blood can run into the throat and cause choking or vomiting.",
+      "Do not pick the nose, blow it hard, or bend over for several hours after first aid.",
+      "Do not pack dirty tissues or rough cotton deep into the nostrils."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-dung-khi-bi-chay-mau-cam-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Source 2",
+        "url": "https://tamanhhospital.vn/so-cuu-chay-mau-cam/",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Tam Anh General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=P2doSrpRTnE"
+    }
+  },
+  {
+    "id": "so-cap-cuu-chan-thuong-bung-theo-huong-dan-cua-bo-y-te",
+    "title": "Abdominal Trauma",
+    "fullTitle": "First Aid Management for Blunt and Penetrating Abdominal Trauma",
+    "category": "tai-nan",
+    "categoryLabel": "Accidents",
+    "criticalLevel": "high",
+    "readTime": "5 mins",
+    "standard": "Medical guidance referenced from Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M7 4c0 2-1 4-1 7s1 5 1 9\"></path><path d=\"M17 4c0 2 1 4 1 7s-1 5-1 9\"></path><circle cx=\"12\" cy=\"13\" r=\"3\"></circle><path d=\"M12 7v2M12 17v2M8 13h1M15 13h1\"></path></svg>",
+    "shortDesc": "A blow or penetrating wound to the abdomen can injure internal organs and cause pain and swelling. Keep the person still and warm, give nothing by mouth, and call 115.",
+    "lead": "A forceful blow or penetrating abdominal injury can damage internal organs. The person may have pain, a swollen abdomen, or shock from blood loss. Keep the person still and warm, give nothing by mouth, and get emergency care.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if you suspect an abdominal injury with signs of shock, sweating, a swollen abdomen, vomiting blood, exposed organs, or an embedded object.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Let the person lie comfortably in a cool, airy place",
+        "desc": "Loosen clothing and the belt. If the person is vomiting or about to vomit, place them on their left side in the recovery position. Check airway, breathing, and circulation as needed."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Respond to shock and open wounds",
+        "desc": "If there are signs of shock, keep the head low and legs raised, and keep the person warm. Cover open, bleeding wounds with sterile gauze or clean clothing."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Protect any exposed organs",
+        "desc": "Do not try to push exposed organs back inside. Cover them with clean gauze moistened with saline or an inverted clean bowl or basin to keep them moist and help prevent infection."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Leave embedded objects in place and wait for the ambulance",
+        "desc": "Do not pull out an object or weapon that has penetrated the abdomen. Removing it can cause life-threatening bleeding. Wait for the 115 ambulance to take over."
+      }
+    ],
+    "dos": [
+      "Place the person on their left side if they are vomiting.",
+      "Cover exposed organs with clean saline-moistened gauze or an inverted clean bowl.",
+      "Keep the person warm with a light blanket.",
+      "Tell the 115 dispatcher clearly if organs are exposed or the person shows signs of shock."
+    ],
+    "donts": [
+      "Do not push exposed intestines or other organs back into the abdomen.",
+      "Do not remove embedded objects at the scene.",
+      "Do not give the person anything to eat or drink.",
+      "Do not move a seriously injured person on your own while their condition is unstable."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-chan-thuong-bung-huong-dan-cua-bo-y-te-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Source 2",
+        "url": "https://bvnguyentriphuong.com.vn/hoi-suc-tich-cuc-chong-doc/so-cap-cuu-chan-thuong-bung",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Study Medicine With Me",
+      "youtubeUrl": "https://www.youtube.com/watch?v=oTgIDLi0hdw"
+    }
+  },
+  {
+    "id": "nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien",
+    "title": "Core First Aid Principles",
+    "fullTitle": "Fundamental Principles & Safety Protocol in Emergency First Aid",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "medium",
+    "readTime": "4 mins",
+    "standard": "Medical guidance referenced from Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 11v4\"></path><path d=\"M14 13h-4\"></path><path d=\"M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\"></path><rect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"></rect></svg>",
+    "shortDesc": "Four principles: stay calm and safe, manage the scene, give initial first aid, and work step by step by assessing, planning, acting, and reassessing.",
+    "lead": "The four main first aid principles are to stay calm and safe, manage the situation, give initial first aid, and work step by step. Assess, plan, act, and reassess to avoid missing important information.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY if there is a risk of further accidents, fire, or explosion, or if someone is unconscious, stops breathing, or has life-threatening bleeding.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Assess",
+        "desc": "Assess the scene to make sure it is safe for you and the injured person. Assess the person's condition to determine what first aid is most needed."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Plan",
+        "desc": "Make a plan of action. If needed, plan to call for outside help, such as 115 or a hospital, or ask people nearby for help."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Act",
+        "desc": "Follow your plan. Give first aid immediately if needed or prioritize injuries according to your assessment."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Reassess",
+        "desc": "Review the first aid you have given. Make sure the scene remains safe and keep reassessing the person's condition for changes."
+      }
+    ],
+    "dos": [
+      "Stay calm and protect your safety, the injured person's safety, and that of bystanders.",
+      "Manage the situation to keep the scene safe.",
+      "Give initial first aid to preserve life and promote recovery.",
+      "Work step by step so anxiety does not overwhelm you and important details are not missed."
+    ],
+    "donts": [
+      "Do not rush into a dangerous scene with hazards such as exposed live wires, fire, explosions, or toxic gas.",
+      "Do not move a person if a spinal injury is suspected.",
+      "If there are multiple casualties, do not focus on a non-life-threatening injury at the expense of someone with a serious injury."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Source 2",
+        "url": "https://tramytep10q10.medinet.gov.vn/chuyen-muc/huong-dan-so-cap-cuu-ban-dau-cmobile3091-154422.aspx",
+        "accessDate": "16/09/2026"
+      }
+    ]
+  },
+  {
+    "id": "so-cap-cuu-bong-o-tre-em",
+    "title": "Pediatric Scald Burns",
+    "fullTitle": "First Aid Management for Scald and Contact Burns in Children",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "high",
+    "readTime": "4 mins",
+    "standard": "Medical guidance referenced from Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"></path><path d=\"M12 18a2 2 0 0 1-2-2c0-1.2 2-3 2-3s2 1.8 2 3a2 2 0 0 1-2 2Z\"></path></svg>",
+    "shortDesc": "For burns from boiling water, hot food, or flames, cool the child's burn with clean water for 15–20 minutes, dress it with clean gauze, and seek medical care immediately.",
+    "lead": "Children's skin is thin and sensitive, so burns from boiling water, hot food, or flames can go deep and lead to burn shock or infection. Cool with clean, cool water for 15–20 minutes, cover with clean gauze, and go to hospital. Do not apply python fat or toothpaste.",
+    "emergencyAlert": "TAKE THE CHILD TO HOSPITAL IMMEDIATELY for a large burn covering the entire back, chest, abdomen, or a limb, a burn to the face or genitals, a second-degree or deeper burn, or signs of shock or panic.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Remove the cause of the burn and get the child to safety",
+        "desc": "Quickly move the child away from the heat. Gently remove clothing soaked in hot liquid. If clothing sticks to the skin, cut around it rather than trying to pull it off."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cool with clean water for 15–20 minutes",
+        "desc": "Immediately immerse the burn in clean, cool water or rinse it gently under running water (15–20°C) for 15–20 minutes to limit burn depth, pain, and swelling."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Protect the burn with clean, sterile gauze",
+        "desc": "Keep the burn clean and cover it lightly with sterile gauze to ease local pain. Do not apply unfamiliar medication or chemicals."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Replace fluids, help prevent burn shock, and seek medical care",
+        "desc": "Let the child breastfeed or drink plenty of sugar water with a little salt or oral rehydration solution to help prevent shock. Hold the child's head raised and turned to one side to avoid reflux. Take the child quickly to the nearest healthcare facility."
+      }
+    ],
+    "dos": [
+      "Immerse the burn in clean, cool water immediately for the first 15–20 minutes.",
+      "Offer sugar water with salt or an oral rehydration solution to replace fluids.",
+      "Comfort and reassure the child to reduce panic."
+    ],
+    "donts": [
+      "Do not apply toothpaste, burn cream, python fat, or unfamiliar medication to the burn.",
+      "Do not immerse the child in ice-cold water, which can cause cold injury and hypothermia.",
+      "Do not burst skin blisters.",
+      "Do not pull clothing stuck to the burn off the skin."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-bong-o-tre-em-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Source 2",
+        "url": "https://tamanhhospital.vn/so-cuu-tre-bi-bong/",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec — First aid for flame burns and scalds",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Vinmec — First aid steps for burns in children",
+        "url": "https://www.vinmec.com/vie/bai-viet/cac-buoc-so-cuu-ban-dau-tre-bi-bong-vi",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "Tam Anh General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_GO6VO5wzsU"
+    }
+  },
+  {
+    "id": "so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu",
+    "title": "Amputated Extremities",
+    "fullTitle": "First Aid & Proper Cold Preservation for Traumatic Limb Amputations",
+    "category": "sinh-hoat",
+    "categoryLabel": "Daily Life",
+    "criticalLevel": "critical",
+    "readTime": "5 mins",
+    "standard": "Medical guidance referenced from Vinmec",
+    "iconSvg": "<svg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"><path d=\"M10 10.01h.01\"></path><path d=\"M10 14.01h.01\"></path><path d=\"M14 10.01h.01\"></path><path d=\"M14 14.01h.01\"></path><path d=\"M18 6v12\"></path><path d=\"M6 6v12\"></path><rect x=\"2\" y=\"6\" width=\"20\" height=\"12\" rx=\"2\"></rect></svg>",
+    "shortDesc": "A severed limb is an urgent emergency. Control the person's bleeding and keep the severed part in a sealed bag cooled indirectly in an ice container.",
+    "lead": "A traumatic amputation is an emergency. Controlling the person's bleeding and preserving the severed part by sealing it in a clean bag and cooling it indirectly in an ice container affect whether microsurgical reattachment is possible.",
+    "emergencyAlert": "CALL 115 IMMEDIATELY. Control life-threatening bleeding and preserve the severed part with indirect cooling so it can reach microsurgery within the six-hour window.",
+    "timeline": [],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Keep the airway clear and check vital signs",
+        "desc": "Make sure the airway is clear. If breathing and circulation stop, start CPR immediately."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Control bleeding from the stump first",
+        "desc": "Rinse the wound with saline or clean water and cover it with a dressing. Apply a pressure dressing to the stump. If a hand or foot has been severed or pressure does not stop the bleeding, place a tourniquet 10 cm from the stump and record the time."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Gently rinse the severed part and wrap it in moist gauze",
+        "desc": "Handle the part gently and rinse it with sterile saline or clean water. Avoid soap and chemicals. Moisten sterile gauze with saline and wrap the part completely, without using too thick a layer."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Cool the part indirectly in a sealed bag and an ice container",
+        "desc": "Place the wrapped part in a clean plastic bag and seal it to keep water out. Put the bag into an ice container or a basin of ice water. Keep the part from touching ice directly."
+      },
+      {
+        "stepNumber": 5,
+        "title": "Take the person and the severed part to hospital urgently",
+        "desc": "Transport both quickly to a hospital that can perform microsurgical reattachment."
+      }
+    ],
+    "dos": [
+      "Make controlling the person's bleeding your first priority.",
+      "Handle the severed part gently and rinse it with clean saline.",
+      "Wrap the part in moist gauze, seal it in a plastic bag, and then place the bag in an ice container to cool it indirectly.",
+      "If the limb is only partly severed, leave it attached."
+    ],
+    "donts": [
+      "Do not let the severed part touch ice directly. Extreme cold can destroy tissue needed for microsurgery.",
+      "Do not wash the severed part with soap, alcohol, or chemicals.",
+      "Do not cut away a part that is still attached to the skin."
+    ],
+    "sources": [
+      {
+        "name": "Vinmec",
+        "url": "https://www.vinmec.com/vie/bai-viet/so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu-vi",
+        "accessDate": "16/09/2026"
+      },
+      {
+        "name": "Reference Source 2",
+        "url": "https://nhathuoclongchau.com.vn/bai-viet/cach-so-cuu-va-bao-quan-chi-the-dut-roi.html",
+        "accessDate": "16/09/2026"
+      }
+    ],
+    "video": {
+      "creator": "South Saigon International General Hospital",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ZG6IyTPEEQU"
+    }
+  }
+]

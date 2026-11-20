@@ -6,14 +6,13 @@
  */
 
 // HTML dự phòng đồng bộ 100% với components/header.html khi mở trực tiếp bằng giao thức file://
-const FALLBACK_HEADER_HTML = `
-<!-- MedFA Shared Header Component -->
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-  <div class="h-20 w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-space-md">
+const FALLBACK_HEADER_HTML = `<!-- MedFA Shared Header Component -->
+<header class="medfa-header fixed top-0 left-0 right-0 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="medfa-header__inner">
     <!-- Brand Logo -->
-    <div class="flex items-center gap-space-md">
-      <a aria-label="Trang chủ MedFA" class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-14 w-auto" fill="none">
+    <div class="medfa-header__brand">
+      <a aria-label="Trang chủ MedFA" data-i18n-aria-label="header.homeAria" class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 80" class="medfa-header__logo" fill="none">
           <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
           <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
           <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
@@ -25,85 +24,86 @@ const FALLBACK_HEADER_HTML = `
     </div>
 
     <!-- Desktop Navigation Links -->
-    <nav aria-label="Menu điều hướng chính" class="hidden items-center gap-space-md 2xl:gap-space-lg lg:flex justify-end flex-1" id="main-nav">
-      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html">Trang chủ</a>
-      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html">Tác động xã hội</a>
-      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="topics" href="topics.html">Thư viện sơ cấp cứu</a>
+    <nav aria-label="Menu điều hướng chính" data-i18n-aria-label="header.navAria" class="items-center justify-end flex-1" id="main-nav">
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="home" href="index.html"><span data-i18n="nav.home">Trang chủ</span></a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="social-impact" href="social-impact.html"><span data-i18n="nav.socialImpact">Tác động xã hội</span></a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="topics" href="topics.html"><span data-i18n="nav.topics">Thư viện sơ cấp cứu</span></a>
 
       <!-- Dropdown Luyện tập & Phản xạ -->
       <div class="relative group" id="practice-dropdown-container">
         <button id="practice-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="practice-dropdown-menu" class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full inline-flex items-center gap-1 focus:outline-none cursor-pointer" data-page="practice">
-          <span>Luyện tập</span>
-          <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+          <span data-i18n="nav.practice">Luyện tập</span>
+          <svg class="medfa-header__chevron transition-transform duration-200" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div id="practice-dropdown-menu" class="hidden group-hover:flex hover:flex absolute left-0 top-full mt-1.5 w-64 rounded-2xl bg-surface-container-lowest shadow-2xl border border-outline-variant/30 p-2 z-50 flex-col gap-1 transition-all">
           <a href="flashcards.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="flashcards">
             <span class="material-symbols-outlined text-primary text-[20px]">style</span>
             <div class="flex flex-col">
-              <span class="font-bold">Flashcard 3D</span>
-              <span class="text-xs text-on-surface-variant font-normal">Lật thẻ phản xạ trực quan</span>
+              <span class="font-bold" data-i18n="nav.flashcards">Flashcard 3D</span>
+              <span class="text-xs text-on-surface-variant font-normal" data-i18n="nav.flashcardsDesc">Lật thẻ phản xạ trực quan</span>
             </div>
           </a>
           <a href="timed-practice.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="timed-practice">
             <span class="material-symbols-outlined text-secondary text-[20px]">timer</span>
             <div class="flex flex-col">
-              <span class="font-bold">Thử thách 4 Phút Vàng</span>
-              <span class="text-xs text-on-surface-variant font-normal">Đồng hồ đếm ngược 240s</span>
+              <span class="font-bold" data-i18n="nav.timedPractice">Thử thách 4 Phút Vàng</span>
+              <span class="text-xs text-on-surface-variant font-normal" data-i18n="nav.timedPracticeDesc">Đồng hồ đếm ngược 240s</span>
             </div>
           </a>
           <a href="quiz.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="quiz">
             <span class="material-symbols-outlined text-tertiary text-[20px]">quiz</span>
             <div class="flex flex-col">
-              <span class="font-bold">Trắc nghiệm tình huống</span>
-              <span class="text-xs text-on-surface-variant font-normal">10 case-study có giải thích y khoa</span>
+              <span class="font-bold" data-i18n="nav.quiz">Trắc nghiệm tình huống</span>
+              <span class="text-xs text-on-surface-variant font-normal" data-i18n="nav.quizDesc">10 case-study có giải thích y khoa</span>
             </div>
           </a>
         </div>
       </div>
 
-      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="contact" href="contact.html">Liên hệ</a>
-      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html">Về MedFA</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="contact" href="contact.html"><span data-i18n="nav.contact">Liên hệ</span></a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html"><span data-i18n="nav.about">Về MedFA</span></a>
     </nav>
 
     <!-- Header Actions (Search, Language, Mobile Toggle) -->
-    <div class="flex items-center gap-2 sm:gap-space-sm md:gap-space-md">
-      <a href="topics.html" aria-label="Tìm kiếm tình huống sơ cứu" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">search</span>
+    <div class="medfa-header__actions">
+      <a href="topics.html" aria-label="Tìm kiếm tình huống sơ cứu" data-i18n-aria-label="header.searchAria" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+        <svg class="shrink-0" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></svg>
       </a>
 
       <!-- Language Switcher -->
       <div class="relative inline-block text-left" id="language-dropdown-container">
-        <button id="language-switcher-btn" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
-          <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-            <rect fill="#DA251D" height="20" width="30"></rect>
-            <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
-          </svg>
-          <span class="font-label-md text-label-md font-bold text-primary">VN</span>
-          <span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform duration-200" id="lang-arrow">expand_more</span>
+        <button id="language-switcher-btn" aria-controls="language-dropdown-menu" aria-label="Chuyển đổi ngôn ngữ: Tiếng Việt" data-i18n-aria-label="header.langBtnAria" aria-expanded="false" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface focus:outline-none" type="button">
+          <span id="lang-btn-flag">
+            <svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="#DA251D" height="20" width="30"></rect>
+              <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
+            </svg>
+          </span>
+          <span id="lang-btn-text" class="font-label-md text-label-md font-bold text-primary">VN</span>
+          <svg class="medfa-header__chevron text-on-surface-variant transition-transform duration-200" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
-          <button type="button" data-language="vi" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors bg-surface-container/50">
+          <button type="button" data-language="vi" aria-pressed="true" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
             <div class="flex items-center gap-2.5">
               <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
                 <rect fill="#DA251D" height="20" width="30"></rect>
                 <polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon>
               </svg>
-              <span class="font-label-md text-label-md font-bold text-primary">Tiếng Việt</span>
+              <span class="font-label-md text-label-md" data-i18n="header.language.vietnamese">Tiếng Việt</span>
             </div>
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-1.5 lang-status">
               <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">VN</span>
-              <span class="material-symbols-outlined text-primary text-[18px]">check</span>
             </div>
           </button>
-          <button type="button" data-language="en" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
+          <button type="button" data-language="en" aria-pressed="false" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
             <div class="flex items-center gap-2.5">
               <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
                 <clipPath id="uk-flag-clip"><rect width="60" height="30"></rect></clipPath>
                 <g clip-path="url(#uk-flag-clip)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></g>
               </svg>
-              <span class="font-label-md text-label-md font-medium text-on-surface">English</span>
+              <span class="font-label-md text-label-md" data-i18n="header.language.english">Tiếng Anh</span>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center gap-1.5 lang-status">
               <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">ENG</span>
             </div>
           </button>
@@ -111,60 +111,60 @@ const FALLBACK_HEADER_HTML = `
       </div>
 
       <!-- Mobile menu toggle button -->
-      <button id="mobile-menu-btn" aria-label="Mở menu di động" class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
-        <span class="material-symbols-outlined">menu</span>
+      <button id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Mở menu di động" data-i18n-aria-label="header.mobileMenuAria" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button">
+        <svg class="shrink-0" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="medfa-header__menu-icon" d="M4 6h16M4 12h16M4 18h16"/><path class="medfa-header__close-icon" d="m6 6 12 12M18 6 6 18"/></svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Dropdown Navigation Drawer -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
+  <div id="mobile-menu" class="hidden bg-surface-container-lowest border-t border-outline-variant/30 px-4 py-4 flex-col gap-1.5 shadow-2xl">
     <div class="flex items-center justify-between pb-2 mb-1 border-b border-outline-variant/20">
-      <span class="text-xs font-bold text-primary tracking-wider uppercase">Menu Điều Hướng</span>
+      <span class="text-xs font-bold text-primary tracking-wider uppercase" data-i18n="header.mobileMenuTitle">Menu Điều Hướng</span>
       <span class="text-xs text-on-surface-variant font-medium">MedFA Mobile</span>
     </div>
     <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="home" href="index.html">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-primary text-[20px]">home</span>
-        <span>Trang chủ</span>
+        <span data-i18n="nav.home">Trang chủ</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
     <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="social-impact" href="social-impact.html">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-secondary text-[20px]">volunteer_activism</span>
-        <span>Tác động xã hội</span>
+        <span data-i18n="nav.socialImpact">Tác động xã hội</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
     <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="topics" href="topics.html">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
-        <span>Thư viện sơ cấp cứu</span>
+        <span data-i18n="nav.topics">Thư viện sơ cấp cứu</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
     <!-- Luyện tập & Phản xạ Group -->
     <div class="rounded-xl bg-surface-container-low/70 p-2 flex flex-col gap-1 border border-outline-variant/20 my-1">
-      <span class="text-[10px] font-bold text-primary tracking-wider uppercase px-2 py-0.5">Luyện tập & Phản xạ</span>
+      <span class="text-[10px] font-bold text-primary tracking-wider uppercase px-2 py-0.5" data-i18n="header.mobilePracticeGroup">Luyện tập & Phản xạ</span>
       <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="flashcards" href="flashcards.html">
         <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-primary text-[18px]">style</span>
-          <span class="text-sm">Flashcard 3D</span>
+          <span class="text-sm" data-i18n="nav.flashcards">Flashcard 3D</span>
         </div>
         <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
       </a>
       <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="timed-practice" href="timed-practice.html">
         <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-secondary text-[18px]">timer</span>
-          <span class="text-sm">Thử thách 4 Phút Vàng</span>
+          <span class="text-sm" data-i18n="nav.timedPractice">Thử thách 4 Phút Vàng</span>
         </div>
         <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
       </a>
       <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="quiz" href="quiz.html">
         <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-tertiary text-[18px]">quiz</span>
-          <span class="text-sm">Trắc nghiệm tình huống</span>
+          <span class="text-sm" data-i18n="nav.quiz">Trắc nghiệm tình huống</span>
         </div>
         <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
       </a>
@@ -172,36 +172,34 @@ const FALLBACK_HEADER_HTML = `
     <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="contact" href="contact.html">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-secondary text-[20px]">contact_support</span>
-        <span>Liên hệ</span>
+        <span data-i18n="nav.contact">Liên hệ</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
     <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="about" href="about.html">
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-secondary text-[20px]">info</span>
-        <span>Về MedFA</span>
+        <span data-i18n="nav.about">Về MedFA</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>
     <div class="pt-2.5 mt-1 border-t border-outline-variant/20 flex flex-col gap-2">
       <a href="tel:115" class="w-full py-2.5 px-4 rounded-xl bg-error hover:bg-red-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
         <span class="material-symbols-outlined text-[18px]">call</span>
-        Gọi Cấp Cứu 115 Khẩn Cấp
+        <span data-i18n="nav.callEmergency">Gọi Cấp Cứu 115 Khẩn Cấp</span>
       </a>
     </div>
   </div>
-</header>
-`;
+</header>`;
 
 // HTML dự phòng đồng bộ 100% với components/footer.html (bao gồm nút cài đặt #chat-settings-btn)
-const FALLBACK_FOOTER_HTML = `
-<footer class="w-full bg-surface-container-low text-on-surface mt-auto border-t border-outline-variant/30">
+const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low text-on-surface mt-auto border-t border-outline-variant/30">
   <div class="w-full px-4 sm:px-6 lg:px-8 pt-space-xl pb-space-lg">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-space-xl">
       <!-- Cột 1: Thương hiệu & Sứ mệnh -->
       <div class="flex flex-col gap-space-md">
         <div class="flex items-center gap-space-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-9 w-auto" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 80" class="h-14 w-auto" fill="none">
             <rect width="64" height="64" x="8" y="8" rx="16" fill="#1E40AF"/>
             <path d="M40 24v32M24 40h32" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
             <path d="M26 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#0D9488" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
@@ -210,17 +208,17 @@ const FALLBACK_FOOTER_HTML = `
             <text x="88" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.5">MEDICAL FIRST AID</text>
           </svg>
         </div>
-        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-i18n-html="footer.mission">
           MedFA là nền tảng phi lợi nhuận chuyên chuẩn hóa và phổ biến kiến thức sơ cấp cứu ban đầu trong <strong>"4 Phút Vàng"</strong> theo chuẩn y khoa quốc tế AHA & ERC.
         </p>
         <div class="flex flex-wrap items-center gap-2 pt-1">
           <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-container text-on-secondary-container">
             <span class="material-symbols-outlined text-[14px]">volunteer_activism</span>
-            Dự án phi lợi nhuận
+            <span data-i18n="footer.nonProfit">Dự án phi lợi nhuận</span>
           </span>
           <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-primary-fixed text-primary">
             <span class="material-symbols-outlined text-[14px]">school</span>
-            Đồ án IE104 UIT
+            <span data-i18n="footer.schoolProject">Đồ án IE104 UIT</span>
           </span>
         </div>
       </div>
@@ -229,34 +227,34 @@ const FALLBACK_FOOTER_HTML = `
       <div class="flex flex-col gap-space-sm">
         <span class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-1.5">
           <span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
-          Tổng đài khẩn cấp
+          <span data-i18n="footer.emergencyTitle">Tổng đài khẩn cấp</span>
         </span>
         <div class="flex flex-col gap-2 mt-1">
           <a href="tel:115" class="flex items-center justify-between p-2 rounded-lg bg-error-container/30 border border-error/30 hover:bg-error-container/50 transition-colors group">
             <div class="flex items-center gap-2">
               <span class="font-bold text-xs text-white bg-error px-2 py-0.5 rounded shadow-xs">115</span>
-              <span class="font-body-sm text-body-sm font-bold text-error">Cấp cứu Y tế</span>
+              <span class="font-body-sm text-body-sm font-bold text-error" data-i18n="footer.em115">Cấp cứu Y tế</span>
             </div>
             <span class="material-symbols-outlined text-error text-[18px] group-hover:translate-x-0.5 transition-transform">phone_in_talk</span>
           </a>
           <a href="tel:114" class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
             <div class="flex items-center gap-2">
               <span class="font-bold text-xs text-on-surface bg-surface-container-lowest border border-outline-variant/30 px-2 py-0.5 rounded shadow-xs">114</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Cứu hỏa & Cứu nạn</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium" data-i18n="footer.em114">Cứu hỏa & Cứu nạn</span>
             </div>
             <span class="material-symbols-outlined text-outline text-[16px]">call</span>
           </a>
           <a href="tel:113" class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
             <div class="flex items-center gap-2">
               <span class="font-bold text-xs text-on-surface bg-surface-container-lowest border border-outline-variant/30 px-2 py-0.5 rounded shadow-xs">113</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Cảnh sát & An ninh</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium" data-i18n="footer.em113">Cảnh sát & An ninh</span>
             </div>
             <span class="material-symbols-outlined text-outline text-[16px]">call</span>
           </a>
           <a href="tel:111" class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
             <div class="flex items-center gap-2">
               <span class="font-bold text-xs text-on-surface bg-surface-container-lowest border border-outline-variant/30 px-2 py-0.5 rounded shadow-xs">111</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Bảo vệ Trẻ em</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant font-medium" data-i18n="footer.em111">Bảo vệ Trẻ em</span>
             </div>
             <span class="material-symbols-outlined text-outline text-[16px]">call</span>
           </a>
@@ -265,39 +263,39 @@ const FALLBACK_FOOTER_HTML = `
 
       <!-- Cột 3: Cẩm nang Sơ cấp cứu -->
       <div class="flex flex-col gap-space-sm">
-        <span class="font-title-md text-title-md text-on-surface font-bold">Cẩm nang sơ cứu</span>
-        <nav aria-label="Tình huống sơ cứu" class="flex flex-col gap-space-xs">
+        <span class="font-title-md text-title-md text-on-surface font-bold" data-i18n="footer.handbookTitle">Cẩm nang sơ cứu</span>
+        <nav aria-label="Tình huống sơ cứu" data-i18n-aria-label="footer.topicsAria" class="flex flex-col gap-space-xs">
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topics.html">
             <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
-            Thư viện tình huống sơ cứu
+            <span data-i18n="footer.handbookLibrary">Thư viện tình huống sơ cứu</span>
           </a>
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon">
             <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
-            Ép tim CPR & Máy sốc điện AED
+            <span data-i18n="footer.handbookCpr">Ép tim CPR & Máy sốc điện AED</span>
           </a>
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=hoc-di-vat-o-tre-em">
             <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
-            Hóc dị vật & Nghiệm pháp Heimlich
+            <span data-i18n="footer.handbookChoking">Hóc dị vật & Nghiệm pháp Heimlich</span>
           </a>
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=bong-nhiet">
             <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
-            Sơ cứu bỏng nhiệt an toàn
+            <span data-i18n="footer.handbookBurns">Sơ cứu bỏng nhiệt an toàn</span>
           </a>
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=chay-mau-va-cam-mau">
             <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
-            Kỹ thuật băng ép & Cầm máu
+            <span data-i18n="footer.handbookBleeding">Kỹ thuật băng ép & Cầm máu</span>
           </a>
           <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="topic-detail.html?id=dot-quy">
             <span class="material-symbols-outlined text-[16px] text-secondary">arrow_right</span>
-            Nhận biết dấu hiệu Đột quỵ FAST
+            <span data-i18n="footer.handbookStroke">Nhận biết dấu hiệu Đột quỵ FAST</span>
           </a>
         </nav>
       </div>
 
       <!-- Cột 4: Dự án & Thông tin liên hệ -->
       <div class="flex flex-col gap-space-sm">
-        <span class="font-title-md text-title-md text-on-surface font-bold">Dự án & Liên hệ</span>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">
+        <span class="font-title-md text-title-md text-on-surface font-bold" data-i18n="footer.projectTitle">Dự án & Liên hệ</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n-html="footer.courseDesc">
           Đồ án môn học <strong>IE104 - Internet và Công nghệ Web</strong>. Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM).
         </p>
         <div class="flex flex-col gap-space-xs mt-1">
@@ -311,43 +309,39 @@ const FALLBACK_FOOTER_HTML = `
           </div>
           <div class="flex items-center gap-2 text-on-surface-variant">
             <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
-            <span class="font-body-sm text-body-sm">ĐHQG-HCM, TP. Thủ Đức</span>
+            <span class="font-body-sm text-body-sm" data-i18n="footer.address">ĐHQG-HCM, TP. Thủ Đức</span>
           </div>
         </div>
         <div class="mt-2 pt-2 border-t border-outline-variant/20 flex flex-wrap gap-2 text-xs">
-          <a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html">Về MedFA</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html" data-i18n="footer.aboutLink">Về MedFA</a>
           <span>•</span>
-          <a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html#team">Thành viên</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="social-impact.html" data-i18n="footer.impactLink">Tác động xã hội</a>
           <span>•</span>
-          <a class="text-on-surface-variant hover:text-primary transition-colors" href="social-impact.html">Tác động xã hội</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html#standards" data-i18n="footer.disclaimerLink">Miễn trừ trách nhiệm y khoa</a>
         </div>
       </div>
     </div>
 
     <!-- Mạng lưới Nguồn Y khoa Chính thống & Cấu hình Website chính (Satellite Network) -->
     <div class="pb-space-lg pt-space-md border-t border-outline-variant/20 flex flex-col gap-2">
-      <span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Nguồn tham chiếu y khoa & Đối tác chuyên môn</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant" data-i18n="footer.sourcesHeading">Nguồn tham chiếu y khoa & Đối tác chuyên môn</span>
       <div id="satellite-authority-links"></div>
     </div>
 
     <!-- Bottom Copyright -->
     <div class="pt-space-lg border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
-      <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid. Đồ án môn học IE104 - UIT.</span>
+      <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid. IE104 UIT. <span data-i18n="footer.copyright">Bảo lưu mọi quyền.</span></span>
       <div class="flex flex-wrap items-center gap-space-md text-body-sm">
-        <a class="hover:text-primary transition-colors" href="about.html#standards">Nguồn tài liệu y khoa</a>
-        <span>•</span>
-        <a class="hover:text-primary transition-colors" href="about.html#team">Đội ngũ phát triển</a>
-        <span>•</span>
-        <a class="text-tertiary font-medium hover:underline" href="about.html#standards">Miễn trừ trách nhiệm y khoa</a>
+        <a class="hover:text-primary transition-colors" href="about.html#standards" data-i18n="footer.disclaimerLink">Miễn trừ trách nhiệm y khoa</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- FLOATING COMPONENT: MEDFA AI FIRST AID ASSISTANT -->
-<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+<div id="medfa-chat-dock" class="fixed z-50 flex flex-col items-end pointer-events-none">
   <!-- Chat Window -->
-  <div id="medfa-chat-window" class="pointer-events-auto w-[380px] max-w-[calc(100vw-2rem)] h-[520px] max-h-[calc(100vh-6rem)] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 flex flex-col overflow-hidden mb-3 transition-all duration-300 origin-bottom-right hidden">
+  <div id="medfa-chat-window" class="pointer-events-auto bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right hidden">
     <!-- Chat Header -->
     <div class="bg-gradient-to-r from-primary-container to-primary px-4 py-3.5 text-on-primary flex items-center justify-between shadow-sm">
       <div class="flex items-center gap-3">
@@ -359,17 +353,17 @@ const FALLBACK_FOOTER_HTML = `
         </div>
         <div class="flex flex-col">
           <div class="flex items-center gap-1.5">
-            <span class="font-title-md text-title-md font-bold tracking-tight leading-tight text-white">MedFA Trợ lý AI</span>
-            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/20 text-white leading-none">Y KHOA</span>
+            <span class="font-title-md text-title-md font-bold tracking-tight leading-tight text-white" data-i18n="chat.title">MedFA Trợ lý AI</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/20 text-white leading-none">AHA/ERC</span>
           </div>
           <span class="text-[12px] text-white/80 font-medium flex items-center gap-1 mt-0.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>Trực tuyến 24/7 • Phản xạ cấp cứu
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span><span data-i18n="chat.subtitle">Chuẩn Y Khoa AHA & ERC</span>
           </span>
         </div>
       </div>
       <div class="flex items-center gap-1 text-white/90">
-        <button id="chat-settings-btn" type="button" title="Cài đặt API Key Gemini" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none"><span class="material-symbols-outlined text-[18px]">settings</span></button>
-        <button id="chat-close-btn" type="button" title="Thu nhỏ" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
+        <button id="chat-settings-btn" type="button" title="Cài đặt API Key Gemini" data-i18n-title="chat.settingsTitle" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+        <button id="chat-close-btn" type="button" title="Thu nhỏ" data-i18n-title="chat.closeTitle" class="p-1.5 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
           <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
@@ -378,7 +372,7 @@ const FALLBACK_FOOTER_HTML = `
     <!-- Messages Container -->
     <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto bg-surface-container-low flex flex-col gap-3">
       <div class="flex justify-center my-1">
-        <span class="text-[11px] font-medium text-on-surface-variant/70 bg-surface-container-high px-2.5 py-0.5 rounded-full">Trợ lý y tế phản hồi tức thì</span>
+        <span class="text-[11px] font-medium text-on-surface-variant/70 bg-surface-container-high px-2.5 py-0.5 rounded-full" data-i18n="chat.subtitle">Chuẩn Y Khoa AHA & ERC</span>
       </div>
       <div class="flex items-start gap-2.5 max-w-[90%]">
         <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
@@ -386,27 +380,26 @@ const FALLBACK_FOOTER_HTML = `
         </div>
         <div class="flex flex-col items-start gap-1">
           <div class="bg-surface-container-lowest text-on-surface p-3.5 rounded-2xl rounded-tl-sm border border-outline-variant/30 shadow-sm text-body-sm leading-relaxed">
-            <p class="font-semibold text-primary mb-1">Xin chào bạn! Mình là Trợ lý AI MedFA 🩺</p>
-            <p class="text-on-surface-variant">Bạn hoặc người thân đang gặp tình huống sơ cấp cứu nào cần hướng dẫn xử trí khẩn cấp không?</p>
+            <p class="font-semibold text-primary mb-1" data-i18n="chat.greeting">Xin chào bạn! Mình là Trợ lý AI MedFA 🩺</p>
+            <p class="text-on-surface-variant" data-i18n="chat.greetingDesc">Bạn hoặc người thân đang gặp tình huống sơ cấp cứu nào cần hướng dẫn xử trí khẩn cấp không?</p>
           </div>
-          <span class="text-[10px] text-on-surface-variant/60 font-medium ml-1">Vừa xong</span>
+          <span class="text-[10px] text-on-surface-variant/60 font-medium ml-1" data-i18n="chat.justNow">Vừa xong</span>
         </div>
       </div>
       <!-- Quick Suggestions -->
       <div class="flex flex-col gap-1.5 pl-9 mt-1">
-        <span class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Gợi ý tình huống nhanh:</span>
         <div class="flex flex-wrap gap-1.5">
-          <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
-            <span>🚨</span> Ép tim CPR & AED
+          <a href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1" data-i18n="chat.quickCpr">
+            🚨 Ép tim CPR & AED
           </a>
-          <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
-            <span>👶</span> Hóc dị vật đường thở
+          <a href="topic-detail.html?id=hoc-di-vat-o-tre-em" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1" data-i18n="chat.quickChoking">
+            👶 Hóc dị vật đường thở
           </a>
-          <a href="topic-detail.html?id=bong-nhiet" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
-            <span>🔥</span> Sơ cứu vết bỏng
+          <a href="topic-detail.html?id=bong-nhiet" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1" data-i18n="chat.quickBurns">
+            🔥 Sơ cứu vết bỏng
           </a>
-          <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1">
-            <span>🩸</span> Băng ép cầm máu
+          <a href="topic-detail.html?id=chay-mau-va-cam-mau" class="px-3 py-1.5 text-body-sm font-semibold rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/40 shadow-xs transition-colors flex items-center gap-1" data-i18n="chat.quickBleeding">
+            🩸 Băng ép cầm máu
           </a>
         </div>
       </div>
@@ -415,33 +408,55 @@ const FALLBACK_FOOTER_HTML = `
     <!-- Chat Input Area -->
     <div class="p-3 bg-surface-container-lowest border-t border-outline-variant/30">
       <form id="chat-input-form" class="flex items-center gap-2 bg-surface-container-low rounded-xl px-3 py-2 border border-outline-variant/40 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
-        <input id="chat-user-input" type="text" placeholder="Nhập tình huống sơ cứu..." class="flex-1 bg-transparent border-none text-body-sm text-on-surface focus:outline-none placeholder:text-on-surface-variant/50 p-0" />
+        <input id="chat-user-input" type="text" placeholder="Nhập tình huống sơ cứu..." data-i18n-placeholder="footer.chatPlaceholder" class="flex-1 bg-transparent border-none text-body-sm text-on-surface focus:outline-none placeholder:text-on-surface-variant/50 p-0" />
         <button type="submit" class="w-8 h-8 rounded-lg bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-colors shadow-xs shrink-0">
           <span class="material-symbols-outlined text-[18px]">send</span>
         </button>
       </form>
       <div class="flex items-center justify-between mt-2 px-1">
-        <span class="text-[11px] text-on-surface-variant/70">Dữ liệu tham khảo y khoa</span>
+        <span class="text-[11px] text-on-surface-variant/70" data-i18n="footer.chatRefData">Dữ liệu tham khảo y khoa</span>
         <a href="tel:115" class="text-[11px] font-bold text-error hover:underline flex items-center gap-0.5">
-          <span class="material-symbols-outlined text-[13px]">call</span>Cấp cứu 115
+          <span class="material-symbols-outlined text-[13px]">call</span><span data-i18n="footer.chatEmergency">Cấp cứu 115</span>
         </a>
       </div>
     </div>
   </div>
 
   <!-- Chat Floating Trigger Button -->
-  <button id="medfa-chat-toggle-btn" type="button" aria-label="Mở trợ lý sơ cứu AI" class="pointer-events-auto relative w-14 h-14 rounded-full bg-primary-container hover:bg-primary text-on-primary shadow-2xl flex items-center justify-center transition-all duration-200 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/40 group">
+  <button id="medfa-chat-toggle-btn" type="button" aria-label="Mở trợ lý sơ cứu AI" data-i18n-aria-label="footer.chatToggleAria" class="pointer-events-auto relative w-14 h-14 rounded-full bg-primary-container hover:bg-primary text-on-primary shadow-2xl flex items-center justify-center transition-all duration-200 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/40 group">
     <span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-30 animate-ping -z-10"></span>
     <span class="material-symbols-outlined text-[26px]">smart_toy</span>
     <span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-white font-bold text-[9px] rounded-full flex items-center justify-center border-2 border-surface-container-lowest shadow-xs">1</span>
   </button>
-</div>
-`;
+</div>`;
 
 /**
- * Xác định khóa trang hiện tại dựa trên thuộc tính data-page của <body> hoặc URL
- * @returns {string}
+ * Cập nhật giao diện nút chuyển ngôn ngữ và menu dropdown
+ * @param {'vi'|'en'} [lang]
  */
+function updateLanguageSwitcherUI(lang) {
+  const currentLang = lang || (window.I18n ? window.I18n.getLanguage() : 'vi');
+  const flagContainer = document.getElementById('lang-btn-flag');
+  const textContainer = document.getElementById('lang-btn-text');
+  const langMenu = document.getElementById('language-dropdown-menu');
+
+  const vnFlagSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect fill="#DA251D" height="20" width="30"></rect><polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon></svg>';
+  const ukFlagSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><clipPath id="uk-flag-clip-header"><rect width="60" height="30"></rect></clipPath><g clip-path="url(#uk-flag-clip-header)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></g></svg>';
+
+  if (flagContainer) {
+    flagContainer.innerHTML = currentLang === 'en' ? ukFlagSvg : vnFlagSvg;
+  }
+  if (textContainer) {
+    textContainer.textContent = currentLang === 'en' ? 'ENG' : 'VN';
+  }
+  if (langMenu) {
+    langMenu.querySelectorAll('button[data-language]').forEach(btn => {
+      const selected = btn.dataset.language === currentLang;
+      btn.setAttribute('aria-pressed', String(selected));
+    });
+  }
+}
+
 function getCurrentPageKey() {
   const bodyPage = document.body.getAttribute('data-page');
   if (bodyPage) return bodyPage;
@@ -517,21 +532,18 @@ function bindHeaderFooterEvents() {
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
-    const iconSpan = mobileBtn.querySelector('.material-symbols-outlined');
-
     const closeMobileMenu = () => {
       mobileMenu.classList.add('hidden');
       mobileMenu.classList.remove('flex');
-      if (iconSpan) iconSpan.textContent = 'menu';
+      mobileBtn.setAttribute('aria-expanded', 'false');
     };
 
-    mobileBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    mobileBtn.addEventListener('click', () => {
       const isClosed = mobileMenu.classList.contains('hidden');
       if (isClosed) {
         mobileMenu.classList.remove('hidden');
         mobileMenu.classList.add('flex');
-        if (iconSpan) iconSpan.textContent = 'close';
+        mobileBtn.setAttribute('aria-expanded', 'true');
       } else {
         closeMobileMenu();
       }
@@ -548,11 +560,14 @@ function bindHeaderFooterEvents() {
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMobileMenu();
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
+        mobileBtn.focus();
+      }
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) closeMobileMenu();
+      if (getComputedStyle(mobileBtn).display === 'none') closeMobileMenu();
     });
   }
 
@@ -627,8 +642,7 @@ function bindHeaderFooterEvents() {
       langBtn.setAttribute('aria-expanded', 'false');
     };
 
-    langBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
+    langBtn.addEventListener('click', () => {
       const willOpen = langMenu.classList.contains('hidden');
       langMenu.classList.toggle('hidden');
       langBtn.setAttribute('aria-expanded', String(willOpen));
@@ -637,15 +651,27 @@ function bindHeaderFooterEvents() {
     langMenu.querySelectorAll('button[data-language]').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const lang = btn.getAttribute('data-language');
+        const lang = btn.getAttribute('data-language') || 'vi';
         closeLangMenu();
-        if (lang === 'en') {
-          showGlobalToast('Phiên bản tiếng Anh đang được phát triển. Website hiện hiển thị chuẩn Tiếng Việt.');
+        if (window.I18n && typeof window.I18n.setLanguage === 'function') {
+          window.I18n.setLanguage(lang);
         }
+        langBtn.focus();
       });
     });
 
-    document.addEventListener('click', () => closeLangMenu());
+    document.addEventListener('click', (e) => {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+        closeLangMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !langMenu.classList.contains('hidden')) {
+        closeLangMenu();
+        langBtn.focus();
+      }
+    });
   }
 
   // 4. Mở / Thu gọn cửa sổ Chatbot AI nổi
@@ -696,8 +722,8 @@ function initScrollFeatures() {
     backTopBtn.id = 'medfa-back-top';
     backTopBtn.type = 'button';
     backTopBtn.className = 'medfa-back-top';
-    backTopBtn.setAttribute('aria-label', 'Cuộn lên đầu trang');
-    backTopBtn.setAttribute('title', 'Lên đầu trang');
+    backTopBtn.setAttribute('data-i18n-aria-label', 'common.backToTop');
+    backTopBtn.setAttribute('data-i18n-title', 'common.backToTop');
     backTopBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">arrow_upward</span>';
     backTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -772,7 +798,14 @@ async function injectHeaderAndFooter() {
   if (headerPlaceholder) {
     try {
       const res = await fetch('components/header.html');
-      headerPlaceholder.innerHTML = res.ok ? await res.text() : FALLBACK_HEADER_HTML;
+      let html = res.ok ? await res.text() : FALLBACK_HEADER_HTML;
+      // Live Server của VS Code tự động inject script vào trong từng thẻ <svg>,
+      // làm phình kích thước payload vượt quá header Content-Length khiến file bị cắt cụt (truncation).
+      // Nếu phát hiện phần đuôi bị cắt (không có đủ thẻ đóng </header>), dùng ngay FALLBACK_HEADER_HTML đầy đủ chuẩn.
+      if (!html || !html.includes('data-language="en"') || !html.includes('</header>')) {
+        html = FALLBACK_HEADER_HTML;
+      }
+      headerPlaceholder.innerHTML = html;
     } catch {
       headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
     }
@@ -792,6 +825,11 @@ async function injectHeaderAndFooter() {
   initScrollFeatures();
   initScrollReveal();
 
+  if (window.I18n && typeof window.I18n.applyTranslations === 'function') {
+    window.I18n.applyTranslations(document);
+  }
+  updateLanguageSwitcherUI();
+
   if (window.MedFASeoHelper) {
     window.MedFASeoHelper.renderSatelliteNetworkBlock(document.getElementById('satellite-authority-links'));
   }
@@ -801,3 +839,11 @@ async function injectHeaderAndFooter() {
 document.addEventListener('DOMContentLoaded', () => {
   injectHeaderAndFooter();
 });
+
+// Lắng nghe sự kiện đổi ngôn ngữ toàn cục
+if (typeof window !== 'undefined') {
+  window.addEventListener('medfa:languageChanged', (e) => {
+    updateLanguageSwitcherUI(e.detail && e.detail.language);
+    highlightActiveNav();
+  });
+}

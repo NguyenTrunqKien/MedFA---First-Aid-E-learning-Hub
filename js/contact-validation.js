@@ -4,18 +4,18 @@
 
   const toast = document.getElementById('contact-toast');
   const validators = {
-    name: value => value.trim() ? '' : 'Vui lòng nhập họ và tên.',
+    name: value => value.trim() ? '' : (window.t ? t('contact.errName') : 'Vui lòng nhập họ và tên.'),
     email: value => {
-      if (!value.trim()) return 'Vui lòng nhập email.';
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? '' : 'Email chưa đúng định dạng.';
+      if (!value.trim()) return window.t ? t('contact.errEmailEmpty') : 'Vui lòng nhập email.';
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? '' : (window.t ? t('contact.errEmailInvalid') : 'Email chưa đúng định dạng.');
     },
     phone: value => {
-      if (!value.trim()) return 'Vui lòng nhập số điện thoại.';
-      return /^(0|\+84)[3|5|7|8|9][0-9]{8}$/.test(value.trim()) ? '' : 'Nhập số di động Việt Nam, ví dụ 0912345678.';
+      if (!value.trim()) return window.t ? t('contact.errPhoneEmpty') : 'Vui lòng nhập số điện thoại.';
+      return /^(0|\+84)[3|5|7|8|9][0-9]{8}$/.test(value.trim()) ? '' : (window.t ? t('contact.errPhoneInvalid') : 'Nhập số di động Việt Nam, ví dụ 0912345678.');
     },
-    subject: value => value ? '' : 'Vui lòng chọn chủ đề đóng góp.',
-    message: value => value.trim() ? '' : 'Vui lòng nhập lời nhắn.',
-    consent: checked => checked ? '' : 'Vui lòng xác nhận để tiếp tục.'
+    subject: value => value ? '' : (window.t ? t('contact.errSubject') : 'Vui lòng chọn chủ đề đóng góp.'),
+    message: value => value.trim() ? '' : (window.t ? t('contact.errMessage') : 'Vui lòng nhập lời nhắn.'),
+    consent: checked => checked ? '' : (window.t ? t('contact.errConsent') : 'Vui lòng xác nhận để tiếp tục.')
   };
   let toastTimer;
 
@@ -35,12 +35,14 @@
 
   function validateField(name) {
     const field = getField(name);
+    if (!field) return true;
     const value = name === 'consent' ? field.checked : field.value;
     return showFieldError(name, validators[name](value));
   }
 
-  function showToast(message, isError) {
-    toast.textContent = message;
+  function showToast(key, fallback, isError) {
+    toast.dataset.i18n = key;
+    toast.textContent = window.t ? t(key) : fallback;
     toast.classList.toggle('is-error', Boolean(isError));
     toast.hidden = false;
     window.clearTimeout(toastTimer);
@@ -51,6 +53,7 @@
 
   Object.keys(validators).forEach(name => {
     const field = getField(name);
+    if (!field) return;
     const eventName = name === 'consent' || name === 'subject' ? 'change' : 'input';
     field.addEventListener(eventName, () => validateField(name));
     field.addEventListener('blur', () => validateField(name));
@@ -62,7 +65,7 @@
     if (!isValid) {
       const firstInvalid = form.querySelector('[aria-invalid="true"]');
       if (firstInvalid) firstInvalid.focus();
-      showToast('Vui lòng kiểm tra các trường được đánh dấu.', true);
+      showToast('contact.errFormInvalid', 'Vui lòng kiểm tra các trường được đánh dấu.', true);
       return;
     }
 
@@ -82,11 +85,21 @@
       sessionStorage.setItem('medfa_contact_submissions', JSON.stringify(stored));
       form.reset();
       Object.keys(validators).forEach(name => showFieldError(name, ''));
-      showToast('Đã lưu phản hồi tạm thời trong phiên trình duyệt. Cảm ơn bạn!');
+      showToast('contact.toastSuccess', 'Đã lưu phản hồi tạm thời trong phiên trình duyệt. Cảm ơn bạn!');
     } catch (error) {
       console.error('[MedFA Contact] Không thể lưu phản hồi trong sessionStorage.', error);
-      showToast('Không thể lưu phản hồi trong phiên này. Vui lòng kiểm tra cài đặt trình duyệt.', true);
+      showToast('contact.toastError', 'Không thể lưu phản hồi trong phiên này. Vui lòng kiểm tra cài đặt trình duyệt.', true);
     }
+  });
+
+  // Khi đổi ngôn ngữ, cập nhật lại thông báo lỗi đang hiển thị (nếu có) nhưng giữ nguyên giá trị đã nhập
+  window.addEventListener('medfa:languageChanged', () => {
+    Object.keys(validators).forEach(name => {
+      const field = getField(name);
+      if (field && field.classList.contains('is-invalid')) {
+        validateField(name);
+      }
+    });
   });
 
   const shareUrl = encodeURIComponent(window.location.href);

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Thử thách phản xạ 4 Phút Vàng trên MedFA: đồng hồ đếm ngược 240 giây và 12 tình huống cấp cứu khẩn cấp.">
   <title>Thử thách 4 Phút Vàng | MedFA</title>
+  <meta name="i18n-title" content="tp.pageTitle">
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
 
   <!-- Google Fonts -->
@@ -77,22 +78,22 @@
   <main class="practice-page flex-1">
     <div class="practice-shell">
       <div class="practice-intro">
-        <span class="practice-eyebrow">MEDFA · THỬ THÁCH PHẢN XẠ</span>
-        <h1>Thử thách 4 Phút Vàng</h1>
-        <p>4 phút là thời gian vàng sống còn của tế bào não. Hãy phản xạ chính xác các câu hỏi tình huống sơ cứu trước khi hết giờ!</p>
+        <span class="practice-eyebrow" data-i18n="tp.heroBadge">MEDFA · THỬ THÁCH PHẢN XẠ</span>
+        <h1 data-i18n="tp.heroTitle">Thử thách 4 Phút Vàng</h1>
+        <p data-i18n="tp.heroSubtitle">4 phút là thời gian vàng sống còn của tế bào não. Hãy phản xạ chính xác các câu hỏi tình huống sơ cứu trước khi hết giờ!</p>
       </div>
-      <section class="challenge" aria-label="Khu vực chơi">
-        <aside class="challenge-sidebar" aria-label="Đồng hồ và hình minh họa">
+      <section class="challenge" aria-label="Khu vực chơi" data-i18n-aria-label="tp.playAreaAria">
+        <aside class="challenge-sidebar" aria-label="Đồng hồ và hình minh họa" data-i18n-aria-label="tp.sidebarAria">
           <div class="clock">
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <circle cx="50" cy="50" r="43" fill="none" stroke="#e4efed" stroke-width="8"/>
               <circle id="ring" cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="8"
               pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"/>
             </svg>
-            <output id="time" aria-label="Thời gian còn lại" aria-live="off">4:00</output>
+            <output id="time" aria-label="Thời gian còn lại" data-i18n-aria-label="tp.timerAria" aria-live="off">4:00</output>
           </div>
-          <span class="clock-label">Thời gian còn lại</span>
-          <p class="challenge-rule">Đạt từ 70% số câu đúng để vượt qua thử thách.</p>
+          <span class="clock-label" data-i18n="tp.sidebarClock">Thời gian còn lại</span>
+          <p class="challenge-rule" data-i18n="tp.sidebarRule">Đạt từ 70% số câu đúng để vượt qua thử thách.</p>
         </aside>
         <div class="challenge-content">
           <span id="result-icon" class="result-icon material-symbols-outlined" aria-hidden="true" hidden></span>
@@ -100,46 +101,48 @@
           <!-- Màn hình mở đầu thử thách phản xạ -->
           <div id="challenge-intro-box" class="challenge-intro-card">
             <span class="challenge-badge">
-              <span class="material-symbols-outlined text-[16px]">bolt</span> Thử thách phản xạ sơ cấp cứu
+              <span class="material-symbols-outlined text-[16px]">bolt</span> <span data-i18n="tp.introBadge">Thử thách phản xạ sơ cấp cứu</span>
             </span>
-            <h2>Bạn đã sẵn sàng thử thách kỹ năng sơ cứu?</h2>
-            <p class="challenge-intro-desc">
+            <h2 data-i18n="tp.introTitle">Bạn đã sẵn sàng thử thách kỹ năng sơ cứu?</h2>
+            <p class="challenge-intro-desc" data-i18n="tp.introDesc">
               Khi tim ngừng đập hoặc đường thở bị tắc nghẽn, tế bào não chỉ chịu đựng được tối đa <strong>4 phút thiếu oxy</strong> trước khi tổn thương vĩnh viễn. Hãy phản xạ chính xác 12 tình huống khẩn cấp trước khi hết giờ!
             </p>
             <div class="challenge-highlights">
               <div class="highlight-item">
                 <span class="material-symbols-outlined text-primary">format_list_numbered</span>
-                <span><strong>12</strong> tình huống khẩn cấp</span>
+                <span data-i18n="tp.highlightScenarios"><strong>12</strong> tình huống khẩn cấp</span>
               </div>
               <div class="highlight-item">
                 <span class="material-symbols-outlined text-primary">timer</span>
-                <span><strong>240s</strong> đếm ngược liên tục</span>
+                <span data-i18n="tp.highlightTime"><strong>240s</strong> đếm ngược liên tục</span>
               </div>
               <div class="highlight-item">
                 <span class="material-symbols-outlined text-primary">verified</span>
-                <span>Đạt <strong>≥ 70%</strong> để vượt qua</span>
+                <span data-i18n="tp.highlightPass">Đạt <strong>≥ 70%</strong> để vượt qua</span>
               </div>
             </div>
           </div>
 
-          <h2 id="question" tabindex="-1" style="display:none;">Sẵn sàng thử thách phản xạ?</h2>
+          <h2 id="question" tabindex="-1" style="display:none;"></h2>
           <div id="choices"></div>
           <p id="status" role="status"></p>
           <button id="start" type="button" class="btn-start-challenge">
-            <span class="material-symbols-outlined">play_arrow</span> Bắt đầu Thử thách
+            <span class="material-symbols-outlined">play_arrow</span> <span id="start-btn-text" data-i18n="tp.startBtn">Bắt đầu Thử thách</span>
           </button>
         </div>
       </section>
       <section id="review" class="review" aria-labelledby="review-title" hidden>
-        <h2 id="review-title">Thống kê và đáp án chi tiết</h2>
+        <h2 id="review-title" data-i18n="tp.reviewTitle">Thống kê và đáp án chi tiết</h2>
         <p id="review-time"></p>
         <dl id="review-stats"></dl>
-        <nav id="review-links" aria-label="Đi đến câu hỏi"></nav>
+        <nav id="review-links" aria-label="Đi đến câu hỏi" data-i18n-aria-label="tp.navQuestionsAria"></nav>
         <ol id="review-answers"></ol>
       </section>
     </div>
   </main>
   <div id="footer-placeholder"></div>
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/storage.js" defer></script>
   <script src="js/chatbot-gemini.js"></script>
   <script src="js/seo-config.js" defer></script>

@@ -126,6 +126,107 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
   ];
 
   /**
+   * Bộ quy tắc phản xạ ngoại tuyến tiếng Anh (AHA & ERC Compliant)
+   */
+  const OFFLINE_RULES_EN = [
+    {
+      keywords: ['cpr', 'cardiac arrest', 'chest compression', 'heart stop', 'resuscitation', 'unconscious not breathing', 'ngừng tim', 'ngưng tim', 'ép tim'],
+      title: '🚨 CPR (CARDIOPULMONARY RESUSCITATION) & CALL EMERGENCY',
+      critical: true,
+      steps: [
+        '**CALL 115 (OR LOCAL EMERGENCY) IMMEDIATELY** or turn on speakerphone for dispatcher guidance.',
+        'Place victim on their back on a firm, flat surface.',
+        'Place heel of one hand in center of chest (lower half of breastbone), interlock other hand on top.',
+        '**Continuous chest compressions:** Rate 100 - 120/min, depth 5 - 6 cm, allow full chest recoil.',
+        'If automated external defibrillator (AED) is available, turn on and follow voice prompts.'
+      ],
+      warning: 'DO NOT stop compressions for more than 10 seconds until emergency medical personnel arrive.',
+      link: { url: 'topic-detail.html?id=ngung-tuan-hoan-cpr', text: 'View detailed CPR procedure' }
+    },
+    {
+      keywords: ['choking', 'choke', 'heimlich', 'airway', 'suffocating', 'hóc', 'nghẹn', 'dị vật'],
+      title: '⚠️ CHOKING & AIRWAY OBSTRUCTION (HEIMLICH MANEUVER)',
+      critical: true,
+      steps: [
+        'Check: If victim can cough, encourage forceful coughing to expel object.',
+        'If unable to cough, turning blue, or cannot speak: Deliver **5 firm back blows** between shoulder blades with heel of hand.',
+        'If not dislodged: Stand behind, wrap arms around waist, place fist above navel below breastbone, deliver **5 abdominal thrusts** upward and inward (Heimlich).',
+        'Alternate 5 back blows and 5 abdominal thrusts. If victim becomes unconscious, lay flat and start CPR immediately.'
+      ],
+      warning: 'NEVER perform blind finger sweeps in the throat as this can push the object deeper.',
+      link: { url: 'topic-detail.html?id=hoc-di-vat', text: 'View choking first aid procedure' }
+    },
+    {
+      keywords: ['burn', 'burns', 'scald', 'boiling water', 'thermal burn', 'fire', 'bỏng'],
+      title: '🔥 EMERGENCY THERMAL BURN FIRST AID',
+      critical: false,
+      steps: [
+        'Remove victim from the heat source immediately.',
+        '**Cool under clean running water (15 - 25°C)** for 15 - 20 minutes to reduce skin tissue temperature.',
+        'Gently remove jewelry or constrictive items before swelling begins (do not tear clothing stuck to wounds).',
+        'Cover with sterile gauze or clean plastic wrap, keep warm, and seek medical care.'
+      ],
+      warning: 'DO NOT apply ice directly, DO NOT use toothpaste, fish sauce, or lard, and never puncture blisters.',
+      link: { url: 'topic-detail.html?id=bong-nhiet', text: 'View thermal burn procedure' }
+    },
+    {
+      keywords: ['bleeding', 'bleed', 'blood', 'wound', 'cut', 'hemorrhage', 'chảy máu', 'cầm máu'],
+      title: '🩸 EMERGENCY BLEEDING CONTROL',
+      critical: false,
+      steps: [
+        'Apply **firm, direct and continuous pressure** over the wound with sterile gauze or clean cloth for at least 5 - 10 minutes.',
+        'Elevate injured limb above heart level (unless fracture suspected).',
+        'Secure dressing snugly. If blood soaks through, add another layer on top—do not remove initial dressing.',
+        'If blood is spurting (arterial) or bleeding does not stop after 10 minutes: **Call 115 immediately**.'
+      ],
+      warning: 'Apply tourniquet only for life-threatening limb hemorrhage or traumatic amputation; note exact application time.',
+      link: { url: 'topic-detail.html?id=chay-mau-va-cam-mau', text: 'View bleeding control procedure' }
+    },
+    {
+      keywords: ['heat stroke', 'heatstroke', 'sunstroke', 'hyperthermia', 'sốc nhiệt', 'say nắng'],
+      title: '☀️ HEAT STROKE & SUNSTROKE EMERGENCY FIRST AID',
+      critical: true,
+      steps: [
+        'Move victim immediately to a cool, shaded, or air-conditioned area.',
+        'Loosen or remove excess tight clothing.',
+        '**Aggressive cooling:** Sponge with cool water, fan continuously, place ice packs on neck, axillae (armpits), and groin.',
+        'If conscious and alert: Offer small sips of cool water or electrolyte solution.',
+        'If confused, vomiting, seizing, or unconscious: **Call 115 immediately**.'
+      ],
+      warning: 'DO NOT give fluids if victim is drowsy, confused, or unconscious due to aspiration risk.',
+      link: { url: 'topic-detail.html?id=soc-nhiet-say-nang', text: 'View heat stroke handbook' }
+    },
+    {
+      keywords: ['snake bite', 'snakebite', 'venomous', 'snake', 'rắn cắn', 'rắn độc'],
+      title: '🐍 VENOMOUS SNAKE BITE FIRST AID',
+      critical: true,
+      steps: [
+        'Keep victim calm and completely still (movement speeds venom circulation).',
+        'Keep bitten limb **below heart level**.',
+        'Gently clean wound with clean water or mild soap; remove tight jewelry and rings.',
+        'Apply broad pressure immobilization bandage from fingers/toes upwards and splint limb.',
+        '**Call 115 or transfer immediately to hospital with antivenom.** Take a photo of the snake if safe.'
+      ],
+      warning: 'NEVER cut the wound, suck venom by mouth, apply ice, or apply herbal pastes.',
+      link: { url: 'topic-detail.html?id=so-cuu-khi-bi-ran-can-ran-doc', text: 'View snake bite guide' }
+    },
+    {
+      keywords: ['faint', 'fainting', 'syncope', 'collapsed', 'ngất', 'xỉu', 'bất tỉnh'],
+      title: '💫 FIRST AID FOR FAINTING (SYNCOPE)',
+      critical: false,
+      steps: [
+        'Check responsiveness and breathing: If not breathing, start CPR immediately.',
+        'If breathing normally: Lay victim on back, elevate legs 20 - 30 cm (8 - 12 in) to increase blood flow to brain.',
+        'Loosen collar, belts, and disperse crowd for fresh airflow.',
+        'If vomiting or nauseated: Place in recovery position to protect airway.',
+        'If victim does not regain consciousness within 1 - 2 minutes: Call 115 immediately.'
+      ],
+      warning: 'DO NOT prick fingertips with needles, do not pull hair, and do not slap victim.',
+      link: { url: 'topic-detail.html?id=nhung-cach-so-cuu-nguoi-bi-ngat', text: 'View fainting procedure' }
+    }
+  ];
+
+  /**
    * Lấy API Key từ LocalStorage
    * @returns {string|null}
    */
@@ -160,12 +261,21 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
    * @returns {string} HTML response
    */
   function generateOfflineResponse(query) {
+    const isEn = (typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en');
     const q = query.toLowerCase();
     
-    // Tìm rule khớp từ khóa
-    const matchedRule = OFFLINE_RULES.find(rule => 
+    // Tìm rule khớp từ khóa (ưu tiên bộ quy tắc phù hợp với ngôn ngữ hiện hành)
+    const primaryRules = isEn ? OFFLINE_RULES_EN : OFFLINE_RULES;
+    const secondaryRules = isEn ? OFFLINE_RULES : OFFLINE_RULES_EN;
+
+    let matchedRule = primaryRules.find(rule =>
       rule.keywords.some(keyword => q.includes(keyword))
     );
+    if (!matchedRule) {
+      matchedRule = secondaryRules.find(rule =>
+        rule.keywords.some(keyword => q.includes(keyword))
+      );
+    }
 
     if (matchedRule) {
       const stepsHtml = matchedRule.steps.map(step => {
@@ -173,6 +283,8 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
         const formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         return `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check_circle</span><span>${formatted}</span></li>`;
       }).join('');
+
+      const warningLabel = isEn ? 'Note:' : 'Lưu ý:';
 
       return `
         <div class="flex flex-col gap-2">
@@ -185,7 +297,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
           ${matchedRule.warning ? `
             <div class="p-2 rounded-lg bg-error-container/20 border border-error/20 text-[11px] text-error font-medium flex items-start gap-1.5">
               <span class="material-symbols-outlined text-[15px] shrink-0">warning</span>
-              <span><strong>Lưu ý:</strong> ${matchedRule.warning}</span>
+              <span><strong>${warningLabel}</strong> ${matchedRule.warning}</span>
             </div>
           ` : ''}
           ${matchedRule.link ? `
@@ -199,6 +311,21 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
     }
 
     // Phản hồi chung khi không khớp từ khóa
+    if (isEn) {
+      return `
+        <div class="flex flex-col gap-2 text-xs leading-relaxed">
+          <p>MedFA received your reflex emergency query: <em>"${escapeHTML(query)}"</em></p>
+          <p>To preserve life during the <strong>"Golden 4 Minutes"</strong>:</p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>If victim is unconscious and not breathing: <strong class="text-error">CALL 115 / 911 IMMEDIATELY</strong> and begin chest compressions (CPR).</li>
+            <li>Explore standardized step-by-step procedures in the <a href="topics.html" class="text-primary font-bold underline">First Aid Library</a>.</li>
+            <li>Sharpen your reflexes with <a href="flashcards.html" class="text-secondary font-bold underline">3D Flashcards</a> or the <a href="quiz.html" class="text-tertiary font-bold underline">Scenario Quiz</a>.</li>
+          </ul>
+          <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Note: You can enter your Gemini API Key via the Settings icon ⚙️ in the chat header to enable live AI reasoning.</p>
+        </div>
+      `;
+    }
+
     return `
       <div class="flex flex-col gap-2 text-xs leading-relaxed">
         <p>MedFA đã tiếp nhận câu hỏi phản xạ: <em>"${escapeHTML(query)}"</em></p>
@@ -326,9 +453,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
             ${htmlContent}
           </div>
           <div class="flex items-center gap-1.5 ml-1">
-            <span class="text-[10px] text-on-surface-variant/60 font-medium">Vừa xong</span>
-            <span class="text-[9px] px-1.5 py-0.5 rounded font-bold ${isLiveGemini ? 'bg-secondary-container/40 text-secondary' : 'bg-surface-container-high text-on-surface-variant'}">
-              ${isLiveGemini ? 'Gemini Flash Live' : 'Bộ Phản Xạ AHA/ERC'}
+            <span class="text-[10px] text-on-surface-variant/60 font-medium" data-i18n="chat.justNow">${typeof window !== 'undefined' && window.t ? window.t('chat.justNow') : 'Vừa xong'}</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded font-bold ${isLiveGemini ? 'bg-secondary-container/40 text-secondary' : 'bg-surface-container-high text-on-surface-variant'}" data-i18n="${isLiveGemini ? 'chat.geminiLive' : 'chat.offlineReflex'}">
+              ${isLiveGemini ? (typeof window !== 'undefined' && window.t ? window.t('chat.geminiLive') : 'Gemini Flash Live') : (typeof window !== 'undefined' && window.t ? window.t('chat.offlineReflex') : 'Bộ Phản Xạ AHA/ERC')}
             </span>
           </div>
         </div>
@@ -352,7 +479,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
     indicator.className = 'flex items-center gap-2 max-w-[80%] text-xs text-on-surface-variant bg-surface-container-high/60 px-3 py-2 rounded-xl';
     indicator.innerHTML = `
       <div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
-      <span class="font-medium">Đang tra cứu phản xạ y tế AHA/ERC...</span>
+      <span class="font-medium" data-i18n="chat.thinking">${(typeof I18n !== 'undefined' && I18n.t) ? I18n.t('chat.thinking') : 'Đang tra cứu phản xạ y tế AHA/ERC...'}</span>
     `;
     container.appendChild(indicator);
     container.scrollTop = container.scrollHeight;
@@ -421,9 +548,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
         <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-primary text-[20px]">tune</span>
-            <h4 class="font-bold text-on-surface text-sm">Cài đặt Trợ lý AI</h4>
+            <h4 class="font-bold text-on-surface text-sm" data-i18n="chat.settingsTitle">Cài đặt Trợ lý AI</h4>
           </div>
-          <button id="btn-close-settings" type="button" class="p-1 hover:bg-surface-container rounded-lg text-outline">
+          <button id="btn-close-settings" data-i18n-aria-label="chat.closeTitle" type="button" class="p-1 hover:bg-surface-container rounded-lg text-outline">
             <span class="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
@@ -439,7 +566,7 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
               placeholder="AIzaSy..." 
               class="w-full bg-surface-container-low border border-outline-variant/40 rounded-xl px-3 py-2 text-xs text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
-            <p class="text-[11px] text-on-surface-variant/70 mt-1.5 leading-relaxed">
+            <p class="text-[11px] text-on-surface-variant/70 mt-1.5 leading-relaxed" data-i18n-html="chat.keyPrivacy">
               API Key được lưu bảo mật trong <code>localStorage</code> của trình duyệt bạn. MedFA không truyền key lên máy chủ trung gian.
             </p>
           </div>
@@ -447,9 +574,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
           <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1.5 text-xs">
             <span class="font-bold text-on-surface flex items-center gap-1">
               <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
-              Cơ chế Hoạt động:
+              <span data-i18n="chat.howItWorks">Cơ chế hoạt động</span>
             </span>
-            <p class="text-on-surface-variant text-[11px] leading-relaxed">
+            <p class="text-on-surface-variant text-[11px] leading-relaxed" data-i18n-html="chat.keyModes">
               • <strong>Có Key:</strong> Gọi trực tiếp Google Gemini Flash với System Prompt y khoa chuyên sâu.<br/>
               • <strong>Không có Key / Mất mạng:</strong> Tự động chuyển về Bộ phản xạ y tế AHA/ERC ngoại tuyến 100%.
             </p>
@@ -458,16 +585,17 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       </div>
 
       <div class="flex items-center gap-2 pt-3 border-t border-outline-variant/30">
-        <button id="btn-save-key" type="button" class="flex-1 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-bold text-xs transition-colors shadow-sm">
+        <button id="btn-save-key" data-i18n="chat.saveSettingsBtn" type="button" class="flex-1 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-bold text-xs transition-colors shadow-sm">
           Lưu Cài Đặt
         </button>
-        <button id="btn-clear-key" type="button" class="py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold transition-colors">
+        <button id="btn-clear-key" data-i18n="chat.clearKeyBtn" type="button" class="py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold transition-colors">
           Xóa Key
         </button>
       </div>
     `;
 
     chatWindow.appendChild(modal);
+    window.I18n?.applyTranslations(modal);
 
     // Bind events
     const closeBtn = modal.querySelector('#btn-close-settings');
@@ -481,9 +609,13 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       const keyVal = keyInput.value.trim();
       setApiKey(keyVal);
       modal.classList.add('hidden');
+      const title = typeof window !== 'undefined' && window.t ? window.t('chat.keyUpdated') : '✅ Đã cập nhật cấu hình!';
+      const desc = keyVal
+        ? (typeof window !== 'undefined' && window.t ? window.t('chat.switchedLive') : 'Trợ lý đã chuyển sang chế độ <strong>Google Gemini Flash Live</strong>.')
+        : (typeof window !== 'undefined' && window.t ? window.t('chat.switchedOffline') : 'Đã xóa Key. Trợ lý sử dụng <strong>Bộ phản xạ sơ cấp cứu y khoa MedFA (Offline)</strong>.');
       appendMessage('bot', `
-        <p class="text-xs text-secondary font-bold">✅ Đã cập nhật cấu hình!</p>
-        <p class="text-xs text-on-surface-variant mt-1">${keyVal ? 'Trợ lý đã chuyển sang chế độ <strong>Google Gemini Flash Live</strong>.' : 'Đã xóa Key. Trợ lý sử dụng <strong>Bộ phản xạ sơ cấp cứu y khoa MedFA (Offline)</strong>.'}</p>
+        <p class="text-xs text-secondary font-bold" data-i18n="chat.keyUpdated">${title}</p>
+        <p class="text-xs text-on-surface-variant mt-1" data-i18n-html="${keyVal ? 'chat.switchedLive' : 'chat.switchedOffline'}">${desc}</p>
       `);
     });
 
@@ -491,8 +623,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       removeApiKey();
       keyInput.value = '';
       modal.classList.add('hidden');
+      const clearedMsg = typeof window !== 'undefined' && window.t ? window.t('chat.keyCleared') : 'ℹ️ Đã xóa API Key. Trợ lý đang hoạt động ở chế độ <strong>Bộ phản xạ y khoa ngoại tuyến chuẩn AHA/ERC</strong>.';
       appendMessage('bot', `
-        <p class="text-xs text-on-surface font-semibold">ℹ️ Đã xóa API Key. Trợ lý đang hoạt động ở chế độ <strong>Bộ phản xạ y khoa ngoại tuyến chuẩn AHA/ERC</strong>.</p>
+        <p class="text-xs text-on-surface font-semibold" data-i18n-html="chat.keyCleared">${clearedMsg}</p>
       `);
     });
 
@@ -509,8 +642,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
     const chatInput = document.getElementById('chat-user-input');
     const settingsBtn = document.getElementById('chat-settings-btn');
 
-    if (chatForm && chatInput && !chatForm.dataset.chatbotBound) {
-      chatForm.dataset.chatbotBound = '1';
+    if (chatForm && chatInput && (!chatForm.dataset || !chatForm.dataset.chatbotBound)) {
+      if (chatForm.dataset) chatForm.dataset.chatbotBound = '1';
+
       chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const text = chatInput.value.trim();
@@ -520,8 +654,9 @@ Format câu trả lời: Ngắn gọn, có dùng định dạng Markdown hoặc 
       });
     }
 
-    if (settingsBtn && !settingsBtn.dataset.settingsBound) {
-      settingsBtn.dataset.settingsBound = '1';
+    if (settingsBtn && (!settingsBtn.dataset || !settingsBtn.dataset.settingsBound)) {
+      if (settingsBtn.dataset) settingsBtn.dataset.settingsBound = '1';
+
       settingsBtn.addEventListener('click', () => {
         initSettingsModal();
         const modal = document.getElementById('chat-settings-modal');
