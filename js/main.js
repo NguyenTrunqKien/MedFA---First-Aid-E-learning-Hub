@@ -223,8 +223,8 @@ const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low tex
         </div>
       </div>
 
-      <!-- Cột 2: Danh bạ Khẩn cấp Quốc Gia -->
-      <div class="flex flex-col gap-space-sm">
+      <!-- Cột 2: Danh bạ Khẩn cấp Quốc Gia (Lab 1: semantic address) -->
+      <address class="flex flex-col gap-space-sm not-italic">
         <span class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-1.5">
           <span class="material-symbols-outlined text-error text-[20px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
           <span data-i18n="footer.emergencyTitle">Tổng đài khẩn cấp</span>
@@ -259,7 +259,7 @@ const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low tex
             <span class="material-symbols-outlined text-outline text-[16px]">call</span>
           </a>
         </div>
-      </div>
+      </address>
 
       <!-- Cột 3: Cẩm nang Sơ cấp cứu -->
       <div class="flex flex-col gap-space-sm">

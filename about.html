@@ -109,10 +109,14 @@
               </div>
             </div>
 
-            <!-- Right Image Showcase -->
+            <!-- Right Image Showcase with Responsive Picture (Lab 2 Bài 1) -->
             <div class="lg:col-span-5">
               <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-surface-container border border-outline-variant/30">
-                <img alt="Nhóm sinh viên phát triển dự án MedFA" data-i18n-alt="about.teamAlt" class="w-full h-full object-cover" src="images/medfa-team.webp" loading="lazy" decoding="async">
+                <picture class="w-full h-full">
+                  <source media="(max-width: 639px)" srcset="images/medfa-team-sm.webp">
+                  <source media="(min-width: 640px)" srcset="images/medfa-team.webp">
+                  <img alt="Nhóm sinh viên phát triển dự án MedFA" data-i18n-alt="about.teamAlt" class="w-full h-full object-cover" src="images/medfa-team.webp" srcset="images/medfa-team-sm.webp 320w, images/medfa-team.webp 512w" sizes="(max-width: 639px) 100vw, 40vw" loading="lazy" decoding="async" width="512" height="382">
+                </picture>
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent pointer-events-none"></div>
                 <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-surface/95 backdrop-blur-md flex items-center gap-3 shadow-md border border-outline-variant/30">
                   <div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
@@ -243,11 +247,11 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full text-left">
             <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
-              <span class="font-bold text-primary text-base">AHA 2025</span>
+              <span class="font-bold text-primary text-base"><abbr title="American Heart Association - Hiệp hội Tim mạch Hoa Kỳ" class="cursor-help">AHA</abbr> 2025</span>
               <span class="text-xs text-on-surface-variant mt-1" data-i18n="about.ahaDesc">American Heart Association - Phác đồ hồi sinh tim phổi và xử trí cấp cứu tim mạch.</span>
             </div>
             <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
-              <span class="font-bold text-secondary text-base">ERC Guidelines</span>
+              <span class="font-bold text-secondary text-base"><abbr title="European Resuscitation Council - Hội đồng Hồi sức Châu Âu" class="cursor-help">ERC</abbr> Guidelines</span>
               <span class="text-xs text-on-surface-variant mt-1" data-i18n="about.ercDesc">European Resuscitation Council - Hướng dẫn sơ cấp cứu và sơ cứu đường thở châu Âu.</span>
             </div>
             <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
@@ -255,7 +259,7 @@
               <span class="text-xs text-on-surface-variant mt-1" data-i18n="about.redCrossDesc">Hiệp hội Chữ thập đỏ quốc tế - Cẩm nang kỹ năng sơ cấp cứu cộng đồng tiêu chuẩn.</span>
             </div>
             <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col">
-              <span class="font-bold text-on-surface text-base" data-i18n="about.mohTitle">Bộ Y Tế Việt Nam</span>
+              <span class="font-bold text-on-surface text-base"><abbr title="Bộ Y Tế Nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam" class="cursor-help" data-i18n="about.mohTitle">Bộ Y Tế Việt Nam</abbr></span>
               <span class="text-xs text-on-surface-variant mt-1" data-i18n="about.mohDesc">Tài liệu tập huấn sơ cấp cứu ban đầu cho lực lượng y tế cơ sở và người dân.</span>
             </div>
           </div>

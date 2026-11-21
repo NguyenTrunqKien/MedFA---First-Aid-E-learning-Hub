@@ -97,14 +97,37 @@
                 </button>
               </div>
 
-              <!-- Main Title & Lead -->
+              <!-- Main Title & Lead with Float Text Wrap (Lab 4 Bài 3.3) -->
               <div class="mt-4">
                 <h1 id="detail-title" class="text-2xl md:text-4xl text-primary tracking-tight font-extrabold leading-tight">
                   Hóc dị vật (Nghẹn & Tắc đường thở)
                 </h1>
-                <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant mt-2 leading-relaxed">
-                  Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu <span class="font-bold text-tertiary">tổn thương không thể phục hồi chỉ sau 4 phút</span> thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.
-                </p>
+                
+                <!-- Bố cục Float hình ảnh bao quanh bởi chữ theo chuẩn Lab 4 Bài 3.3 -->
+                <div class="mt-4 medfa-clearfix">
+                  <figure class="medfa-float-wrap-left">
+                    <picture>
+                      <source media="(max-width: 639px)" srcset="images/hero-cpr-sm.webp">
+                      <source media="(min-width: 640px)" srcset="images/hero-cpr.webp">
+                      <img src="images/hero-cpr-sm.webp" alt="Minh họa phản xạ sơ cấp cứu trong 4 phút vàng" width="320" height="236" loading="lazy">
+                    </picture>
+                    <figcaption data-i18n="detail.floatFigcaption">Mô hình sơ cứu phản xạ 4 Phút Vàng</figcaption>
+                  </figure>
+                  <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                    Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu <span class="font-bold text-tertiary">tổn thương không thể phục hồi chỉ sau 4 phút</span> thiếu hụt O<sub>2</sub> nếu không được can thiệp <abbr title="Cardiopulmonary Resuscitation - Hồi sinh tim phổi">CPR</abbr> và khai thông đường thở đúng phương pháp ngay tại hiện trường.
+                  </p>
+                  <p class="text-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="detail.floatLeadExtra">
+                    Mỗi giây trôi qua đều quyết định sự sống còn của tế bào thần kinh trung ương. Hãy giữ bình tĩnh, quan sát dấu hiệu nhận biết và phối hợp nhịp nhàng giữa ép tim, vỗ lưng hoặc ép bụng tùy theo từng đối tượng.
+                  </p>
+                </div>
+
+                <!-- Trích dẫn chuẩn Y khoa (Lab 1: blockquote & cite) -->
+                <blockquote cite="https://cpr.heart.org" class="mt-4">
+                  <p data-i18n="detail.ahaQuoteText">"Hồi sinh tim phổi (CPR) chất lượng cao kịp thời trong 4 phút đầu tiên có thể làm tăng gấp 2 đến 3 lần cơ hội sống sót của nạn nhân ngừng tuần hoàn ngoài bệnh viện."</p>
+                  <footer>
+                    — <cite data-i18n="detail.ahaQuoteCite">Hiệp hội Tim mạch Hoa Kỳ (<abbr title="American Heart Association">AHA</abbr>) &amp; Hội đồng Hồi sinh Châu Âu (<abbr title="European Resuscitation Council">ERC</abbr>) Guidelines 2025</cite>
+                  </footer>
+                </blockquote>
               </div>
 
               <!-- CRITICAL ALERT BANNER -->
@@ -293,7 +316,97 @@
                 </div>
               </section>
 
-              <!-- VIDEO HƯỚNG DẪN MINH HỌA (Hiển thị động nếu bài học có nguồn video YouTube) -->
+              <!-- BẢNG ĐỐI CHIẾU THÔNG SỐ CẤP CỨU CHUẨN Y KHOA (Lab 2 Bài 2: HTML Table) -->
+              <section class="mt-8 pt-6 border-t border-outline-variant/20" aria-labelledby="table-cpr-title">
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary-container text-primary flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">table_chart</span>
+                  </div>
+                  <h3 id="table-cpr-title" class="text-lg font-bold text-on-surface" data-i18n="detail.tableSectionTitle">
+                    Bảng đối chiếu thông số hồi sinh tim phổi (CPR &amp; AED)
+                  </h3>
+                </div>
+                <p class="text-sm text-on-surface-variant mb-3 leading-relaxed" data-i18n="detail.tableSectionDesc">
+                  Đối chiếu các thông số ép tim, thổi ngạt và sử dụng máy khử rung tim tự động ngoài lồng ngực (<abbr title="Automated External Defibrillator">AED</abbr>) giữa các nhóm lứa tuổi theo khuyến nghị cập nhật từ <abbr title="American Heart Association">AHA</abbr> &amp; <abbr title="European Resuscitation Council">ERC</abbr> 2025:
+                </p>
+                <div class="medfa-table-wrapper">
+                  <table class="medfa-table">
+                    <caption data-i18n="detail.tableCaption">Bảng 1: Thông số kỹ thuật ép tim CPR &amp; AED theo lứa tuổi (AHA/ERC 2025)</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" rowspan="2" class="text-center" data-i18n="detail.thParameter">Thông số kỹ thuật</th>
+                        <th scope="colgroup" colspan="3" class="text-center" data-i18n="detail.thAgeGroups">Phân loại đối tượng nạn nhân</th>
+                      </tr>
+                      <tr>
+                        <th scope="col" data-i18n="detail.thAdult">Người lớn (≥ 8 tuổi)</th>
+                        <th scope="col" data-i18n="detail.thChild">Trẻ em (1 – 8 tuổi)</th>
+                        <th scope="col" data-i18n="detail.thInfant">Trẻ sơ sinh (&lt; 1 tuổi)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" data-i18n="detail.rowRate">Tần số ép tim (Rate)</th>
+                        <td colspan="3" class="text-center font-bold text-primary">
+                          <span class="badge-cpr">100 – 120 nhịp/phút</span> <span class="text-xs text-on-surface-variant font-normal" data-i18n="detail.rowRateShared">(áp dụng đồng nhất cho mọi lứa tuổi)</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-i18n="detail.rowDepth">Độ sâu ép tim (Depth)</th>
+                        <td>
+                          <strong>5 – 6 cm</strong><br>
+                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthAdult">Không ấn sâu quá 6 cm</span>
+                        </td>
+                        <td>
+                          <strong>Khoảng 5 cm</strong><br>
+                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthChild">~1/3 đường kính lồng ngực</span>
+                        </td>
+                        <td>
+                          <strong>Khoảng 4 cm</strong><br>
+                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthInfant">~1/3 đường kính lồng ngực</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-i18n="detail.rowHandPos">Vị trí đặt tay</th>
+                        <td data-i18n="detail.rowHandPosAdult">1/2 dưới xương ức, giữa 2 núm vú</td>
+                        <td data-i18n="detail.rowHandPosChild">1/2 dưới xương ức</td>
+                        <td data-i18n="detail.rowHandPosInfant">Giữa ngực, ngay dưới đường nối 2 núm vú</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-i18n="detail.rowHandTech">Kỹ thuật dùng tay</th>
+                        <td data-i18n="detail.rowHandTechAdult">2 bàn tay đan chặt ngón vào nhau, gót tay tì lực</td>
+                        <td data-i18n="detail.rowHandTechChild">1 hoặc 2 bàn tay (tùy thể trạng trẻ)</td>
+                        <td data-i18n="detail.rowHandTechInfant">2 ngón tay (trỏ &amp; giữa) hoặc 2 ngón cái bao quanh ngực</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-i18n="detail.rowRatio">Tỷ lệ Ép tim : Thổi ngạt</th>
+                        <td>
+                          <span class="font-bold text-primary">30 : 2</span><br>
+                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowRatioAdult">Áp dụng cho cả 1 hoặc 2 người sơ cứu</span>
+                        </td>
+                        <td>
+                          <span class="font-bold text-primary">30 : 2</span> (1 người cứu)<br>
+                          <span class="font-bold text-secondary">15 : 2</span> (2 người cứu y tế)
+                        </td>
+                        <td>
+                          <span class="font-bold text-primary">30 : 2</span> (1 người cứu)<br>
+                          <span class="font-bold text-secondary">15 : 2</span> (2 người cứu y tế)
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-i18n="detail.rowAed">Sử dụng máy sốc tim AED</th>
+                        <td data-i18n="detail.rowAedAdult">Miếng dán người lớn tiêu chuẩn</td>
+                        <td data-i18n="detail.rowAedChild">Miếng dán nhi khoa (hoặc chuyển công tắc trẻ em)</td>
+                        <td data-i18n="detail.rowAedInfant">Ưu tiên máy khử rung thủ công / Miếng dán nhi có bộ giảm liều</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="text-xs text-on-surface-variant italic mt-1">
+                  *<sup>(1)</sup> <span data-i18n="detail.tableFootnote">Nguồn dữ liệu tham chiếu: Khuyến cáo Hồi sinh tim phổi AHA ECC Guidelines 2025 &amp; Phác đồ Cấp cứu Ngoại viện Bộ Y Tế.</span>
+                </p>
+              </section>
+
+              <!-- VIDEO HƯỚNG DẪN MINH HỌA (Lab 2 Bài 1: Nhúng video YouTube trực quan) -->
               <section id="detail-video-section" class="mt-6 p-4 md:p-5 rounded-xl bg-surface-container-low border border-outline-variant/30" hidden>
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div class="flex items-start gap-3">
@@ -305,11 +418,13 @@
                       <p id="detail-video-creator" class="text-xs text-on-surface-variant mt-0.5"></p>
                     </div>
                   </div>
-                  <a id="detail-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs py-2.5 px-4 self-start sm:self-auto">
-                    <span class="material-symbols-outlined text-[18px]">play_circle</span>
-                    <span id="detail-video-link-label" data-i18n="detail.youtubeView">Xem trên YouTube</span>
+                  <a id="detail-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs py-2.5 px-4 self-start sm:self-auto no-external-icon">
+                    <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                    <span id="detail-video-link-label" data-i18n="detail.youtubeView">Mở trên YouTube</span>
                   </a>
                 </div>
+                <!-- Container nhúng Video player trực tiếp (16:9 iframe) -->
+                <div id="detail-video-embed" class="mt-4" hidden></div>
               </section>
 
               </div>

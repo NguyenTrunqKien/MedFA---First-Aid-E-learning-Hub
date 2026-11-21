@@ -426,3 +426,168 @@
   padding: 2px 6px;
   border-radius: 4px;
 }
+
+/* ==========================================================================
+   CLINICAL DATA TABLE (Lab 2 Bài 2: HTML Table Nâng cao)
+   ========================================================================== */
+.medfa-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(196, 197, 213, 0.4);
+  background: var(--color-surface-container-lowest, #ffffff);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.medfa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.medfa-table caption {
+  caption-side: top;
+  padding: 0.875rem 1rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--color-primary, #00288e);
+  background-color: var(--color-surface-container-low, #f1f3fa);
+  border-bottom: 1px solid rgba(196, 197, 213, 0.4);
+  text-align: left;
+}
+
+.medfa-table thead th {
+  background-color: var(--color-surface-container, #e8ecf4);
+  color: var(--color-on-surface, #121c2a);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(196, 197, 213, 0.4);
+  vertical-align: middle;
+}
+
+.medfa-table tbody th[scope="row"] {
+  background-color: var(--color-surface-container-low, #f1f3fa);
+  color: var(--color-on-surface, #121c2a);
+  font-weight: 700;
+  border: 1px solid rgba(196, 197, 213, 0.4);
+  vertical-align: middle;
+}
+
+.medfa-table tbody td {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(196, 197, 213, 0.4);
+  vertical-align: middle;
+  color: var(--color-on-surface-variant, #43474e);
+}
+
+/* Sọc ngựa vằn (Zebra-striping chuẩn Lab 2) */
+.medfa-table tbody tr:nth-child(even) td {
+  background-color: rgba(241, 245, 249, 0.5);
+}
+
+.medfa-table tbody tr:hover td,
+.medfa-table tbody tr:hover th {
+  background-color: rgba(30, 64, 175, 0.04);
+}
+
+/* Highlight badge bên trong bảng */
+.medfa-table .badge-cpr {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--color-primary-fixed, #dbeafe);
+  color: var(--color-primary, #00288e);
+}
+
+/* ==========================================================================
+   FLOAT TEXT WRAPPING (Lab 4 Bài 3.3: Bố cục Float chữ bao quanh ảnh)
+   ========================================================================== */
+.medfa-float-wrap-left {
+  float: left;
+  margin: 0.35rem 1.25rem 1rem 0;
+  max-width: 240px;
+  shape-outside: margin-box;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(196, 197, 213, 0.3);
+  background-color: var(--color-surface-container-lowest, #ffffff);
+}
+
+.medfa-float-wrap-right {
+  float: right;
+  margin: 0.35rem 0 1rem 1.25rem;
+  max-width: 240px;
+  shape-outside: margin-box;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(196, 197, 213, 0.3);
+  background-color: var(--color-surface-container-lowest, #ffffff);
+}
+
+.medfa-float-wrap-left img,
+.medfa-float-wrap-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.medfa-float-wrap-left figcaption,
+.medfa-float-wrap-right figcaption {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.5rem 0.65rem;
+  color: var(--color-on-surface-variant, #43474e);
+  background-color: var(--color-surface-container-low, #f1f3fa);
+  text-align: center;
+  border-top: 1px solid rgba(196, 197, 213, 0.3);
+}
+
+/* Xóa float sau khối văn bản */
+.medfa-clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 639.98px) {
+  .medfa-float-wrap-left,
+  .medfa-float-wrap-right {
+    float: none;
+    margin: 0 0 1rem 0;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE VIDEO EMBED (Lab 2 Bài 1: Nhúng video đa phương tiện)
+   ========================================================================== */
+.medfa-video-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Tỷ lệ khung hình chuẩn 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.875rem;
+  background-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(196, 197, 213, 0.3);
+}
+
+.medfa-video-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

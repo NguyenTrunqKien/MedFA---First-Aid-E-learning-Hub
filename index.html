@@ -73,7 +73,12 @@
 
       <!-- SECTION 1: HERO SECTION -->
       <section class="relative w-full min-h-[640px] lg:min-h-[720px] flex items-center overflow-hidden bg-[#0A192F]">
-        <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" data-i18n-alt="home.heroAlt" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" src="images/hero-cpr.webp" fetchpriority="high" decoding="async">
+        <!-- Responsive Picture (Lab 2 Bài 1) -->
+        <picture class="absolute inset-0 w-full h-full pointer-events-none">
+          <source media="(max-width: 639px)" srcset="images/hero-cpr-sm.webp">
+          <source media="(min-width: 640px)" srcset="images/hero-cpr.webp">
+          <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" data-i18n-alt="home.heroAlt" class="w-full h-full object-cover object-center" src="images/hero-cpr.webp" srcset="images/hero-cpr-sm.webp 320w, images/hero-cpr.webp 512w" sizes="(max-width: 639px) 100vw, 100vw" fetchpriority="high" decoding="async" width="512" height="379">
+        </picture>
         <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F]/95 via-[#0F1E3C]/80 sm:via-[#0F1E3C]/70 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F]/60 via-transparent to-black/20"></div>
 
@@ -354,10 +359,14 @@
               </div>
             </div>
 
-            <!-- Right column image -->
+            <!-- Right column image with Responsive Picture (Lab 2 Bài 1) -->
             <div class="lg:col-span-6 relative">
               <div class="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
-                <img alt="Bác sĩ khám và chăm sóc bé gái cùng mẹ" data-i18n-alt="home.childAlt" class="w-full h-full object-cover object-center rounded-2xl aspect-[4/3]" src="images/first-aid-child.webp" loading="lazy" decoding="async">
+                <picture class="w-full h-full">
+                  <source media="(max-width: 639px)" srcset="images/first-aid-child-sm.webp">
+                  <source media="(min-width: 640px)" srcset="images/first-aid-child.webp">
+                  <img alt="Bác sĩ khám và chăm sóc bé gái cùng mẹ" data-i18n-alt="home.childAlt" class="w-full h-full object-cover object-center rounded-2xl aspect-[4/3]" src="images/first-aid-child.webp" srcset="images/first-aid-child-sm.webp 320w, images/first-aid-child.webp 512w" sizes="(max-width: 639px) 100vw, 50vw" loading="lazy" decoding="async" width="512" height="387">
+                </picture>
               </div>
             </div>
           </div>

@@ -239,7 +239,34 @@
   };
 
   /**
-   * Render liên kết video hướng dẫn nếu bài học có trường video hợp lệ (HTTPS)
+   * Trích xuất mã ID video từ các định dạng URL YouTube phổ biến
+   * @param {string} url
+   * @returns {string|null}
+   */
+  function extractYouTubeVideoId(url) {
+    if (!url) return null;
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname.includes('youtu.be')) {
+        return parsed.pathname.slice(1).split(/[?#]/)[0] || null;
+      }
+      if (parsed.hostname.includes('youtube.com')) {
+        const v = parsed.searchParams.get('v');
+        if (v) return v;
+        const parts = parsed.pathname.split('/');
+        const embedIdx = parts.indexOf('embed');
+        if (embedIdx !== -1 && parts[embedIdx + 1]) {
+          return parts[embedIdx + 1].split(/[?#]/)[0];
+        }
+      }
+    } catch {
+      return null;
+    }
+    return null;
+  }
+
+  /**
+   * Render liên kết video hướng dẫn và khung nhúng video responsive (Lab 2 Bài 1 & Đề cương Buổi 3)
    * @param {Object} topic
    */
   function renderTopicVideo(topic) {
@@ -247,8 +274,14 @@
     const creatorEl = document.getElementById('detail-video-creator');
     const linkEl = document.getElementById('detail-video-link');
     const linkLabelEl = document.getElementById('detail-video-link-label');
+    const embedEl = document.getElementById('detail-video-embed');
+
     if (!videoSection || !linkEl || !topic?.video?.youtubeUrl) {
       if (videoSection) videoSection.hidden = true;
+      if (embedEl) {
+        embedEl.innerHTML = '';
+        embedEl.hidden = true;
+      }
       return;
     }
 
@@ -261,7 +294,7 @@
       linkEl.href = parsed.href;
       if (linkLabelEl) {
         const isYouTube = parsed.hostname.includes('youtube.com') || parsed.hostname.includes('youtu.be');
-        const ytText = window.t ? t('detail.youtubeView') : 'Xem trên YouTube';
+        const ytText = window.t ? t('detail.youtubeView') : 'Mở trên YouTube';
         const vidText = window.t ? t('detail.videoGuide') : 'Xem video hướng dẫn';
         linkLabelEl.textContent = isYouTube ? ytText : vidText;
       }
@@ -283,9 +316,35 @@
           ? `${prefix}${creatorName}`
           : fallback;
       }
+
+      // Nhúng Video YouTube trực tiếp vào khung phản hồi (Lab 2 Bài 1)
+      if (embedEl) {
+        const ytId = extractYouTubeVideoId(parsed.href);
+        if (ytId) {
+          const videoTitle = topic.title || 'Video hướng dẫn sơ cấp cứu MedFA';
+          embedEl.innerHTML = `
+            <div class="medfa-video-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(ytId)}?rel=0" 
+                      title="${escapeHTML(videoTitle)}" 
+                      loading="lazy" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+          `;
+          embedEl.hidden = false;
+        } else {
+          embedEl.innerHTML = '';
+          embedEl.hidden = true;
+        }
+      }
+
       videoSection.hidden = false;
     } catch {
       videoSection.hidden = true;
+      if (embedEl) {
+        embedEl.innerHTML = '';
+        embedEl.hidden = true;
+      }
     }
   }
 
