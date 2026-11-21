@@ -39,15 +39,8 @@ const FALLBACK_HEADER_HTML = `<!-- MedFA Shared Header Component -->
           <a href="flashcards.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="flashcards">
             <span class="material-symbols-outlined text-primary text-[20px]">style</span>
             <div class="flex flex-col">
-              <span class="font-bold" data-i18n="nav.flashcards">Flashcard 3D</span>
+              <span class="font-bold" data-i18n="nav.flashcards">Flashcard</span>
               <span class="text-xs text-on-surface-variant font-normal" data-i18n="nav.flashcardsDesc">Lật thẻ phản xạ trực quan</span>
-            </div>
-          </a>
-          <a href="timed-practice.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="timed-practice">
-            <span class="material-symbols-outlined text-secondary text-[20px]">timer</span>
-            <div class="flex flex-col">
-              <span class="font-bold" data-i18n="nav.timedPractice">Thử thách 4 Phút Vàng</span>
-              <span class="text-xs text-on-surface-variant font-normal" data-i18n="nav.timedPracticeDesc">Đồng hồ đếm ngược 240s</span>
             </div>
           </a>
           <a href="quiz.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors text-on-surface font-semibold text-sm" data-page="quiz">
@@ -82,7 +75,7 @@ const FALLBACK_HEADER_HTML = `<!-- MedFA Shared Header Component -->
           <span id="lang-btn-text" class="font-label-md text-label-md font-bold text-primary">VN</span>
           <svg class="medfa-header__chevron text-on-surface-variant transition-transform duration-200" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
-        <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col overflow-hidden">
+        <div id="language-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-48 rounded-xl bg-surface-container-lowest shadow-xl border border-outline-variant/30 py-1.5 z-50 flex flex-col">
           <button type="button" data-language="vi" aria-pressed="true" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
             <div class="flex items-center gap-2.5">
               <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
@@ -150,14 +143,7 @@ const FALLBACK_HEADER_HTML = `<!-- MedFA Shared Header Component -->
       <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="flashcards" href="flashcards.html">
         <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-primary text-[18px]">style</span>
-          <span class="text-sm" data-i18n="nav.flashcards">Flashcard 3D</span>
-        </div>
-        <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
-      </a>
-      <a class="nav-link-mobile px-3 py-2 rounded-lg font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="timed-practice" href="timed-practice.html">
-        <div class="flex items-center gap-2.5">
-          <span class="material-symbols-outlined text-secondary text-[18px]">timer</span>
-          <span class="text-sm" data-i18n="nav.timedPractice">Thử thách 4 Phút Vàng</span>
+          <span class="text-sm" data-i18n="nav.flashcards">Flashcard</span>
         </div>
         <span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
       </a>
@@ -354,11 +340,7 @@ const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low tex
         <div class="flex flex-col">
           <div class="flex items-center gap-1.5">
             <span class="font-title-md text-title-md font-bold tracking-tight leading-tight text-white" data-i18n="chat.title">MedFA Trợ lý AI</span>
-            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/20 text-white leading-none">AHA/ERC</span>
           </div>
-          <span class="text-[12px] text-white/80 font-medium flex items-center gap-1 mt-0.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span><span data-i18n="chat.subtitle">Chuẩn Y Khoa AHA & ERC</span>
-          </span>
         </div>
       </div>
       <div class="flex items-center gap-1.5 text-white">
@@ -371,9 +353,6 @@ const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low tex
 
     <!-- Messages Container -->
     <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto bg-surface-container-low flex flex-col gap-3">
-      <div class="flex justify-center my-1">
-        <span class="text-[11px] font-medium text-on-surface-variant/70 bg-surface-container-high px-2.5 py-0.5 rounded-full" data-i18n="chat.subtitle">Chuẩn Y Khoa AHA & ERC</span>
-      </div>
       <div class="flex items-start gap-2.5 max-w-[90%]">
         <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
           <span class="material-symbols-outlined text-[16px]">smart_toy</span>

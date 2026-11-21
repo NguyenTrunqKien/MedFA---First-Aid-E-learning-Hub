@@ -90,44 +90,16 @@
                     <span>Đọc 2 phút</span>
                   </span>
                 </div>
-                <!-- Bookmark button -->
-                <button id="detail-bookmark-btn" type="button" class="btn-bookmark inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-outline-variant/30 text-xs font-bold hover:bg-surface-container transition-colors text-on-surface cursor-pointer shadow-xs" title="Lưu bài học này" data-i18n-title="detail.bookmarkTitle">
-                  <span class="material-symbols-outlined text-[18px] text-outline">bookmark_add</span>
-                  <span class="bookmark-text" data-i18n="topics.bookmarkSave">Lưu bài học</span>
-                </button>
               </div>
 
-              <!-- Main Title & Lead with Float Text Wrap (Lab 4 Bài 3.3) -->
+              <!-- Main Title & Lead -->
               <div class="mt-4">
                 <h1 id="detail-title" class="text-2xl md:text-4xl text-primary tracking-tight font-extrabold leading-tight">
                   Hóc dị vật (Nghẹn & Tắc đường thở)
                 </h1>
-                
-                <!-- Bố cục Float hình ảnh bao quanh bởi chữ theo chuẩn Lab 4 Bài 3.3 -->
-                <div class="mt-4 medfa-clearfix">
-                  <figure class="medfa-float-wrap-left">
-                    <picture>
-                      <source media="(max-width: 639px)" srcset="images/hero-cpr-sm.webp">
-                      <source media="(min-width: 640px)" srcset="images/hero-cpr.webp">
-                      <img src="images/hero-cpr-sm.webp" alt="Minh họa phản xạ sơ cấp cứu trong 4 phút vàng" width="320" height="236" loading="lazy">
-                    </picture>
-                    <figcaption data-i18n="detail.floatFigcaption">Mô hình sơ cứu phản xạ 4 Phút Vàng</figcaption>
-                  </figure>
-                  <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant leading-relaxed">
-                    Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu <span class="font-bold text-tertiary">tổn thương không thể phục hồi chỉ sau 4 phút</span> thiếu hụt O<sub>2</sub> nếu không được can thiệp <abbr title="Cardiopulmonary Resuscitation - Hồi sinh tim phổi">CPR</abbr> và khai thông đường thở đúng phương pháp ngay tại hiện trường.
-                  </p>
-                  <p class="text-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="detail.floatLeadExtra">
-                    Mỗi giây trôi qua đều quyết định sự sống còn của tế bào thần kinh trung ương. Hãy giữ bình tĩnh, quan sát dấu hiệu nhận biết và phối hợp nhịp nhàng giữa ép tim, vỗ lưng hoặc ép bụng tùy theo từng đối tượng.
-                  </p>
-                </div>
-
-                <!-- Trích dẫn chuẩn Y khoa (Lab 1: blockquote & cite) -->
-                <blockquote cite="https://cpr.heart.org" class="mt-4">
-                  <p data-i18n="detail.ahaQuoteText">"Hồi sinh tim phổi (CPR) chất lượng cao kịp thời trong 4 phút đầu tiên có thể làm tăng gấp 2 đến 3 lần cơ hội sống sót của nạn nhân ngừng tuần hoàn ngoài bệnh viện."</p>
-                  <footer>
-                    — <cite data-i18n="detail.ahaQuoteCite">Hiệp hội Tim mạch Hoa Kỳ (<abbr title="American Heart Association">AHA</abbr>) &amp; Hội đồng Hồi sinh Châu Âu (<abbr title="European Resuscitation Council">ERC</abbr>) Guidelines 2025</cite>
-                  </footer>
-                </blockquote>
+                <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant mt-2 leading-relaxed">
+                  Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu <span class="font-bold text-tertiary">tổn thương không thể phục hồi chỉ sau 4 phút</span> thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.
+                </p>
               </div>
 
               <!-- CRITICAL ALERT BANNER -->
@@ -181,7 +153,7 @@
                   </div>
                   <div class="flex flex-col gap-1">
                     <div class="flex flex-wrap items-center gap-2">
-                      <h2 class="text-sm md:text-base font-bold text-on-surface" data-i18n="detail.cprMetronomeTitle">Nhịp ép tim CPR chuẩn AHA/ERC (110 nhịp/phút)</h2>
+                      <h2 class="text-sm md:text-base font-bold text-on-surface" data-i18n="detail.cprMetronomeTitle">Bộ đếm nhịp thực hiện ép tim CPR 110 BPM</h2>
                       <span id="cpr-beat-counter" class="cpr-beat-counter">0 / 30 nhịp</span>
                     </div>
                     <p id="cpr-cycle-hint" class="text-xs text-on-surface-variant" data-i18n="detail.cprMetronomeDesc">
@@ -317,7 +289,7 @@
               </section>
 
               <!-- BẢNG ĐỐI CHIẾU THÔNG SỐ CẤP CỨU CHUẨN Y KHOA (Lab 2 Bài 2: HTML Table) -->
-              <section class="mt-8 pt-6 border-t border-outline-variant/20" aria-labelledby="table-cpr-title">
+              <section id="detail-cpr-table-section" class="mt-8 pt-6 border-t border-outline-variant/20" aria-labelledby="table-cpr-title" hidden>
                 <div class="flex items-center gap-2 mb-3">
                   <div class="w-8 h-8 rounded-lg bg-primary-container text-primary flex items-center justify-center shrink-0">
                     <span class="material-symbols-outlined text-[20px]">table_chart</span>
@@ -406,7 +378,7 @@
                 </p>
               </section>
 
-              <!-- VIDEO HƯỚNG DẪN MINH HỌA (Lab 2 Bài 1: Nhúng video YouTube trực quan) -->
+              <!-- VIDEO HƯỚNG DẪN MINH HỌA (Xem trên YouTube) -->
               <section id="detail-video-section" class="mt-6 p-4 md:p-5 rounded-xl bg-surface-container-low border border-outline-variant/30" hidden>
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div class="flex items-start gap-3">
@@ -418,13 +390,11 @@
                       <p id="detail-video-creator" class="text-xs text-on-surface-variant mt-0.5"></p>
                     </div>
                   </div>
-                  <a id="detail-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs py-2.5 px-4 self-start sm:self-auto no-external-icon">
-                    <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-                    <span id="detail-video-link-label" data-i18n="detail.youtubeView">Mở trên YouTube</span>
+                  <a id="detail-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-xs py-2.5 px-4 self-start sm:self-auto">
+                    <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                    <span id="detail-video-link-label" data-i18n="detail.youtubeView">Xem trên YouTube</span>
                   </a>
                 </div>
-                <!-- Container nhúng Video player trực tiếp (16:9 iframe) -->
-                <div id="detail-video-embed" class="mt-4" hidden></div>
               </section>
 
               </div>
@@ -486,8 +456,7 @@
 
             <!-- Back to topics button -->
             <a href="topics.html" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-outline-variant/40 hover:bg-surface-container-high transition-colors text-sm font-semibold text-on-surface">
-              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-              <span data-i18n="detail.sidebarBackTopics">Quay lại danh mục tình huống</span>
+              <span data-i18n="detail.sidebarBackTopics">Quay lại danh sách tình huống</span>
             </a>
 
           </aside>

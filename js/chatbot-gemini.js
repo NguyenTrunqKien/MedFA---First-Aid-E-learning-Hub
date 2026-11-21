@@ -789,7 +789,7 @@ Format: Concise Markdown with clear bullet points.
         <ul class="list-disc pl-4 space-y-1">
           <li>Nếu nạn nhân bất tỉnh, ngừng thở: <strong class="text-error">GỌI 115 NGAY LẬP TỨC</strong> và ép tim CPR liên tục.</li>
           <li>Bạn có thể tra cứu nhanh quy trình chuẩn từng bước trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a>.</li>
-          <li>Thử phản xạ kiến thức với <a href="flashcards.html" class="text-secondary font-bold underline">Flashcard 3D</a> hoặc <a href="quiz.html" class="text-tertiary font-bold underline">Bài thi trắc nghiệm</a>.</li>
+          <li>Thử phản xạ kiến thức với <a href="flashcards.html" class="text-secondary font-bold underline">Flashcard</a> hoặc <a href="quiz.html" class="text-tertiary font-bold underline">Bài thi trắc nghiệm</a>.</li>
         </ul>
         <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Lưu ý: Cấu hình <code>GEMINI_API_KEY</code> trong tệp <code>env.local</code> và chọn mô hình AI ở biểu tượng Cài đặt ⚙️ để hỏi đáp trực tiếp.</p>
       </div>
@@ -916,7 +916,7 @@ Format: Concise Markdown with clear bullet points.
       const liveBadgeText = modelId
         ? `${escapeHTML(getModelLabel(modelId))} Live`
         : (typeof window !== 'undefined' && window.t ? window.t('chat.geminiLive') : 'Gemini Live');
-      const offlineBadgeText = typeof window !== 'undefined' && window.t ? window.t('chat.offlineReflex') : 'Bộ Phản Xạ AHA/ERC';
+      const offlineBadgeText = typeof window !== 'undefined' && window.t ? window.t('chat.offlineReflex') : 'Bộ Phản Xạ Y Tế';
 
       row.className = 'flex items-start gap-2.5 max-w-[95%]';
       row.innerHTML = `

@@ -239,34 +239,7 @@
   };
 
   /**
-   * Trích xuất mã ID video từ các định dạng URL YouTube phổ biến
-   * @param {string} url
-   * @returns {string|null}
-   */
-  function extractYouTubeVideoId(url) {
-    if (!url) return null;
-    try {
-      const parsed = new URL(url);
-      if (parsed.hostname.includes('youtu.be')) {
-        return parsed.pathname.slice(1).split(/[?#]/)[0] || null;
-      }
-      if (parsed.hostname.includes('youtube.com')) {
-        const v = parsed.searchParams.get('v');
-        if (v) return v;
-        const parts = parsed.pathname.split('/');
-        const embedIdx = parts.indexOf('embed');
-        if (embedIdx !== -1 && parts[embedIdx + 1]) {
-          return parts[embedIdx + 1].split(/[?#]/)[0];
-        }
-      }
-    } catch {
-      return null;
-    }
-    return null;
-  }
-
-  /**
-   * Render liên kết video hướng dẫn và khung nhúng video responsive (Lab 2 Bài 1 & Đề cương Buổi 3)
+   * Render liên kết video hướng dẫn — mở trực tiếp trên YouTube (không nhúng iframe)
    * @param {Object} topic
    */
   function renderTopicVideo(topic) {
@@ -274,14 +247,9 @@
     const creatorEl = document.getElementById('detail-video-creator');
     const linkEl = document.getElementById('detail-video-link');
     const linkLabelEl = document.getElementById('detail-video-link-label');
-    const embedEl = document.getElementById('detail-video-embed');
 
     if (!videoSection || !linkEl || !topic?.video?.youtubeUrl) {
       if (videoSection) videoSection.hidden = true;
-      if (embedEl) {
-        embedEl.innerHTML = '';
-        embedEl.hidden = true;
-      }
       return;
     }
 
@@ -317,34 +285,9 @@
           : fallback;
       }
 
-      // Nhúng Video YouTube trực tiếp vào khung phản hồi (Lab 2 Bài 1)
-      if (embedEl) {
-        const ytId = extractYouTubeVideoId(parsed.href);
-        if (ytId) {
-          const videoTitle = topic.title || 'Video hướng dẫn sơ cấp cứu MedFA';
-          embedEl.innerHTML = `
-            <div class="medfa-video-frame">
-              <iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(ytId)}?rel=0" 
-                      title="${escapeHTML(videoTitle)}" 
-                      loading="lazy" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen></iframe>
-            </div>
-          `;
-          embedEl.hidden = false;
-        } else {
-          embedEl.innerHTML = '';
-          embedEl.hidden = true;
-        }
-      }
-
       videoSection.hidden = false;
     } catch {
       videoSection.hidden = true;
-      if (embedEl) {
-        embedEl.innerHTML = '';
-        embedEl.hidden = true;
-      }
     }
   }
 
@@ -633,6 +576,30 @@
       initCprMetronome(topic);
       metronomeInitialized = true;
     }
+
+    // Hiển thị bảng thông số CPR chỉ với các tình huống liên quan (Item 5)
+    const cprTableSection = document.getElementById('detail-cpr-table-section');
+    if (cprTableSection) {
+      const cprTopicIds = new Set([
+        'ngung-tuan-hoan-cpr',
+        'hoi-sinh-tim-phoi-nguoi-lon',
+        'duoi-nuoc-o-tre-em',
+        'dien-giat',
+        'hoc-di-vat',
+        'hoc-di-vat-o-tre-em'
+      ]);
+      const topicText = [
+        topic.title || '',
+        topic.lead || '',
+        ...(Array.isArray(topic.steps) ? topic.steps.map(s => `${s.title || ''} ${s.desc || ''}`) : [])
+      ].join(' ').toLowerCase();
+      const hasCpr = cprTopicIds.has(topic.id) ||
+        topicText.includes('cpr') ||
+        topicText.includes('ép tim') ||
+        topicText.includes('hồi sinh tim phổi');
+      cprTableSection.hidden = !hasCpr;
+    }
+
     renderRelatedTopics(topic, allTopics);
 
     const alertEl = document.getElementById('detail-alert-text');
