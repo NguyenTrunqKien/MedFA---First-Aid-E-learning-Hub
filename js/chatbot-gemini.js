@@ -775,9 +775,8 @@ Format: Concise Markdown with clear bullet points.
           <ul class="list-disc pl-4 space-y-1">
             <li>If victim is unconscious and not breathing: <strong class="text-error">CALL 115 / 911 IMMEDIATELY</strong> and begin chest compressions (CPR).</li>
             <li>Explore standardized step-by-step procedures in the <a href="topics.html" class="text-primary font-bold underline">First Aid Library</a>.</li>
-            <li>Sharpen your reflexes with <a href="flashcards.html" class="text-secondary font-bold underline">3D Flashcards</a> or the <a href="quiz.html" class="text-tertiary font-bold underline">Scenario Quiz</a>.</li>
+            <li>Sharpen your reflexes with <a href="flashcards.html" class="text-secondary font-bold underline">Flashcards</a> or the <a href="quiz.html" class="text-tertiary font-bold underline">Scenario Quiz</a>.</li>
           </ul>
-          <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Note: Configure <code>GEMINI_API_KEY</code> in <code>env.local</code> and pick a Gemini model via the Settings icon ⚙️ to enable live AI reasoning.</p>
         </div>
       `;
     }
@@ -791,7 +790,6 @@ Format: Concise Markdown with clear bullet points.
           <li>Bạn có thể tra cứu nhanh quy trình chuẩn từng bước trong <a href="topics.html" class="text-primary font-bold underline">Thư viện sơ cấp cứu</a>.</li>
           <li>Thử phản xạ kiến thức với <a href="flashcards.html" class="text-secondary font-bold underline">Flashcard</a> hoặc <a href="quiz.html" class="text-tertiary font-bold underline">Bài thi trắc nghiệm</a>.</li>
         </ul>
-        <p class="text-[11px] text-on-surface-variant/70 italic mt-1">* Lưu ý: Cấu hình <code>GEMINI_API_KEY</code> trong tệp <code>env.local</code> và chọn mô hình AI ở biểu tượng Cài đặt ⚙️ để hỏi đáp trực tiếp.</p>
       </div>
     `;
   }
@@ -1086,20 +1084,6 @@ Format: Concise Markdown with clear bullet points.
               id="select-gemini-model"
               class="w-full bg-surface-container-low border border-outline-variant/40 rounded-xl px-3 py-2 text-xs text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer"
             ></select>
-            <p class="text-[11px] text-on-surface-variant/70 mt-1.5 leading-relaxed" data-i18n-html="chat.keyPrivacy">
-              Lựa chọn mô hình được lưu trong <code>localStorage</code> của trình duyệt. Khóa API và mô hình mặc định được quản lý trong tệp <code>env.local</code>.
-            </p>
-          </div>
-
-          <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1.5 text-xs">
-            <span class="font-bold text-on-surface flex items-center gap-1">
-              <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
-              <span data-i18n="chat.howItWorks">Cơ chế hoạt động</span>
-            </span>
-            <p class="text-on-surface-variant text-[11px] leading-relaxed" data-i18n-html="chat.keyModes">
-              <strong>Chế độ AI trực tuyến:</strong> Kết nối trực tiếp Google Gemini theo mô hình bạn chọn (API Key lấy từ <code>env.local</code>).<br/>
-              <strong>Chưa cấu hình env.local hoặc mất mạng:</strong> Tự động dùng Bộ phản xạ y tế AHA/ERC ngoại tuyến.
-            </p>
           </div>
         </div>
       </div>
@@ -1148,8 +1132,8 @@ Format: Concise Markdown with clear bullet points.
       const defaultId = envConfig.defaultModel || modelSelect.value;
       const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
       const msg = isEn
-        ? `ℹ️ Reset to default model from <code>env.local</code>: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`
-        : `ℹ️ Đã khôi phục mô hình mặc định từ <code>env.local</code>: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`;
+        ? `ℹ️ Reset to default model: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`
+        : `ℹ️ Đã khôi phục mô hình mặc định: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`;
       appendMessage('bot', `
         <p class="text-xs text-on-surface font-semibold">${msg}</p>
       `);

@@ -99,7 +99,7 @@
                 MedFA (Medical First Aid) không bắt đầu từ một tổ chức y tế khổng lồ. Chúng tôi là một nhóm những người trẻ đam mê công nghệ tại Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM), thực hiện dự án này trong khuôn khổ đồ án môn học IE104.
               </p>
               <p class="text-base text-on-surface-variant leading-relaxed mb-6" data-i18n="about.p2">
-                Xuất phát từ khao khát ứng dụng những dòng code và thiết kế giao diện vào một mục đích mang ý nghĩa nhân văn, MedFA ra đời nhằm số hóa và đơn giản hóa kiến thức sơ cứu. Chúng tôi tin rằng, công nghệ ý nghĩa nhất là công nghệ giúp bảo vệ sự sống.
+                Xuất phát từ khao khát ứng dụng những dòng code và thiết kế giao diện vào một mục đích mang ý nghĩa nhân văn, MedFA ra đời nhằm số hóa và đơn giản hóa kiến thức sơ cứu. Chúng tôi tin rằng công nghệ ý nghĩa nhất là công nghệ giúp bảo vệ sự sống.
               </p>
               <div class="flex flex-wrap items-center gap-3 pt-2">
                 <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-primary text-sm font-semibold shadow-sm">
@@ -109,25 +109,64 @@
               </div>
             </div>
 
-            <!-- Right Image Showcase with Responsive Picture (Lab 2 Bài 1) -->
-            <div class="lg:col-span-5">
-              <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-surface-container border border-outline-variant/30">
-                <picture class="w-full h-full">
-                  <source media="(max-width: 639px)" srcset="images/medfa-team-sm.webp">
-                  <source media="(min-width: 640px)" srcset="images/medfa-team.webp">
-                  <img alt="Nhóm sinh viên phát triển dự án MedFA" data-i18n-alt="about.teamAlt" class="w-full h-full object-cover" src="images/medfa-team.webp" srcset="images/medfa-team-sm.webp 320w, images/medfa-team.webp 512w" sizes="(max-width: 639px) 100vw, 40vw" loading="lazy" decoding="async" width="512" height="382">
-                </picture>
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent pointer-events-none"></div>
-                <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-surface/95 backdrop-blur-md flex items-center gap-3 shadow-md border border-outline-variant/30">
-                  <div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-[20px]">group_work</span>
+            <!-- Right Column: Bento Grid 3 Core Commitments -->
+            <div class="lg:col-span-5 w-full flex flex-col gap-3.5">
+              <!-- Bento Card 1: 100% Miễn phí & Mở -->
+              <article class="relative overflow-hidden rounded-2xl bg-surface-container-low p-5 border border-outline-variant/30 shadow-xs hover:shadow-md hover:border-secondary/40 transition-all duration-300 group">
+                <div class="flex items-center justify-between gap-2 mb-2.5">
+                  <div class="w-10 h-10 rounded-xl bg-secondary-container/60 text-secondary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
                   </div>
-                  <div class="flex flex-col min-w-0">
-                    <span class="font-bold text-sm text-on-surface truncate" data-i18n="about.teamBadge">Nhóm phát triển dự án MedFA</span>
-                    <span class="text-xs text-on-surface-variant truncate" data-i18n="about.teamSub">Đồ án môn học IE104 • Đại học Công nghệ Thông tin (UIT)</span>
-                  </div>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    <span data-i18n="about.bentoCard1Badge">Cộng đồng</span>
+                  </span>
                 </div>
-              </div>
+                <h2 class="text-base font-bold text-on-surface mb-1 group-hover:text-secondary transition-colors" data-i18n="about.bentoCard1Title">
+                  100% Miễn phí &amp; Mã nguồn mở
+                </h2>
+                <p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="about.bentoCard1Desc">
+                  Toàn bộ cẩm nang sơ cứu, mô phỏng phản xạ và công cụ luyện tập đều mở tự do vĩnh viễn, không thu phí, không rào cản đăng nhập và không quảng cáo thương mại.
+                </p>
+              </article>
+
+              <!-- Bento Card 2: Quy trình trực quan từng bước -->
+              <article class="relative overflow-hidden rounded-2xl bg-surface-container-low p-5 border border-outline-variant/30 shadow-xs hover:shadow-md hover:border-primary/40 transition-all duration-300 group">
+                <div class="flex items-center justify-between gap-2 mb-2.5">
+                  <div class="w-10 h-10 rounded-xl bg-primary-container/60 text-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[22px]">checklist_rtl</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container text-[11px] font-bold uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span data-i18n="about.bentoCard2Badge">Chuẩn hóa</span>
+                  </span>
+                </div>
+                <h2 class="text-base font-bold text-on-surface mb-1 group-hover:text-primary transition-colors" data-i18n="about.bentoCard2Title">
+                  Quy trình trực quan từng bước
+                </h2>
+                <p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="about.bentoCard2Desc">
+                  Mọi kỹ thuật cứu sinh được tinh gọn theo các mốc hành động tuần tự rõ ràng, kết hợp chỉ dẫn dễ nhớ giúp người sơ cứu giữ bình tĩnh và thao tác chuẩn xác.
+                </p>
+              </article>
+
+              <!-- Bento Card 3: Tối ưu cho tình huống khẩn cấp -->
+              <article class="relative overflow-hidden rounded-2xl bg-surface-container-low p-5 border border-outline-variant/30 shadow-xs hover:shadow-md hover:border-tertiary/40 transition-all duration-300 group">
+                <div class="flex items-center justify-between gap-2 mb-2.5">
+                  <div class="w-10 h-10 rounded-xl bg-tertiary-container/60 text-tertiary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <span class="material-symbols-outlined text-[22px]">bolt</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container text-[11px] font-bold uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                    <span data-i18n="about.bentoCard3Badge">4 Phút Vàng</span>
+                  </span>
+                </div>
+                <h2 class="text-base font-bold text-on-surface mb-1 group-hover:text-tertiary transition-colors" data-i18n="about.bentoCard3Title">
+                  Tối ưu cho tình huống khẩn cấp
+                </h2>
+                <p class="text-xs text-on-surface-variant leading-relaxed" data-i18n="about.bentoCard3Desc">
+                  Truy cập tức thì không độ trễ, tích hợp bộ đếm nhịp ép tim CPR 110 BPM chuẩn y khoa và phím tắt kết nối cấp cứu 115 nhanh chóng trong tích tắc.
+                </p>
+              </article>
             </div>
 
           </div>
