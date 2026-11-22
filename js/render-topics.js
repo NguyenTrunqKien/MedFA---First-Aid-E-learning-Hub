@@ -30,7 +30,6 @@ const TopicsRenderer = (() => {
     const viewText = topic.needsMedicalReview
       ? (window.t ? t('topics.viewReviewStatus') : 'Xem trạng thái rà soát')
       : (window.t ? t('topics.viewGuide') : 'Xem hướng dẫn');
-    const bookmarkLabel = window.t ? t('topics.bookmarkSave') : 'Lưu bài học';
 
     return `
       <article 
@@ -45,12 +44,6 @@ const TopicsRenderer = (() => {
             <!-- Icon -->
             <div class="w-12 h-12 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-300 shadow-sm">
               ${topic.iconSvg || '<span class="material-symbols-outlined text-[24px]">medical_services</span>'}
-            </div>
-            <!-- Bookmark Action -->
-            <div class="flex items-center">
-              <button type="button" class="btn-bookmark w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container-high text-outline hover:text-primary transition-colors focus:outline-none" data-topic-id="${escapeHTML(topic.id)}" title="${escapeHTML(bookmarkLabel)}" aria-label="${escapeHTML(bookmarkLabel)}">
-                <span class="material-symbols-outlined text-[19px]">bookmark_add</span>
-              </button>
             </div>
           </div>
 
@@ -111,9 +104,6 @@ const TopicsRenderer = (() => {
 
     const htmlContent = topics.map(topic => createTopicCardHTML(topic)).join('');
     container.innerHTML = htmlContent;
-    if (window.Storage && typeof window.Storage.syncAllBookmarkButtons === 'function') {
-      window.Storage.syncAllBookmarkButtons();
-    }
   }
 
   /**
@@ -123,13 +113,12 @@ const TopicsRenderer = (() => {
     let result = [...allTopics];
 
     // 1. Filter by category
-    if (currentCategory === 'bookmarks') {
-      const bookmarks = (window.Storage && typeof window.Storage.getBookmarks === 'function')
-        ? window.Storage.getBookmarks()
-        : [];
-      result = result.filter(t => bookmarks.includes(t.id));
-    } else if (currentCategory && currentCategory !== 'all') {
-      result = result.filter(t => t.category === currentCategory);
+    if (currentCategory && currentCategory !== 'all') {
+      if (currentCategory === 'tai-nan' || currentCategory === 'chan-thuong') {
+        result = result.filter(t => t.category === 'tai-nan' || t.category === 'chan-thuong' || t.categoryLabel === 'Chấn thương' || t.categoryLabel === 'Tai nạn');
+      } else {
+        result = result.filter(t => t.category === currentCategory);
+      }
     }
 
     // 2. Filter by search query (Tìm kiếm tiếng Việt không dấu thông qua DataLoader.normalizeText)
@@ -267,10 +256,6 @@ const TopicsRenderer = (() => {
         applyFiltersAndRender();
       });
     }
-
-    window.addEventListener('medfa:bookmark-changed', () => {
-      if (currentCategory === 'bookmarks') applyFiltersAndRender();
-    });
 
     // First render
     applyFiltersAndRender();

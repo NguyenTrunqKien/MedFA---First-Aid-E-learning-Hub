@@ -122,7 +122,7 @@
 
 main.pt-20,
 .site-main {
-  padding-top: var(--medfa-header-height);
+  padding-top: 0;
 }
 
 /* Keep the shared footer full-width across edges on every page. */

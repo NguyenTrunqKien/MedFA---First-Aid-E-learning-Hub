@@ -515,12 +515,6 @@
       return;
     }
 
-    const bBtn = document.getElementById('detail-bookmark-btn');
-    if (bBtn) {
-      bBtn.setAttribute('data-topic-id', topic.id);
-      if (window.Storage) window.Storage.syncAllBookmarkButtons();
-    }
-
     // Cập nhật SEO Meta, Canonical, Open Graph & Structured Data
     const displayTitle = topic.fullTitle || topic.title;
     const seoDesc = topic.shortDesc || topic.lead;
@@ -553,8 +547,40 @@
     const leadEl = document.getElementById('detail-lead');
     if (leadEl) leadEl.textContent = topic.lead || topic.shortDesc;
 
+    const catBadge = document.getElementById('detail-category-badge');
     const catLabel = document.getElementById('detail-category-label');
-    if (catLabel) catLabel.textContent = topic.categoryLabel || topic.category;
+    if (catBadge && catLabel) {
+      const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+      const catKey = (topic.category || '').toLowerCase();
+      const rawLabel = (topic.categoryLabel || '').toLowerCase();
+
+      let icon = 'medical_services';
+      let labelText = topic.categoryLabel || topic.category;
+
+      if (catKey === 'tai-nan' || catKey === 'chan-thuong' || rawLabel.includes('chấn thương') || rawLabel.includes('trauma')) {
+        icon = 'personal_injury';
+        labelText = isEn ? 'Trauma' : 'Chấn thương';
+      } else if (catKey === 'tre-em' || rawLabel.includes('trẻ em') || rawLabel.includes('pediatric')) {
+        icon = 'child_care';
+        labelText = isEn ? 'Pediatric' : 'Trẻ em';
+      } else if (catKey === 'sinh-hoat' || rawLabel.includes('sinh hoạt') || rawLabel.includes('daily life')) {
+        icon = 'home';
+        labelText = isEn ? 'Daily Life' : 'Sinh hoạt';
+      } else if (catKey === 'ngoai-troi' || rawLabel.includes('ngoài trời') || rawLabel.includes('outdoor')) {
+        icon = 'nature_people';
+        labelText = isEn ? 'Outdoors' : 'Ngoài trời';
+      } else if (catKey === 'benh-ly' || rawLabel.includes('bệnh lý') || rawLabel.includes('medical')) {
+        icon = 'ecg_heart';
+        labelText = isEn ? 'Medical' : 'Bệnh lý';
+      } else if (topic.id && topic.id.includes('hoc-di-vat')) {
+        icon = 'air';
+        labelText = isEn ? 'Airway Choking' : 'Cấp cứu đường thở';
+      }
+
+      const iconEl = catBadge.querySelector('.material-symbols-outlined');
+      if (iconEl) iconEl.textContent = icon;
+      catLabel.textContent = labelText;
+    }
 
     const readTime = document.getElementById('detail-read-time');
     if (readTime && topic.readTime) {

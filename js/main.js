@@ -445,7 +445,6 @@ function getCurrentPageKey() {
   if (path.includes('social-impact')) return 'social-impact';
   if (path.includes('topic-detail') || path.includes('topics')) return 'topics';
   if (path.includes('flashcards')) return 'flashcards';
-  if (path.includes('timed-practice')) return 'timed-practice';
   if (path.includes('quiz')) return 'quiz';
   if (path.includes('contact')) return 'contact';
   if (path.includes('about')) return 'about';
@@ -457,7 +456,7 @@ function getCurrentPageKey() {
  */
 function highlightActiveNav() {
   const currentKey = getCurrentPageKey();
-  const isPracticePage = ['flashcards', 'timed-practice', 'quiz'].includes(currentKey);
+  const isPracticePage = ['flashcards', 'quiz'].includes(currentKey);
 
   // Điều hướng Desktop
   document.querySelectorAll('.nav-link').forEach(link => {

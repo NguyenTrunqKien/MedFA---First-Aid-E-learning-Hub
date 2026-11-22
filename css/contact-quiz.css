@@ -1,6 +1,6 @@
 .contact-quiz-page {
   flex: 1;
-  padding: 7.5rem 1rem 4rem;
+  padding: 2rem 1rem 4rem;
   background:
     radial-gradient(ellipse at 12% 0%, rgba(13, 148, 136, 0.08), transparent 34rem),
     var(--color-background, #f8f9ff);
@@ -636,7 +636,7 @@
 
 @media (max-width: 540px) {
   .contact-quiz-page {
-    padding: 6.5rem 1rem 2.5rem;
+    padding: 1.5rem 1rem 2.5rem;
   }
 
   .contact-emergency {
