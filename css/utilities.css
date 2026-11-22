@@ -197,6 +197,7 @@
 .h-7 { height: 1.75rem; }
 .h-8 { height: 2rem; }
 .h-9 { height: 2.25rem; }
+.content-start { align-content: flex-start; align-content: start; }
 .h-96 { height: 24rem; }
 .h-full { height: 100%; }
 .hidden { display: none; }

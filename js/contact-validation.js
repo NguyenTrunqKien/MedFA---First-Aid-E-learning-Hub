@@ -85,10 +85,10 @@
       sessionStorage.setItem('medfa_contact_submissions', JSON.stringify(stored));
       form.reset();
       Object.keys(validators).forEach(name => showFieldError(name, ''));
-      showToast('contact.toastSuccess', 'Đã lưu phản hồi tạm thời trong phiên trình duyệt. Cảm ơn bạn!');
+      showToast('contact.toastSuccess', 'Cảm ơn bạn đã gửi ý kiến đóng góp! Chúng tôi xin ghi nhận và trân trọng sự đồng hành của bạn.');
     } catch (error) {
       console.error('[MedFA Contact] Không thể lưu phản hồi trong sessionStorage.', error);
-      showToast('contact.toastError', 'Không thể lưu phản hồi trong phiên này. Vui lòng kiểm tra cài đặt trình duyệt.', true);
+      showToast('contact.toastError', 'Chưa thể gửi phản hồi lúc này. Vui lòng thử lại sau ít phút.', true);
     }
   });
 

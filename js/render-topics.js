@@ -33,7 +33,7 @@ const TopicsRenderer = (() => {
 
     return `
       <article 
-        class="first-aid-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-[0_1px_3px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_24px_-4px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer border border-outline-variant/20"
+        class="first-aid-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-[0_1px_3px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_24px_-4px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer border border-outline-variant/20 h-full"
         data-id="${escapeHTML(topic.id)}"
         data-category="${escapeHTML(topic.category)}"
         data-critical="${escapeHTML(topic.criticalLevel)}"
