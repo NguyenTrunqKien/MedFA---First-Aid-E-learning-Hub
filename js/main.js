@@ -310,13 +310,13 @@ const FALLBACK_FOOTER_HTML = `<footer class="w-full bg-surface-container-low tex
 
     <!-- Mạng lưới Nguồn Y khoa Chính thống & Cấu hình Website chính (Satellite Network) -->
     <div class="pb-space-lg pt-space-md border-t border-outline-variant/20 flex flex-col gap-2">
-      <span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant" data-i18n="footer.sourcesHeading">Nguồn tham chiếu y khoa & Đối tác chuyên môn</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant" data-i18n="footer.sourcesHeading">Nguồn tham chiếu y khoa</span>
       <div id="satellite-authority-links"></div>
     </div>
 
     <!-- Bottom Copyright -->
     <div class="pt-space-lg border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
-      <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid. IE104 UIT. <span data-i18n="footer.copyright">Bảo lưu mọi quyền.</span></span>
+      <span class="font-body-sm text-body-sm">© 2026 MedFA - Medical First Aid (IE104 UIT). <span data-i18n="footer.copyright">Dự án giáo dục phi lợi nhuận phục vụ cộng đồng.</span></span>
       <div class="flex flex-wrap items-center gap-space-md text-body-sm">
         <a class="hover:text-primary transition-colors" href="about.html#standards" data-i18n="footer.disclaimerLink">Miễn trừ trách nhiệm y khoa</a>
       </div>

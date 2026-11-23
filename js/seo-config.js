@@ -61,7 +61,7 @@
         role: 'Tài liệu đối chiếu sơ cứu'
       },
       {
-        shortName: 'Tâm Anh',
+        shortName: 'BVĐK Tâm Anh',
         titleKey: 'footer.authorityTamAnh',
         name: 'Bệnh viện Đa khoa Tâm Anh',
         url: 'https://tamanhhospital.vn/',

@@ -24,7 +24,7 @@ const MedFATranslations = {
     'home.childAlt': "Bác sĩ khám và chăm sóc bé gái cùng mẹ",
     'about.teamAlt': "Nhóm sinh viên phát triển dự án MedFA",
     'about.studentId': "MSSV: {id}",
-    'impact.heroAlt': "Minh họa sự cấp bách y tế và chăm sóc sinh mạng",
+    'impact.heroAlt': "Minh họa thực hiện ép tim ngoài lồng ngực CPR cứu hộ khẩn cấp",
     'brand.name': "MedFA",
     'brand.tagline': "MEDICAL FIRST AID",
     'nav.home': "Trang chủ",
@@ -65,7 +65,7 @@ const MedFATranslations = {
     'footer.impactLink': "Báo cáo Tác động Xã hội",
     'footer.disclaimerLink': "Miễn trừ trách nhiệm y khoa",
     'footer.disclaimerText': "Thông tin trên website chỉ mang tính chất tham khảo giáo dục, không thay thế chẩn đoán hay điều trị y tế chuyên nghiệp. Luôn gọi 115 trong tình huống nguy kịch.",
-    'footer.copyright': "Bảo lưu mọi quyền. Dự án giáo dục phi lợi nhuận phục vụ cộng đồng.",
+    'footer.copyright': "Dự án giáo dục phi lợi nhuận phục vụ cộng đồng.",
     'footer.chatToggleAria': "Mở trợ lý sơ cứu AI",
     'footer.chatRefData': "Dữ liệu tham khảo y khoa",
     'footer.chatEmergency': "Cấp cứu 115",
@@ -528,7 +528,7 @@ const MedFATranslations = {
     'disclaimer.accessedDate': "(Đối chiếu: {date})",
     'footer.courseDesc': "Đồ án môn học <strong>IE104 - Internet và Công nghệ Web</strong>. Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM).",
     'footer.address': "ĐHQG-HCM, TP. Thủ Đức",
-    'footer.sourcesHeading': "Nguồn tham chiếu y khoa & Đối tác chuyên môn",
+    'footer.sourcesHeading': "Nguồn tham chiếu y khoa",
   },
 
   en: {
@@ -551,7 +551,7 @@ const MedFATranslations = {
     'home.childAlt': "A doctor examining a girl next to her mother",
     'about.teamAlt': "The student team behind MedFA",
     'about.studentId': "Student ID: {id}",
-    'impact.heroAlt': "Illustration of urgent medical care",
+    'impact.heroAlt': "Illustration of administering CPR chest compressions during emergency rescue",
     'brand.name': "MedFA",
     'brand.tagline': "MEDICAL FIRST AID",
     'nav.home': "Home",
@@ -592,7 +592,7 @@ const MedFATranslations = {
     'footer.impactLink': "Social Impact Report",
     'footer.disclaimerLink': "Medical Disclaimer",
     'footer.disclaimerText': "Information on this website is for educational reference only and does not replace professional medical diagnosis or treatment. Always call 115 in critical emergencies.",
-    'footer.copyright': "All rights reserved. Non-profit educational project serving the community.",
+    'footer.copyright': "Non-profit educational project serving the community.",
     'footer.chatToggleAria': "Open AI First Aid Assistant",
     'footer.chatRefData': "Medical Reference Data",
     'footer.chatEmergency': "Emergency 115",
@@ -1055,7 +1055,7 @@ const MedFATranslations = {
     'disclaimer.accessedDate': "(Referenced: {date})",
     'footer.courseDesc': "Coursework Project <strong>IE104 - Internet and Web Technologies</strong>. University of Information Technology (UIT - VNU-HCM).",
     'footer.address': "VNU-HCM, Thu Duc City",
-    'footer.sourcesHeading': "Clinical References & Professional Partners",
+    'footer.sourcesHeading': "Medical Reference Sources",
   }
 };
 
