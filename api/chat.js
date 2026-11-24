@@ -45,9 +45,16 @@ async function handler(req, res) {
     return res.status(200).end();
   }
 
-  const rawKey = (process.env.GEMINI_API_KEY || '').trim();
+  const rawKey = (
+    process.env.GEMINI_API_KEY ||
+    process.env.GOOGLE_API_KEY ||
+    process.env.GEMINI_KEY ||
+    process.env.API_KEY ||
+    process.env.gemini_api_key ||
+    ''
+  ).trim();
   const apiKey = rawKey && rawKey !== 'your_gemini_api_key_here' ? rawKey : '';
-  const defaultModel = (process.env.GEMINI_DEFAULT_MODEL || 'gemini-3.5-flash-lite').trim();
+  const defaultModel = (process.env.GEMINI_DEFAULT_MODEL || process.env.DEFAULT_MODEL || 'gemini-3.5-flash-lite').trim();
 
   // GET: Kiểm tra trạng thái cấu hình serverless của Vercel
   if (req.method === 'GET') {
