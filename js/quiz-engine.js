@@ -330,7 +330,286 @@
     resultMessage.textContent = passed
       ? (window.t ? t('quiz.msgElite') : 'Làm tốt lắm! Hãy tiếp tục ôn luyện và thực hành cùng các nguồn hướng dẫn đáng tin cậy.')
       : (window.t ? t('quiz.msgPractice') : 'Hãy xem lại phần giải thích và thử lại để củng cố kiến thức sơ cứu.');
-    saveButton.disabled = hasSaved;
+    saveButton.disabled = false;
+  }
+
+  function drawRoundedRect(ctx, x, y, width, height, radius) {
+    const r = Math.min(radius, width / 2, height / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + width, y, x + width, y + height, r);
+    ctx.arcTo(x + width, y + height, x, y + height, r);
+    ctx.arcTo(x, y + height, x, y, r);
+    ctx.arcTo(x, y, x + width, y, r);
+    ctx.closePath();
+  }
+
+  function drawMedalIcon(ctx, cx, cy) {
+    ctx.save();
+    ctx.strokeStyle = '#b45309';
+    ctx.fillStyle = '#d97706';
+    ctx.lineWidth = 5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+
+    // Ribbon tails
+    ctx.beginPath();
+    ctx.moveTo(cx - 16, cy + 20);
+    ctx.lineTo(cx - 20, cy + 52);
+    ctx.lineTo(cx, cy + 42);
+    ctx.lineTo(cx + 20, cy + 52);
+    ctx.lineTo(cx + 16, cy + 20);
+    ctx.stroke();
+
+    // Outer circle
+    ctx.beginPath();
+    ctx.arc(cx, cy, 28, 0, Math.PI * 2);
+    ctx.fillStyle = '#fffbeb';
+    ctx.fill();
+    ctx.stroke();
+
+    // Inner 5-point star
+    const spikes = 5;
+    const outerR = 13;
+    const innerR = 6;
+    ctx.beginPath();
+    for (let i = 0; i < spikes * 2; i += 1) {
+      const r = i % 2 === 0 ? outerR : innerR;
+      const angle = (i * Math.PI) / spikes - Math.PI / 2;
+      const sx = cx + Math.cos(angle) * r;
+      const sy = cy + Math.sin(angle) * r;
+      if (i === 0) ctx.moveTo(sx, sy);
+      else ctx.lineTo(sx, sy);
+    }
+    ctx.closePath();
+    ctx.fillStyle = '#d97706';
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function wrapCanvasText(ctx, text, maxWidth) {
+    const words = String(text || '').trim().split(/\s+/);
+    const lines = [];
+    let line = '';
+    for (const word of words) {
+      const testLine = line ? `${line} ${word}` : word;
+      if (ctx.measureText(testLine).width > maxWidth && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = testLine;
+      }
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  async function downloadResultImage() {
+    if (document.fonts && document.fonts.ready) {
+      try {
+        await document.fonts.ready;
+      } catch (_) {}
+    }
+
+    const width = 1200;
+    const height = 780;
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return false;
+
+    const lang = (window.I18n && typeof window.I18n.getCurrentLanguage === 'function')
+      ? window.I18n.getCurrentLanguage()
+      : 'vi';
+    const fontFamily = '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+    const total = questions.length || 10;
+    const passed = score >= 8;
+    const now = new Date();
+    const dateStr = now.toLocaleDateString(lang === 'en' ? 'en-US' : 'vi-VN', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+    const timeStr = now.toLocaleTimeString(lang === 'en' ? 'en-US' : 'vi-VN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+
+    // Page background gradient
+    const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+    bgGrad.addColorStop(0, '#eef4ff');
+    bgGrad.addColorStop(1, '#f8fafc');
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, width, height);
+
+    // Main white card with soft shadow
+    const cardX = 64;
+    const cardY = 56;
+    const cardW = width - 128;
+    const cardH = height - 112;
+
+    ctx.save();
+    ctx.shadowColor = 'rgba(0, 40, 142, 0.10)';
+    ctx.shadowBlur = 32;
+    ctx.shadowOffsetY = 12;
+    drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 28);
+    ctx.fillStyle = '#ffffff';
+    ctx.fill();
+    ctx.restore();
+
+    drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 28);
+    ctx.strokeStyle = '#dde5f4';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Header bar inside card: Brand (left) + Date/Score (right)
+    const padX = cardX + 56;
+    const topY = cardY + 52;
+
+    // MedFA cross emblem
+    drawRoundedRect(ctx, padX, topY - 8, 44, 44, 12);
+    const logoGrad = ctx.createLinearGradient(padX, topY - 8, padX + 44, topY + 36);
+    logoGrad.addColorStop(0, '#00288e');
+    logoGrad.addColorStop(1, '#0d9488');
+    ctx.fillStyle = logoGrad;
+    ctx.fill();
+
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(padX + 18, topY + 2, 8, 24);
+    ctx.fillRect(padX + 10, topY + 10, 24, 8);
+
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = '#00288e';
+    ctx.font = `800 24px ${fontFamily}`;
+    ctx.fillText('MedFA', padX + 58, topY + 14);
+
+    ctx.fillStyle = '#555765';
+    ctx.font = `600 14px ${fontFamily}`;
+    ctx.fillText('FIRST AID E-LEARNING HUB', padX + 58, topY + 33);
+
+    // Right side status & timestamp
+    const completedText = window.t ? t('quiz.completedStatus') : 'Đã hoàn thành';
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#121c2a';
+    ctx.font = `700 18px ${fontFamily}`;
+    ctx.fillText(`${completedText} · ${dateStr} ${timeStr}`, cardX + cardW - 56, topY + 20);
+
+    // Teal progress bar (matches UI)
+    const barX = padX;
+    const barY = topY + 58;
+    const barW = cardW - 112;
+    const barH = 14;
+    drawRoundedRect(ctx, barX, barY, barW, barH, 7);
+    const barGrad = ctx.createLinearGradient(barX, barY, barX + barW, barY);
+    barGrad.addColorStop(0, '#006a61');
+    barGrad.addColorStop(1, '#0d9488');
+    ctx.fillStyle = barGrad;
+    ctx.fill();
+
+    // Medal icon
+    const centerX = width / 2;
+    drawMedalIcon(ctx, centerX, barY + 84);
+
+    // Badge pill
+    const badgeText = passed
+      ? (window.t ? t('quiz.badgeElite') : 'Sơ cứu viên Tinh anh')
+      : (window.t ? t('quiz.badgePractice') : 'Cần ôn luyện thêm');
+    ctx.font = `700 20px ${fontFamily}`;
+    const badgeTextW = ctx.measureText(badgeText).width;
+    const pillW = badgeTextW + 52;
+    const pillH = 44;
+    const pillX = centerX - pillW / 2;
+    const pillY = barY + 158;
+
+    drawRoundedRect(ctx, pillX, pillY, pillW, pillH, 22);
+    ctx.fillStyle = passed ? '#d1fae5' : '#86f2e4';
+    ctx.fill();
+
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = passed ? '#065f46' : '#005049';
+    ctx.fillText(badgeText, centerX, pillY + pillH / 2 + 1);
+
+    // Title: Kết quả bài kiểm tra
+    const headingText = window.t ? t('quiz.resultHeading') : 'Kết quả bài kiểm tra';
+    ctx.fillStyle = '#00288e';
+    ctx.font = `800 42px ${fontFamily}`;
+    ctx.fillText(headingText, centerX, pillY + 98);
+
+    // Score: X / 10 câu đúng
+    const scoreText = window.t
+      ? t('quiz.resultScoreFormat', { score, total })
+      : `${score} / ${total} câu đúng`;
+    ctx.fillStyle = '#006a61';
+    ctx.font = `800 58px ${fontFamily}`;
+    ctx.fillText(scoreText, centerX, pillY + 174);
+
+    // Message (wrapped)
+    const msgText = passed
+      ? (window.t ? t('quiz.msgElite') : 'Làm tốt lắm! Hãy tiếp tục ôn luyện và thực hành cùng các nguồn hướng dẫn đáng tin cậy.')
+      : (window.t ? t('quiz.msgPractice') : 'Hãy xem lại phần giải thích và thử lại để củng cố kiến thức sơ cứu.');
+    ctx.fillStyle = '#444653';
+    ctx.font = `500 22px ${fontFamily}`;
+    const msgLines = wrapCanvasText(ctx, msgText, cardW - 180);
+    msgLines.slice(0, 3).forEach((line, idx) => {
+      ctx.fillText(line, centerX, pillY + 242 + idx * 34);
+    });
+
+    // Subtle footer divider & caption
+    const footerY = cardY + cardH - 54;
+    ctx.beginPath();
+    ctx.moveTo(padX, footerY - 24);
+    ctx.lineTo(cardX + cardW - 56, footerY - 24);
+    ctx.strokeStyle = '#e6eeff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    const subtitleText = window.t
+      ? t('quiz.imageSubtitle')
+      : 'Trắc nghiệm tình huống sơ cứu · Chuẩn khuyến cáo ERC & AHA';
+    ctx.fillStyle = '#64748b';
+    ctx.font = `600 17px ${fontFamily}`;
+    ctx.fillText(subtitleText, centerX, footerY + 6);
+
+    // Filename
+    const stamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
+    const filePrefix = lang === 'en' ? 'MedFA-QuizResult' : 'MedFA-KetQua';
+    const fileName = `${filePrefix}-${score}of${total}-${stamp}.png`;
+
+    // Trigger download
+    return new Promise(resolve => {
+      const triggerLink = href => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      };
+
+      if (typeof canvas.toBlob === 'function') {
+        canvas.toBlob(blob => {
+          if (!blob) {
+            resolve(false);
+            return;
+          }
+          const url = URL.createObjectURL(blob);
+          triggerLink(url);
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          resolve(true);
+        }, 'image/png');
+      } else {
+        try {
+          triggerLink(canvas.toDataURL('image/png'));
+          resolve(true);
+        } catch (_) {
+          resolve(false);
+        }
+      }
+    });
   }
 
   function restartQuiz() {
@@ -362,27 +641,27 @@
 
   document.getElementById('quiz-restart').addEventListener('click', restartQuiz);
 
-  saveButton.addEventListener('click', () => {
-    const storage = window.Storage;
-    if (!storage || typeof storage.get !== 'function' || typeof storage.set !== 'function') {
-      setStatus(saveStatus, 'quiz.storageError', 'Storage error');
-      return;
-    }
-    const history = storage.get('quiz_scores', []);
-    if (!Array.isArray(history)) return;
-    const saved = storage.set('quiz_scores', history.concat({
-      score,
-      total: questions.length,
-      timeSpent: null,
-      completedAt: new Date().toISOString()
-    }));
-    if (!saved) {
-      setStatus(saveStatus, 'quiz.savedBlocked', 'Trình duyệt không cho phép lưu điểm. Hãy kiểm tra cài đặt lưu trữ.');
-      return;
-    }
-    hasSaved = true;
+  saveButton.addEventListener('click', async () => {
     saveButton.disabled = true;
-    setStatus(saveStatus, 'quiz.savedSuccess', 'Đã lưu điểm trên thiết bị này.');
+    try {
+      // Vẫn lưu lịch sử điểm vào localStorage (chỉ 1 lần cho mỗi lượt thi)
+      if (!hasSaved && window.Storage && typeof window.Storage.saveQuizScore === 'function') {
+        window.Storage.saveQuizScore(score, questions.length, null);
+        hasSaved = true;
+      }
+
+      const downloaded = await downloadResultImage();
+      if (!downloaded) {
+        setStatus(saveStatus, 'quiz.savedBlocked', 'Không thể tạo ảnh kết quả. Vui lòng thử lại.');
+        return;
+      }
+      setStatus(saveStatus, 'quiz.savedSuccess', 'Đã tải ảnh kết quả về thiết bị của bạn.');
+    } catch (error) {
+      console.error('[MedFA Quiz] Không thể xuất ảnh kết quả.', error);
+      setStatus(saveStatus, 'quiz.savedBlocked', 'Không thể tạo ảnh kết quả. Vui lòng thử lại.');
+    } finally {
+      saveButton.disabled = false;
+    }
   });
 
   // Khởi tạo bài trắc nghiệm
