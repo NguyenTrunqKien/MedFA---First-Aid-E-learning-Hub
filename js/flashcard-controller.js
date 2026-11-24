@@ -256,9 +256,9 @@ function setMode(mode) {
   currentMode = mode;
   if (modeQuickBtn && modeAllBtn) {
     modeQuickBtn.classList.toggle('is-active', mode === 'quick');
-    modeQuickBtn.setAttribute('aria-selected', String(mode === 'quick'));
+    modeQuickBtn.setAttribute('aria-pressed', String(mode === 'quick'));
     modeAllBtn.classList.toggle('is-active', mode === 'all');
-    modeAllBtn.setAttribute('aria-selected', String(mode === 'all'));
+    modeAllBtn.setAttribute('aria-pressed', String(mode === 'all'));
   }
 
   if (mode === 'quick') {
@@ -412,14 +412,14 @@ function setFlipped(flipped) {
     flipText.textContent = label;
   }
   card.classList.toggle('is-flipped', flipped);
-  card.setAttribute('aria-pressed', String(flipped));
+  cardInner.setAttribute('aria-pressed', String(flipped));
   const current = cards[index];
   if (current) {
     const activeText = flipped ? (current.back + '. ' + (current.backDesc || '')) : (current.front + '. ' + (current.frontDesc || ''));
     const flipAria = (typeof window !== 'undefined' && typeof window.t === 'function')
       ? window.t('flashcard.cardAria')
       : 'Lật thẻ';
-    card.setAttribute('aria-label', `${flipAria}. ${activeText}`);
+    cardInner.setAttribute('aria-label', `${flipAria}. ${activeText}`);
   }
 }
 
@@ -615,7 +615,7 @@ function flipCard() {
 }
 
 // Bắt sự kiện click
-card.addEventListener('click', flipCard);
+cardInner.addEventListener('click', flipCard);
 flip.addEventListener('click', flipCard);
 
 previous.addEventListener('click', () => {
@@ -695,8 +695,8 @@ if (shuffleBtn) {
 }
 
 // Bắt sự kiện bàn phím trên thẻ khi focus
-card.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
+cardInner.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
     flipCard();
   }

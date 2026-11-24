@@ -90,11 +90,11 @@
 
       <!-- Bộ chọn 2 chế độ học: Luyện nhanh 10 thẻ vs Tất cả dữ liệu -->
       <div class="deck-mode-wrapper">
-        <div class="deck-mode-selector" role="tablist" aria-label="Chọn chế độ học" data-i18n-aria-label="flashcard.modeSelectorAria">
-          <button type="button" class="mode-tab is-active" id="mode-quick" role="tab" aria-selected="true" title="Luyện nhanh 10 tình huống ngẫu nhiên" data-i18n-title="flashcard.modeQuickTitle">
+        <div class="deck-mode-selector" role="group" aria-label="Chọn chế độ học" data-i18n-aria-label="flashcard.modeSelectorAria">
+          <button type="button" class="mode-tab is-active" id="mode-quick" aria-pressed="true" title="Luyện nhanh 10 tình huống ngẫu nhiên" data-i18n-title="flashcard.modeQuickTitle">
             <span class="material-symbols-outlined text-[16px]">bolt</span> <span data-i18n="flashcard.modeQuick">Luyện nhanh (10 thẻ)</span>
           </button>
-          <button type="button" class="mode-tab" id="mode-all" role="tab" aria-selected="false" title="Ôn tập toàn bộ dữ liệu" data-i18n-title="flashcard.modeAllTitle">
+          <button type="button" class="mode-tab" id="mode-all" aria-pressed="false" title="Ôn tập toàn bộ dữ liệu" data-i18n-title="flashcard.modeAllTitle">
             <span class="material-symbols-outlined text-[16px]">library_books</span> <span data-i18n="flashcard.modeAll">Tất cả dữ liệu</span>
           </button>
         </div>
@@ -110,8 +110,8 @@
         </div>
         <progress id="card-progress" aria-label="Vị trí trong bộ thẻ" data-i18n-aria-label="flashcard.progressAria"></progress>
 
-        <div id="card" class="flashcard" role="button" tabindex="0" aria-pressed="false" aria-label="Lật thẻ" data-i18n-aria-label="flashcard.cardAria">
-          <div class="card-inner">
+        <div id="card" class="flashcard">
+          <div class="card-inner" role="button" tabindex="0" aria-pressed="false" aria-label="Lật thẻ" data-i18n-aria-label="flashcard.cardAria">
             <!-- Mặt trước -->
             <div class="card-face card-front-face">
               <div class="card-face-header">
@@ -162,7 +162,7 @@
               <div class="completion-icon-pulse">
                 <span class="material-symbols-outlined text-[44px] text-emerald-600">verified</span>
               </div>
-              <h3 id="completion-title" class="completion-title" data-i18n="flashcard.completedTitle">Tuyệt vời! Bạn đã hoàn thành 10 phản xạ!</h3>
+              <h2 id="completion-title" class="completion-title" data-i18n="flashcard.completedTitle">Tuyệt vời! Bạn đã hoàn thành 10 phản xạ!</h2>
               <p id="completion-subtitle" class="completion-subtitle" data-i18n="flashcard.completedSubtitle">Bạn đã làm chủ các thao tác xử trí khẩn cấp sống còn. Hãy tiếp tục duy trì phản xạ mỗi ngày!</p>
               
               <div class="completion-stats">
