@@ -86,6 +86,15 @@ article a:not(.btn):not(.nav-link):active,
   color: var(--color-error, #ba1a1a);
 }
 
+/* Thẻ tình huống liên quan trong trang chi tiết: không gạch dưới ở mọi trạng thái */
+#related-topics-grid a,
+#related-topics-grid a:visited,
+#related-topics-grid a:hover,
+#related-topics-grid a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* External Link Indicator (Lab 3 Bài 3.3) */
 article a[target="_blank"]:not(.btn):not(.no-external-icon)::after,
 .prose a[target="_blank"]:not(.btn):not(.no-external-icon)::after,
