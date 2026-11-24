@@ -22,6 +22,7 @@ const ChatbotGemini = (() => {
 
   let envConfig = { apiKey: '', defaultModel: '' };
   let envLoadPromise = null;
+  let isVercelServerless = false;
 
   // Bộ nhớ đệm thư viện bài học theo ngôn ngữ ('vi' -> data/topics.json, 'en' -> data/en/topics.json)
   const topicsCacheByLang = { vi: null, en: null };
@@ -292,13 +293,37 @@ Format: Concise Markdown with clear bullet points.
   }
 
   /**
-   * Nạp cấu hình GEMINI_API_KEY và GEMINI_DEFAULT_MODEL từ tệp env.local (tương thích VS Code Live Server, fallback .env)
+   * Nạp cấu hình Gemini API:
+   * 1. Ưu tiên kiểm tra Vercel Serverless Function (/api/chat) bảo mật key phía server
+   * 2. Fallback sang tệp env.local / .env cho môi trường máy cục bộ (VS Code Live Server, Python http.server)
    * @param {boolean} [forceReload=false]
    * @returns {Promise<{apiKey: string, defaultModel: string}>}
    */
   async function loadEnvConfig(forceReload = false) {
     if (envLoadPromise && !forceReload) return envLoadPromise;
     envLoadPromise = (async () => {
+      // 1. Kiểm tra Vercel Serverless Function (/api/chat)
+      try {
+        const apiRes = await fetch('api/chat', { cache: 'no-store' });
+        if (apiRes.ok) {
+          const contentType = apiRes.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            const apiData = await apiRes.json();
+            if (apiData && apiData.configured) {
+              isVercelServerless = true;
+              envConfig = {
+                apiKey: 'vercel-serverless-managed',
+                defaultModel: apiData.defaultModel || 'gemini-3.5-flash-lite'
+              };
+              return envConfig;
+            }
+          }
+        }
+      } catch (_) {
+        // Chạy môi trường tĩnh không hỗ trợ serverless /api/chat
+      }
+
+      // 2. Fallback cho môi trường Local: đọc env.local hoặc .env
       const candidates = ['env.local', '.env'];
       for (const file of candidates) {
         try {
@@ -310,21 +335,21 @@ Format: Concise Markdown with clear bullet points.
           const apiKey = rawKey && rawKey !== 'your_gemini_api_key_here' ? rawKey : '';
           const defaultModel = (parsed.GEMINI_DEFAULT_MODEL || '').trim();
           if (apiKey || defaultModel) {
-            envConfig = { apiKey, defaultModel };
+            envConfig = { apiKey, defaultModel: defaultModel || 'gemini-3.5-flash-lite' };
             return envConfig;
           }
         } catch (_) {
           // Thử nguồn tiếp theo hoặc chuyển sang chế độ ngoại tuyến
         }
       }
-      console.warn('[MedFA Chatbot] Không thể nạp tệp env.local (có thể chưa tạo env.local hoặc mở trực tiếp file://). Dùng chế độ ngoại tuyến.');
+      console.warn('[MedFA Chatbot] Chưa cấu hình API Key trên Vercel hoặc env.local. Dùng chế độ ngoại tuyến.');
       return envConfig;
     })();
     return envLoadPromise;
   }
 
   /**
-   * Lấy mô hình Gemini hiện đang chọn (ưu tiên localStorage, nếu không có dùng GEMINI_DEFAULT_MODEL từ .env)
+   * Lấy mô hình Gemini hiện đang chọn (ưu tiên localStorage, nếu không có dùng GEMINI_DEFAULT_MODEL từ .env/Vercel)
    * @returns {string}
    */
   function getSelectedModel() {
@@ -332,7 +357,7 @@ Format: Concise Markdown with clear bullet points.
       const saved = localStorage.getItem(STORAGE_KEY_MODEL);
       if (saved && saved.trim()) return saved.trim();
     } catch (_) {}
-    return envConfig.defaultModel || '';
+    return envConfig.defaultModel || 'gemini-3.5-flash-lite';
   }
 
   /**
@@ -795,6 +820,42 @@ Format: Concise Markdown with clear bullet points.
   }
 
   /**
+   * Gọi Vercel Serverless Function /api/chat (Bảo mật API Key ở server Vercel)
+   * @param {string} prompt 
+   * @param {string} model 
+   * @param {{ lang?: 'vi'|'en', topicsContext?: string }} [options={}]
+   * @returns {Promise<string>}
+   */
+  async function callVercelChatApi(prompt, model, options = {}) {
+    const lang = options.lang === 'en' ? 'en' : 'vi';
+    const payload = {
+      prompt,
+      model,
+      lang,
+      topicsContext: options.topicsContext || '',
+      history: chatHistory
+    };
+
+    const response = await fetch('api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const msg = errorData.error || `HTTP ${response.status}`;
+      throw new Error(msg);
+    }
+
+    const data = await response.json();
+    if (!data.text) {
+      throw new Error('Mô hình Gemini không trả về nội dung.');
+    }
+    return data.text;
+  }
+
+  /**
    * Gọi REST API Google Gemini với model động + ngữ cảnh rút gọn từ thư viện + lịch sử ngắn
    * @param {string} prompt 
    * @param {string} apiKey 
@@ -980,13 +1041,15 @@ Format: Concise Markdown with clear bullet points.
     const suggestionsHtml = renderTopicSuggestionsHtml(matchedTopics, lang);
 
     const apiKey = envConfig.apiKey;
-    const activeModel = getSelectedModel();
+    const activeModel = getSelectedModel() || envConfig.defaultModel || 'gemini-3.5-flash-lite';
     let finalHtml = '';
     let isLiveGemini = false;
 
-    if (apiKey && activeModel) {
+    if ((isVercelServerless || (apiKey && apiKey !== 'vercel-serverless-managed')) && activeModel) {
       try {
-        const geminiText = await callGeminiApi(cleanQuery, apiKey, activeModel, { lang, topicsContext });
+        const geminiText = isVercelServerless
+          ? await callVercelChatApi(cleanQuery, activeModel, { lang, topicsContext })
+          : await callGeminiApi(cleanQuery, apiKey, activeModel, { lang, topicsContext });
         finalHtml = formatMarkdownToHTML(geminiText) + suggestionsHtml;
         isLiveGemini = true;
 
@@ -999,7 +1062,7 @@ Format: Concise Markdown with clear bullet points.
           chatHistory = chatHistory.slice(-MAX_HISTORY_TURNS * 2);
         }
       } catch (err) {
-        console.warn(`[MedFA Chatbot] Lỗi gọi Gemini API (${activeModel}), chuyển sang chế độ phản xạ y khoa nội bộ:`, err.message);
+        console.warn(`[MedFA Chatbot] Lỗi gọi Gemini AI (${activeModel}), chuyển sang chế độ phản xạ y khoa nội bộ:`, err.message);
         const fallbackBanner = lang === 'en'
           ? `Could not connect to ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Switched to AHA/ERC offline guide:`
           : `Không kết nối được ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Đã tự động chuyển về phản xạ chuẩn AHA/ERC:`;

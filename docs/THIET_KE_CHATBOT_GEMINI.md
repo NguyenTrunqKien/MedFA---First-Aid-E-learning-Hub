@@ -61,8 +61,9 @@ Chọn **1 trong 2 cách** dưới đây:
 
 Trong `js/chatbot-gemini.js`, hàm `loadEnvConfig()` tự động thử nạp theo thứ tự ưu tiên: **`env.local` → `.env`**.
 
-| Trường hợp sử dụng | Tệp nên dùng | Lý do kỹ thuật |
+| Trường hợp sử dụng | Tệp / Cách cấu hình | Lý do kỹ thuật & Cơ chế |
 | :--- | :---: | :--- |
+| **Triển khai trên Vercel (Production)** | **Environment Variables trên Vercel** (`GEMINI_API_KEY`) | Tự động kích hoạt qua Vercel Serverless Function `api/chat.js`. API Key được giữ bí mật 100% tại server, không lộ xuống trình duyệt. |
 | **Chạy bằng VS Code Live Server ("Go Live" — port 5500)** | **`env.local`** *(Khuyên dùng)* | VS Code Live Server mặc định **chặn file ẩn bắt đầu bằng dấu chấm** (`.env` trả về 404). `env.local` không có dấu chấm ở đầu nên đọc được 100%. |
 | **Chạy bằng Python `http.server` / Node static server** | `env.local` hoặc `.env` | Cả hai đều đọc được bình thường; dùng `env.local` để đồng bộ với Live Server. |
 | **Đẩy mã nguồn lên GitHub (GitHub Pages)** | **Không đẩy file chứa key** (chỉ giữ `env.example`) | `.gitignore` đã chặn sẵn `env.local` và `.env` để tránh lộ API Key công khai. Khi chạy trên GitHub Pages, chatbot tự chuyển mượt sang **Chế độ Offline 33 bài**. |
