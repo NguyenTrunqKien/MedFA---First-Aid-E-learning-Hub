@@ -79,7 +79,7 @@
         <p data-i18n="quiz.heroSubtitle">10 tình huống thực tế. Chọn phương án phù hợp để xem giải thích ngay sau mỗi câu.</p>
       </header>
 
-      <section class="cq-card quiz-card" aria-labelledby="quiz-title">
+      <div class="cq-card quiz-card">
         <div id="quiz-loading" class="quiz-loading" role="status" aria-live="polite" data-i18n="quiz.loading">Đang tải bộ câu hỏi...</div>
         <div id="quiz-content" hidden>
           <div class="quiz-progress-heading">
@@ -89,9 +89,9 @@
           <progress id="quiz-progress" max="10" value="0" aria-label="Tiến độ bài trắc nghiệm" data-i18n-aria-label="quiz.progressAria"></progress>
           <article id="quiz-question-card" class="quiz-question-card">
             <span id="quiz-category" class="quiz-category">Tình huống</span>
-            <h2 id="quiz-title" tabindex="-1"></h2>
+            <h2 id="quiz-title" tabindex="-1">Tình huống trắc nghiệm</h2>
             <p id="quiz-question" class="quiz-question"></p>
-            <div id="quiz-options" class="quiz-options" aria-label="Các phương án trả lời" data-i18n-aria-label="quiz.optionsAria"></div>
+            <div id="quiz-options" class="quiz-options" role="group" aria-label="Các phương án trả lời" data-i18n-aria-label="quiz.optionsAria"></div>
             <div id="quiz-feedback" class="quiz-feedback" role="status" aria-live="polite" hidden></div>
             <div class="quiz-controls">
               <button id="quiz-next" class="btn btn-primary" type="button" data-i18n="quiz.nextBtn" hidden>Tiếp theo</button>
@@ -117,7 +117,7 @@
           <p id="quiz-save-status" class="quiz-save-status" role="status" aria-live="polite"></p>
         </section>
         <p id="quiz-data-status" class="quiz-data-status" role="status" aria-live="polite"></p>
-      </section>
+      </div>
 
       <aside class="quiz-disclaimer">
         <span class="material-symbols-outlined" aria-hidden="true">info</span>

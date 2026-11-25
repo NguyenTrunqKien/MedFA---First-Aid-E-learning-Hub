@@ -76,8 +76,7 @@
         <!-- Responsive Picture (Lab 2 Bài 1) -->
         <picture class="absolute inset-0 w-full h-full pointer-events-none">
           <source media="(max-width: 639px)" srcset="images/hero-cpr-sm.webp">
-          <source media="(min-width: 640px)" srcset="images/hero-cpr.webp">
-          <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" data-i18n-alt="home.heroAlt" class="w-full h-full object-cover object-center" src="images/hero-cpr.webp" srcset="images/hero-cpr-sm.webp 320w, images/hero-cpr.webp 512w" sizes="(max-width: 639px) 100vw, 100vw" fetchpriority="high" decoding="async" width="512" height="379">
+          <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" data-i18n-alt="home.heroAlt" class="w-full h-full object-cover object-center" src="images/hero-cpr.webp" fetchpriority="high" decoding="async" width="512" height="379">
         </picture>
         <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F]/95 via-[#0F1E3C]/80 sm:via-[#0F1E3C]/70 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F]/60 via-transparent to-black/20"></div>
@@ -145,8 +144,8 @@
           </div>
 
           <!-- 3-Column Stats Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-lg">
-            <article class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
+          <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-lg">
+            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
               <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-secondary text-[30px]">emergency</span>
               </div>
@@ -154,9 +153,9 @@
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">&gt; 3.000</div>
                 <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat1Desc">Ca tai nạn thương tích trung bình mỗi ngày tại Việt Nam</p>
               </div>
-            </article>
+            </li>
 
-            <article class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
+            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
               <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-secondary text-[30px]">sentiment_very_dissatisfied</span>
               </div>
@@ -164,9 +163,9 @@
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">&gt; 80</div>
                 <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat2Desc">Người tử vong mỗi ngày do các loại tai nạn thương tích</p>
               </div>
-            </article>
+            </li>
 
-            <article class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
+            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
               <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-secondary text-[30px]">local_hospital</span>
               </div>
@@ -174,9 +173,9 @@
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">200.000</div>
                 <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat3Desc">Ca đột quỵ mỗi năm, chỉ 23,2% kịp đến viện trong giờ vàng</p>
               </div>
-            </article>
+            </li>
 
-            <article class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
+            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
               <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-secondary text-[30px]">directions_car</span>
               </div>
@@ -184,9 +183,9 @@
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">&lt; 1%</div>
                 <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat4Desc">Dân số Việt Nam từng được đào tạo sơ cấp cứu bài bản</p>
               </div>
-            </article>
+            </li>
 
-            <article class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
+            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
               <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-secondary text-[30px]">child_care</span>
               </div>
@@ -194,9 +193,9 @@
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">28</div>
                 <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat5Desc">Người tử vong mỗi ngày do tai nạn giao thông trên cả nước</p>
               </div>
-            </article>
+            </li>
 
-            <article class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
+            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
               <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-secondary text-[30px]">ecg_heart</span>
               </div>
@@ -204,8 +203,8 @@
                 <div class="text-3xl font-bold text-on-surface leading-none mb-1">&gt; 50%</div>
                 <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat6Desc">Ca sơ cứu ban đầu tại hiện trường do người đi đường thực hiện</p>
               </div>
-            </article>
-          </div>
+            </li>
+          </ul>
           <p class="text-center text-xs md:text-[13px] text-on-surface-variant/70 mt-6" data-i18n="home.statSource">
             Nguồn tham khảo: Bộ Y tế, Ban An toàn giao thông Quốc gia, Hội Chữ thập đỏ Việt Nam.
           </p>
@@ -343,8 +342,7 @@
               <div class="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
                 <picture class="w-full h-full">
                   <source media="(max-width: 639px)" srcset="images/first-aid-child-sm.webp">
-                  <source media="(min-width: 640px)" srcset="images/first-aid-child.webp">
-                  <img alt="Bác sĩ khám và chăm sóc bé gái cùng mẹ" data-i18n-alt="home.childAlt" class="w-full h-full object-cover object-center rounded-2xl aspect-[4/3]" src="images/first-aid-child.webp" srcset="images/first-aid-child-sm.webp 320w, images/first-aid-child.webp 512w" sizes="(max-width: 639px) 100vw, 50vw" loading="lazy" decoding="async" width="512" height="387">
+                  <img alt="Bác sĩ khám và chăm sóc bé gái cùng mẹ" data-i18n-alt="home.childAlt" class="w-full h-full object-cover object-center rounded-2xl aspect-[4/3]" src="images/first-aid-child.webp" loading="lazy" decoding="async" width="512" height="387">
                 </picture>
               </div>
             </div>

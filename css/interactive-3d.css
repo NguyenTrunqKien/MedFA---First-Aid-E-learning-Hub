@@ -981,6 +981,11 @@
     height: auto;
     min-height: 20rem;
   }
+  #card-completion {
+    position: relative;
+    inset: auto;
+    min-height: 20rem;
+  }
   .card-face {
     min-height: 20rem;
     padding: 0.9rem;

@@ -94,6 +94,11 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     font-size: 0.8125rem;
   }
 
+  #category-filter-group .category-btn.bg-secondary {
+    background-color: var(--color-secondary, #006a61) !important;
+    color: var(--color-on-secondary, #ffffff) !important;
+  }
+
   #topics-container {
     gap: 1rem;
   }
