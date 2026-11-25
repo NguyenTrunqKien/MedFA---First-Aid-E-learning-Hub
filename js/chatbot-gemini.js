@@ -1207,17 +1207,27 @@ Format: Concise Markdown with clear bullet points.
 
   let langListenerBound = false;
 
+  let chatbotWarmedUp = false;
+
+  /**
+   * Lazy-load cấu hình /api/chat và dữ liệu thư viện khi người dùng thực sự mở Chatbot
+   * (Tránh tạo request mạng thừa trong chuỗi critical path lúc mới tải trang)
+   */
+  function warmup() {
+    if (chatbotWarmedUp) return;
+    chatbotWarmedUp = true;
+    loadEnvConfig();
+    loadLibraryTopics(getCurrentLang());
+  }
+
   /**
    * Khởi tạo liên kết sự kiện Chatbot (chống gắn trùng listener nếu gọi lại nhiều lần)
    */
   function initChatbot() {
-    // Nạp trước cấu hình .env và thư viện bài học theo ngôn ngữ hiện hành
-    loadEnvConfig();
-    loadLibraryTopics(getCurrentLang());
-
     if (!langListenerBound && typeof window !== 'undefined') {
       langListenerBound = true;
       window.addEventListener('medfa:languageChanged', (e) => {
+        if (!chatbotWarmedUp) return;
         const nextLang = e?.detail?.language === 'en' ? 'en' : getCurrentLang();
         loadLibraryTopics(nextLang);
       });
@@ -1257,6 +1267,7 @@ Format: Concise Markdown with clear bullet points.
 
   return {
     initChatbot,
+    warmup,
     handleUserQuery,
     loadEnvConfig,
     getSelectedModel,

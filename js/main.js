@@ -659,7 +659,11 @@ function bindHeaderFooterEvents() {
 
   if (chatToggleBtn && chatWindow) {
     chatToggleBtn.addEventListener('click', () => {
+      const willOpen = chatWindow.classList.contains('hidden');
       chatWindow.classList.toggle('hidden');
+      if (willOpen && window.ChatbotGemini && typeof window.ChatbotGemini.warmup === 'function') {
+        window.ChatbotGemini.warmup();
+      }
     });
   }
 
@@ -766,36 +770,20 @@ function initScrollReveal() {
 }
 
 /**
- * Fetch và chèn Header & Footer dùng chung vào các thẻ placeholder trên mỗi trang HTML.
- * Tự động dùng FALLBACK_HEADER_HTML / FALLBACK_FOOTER_HTML nếu chạy offline qua file://.
+ * Chèn tức thì Header & Footer dùng chung vào các thẻ placeholder trên mỗi trang HTML.
+ * Dùng trực tiếp template đồng bộ 100% với components/header.html & components/footer.html
+ * để loại bỏ 2 request fetch + redirect 308 trên Vercel cleanUrls, rút ngắn critical path & chống giật layout.
  */
-async function injectHeaderAndFooter() {
+function injectHeaderAndFooter() {
   const headerPlaceholder = document.getElementById('header-placeholder');
   const footerPlaceholder = document.getElementById('footer-placeholder');
 
-  if (headerPlaceholder) {
-    try {
-      const res = await fetch('components/header.html');
-      let html = res.ok ? await res.text() : FALLBACK_HEADER_HTML;
-      // Live Server của VS Code tự động inject script vào trong từng thẻ <svg>,
-      // làm phình kích thước payload vượt quá header Content-Length khiến file bị cắt cụt (truncation).
-      // Nếu phát hiện phần đuôi bị cắt (không có đủ thẻ đóng </header>), dùng ngay FALLBACK_HEADER_HTML đầy đủ chuẩn.
-      if (!html || !html.includes('data-language="en"') || !html.includes('</header>')) {
-        html = FALLBACK_HEADER_HTML;
-      }
-      headerPlaceholder.innerHTML = html;
-    } catch {
-      headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
-    }
+  if (headerPlaceholder && headerPlaceholder.children.length === 0) {
+    headerPlaceholder.innerHTML = FALLBACK_HEADER_HTML;
   }
 
   if (footerPlaceholder && footerPlaceholder.children.length === 0) {
-    try {
-      const res = await fetch('components/footer.html');
-      footerPlaceholder.innerHTML = res.ok ? await res.text() : FALLBACK_FOOTER_HTML;
-    } catch {
-      footerPlaceholder.innerHTML = FALLBACK_FOOTER_HTML;
-    }
+    footerPlaceholder.innerHTML = FALLBACK_FOOTER_HTML;
   }
 
   highlightActiveNav();
