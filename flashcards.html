@@ -21,11 +21,6 @@
   <!-- MedFA Modular CSS Files -->
   <link rel="stylesheet" href="css/medfa.min.css">
   <link rel="stylesheet" href="css/interactive-3d.css">
-  
-  <script src="js/translations.js" defer></script>
-  <script src="js/i18n.js" defer></script>
-  <script src="js/data-loader.js" defer></script>
-  <script src="js/flashcard-controller.js" defer></script>
 
   <!-- SEO Meta Tags, Canonical, Open Graph & Schema.org -->
   <meta name="robots" content="index, follow">
@@ -234,8 +229,14 @@
   <!-- Mức độ 2: Canvas hiệu ứng pháo hoa giấy (Micro Confetti) -->
   <canvas id="confetti-canvas" class="confetti-canvas" style="display: none;" aria-hidden="true"></canvas>
   <div id="footer-placeholder"></div>
+  <!-- JavaScript Modules (đồng nhất đặt toàn bộ ở cuối body với defer) -->
+  <script src="js/translations.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/data-loader.js" defer></script>
   <script src="js/chatbot-gemini.js" defer></script>
   <script src="js/seo-config.js" defer></script>
+  <script src="js/components/layout.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/flashcard-controller.js" defer></script>
 </body>
 </html>

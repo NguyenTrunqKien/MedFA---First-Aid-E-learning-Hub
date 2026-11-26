@@ -63,7 +63,7 @@
             </li>
             <li class="font-bold text-on-surface flex items-center gap-1">
               <span class="w-2 h-2 rounded-full bg-tertiary inline-block animate-ping"></span>
-              <span id="breadcrumb-topic-title" data-i18n="detail.breadcrumbDefault">Hóc dị vật (Nghẹn & Tắc đường thở)</span>
+              <span id="breadcrumb-topic-title"></span>
             </li>
           </ol>
         </nav>
@@ -81,27 +81,20 @@
               <div class="flex flex-wrap items-center justify-between gap-3">
                 <div class="flex flex-wrap items-center gap-2">
                   <span id="detail-category-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider">
-                    <span class="material-symbols-outlined text-[16px]">air</span>
-                    <span id="detail-category-label">Cấp cứu đường thở</span>
+                    <span class="material-symbols-outlined text-[16px]">medical_services</span>
+                    <span id="detail-category-label"></span>
                   </span>
-                  <span id="detail-read-time" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold">
-                    <span class="material-symbols-outlined text-[15px]">timer</span>
-                    <span>Đọc 2 phút</span>
-                  </span>
+                  <span id="detail-read-time" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold"></span>
                 </div>
               </div>
 
-              <!-- Main Title & Lead -->
+              <!-- Tiêu đề chính & Mô tả dẫn nhập: js/topic-detail.js (renderCurrentTopicDetail) đổ dữ liệu từ data/topics.json theo tham số ?id=... -->
               <div class="mt-4">
-                <h1 id="detail-title" class="text-2xl md:text-4xl text-primary tracking-tight font-extrabold leading-tight">
-                  Hóc dị vật (Nghẹn & Tắc đường thở)
-                </h1>
-                <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant mt-2 leading-relaxed">
-                  Dị vật xâm nhập gây cản trở đường thở cấp tính. Não bộ sẽ bắt đầu <span class="font-bold text-tertiary">tổn thương không thể phục hồi chỉ sau 4 phút</span> thiếu oxy nếu không được can thiệp đúng phương pháp ngay tại hiện trường.
-                </p>
+                <h1 id="detail-title" class="text-2xl md:text-4xl text-primary tracking-tight font-extrabold leading-tight"></h1>
+                <p id="detail-lead" class="text-base md:text-lg text-on-surface-variant mt-2 leading-relaxed"></p>
               </div>
 
-              <!-- CRITICAL ALERT BANNER -->
+              <!-- Khối nội dung hướng dẫn động (mặc định ẩn để chờ nạp xong JSON từ data/topics.json) -->
               <div id="topic-guidance" hidden>
               <section aria-label="Cảnh báo sinh mạng" data-i18n-aria-label="detail.alertAria" class="mt-6 bg-tertiary-fixed rounded-xl p-4 flex items-start gap-4 shadow-sm border border-tertiary/20">
                 <div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
@@ -112,17 +105,13 @@
                     <span class="text-sm font-bold text-on-tertiary-fixed uppercase tracking-wider" data-i18n="detail.emergencyNotice">Báo động khẩn cấp</span>
                     <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
                   </div>
-                  <p id="detail-alert-text" class="text-sm md:text-base font-bold text-on-tertiary-fixed leading-snug">
-                    GỌI 115 NGAY LẬP TỨC nếu nạn nhân bất tỉnh, tím tái môi đầu chi hoặc không còn phát ra tiếng thở.
-                  </p>
-                  <p id="choking-alert-note" class="text-xs text-on-tertiary-fixed-variant" data-i18n="detail.chokingAlertNote">
-                    Đồng thời chuẩn bị tiến hành hồi sinh tim phổi (CPR 30 ép tim : 2 thổi ngạt) ngay trên mặt sàn phẳng và cứng.
-                  </p>
+                  <p id="detail-alert-text" class="text-sm md:text-base font-bold text-on-tertiary-fixed leading-snug"></p>
+                  <p id="choking-alert-note" class="text-xs text-on-tertiary-fixed-variant" data-i18n="detail.chokingAlertNote" hidden></p>
                 </div>
               </section>
 
-              <!-- 4-MINUTE GOLDEN TIMELINE VISUALIZATION -->
-              <div id="choking-timeline" class="mt-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+              <!-- Thước đo 4 Phút Vàng: js/topic-detail.js (renderTopicTimeline) tự bật và render khi bài có mảng topic.timeline -->
+              <div id="choking-timeline" class="mt-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20" hidden>
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center gap-1.5 text-sm text-on-surface font-bold">
                     <span class="material-symbols-outlined text-primary text-[18px]">acute</span>
@@ -130,47 +119,14 @@
                   </div>
                   <span class="text-xs text-tertiary font-bold" data-i18n="detail.timelineSub">Não thiếu oxy</span>
                 </div>
-                <div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex">
-                  <div class="h-full bg-secondary-container transition-all" style="width: 25%" title="0-1 phút: Bắt đầu ngạt, hoảng loạn"></div>
-                  <div class="h-full bg-primary-fixed transition-all" style="width: 25%" title="1-2 phút: Tím tái, mất phản xạ ho"></div>
-                  <div class="h-full bg-on-tertiary-container transition-all" style="width: 25%" title="2-4 phút: Ngất lịm, bất tỉnh"></div>
-                  <div class="h-full bg-tertiary transition-all" style="width: 25%" title=">4 phút: Tổn thương tế bào thần kinh vĩnh viễn"></div>
-                </div>
-                <div class="grid grid-cols-4 gap-2 text-center text-xs mt-2 text-on-surface-variant hypoxia-timeline-labels" id="hypoxia-timeline-labels">
-                  <div><strong>0-1 phút</strong><br><span class="hidden sm:inline">Khó thở rít</span></div>
-                  <div><strong>1-2 phút</strong><br><span class="hidden sm:inline">Môi tím tái</span></div>
-                  <div class="text-tertiary font-semibold"><strong>2-4 phút</strong><br><span class="hidden sm:inline">Hôn mê / Gục</span></div>
-                  <div class="text-tertiary font-bold"><strong>>4 phút</strong><br><span class="hidden sm:inline">Tử vong tế bào não</span></div>
-                </div>
+                <div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex"></div>
+                <div class="grid grid-cols-4 gap-2 text-center text-xs mt-2 text-on-surface-variant hypoxia-timeline-labels" id="hypoxia-timeline-labels"></div>
               </div>
 
-              <!-- CPR 110 BPM METRONOME WIDGET (Tự động bật cho các ca có quy trình Ép tim CPR) -->
-              <section id="cpr-metronome-widget" class="mt-6 cpr-metronome-card" aria-label="Bộ đếm nhịp ép tim CPR" data-i18n-aria="detail.cprMetronomeTitle" hidden>
-                <div class="flex items-center gap-3">
-                  <div id="cpr-beat-indicator" class="cpr-beat-indicator" aria-hidden="true">
-                    <span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <div class="flex flex-wrap items-center gap-2">
-                      <h2 class="text-sm md:text-base font-bold text-on-surface" data-i18n="detail.cprMetronomeTitle">Bộ đếm nhịp thực hiện ép tim CPR 110 BPM</h2>
-                      <span id="cpr-beat-counter" class="cpr-beat-counter">0 / 30 nhịp</span>
-                    </div>
-                    <p id="cpr-cycle-hint" class="text-xs text-on-surface-variant" data-i18n="detail.cprMetronomeDesc">
-                      Bấm Bắt đầu để nghe tiếng bíp & nhịp đập trực quan giữ tốc độ 100–120 lần/phút (30 ép tim : 2 thổi ngạt).
-                    </p>
-                  </div>
-                </div>
-                <div class="flex flex-wrap items-center gap-2">
-                  <button id="cpr-metronome-btn" type="button" class="btn btn-danger text-xs py-2 px-4">
-                    <span class="material-symbols-outlined text-[18px]">play_arrow</span>
-                    <span id="cpr-metronome-btn-text" data-i18n="detail.cprStart">Bắt đầu nhịp 110 BPM</span>
-                  </button>
-                  <button id="cpr-sound-btn" data-i18n-title="detail.cprSoundTitle" type="button" aria-pressed="true" title="Bật / Tắt âm thanh bíp" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container text-xs font-semibold text-on-surface transition-colors">
-                    <span id="cpr-sound-icon" class="material-symbols-outlined text-[18px] text-primary">volume_up</span>
-                    <span id="cpr-sound-text" data-i18n="detail.soundOn">Âm thanh: Bật</span>
-                  </button>
-                </div>
-              </section>
+              <!-- Vị trí gắn Widget Bộ đếm nhịp ép tim CPR 110 BPM:
+                   -> js/topic-detail.js (renderCprComponents) kiểm tra isCprTopic(topic)
+                   -> Nếu là bài CPR thì bơm CPR_METRONOME_HTML từ js/components/detail.js và chạy initCprMetronome() -->
+              <div id="cpr-metronome-slot" hidden></div>
 
               <!-- SECTION: CÁC BƯỚC XỬ LÝ CHUẨN Y KHOA -->
               <section class="mt-8">
@@ -191,47 +147,8 @@
                   Áp dụng tuần tự các bước dưới đây. Luôn giữ bình tĩnh, thực hiện dứt khoát đến khi tình trạng nguy cấp được giải tỏa.
                 </p>
 
-                <!-- DYNAMIC STEPS CONTAINER -->
-                <div class="mt-6 flex flex-col gap-4" id="detail-steps-container">
-                  <!-- Fallback Step 1 -->
-                  <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
-                    <div class="flex items-start gap-4">
-                      <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">1</div>
-                      <div class="flex-1">
-                        <h3 class="text-base md:text-lg font-bold text-on-surface">Đánh giá & Khuyến khích ho mạnh</h3>
-                        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
-                          Nếu nạn nhân vẫn còn tỉnh táo, nói được câu ngắn hoặc ho mạnh: Khuyến cáo không can thiệp thô bạo. Động viên họ gập người ra trước và ho liên tục.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Fallback Step 2 -->
-                  <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
-                    <div class="flex items-start gap-4">
-                      <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">2</div>
-                      <div class="flex-1">
-                        <h3 class="text-base md:text-lg font-bold text-on-surface">5 lần vỗ lưng dứt khoát</h3>
-                        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
-                          Đứng chếch phía sau, dùng một tay đỡ ngực nạn nhân nghiêng về phía trước. Dùng gót bàn tay kia vỗ mạnh 5 lần vào giữa hai xương bả vai hướng lên trên.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Fallback Step 3 -->
-                  <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
-                    <div class="flex items-start gap-4">
-                      <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">3</div>
-                      <div class="flex-1">
-                        <h3 class="text-base md:text-lg font-bold text-on-surface">5 lần ép bụng Heimlich</h3>
-                        <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
-                          Vòng hai tay quanh eo nạn nhân. Đặt nắm đấm vào vùng thượng vị (trên rốn, dưới mũi ức), giật mạnh theo hướng vào trong và lên trên.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <!-- Danh sách các bước sơ cứu: js/topic-detail.js render từ topic.steps bằng hàm createStepCardHTML() trong js/components/detail.js -->
+                <div class="mt-6 flex flex-col gap-4" id="detail-steps-container"></div>
               </section>
 
               <!-- DO'S AND DON'TS COMPARISON GRID -->
@@ -247,20 +164,7 @@
                       <span class="material-symbols-outlined text-emerald-600">check_circle</span>
                       <span data-i18n="detail.dosTitle">NÊN LÀM (CHUẨN Y KHOA)</span>
                     </div>
-                    <ul class="flex flex-col gap-2 text-sm text-emerald-950" id="detail-dos-list">
-                      <li class="flex items-start gap-2">
-                        <span class="text-emerald-600 font-bold">•</span>
-                        <span>Khuyến khích nạn nhân tiếp tục ho mạnh nếu họ còn ho được.</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <span class="text-emerald-600 font-bold">•</span>
-                        <span>Cúi người nạn nhân về phía trước khi vỗ lưng để dị vật rơi ra ngoài.</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <span class="text-emerald-600 font-bold">•</span>
-                        <span>Đối với trẻ nhỏ &lt;1 tuổi: dùng 5 vỗ lưng và 5 ấn ngực bằng 2 ngón tay.</span>
-                      </li>
-                    </ul>
+                    <ul class="flex flex-col gap-2 text-sm text-emerald-950" id="detail-dos-list"></ul>
                   </div>
 
                   <!-- DON'T Column -->
@@ -269,113 +173,15 @@
                       <span class="material-symbols-outlined text-rose-600">cancel</span>
                       <span data-i18n="detail.dontsTitle">Cần tránh</span>
                     </div>
-                    <ul class="flex flex-col gap-2 text-sm text-rose-950" id="detail-donts-list">
-                      <li class="flex items-start gap-2">
-                        <span class="text-rose-600 font-bold">•</span>
-                        <span>KHÔNG móc họng mù quáng bằng ngón tay khi không nhìn thấy rõ dị vật.</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <span class="text-rose-600 font-bold">•</span>
-                        <span>KHÔNG cho uống nước hay nuốt cơm để cố đẩy dị vật xuống.</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <span class="text-rose-600 font-bold">•</span>
-                        <span>KHÔNG ép bụng cho phụ nữ mang thai tháng cuối (chuyển sang ép ngực).</span>
-                      </li>
-                    </ul>
+                    <ul class="flex flex-col gap-2 text-sm text-rose-950" id="detail-donts-list"></ul>
                   </div>
                 </div>
               </section>
 
-              <!-- BẢNG ĐỐI CHIẾU THÔNG SỐ CẤP CỨU CHUẨN Y KHOA (Lab 2 Bài 2: HTML Table) -->
-              <section id="detail-cpr-table-section" class="mt-8 pt-6 border-t border-outline-variant/20" aria-labelledby="table-cpr-title" hidden>
-                <div class="flex items-center gap-2 mb-3">
-                  <div class="w-8 h-8 rounded-lg bg-primary-container text-primary flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-[20px]">table_chart</span>
-                  </div>
-                  <h3 id="table-cpr-title" class="text-lg font-bold text-on-surface" data-i18n="detail.tableSectionTitle">
-                    Bảng đối chiếu thông số hồi sinh tim phổi (CPR &amp; AED)
-                  </h3>
-                </div>
-                <p class="text-sm text-on-surface-variant mb-3 leading-relaxed" data-i18n="detail.tableSectionDesc">
-                  Đối chiếu các thông số ép tim, thổi ngạt và sử dụng máy khử rung tim tự động ngoài lồng ngực (<abbr title="Automated External Defibrillator">AED</abbr>) giữa các nhóm lứa tuổi theo khuyến nghị cập nhật từ <abbr title="American Heart Association">AHA</abbr> &amp; <abbr title="European Resuscitation Council">ERC</abbr> 2025:
-                </p>
-                <div class="medfa-table-wrapper">
-                  <table class="medfa-table">
-                    <caption data-i18n="detail.tableCaption">Bảng 1: Thông số kỹ thuật ép tim CPR &amp; AED theo lứa tuổi (AHA/ERC 2025)</caption>
-                    <thead>
-                      <tr>
-                        <th scope="col" rowspan="2" class="text-center" data-i18n="detail.thParameter">Thông số kỹ thuật</th>
-                        <th scope="colgroup" colspan="3" class="text-center" data-i18n="detail.thAgeGroups">Phân loại đối tượng nạn nhân</th>
-                      </tr>
-                      <tr>
-                        <th scope="col" data-i18n="detail.thAdult">Người lớn (≥ 8 tuổi)</th>
-                        <th scope="col" data-i18n="detail.thChild">Trẻ em (1 – 8 tuổi)</th>
-                        <th scope="col" data-i18n="detail.thInfant">Trẻ sơ sinh (&lt; 1 tuổi)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row" data-i18n="detail.rowRate">Tần số ép tim (Rate)</th>
-                        <td colspan="3" class="text-center font-bold text-primary">
-                          <span class="badge-cpr">100 – 120 nhịp/phút</span> <span class="text-xs text-on-surface-variant font-normal" data-i18n="detail.rowRateShared">(áp dụng đồng nhất cho mọi lứa tuổi)</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" data-i18n="detail.rowDepth">Độ sâu ép tim (Depth)</th>
-                        <td>
-                          <strong>5 – 6 cm</strong><br>
-                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthAdult">Không ấn sâu quá 6 cm</span>
-                        </td>
-                        <td>
-                          <strong>Khoảng 5 cm</strong><br>
-                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthChild">~1/3 đường kính lồng ngực</span>
-                        </td>
-                        <td>
-                          <strong>Khoảng 4 cm</strong><br>
-                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthInfant">~1/3 đường kính lồng ngực</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" data-i18n="detail.rowHandPos">Vị trí đặt tay</th>
-                        <td data-i18n="detail.rowHandPosAdult">1/2 dưới xương ức, giữa 2 núm vú</td>
-                        <td data-i18n="detail.rowHandPosChild">1/2 dưới xương ức</td>
-                        <td data-i18n="detail.rowHandPosInfant">Giữa ngực, ngay dưới đường nối 2 núm vú</td>
-                      </tr>
-                      <tr>
-                        <th scope="row" data-i18n="detail.rowHandTech">Kỹ thuật dùng tay</th>
-                        <td data-i18n="detail.rowHandTechAdult">2 bàn tay đan chặt ngón vào nhau, gót tay tì lực</td>
-                        <td data-i18n="detail.rowHandTechChild">1 hoặc 2 bàn tay (tùy thể trạng trẻ)</td>
-                        <td data-i18n="detail.rowHandTechInfant">2 ngón tay (trỏ &amp; giữa) hoặc 2 ngón cái bao quanh ngực</td>
-                      </tr>
-                      <tr>
-                        <th scope="row" data-i18n="detail.rowRatio">Tỷ lệ Ép tim : Thổi ngạt</th>
-                        <td>
-                          <span class="font-bold text-primary">30 : 2</span><br>
-                          <span class="text-xs text-on-surface-variant" data-i18n="detail.rowRatioAdult">Áp dụng cho cả 1 hoặc 2 người sơ cứu</span>
-                        </td>
-                        <td>
-                          <span class="font-bold text-primary">30 : 2</span> (1 người cứu)<br>
-                          <span class="font-bold text-secondary">15 : 2</span> (2 người cứu y tế)
-                        </td>
-                        <td>
-                          <span class="font-bold text-primary">30 : 2</span> (1 người cứu)<br>
-                          <span class="font-bold text-secondary">15 : 2</span> (2 người cứu y tế)
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" data-i18n="detail.rowAed">Sử dụng máy sốc tim AED</th>
-                        <td data-i18n="detail.rowAedAdult">Miếng dán người lớn tiêu chuẩn</td>
-                        <td data-i18n="detail.rowAedChild">Miếng dán nhi khoa (hoặc chuyển công tắc trẻ em)</td>
-                        <td data-i18n="detail.rowAedInfant">Ưu tiên máy khử rung thủ công / Miếng dán nhi có bộ giảm liều</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p class="text-xs text-on-surface-variant italic mt-1">
-                  *<sup>(1)</sup> <span data-i18n="detail.tableFootnote">Nguồn dữ liệu tham chiếu: Khuyến cáo Hồi sinh tim phổi AHA ECC Guidelines 2025 &amp; Phác đồ Cấp cứu Ngoại viện Bộ Y Tế.</span>
-                </p>
-              </section>
+              <!-- Vị trí gắn Bảng đối chiếu thông số CPR & AED:
+                   -> js/topic-detail.js (renderCprComponents) kiểm tra isCprTopic(topic)
+                   -> Nếu là bài CPR thì bơm CPR_TABLE_HTML từ js/components/detail.js -->
+              <div id="cpr-table-slot" hidden></div>
 
               <!-- VIDEO HƯỚNG DẪN MINH HỌA (Xem trên YouTube) -->
               <section id="detail-video-section" class="mt-6 p-4 md:p-5 rounded-xl bg-surface-container-low border border-outline-variant/30" hidden>
@@ -397,13 +203,8 @@
               </section>
 
               </div>
-              <section id="medical-disclaimer" aria-labelledby="medical-disclaimer-title" class="mt-8 p-4 md:p-6 rounded-xl border border-outline-variant/30 bg-surface-container-low">
-                <h2 id="medical-disclaimer-title" class="text-xl font-bold text-on-surface" data-i18n="disclaimer.briefTitle">Lưu ý y khoa</h2>
-                <p class="mt-2 text-sm text-on-surface-variant" data-i18n-html="disclaimer.briefText">
-                  Nội dung MedFA phục vụ học tập và không thay thế tư vấn y tế hoặc đào tạo thực hành.
-                  Trong tình huống khẩn cấp tại Việt Nam, hãy <a class="font-bold underline" href="tel:115">gọi 115</a> và làm theo hướng dẫn của nhân viên cấp cứu.
-                </p>
-              </section>
+              <!-- Khối Lưu ý y khoa & Nguồn tham khảo: js/topic-detail.js (renderMedicalDisclaimer) bơm MEDICAL_DISCLAIMER_HTML từ js/components/detail.js và gắn danh sách topic.sources -->
+              <section id="medical-disclaimer" aria-labelledby="medical-disclaimer-title" class="mt-8 p-4 md:p-6 rounded-xl border border-outline-variant/30 bg-surface-container-low"></section>
 
               <!-- TÌNH HUỐNG SƠ CẤP CỨU LIÊN QUAN (Internal Linking SEO) -->
               <section id="related-topics-section" aria-labelledby="related-topics-title" class="mt-8 pt-6 border-t border-outline-variant/30" hidden>
@@ -483,6 +284,8 @@
   <script src="js/storage.js" defer></script>
   <script src="js/data-loader.js" defer></script>
   <script src="js/chatbot-gemini.js" defer></script>
+  <script src="js/components/layout.js" defer></script>
+  <script src="js/components/detail.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/topic-detail.js" defer></script>
 </body>
