@@ -434,7 +434,7 @@
 }
 
 /* ==========================================================================
-   CLINICAL DATA TABLE (Lab 2 Bài 2: HTML Table Nâng cao)
+   CLINICAL DATA TABLE (HTML Table)
    ========================================================================== */
 .medfa-table-wrapper {
   width: 100%;
@@ -491,7 +491,7 @@
   color: var(--color-on-surface-variant, #43474e);
 }
 
-/* Sọc ngựa vằn (Zebra-striping chuẩn Lab 2) */
+/* Sọc ngựa vằn (Zebra-striping) */
 .medfa-table tbody tr:nth-child(even) td {
   background-color: rgba(241, 245, 249, 0.5);
 }
@@ -575,7 +575,7 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE VIDEO EMBED (Lab 2 Bài 1: Nhúng video đa phương tiện)
+   RESPONSIVE VIDEO EMBED (Nhúng video đa phương tiện)
    ========================================================================== */
 .medfa-video-frame {
   position: relative;

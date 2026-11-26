@@ -165,7 +165,7 @@
             </div>
           </div>
 
-          <!-- Right Column with Responsive Picture & Blockquote (Lab 1 & Lab 2) -->
+          <!-- Right Column with Responsive Picture & Blockquote -->
           <div class="relative w-full">
             <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white group flex flex-col">
               <div class="relative overflow-hidden aspect-[16/10] bg-gray-100">
@@ -213,53 +213,17 @@
           </p>
         </div>
 
-        <!-- 3-Card Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-          <!-- Card 1 -->
-          <article class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start group hover:-translate-y-1">
-            <div class="w-14 h-14 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0D9488] mb-5 group-hover:bg-[#0D9488] group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined text-[32px]">public</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="impact.card1Title">Phá bỏ rào cản</h3>
-            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="impact.card1Desc">
-              Số hóa các tài liệu chuẩn Y khoa thành một thư viện mở, truy cập miễn phí mọi lúc, mọi nơi.
-            </p>
-            <div class="mt-6 pt-4 border-t border-gray-50 w-full flex items-center text-xs font-semibold text-[#0D9488] group-hover:text-primary transition-colors">
-              <span data-i18n="impact.card1Cta">Mở rộng tiếp cận phi lợi nhuận</span>
-              <span class="material-symbols-outlined text-[14px] ml-1">arrow_forward</span>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start group hover:-translate-y-1">
-            <div class="w-14 h-14 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0D9488] mb-5 group-hover:bg-[#0D9488] group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined text-[32px]">menu_book</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="impact.card2Title">Dễ hiểu, dễ áp dụng</h3>
-            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="impact.card2Desc">
-              Ngôn ngữ được đơn giản hóa, tập trung vào thao tác thực hành thay vì lý thuyết y khoa hàn lâm.
-            </p>
-            <div class="mt-6 pt-4 border-t border-gray-50 w-full flex items-center text-xs font-semibold text-[#0D9488] group-hover:text-primary transition-colors">
-              <span data-i18n="impact.card2Cta">Quy trình chuẩn hóa từng bước</span>
-              <span class="material-symbols-outlined text-[14px] ml-1">arrow_forward</span>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-start group hover:-translate-y-1">
-            <div class="w-14 h-14 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0D9488] mb-5 group-hover:bg-[#0D9488] group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined text-[32px]">groups</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="impact.card3Title">Cộng đồng vững bước</h3>
-            <p class="text-gray-600 text-sm leading-relaxed" data-i18n="impact.card3Desc">
-              Tầm nhìn mỗi gia đình Việt Nam đều có ít nhất một thành viên nắm vững kỹ năng phản ứng khẩn cấp.
-            </p>
-            <div class="mt-6 pt-4 border-t border-gray-50 w-full flex items-center text-xs font-semibold text-[#0D9488] group-hover:text-primary transition-colors">
-              <span data-i18n="impact.card3Cta">Mục tiêu 1 triệu người biết sơ cứu</span>
-              <span class="material-symbols-outlined text-[14px] ml-1">arrow_forward</span>
-            </div>
-          </article>
-        </div>
+        <!-- Lưới 3 thẻ Giải pháp từ MedFA: Khai báo dữ liệu JSON cho component 'approach-card'
+             -> js/main.js (injectSharedComponents) gọi MedFAComponents.renderComponentList()
+             -> render bằng hàm createApproachCardHTML() trong js/components/cards.js -->
+        <div id="impact-approach-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"></div>
+        <script type="application/json" data-component="approach-card" data-target="impact-approach-grid">
+          [
+            { "icon": "public", "titleKey": "impact.card1Title", "titleDefault": "Phá bỏ rào cản", "descKey": "impact.card1Desc", "descDefault": "Số hóa các tài liệu chuẩn Y khoa thành một thư viện mở, truy cập miễn phí mọi lúc, mọi nơi.", "ctaKey": "impact.card1Cta", "ctaDefault": "Mở rộng tiếp cận phi lợi nhuận" },
+            { "icon": "menu_book", "titleKey": "impact.card2Title", "titleDefault": "Dễ hiểu, dễ áp dụng", "descKey": "impact.card2Desc", "descDefault": "Ngôn ngữ được đơn giản hóa, tập trung vào thao tác thực hành thay vì lý thuyết y khoa hàn lâm.", "ctaKey": "impact.card2Cta", "ctaDefault": "Quy trình chuẩn hóa từng bước" },
+            { "icon": "groups", "titleKey": "impact.card3Title", "titleDefault": "Cộng đồng vững bước", "descKey": "impact.card3Desc", "descDefault": "Tầm nhìn mỗi gia đình Việt Nam đều có ít nhất một thành viên nắm vững kỹ năng phản ứng khẩn cấp.", "ctaKey": "impact.card3Cta", "ctaDefault": "Mục tiêu 1 triệu người biết sơ cứu" }
+          ]
+        </script>
 
       </div>
     </section>
@@ -267,11 +231,8 @@
     <!-- 4. CTA BANNER SECTION -->
     <section class="w-full bg-[#F9FAFB] py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-r from-[#0D9488] to-[#1E40AF] p-8 sm:p-12 md:p-16 text-center text-white shadow-xl relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-          <svg class="w-full max-w-4xl h-48" fill="none" stroke="currentColor" viewBox="0 0 1000 200">
-            <path d="M0,100 L250,100 L280,40 L310,170 L340,80 L360,110 L380,100 L650,100 L680,30 L710,180 L740,70 L760,110 L780,100 L1000,100" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
-          </svg>
-        </div>
+        <!-- Nền SVG đường nhịp tim ECG: js/main.js bơm HEARTBEAT_BG_SVG từ js/components/cards.js -->
+        <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none" data-component="heartbeat-bg"></div>
 
         <div class="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
           <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
@@ -307,6 +268,8 @@
   <script src="js/i18n.js" defer></script>
   <script src="js/chatbot-gemini.js" defer></script>
   <script src="js/seo-config.js" defer></script>
+  <script src="js/components/layout.js" defer></script>
+  <script src="js/components/cards.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -14,11 +14,14 @@
   'use strict';
 
   /**
-   * Escape ký tự đặc biệt HTML nhằm ngăn chặn XSS khi render dữ liệu từ JSON
+   * Escape ký tự đặc biệt HTML để chống XSS (tái sử dụng hàm escapeHTML từ js/components/layout.js)
    * @param {string|number} str
    * @returns {string}
    */
   function escapeTopicHTML(str) {
+    if (window.MedFAComponents?.escapeHTML) {
+      return window.MedFAComponents.escapeHTML(str);
+    }
     return String(str || '').replace(/[&<>'"]/g, tag => ({
       '&': '&amp;',
       '<': '&lt;',
@@ -106,19 +109,39 @@
   }
 
   /**
-   * Nạp component miễn trừ trách nhiệm y khoa một lần cho mỗi trang.
+   * Kiểm tra xem tình huống hiện tại có liên quan đến Hồi sinh tim phổi (CPR) hay không (DRY)
+   * Dùng chung để quyết định bật/tắt cả Widget CPR Metronome và Bảng thông số CPR & AED.
+   * @param {Object} topic
+   * @returns {boolean}
    */
-  let disclaimerRequest;
-  function loadMedicalDisclaimer() {
-    disclaimerRequest ??= fetch('components/medical-disclaimer.html')
-      .then(response => response.ok ? response.text() : null)
-      .catch(() => null);
-    return disclaimerRequest;
+  const CPR_TOPIC_IDS = new Set([
+    'ngung-tuan-hoan-cpr',
+    'hoi-sinh-tim-phoi-nguoi-lon',
+    'duoi-nuoc-o-tre-em',
+    'dien-giat',
+    'hoc-di-vat',
+    'hoc-di-vat-o-tre-em'
+  ]);
+
+  function isCprTopic(topic) {
+    if (!topic) return false;
+    if (CPR_TOPIC_IDS.has(topic.id)) return true;
+    const text = [
+      topic.title || '',
+      topic.lead || '',
+      topic.emergencyAlert || '',
+      ...(Array.isArray(topic.steps) ? topic.steps.map(s => `${s.title || ''} ${s.desc || ''}`) : [])
+    ].join(' ').toLowerCase();
+    return text.includes('cpr') || text.includes('ép tim') || text.includes('hồi sinh tim phổi');
   }
 
-  function renderMedicalDisclaimer(markup, topic) {
+  /**
+   * Nạp khối Lưu ý y khoa (MEDICAL_DISCLAIMER_HTML) từ js/components/detail.js và gắn danh sách nguồn của bài
+   */
+  function renderMedicalDisclaimer(topic) {
     const disclaimer = document.getElementById('medical-disclaimer');
     if (!disclaimer) return;
+    const markup = window.MedFAComponents?.MEDICAL_DISCLAIMER_HTML;
     if (markup && !disclaimer.dataset.loaded) {
       disclaimer.innerHTML = markup;
       disclaimer.dataset.loaded = 'true';
@@ -314,24 +337,20 @@
       return;
     }
 
-    grid.innerHTML = related.map(item => `
-      <a href="topic-detail.html?id=${encodeURIComponent(item.id)}" class="group p-4 rounded-xl bg-surface-container-low hover:bg-surface-container border border-outline-variant/30 transition-all flex flex-col gap-2">
-        <span class="text-xs font-bold text-primary uppercase tracking-wider">${escapeTopicHTML(item.categoryLabel || 'Sơ cấp cứu')}</span>
-        <h3 class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">${escapeTopicHTML(item.title)}</h3>
-        <p class="text-xs text-on-surface-variant line-clamp-2">${escapeTopicHTML(item.shortDesc || item.lead)}</p>
-      </a>
-    `).join('');
+    grid.innerHTML = related.map(item =>
+      window.MedFAComponents?.createRelatedTopicCardHTML
+        ? window.MedFAComponents.createRelatedTopicCardHTML(item)
+        : ''
+    ).join('');
 
     section.hidden = false;
   }
 
   /**
    * Bộ đếm nhịp Ép tim CPR 110 lần/phút bằng Web Audio API + hiệu ứng nhấp nháy trực quan.
-   * Tự động hiển thị cho các tình huống có bước hồi sinh tim phổi (CPR).
-   * @param {Object} topic
+   * Chỉ được gắn vào DOM qua js/components.js khi bài thuộc nhóm CPR.
    */
-  function initCprMetronome(topic) {
-    const widget = document.getElementById('cpr-metronome-widget');
+  function initCprMetronome() {
     const toggleBtn = document.getElementById('cpr-metronome-btn');
     const btnText = document.getElementById('cpr-metronome-btn-text');
     const indicator = document.getElementById('cpr-beat-indicator');
@@ -340,26 +359,7 @@
     const soundBtn = document.getElementById('cpr-sound-btn');
     const soundIcon = document.getElementById('cpr-sound-icon');
     const soundText = document.getElementById('cpr-sound-text');
-    if (!widget || !toggleBtn || !indicator || !counterEl) return;
-
-    const cprIds = new Set([
-      'ngung-tuan-hoan-cpr',
-      'hoi-sinh-tim-phoi-nguoi-lon',
-      'duoi-nuoc-o-tre-em',
-      'dien-giat',
-      'hoc-di-vat',
-      'hoc-di-vat-o-tre-em'
-    ]);
-    const fullText = [
-      topic.title,
-      topic.lead,
-      topic.emergencyAlert,
-      ...(Array.isArray(topic.steps) ? topic.steps.map(s => `${s.title} ${s.desc}`) : [])
-    ].join(' ').toLowerCase();
-
-    const hasCpr = cprIds.has(topic.id) || fullText.includes('cpr') || fullText.includes('ép tim');
-    widget.hidden = !hasCpr;
-    if (!hasCpr) return;
+    if (!toggleBtn || !indicator || !counterEl) return;
 
     const BPM = 110; // Khuyến cáo AHA/ERC: 100 - 120 nhịp/phút
     const INTERVAL_MS = Math.round(60000 / BPM);
@@ -478,6 +478,51 @@
   }
 
   /**
+   * Bơm động 2 component CPR (CPR_METRONOME_HTML & CPR_TABLE_HTML) từ js/components/detail.js
+   * chỉ khi isCprTopic(topic) === true; các bài không phải CPR sẽ giữ 2 slot trống và ẩn hoàn toàn.
+   * @param {Object} topic
+   */
+  function renderCprComponents(topic) {
+    const hasCpr = isCprTopic(topic);
+    const metronomeSlot = document.getElementById('cpr-metronome-slot');
+    const tableSlot = document.getElementById('cpr-table-slot');
+
+    if (metronomeSlot) {
+      if (hasCpr) {
+        if (!metronomeSlot.dataset.mounted && window.MedFAComponents?.CPR_METRONOME_HTML) {
+          metronomeSlot.innerHTML = window.MedFAComponents.CPR_METRONOME_HTML;
+          metronomeSlot.dataset.mounted = 'true';
+        }
+        metronomeSlot.hidden = false;
+        window.I18n?.applyTranslations(metronomeSlot);
+        if (!metronomeInitialized) {
+          initCprMetronome();
+          metronomeInitialized = true;
+        }
+      } else {
+        metronomeSlot.hidden = true;
+        metronomeSlot.innerHTML = '';
+        delete metronomeSlot.dataset.mounted;
+      }
+    }
+
+    if (tableSlot) {
+      if (hasCpr) {
+        if (!tableSlot.dataset.mounted && window.MedFAComponents?.CPR_TABLE_HTML) {
+          tableSlot.innerHTML = window.MedFAComponents.CPR_TABLE_HTML;
+          tableSlot.dataset.mounted = 'true';
+        }
+        tableSlot.hidden = false;
+        window.I18n?.applyTranslations(tableSlot);
+      } else {
+        tableSlot.hidden = true;
+        tableSlot.innerHTML = '';
+        delete tableSlot.dataset.mounted;
+      }
+    }
+  }
+
+  /**
    * Điểm khởi chạy chính của trang Chi tiết tình huống
    */
   let metronomeInitialized = false;
@@ -487,17 +532,14 @@
     const revision = ++renderRevision;
     const urlParams = new URLSearchParams(window.location.search);
     const topicId = urlParams.get('id') || 'hoc-di-vat';
-    const [allTopics, disclaimerMarkup] = await Promise.all([
-      window.DataLoader?.loadTopics(),
-      loadMedicalDisclaimer()
-    ]);
+    const allTopics = await window.DataLoader?.loadTopics();
     const topic = Array.isArray(allTopics)
       ? allTopics.find(t => t.id === topicId)
       : await window.DataLoader?.getTopicById(topicId);
     const matchesTopic = topic?.id === topicId;
 
     if (revision !== renderRevision) return;
-    renderMedicalDisclaimer(disclaimerMarkup, matchesTopic ? topic : null);
+    renderMedicalDisclaimer(matchesTopic ? topic : null);
 
     if (!matchesTopic || !topic) {
       const title = window.t ? t('detail.unavailableTitle') : 'Chủ đề hiện không khả dụng';
@@ -598,34 +640,7 @@
 
     renderTopicTimeline(topic);
     renderTopicVideo(topic);
-    if (!metronomeInitialized) {
-      initCprMetronome(topic);
-      metronomeInitialized = true;
-    }
-
-    // Hiển thị bảng thông số CPR chỉ với các tình huống liên quan (Item 5)
-    const cprTableSection = document.getElementById('detail-cpr-table-section');
-    if (cprTableSection) {
-      const cprTopicIds = new Set([
-        'ngung-tuan-hoan-cpr',
-        'hoi-sinh-tim-phoi-nguoi-lon',
-        'duoi-nuoc-o-tre-em',
-        'dien-giat',
-        'hoc-di-vat',
-        'hoc-di-vat-o-tre-em'
-      ]);
-      const topicText = [
-        topic.title || '',
-        topic.lead || '',
-        ...(Array.isArray(topic.steps) ? topic.steps.map(s => `${s.title || ''} ${s.desc || ''}`) : [])
-      ].join(' ').toLowerCase();
-      const hasCpr = cprTopicIds.has(topic.id) ||
-        topicText.includes('cpr') ||
-        topicText.includes('ép tim') ||
-        topicText.includes('hồi sinh tim phổi');
-      cprTableSection.hidden = !hasCpr;
-    }
-
+    renderCprComponents(topic);
     renderRelatedTopics(topic, allTopics);
 
     const alertEl = document.getElementById('detail-alert-text');
@@ -634,40 +649,18 @@
     }
 
     const stepsContainer = document.getElementById('detail-steps-container');
-    if (stepsContainer && Array.isArray(topic.steps) && topic.steps.length > 0) {
-      stepsContainer.innerHTML = topic.steps.map(s => `
-        <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-lg flex items-center justify-center shrink-0">
-              ${escapeTopicHTML(s.stepNumber)}
-            </div>
-            <div class="flex-1">
-              <h3 class="text-base md:text-lg font-bold text-on-surface">${escapeTopicHTML(s.title)}</h3>
-              <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">${escapeTopicHTML(s.desc)}</p>
-            </div>
-          </div>
-        </div>
-      `).join('');
+    if (stepsContainer && Array.isArray(topic.steps) && topic.steps.length > 0 && window.MedFAComponents?.createStepCardHTML) {
+      stepsContainer.innerHTML = topic.steps.map(window.MedFAComponents.createStepCardHTML).join('');
     }
 
     const dosList = document.getElementById('detail-dos-list');
-    if (dosList && Array.isArray(topic.dos) && topic.dos.length > 0) {
-      dosList.innerHTML = topic.dos.map(item => `
-        <li class="flex items-start gap-2">
-          <span class="text-emerald-600 font-bold">•</span>
-          <span>${escapeTopicHTML(item)}</span>
-        </li>
-      `).join('');
+    if (dosList && Array.isArray(topic.dos) && topic.dos.length > 0 && window.MedFAComponents?.createBulletListHTML) {
+      dosList.innerHTML = window.MedFAComponents.createBulletListHTML(topic.dos, 'text-emerald-600');
     }
 
     const dontsList = document.getElementById('detail-donts-list');
-    if (dontsList && Array.isArray(topic.donts) && topic.donts.length > 0) {
-      dontsList.innerHTML = topic.donts.map(item => `
-        <li class="flex items-start gap-2">
-          <span class="text-rose-600 font-bold">•</span>
-          <span>${escapeTopicHTML(item)}</span>
-        </li>
-      `).join('');
+    if (dontsList && Array.isArray(topic.donts) && topic.donts.length > 0 && window.MedFAComponents?.createBulletListHTML) {
+      dontsList.innerHTML = window.MedFAComponents.createBulletListHTML(topic.donts, 'text-rose-600');
     }
 
     const guidanceEl = document.getElementById('topic-guidance');

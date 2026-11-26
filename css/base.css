@@ -148,7 +148,7 @@ cite {
   color: var(--color-on-surface-variant, #43474e);
 }
 
-/* Superscript and Subscript (Lab 1 Bài 1 & Lab 2 Bài 2) */
+/* Superscript and Subscript */
 sup, sub {
   font-size: 75%;
   line-height: 0;

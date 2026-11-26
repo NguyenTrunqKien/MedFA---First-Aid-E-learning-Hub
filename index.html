@@ -76,7 +76,7 @@
 
       <!-- SECTION 1: HERO SECTION -->
       <section class="relative w-full min-h-[480px] md:min-h-[540px] lg:min-h-[580px] flex items-center overflow-hidden bg-[#0A192F]">
-        <!-- Responsive Picture (Lab 2 Bài 1) -->
+        <!-- Responsive Picture -->
         <picture class="absolute inset-0 w-full h-full pointer-events-none">
           <source media="(max-width: 639px)" srcset="images/hero-cpr-sm.webp">
           <img alt="Huấn luyện thực hành sơ cấp cứu CPR hồi sinh tim phổi trên mô hình" data-i18n-alt="home.heroAlt" class="w-full h-full object-cover object-center" src="images/hero-cpr.webp" fetchpriority="high" width="512" height="379">
@@ -102,15 +102,11 @@
               Trang bị kỹ năng phản xạ sơ cấp cứu chuẩn y khoa quốc tế cho mọi gia đình, học sinh và cộng đồng Việt Nam. Đơn giản, thực tế và hoàn toàn miễn phí.
             </p>
 
-            <!-- 2 CTA Buttons -->
+            <!-- Primary CTA Button -->
             <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-space-lg w-full hero-cta-buttons">
               <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#E63946] hover:bg-[#D62839] text-white font-bold shadow-lg shadow-red-500/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0" href="topics.html">
                 <span class="material-symbols-outlined text-[22px]">how_to_reg</span><span data-i18n="home.heroCtaExplore">Tra cứu tình huống ngay</span>
               </a>
-              <button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/60 text-white font-semibold transition-all duration-200" onclick="openDemoModal()" type="button">
-                <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                <span data-i18n="home.heroCtaVideo">Xem video hướng dẫn</span>
-              </button>
             </div>
 
             <!-- Trust Proof -->
@@ -146,68 +142,20 @@
             <div class="w-20 h-1 bg-secondary rounded-full mt-2"></div>
           </div>
 
-          <!-- 3-Column Stats Grid -->
-          <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-lg">
-            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
-              <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-secondary text-[30px]">emergency</span>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-on-surface leading-none mb-1">&gt; 3.000</div>
-                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat1Desc">Ca tai nạn thương tích trung bình mỗi ngày tại Việt Nam</p>
-              </div>
-            </li>
-
-            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
-              <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-secondary text-[30px]">sentiment_very_dissatisfied</span>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-on-surface leading-none mb-1">&gt; 80</div>
-                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat2Desc">Người tử vong mỗi ngày do các loại tai nạn thương tích</p>
-              </div>
-            </li>
-
-            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
-              <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-secondary text-[30px]">local_hospital</span>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-on-surface leading-none mb-1">200.000</div>
-                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat3Desc">Ca đột quỵ mỗi năm, chỉ 23,2% kịp đến viện trong giờ vàng</p>
-              </div>
-            </li>
-
-            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
-              <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-secondary text-[30px]">directions_car</span>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-on-surface leading-none mb-1">&lt; 1%</div>
-                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat4Desc">Dân số Việt Nam từng được đào tạo sơ cấp cứu bài bản</p>
-              </div>
-            </li>
-
-            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
-              <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-secondary text-[30px]">child_care</span>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-on-surface leading-none mb-1">28</div>
-                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat5Desc">Người tử vong mỗi ngày do tai nạn giao thông trên cả nước</p>
-              </div>
-            </li>
-
-            <li class="flex items-center gap-space-md p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors shadow-sm">
-              <div class="w-14 h-14 rounded-full bg-secondary-container/40 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-secondary text-[30px]">ecg_heart</span>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-on-surface leading-none mb-1">&gt; 50%</div>
-                <p class="text-sm text-on-surface-variant font-medium" data-i18n="home.stat6Desc">Ca sơ cứu ban đầu tại hiện trường do người đi đường thực hiện</p>
-              </div>
-            </li>
-          </ul>
+          <!-- Lưới 6 thẻ Thống kê: Khai báo dữ liệu JSON cho component 'stat-card'
+               -> js/main.js (injectSharedComponents) gọi MedFAComponents.renderComponentList()
+               -> render bằng hàm createStatCardHTML() trong js/components/cards.js -->
+          <ul id="home-stats-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-lg"></ul>
+          <script type="application/json" data-component="stat-card" data-target="home-stats-grid">
+            [
+              { "icon": "emergency", "value": "> 3.000", "descKey": "home.stat1Desc", "descDefault": "Ca tai nạn thương tích trung bình mỗi ngày tại Việt Nam" },
+              { "icon": "sentiment_very_dissatisfied", "value": "> 80", "descKey": "home.stat2Desc", "descDefault": "Người tử vong mỗi ngày do các loại tai nạn thương tích" },
+              { "icon": "local_hospital", "value": "200.000", "descKey": "home.stat3Desc", "descDefault": "Ca đột quỵ mỗi năm, chỉ 23,2% kịp đến viện trong giờ vàng" },
+              { "icon": "directions_car", "value": "< 1%", "descKey": "home.stat4Desc", "descDefault": "Dân số Việt Nam từng được đào tạo sơ cấp cứu bài bản" },
+              { "icon": "child_care", "value": "28", "descKey": "home.stat5Desc", "descDefault": "Người tử vong mỗi ngày do tai nạn giao thông trên cả nước" },
+              { "icon": "ecg_heart", "value": "> 50%", "descKey": "home.stat6Desc", "descDefault": "Ca sơ cứu ban đầu tại hiện trường do người đi đường thực hiện" }
+            ]
+          </script>
           <p class="text-center text-xs md:text-[13px] text-on-surface-variant/70 mt-6" data-i18n="home.statSource">
             Nguồn tham khảo: Bộ Y tế, Ban An toàn giao thông Quốc gia, Hội Chữ thập đỏ Việt Nam.
           </p>
@@ -266,11 +214,8 @@
 
       <!-- SECTION 3: CALL TO ACTION BANNER -->
       <section class="w-full bg-gradient-to-r from-[#0D9488] to-[#1E40AF] py-20 px-margin-sm lg:px-margin relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-          <svg class="w-full max-w-4xl h-48" fill="none" stroke="currentColor" viewBox="0 0 1000 200">
-            <path d="M0,100 L250,100 L280,40 L310,170 L340,80 L360,110 L380,100 L650,100 L680,30 L710,180 L740,70 L760,110 L780,100 L1000,100" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
-          </svg>
-        </div>
+        <!-- Nền SVG đường nhịp tim ECG: js/main.js bơm HEARTBEAT_BG_SVG từ js/components/cards.js -->
+        <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none" data-component="heartbeat-bg"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
           <div class="w-16 h-16 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm flex items-center justify-center mb-space-md">
             <span class="material-symbols-outlined text-on-primary text-[32px]">monitor_heart</span>
@@ -300,47 +245,20 @@
               <p class="text-lg text-secondary font-medium mb-space-lg" data-i18n="home.prioritySubtitle">
                 Sự cố sức khỏe có thể ập đến bất ngờ, không có dấu hiệu báo trước. Bạn sẽ làm gì nếu...
               </p>
-              <div class="flex flex-col gap-space-md w-full">
-                <!-- Situation 1 -->
-                <article class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/20">
-                  <div class="w-12 h-12 rounded-lg bg-secondary-container/50 flex items-center justify-center shrink-0 mt-1">
-                    <span class="material-symbols-outlined text-secondary text-[24px]">child_care</span>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <h3 class="text-lg font-bold text-on-surface" data-i18n="home.priChokingTitle">Trẻ bị hóc dị vật, tắc đường thở</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="home.priChokingDesc">
-                      Trẻ ngậm kẹo hoặc đồ chơi bị tắc thở. Não bắt đầu tổn thương không hồi phục sau 4 phút thiếu oxy nếu không xử lý đúng kỹ thuật.
-                    </p>
-                  </div>
-                </article>
-                <!-- Situation 2 -->
-                <article class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/20">
-                  <div class="w-12 h-12 rounded-lg bg-secondary-container/50 flex items-center justify-center shrink-0 mt-1">
-                    <span class="material-symbols-outlined text-secondary text-[24px]">ambulance</span>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <h3 class="text-lg font-bold text-on-surface" data-i18n="home.priStrokeTitle">Đột quỵ & Tai biến mạch máu não</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="home.priStrokeDesc">
-                      Thời gian vàng để nhận biết sớm theo quy tắc FAST và chuyển viện an toàn để cứu tế bào não trước khi di chứng vĩnh viễn xảy ra.
-                    </p>
-                  </div>
-                </article>
-                <!-- Situation 3 -->
-                <article class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/20">
-                  <div class="w-12 h-12 rounded-lg bg-secondary-container/50 flex items-center justify-center shrink-0 mt-1">
-                    <span class="material-symbols-outlined text-secondary text-[24px]">local_fire_department</span>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <h3 class="text-lg font-bold text-on-surface" data-i18n="home.priBurnsTitle">Bỏng nước sôi, hóa chất và lửa nặng</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="home.priBurnsDesc">
-                      Sơ cứu hạ nhiệt dưới vòi nước sạch chảy đúng cách, khuyến cáo đặc biệt tránh các mẹo dân gian chưa kiểm chứng (nước mắm, kem đánh răng, mỡ trăn).
-                    </p>
-                  </div>
-                </article>
-              </div>
+              <!-- 3 thẻ Tình huống ưu tiên gia đình: Khai báo dữ liệu JSON cho component 'priority-card'
+                   -> js/main.js gọi MedFAComponents.renderComponentList()
+                   -> render bằng hàm createPrioritySituationCardHTML() trong js/components/cards.js -->
+              <div id="home-priority-situations" class="flex flex-col gap-space-md w-full"></div>
+              <script type="application/json" data-component="priority-card" data-target="home-priority-situations">
+                [
+                  { "icon": "child_care", "titleKey": "home.priChokingTitle", "titleDefault": "Trẻ bị hóc dị vật, tắc đường thở", "descKey": "home.priChokingDesc", "descDefault": "Trẻ ngậm kẹo hoặc đồ chơi bị tắc thở. Não bắt đầu tổn thương không hồi phục sau 4 phút thiếu oxy nếu không xử lý đúng kỹ thuật." },
+                  { "icon": "ambulance", "titleKey": "home.priStrokeTitle", "titleDefault": "Đột quỵ & Tai biến mạch máu não", "descKey": "home.priStrokeDesc", "descDefault": "Thời gian vàng để nhận biết sớm theo quy tắc FAST và chuyển viện an toàn để cứu tế bào não trước khi di chứng vĩnh viễn xảy ra." },
+                  { "icon": "local_fire_department", "titleKey": "home.priBurnsTitle", "titleDefault": "Bỏng nước sôi, hóa chất và lửa nặng", "descKey": "home.priBurnsDesc", "descDefault": "Sơ cứu hạ nhiệt dưới vòi nước sạch chảy đúng cách, khuyến cáo đặc biệt tránh các mẹo dân gian chưa kiểm chứng (nước mắm, kem đánh răng, mỡ trăn)." }
+                ]
+              </script>
             </div>
 
-            <!-- Right column image with Responsive Picture (Lab 2 Bài 1) -->
+            <!-- Right column image with Responsive Picture -->
             <div class="lg:col-span-6 relative">
               <div class="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
                 <picture class="w-full h-full">
@@ -363,116 +281,20 @@
             <div class="w-16 h-1 bg-secondary rounded-full mt-2"></div>
           </div>
 
-          <!-- 6-Card Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-            <!-- Situation 1 -->
-            <article class="group p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 shadow-sm flex flex-col justify-between border border-outline-variant/20">
-              <div>
-                <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
-                  <span class="material-symbols-outlined text-secondary text-[24px]">air</span>
-                </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5ChokingTitle">Hóc dị vật & Tắc nghẽn đường thở</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5ChokingDesc">Nghiệm pháp Heimlich cho người lớn, kỹ thuật vỗ lưng ấn ngực cho trẻ sơ sinh và xử lý dị vật đường thở khẩn cấp.</p>
-              </div>
-              <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=hoc-di-vat-o-tre-em">
-                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span>
-                <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <line x1="5" x2="19" y1="12" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Situation 2 -->
-            <article class="group p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 shadow-sm flex flex-col justify-between border border-outline-variant/20">
-              <div>
-                <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
-                  <span class="material-symbols-outlined text-secondary text-[24px]">blood_pressure</span>
-                </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5BleedingTitle">Chảy máu & Kỹ thuật cầm máu</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5BleedingDesc">Kỹ thuật băng ép trực tiếp, chèn ép cầm máu, cố định vết thương sâu và xử trí chảy máu cấp cứu.</p>
-              </div>
-              <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=chay-mau-va-cam-mau">
-                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span>
-                <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <line x1="5" x2="19" y1="12" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Situation 3 -->
-            <article class="group p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 shadow-sm flex flex-col justify-between border border-outline-variant/20">
-              <div>
-                <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
-                  <span class="material-symbols-outlined text-secondary text-[24px]">local_fire_department</span>
-                </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5BurnsTitle">Bỏng nhiệt & Sơ cứu an toàn</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5BurnsDesc">Làm mát vết bỏng bằng nước sạch, băng vô trùng, loại bỏ biến chứng nhiễm trùng và hạ độ sâu tổn thương biểu mô.</p>
-              </div>
-              <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=bong-nhiet">
-                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span>
-                <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <line x1="5" x2="19" y1="12" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Situation 4 -->
-            <article class="group p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 shadow-sm flex flex-col justify-between border border-outline-variant/20">
-              <div>
-                <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
-                  <span class="material-symbols-outlined text-secondary text-[24px]">ecg_heart</span>
-                </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5CprTitle">Hồi sinh tim phổi người lớn CPR & AED</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5CprDesc">Tần số ép tim 100-120 lần/phút, độ sâu chuẩn xác, kết hợp thông khí và vận hành máy sốc tim tự động AED ngoài cộng đồng.</p>
-              </div>
-              <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=hoi-sinh-tim-phoi-nguoi-lon">
-                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span>
-                <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <line x1="5" x2="19" y1="12" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Situation 5 -->
-            <article class="group p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 shadow-sm flex flex-col justify-between border border-outline-variant/20">
-              <div>
-                <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
-                  <span class="material-symbols-outlined text-secondary text-[24px]">psychology</span>
-                </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5StrokeTitle">Nhận biết & Sơ cứu Đột quỵ</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5StrokeDesc">Nhận diện quy tắc FAST (mặt méo, yếu tay, nói khó), gọi 115 khẩn cấp và bảo vệ tính mạng trong giờ vàng.</p>
-              </div>
-              <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=dot-quy">
-                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span>
-                <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <line x1="5" x2="19" y1="12" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Situation 6 -->
-            <article class="group p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 shadow-sm flex flex-col justify-between border border-outline-variant/20">
-              <div>
-                <div class="w-12 h-12 rounded-full bg-secondary-container/50 flex items-center justify-center mb-space-md">
-                  <span class="material-symbols-outlined text-secondary text-[24px]">wb_sunny</span>
-                </div>
-                <h3 class="text-lg font-bold text-on-surface mb-2" data-i18n="home.sec5HeatstrokeTitle">Say nắng, Sốc nhiệt & Đột quỵ nhiệt</h3>
-                <p class="text-sm text-on-surface-variant mb-space-md" data-i18n="home.sec5HeatstrokeDesc">Hạ nhiệt cấp tốc, bù điện giải, nhận diện sụp đổ thân nhiệt ở xứ nhiệt đới và phòng ngừa trụy mạch tuần hoàn.</p>
-              </div>
-              <a class="font-semibold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1.5 self-start" href="topic-detail.html?id=soc-nhiet-say-nang">
-                <span data-i18n="home.viewDetail">Xem hướng dẫn chi tiết</span>
-                <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <line x1="5" x2="19" y1="12" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </article>
-          </div>
+          <!-- Lưới 6 thẻ Tình huống nổi bật: Khai báo dữ liệu JSON cho component 'featured-topic-card'
+               -> js/main.js (injectSharedComponents) gọi MedFAComponents.renderComponentList()
+               -> render bằng hàm createFeaturedTopicCardHTML() trong js/components/cards.js -->
+          <div id="home-featured-topics" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter min-h-[420px]"></div>
+          <script type="application/json" data-component="featured-topic-card" data-target="home-featured-topics">
+            [
+              { "id": "hoc-di-vat-o-tre-em", "icon": "air", "titleKey": "home.sec5ChokingTitle", "titleDefault": "Hóc dị vật & Tắc nghẽn đường thở", "descKey": "home.sec5ChokingDesc", "descDefault": "Nghiệm pháp Heimlich cho người lớn, kỹ thuật vỗ lưng ấn ngực cho trẻ sơ sinh và xử lý dị vật đường thở khẩn cấp." },
+              { "id": "chay-mau-va-cam-mau", "icon": "blood_pressure", "titleKey": "home.sec5BleedingTitle", "titleDefault": "Chảy máu & Kỹ thuật cầm máu", "descKey": "home.sec5BleedingDesc", "descDefault": "Kỹ thuật băng ép trực tiếp, chèn ép cầm máu, cố định vết thương sâu và xử trí chảy máu cấp cứu." },
+              { "id": "bong-nhiet", "icon": "local_fire_department", "titleKey": "home.sec5BurnsTitle", "titleDefault": "Bỏng nhiệt & Sơ cứu an toàn", "descKey": "home.sec5BurnsDesc", "descDefault": "Làm mát vết bỏng bằng nước sạch, băng vô trùng, loại bỏ biến chứng nhiễm trùng và hạ độ sâu tổn thương biểu mô." },
+              { "id": "hoi-sinh-tim-phoi-nguoi-lon", "icon": "ecg_heart", "titleKey": "home.sec5CprTitle", "titleDefault": "Hồi sinh tim phổi người lớn CPR & AED", "descKey": "home.sec5CprDesc", "descDefault": "Tần số ép tim 100-120 lần/phút, độ sâu chuẩn xác, kết hợp thông khí và vận hành máy sốc tim tự động AED ngoài cộng đồng." },
+              { "id": "dot-quy", "icon": "psychology", "titleKey": "home.sec5StrokeTitle", "titleDefault": "Nhận biết & Sơ cứu Đột quỵ", "descKey": "home.sec5StrokeDesc", "descDefault": "Nhận diện quy tắc FAST (mặt méo, yếu tay, nói khó), gọi 115 khẩn cấp và bảo vệ tính mạng trong giờ vàng." },
+              { "id": "soc-nhiet-say-nang", "icon": "wb_sunny", "titleKey": "home.sec5HeatstrokeTitle", "titleDefault": "Say nắng, Sốc nhiệt & Đột quỵ nhiệt", "descKey": "home.sec5HeatstrokeDesc", "descDefault": "Hạ nhiệt cấp tốc, bù điện giải, nhận diện sụp đổ thân nhiệt ở xứ nhiệt đới và phòng ngừa trụy mạch tuần hoàn." }
+            ]
+          </script>
         </div>
       </section>
 
@@ -502,114 +324,6 @@
     </div>
   </main>
 
-  <!-- Interactive Demo Modal -->
-  <div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4" id="demo-modal" onclick="if (event.target === this) closeDemoModal()">
-    <div class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
-      <button aria-label="Đóng cửa sổ" data-i18n-aria-label="common.closeModal" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="closeDemoModal()">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary">
-          <span class="material-symbols-outlined">smart_display</span>
-        </div>
-        <div>
-          <h4 class="font-bold text-on-surface" data-i18n="home.demoModalTitle">Video hướng dẫn: Ép tim CPR & Xử lý hóc dị vật</h4>
-          <p class="text-xs text-on-surface-variant" data-i18n="home.demoModalSub">Tổng quan chương trình sơ cấp cứu nền tảng MedFA</p>
-        </div>
-      </div>
-
-      <!-- Quick Video Switcher Tabs -->
-      <div class="flex flex-wrap gap-2 mb-3">
-        <button type="button" id="demo-tab-cpr" onclick="switchDemoVideo('cpr')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-on-primary transition-colors" data-i18n="home.demoTabCpr">
-          Ép tim CPR (Ngừng tuần hoàn)
-        </button>
-        <button type="button" id="demo-tab-choking" onclick="switchDemoVideo('choking')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" data-i18n="home.demoTabChoking">
-          Xử lý hóc dị vật (Heimlich)
-        </button>
-      </div>
-
-      <div class="aspect-video bg-surface-container-highest rounded-xl relative overflow-hidden">
-        <iframe
-          id="demo-video-iframe"
-          class="w-full h-full"
-          src=""
-          title="Video hướng dẫn sơ cấp cứu MedFA"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <a id="demo-youtube-link" href="https://www.youtube.com/watch?v=e7GsqN19s1g" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-secondary hover:text-primary inline-flex items-center gap-1">
-          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          <span data-i18n="home.demoOpenYoutube">Mở trực tiếp trên YouTube</span>
-        </a>
-        <div class="flex justify-end gap-3">
-          <button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" onclick="closeDemoModal()" data-i18n="home.demoClose">Đóng</button>
-          <a class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-on-primary font-semibold" href="topics.html" data-i18n="home.demoStart">Bắt đầu tra cứu ngay</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const DEMO_VIDEOS = {
-        cpr: {
-          embed: 'https://www.youtube.com/embed/e7GsqN19s1g?rel=0',
-          watch: 'https://www.youtube.com/watch?v=e7GsqN19s1g'
-        },
-        choking: {
-          embed: 'https://www.youtube.com/embed/HS4_SPZdp5g?rel=0',
-          watch: 'https://www.youtube.com/watch?v=HS4_SPZdp5g'
-        }
-      };
-      let currentDemoKey = 'cpr';
-
-      window.switchDemoVideo = function (key) {
-        if (!DEMO_VIDEOS[key]) return;
-        currentDemoKey = key;
-        const iframe = document.getElementById('demo-video-iframe');
-        const ytLink = document.getElementById('demo-youtube-link');
-        const tabCpr = document.getElementById('demo-tab-cpr');
-        const tabChoking = document.getElementById('demo-tab-choking');
-
-        if (iframe) iframe.src = DEMO_VIDEOS[key].embed;
-        if (ytLink) ytLink.href = DEMO_VIDEOS[key].watch;
-
-        const activeCls = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-on-primary transition-colors';
-        const idleCls = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors';
-        if (tabCpr) tabCpr.className = key === 'cpr' ? activeCls : idleCls;
-        if (tabChoking) tabChoking.className = key === 'choking' ? activeCls : idleCls;
-      };
-
-      window.openDemoModal = function () {
-        const modal = document.getElementById('demo-modal');
-        if (!modal) return;
-        modal.classList.remove('hidden');
-        window.switchDemoVideo(currentDemoKey);
-      };
-
-      window.closeDemoModal = function () {
-        const modal = document.getElementById('demo-modal');
-        const iframe = document.getElementById('demo-video-iframe');
-        if (modal) modal.classList.add('hidden');
-        if (iframe) iframe.src = '';
-      };
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          const modal = document.getElementById('demo-modal');
-          if (modal && !modal.classList.contains('hidden')) {
-            window.closeDemoModal();
-          }
-        }
-      });
-    })();
-  </script>
-
   <!-- Footer Placeholder: Injected via js/main.js -->
   <div id="footer-placeholder"></div>
 
@@ -619,6 +333,8 @@
   <script src="js/seo-config.js" defer></script>
   <script src="js/storage.js" defer></script>
   <script src="js/chatbot-gemini.js" defer></script>
+  <script src="js/components/layout.js" defer></script>
+  <script src="js/components/cards.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

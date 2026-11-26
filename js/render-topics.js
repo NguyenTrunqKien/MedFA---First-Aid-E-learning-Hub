@@ -11,69 +11,16 @@ const TopicsRenderer = (() => {
   let currentSort = 'popular';
 
   /**
-   * Escape ký tự HTML đặc biệt để ngăn XSS khi chèn dữ liệu JSON vào template string
-   */
-  function escapeHTML(str) {
-    return String(str || '').replace(/[&<>'"]/g, tag => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
-    }[tag] || tag));
-  }
-
-  /**
-   * Template literal for a single first aid topic card
-   * Extracted from Stitch mock HTML and made fully dynamic
-   * @param {Object} topic 
-   * @returns {string} HTML string
+   * Tạo HTML cho 1 thẻ tình huống sơ cấp cứu trên trang topics.html
+   * Ủy quyền về hàm MedFAComponents.createTopicCardHTML() trong js/components/cards.js
+   * @param {Object} topic
+   * @returns {string}
    */
   function createTopicCardHTML(topic) {
-    const safeId = encodeURIComponent(topic.id);
-    const viewText = topic.needsMedicalReview
-      ? (window.t ? t('topics.viewReviewStatus') : 'Xem trạng thái rà soát')
-      : (window.t ? t('topics.viewGuide') : 'Xem hướng dẫn');
-
-    return `
-      <article 
-        class="first-aid-card group bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-[0_1px_3px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_24px_-4px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer border border-outline-variant/20 h-full"
-        data-id="${escapeHTML(topic.id)}"
-        data-category="${escapeHTML(topic.category)}"
-        data-critical="${escapeHTML(topic.criticalLevel)}"
-        onclick="window.location.href='topic-detail.html?id=${safeId}'"
-      >
-        <div>
-          <div class="flex items-center justify-between">
-            <!-- Icon -->
-            <div class="w-12 h-12 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors duration-300 shadow-sm">
-              ${topic.iconSvg || '<span class="material-symbols-outlined text-[24px]">medical_services</span>'}
-            </div>
-          </div>
-
-          <!-- Title (Semantic H2 for Collection Items) -->
-          <h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-space-md font-bold">
-            ${escapeHTML(topic.title)}
-          </h2>
-
-          <!-- Short Description -->
-          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-space-xs leading-relaxed">
-            ${escapeHTML(topic.shortDesc)}
-          </p>
-        </div>
-
-        <!-- Footer / CTA -->
-        <div class="mt-space-lg pt-space-md flex items-center justify-between bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-3 rounded-b-xl border-t border-outline-variant/10">
-          <a href="topic-detail.html?id=${safeId}" onclick="event.stopPropagation();" class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary group-hover:text-secondary-fixed-variant font-bold transition-colors">
-            ${viewText}
-            <svg aria-hidden="true" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <line x1="5" x2="19" y1="12" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
-            <span class="material-symbols-outlined text-[16px]">schedule</span>
-            <span>${escapeHTML(topic.readTime || (window.t ? t('topics.readTimeDefault') : '3 phút'))}</span>
-          </div>
-        </div>
-      </article>
-    `;
+    if (window.MedFAComponents && typeof window.MedFAComponents.createTopicCardHTML === 'function') {
+      return window.MedFAComponents.createTopicCardHTML(topic);
+    }
+    return '';
   }
 
   /**
@@ -154,6 +101,11 @@ const TopicsRenderer = (() => {
   async function init() {
     const container = document.getElementById('topics-container');
     if (!container) return; // Not on topics.html
+
+    // Hiển thị nhanh 6 thẻ Skeleton Loading bằng createSkeletonCardsHTML() từ js/components/cards.js trong lúc tải data/topics.json
+    if (container.children.length === 0 && window.MedFAComponents?.createSkeletonCardsHTML) {
+      container.innerHTML = window.MedFAComponents.createSkeletonCardsHTML(6);
+    }
 
     // Load initial data
     if (window.DataLoader) {
