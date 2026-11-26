@@ -102,15 +102,11 @@
               Trang bị kỹ năng phản xạ sơ cấp cứu chuẩn y khoa quốc tế cho mọi gia đình, học sinh và cộng đồng Việt Nam. Đơn giản, thực tế và hoàn toàn miễn phí.
             </p>
 
-            <!-- 2 CTA Buttons -->
+            <!-- Primary CTA Button -->
             <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-space-lg w-full hero-cta-buttons">
               <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#E63946] hover:bg-[#D62839] text-white font-bold shadow-lg shadow-red-500/30 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0" href="topics.html">
                 <span class="material-symbols-outlined text-[22px]">how_to_reg</span><span data-i18n="home.heroCtaExplore">Tra cứu tình huống ngay</span>
               </a>
-              <button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/60 text-white font-semibold transition-all duration-200" onclick="openDemoModal()" type="button">
-                <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
-                <span data-i18n="home.heroCtaVideo">Xem video hướng dẫn</span>
-              </button>
             </div>
 
             <!-- Trust Proof -->
@@ -501,114 +497,6 @@
       </section>
     </div>
   </main>
-
-  <!-- Interactive Demo Modal -->
-  <div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 backdrop-blur-sm p-4" id="demo-modal" onclick="if (event.target === this) closeDemoModal()">
-    <div class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
-      <button aria-label="Đóng cửa sổ" data-i18n-aria-label="common.closeModal" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface" onclick="closeDemoModal()">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary">
-          <span class="material-symbols-outlined">smart_display</span>
-        </div>
-        <div>
-          <h4 class="font-bold text-on-surface" data-i18n="home.demoModalTitle">Video hướng dẫn: Ép tim CPR & Xử lý hóc dị vật</h4>
-          <p class="text-xs text-on-surface-variant" data-i18n="home.demoModalSub">Tổng quan chương trình sơ cấp cứu nền tảng MedFA</p>
-        </div>
-      </div>
-
-      <!-- Quick Video Switcher Tabs -->
-      <div class="flex flex-wrap gap-2 mb-3">
-        <button type="button" id="demo-tab-cpr" onclick="switchDemoVideo('cpr')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-on-primary transition-colors" data-i18n="home.demoTabCpr">
-          Ép tim CPR (Ngừng tuần hoàn)
-        </button>
-        <button type="button" id="demo-tab-choking" onclick="switchDemoVideo('choking')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" data-i18n="home.demoTabChoking">
-          Xử lý hóc dị vật (Heimlich)
-        </button>
-      </div>
-
-      <div class="aspect-video bg-surface-container-highest rounded-xl relative overflow-hidden">
-        <iframe
-          id="demo-video-iframe"
-          class="w-full h-full"
-          src=""
-          title="Video hướng dẫn sơ cấp cứu MedFA"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <a id="demo-youtube-link" href="https://www.youtube.com/watch?v=e7GsqN19s1g" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-secondary hover:text-primary inline-flex items-center gap-1">
-          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          <span data-i18n="home.demoOpenYoutube">Mở trực tiếp trên YouTube</span>
-        </a>
-        <div class="flex justify-end gap-3">
-          <button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" onclick="closeDemoModal()" data-i18n="home.demoClose">Đóng</button>
-          <a class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-dark text-on-primary font-semibold" href="topics.html" data-i18n="home.demoStart">Bắt đầu tra cứu ngay</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const DEMO_VIDEOS = {
-        cpr: {
-          embed: 'https://www.youtube.com/embed/e7GsqN19s1g?rel=0',
-          watch: 'https://www.youtube.com/watch?v=e7GsqN19s1g'
-        },
-        choking: {
-          embed: 'https://www.youtube.com/embed/HS4_SPZdp5g?rel=0',
-          watch: 'https://www.youtube.com/watch?v=HS4_SPZdp5g'
-        }
-      };
-      let currentDemoKey = 'cpr';
-
-      window.switchDemoVideo = function (key) {
-        if (!DEMO_VIDEOS[key]) return;
-        currentDemoKey = key;
-        const iframe = document.getElementById('demo-video-iframe');
-        const ytLink = document.getElementById('demo-youtube-link');
-        const tabCpr = document.getElementById('demo-tab-cpr');
-        const tabChoking = document.getElementById('demo-tab-choking');
-
-        if (iframe) iframe.src = DEMO_VIDEOS[key].embed;
-        if (ytLink) ytLink.href = DEMO_VIDEOS[key].watch;
-
-        const activeCls = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-on-primary transition-colors';
-        const idleCls = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors';
-        if (tabCpr) tabCpr.className = key === 'cpr' ? activeCls : idleCls;
-        if (tabChoking) tabChoking.className = key === 'choking' ? activeCls : idleCls;
-      };
-
-      window.openDemoModal = function () {
-        const modal = document.getElementById('demo-modal');
-        if (!modal) return;
-        modal.classList.remove('hidden');
-        window.switchDemoVideo(currentDemoKey);
-      };
-
-      window.closeDemoModal = function () {
-        const modal = document.getElementById('demo-modal');
-        const iframe = document.getElementById('demo-video-iframe');
-        if (modal) modal.classList.add('hidden');
-        if (iframe) iframe.src = '';
-      };
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          const modal = document.getElementById('demo-modal');
-          if (modal && !modal.classList.contains('hidden')) {
-            window.closeDemoModal();
-          }
-        }
-      });
-    })();
-  </script>
 
   <!-- Footer Placeholder: Injected via js/main.js -->
   <div id="footer-placeholder"></div>
