@@ -1,6 +1,6 @@
 # MedFA – Medical First Aid E-Learning Hub
 
-MedFA là website học sơ cấp cứu bằng tiếng Việt và tiếng Anh. Người học có thể tra cứu tình huống, ôn tập bằng thẻ ghi nhớ, làm trắc nghiệm và gửi góp ý cho nhóm qua trang Contact.
+MedFA là website học sơ cấp cứu bằng tiếng Việt và tiếng Anh. Người học có thể tra cứu tình huống, ôn tập bằng thẻ ghi nhớ, làm trắc nghiệm, tìm cơ sở y tế gần mình và gửi góp ý cho nhóm qua trang Contact.
 
 Đây là đồ án môn **IE104 – Internet và Công nghệ Web**, Trường Đại học Công nghệ Thông tin, ĐHQG-HCM. Giảng viên hướng dẫn là **ThS. Võ Tấn Khoa**.
 
@@ -23,6 +23,7 @@ Mở [MedFA trên localhost](http://127.0.0.1:8000/). Bạn cũng có thể mở
 | [Flashcards](flashcards.html) | Ôn kiến thức bằng thẻ hai mặt |
 | [Trắc nghiệm](quiz.html) | Trả lời câu hỏi tình huống và xem giải thích |
 | [Liên hệ](contact.html) | Gửi góp ý cho nhóm qua Google Form ngay trên website |
+| [Cơ sở y tế](nearby-care.html) | Tìm bệnh viện, trạm y tế và phòng khám quanh vị trí hiện tại hoặc một điểm trên bản đồ, xem chi tiết và mở chỉ đường |
 | [Tác động xã hội](social-impact.html) và [giới thiệu](about.html) | Tìm hiểu mục tiêu cộng đồng, dự án và đội ngũ |
 
 ## Tích hợp dịch vụ
@@ -44,7 +45,9 @@ Mở [MedFA trên localhost](http://127.0.0.1:8000/). Bạn cũng có thể mở
 
 ## Bản đồ cơ sở y tế
 
-Mở `nearby-care.html` qua localhost hoặc HTTPS để dùng định vị. Bản mặc định dùng Leaflet và tìm trên thiết bị trong danh mục [cơ sở y tế Việt Nam](data/nearby-care-vn.json). Danh mục được lọc từ [bản xuất HOT/HDX](https://data.humdata.org/dataset/hotosm_vnm_health_facilities), dữ liệu ngày 15/11/2026, © OpenStreetMap contributors, phân phối theo [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Tọa độ cơ sở dạng vùng là tâm khung bao. Khi danh mục thiếu kết quả trong bán kính hoặc vị trí nằm ngoài phạm vi dữ liệu, trang tìm qua Overpass với thời gian chờ tối đa 8 giây. Để dùng Google, bật Maps JavaScript API và Places API (New), sau đó điền khóa **dành cho trình duyệt** vào thẻ meta `google-maps-browser-key` trong trang này. Giới hạn khóa theo tên miền, hai API trên và thiết lập hạn mức trong Google Cloud. Với dữ liệu Google, liên kết chi tiết dùng Place ID. Với OpenStreetMap, liên kết mở ghim theo đúng kinh độ và vĩ độ đã lưu của cơ sở.
+Mở trang qua localhost hoặc HTTPS và bấm **Dùng vị trí hiện tại** hoặc **Chọn điểm trên bản đồ**. Trang hiển thị tối đa 10 cơ sở gần nhất trong bán kính 5 km, có thể mở rộng đến 10 km. Bấm tên một cơ sở để xem ghim và mở chỉ đường trên Google Maps.
+
+Bản mặc định dùng Leaflet và dữ liệu © OpenStreetMap contributors, không cần khóa Google. Xem nguồn dữ liệu, giấy phép, cách bật Google Maps tùy chọn và các bước kiểm tra trong [tài liệu trang Cơ sở y tế](docs/knowledge/NEARBY_CARE.md).
 
 ## Nhóm thực hiện
 
