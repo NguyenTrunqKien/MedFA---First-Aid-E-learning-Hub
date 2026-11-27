@@ -1,0 +1,95 @@
+.care-shell { width: min(100% - 2rem, 76rem); margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem) 0 3rem; }
+.care-shell h1 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.15; font-weight: 800; color: #172950; }
+.care-shell h2 { font-size: 1.35rem; font-weight: 750; }
+.care-shell p { color: #475569; margin: .6rem 0; }
+.care-toolbar, .care-links { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1rem 0; }
+.care-toolbar button, .care-links a { background: #edf2fc; border: 1px solid #d3deef; color: #203f92; border-radius: .75rem; padding: .65rem .9rem; font: inherit; font-weight: 650; }
+.care-toolbar #locate { color: white; background: #203fac; }
+.care-toolbar button:disabled { opacity: .55; }
+.care-toolbar button[hidden] { display: none; }
+.care-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr); gap: 1rem; }
+#care-map, .care-panel { border: 1px solid #d9e2ed; border-radius: 1rem; }
+#care-map { height: clamp(25rem, 62vh, 42rem); background: #edf3f5; z-index: 0; overflow: hidden; }
+.care-panel { display: flex; flex-direction: column; padding: 1.25rem; background: white; max-height: clamp(25rem, 62vh, 42rem); }
+#care-list { min-height: 0; overflow-y: auto; padding-inline-start: 1.8rem; list-style: decimal outside; }
+#care-list li { padding: .85rem 0; border-top: 1px solid #dce4ef; }
+#care-list li::marker { color: #183c91; font-weight: 750; }
+#care-list button { color: #183c91; font: inherit; font-weight: 750; text-align: left; }
+.care-links a { font-size: .82rem; text-decoration: none; }
+.care-links { margin: .6rem 0 .2rem; }
+.care-place-card { width: min(16rem, 62vw); padding: .4rem .15rem; font: 14px/1.45 Arial, sans-serif; }
+.care-place-card strong { display: block; font-size: 18px; color: #172950; }
+#care-map .care-place-card p { margin: .45rem 0; }
+.care-place-card .care-links { gap: .4rem; }
+.care-place-card .care-links a { padding: .45rem .6rem; }
+#care-map .care-symbol, #care-map .care-location-dot {
+  position: relative; display: grid; place-items: center; box-sizing: border-box;
+  width: 22px; height: 22px; border: 2px solid white; border-radius: 50%;
+  background: #db354b; color: white; font: 800 15px/1 Arial, sans-serif;
+  box-shadow: 0 1px 4px #5558;
+}
+#care-map .care-location-dot { background: #2455b3; box-shadow: 0 0 0 4px #326fd333; }
+#care-map .care-place-label {
+  position: absolute; left: calc(100% + 5px); top: 50%; transform: translateY(-50%);
+  width: max-content; max-width: 9rem; text-align: left; color: #ae1731;
+  font: 650 var(--care-label-size, 13px)/1.2 Arial, sans-serif; overflow-wrap: anywhere;
+  paint-order: stroke fill; -webkit-text-stroke: 3px white;
+}
+#care-map .care-place-label[data-side="left"] { left: auto; right: calc(100% + 5px); }
+#care-map.care-picking, #care-map.care-picking .leaflet-interactive, #care-map.care-picking div[style*="cursor"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='32' viewBox='0 0 26 32'%3E%3Cpath d='M13 30S2 17 2 12a11 11 0 0 1 22 0c0 5-11 18-11 18Z' fill='%23203fac' stroke='white' stroke-width='2'/%3E%3Ccircle cx='13' cy='12' r='4' fill='white'/%3E%3C/svg%3E") 13 30, crosshair !important;
+}
+@media (max-width: 750px) {
+  .care-grid { grid-template-columns: minmax(0, 1fr); }
+  #care-map { height: clamp(17rem, 42vh, 26rem); }
+  .care-panel { max-height: max(22rem, 70vh); }
+}
+
+.care-intro {
+  position: relative; isolation: isolate; overflow: hidden;
+  padding: clamp(1.2rem, 3vw, 2.5rem); margin-bottom: 1.25rem;
+  border: 1px solid #cfdfe7; border-radius: 1.4rem;
+  background: linear-gradient(105deg, #fff 10%, #f2f8ff 64%, #e2f4f0);
+}
+.care-intro::after {
+  content: ""; pointer-events: none; position: absolute; z-index: -1;
+  right: -2rem; top: 50%; width: 20rem; aspect-ratio: 1; transform: translateY(-50%);
+  background: repeating-radial-gradient(circle, transparent 0 33px, #23796b16 34px 35px);
+}
+.care-intro h1 { letter-spacing: -.035em; }
+.care-intro .care-toolbar { margin-bottom: 0; }
+.care-icon { width: 1.12em; height: 1.12em; flex: none; }
+.care-toolbar button, .care-links a, .care-toolbar a:not([hidden]) {
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+  transition: background-color .16s, box-shadow .16s, transform .16s;
+}
+.care-toolbar button[hidden] { display: none; }
+.care-toolbar #pick[aria-pressed="true"] { color: #075d54; background: #dbf2ec; border-color: #80baaf; }
+.care-panel, #care-map { box-shadow: 0 5px 20px #2038580c; }
+.care-panel h2 { display: flex; align-items: center; gap: .65rem; color: #172950; }
+.care-panel h2 .care-icon { box-sizing: content-box; padding: .45rem; background: #e2f4ef; color: #117368; border-radius: .65rem; }
+#care-list { padding: .2rem .3rem; list-style: none; counter-reset: facility; }
+#care-list li {
+  position: relative; counter-increment: facility; margin: 0 0 .6rem; padding: .9rem .8rem .9rem 2.8rem;
+  border: 1px solid #dbe5ee; border-radius: .9rem; background: #fcfdff;
+}
+#care-list li::before {
+  content: counter(facility); position: absolute; top: .95rem; left: .65rem;
+  display: grid; place-items: center; width: 1.65rem; height: 1.65rem;
+  border-radius: .5rem; background: #e9eefb; color: #24468a; font-size: .82rem; font-weight: 750;
+}
+.care-links a:last-child { color: #086155; background: #e4f4ef; border-color: #c0dfd6; }
+.care-shell :is(button,a):focus-visible { outline: 3px solid #3275c7; outline-offset: 2px; }
+@media (hover: hover) {
+  .care-toolbar button:enabled:hover, .care-links a:hover {
+    transform: translateY(-2px); box-shadow: 0 4px 10px #1c365524; background: #dce8fb;
+  }
+  .care-toolbar #locate:enabled:hover { background: #19348a; }
+  .care-links a:last-child:hover { background: #cbebe1; }
+  #care-list li:hover, #care-list li:focus-within { border-color: #a7c3df; }
+  #care-list button:hover, .care-toolbar a:hover { text-decoration: underline; text-underline-offset: .18em; }
+}
+.care-shell :is(.care-toolbar button:enabled,.care-links a):active { transform: translateY(1px); }
+@media (prefers-reduced-motion: reduce) {
+  .care-shell .care-toolbar button, .care-shell .care-links a { transition: none; transform: none; }
+}

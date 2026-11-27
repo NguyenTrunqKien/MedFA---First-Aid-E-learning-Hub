@@ -101,6 +101,7 @@
       </div>
 
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="contact" href="contact.html"><span data-i18n="nav.contact">Liên hệ</span></a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="nearby-care" href="nearby-care.html"><span data-i18n="nav.care">Cơ sở y tế</span></a>
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html"><span data-i18n="nav.about">Về MedFA</span></a>
     </nav>
 
@@ -206,6 +207,13 @@
       <div class="flex items-center gap-3">
         <span class="material-symbols-outlined text-secondary text-[20px]">contact_support</span>
         <span data-i18n="nav.contact">Liên hệ</span>
+      </div>
+      <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+    </a>
+    <a class="nav-link-mobile px-4 py-3 rounded-xl font-semibold text-on-surface hover:bg-surface-container transition-colors flex items-center justify-between" data-page="nearby-care" href="nearby-care.html">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-secondary text-[20px]">local_hospital</span>
+        <span data-i18n="nav.care">Cơ sở y tế</span>
       </div>
       <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
     </a>

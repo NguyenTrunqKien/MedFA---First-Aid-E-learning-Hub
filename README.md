@@ -42,6 +42,10 @@ Mở [MedFA trên localhost](http://127.0.0.1:8000/). Bạn cũng có thể mở
 | Hướng dẫn bảo trì | [Kiến trúc và tái sử dụng mã](docs/knowledge/KIEN_TRUC_VA_TAI_SU_DUNG_CODE.md), [cách tạo lại CSS dùng chung](docs/knowledge/KIEN_TRUC_VA_BUILD_CSS.md), [đặc tả dữ liệu](docs/DATA_SCHEMA_SPEC.md) |
 | Mã và tài liệu lưu trữ | [archive](archive/) |
 
+## Bản đồ cơ sở y tế
+
+Mở `nearby-care.html` qua localhost hoặc HTTPS để dùng định vị. Bản mặc định dùng Leaflet và tìm trên thiết bị trong danh mục [cơ sở y tế Việt Nam](data/nearby-care-vn.json). Danh mục được lọc từ [bản xuất HOT/HDX](https://data.humdata.org/dataset/hotosm_vnm_health_facilities), dữ liệu ngày 15/11/2026, © OpenStreetMap contributors, phân phối theo [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Tọa độ cơ sở dạng vùng là tâm khung bao. Khi danh mục thiếu kết quả trong bán kính hoặc vị trí nằm ngoài phạm vi dữ liệu, trang tìm qua Overpass với thời gian chờ tối đa 8 giây. Để dùng Google, bật Maps JavaScript API và Places API (New), sau đó điền khóa **dành cho trình duyệt** vào thẻ meta `google-maps-browser-key` trong trang này. Giới hạn khóa theo tên miền, hai API trên và thiết lập hạn mức trong Google Cloud. Với dữ liệu Google, liên kết chi tiết dùng Place ID. Với OpenStreetMap, liên kết mở ghim theo đúng kinh độ và vĩ độ đã lưu của cơ sở.
+
 ## Nhóm thực hiện
 
 Nguyễn Trung Kiên, Trần Gia Phú, Hồ Tấn Khải và Trương Đỗ Như Quỳnh. Xem [bảng phân công công việc](docs/KE_HOACH_PHAN_CONG_NHOM.md).
