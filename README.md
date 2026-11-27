@@ -1,126 +1,47 @@
 # MedFA – Medical First Aid E-Learning Hub
-> **Đồ án môn học:** IE104 – Internet và Công nghệ Web  
-> **Giảng viên hướng dẫn:** ThS. Võ Tấn Khoa – Khoa Khoa học và Kỹ thuật Thông tin  
-> **Trường Đại học Công nghệ Thông tin – ĐHQG-HCM (UIT)**  
-> **Mô hình triển khai:** Web Vệ Tinh Giáo Dục & Cứu Trợ Khẩn Cấp (Satellite Educational Hub)  
-> **Định hướng chuyên môn:** Phản xạ sơ cấp cứu tức thì trong "4 Phút Vàng" sống còn
 
----
+MedFA là website học sơ cấp cứu bằng tiếng Việt và tiếng Anh. Người học có thể tra cứu tình huống, ôn tập bằng thẻ ghi nhớ, làm trắc nghiệm và gửi góp ý cho nhóm qua trang Contact.
 
-## 🌟 1. GIỚI THIỆU DỰ ÁN & MÔ HÌNH WEB VỆ TINH
+Đây là đồ án môn **IE104 – Internet và Công nghệ Web**, Trường Đại học Công nghệ Thông tin, ĐHQG-HCM. Giảng viên hướng dẫn là **ThS. Võ Tấn Khoa**.
 
-**MedFA** là nền tảng trực tuyến phi lợi nhuận chuyên chuẩn hóa và phổ biến kiến thức sơ cấp cứu ban đầu theo các tiêu chuẩn y khoa quốc tế (**AHA** – Hiệp hội Tim mạch Hoa Kỳ, **ERC** – Hội đồng Hồi sinh Châu Âu và **Bộ Y Tế Việt Nam**). 
+## Chạy trên máy
 
-Khác với các cổng thông tin bệnh viện cồng kềnh, MedFA được thiết kế dưới mô hình **Web Vệ Tinh (Satellite Website)**:
-* **Mục tiêu chuyên sâu duy nhất (Niche):** Hướng dẫn thao tác phản xạ xử trí tại hiện trường trong **"4 Phút Vàng"** trước khi nhân viên y tế 115 tiếp cận.
-* **Tải trang siêu tốc (< 0.5s):** 100% công nghệ Frontend thuần (Zero-dependency), đạt điểm Google Core Web Vitals tối đa, hỗ trợ tra cứu ngoại tuyến (Offline-first).
-* **Đón đầu Search Intent khẩn cấp:** Tích hợp Schema Structured Data (`MedicalWebPage`, `HowTo`) để Google hiển thị các bước sơ cứu dạng Rich Snippets trực tiếp trên trang tìm kiếm.
+Tại thư mục gốc của repo, chạy máy chủ tĩnh bằng Python 3:
 
----
-
-## 🏗️ 2. CẤU TRÚC THƯ MỤC DỰ ÁN
-
-Cấu trúc repository tuân thủ nghiêm ngặt theo **Mục 5 trong Tài liệu hướng dẫn đồ án IE104 của ThS. Võ Tấn Khoa**:
-
-```
-project MedFA/
-├── index.html                 # Trang chủ: Hero banner, số liệu thực trạng & Hub luyện tập phản xạ
-├── topics.html                # Thư viện sơ cấp cứu: Tìm kiếm real-time, lọc danh mục & bài đã lưu
-├── topic-detail.html          # Chi tiết tình huống: Nạp động ?id=..., sơ đồ bước, Medical Disclaimer
-├── flashcards.html            # Flashcard 3D: Lật thẻ CSS3 3D hai mặt, 2 chế độ học & phím tắt
-├── timed-practice.html        # Thử thách 4 Phút Vàng: Đồng hồ SVG đếm ngược 240s & 12 ca cấp cứu
-├── quiz.html                  # Trắc nghiệm tình huống: 10 câu case-study, giải thích y khoa, lưu điểm
-├── contact.html               # Trang liên hệ: Gọi 115 khẩn cấp, form góp ý có JS Validation thuần
-├── social-impact.html         # Tác động xã hội: Bức tranh thực trạng cấp cứu tại Việt Nam
-├── about.html                 # Giới thiệu dự án, tài liệu chuẩn và đội ngũ sinh viên thực hiện
-├── components/
-│   ├── header.html            # Header dùng chung: Logo SVG, Menu Dropdown Luyện tập, Switch Lang
-│   ├── footer.html            # Footer dùng chung: Hotline 115, mạng xã hội, Chatbot AI Popup
-│   └── medical-disclaimer.html# Component tuyên bố miễn trừ y khoa và nguồn AHA/ERC
-├── css/
-│   ├── variables.css          # Design Tokens: Màu Material 3, Spacing, Typography
-│   ├── base.css               # CSS Reset, Typography cơ bản, Smooth scroll
-│   ├── layout.css             # Grid, Flexbox, Container, Header/Footer layout
-│   ├── components.css         # Card, Button, Badge, Modal, Chat widget, Alert
-│   ├── utilities.css          # Bộ tiện ích CSS3 thuần (>650 dòng) thay thế Tailwind runtime
-│   ├── responsive.css         # Media queries chuẩn Mobile (375px), Tablet (768px), Desktop
-│   ├── interactive-3d.css     # CSS 3D Transforms chuyên sâu cho Flashcards & 4 Phút Vàng
-│   └── contact-quiz.css       # Stylesheet chuyên dụng cho Form liên hệ và Module Trắc nghiệm
-├── js/
-│   ├── data-loader.js         # Nạp data/topics.json, cache bộ nhớ, fallback dữ liệu nhúng offline
-│   ├── render-topics.js       # Template Literal render card, tìm kiếm, lọc danh mục & bookmark
-│   ├── storage.js             # Quản lý LocalStorage, Bookmark bài học, lưu điểm, Event Delegation
-│   ├── chatbot-gemini.js      # Trợ lý AI gọi Google Gemini REST API + Fallback phản xạ ngoại tuyến
-│   ├── flashcard-controller.js# Điều khiển lật thẻ 3D, xáo trộn, phím tắt bàn phím & Confetti
-│   ├── timed-practice.js      # Logic đếm ngược 240s, chấm điểm và bảng thống kê đáp án
-│   ├── quiz-engine.js         # Logic trắc nghiệm 10 câu, live progress, giải thích y khoa, lưu điểm
-│   ├── contact-validation.js  # Kiểm tra form liên hệ bằng Regex thuần, inline error & Toast
-│   └── main.js                # Chèn Header/Footer động, highlight menu, điều phối toàn cục
-├── data/
-│   ├── topics.json            # Ngân hàng 33 tình huống cấp cứu chuẩn hóa y khoa
-│   ├── quiz.json              # Ngân hàng 10 câu trắc nghiệm case-study
-│   └── timed_practice.json    # Ngân hàng 32 câu hỏi phản xạ áp lực thời gian
-├── images/                    # Hình ảnh nén WebP nội bộ (<150KB): hero-cpr, child, team (Chuẩn Mục 5)
-├── assets/
-│   └── icons/                 # Logo SVG MedFA và biểu tượng nhận diện
-├── docs/
-│   ├── KE_HOACH_PHAN_CONG_NHOM.md # Kế hoạch phân công & ma trận đóng góp của nhóm
-│   ├── DATA_SCHEMA_SPEC.md        # Đặc tả cấu trúc Schema JSON cho dữ liệu sơ cứu
-│   ├── SEO_SCHEMA_SATELLITE.md    # Đặc tả Schema.org JSON-LD và Open Graph Web Vệ Tinh
-│   └── GUIDE_DATA_PREPARATION.md  # Hướng dẫn thu thập & rà soát dữ liệu y khoa
-└── archive/
-    └── legacy-js/             # Lưu trữ các file script phiên bản cũ (flashcard.js, search.js)
+```sh
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
----
+Mở [MedFA trên localhost](http://127.0.0.1:8000/). Bạn cũng có thể mở [index.html](index.html) bằng Live Server trong VS Code. Các trang học sử dụng HTML, CSS, JavaScript và dữ liệu JSON có sẵn trong repo.
 
-## ⚡ 3. CÔNG NGHỆ ÁP DỤNG (ZERO-DEPENDENCY STACK)
+## Các trang chính
 
-Tuân thủ quy định không sử dụng Framework nặng nhằm đảm bảo sinh viên nắm vững bản chất công nghệ Web:
-* **HTML5 Semantic:** Cấu trúc ngữ nghĩa cao (`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`).
-* **CSS3 Pure & 3D Transforms:**
-  * Không dùng CDN runtime của Tailwind/Bootstrap.
-  * Hiệu ứng không gian 3 chiều: `perspective: 1000px`, `transform-style: preserve-3d`, `rotateY(180deg)`.
-  * Bộ đếm thời gian tròn SVG: `stroke-dasharray` & `stroke-dashoffset`.
-* **Vanilla JavaScript (ES6+):**
-  * Mô hình Module Pattern tách biệt độc lập, không xung đột biến toàn cục.
-  * Xử lý bất đồng bộ (`async`/`await`, `fetch()`).
-  * Quản lý bộ nhớ trình duyệt qua `localStorage` và `sessionStorage`.
-* **Trí tuệ Nhân tạo (Generative AI):**
-  * Tích hợp trực tiếp Google Gemini API (`gemini-1.5-flash:generateContent`).
-  * System Instruction định hướng phản xạ chuẩn AHA/ERC.
-  * Cơ chế Fallback ngoại tuyến 100% khi không có mạng hoặc không có API Key.
+| Trang | Người dùng có thể làm gì |
+| --- | --- |
+| [Trang chủ](index.html) | Chọn nội dung học và truy cập các khu vực của website |
+| [Thư viện](topics.html) và [chi tiết tình huống](topic-detail.html) | Tìm, lọc, lưu chủ đề và đọc hướng dẫn theo từng bước. Trang chi tiết nhận mã chủ đề qua tham số `id` |
+| [Flashcards](flashcards.html) | Ôn kiến thức bằng thẻ hai mặt |
+| [Trắc nghiệm](quiz.html) | Trả lời câu hỏi tình huống và xem giải thích |
+| [Liên hệ](contact.html) | Gửi góp ý cho nhóm qua Google Form ngay trên website |
+| [Tác động xã hội](social-impact.html) và [giới thiệu](about.html) | Tìm hiểu mục tiêu cộng đồng, dự án và đội ngũ |
 
----
+## Tích hợp dịch vụ
 
-## 👥 4. BẢNG PHÂN CÔNG CÔNG VIỆC & MA TRẬN ĐÓNG GÓP
+**Form Contact.** Trang Contact gửi dữ liệu trực tiếp đến Google Apps Script kể cả khi chạy website trên localhost. Để kiểm tra một lần gửi thực tế, đối chiếu lời nhắn với tab **Câu trả lời** của Google Form. Xem [luồng gửi, cấu hình câu hỏi và cách xử lý lỗi](docs/knowledge/FORM_CONTACT.md).
 
-| STT | Họ và Tên | MSSV | Vai trò chính | Module & Sản phẩm đầu ra | Tỷ lệ |
-| :---: | :--- | :---: | :--- | :--- | :---: |
-| 1 | **Nguyễn Trung Kiên** | 24520888 | Trưởng nhóm, Logic & AI | `js/storage.js`, `js/chatbot-gemini.js`, `docs/SEO_SCHEMA_SATELLITE.md`, Chuẩn hóa Repo & `README.md`, Merge & Đồng bộ toàn dự án | **25%** |
-| 2 | **Trần Gia Phú** | 24521365 | UI/UX & Motion 3D | `flashcards.html`, `timed-practice.html`, `css/interactive-3d.css`, `js/flashcard-controller.js`, `js/timed-practice.js`, `data/timed_practice.json` | **25%** |
-| 3 | **Hồ Tấn Khải** | 24520721 | Quản lý Dữ liệu Y tế | Chuẩn hóa `data/topics.json`, `docs/DATA_SCHEMA_SPEC.md`, Ảnh offline `images/*`, `components/medical-disclaimer.html`, Khung Báo cáo đồ án | **25%** |
-| 4 | **Trương Đỗ Như Quỳnh** | 24521513 | Tương tác & Form Dev | `contact.html`, `js/contact-validation.js`, `quiz.html`, `data/quiz.json`, `js/quiz-engine.js`, `css/contact-quiz.css`, Menu navigation | **25%** |
-| **TỔNG** | **4 thành viên** | | | | **100%** |
+**Chatbot Gemini.** Khi chạy trên Vercel, chatbot có thể gọi [hàm máy chủ `/api/chat`](api/chat.js). Để dùng luồng này, đặt `GEMINI_API_KEY` trong môi trường của dự án Vercel. Có thể đặt `GEMINI_DEFAULT_MODEL` để chọn mô hình. Máy chủ tĩnh Python ở trên chỉ phục vụ tệp, nên cần môi trường hỗ trợ Vercel Functions để thử API này. Xem [mẫu cấu hình](env.example) và [cấu hình định tuyến](vercel.json).
 
----
+## Tìm đúng nơi để sửa
 
-## 🚀 5. HƯỚNG DẪN CÀI ĐẶT & CHẠY THỬ NGHIỆM
+| Thành phần | Vị trí |
+| --- | --- |
+| Chủ đề và câu hỏi tiếng Việt | [topics.json](data/topics.json), [quiz.json](data/quiz.json) |
+| Nội dung học tiếng Anh và chuỗi giao diện hai ngôn ngữ | [data/en](data/en/), [translations.js](js/translations.js), [i18n.js](js/i18n.js) |
+| Thành phần dùng chung và khởi tạo trang | [js/components](js/components/), [main.js](js/main.js) |
+| Giao diện, ảnh và tài nguyên nhận diện | [css](css/), [images](images/), [assets](assets/) |
+| Hướng dẫn bảo trì | [Kiến trúc và tái sử dụng mã](docs/knowledge/KIEN_TRUC_VA_TAI_SU_DUNG_CODE.md), [cách tạo lại CSS dùng chung](docs/knowledge/KIEN_TRUC_VA_BUILD_CSS.md), [đặc tả dữ liệu](docs/DATA_SCHEMA_SPEC.md) |
+| Mã và tài liệu lưu trữ | [archive](archive/) |
 
-Website MedFA được thiết kế để có thể chạy mượt mà trên mọi môi trường phát triển:
+## Nhóm thực hiện
 
-### Cách 1: Sử dụng VS Code Live Server (Khuyên dùng)
-1. Cài đặt extension **Live Server** (Ritwick Dey) trên Visual Studio Code.
-2. Chuột phải vào file `index.html` chọn **"Open with Live Server"**.
-3. Website sẽ tự động mở tại địa chỉ `http://127.0.0.1:5500/`.
-
-### Cách 2: Sử dụng Python HTTP Server
-Mở terminal tại thư mục `project MedFA`:
-```bash
-# Python 3
-python -m http.server 8000
-```
-Sau đó truy cập `http://localhost:8000/` trên trình duyệt.
-
-### Cách 3: Kiểm tra Chế độ Ngoại Tuyến (Offline / file:///)
-Website tích hợp sẵn bộ dữ liệu tĩnh nhúng (`DataLoader fallback`) và bộ kịch bản phản xạ y tế nội bộ, cho phép bạn mở trực tiếp bất kỳ file `.html` nào trên trình duyệt mà không cần cài đặt Web server.
+Nguyễn Trung Kiên, Trần Gia Phú, Hồ Tấn Khải và Trương Đỗ Như Quỳnh. Xem [bảng phân công công việc](docs/KE_HOACH_PHAN_CONG_NHOM.md).
