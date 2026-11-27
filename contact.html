@@ -101,7 +101,7 @@
               <p data-i18n="contact.formSub">Mọi ý kiến đóng góp của bạn giúp MedFA hoàn thiện thư viện sơ cấp cứu vì cộng đồng.</p>
             </div>
           </div>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" method="post" action="https://script.google.com/macros/s/AKfycbwtdiHpuNPoUlGjVyKsSnnx6d2cX6LQtQXKDhIJmqJIaVZGzmZzTd9V0HfZ_3EPgLFn/exec" novalidate>
             <div class="contact-fields">
               <div class="cq-field">
                 <label for="contact-name" data-i18n="contact.nameLabel">Họ và tên *</label>
@@ -145,6 +145,12 @@
               <span data-i18n="contact.submitBtn">Gửi phản hồi</span>
             </button>
           </form>
+        </section>
+        <section id="contact-thanks" class="cq-card contact-thanks" aria-labelledby="contact-thanks-title" hidden>
+          <span class="cq-icon" aria-hidden="true"><span class="material-symbols-outlined">check_circle</span></span>
+          <h2 id="contact-thanks-title" tabindex="-1" data-i18n="contact.thanks">Cảm ơn bạn đã liên hệ chúng tôi!</h2>
+          <p data-i18n="contact.thanksMessage">MedFA trân trọng thời gian bạn đã dành để góp ý. Những chia sẻ của bạn giúp chúng tôi viết hướng dẫn sơ cứu rõ ràng hơn và bổ sung những tình huống gần gũi với cuộc sống.</p>
+          <button type="button" class="btn btn-primary" data-i18n="contact.sendAnother">Gửi phản hồi khác</button>
         </section>
 
         <aside class="contact-side">
