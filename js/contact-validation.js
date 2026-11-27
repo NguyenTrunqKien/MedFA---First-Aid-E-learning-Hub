@@ -11,7 +11,7 @@
     },
     phone: value => {
       if (!value.trim()) return window.t ? t('contact.errPhoneEmpty') : 'Vui lòng nhập số điện thoại.';
-      return /^(0|\+84)[3|5|7|8|9][0-9]{8}$/.test(value.trim()) ? '' : (window.t ? t('contact.errPhoneInvalid') : 'Nhập số di động Việt Nam, ví dụ 0912345678.');
+      return /^(0|\+84)[35789][0-9]{8}$/.test(value.trim()) ? '' : (window.t ? t('contact.errPhoneInvalid') : 'Nhập số di động Việt Nam, ví dụ 0912345678.');
     },
     subject: value => value ? '' : (window.t ? t('contact.errSubject') : 'Vui lòng chọn chủ đề đóng góp.'),
     message: value => value.trim() ? '' : (window.t ? t('contact.errMessage') : 'Vui lòng nhập lời nhắn.'),
@@ -59,8 +59,18 @@
     field.addEventListener('blur', () => validateField(name));
   });
 
-  form.addEventListener('submit', event => {
+  const submitButton = form.querySelector('[type="submit"]');
+  const submitLabel = submitButton.querySelector('[data-i18n]');
+  const formCard = form.closest('.contact-form-card');
+  const thanks = document.getElementById('contact-thanks');
+  thanks.querySelector('button').addEventListener('click', () => {
+    thanks.hidden = true;
+    formCard.hidden = false;
+    getField('name').focus();
+  });
+  form.addEventListener('submit', async event => {
     event.preventDefault();
+    if (submitButton.disabled) return;
     const isValid = Object.keys(validators).map(validateField).every(Boolean);
     if (!isValid) {
       const firstInvalid = form.querySelector('[aria-invalid="true"]');
@@ -69,26 +79,29 @@
       return;
     }
 
-    const submission = {
-      name: getField('name').value.trim(),
-      email: getField('email').value.trim(),
-      phone: getField('phone').value.trim(),
-      subject: getField('subject').value,
-      message: getField('message').value.trim(),
-      submittedAt: new Date().toISOString()
-    };
-
+    submitButton.disabled = true;
+    submitButton.setAttribute('aria-busy', 'true');
+    submitLabel.dataset.i18n = 'contact.sending';
+    submitLabel.textContent = window.t ? t('contact.sending') : 'Đang gửi…';
     try {
-      const stored = JSON.parse(sessionStorage.getItem('medfa_contact_submissions') || '[]');
-      if (!Array.isArray(stored)) throw new Error('Dữ liệu phản hồi trong phiên không hợp lệ.');
-      stored.push(submission);
-      sessionStorage.setItem('medfa_contact_submissions', JSON.stringify(stored));
+      // Apps Script returns a cross-origin HTML page. Its receipt cannot be read here.
+      await fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(new FormData(form))
+      });
       form.reset();
-      Object.keys(validators).forEach(name => showFieldError(name, ''));
-      showToast('contact.toastSuccess', 'Cảm ơn bạn đã gửi ý kiến đóng góp! Chúng tôi xin ghi nhận và trân trọng sự đồng hành của bạn.');
-    } catch (error) {
-      console.error('[MedFA Contact] Không thể lưu phản hồi trong sessionStorage.', error);
-      showToast('contact.toastError', 'Chưa thể gửi phản hồi lúc này. Vui lòng thử lại sau ít phút.', true);
+      toast.hidden = true;
+      formCard.hidden = true;
+      thanks.hidden = false;
+      thanks.querySelector('h2').focus();
+    } catch {
+      showToast('contact.toastError', 'Gặp lỗi kết nối khi gửi phản hồi.', true);
+    } finally {
+      submitButton.removeAttribute('aria-busy');
+      submitLabel.dataset.i18n = 'contact.submitBtn';
+      submitLabel.textContent = window.t ? t('contact.submitBtn') : 'Gửi phản hồi';
+      submitButton.disabled = false;
     }
   });
 
