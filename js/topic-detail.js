@@ -135,6 +135,88 @@
     return text.includes('cpr') || text.includes('ép tim') || text.includes('hồi sinh tim phổi');
   }
 
+  let guideSteps = [];
+  let guideTopicTitle = '';
+  let guideStepIndex = 0;
+
+  function renderStepGuide() {
+    if (guideSteps.length === 0) return;
+
+    const step = guideSteps[guideStepIndex];
+    const count = guideSteps.length;
+    const stepNumber = guideStepIndex + 1;
+    const image = document.getElementById('step-guide-image');
+    const imagePlaceholder = document.getElementById('step-guide-image-placeholder');
+    const progress = document.querySelector('.step-guide-dialog__progress');
+    const progressFill = document.getElementById('step-guide-progress-fill');
+    const previousButton = document.getElementById('step-guide-previous');
+    const nextButton = document.getElementById('step-guide-next');
+
+    document.getElementById('step-guide-heading').textContent = guideTopicTitle;
+    document.getElementById('step-guide-step-title').textContent = step.title || '';
+    document.getElementById('step-guide-step-description').textContent = step.desc || '';
+    document.getElementById('step-guide-count').textContent = window.t
+      ? t('detail.guideStepCount', { current: stepNumber, total: count })
+      : `Bước ${stepNumber} / ${count}`;
+
+    progress.setAttribute('aria-valuemax', String(count));
+    progress.setAttribute('aria-valuenow', String(stepNumber));
+    progressFill.style.width = `${(stepNumber / count) * 100}%`;
+    previousButton.disabled = guideStepIndex === 0;
+    nextButton.textContent = guideStepIndex === count - 1
+      ? (window.t ? t('detail.guideFinish') : 'Hoàn tất')
+      : (window.t ? t('detail.guideNext') : 'Tiếp theo');
+
+    const imageNumber = String(stepNumber).padStart(2, '0');
+    const imagePath = `images/steps/${encodeURIComponent(new URLSearchParams(window.location.search).get('id') || 'hoc-di-vat')}/step-${imageNumber}.webp`;
+    image.alt = `${guideTopicTitle} - ${step.title || ''}`;
+    image.hidden = true;
+    imagePlaceholder.hidden = false;
+    image.onload = () => {
+      image.hidden = false;
+      imagePlaceholder.hidden = true;
+    };
+    image.onerror = () => {
+      image.hidden = true;
+      imagePlaceholder.hidden = false;
+    };
+    image.src = imagePath;
+  }
+
+  function initializeStepGuide() {
+    const dialog = document.getElementById('step-guide-dialog');
+    const openButton = document.getElementById('open-step-guide');
+    const closeButton = document.getElementById('step-guide-close');
+    const previousButton = document.getElementById('step-guide-previous');
+    const nextButton = document.getElementById('step-guide-next');
+    if (!dialog || !openButton || !closeButton || !previousButton || !nextButton) return;
+
+    openButton.addEventListener('click', () => {
+      if (guideSteps.length === 0) return;
+      guideStepIndex = 0;
+      renderStepGuide();
+      dialog.showModal();
+      closeButton.focus();
+    });
+    closeButton.addEventListener('click', () => dialog.close());
+    previousButton.addEventListener('click', () => {
+      if (guideStepIndex === 0) return;
+      guideStepIndex -= 1;
+      renderStepGuide();
+    });
+    nextButton.addEventListener('click', () => {
+      if (guideStepIndex === guideSteps.length - 1) {
+        dialog.close();
+        return;
+      }
+      guideStepIndex += 1;
+      renderStepGuide();
+    });
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+
   /**
    * Nạp khối Lưu ý y khoa (MEDICAL_DISCLAIMER_HTML) từ js/components/detail.js và gắn danh sách nguồn của bài
    */
@@ -542,6 +624,8 @@
     renderMedicalDisclaimer(matchesTopic ? topic : null);
 
     if (!matchesTopic || !topic) {
+      guideSteps = [];
+      document.getElementById('open-step-guide').hidden = true;
       const title = window.t ? t('detail.unavailableTitle') : 'Chủ đề hiện không khả dụng';
       document.title = `${title} - MedFA`;
       const breadcrumbEl = document.getElementById('breadcrumb-topic-title');
@@ -556,6 +640,12 @@
       if (readTimeBadge) readTimeBadge.hidden = true;
       return;
     }
+
+    guideSteps = !topic.needsMedicalReview && Array.isArray(topic.steps) ? topic.steps : [];
+    guideTopicTitle = topic.fullTitle || topic.title;
+    guideStepIndex = Math.min(guideStepIndex, Math.max(guideSteps.length - 1, 0));
+    document.getElementById('open-step-guide').hidden = guideSteps.length === 0;
+    if (document.getElementById('step-guide-dialog').open) renderStepGuide();
 
     // Cập nhật SEO Meta, Canonical, Open Graph & Structured Data
     const displayTitle = topic.fullTitle || topic.title;
@@ -669,6 +759,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    initializeStepGuide();
     if (window.t) document.title = t('detail.pageTitle');
     renderCurrentTopicDetail();
   });
