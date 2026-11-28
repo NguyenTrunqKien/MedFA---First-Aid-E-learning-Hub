@@ -779,7 +779,13 @@
 
     const stepsContainer = document.getElementById('detail-steps-container');
     if (stepsContainer && Array.isArray(topic.steps) && topic.steps.length > 0 && window.MedFAComponents?.createStepCardHTML) {
-      stepsContainer.innerHTML = topic.steps.map(window.MedFAComponents.createStepCardHTML).join('');
+      stepsContainer.innerHTML = topic.steps
+        .map(step => window.MedFAComponents.createStepCardHTML(step, topic.id))
+        .join('');
+      stepsContainer.querySelectorAll('img[data-step-image]').forEach(image => {
+        image.addEventListener('error', () => image.closest('figure')?.remove(), { once: true });
+        image.src = image.dataset.stepImage;
+      });
     }
 
     const dosList = document.getElementById('detail-dos-list');

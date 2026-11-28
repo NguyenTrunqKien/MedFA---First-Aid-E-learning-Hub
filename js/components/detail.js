@@ -359,7 +359,10 @@
 </ul>`;
 
   /** Pure Component: Thẻ từng bước sơ cứu */
-  function createStepCardHTML(step) {
+  function createStepCardHTML(step, topicId) {
+    const imagePath = topicId
+      ? `images/steps/${encodeURIComponent(topicId)}/step-${String(step.stepNumber).padStart(2, '0')}.webp`
+      : '';
     return `
       <div class="bg-surface rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20">
         <div class="flex items-start gap-4">
@@ -371,6 +374,17 @@
             <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">${escapeHTML(step.desc)}</p>
           </div>
         </div>
+        ${imagePath ? `
+          <figure class="detail-step-illustration-frame">
+            <img
+              class="detail-step-illustration"
+              data-step-image="${escapeHTML(imagePath)}"
+              alt="${escapeHTML(step.title)}"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        ` : ''}
       </div>
     `;
   }
