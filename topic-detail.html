@@ -34,6 +34,8 @@
 
   <!-- MedFA Modular CSS Files -->
   <link rel="stylesheet" href="css/medfa.min.css">
+  <link rel="stylesheet" href="css/step-guide.css">
+  <link rel="stylesheet" href="css/cpr-age-guide.css">
 </head>
 <body class="bg-surface font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="topics">
 
@@ -125,7 +127,7 @@
 
               <!-- Vị trí gắn Widget Bộ đếm nhịp ép tim CPR 110 BPM:
                    -> js/topic-detail.js (renderCprComponents) kiểm tra isCprTopic(topic)
-                   -> Nếu là bài CPR thì bơm CPR_METRONOME_HTML từ js/components/detail.js và chạy initCprMetronome() -->
+                   -> Widget được gắn bằng mountCprMetronome() từ js/components/detail.js -->
               <div id="cpr-metronome-slot" hidden></div>
 
               <!-- SECTION: CÁC BƯỚC XỬ LÝ CHUẨN Y KHOA -->
@@ -146,6 +148,11 @@
                 <p class="text-sm text-on-surface-variant mt-2" data-i18n="detail.stepsSubtitle">
                   Áp dụng tuần tự các bước dưới đây. Luôn giữ bình tĩnh, thực hiện dứt khoát đến khi tình trạng nguy cấp được giải tỏa.
                 </p>
+
+                <button id="open-step-guide" type="button" class="step-guide-open" hidden>
+                  <span class="material-symbols-outlined" aria-hidden="true">play_circle</span>
+                  <span data-i18n="detail.guideOpen">Theo dõi hướng dẫn từng bước</span>
+                </button>
 
                 <!-- Danh sách các bước sơ cứu: js/topic-detail.js render từ topic.steps bằng hàm createStepCardHTML() trong js/components/detail.js -->
                 <div class="mt-6 flex flex-col gap-4" id="detail-steps-container"></div>
@@ -264,8 +271,8 @@
         </div>
       </div>
       <!-- Mobile Quick Action Floating Emergency Bar (Visible on mobile & tablet) -->
-      <div class="lg:hidden fixed bottom-4 left-4 right-20 z-40 flex items-center gap-2 pointer-events-none">
-        <a href="tel:115" class="pointer-events-auto flex-1 py-3 px-4 rounded-full bg-error hover:bg-red-700 text-white font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all active:scale-95 border-2 border-white/20">
+      <div class="emergency-call-floating">
+        <a href="tel:115" class="emergency-call-floating__link">
           <span class="material-symbols-outlined text-[18px]">call</span>
           <span data-i18n="detail.mobileCallBar">GỌI CẤP CỨU 115</span>
         </a>
@@ -273,6 +280,54 @@
 
     </div>
   </main>
+
+  <dialog id="step-guide-dialog" class="step-guide-dialog" aria-labelledby="step-guide-heading">
+    <div class="step-guide-dialog__panel">
+      <header class="step-guide-dialog__header">
+        <div>
+          <p class="step-guide-dialog__eyebrow" data-i18n="detail.guideHeading">Hướng dẫn sơ cứu</p>
+          <h2 id="step-guide-heading" class="step-guide-dialog__topic"></h2>
+        </div>
+        <button id="step-guide-close" class="step-guide-dialog__close" type="button" data-i18n-aria-label="detail.guideClose" aria-label="Đóng hướng dẫn">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+      </header>
+
+      <div class="step-guide-dialog__content">
+        <div class="step-guide-dialog__progress" role="progressbar" data-i18n-aria-label="detail.guideProgress" aria-label="Tiến độ hướng dẫn" aria-valuemin="1" aria-valuemax="1" aria-valuenow="1">
+          <span id="step-guide-progress-fill"></span>
+        </div>
+        <p id="step-guide-count" class="step-guide-dialog__count" aria-live="polite"></p>
+
+        <figure id="step-guide-figure" class="step-guide-dialog__figure">
+          <img id="step-guide-image" class="step-guide-dialog__image" alt="" hidden>
+          <div id="step-guide-image-placeholder" class="step-guide-dialog__placeholder">
+            <span class="material-symbols-outlined" aria-hidden="true">image</span>
+            <p data-i18n="detail.guideImageMissing">Chưa có ảnh minh họa cho bước này.</p>
+          </div>
+        </figure>
+
+        <div id="step-guide-copy" class="step-guide-dialog__copy">
+          <h3 id="step-guide-step-title" class="step-guide-dialog__step-title" tabindex="-1" aria-live="polite"></h3>
+          <p id="step-guide-step-description" class="step-guide-dialog__description"></p>
+          <p id="step-guide-audience-note" class="step-guide-dialog__note" hidden></p>
+          <div id="step-guide-cpr-age-slot" hidden></div>
+        </div>
+        <div id="step-guide-panel" class="step-guide-dialog__panel" hidden></div>
+      </div>
+
+      <footer class="step-guide-dialog__footer">
+        <a href="tel:115" class="step-guide-dialog__call">
+          <span class="material-symbols-outlined" aria-hidden="true">call</span>
+          <span data-i18n="detail.mobileCallBar">GỌI CẤP CỨU 115</span>
+        </a>
+        <div class="step-guide-dialog__navigation">
+          <button id="step-guide-previous" class="step-guide-dialog__button step-guide-dialog__button--secondary" type="button" data-i18n="detail.guidePrevious" disabled>Trước</button>
+          <button id="step-guide-next" class="step-guide-dialog__button step-guide-dialog__button--primary" type="button">Tiếp theo</button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
 
   <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
