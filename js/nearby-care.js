@@ -232,6 +232,7 @@
     for (const directions of [false, true]) {
       const url = new URL('https://www.google.com/maps/' + (directions ? 'dir/' : 'search/'));
       url.searchParams.set('api', '1');
+      if (directions) url.searchParams.set('origin', origin.lat + ',' + origin.lng);
       const param = directions ? 'destination' : 'query';
       url.searchParams.set(param, coords);
       if (place.id) url.searchParams.set(param + '_place_id', place.id);
