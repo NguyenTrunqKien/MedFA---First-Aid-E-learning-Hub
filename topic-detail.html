@@ -35,6 +35,7 @@
   <!-- MedFA Modular CSS Files -->
   <link rel="stylesheet" href="css/medfa.min.css">
   <link rel="stylesheet" href="css/step-guide.css">
+  <link rel="stylesheet" href="css/cpr-age-guide.css">
 </head>
 <body class="bg-surface font-sans text-on-surface antialiased min-h-screen flex flex-col" data-page="topics">
 
@@ -126,7 +127,7 @@
 
               <!-- Vị trí gắn Widget Bộ đếm nhịp ép tim CPR 110 BPM:
                    -> js/topic-detail.js (renderCprComponents) kiểm tra isCprTopic(topic)
-                   -> Nếu là bài CPR thì bơm CPR_METRONOME_HTML từ js/components/detail.js và chạy initCprMetronome() -->
+                   -> Widget được gắn bằng mountCprMetronome() từ js/components/detail.js -->
               <div id="cpr-metronome-slot" hidden></div>
 
               <!-- SECTION: CÁC BƯỚC XỬ LÝ CHUẨN Y KHOA -->
@@ -298,7 +299,7 @@
         </div>
         <p id="step-guide-count" class="step-guide-dialog__count" aria-live="polite"></p>
 
-        <figure class="step-guide-dialog__figure">
+        <figure id="step-guide-figure" class="step-guide-dialog__figure">
           <img id="step-guide-image" class="step-guide-dialog__image" alt="" hidden>
           <div id="step-guide-image-placeholder" class="step-guide-dialog__placeholder">
             <span class="material-symbols-outlined" aria-hidden="true">image</span>
@@ -306,10 +307,13 @@
           </div>
         </figure>
 
-        <div class="step-guide-dialog__copy">
-          <h3 id="step-guide-step-title" class="step-guide-dialog__step-title" aria-live="polite"></h3>
+        <div id="step-guide-copy" class="step-guide-dialog__copy">
+          <h3 id="step-guide-step-title" class="step-guide-dialog__step-title" tabindex="-1" aria-live="polite"></h3>
           <p id="step-guide-step-description" class="step-guide-dialog__description"></p>
+          <p id="step-guide-audience-note" class="step-guide-dialog__note" hidden></p>
+          <div id="step-guide-cpr-age-slot" hidden></div>
         </div>
+        <div id="step-guide-panel" class="step-guide-dialog__panel" hidden></div>
       </div>
 
       <footer class="step-guide-dialog__footer">
@@ -319,7 +323,7 @@
         </a>
         <div class="step-guide-dialog__navigation">
           <button id="step-guide-previous" class="step-guide-dialog__button step-guide-dialog__button--secondary" type="button" data-i18n="detail.guidePrevious" disabled>Trước</button>
-          <button id="step-guide-next" class="step-guide-dialog__button step-guide-dialog__button--primary" type="button" data-i18n="detail.guideNext">Tiếp theo</button>
+          <button id="step-guide-next" class="step-guide-dialog__button step-guide-dialog__button--primary" type="button">Tiếp theo</button>
         </div>
       </footer>
     </div>

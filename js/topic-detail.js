@@ -135,40 +135,169 @@
     return text.includes('cpr') || text.includes('ép tim') || text.includes('hồi sinh tim phổi');
   }
 
+  function stepUsesCpr(step) {
+    if (typeof step.showCprAedGuide === 'boolean') return step.showCprAedGuide;
+    // Dữ liệu dự phòng có thể chưa có cờ showCprAedGuide.
+    const text = `${step.title || ''} ${step.desc || ''}`;
+    return /\b(?:CPR|chest compressions?)\b|ép tim|ép ngực|hồi sinh tim phổi/iu.test(text);
+  }
+
+  let stepCprGuide;
+  let stopPageMetronome;
+
+  function renderStepCprAgeGuide(step) {
+    const slot = document.getElementById('step-guide-cpr-age-slot');
+    if (!slot) return;
+    slot.hidden = !stepUsesCpr(step);
+    if (!slot.hidden && !slot.firstElementChild) {
+      stepCprGuide = window.MedFAComponents?.mountCprAgeGuide(slot);
+    }
+    if (!slot.hidden) stepCprGuide?.selectAge(guideAudience?.cprAge || guideDefaultCprAge);
+  }
+
   let guideSteps = [];
   let guideTopicTitle = '';
-  let guideStepIndex = 0;
+  let guideHistory = [];
+  let guideAudiences = [];
+  let guideAudience;
+  let guideDefaultCprAge;
 
-  function renderStepGuide() {
-    if (guideSteps.length === 0) return;
+  function nextGuideIndex(start) {
+    return guideSteps.findIndex((step, index) =>
+      index >= start && !guideAudience?.skip?.includes(step.stepNumber));
+  }
 
-    const step = guideSteps[guideStepIndex];
+  function matchGuideRoute(decision, answers) {
+    return decision.routes.find(route =>
+      Object.entries(route.when).every(([key, value]) =>
+        Object.prototype.hasOwnProperty.call(answers, key) && answers[key] === value));
+  }
+
+  function renderGuideIntake(container, nextButton) {
+    container.innerHTML = `
+      <h3 tabindex="-1" data-i18n="detail.guideIntake"></h3>
+      <fieldset>
+        <legend data-i18n="detail.guideAudienceQuestion"></legend>
+        <div class="step-guide-dialog__answers step-guide-dialog__audiences">
+          ${guideAudiences.map(({ id }) => `
+            <label>
+              <input type="radio" name="guide-audience" value="${escapeTopicHTML(id)}" ${guideAudience?.id === id ? 'checked' : ''}>
+              <span data-i18n="detail.guideAudience.${escapeTopicHTML(id)}"></span>
+            </label>`).join('')}
+        </div>
+      </fieldset>`;
+    window.I18n?.applyTranslations(container);
+    nextButton.disabled = !guideAudience;
+    nextButton.textContent = t('detail.guideNext');
+    container.onchange = event => {
+      if (!event.target.matches('input[name="guide-audience"]')) return;
+      guideAudience = guideAudiences.find(audience => audience.id === event.target.value);
+      nextButton.disabled = !guideAudience;
+    };
+  }
+
+  function renderGuideDecision(container, decision, answers, nextButton) {
+    const presetAnswers = guideAudience?.answers || {};
+    container.innerHTML = `
+      <h3 tabindex="-1" data-i18n="detail.guideDecision"></h3>
+      ${decision.questions.map(key => {
+        const preset = Object.prototype.hasOwnProperty.call(presetAnswers, key);
+        return `<fieldset>
+          <legend>${escapeTopicHTML(t(`detail.guideQuestion.${key}`))}</legend>
+          <div class="step-guide-dialog__answers">
+            ${[true, false].map(value => `<label>
+              <input type="radio" name="${escapeTopicHTML(key)}" value="${value}" ${answers[key] === value ? 'checked' : ''} ${preset ? 'disabled' : ''}>
+              <span data-i18n="detail.${value ? 'guideYes' : 'guideNo'}"></span>
+            </label>`).join('')}
+          </div>
+        </fieldset>`;
+      }).join('')}
+      <p class="step-guide-dialog__note" aria-live="polite"></p>`;
+    window.I18n?.applyTranslations(container);
+
+    const note = container.querySelector('.step-guide-dialog__note');
+    const update = () => {
+      const route = matchGuideRoute(decision, answers);
+      nextButton.disabled = !route;
+      nextButton.textContent = t(route?.go === 0 ? 'detail.guideFinish' : 'detail.guideNext');
+      note.textContent = route?.note ? t(`detail.guideNote.${route.note}`) : '';
+    };
+    container.onchange = event => {
+      const input = event.target;
+      if (!input.matches('input[type="radio"]') || input.disabled) return;
+      answers[input.name] = input.value === 'true';
+      update();
+    };
+    update();
+  }
+
+  function renderStepGuide(moveFocus = false) {
+    const frame = guideHistory.at(-1);
+    const intake = frame?.index === -1;
+    const assessment = frame?.kind === 'decision';
+    if (!frame || (!intake && !guideSteps[frame.index])) return;
+
+    if (moveFocus) stepCprGuide?.stop();
+
+    const step = guideSteps[frame.index];
     const count = guideSteps.length;
-    const stepNumber = guideStepIndex + 1;
+    const stepNumber = step?.stepNumber || 0;
     const image = document.getElementById('step-guide-image');
     const imagePlaceholder = document.getElementById('step-guide-image-placeholder');
     const progress = document.querySelector('.step-guide-dialog__progress');
     const progressFill = document.getElementById('step-guide-progress-fill');
     const previousButton = document.getElementById('step-guide-previous');
     const nextButton = document.getElementById('step-guide-next');
+    const panel = document.getElementById('step-guide-panel');
 
     document.getElementById('step-guide-heading').textContent = guideTopicTitle;
-    document.getElementById('step-guide-step-title').textContent = step.title || '';
-    document.getElementById('step-guide-step-description').textContent = step.desc || '';
-    document.getElementById('step-guide-count').textContent = window.t
-      ? t('detail.guideStepCount', { current: stepNumber, total: count })
-      : `Bước ${stepNumber} / ${count}`;
+    document.getElementById('step-guide-count').textContent = intake
+      ? t('detail.guideIntake')
+      : assessment
+        ? t('detail.guideDecision')
+        : t('detail.guideStepCount', { current: stepNumber, total: count });
 
+    progress.setAttribute('aria-valuemin', '0');
     progress.setAttribute('aria-valuemax', String(count));
     progress.setAttribute('aria-valuenow', String(stepNumber));
     progressFill.style.width = `${(stepNumber / count) * 100}%`;
-    previousButton.disabled = guideStepIndex === 0;
-    nextButton.textContent = guideStepIndex === count - 1
+    previousButton.disabled = guideHistory.length <= 1;
+    const variant = guideAudience?.steps?.[stepNumber];
+    document.getElementById('step-guide-figure').hidden = intake || assessment;
+    document.getElementById('step-guide-copy').hidden = intake || assessment;
+    panel.hidden = !intake && !assessment;
+
+    if (intake) {
+      renderGuideIntake(panel, nextButton);
+      if (moveFocus) panel.querySelector('h3').focus();
+      return;
+    }
+
+    if (assessment) {
+      renderGuideDecision(panel, step.guideDecision, frame.answers, nextButton);
+      if (moveFocus) panel.querySelector('h3').focus();
+      return;
+    }
+
+    panel.replaceChildren();
+    panel.onchange = null;
+    const stepTitle = document.getElementById('step-guide-step-title');
+    stepTitle.textContent = step.title || '';
+    document.getElementById('step-guide-step-description').textContent = step.desc || '';
+    const audienceNote = document.getElementById('step-guide-audience-note');
+    audienceNote.textContent = variant?.note ? t(`detail.guideVariant.${variant.note}`) : '';
+    audienceNote.hidden = !variant?.note;
+    renderStepCprAgeGuide(step);
+
+    nextButton.disabled = false;
+    nextButton.textContent = !step.guideDecision && nextGuideIndex(frame.index + 1) < 0
       ? (window.t ? t('detail.guideFinish') : 'Hoàn tất')
       : (window.t ? t('detail.guideNext') : 'Tiếp theo');
 
     const imageNumber = String(stepNumber).padStart(2, '0');
-    const imagePath = `images/steps/${encodeURIComponent(new URLSearchParams(window.location.search).get('id') || 'hoc-di-vat')}/step-${imageNumber}.webp`;
+    const imagePath = `images/steps/${encodeURIComponent(new URLSearchParams(window.location.search).get('id') || 'hoc-di-vat')}/step-${imageNumber}`;
+    const imageFormats = ['webp', 'png'];
+    let imageFormatIndex = 0;
     image.alt = `${guideTopicTitle} - ${step.title || ''}`;
     image.hidden = true;
     imagePlaceholder.hidden = false;
@@ -177,10 +306,16 @@
       imagePlaceholder.hidden = true;
     };
     image.onerror = () => {
+      if (imageFormatIndex < imageFormats.length - 1) {
+        imageFormatIndex += 1;
+        image.src = `${imagePath}.${imageFormats[imageFormatIndex]}`;
+        return;
+      }
       image.hidden = true;
       imagePlaceholder.hidden = false;
     };
-    image.src = imagePath;
+    image.src = `${imagePath}.${imageFormats[imageFormatIndex]}`;
+    if (moveFocus) stepTitle.focus();
   }
 
   function initializeStepGuide() {
@@ -193,24 +328,65 @@
 
     openButton.addEventListener('click', () => {
       if (guideSteps.length === 0) return;
-      guideStepIndex = 0;
+      stopPageMetronome?.();
+      guideAudience = undefined;
+      guideHistory = [{ index: guideAudiences.length ? -1 : 0 }];
       renderStepGuide();
       dialog.showModal();
       closeButton.focus();
     });
     closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => stepCprGuide?.stop());
     previousButton.addEventListener('click', () => {
-      if (guideStepIndex === 0) return;
-      guideStepIndex -= 1;
-      renderStepGuide();
+      if (guideHistory.length <= 1) return;
+      guideHistory.pop();
+      renderStepGuide(true);
     });
     nextButton.addEventListener('click', () => {
-      if (guideStepIndex === guideSteps.length - 1) {
+      const frame = guideHistory.at(-1);
+      if (frame?.index === -1) {
+        if (!guideAudience) return;
+        const index = nextGuideIndex(0);
+        if (index < 0) return;
+        guideHistory.push({ index });
+        renderStepGuide(true);
+        return;
+      }
+      const step = frame && guideSteps[frame.index];
+      if (frame?.kind === 'decision' && step?.guideDecision) {
+        const route = matchGuideRoute(step.guideDecision, frame.answers || {});
+        if (!route) return;
+        if (route.go === 0) {
+          dialog.close();
+          return;
+        }
+        const destination = guideSteps.findIndex(item => item.stepNumber === route.go);
+        if (destination < 0) {
+          console.error(`Invalid step-guide destination: ${route.go}`);
+          return;
+        }
+        const index = nextGuideIndex(destination);
+        if (index < 0) {
+          dialog.close();
+          return;
+        }
+        guideHistory.push({ index });
+        renderStepGuide(true);
+        return;
+      }
+      if (step?.guideDecision) {
+        frame.answers = frame.answers || { ...guideAudience?.answers };
+        guideHistory.push({ index: frame.index, kind: 'decision', answers: frame.answers });
+        renderStepGuide(true);
+        return;
+      }
+      const index = frame ? nextGuideIndex(frame.index + 1) : -1;
+      if (index < 0) {
         dialog.close();
         return;
       }
-      guideStepIndex += 1;
-      renderStepGuide();
+      guideHistory.push({ index });
+      renderStepGuide(true);
     });
     dialog.addEventListener('click', event => {
       if (event.target === dialog) dialog.close();
@@ -429,137 +605,6 @@
   }
 
   /**
-   * Bộ đếm nhịp Ép tim CPR 110 lần/phút bằng Web Audio API + hiệu ứng nhấp nháy trực quan.
-   * Chỉ được gắn vào DOM qua js/components.js khi bài thuộc nhóm CPR.
-   */
-  function initCprMetronome() {
-    const toggleBtn = document.getElementById('cpr-metronome-btn');
-    const btnText = document.getElementById('cpr-metronome-btn-text');
-    const indicator = document.getElementById('cpr-beat-indicator');
-    const counterEl = document.getElementById('cpr-beat-counter');
-    const hintEl = document.getElementById('cpr-cycle-hint');
-    const soundBtn = document.getElementById('cpr-sound-btn');
-    const soundIcon = document.getElementById('cpr-sound-icon');
-    const soundText = document.getElementById('cpr-sound-text');
-    if (!toggleBtn || !indicator || !counterEl) return;
-
-    const BPM = 110; // Khuyến cáo AHA/ERC: 100 - 120 nhịp/phút
-    const INTERVAL_MS = Math.round(60000 / BPM);
-    let timerId = null;
-    let audioCtx = null;
-    let soundEnabled = true;
-    let totalBeats = 0;
-
-    function ensureAudioContext() {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (!AudioCtx) return null;
-      if (!audioCtx) audioCtx = new AudioCtx();
-      return audioCtx;
-    }
-
-    function playBeep(isCycleEnd) {
-      if (!soundEnabled) return;
-      try {
-        const ctx = ensureAudioContext();
-        if (!ctx) return;
-
-        const triggerTone = () => {
-          if (!ctx || ctx.state !== 'running') return;
-          const now = ctx.currentTime;
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(isCycleEnd ? 1174.66 : 880, now);
-          gain.gain.setValueAtTime(0.001, now);
-          gain.gain.linearRampToValueAtTime(0.45, now + 0.008);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.11);
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-          osc.start(now);
-          osc.stop(now + 0.12);
-        };
-
-        if (ctx.state === 'suspended') {
-          ctx.resume().then(triggerTone).catch(() => {});
-        } else {
-          triggerTone();
-        }
-      } catch {
-        // Bỏ qua an toàn nếu trình duyệt chặn audio
-      }
-    }
-
-    function updateMetronomeText() {
-      const cycleBeat = totalBeats ? ((totalBeats - 1) % 30) + 1 : 0;
-      const cycle = Math.floor((totalBeats - 1) / 30) + 1;
-      counterEl.textContent = window.t
-        ? (cycleBeat ? t('detail.cprBeatFormat', { beat: cycleBeat, cycle }) : t('detail.cprBeatIdle'))
-        : (cycleBeat ? `${cycleBeat} / 30 nhịp · Chu kỳ ${cycle}` : '0 / 30 nhịp');
-      if (hintEl && window.t) {
-        const key = !cycleBeat ? 'detail.cprMetronomeDesc'
-          : cycleBeat === 30 ? 'detail.cprCycleHintEnd' : 'detail.cprCycleHintDefault';
-        hintEl.textContent = t(key);
-      }
-      if (btnText) btnText.textContent = window.t
-        ? t(timerId ? 'detail.cprStop' : 'detail.cprStart')
-        : (timerId ? 'Dừng đếm nhịp' : 'Bắt đầu nhịp 110 BPM');
-      if (soundText) soundText.textContent = window.t
-        ? t(soundEnabled ? 'detail.soundOn' : 'detail.soundOff')
-        : (soundEnabled ? 'Âm thanh: Bật' : 'Âm thanh: Tắt');
-    }
-
-    function triggerBeat() {
-      totalBeats += 1;
-      const isCycleEnd = totalBeats % 30 === 0;
-      updateMetronomeText();
-
-      playBeep(isCycleEnd);
-      indicator.classList.add('is-beat');
-      window.setTimeout(() => indicator.classList.remove('is-beat'), 140);
-    }
-
-    function stopMetronome() {
-      if (timerId) {
-        window.clearInterval(timerId);
-        timerId = null;
-      }
-      indicator.classList.remove('is-beat');
-      const btnIcon = toggleBtn.querySelector('.material-symbols-outlined');
-      if (btnIcon) btnIcon.textContent = 'play_arrow';
-      updateMetronomeText();
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      if (timerId) {
-        stopMetronome();
-        return;
-      }
-      const ctx = ensureAudioContext();
-      if (ctx && ctx.state === 'suspended') {
-        ctx.resume().catch(() => {});
-      }
-      totalBeats = 0;
-      timerId = window.setInterval(triggerBeat, INTERVAL_MS);
-      triggerBeat();
-      const btnIcon = toggleBtn.querySelector('.material-symbols-outlined');
-      if (btnIcon) btnIcon.textContent = 'stop';
-    });
-
-    if (soundBtn) {
-      soundBtn.addEventListener('click', () => {
-        soundEnabled = !soundEnabled;
-        soundBtn.setAttribute('aria-pressed', String(soundEnabled));
-        if (soundIcon) soundIcon.textContent = soundEnabled ? 'volume_up' : 'volume_off';
-        updateMetronomeText();
-      });
-    }
-
-    updateMetronomeText();
-    window.addEventListener('medfa:languageChanged', updateMetronomeText);
-    window.addEventListener('pagehide', stopMetronome);
-  }
-
-  /**
    * Bơm động 2 component CPR (CPR_METRONOME_HTML & CPR_TABLE_HTML) từ js/components/detail.js
    * chỉ khi isCprTopic(topic) === true; các bài không phải CPR sẽ giữ 2 slot trống và ẩn hoàn toàn.
    * @param {Object} topic
@@ -570,22 +615,11 @@
     const tableSlot = document.getElementById('cpr-table-slot');
 
     if (metronomeSlot) {
-      if (hasCpr) {
-        if (!metronomeSlot.dataset.mounted && window.MedFAComponents?.CPR_METRONOME_HTML) {
-          metronomeSlot.innerHTML = window.MedFAComponents.CPR_METRONOME_HTML;
-          metronomeSlot.dataset.mounted = 'true';
-        }
-        metronomeSlot.hidden = false;
-        window.I18n?.applyTranslations(metronomeSlot);
-        if (!metronomeInitialized) {
-          initCprMetronome();
-          metronomeInitialized = true;
-        }
-      } else {
-        metronomeSlot.hidden = true;
-        metronomeSlot.innerHTML = '';
-        delete metronomeSlot.dataset.mounted;
+      metronomeSlot.hidden = !hasCpr;
+      if (hasCpr && !metronomeSlot.firstElementChild) {
+        stopPageMetronome = window.MedFAComponents?.mountCprMetronome(metronomeSlot);
       }
+      if (!hasCpr) stopPageMetronome?.();
     }
 
     if (tableSlot) {
@@ -607,7 +641,6 @@
   /**
    * Điểm khởi chạy chính của trang Chi tiết tình huống
    */
-  let metronomeInitialized = false;
   let renderRevision = 0;
 
   async function renderCurrentTopicDetail() {
@@ -642,8 +675,9 @@
     }
 
     guideSteps = !topic.needsMedicalReview && Array.isArray(topic.steps) ? topic.steps : [];
+    guideAudiences = topic.guideAudiences || [];
+    guideDefaultCprAge = topic.guideDefaultCprAge;
     guideTopicTitle = topic.fullTitle || topic.title;
-    guideStepIndex = Math.min(guideStepIndex, Math.max(guideSteps.length - 1, 0));
     document.getElementById('open-step-guide').hidden = guideSteps.length === 0;
     if (document.getElementById('step-guide-dialog').open) renderStepGuide();
 

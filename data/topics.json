@@ -1,6 +1,70 @@
 [
   {
     "id": "hoc-di-vat",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child",
+        "steps": {
+          "5": {
+            "desc": "chokingCpr",
+            "hideImage": true,
+            "note": "childChokingCpr"
+          }
+        }
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant",
+        "steps": {
+          "2": {
+            "title": "infantBackBlowsTitle",
+            "desc": "infantBackBlows",
+            "hideImage": true,
+            "note": "infantChoking"
+          },
+          "3": {
+            "title": "infantChestThrustsTitle",
+            "desc": "infantChestThrusts",
+            "hideImage": true,
+            "note": "infantChoking"
+          },
+          "4": {
+            "title": "infantCycleTitle",
+            "desc": "infantCycle",
+            "hideImage": true,
+            "note": "infantChoking"
+          },
+          "5": {
+            "desc": "chokingCpr",
+            "hideImage": true,
+            "note": "infantChokingCpr"
+          }
+        }
+      },
+      {
+        "id": "latePregnancy",
+        "cprAge": "adult",
+        "skip": [
+          3
+        ],
+        "steps": {
+          "4": {
+            "title": "pregnancyCycleTitle",
+            "desc": "pregnancyCycle",
+            "hideImage": true,
+            "note": "pregnancyChoking"
+          },
+          "5": {
+            "note": "pregnancyChokingCpr"
+          }
+        }
+      }
+    ],
     "title": "Hóc dị vật (nghẹn)",
     "fullTitle": "Hóc dị vật (nghẹn & tắc đường thở)",
     "category": "tre-em",
@@ -37,6 +101,14 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["unresponsive","severeChoking"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"severeChoking":true},"go":2},
+            {"when":{"unresponsive":false,"severeChoking":false},"go":0,"note":"monitorMildChoking"}
+          ]
+        },
         "title": "Đánh giá mức độ tắc nghẽn",
         "desc": "Hỏi nạn nhân 'bạn có bị nghẹn không? '. Nếu nạn nhân vẫn nói, khóc hoặc ho mạnh được: KHUYẾN KHÍCH HO MẠNH, tối đa không nên đập lưng hay can thiệp ép bụng lúc này."
       },
@@ -52,11 +124,20 @@
       },
       {
         "stepNumber": 4,
+        "guideDecision": {
+          "questions": ["objectOut","unresponsive"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"objectOut":true},"go":0,"note":"monitorChoking"},
+            {"when":{"unresponsive":false,"objectOut":false},"go":4}
+          ]
+        },
         "title": "Lặp lại chu kỳ 5 vỗ lưng: 5 ép bụng",
         "desc": "Tiếp tục luân phiên 5 vỗ lưng và 5 ép bụng cho đến khi dị vật bật ra ngoài hoặc nạn nhân thở lại bình thường."
       },
       {
         "stepNumber": 5,
+        "showCprAedGuide": true,
         "title": "Nếu nạn nhân bất tỉnh: Chuyển sang CPR",
         "desc": "Đặt nạn nhân nằm ngửa trên mặt sàn phẳng cứng, gọi 115 và bắt đầu ép tim ngoài lồng ngực (30 lần ép tim: 2 lần thổi ngạt). Trước mỗi lần thổi ngạt, kiểm tra khoang miệng xem có dị vật trồi lên không."
       }
@@ -205,11 +286,26 @@
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["severeLimbBleeding","soakedDressing"],
+          "routes": [
+            {"when":{"severeLimbBleeding":true},"go":4},
+            {"when":{"severeLimbBleeding":false,"soakedDressing":true},"go":3},
+            {"when":{"severeLimbBleeding":false,"soakedDressing":false},"go":0,"note":"monitorBleeding"}
+          ]
+        },
         "title": "Băng ép cố định và nâng cao chi",
         "desc": "Dùng cuộn băng thun quấn chặt quanh vết thương để duy trì áp lực ép. Nâng chi bị thương cao hơn tim (nếu không nghi ngờ gãy xương) để giảm áp lực dòng máu."
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["severeLimbBleeding"],
+          "routes": [
+            {"when":{"severeLimbBleeding":true},"go":4},
+            {"when":{"severeLimbBleeding":false},"go":0,"note":"monitorBleeding"}
+          ]
+        },
         "title": "Nếu máu vẫn thấm qua: Thêm lớp mới, không nên gỡ lớp cũ",
         "desc": "Nếu máu tiếp tục thấm ướt qua lớp băng gạc đầu tiên, không nên tháo gạc cũ ra (để tránh phá vỡ cục máu đông đang hình thành), hãy đặt thêm lớp gạc mới lên trên và băng chặt hơn."
       },
@@ -248,6 +344,42 @@
   },
   {
     "id": "ngung-tuan-hoan-cpr",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child",
+        "steps": {
+          "3": {
+            "title": "ageSpecificCompressionsTitle",
+            "desc": "ageSpecificCompressions",
+            "hideImage": true,
+            "note": "pediatricCompressions"
+          },
+          "5": {
+            "note": "pediatricAed"
+          }
+        }
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant",
+        "steps": {
+          "3": {
+            "title": "ageSpecificCompressionsTitle",
+            "desc": "ageSpecificCompressions",
+            "hideImage": true,
+            "note": "pediatricCompressions"
+          },
+          "5": {
+            "note": "pediatricAed"
+          }
+        }
+      }
+    ],
     "title": "Ngừng tuần hoàn (ép tim CPR)",
     "fullTitle": "Hồi sinh tim phổi (CPR) & sử dụng máy sốc điện tự động AED",
     "category": "benh-ly",
@@ -284,21 +416,46 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["cprSigns"],
+          "routes": [
+            {"when":{"cprSigns":true},"go":2},
+            {"when":{"cprSigns":false},"go":0,"note":"followDispatch"}
+          ]
+        },
         "title": "Kiểm tra hiện trường và phản xạ nạn nhân",
         "desc": "Đảm bảo hiện trường xung quanh an toàn. Vỗ mạnh hai vai nạn nhân và gọi to: 'Anh/chị có sao không? '. Quan sát lồng ngực trong 5-10 giây xem có thở bình thường không (thở ngáp cá được coi là không thở)."
       },
       {
         "stepNumber": 2,
+        "showCprAedGuide": true,
         "title": "Kích hoạt hệ thống cấp cứu 115 và tìm máy AED",
         "desc": "Chỉ định rõ một người xung quanh: 'Anh áo xanh gọi 115 và tìm máy sốc điện AED gần đây mang lại đây! '. Nếu chỉ có một mình, bật loa ngoài điện thoại gọi 115 và bắt đầu ép tim ngay."
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["trainedBreaths","aedReady"],
+          "routes": [
+            {"when":{"aedReady":true},"go":5},
+            {"when":{"aedReady":false,"trainedBreaths":true},"go":4},
+            {"when":{"aedReady":false,"trainedBreaths":false},"go":3,"note":"continueCpr"}
+          ]
+        },
+        "showCprAedGuide": true,
         "title": "Ép tim đúng vị trí và tần số chuẩn 100-120 lần/phút",
         "desc": "Đặt gót bàn tay vào nửa dưới xương ức (chính giữa ngực). Bàn tay kia lồng lên trên, các ngón đan vào nhau. Hai cánh tay thẳng vuông góc với ngực nạn nhân. Dùng trọng lượng nửa thân trên ép lún sâu 5 - 6 cm, để ngực nở hoàn toàn sau mỗi lần ép."
       },
       {
         "stepNumber": 4,
+        "guideDecision": {
+          "questions": ["aedReady"],
+          "routes": [
+            {"when":{"aedReady":true},"go":5},
+            {"when":{"aedReady":false},"go":3,"note":"continueCpr"}
+          ]
+        },
+        "showCprAedGuide": true,
         "title": "Thổi ngạt (30 ép tim: 2 thổi ngạt)",
         "desc": "Sau 30 lần ép tim, ngửa đầu nâng cằm nạn nhân, kẹp mũi và thổi ngạt 2 hơi liên tiếp (mỗi hơi 1 giây, thấy ngực phồng lên). Nếu không quen hoặc không có màng che bảo vệ: Tiếp tục ÉP TIM LIÊN TỤC không nên DỪNG (hands-only CPR)."
       },
@@ -445,6 +602,13 @@
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["seizureEnded"],
+          "routes": [
+            {"when":{"seizureEnded":true},"go":4},
+            {"when":{"seizureEnded":false},"go":3,"note":"monitorSeizure"}
+          ]
+        },
         "title": "Không nên kìm kẹp, không nên nhét bất cứ thứ gì vào miệng",
         "desc": "Để cơ thể nạn nhân co giật tự nhiên, không nên đè giữ chân tay (có thể gây gãy xương hoặc rách cơ). khuyến cáo tránh nhét khăn, đũa, ngón tay vào miệng nạn nhân."
       },
@@ -483,6 +647,58 @@
   },
   {
     "id": "hoc-di-vat-o-tre-em",
+    "guideAudiences": [
+      {
+        "id": "child",
+        "cprAge": "child",
+        "skip": [
+          2,
+          3
+        ],
+        "answers": {
+          "underOne": false
+        },
+        "steps": {
+          "4": {
+            "note": "childCycle"
+          },
+          "5": {
+            "desc": "chokingCpr",
+            "hideImage": true,
+            "note": "childChokingCpr"
+          }
+        }
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant",
+        "skip": [
+          4
+        ],
+        "answers": {
+          "underOne": true
+        },
+        "steps": {
+          "2": {
+            "title": "infantBackBlowsTitle",
+            "desc": "infantBackBlows",
+            "hideImage": true,
+            "note": "infantChoking"
+          },
+          "3": {
+            "title": "infantChestThrustsTitle",
+            "desc": "infantChestThrusts",
+            "hideImage": true,
+            "note": "infantChoking"
+          },
+          "5": {
+            "desc": "chokingCpr",
+            "hideImage": true,
+            "note": "infantChokingCpr"
+          }
+        }
+      }
+    ],
     "title": "Hóc dị vật ở trẻ em",
     "fullTitle": "Hướng dẫn sơ cứu trẻ bị hóc dị vật đường thở",
     "category": "tre-em",
@@ -498,26 +714,60 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["unresponsive","severeChoking","underOne"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"severeChoking":false},"go":0,"note":"monitorMildChoking"},
+            {"when":{"unresponsive":false,"severeChoking":true,"underOne":true},"go":2},
+            {"when":{"unresponsive":false,"severeChoking":true,"underOne":false},"go":4}
+          ]
+        },
         "title": "Đánh giá khả năng ho và thở",
         "desc": "Nếu trẻ còn ho mạnh hoặc khóc được, khuyến khích trẻ tiếp tục ho và theo dõi sát. Nếu ho yếu, không phát ra tiếng hoặc không thở được, xử trí tắc nghẽn đường thở ngay."
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["objectOut","unresponsive"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"objectOut":true},"go":0,"note":"monitorChoking"},
+            {"when":{"unresponsive":false,"objectOut":false},"go":3}
+          ]
+        },
         "title": "Trẻ dưới 1 tuổi: vỗ lưng",
         "desc": "Đỡ đầu và cổ, đặt trẻ nằm sấp dọc cẳng tay, đầu thấp hơn ngực. Dùng gót bàn tay vỗ 5 lần giữa hai xương bả vai."
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["objectOut","unresponsive"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"objectOut":true},"go":0,"note":"monitorChoking"},
+            {"when":{"unresponsive":false,"objectOut":false},"go":2}
+          ]
+        },
         "title": "Trẻ dưới 1 tuổi: ấn ngực",
         "desc": "Lật trẻ nằm ngửa, vẫn giữ đầu thấp hơn ngực; dùng hai ngón tay ấn nhanh 5 lần vào giữa ngực, ngay dưới đường nối hai núm vú. Lặp lại 5 vỗ lưng và 5 ấn ngực nếu dị vật chưa ra."
       },
       {
         "stepNumber": 4,
+        "guideDecision": {
+          "questions": ["objectOut","unresponsive"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"objectOut":true},"go":0,"note":"monitorChoking"},
+            {"when":{"unresponsive":false,"objectOut":false},"go":4}
+          ]
+        },
         "title": "Trẻ từ 1 tuổi: vỗ lưng và ép bụng",
         "desc": "Cho trẻ cúi người về trước, vỗ 5 lần giữa hai xương bả vai. Nếu chưa hết nghẹn, đứng hoặc quỳ phía sau, thực hiện 5 lần ép bụng hướng vào trong và lên trên; lặp lại đến khi trẻ thở được hoặc bất tỉnh."
       },
       {
         "stepNumber": 5,
+        "showCprAedGuide": true,
         "title": "Nếu trẻ bất tỉnh",
         "desc": "Đặt trẻ nằm trên mặt phẳng cứng, gọi 115 nếu chưa gọi và bắt đầu CPR theo hướng dẫn của tổng đài hoặc kỹ năng đã được học. Chỉ lấy dị vật khi nhìn thấy rõ trong miệng."
       }
@@ -551,6 +801,34 @@
   },
   {
     "id": "duoi-nuoc-o-tre-em",
+    "guideAudiences": [
+      {
+        "id": "child",
+        "cprAge": "child",
+        "steps": {
+          "3": {
+            "note": "pediatricCompressions"
+          },
+          "4": {
+            "note": "pediatricAed"
+          }
+        }
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant",
+        "steps": {
+          "3": {
+            "note": "pediatricCompressions",
+            "hideImage": true
+          },
+          "4": {
+            "note": "pediatricAed",
+            "hideImage": true
+          }
+        }
+      }
+    ],
     "title": "Đuối nước ở trẻ em",
     "fullTitle": "Các bước sơ cứu ban đầu trẻ bị đuối nước",
     "category": "ngoai-troi",
@@ -571,11 +849,26 @@
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["cprSigns"],
+          "routes": [
+            {"when":{"cprSigns":true},"go":3},
+            {"when":{"cprSigns":false},"go":0,"note":"monitorBreathing"}
+          ]
+        },
         "title": "Gọi 115, kiểm tra đáp ứng và thở",
         "desc": "Nhờ người khác gọi 115 và tìm AED. Kiểm tra trẻ có đáp ứng và có thở bình thường không; thở ngáp không phải thở bình thường."
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["aedReady"],
+          "routes": [
+            {"when":{"aedReady":true},"go":4},
+            {"when":{"aedReady":false},"go":3,"note":"continueCpr"}
+          ]
+        },
+        "showCprAedGuide": true,
         "title": "Nếu không thở: hỗ trợ hô hấp và CPR",
         "desc": "Nếu biết thực hiện, mở đường thở và cho 2 hơi thổi ngạt ban đầu, sau đó luân phiên 30 ép ngực với 2 hơi thổi. Nếu không thể thổi ngạt, thực hiện ép ngực liên tục theo hướng dẫn của 115."
       },
@@ -614,6 +907,20 @@
   },
   {
     "id": "dot-quy",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child"
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant"
+      }
+    ],
     "title": "Đột quỵ",
     "fullTitle": "Đột quỵ có cứu được không? Yếu tố nào gây ảnh hưởng?",
     "category": "benh-ly",
@@ -644,6 +951,7 @@
       },
       {
         "stepNumber": 4,
+        "showCprAedGuide": true,
         "title": "Theo dõi trong lúc chờ cấp cứu",
         "desc": "Theo dõi hô hấp và mức độ tỉnh táo. Nếu ngừng thở bình thường, bắt đầu CPR theo hướng dẫn của tổng đài."
       }
@@ -818,6 +1126,13 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["alertAndSwallows"],
+          "routes": [
+            {"when":{"alertAndSwallows":true},"go":2},
+            {"when":{"alertAndSwallows":false},"go":3}
+          ]
+        },
         "title": "Đánh giá mức độ nặng",
         "desc": "Kiểm tra mức tỉnh táo, nhịp thở, số lần nôn và tiêu chảy. Nếu bất tỉnh, co giật hoặc khó thở, gọi 115."
       },
@@ -828,6 +1143,13 @@
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["severeFoodPoisoning"],
+          "routes": [
+            {"when":{"severeFoodPoisoning":true},"go":4},
+            {"when":{"severeFoodPoisoning":false},"go":0}
+          ]
+        },
         "title": "Theo dõi mất nước",
         "desc": "Chú ý khô miệng, tiểu ít, chóng mặt khi đứng, mệt lả; trẻ nhỏ có thể ít nước mắt hoặc lừ đừ."
       },
@@ -866,6 +1188,20 @@
   },
   {
     "id": "dien-giat",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child"
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant"
+      }
+    ],
     "title": "Điện giật",
     "fullTitle": "Cách sơ cứu người bị điện giật sao cho đúng chuẩn và an toàn?",
     "category": "sinh-hoat",
@@ -886,11 +1222,19 @@
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["cprSigns"],
+          "routes": [
+            {"when":{"cprSigns":true},"go":3},
+            {"when":{"cprSigns":false},"go":4}
+          ]
+        },
         "title": "Gọi 115 và kiểm tra nạn nhân",
         "desc": "Khi đã an toàn, kiểm tra mức tỉnh táo và thở bình thường. Nhờ người gọi 115 và tìm AED."
       },
       {
         "stepNumber": 3,
+        "showCprAedGuide": true,
         "title": "CPR nếu ngừng thở bình thường",
         "desc": "Nếu nạn nhân không đáp ứng và không thở hoặc chỉ thở ngáp, bắt đầu CPR theo hướng dẫn 115; dùng AED ngay khi có."
       },
@@ -929,6 +1273,7 @@
   },
   {
     "id": "hoi-sinh-tim-phoi-nguoi-lon",
+    "guideDefaultCprAge": "adult",
     "title": "Hồi sinh tim phổi người lớn",
     "fullTitle": "Hồi sinh tim phổi cơ bản cho người lớn khi bị tai nạn",
     "category": "benh-ly",
@@ -944,26 +1289,52 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["cprSigns"],
+          "routes": [
+            {"when":{"cprSigns":true},"go":2},
+            {"when":{"cprSigns":false},"go":0,"note":"followDispatch"}
+          ]
+        },
         "title": "Kiểm tra an toàn, đáp ứng và thở",
         "desc": "Bảo đảm hiện trường an toàn, gọi to và vỗ vai. Quan sát thở bình thường trong tối đa 10 giây; thở ngáp không phải thở bình thường."
       },
       {
         "stepNumber": 2,
+        "showCprAedGuide": true,
         "title": "Gọi 115 và lấy AED",
         "desc": "Nhờ người xung quanh gọi 115, lấy AED; nếu một mình, gọi trên loa ngoài để nhận hướng dẫn và bắt đầu CPR."
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["trainedBreaths","aedReady"],
+          "routes": [
+            {"when":{"aedReady":true},"go":5},
+            {"when":{"aedReady":false,"trainedBreaths":true},"go":4},
+            {"when":{"aedReady":false,"trainedBreaths":false},"go":3,"note":"continueCpr"}
+          ]
+        },
+        "showCprAedGuide": true,
         "title": "Ép ngực 30 lần",
         "desc": "Đặt hai tay ở giữa ngực trên mặt phẳng cứng, ép sâu khoảng 5–6 cm với nhịp 100–120 lần/phút, để ngực nở lại hoàn toàn sau mỗi lần ép."
       },
       {
         "stepNumber": 4,
+        "guideDecision": {
+          "questions": ["aedReady"],
+          "routes": [
+            {"when":{"aedReady":true},"go":5},
+            {"when":{"aedReady":false},"go":3,"note":"continueCpr"}
+          ]
+        },
+        "showCprAedGuide": true,
         "title": "Thổi ngạt nếu đã được học",
         "desc": "Nếu được huấn luyện và có thể thực hiện, sau 30 lần ép ngực thổi 2 hơi, mỗi hơi khoảng 1 giây để ngực nâng lên; tiếp tục 30:2. Nếu không thể thổi ngạt, ép ngực liên tục."
       },
       {
         "stepNumber": 5,
+        "showCprAedGuide": true,
         "title": "Dùng AED và tiếp tục CPR",
         "desc": "Bật AED, dán điện cực theo hình trên máy và làm theo lời nhắc. Đảm bảo không ai chạm nạn nhân khi máy phân tích hoặc sốc điện; tiếp tục CPR khi máy yêu cầu."
       }
@@ -1017,6 +1388,13 @@
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["canUseTourniquet"],
+          "routes": [
+            {"when":{"canUseTourniquet":true},"go":3},
+            {"when":{"canUseTourniquet":false},"go":4}
+          ]
+        },
         "title": "Ép trực tiếp lên vết thương",
         "desc": "Đặt gạc hoặc vải sạch lên nguồn chảy máu và ép mạnh liên tục. Nếu có vật cắm sâu, không rút ra; ép quanh vật."
       },
@@ -1123,6 +1501,20 @@
   },
   {
     "id": "xu-ly-khi-bi-soc-phan-ve",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child"
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant"
+      }
+    ],
     "title": "Xử lý khi bị sốc phản vệ",
     "fullTitle": "Xử lý nghi ngờ sốc phản vệ cấp tính (anaphylaxis)",
     "category": "tre-em",
@@ -1142,6 +1534,13 @@
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["hasEpinephrine"],
+          "routes": [
+            {"when":{"hasEpinephrine":true},"go":3},
+            {"when":{"hasEpinephrine":false},"go":4}
+          ]
+        },
         "title": "Tư thế nằm phù hợp",
         "desc": "Đặt người bệnh nằm ngửa trên mặt phẳng, có thể kê cao hai chân khoảng 30 cm để hỗ trợ tuần hoàn. Nếu người bệnh khó thở nhiều, có thể cho ngồi tựa lưng (nửa nằm nửa ngồi)."
       },
@@ -1152,6 +1551,7 @@
       },
       {
         "stepNumber": 4,
+        "showCprAedGuide": true,
         "title": "Gọi 115 và theo dõi hồi sức",
         "desc": "Liên hệ ngay 115 để chuyển đến cơ sở y tế. nếu người bệnh ngừng thở, ngừng tim, có thể ép tim ngoài lồng ngực (CPR) theo hướng dẫn."
       }
@@ -1185,6 +1585,7 @@
   },
   {
     "id": "sac-sua-o-tre-so-sinh-rat-nguy",
+    "guideDefaultCprAge": "infant",
     "title": "Sặc sữa ở trẻ sơ sinh",
     "fullTitle": "Sơ cứu khi trẻ sơ sinh & trẻ nhỏ bị sặc sữa",
     "category": "tre-em",
@@ -1199,6 +1600,13 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["stillBlue"],
+          "routes": [
+            {"when":{"stillBlue":true},"go":2},
+            {"when":{"stillBlue":false},"go":3}
+          ]
+        },
         "title": "Vỗ lưng hỗ trợ đẩy sữa",
         "desc": "Đặt trẻ nằm sấp dọc theo cẳng tay người hỗ trợ, đầu hướng thấp hơn ngực, bàn tay giữ nhẹ cằm và má trẻ. Dùng gót bàn tay kia vỗ dứt khoát 5 lần vào vùng lưng giữa hai xương bả vai."
       },
@@ -1214,6 +1622,7 @@
       },
       {
         "stepNumber": 4,
+        "showCprAedGuide": true,
         "title": "Hỗ trợ hô hấp và đưa đi cấp cứu",
         "desc": "Nếu trẻ ngừng thở, có thể thực hiện thổi ngạt nhẹ nhàng kết hợp ép tim theo hướng dẫn nhi khoa và đưa trẻ đến cơ sở y tế gần nhất."
       }
@@ -1330,6 +1739,13 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["urgentMove"],
+          "routes": [
+            {"when":{"urgentMove":true},"go":2},
+            {"when":{"urgentMove":false},"go":0,"note":"waitForHelp"}
+          ]
+        },
         "title": "Hạn chế di chuyển và giữ thẳng trục đầu - cổ",
         "desc": "Giữ đầu và cổ nạn nhân thẳng hàng ở tư thế trung gian, tránh gập, ngửa hay xoay. Có thể dùng hai tay giữ nhẹ hai bên đầu hoặc chèn vật mềm hai bên tai."
       },
@@ -1459,6 +1875,13 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["alertAndSwallows"],
+          "routes": [
+            {"when":{"alertAndSwallows":true},"go":2},
+            {"when":{"alertAndSwallows":false},"go":5}
+          ]
+        },
         "title": "Nhận biết triệu chứng và kiểm tra nhanh",
         "desc": "Nếu có máy đo đường huyết cá nhân, đo kiểm tra (mức dưới 3.9 mmol/L hoặc dưới 70 mg/dL thường được xem là hạ đường huyết)."
       },
@@ -1469,11 +1892,26 @@
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["alertAndSwallows","glucoseStillLow"],
+          "routes": [
+            {"when":{"alertAndSwallows":false},"go":5},
+            {"when":{"alertAndSwallows":true,"glucoseStillLow":true},"go":2},
+            {"when":{"alertAndSwallows":true,"glucoseStillLow":false},"go":4}
+          ]
+        },
         "title": "Nghỉ ngơi và kiểm tra lại sau 15 phút",
         "desc": "Để người bệnh ngồi nghỉ ngơi. Sau 15 phút kiểm tra lại đường huyết; nếu vẫn thấp, có thể lặp lại việc bổ sung 15g đường."
       },
       {
         "stepNumber": 4,
+        "guideDecision": {
+          "questions": ["alertAndSwallows"],
+          "routes": [
+            {"when":{"alertAndSwallows":true},"go":0},
+            {"when":{"alertAndSwallows":false},"go":5}
+          ]
+        },
         "title": "Bổ sung bữa phụ duy trì",
         "desc": "Khi đường huyết ổn định trở lại, người bệnh có thể ăn nhẹ tinh bột (bánh quy, bánh mì hoặc cháo) để duy trì mức đường huyết."
       },
@@ -1536,6 +1974,13 @@
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["eyeObjectOrDiscomfort"],
+          "routes": [
+            {"when":{"eyeObjectOrDiscomfort":true},"go":4},
+            {"when":{"eyeObjectOrDiscomfort":false},"go":0}
+          ]
+        },
         "title": "Chớp mắt nhẹ nhàng trong nước sạch",
         "desc": "Có thể ngâm nhẹ mắt vào cốc nước sạch hoặc nước muối sinh lý rồi chớp mắt nhiều lần."
       },
@@ -1647,6 +2092,13 @@
     "steps": [
       {
         "stepNumber": 1,
+        "guideDecision": {
+          "questions": ["responsive"],
+          "routes": [
+            {"when":{"responsive":true},"go":2},
+            {"when":{"responsive":false},"go":3}
+          ]
+        },
         "title": "Giúp người bệnh nằm xuống",
         "desc": "Nếu có thể, kê chân hơi cao. Đề nghị người xung quanh lùi ra để có không khí thoáng."
       },
@@ -1759,6 +2211,65 @@
   },
   {
     "id": "nghiem-phap-heimlich-la-gi-cach",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child",
+        "steps": {
+          "5": {
+            "desc": "chokingCpr",
+            "hideImage": true,
+            "note": "childChokingCpr"
+          }
+        }
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant",
+        "skip": [
+          1,
+          2,
+          3
+        ],
+        "steps": {
+          "4": {
+            "title": "infantCycleTitle",
+            "desc": "infantCycle",
+            "hideImage": true,
+            "note": "infantChoking"
+          },
+          "5": {
+            "desc": "chokingCpr",
+            "hideImage": true,
+            "note": "infantChokingCpr"
+          }
+        }
+      },
+      {
+        "id": "latePregnancy",
+        "cprAge": "adult",
+        "skip": [
+          1,
+          2,
+          3
+        ],
+        "steps": {
+          "4": {
+            "title": "pregnancyCycleTitle",
+            "desc": "pregnancyCycle",
+            "hideImage": true,
+            "note": "pregnancyChoking"
+          },
+          "5": {
+            "note": "pregnancyChokingCpr"
+          }
+        }
+      }
+    ],
     "title": "Nghiệm pháp Heimlich",
     "fullTitle": "Tìm hiểu nghiệm pháp Heimlich: Xử trí dị vật đường thở",
     "category": "tre-em",
@@ -1788,11 +2299,20 @@
       },
       {
         "stepNumber": 4,
+        "guideDecision": {
+          "questions": ["objectOut","unresponsive"],
+          "routes": [
+            {"when":{"unresponsive":true},"go":5},
+            {"when":{"unresponsive":false,"objectOut":true},"go":0,"note":"monitorChoking"},
+            {"when":{"unresponsive":false,"objectOut":false},"go":4}
+          ]
+        },
         "title": "Luân phiên vỗ lưng và ép bụng",
         "desc": "Theo nhiều hướng dẫn hiện hành (như ERC), có thể luân phiên 5 lần vỗ lưng và 5 lần ép bụng cho đến khi dị vật bật ra hoặc nạn nhân ho, thở trở lại."
       },
       {
         "stepNumber": 5,
+        "showCprAedGuide": true,
         "title": "Trường hợp nạn nhân bất tỉnh",
         "desc": "Nhẹ nhàng đỡ nạn nhân nằm ngửa trên mặt phẳng cứng, gọi 115 và thực hiện quy trình hồi sinh tim phổi (CPR). Chỉ lấy dị vật trong miệng nếu nhìn thấy rõ."
       }
@@ -1827,6 +2347,7 @@
   },
   {
     "id": "so-cuu-nguoi-bi-nhoi-mau-co-tim-dau-tim-dot-ngot",
+    "guideDefaultCprAge": "adult",
     "title": "Nhồi máu cơ tim",
     "fullTitle": "Sơ cứu người bị nhồi máu cơ tim (đau tim đột ngột)",
     "category": "benh-ly",
@@ -1852,11 +2373,19 @@
       },
       {
         "stepNumber": 3,
+        "guideDecision": {
+          "questions": ["cprSigns"],
+          "routes": [
+            {"when":{"cprSigns":true},"go":4},
+            {"when":{"cprSigns":false},"go":0,"note":"monitorBreathing"}
+          ]
+        },
         "title": "Dùng thuốc hỗ trợ theo chỉ định của bác sĩ",
         "desc": "Nếu bệnh nhân có sẵn đơn thuốc, dùng ngay viên ngậm dưới lưỡi Nitroglycerin hoặc nhai 1 viên aspirin chống đông máu theo hướng dẫn y tế."
       },
       {
         "stepNumber": 4,
+        "showCprAedGuide": true,
         "title": "Ép tim ngoài lồng ngực (CPR) nếu bất tỉnh",
         "desc": "Đặt nạn nhân nằm lên mặt phẳng cứng. Chồng hai bàn tay đặt lên giữa ngực (trên xương ức) ép mạnh và sâu 1/3 lồng ngực, duy trì liên tục trong khi chờ xe 115."
       }
@@ -1980,6 +2509,13 @@
       },
       {
         "stepNumber": 2,
+        "guideDecision": {
+          "questions": ["exposedOrgans"],
+          "routes": [
+            {"when":{"exposedOrgans":true},"go":3},
+            {"when":{"exposedOrgans":false},"go":4}
+          ]
+        },
         "title": "Xử trí khi có sốc và vết thương hở",
         "desc": "Nếu có sốc nên để đầu thấp, chân cao, ủ ấm tạm thời nạn nhân. Vết thương hở, chảy máu băng bó bằng gạc vô trùng hoặc quần áo sạch."
       },
@@ -2159,6 +2695,20 @@
   },
   {
     "id": "so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu",
+    "guideAudiences": [
+      {
+        "id": "adult",
+        "cprAge": "adult"
+      },
+      {
+        "id": "child",
+        "cprAge": "child"
+      },
+      {
+        "id": "infant",
+        "cprAge": "infant"
+      }
+    ],
     "title": "Chi bị đứt lìa",
     "fullTitle": "Sơ cứu và bảo quản chi bị đứt lìa trong cấp cứu",
     "category": "tai-nan",
@@ -2174,6 +2724,7 @@
     "steps": [
       {
         "stepNumber": 1,
+        "showCprAedGuide": true,
         "title": "Bảo đảm đường thở và kiểm tra sinh hiệu",
         "desc": "Bảo đảm đường thở luôn thông thoáng, không bị tắc nghẹt. Nếu bệnh nhân ngừng tuần hoàn hô hấp thì làm hồi sinh tim phổi (CPR) ngay lập tức."
       },
