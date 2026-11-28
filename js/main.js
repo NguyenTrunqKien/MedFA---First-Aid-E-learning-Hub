@@ -103,6 +103,35 @@ function showGlobalToast(message) {
  * Gắn toàn bộ sự kiện tương tác cho Header, Footer & AI Chatbot sau khi inject DOM
  */
 function bindHeaderFooterEvents() {
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  if (themeToggleBtn) {
+    const root = document.documentElement;
+    const syncThemeToggle = () => {
+      themeToggleBtn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
+    };
+
+    syncThemeToggle();
+    themeToggleBtn.addEventListener('click', () => {
+      const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = nextTheme;
+      root.style.colorScheme = nextTheme;
+      syncThemeToggle();
+
+      try {
+        window.localStorage.setItem('medfa.theme', nextTheme);
+      } catch (error) {
+        console.warn('[MedFA] Không thể lưu giao diện đã chọn:', error);
+      }
+    });
+
+    window.addEventListener('storage', (event) => {
+      if (event.key !== 'medfa.theme' || !['light', 'dark'].includes(event.newValue)) return;
+      root.dataset.theme = event.newValue;
+      root.style.colorScheme = event.newValue;
+      syncThemeToggle();
+    });
+  }
+
   // 1. Điều khiển Mobile Navigation Drawer
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
