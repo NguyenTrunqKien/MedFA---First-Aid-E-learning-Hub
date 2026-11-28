@@ -105,11 +105,16 @@
       <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-3.5 rounded-full" data-page="about" href="about.html"><span data-i18n="nav.about">Về MedFA</span></a>
     </nav>
 
-    <!-- Header Actions (Search, Language, Mobile Toggle) -->
+    <!-- Header Actions (Search, Theme, Language, Mobile Toggle) -->
     <div class="medfa-header__actions">
       <a href="topics.html" aria-label="Tìm kiếm tình huống sơ cứu" data-i18n-aria-label="header.searchAria" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
         <svg class="shrink-0" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></svg>
       </a>
+
+      <button id="theme-toggle-btn" type="button" aria-label="Chuyển đổi giao diện sáng/tối" data-i18n-aria-label="header.themeToggleAria" aria-pressed="false" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+      </button>
 
       <!-- Language Switcher -->
       <div class="relative inline-block text-left" id="language-dropdown-container">
