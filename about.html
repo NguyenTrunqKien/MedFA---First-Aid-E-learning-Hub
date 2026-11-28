@@ -20,6 +20,7 @@
 
   <!-- MedFA Modular CSS Files -->
   <link rel="stylesheet" href="css/medfa.min.css">
+  <link rel="stylesheet" href="css/about.css">
 
   <!-- SEO Meta Tags, Canonical, Open Graph & Schema.org -->
   <meta name="robots" content="index, follow">
@@ -77,47 +78,80 @@
   <div id="header-placeholder"></div>
 
   <!-- MAIN CONTENT -->
-  <main class="w-full bg-surface flex-1">
+  <main class="w-full bg-surface flex-1 about-page">
     <div class="flex flex-col w-full">
 
       <!-- SECTION 1: HERO STORY -->
-      <section class="bg-surface-container-lowest py-20 border-b border-outline-variant/20" id="mission">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-          <div class="max-w-4xl flex flex-col items-start">
-            <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold mb-4 shadow-sm">
-              <span class="material-symbols-outlined text-[16px]">school</span>
+      <section class="about-hero" id="mission">
+        <div class="about-hero__glow about-hero__glow--one" aria-hidden="true"></div>
+        <div class="about-hero__glow about-hero__glow--two" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 md:px-8 about-hero__layout">
+          <div class="about-hero__copy">
+            <div class="about-eyebrow">
+              <span class="material-symbols-outlined" aria-hidden="true">school</span>
               <span data-i18n="about.heroBadge">HÀNH TRÌNH KHỞI TẠO • ĐỒ ÁN MÔN HỌC</span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-primary tracking-tight mb-4" data-i18n="about.heroTitle">
+            <h1 class="about-hero__title" data-i18n="about.heroTitle">
               Từ một đồ án môn học đến thư viện tri thức mở.
             </h1>
-            <p class="text-lg text-on-surface-variant leading-relaxed mb-3" data-i18n="about.p1">
+            <p class="about-hero__lead" data-i18n="about.p1">
               MedFA (Medical First Aid) không bắt đầu từ một tổ chức y tế khổng lồ. Chúng tôi là một nhóm những người trẻ đam mê công nghệ tại Trường Đại học Công nghệ Thông tin (UIT - ĐHQG-HCM), thực hiện dự án này trong khuôn khổ đồ án môn học IE104.
             </p>
-            <p class="text-base text-on-surface-variant leading-relaxed mb-6" data-i18n="about.p2">
+            <p class="about-hero__description" data-i18n="about.p2">
               Xuất phát từ khao khát ứng dụng những dòng code và thiết kế giao diện vào một mục đích mang ý nghĩa nhân văn, MedFA ra đời nhằm số hóa và đơn giản hóa kiến thức sơ cứu. Chúng tôi tin rằng công nghệ ý nghĩa nhất là công nghệ giúp bảo vệ sự sống.
             </p>
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-primary text-sm font-semibold shadow-sm">
-                <span class="material-symbols-outlined text-secondary text-[20px]">volunteer_activism</span>
+            <div class="about-hero__actions">
+              <a class="about-hero__button" href="#team">
+                <span data-i18n="about.teamMembersTitle">Đội ngũ thực hiện dự án</span>
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
+              <span class="about-hero__mission">
+                <span class="material-symbols-outlined" aria-hidden="true">volunteer_activism</span>
                 <span data-i18n="about.nonProfitBadge">Dự án phi lợi nhuận</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="about-hero__visual">
+            <div class="about-hero__art" aria-hidden="true">
+              <div class="about-hero__art-dots"></div>
+              <div class="about-hero__art-orbit about-hero__art-orbit--outer"></div>
+              <div class="about-hero__art-orbit about-hero__art-orbit--inner"></div>
+              <div class="about-hero__art-center">
+                <span class="material-symbols-outlined">health_and_safety</span>
               </div>
+              <span class="about-hero__art-heart material-symbols-outlined">ecg_heart</span>
+              <svg class="about-hero__art-pulse" viewBox="0 0 420 90" fill="none">
+                <path d="M4 47h94l22-1 18-21 25 46 28-68 29 82 22-38h34l15-18 17 18h108" />
+              </svg>
+              <span class="about-hero__art-wordmark">MedFA</span>
+            </div>
+            <div class="about-hero__team-note">
+              <span class="about-hero__team-icon material-symbols-outlined" aria-hidden="true">groups</span>
+              <span class="about-hero__team-copy">
+                <strong data-i18n="about.teamBadge">Nhóm phát triển dự án MedFA</strong>
+                <span data-i18n="about.teamSub">Đồ án môn học IE104 • Đại học Công nghệ Thông tin (UIT)</span>
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- SECTION 2: TEAM MEMBERS -->
-      <section class="bg-surface-container-low py-16" id="team">
+      <section class="about-team-section py-16" id="team">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
-          <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-primary tracking-tight mb-2" data-i18n="about.teamMembersTitle">
-              Đội ngũ thực hiện dự án
-            </h2>
-            <div class="w-16 h-1 bg-secondary rounded-full mb-3"></div>
-            <p class="text-base text-on-surface-variant" data-i18n="about.teamMembersDesc">
-              Các thành viên sinh viên cùng chung niềm đam mê xây dựng sản phẩm công nghệ vì cộng đồng
-            </p>
+          <div class="about-section-heading">
+            <div>
+              <div class="about-section-kicker">
+                <span class="material-symbols-outlined" aria-hidden="true">groups</span>
+                <span data-i18n="about.teamBadge">Nhóm phát triển dự án MedFA</span>
+              </div>
+              <h2 class="about-section-title" data-i18n="about.teamMembersTitle">Đội ngũ thực hiện dự án</h2>
+              <p class="about-section-description" data-i18n="about.teamMembersDesc">
+                Các thành viên sinh viên cùng chung niềm đam mê xây dựng sản phẩm công nghệ vì cộng đồng
+              </p>
+            </div>
+            <span class="about-team-course" data-i18n="about.teamSub">Đồ án môn học IE104 • Đại học Công nghệ Thông tin (UIT)</span>
           </div>
 
           <!-- Lưới 4 thẻ Thành viên nhóm: Khai báo dữ liệu JSON cho component 'team-card'
