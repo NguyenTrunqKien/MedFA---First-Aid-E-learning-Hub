@@ -1,6 +1,5 @@
 (() => {
   const dataUrl = 'data/quiz.json';
-  const enDataUrl = 'data/en/quiz.json';
 
   const fallbackQuestions = [
     {
@@ -206,30 +205,30 @@
       ? window.I18n.getLanguage()
       : 'vi';
 
-    if (currentLang !== 'en') {
+    if (currentLang !== 'en' && currentLang !== 'ja') {
       return baseQuestions;
     }
 
     try {
-      const res = await fetch(enDataUrl);
-      if (!res.ok) throw new Error('Cannot load EN quiz');
-      const enData = await res.json();
-      if (window.I18n.getLanguage() !== currentLang) return baseQuestions;
-      const enMap = new Map();
-      enData.forEach(item => enMap.set(item.id, item));
+      const res = await fetch(`data/${currentLang}/quiz.json`);
+      if (!res.ok) throw new Error(`Cannot load ${currentLang.toUpperCase()} quiz`);
+      const localizedData = await res.json();
+      if (window.I18n.getLanguage() !== currentLang) return getTranslatedQuestions();
+      const localizedMap = new Map();
+      localizedData.forEach(item => localizedMap.set(item.id, item));
 
       return baseQuestions.map(q => {
-        const en = enMap.get(q.id);
-        if (!en) return q;
+        const localized = localizedMap.get(q.id);
+        if (!localized) return q;
         const optMap = new Map();
-        if (Array.isArray(en.options)) {
-          en.options.forEach(o => optMap.set(o.id, o.text));
+        if (Array.isArray(localized.options)) {
+          localized.options.forEach(o => optMap.set(o.id, o.text));
         }
         return {
           ...q,
-          scenario: en.scenario || q.scenario,
-          question: en.question || q.question,
-          explanation: en.explanation || q.explanation,
+          scenario: localized.scenario || q.scenario,
+          question: localized.question || q.question,
+          explanation: localized.explanation || q.explanation,
           options: q.options.map(o => ({
             ...o,
             text: optMap.get(o.id) || o.text
@@ -237,6 +236,7 @@
         };
       });
     } catch {
+      if (window.I18n.getLanguage() !== currentLang) return getTranslatedQuestions();
       return baseQuestions;
     }
   }
@@ -419,19 +419,20 @@
     const ctx = canvas.getContext('2d');
     if (!ctx) return false;
 
-    const lang = (window.I18n && typeof window.I18n.getCurrentLanguage === 'function')
-      ? window.I18n.getCurrentLanguage()
+    const lang = (window.I18n && typeof window.I18n.getLanguage === 'function')
+      ? window.I18n.getLanguage()
       : 'vi';
     const fontFamily = '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
     const total = questions.length || 10;
     const passed = score >= 8;
     const now = new Date();
-    const dateStr = now.toLocaleDateString(lang === 'en' ? 'en-US' : 'vi-VN', {
+    const locale = lang === 'en' ? 'en-US' : lang === 'ja' ? 'ja-JP' : 'vi-VN';
+    const dateStr = now.toLocaleDateString(locale, {
       day: '2-digit',
       month: '2-digit',
       year: 'numeric'
     });
-    const timeStr = now.toLocaleTimeString(lang === 'en' ? 'en-US' : 'vi-VN', {
+    const timeStr = now.toLocaleTimeString(locale, {
       hour: '2-digit',
       minute: '2-digit',
       hour12: false
@@ -576,7 +577,7 @@
 
     // Filename
     const stamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
-    const filePrefix = lang === 'en' ? 'MedFA-QuizResult' : 'MedFA-KetQua';
+    const filePrefix = lang === 'en' ? 'MedFA-QuizResult' : lang === 'ja' ? 'MedFA-クイズ結果' : 'MedFA-KetQua';
     const fileName = `${filePrefix}-${score}of${total}-${stamp}.png`;
 
     // Trigger download

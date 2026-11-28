@@ -153,6 +153,18 @@
               <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">ENG</span>
             </div>
           </button>
+          <button type="button" data-language="ja" aria-pressed="false" class="w-full flex items-center justify-between px-3.5 py-2.5 text-left hover:bg-surface-container transition-colors">
+            <div class="flex items-center gap-2.5">
+              <svg class="w-5 h-3.5 rounded-sm shadow-xs shrink-0" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="30" height="20" fill="#fff"></rect>
+                <circle cx="15" cy="10" r="6" fill="#BC002D"></circle>
+              </svg>
+              <span class="font-label-md text-label-md" data-i18n="header.language.japanese">日本語</span>
+            </div>
+            <div class="flex items-center gap-1.5 lang-status">
+              <span class="text-[10px] font-bold text-on-surface-variant/70 bg-surface-container-high px-1.5 py-0.5 rounded">日本</span>
+            </div>
+          </button>
         </div>
       </div>
 

@@ -7,7 +7,7 @@
 const DataLoader = (() => {
   // In-memory cache
   let topicsCache = null;
-  let englishTopicsRequest;
+  const localizedTopicsRequests = new Map();
 
   // Embedded Fallback Data (ensures site works even if opened directly via file://)
   const FALLBACK_TOPICS = [
@@ -579,58 +579,61 @@ const DataLoader = (() => {
       baseList.every((item, index) => matchesItem(item, translations[index]));
   }
 
-  function mergeTopicTranslations(base, en) {
-    if (!en) return base;
+  function mergeTopicTranslations(base, localized) {
+    if (!localized) return base;
     const topic = { ...base };
     for (const key of ['title', 'fullTitle', 'categoryLabel', 'readTime', 'standard', 'shortDesc', 'lead', 'emergencyAlert']) {
-      if (hasText(en[key])) topic[key] = en[key];
+      if (hasText(localized[key])) topic[key] = localized[key];
     }
-    if (matchesList(base.steps, en.steps, (step, translation) =>
+    if (matchesList(base.steps, localized.steps, (step, translation) =>
       translation?.stepNumber === step.stepNumber && hasText(translation?.title) && hasText(translation?.desc))) {
       topic.steps = base.steps.map((step, index) => ({
-        ...step, title: en.steps[index].title, desc: en.steps[index].desc
+        ...step, title: localized.steps[index].title, desc: localized.steps[index].desc
       }));
     }
-    if (matchesList(base.timeline, en.timeline, (entry, translation) =>
+    if (matchesList(base.timeline, localized.timeline, (entry, translation) =>
       translation?.level === entry.level && hasText(translation?.time) && hasText(translation?.status))) {
       topic.timeline = base.timeline.map((entry, index) => ({
-        ...entry, time: en.timeline[index].time, status: en.timeline[index].status
+        ...entry, time: localized.timeline[index].time, status: localized.timeline[index].status
       }));
     }
     for (const field of ['dos', 'donts']) {
-      if (matchesList(base[field], en[field], (_, text) => hasText(text))) topic[field] = en[field];
+      if (matchesList(base[field], localized[field], (_, text) => hasText(text))) topic[field] = localized[field];
     }
-    if (base.video && hasText(en.video?.creator)) {
-      topic.video = { ...base.video, creator: en.video.creator };
+    if (base.video && hasText(localized.video?.creator)) {
+      topic.video = { ...base.video, creator: localized.video.creator };
     }
-    if (Array.isArray(base.sources) && Array.isArray(en.sources)) {
-      const names = new Map(en.sources.filter(source => source?.url).map(source => [source.url, source.name]));
+    if (Array.isArray(base.sources) && Array.isArray(localized.sources)) {
+      const names = new Map(localized.sources.filter(source => source?.url).map(source => [source.url, source.name]));
       topic.sources = base.sources.map(source => ({...source, name: names.get(source.url) || source.name}));
     }
     return topic;
   }
 
-  async function loadEnglishTopics(base) {
+  async function loadLocalizedTopics(base, lang) {
     try {
-      const response = await fetch('data/en/topics.json');
-      if (!response.ok) throw new Error('Could not load English topics');
+      const response = await fetch(`data/${lang}/topics.json`);
+      if (!response.ok) throw new Error(`Could not load ${lang.toUpperCase()} topics`);
       const translations = await response.json();
-      if (!Array.isArray(translations)) throw new Error('Invalid English topic data');
+      if (!Array.isArray(translations)) throw new Error(`Invalid ${lang.toUpperCase()} topic data`);
       const byId = new Map(translations.filter(item => item?.id).map(item => [item.id, item]));
       return base.map(topic => mergeTopicTranslations(topic, byId.get(topic.id)));
     } catch (error) {
-      console.warn('[DataLoader] Using Vietnamese topics as fallback.', error);
-      englishTopicsRequest = undefined;
+      console.warn(`[DataLoader] Using Vietnamese topics as ${lang.toUpperCase()} fallback.`, error);
+      localizedTopicsRequests.delete(lang);
       return base;
     }
   }
 
   async function loadTopics() {
     const base = await loadBaseTopics();
-    if (globalThis.window?.I18n?.getLanguage() !== 'en') return base;
-    englishTopicsRequest ??= loadEnglishTopics(base);
-    const localized = await englishTopicsRequest;
-    return globalThis.window?.I18n?.getLanguage() === 'en' ? localized : base;
+    const lang = globalThis.window?.I18n?.getLanguage();
+    if (lang !== 'en' && lang !== 'ja') return base;
+    if (!localizedTopicsRequests.has(lang)) {
+      localizedTopicsRequests.set(lang, loadLocalizedTopics(base, lang));
+    }
+    const localized = await localizedTopicsRequests.get(lang);
+    return globalThis.window?.I18n?.getLanguage() === lang ? localized : loadTopics();
   }
 
   /**

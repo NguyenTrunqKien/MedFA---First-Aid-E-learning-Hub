@@ -8,7 +8,7 @@
 
 /**
  * Cập nhật giao diện nút chuyển ngôn ngữ và menu dropdown
- * @param {'vi'|'en'} [lang]
+ * @param {'vi'|'en'|'ja'} [lang]
  */
 function updateLanguageSwitcherUI(lang) {
   const currentLang = lang || (window.I18n ? window.I18n.getLanguage() : 'vi');
@@ -18,12 +18,13 @@ function updateLanguageSwitcherUI(lang) {
 
   const vnFlagSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect fill="#DA251D" height="20" width="30"></rect><polygon fill="#FFFF00" points="15,4 16.545,8.755 21.55,8.755 17.502,11.695 19.048,16.45 15,13.51 10.952,16.45 12.498,11.695 8.45,8.755 13.455,8.755"></polygon></svg>';
   const ukFlagSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><clipPath id="uk-flag-clip-header"><rect width="60" height="30"></rect></clipPath><g clip-path="url(#uk-flag-clip-header)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></g></svg>';
+  const jpFlagSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm shrink-0 inline-block" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#fff"></rect><circle cx="15" cy="10" r="6" fill="#BC002D"></circle></svg>';
 
   if (flagContainer) {
-    flagContainer.innerHTML = currentLang === 'en' ? ukFlagSvg : vnFlagSvg;
+    flagContainer.innerHTML = currentLang === 'en' ? ukFlagSvg : currentLang === 'ja' ? jpFlagSvg : vnFlagSvg;
   }
   if (textContainer) {
-    textContainer.textContent = currentLang === 'en' ? 'ENG' : 'VN';
+    textContainer.textContent = currentLang === 'en' ? 'ENG' : currentLang === 'ja' ? '日本' : 'VN';
   }
   if (langMenu) {
     langMenu.querySelectorAll('button[data-language]').forEach(btn => {
@@ -237,7 +238,7 @@ function bindHeaderFooterEvents() {
     });
   }
 
-  // 3. Language Switcher Dropdown (VN / ENG)
+  // 3. Language Switcher Dropdown (VN / ENG / JP)
   const langBtn = document.getElementById('language-switcher-btn');
   const langMenu = document.getElementById('language-dropdown-menu');
   if (langBtn && langMenu) {

@@ -24,9 +24,9 @@ const ChatbotGemini = (() => {
   let envLoadPromise = null;
   let isVercelServerless = false;
 
-  // Bộ nhớ đệm thư viện bài học theo ngôn ngữ ('vi' -> data/topics.json, 'en' -> data/en/topics.json)
-  const topicsCacheByLang = { vi: null, en: null };
-  const topicsPromiseByLang = { vi: null, en: null };
+  // Bộ nhớ đệm thư viện bài học theo ngôn ngữ
+  const topicsCacheByLang = { vi: null, en: null, ja: null };
+  const topicsPromiseByLang = { vi: null, en: null, ja: null };
 
   // Lịch sử hội thoại ngắn (tối đa 3 lượt hỏi-đáp gần nhất) giúp AI hiểu câu hỏi nối tiếp
   const MAX_HISTORY_TURNS = 3;
@@ -60,6 +60,20 @@ Core rules:
 5. DO NOT (DANGEROUS MISTAKES): List 1-2 critical things to avoid (e.g., no toothpaste/ice on burns, no blind finger sweeps for choking).
 6. DISCLAIMER: Keep a calm, decisive tone and end medical answers with: "This guidance supports initial first aid reflexes and does not replace professional medical care."
 Format: Concise Markdown with clear bullet points.
+`;
+
+  const SYSTEM_INSTRUCTION_JA = `
+あなたはMedFAの応急手当アシスタントです。米国心臓協会（AHA）および欧州蘇生協議会（ERC）のガイドラインに沿って回答してください。
+基本原則:
+1. 対応範囲: 応急手当、緊急時の初期対応、MedFA学習プラットフォームの使い方だけに対応してください。無関係な質問には1〜2文で丁寧に断り、応急手当に関する質問を促してください。短い挨拶には親しみやすく応答してください。
+2. 生命に関わる緊急事態: 心停止、呼吸停止、意識不明、重度の窒息、重いやけど、けいれん、熱中症、大量出血などでは、最初に「直ちに地域の救急サービスへ連絡してください」と明確に伝えてください。ベトナムでは115、日本では119です。
+3. MedFAライブラリと情報の透明性:
+   - [RELATED MEDFA LIBRARY ARTICLES] がある場合は、その内容に沿って回答し、存在しないURLを作らないでください。
+   - 関連記事がない医療・応急手当の質問では、その話題が標準化されたMedFAライブラリにないことを簡潔に伝え、一般的な安全情報のみを案内してください。診断や薬の処方はしないでください。
+4. 直ちに行う手順: 現場で実行できる短い箇条書きで、3〜4段階以内にまとめてください。
+5. 危険な行為: 避けるべきことを1〜2点示してください。
+6. 正確性と注意: 落ち着いた明確な表現を使い、医療に関する回答の最後に「この情報は初期対応を支援するもので、専門的な医療の代わりにはなりません」と記してください。
+日本語で簡潔なMarkdown形式で回答してください。
 `;
 
   /**
@@ -399,13 +413,14 @@ Format: Concise Markdown with clear bullet points.
   }
 
   /**
-   * Lấy ngôn ngữ hiện hành ('vi' hoặc 'en')
-   * @returns {'vi'|'en'}
+   * Lấy ngôn ngữ hiện hành ('vi', 'en' hoặc 'ja')
+   * @returns {'vi'|'en'|'ja'}
    */
   function getCurrentLang() {
-    return (typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en')
-      ? 'en'
+    const lang = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage
+      ? window.I18n.getLanguage()
       : 'vi';
+    return lang === 'en' || lang === 'ja' ? lang : 'vi';
   }
 
   /**
@@ -471,16 +486,16 @@ Format: Concise Markdown with clear bullet points.
   }
 
   /**
-   * Nạp và cache danh sách bài học từ thư viện theo ngôn ngữ ('vi' -> data/topics.json, 'en' -> data/en/topics.json)
-   * @param {'vi'|'en'} [lang]
+   * Nạp và cache danh sách bài học từ thư viện theo ngôn ngữ
+   * @param {'vi'|'en'|'ja'} [lang]
    * @returns {Promise<Array>}
    */
   async function loadLibraryTopics(lang = getCurrentLang()) {
-    const targetLang = lang === 'en' ? 'en' : 'vi';
+    const targetLang = lang === 'en' || lang === 'ja' ? lang : 'vi';
     if (topicsCacheByLang[targetLang]) return topicsCacheByLang[targetLang];
     if (topicsPromiseByLang[targetLang]) return topicsPromiseByLang[targetLang];
 
-    const url = targetLang === 'en' ? 'data/en/topics.json' : 'data/topics.json';
+    const url = targetLang === 'vi' ? 'data/topics.json' : `data/${targetLang}/topics.json`;
     topicsPromiseByLang[targetLang] = (async () => {
       try {
         const res = await fetch(url);
@@ -491,8 +506,8 @@ Format: Concise Markdown with clear bullet points.
           return data;
         }
       } catch (_) {
-        // Fallback nếu mở file:// và có sẵn DataLoader
-        if (typeof window !== 'undefined' && window.DataLoader && Array.isArray(window.DataLoader.FALLBACK_TOPICS)) {
+        // Chỉ dùng dữ liệu tiếng Việt dự phòng cho giao diện tiếng Việt.
+        if (targetLang === 'vi' && typeof window !== 'undefined' && window.DataLoader && Array.isArray(window.DataLoader.FALLBACK_TOPICS)) {
           return window.DataLoader.FALLBACK_TOPICS;
         }
       }
@@ -516,6 +531,15 @@ Format: Concise Markdown with clear bullet points.
       .filter(Boolean);
   }
 
+  function getJapaneseBigrams(value) {
+    const characters = Array.from(value.replace(/\s+/g, ''));
+    const bigrams = new Set();
+    for (let index = 0; index < characters.length - 1; index++) {
+      bigrams.add(characters[index] + characters[index + 1]);
+    }
+    return [...bigrams];
+  }
+
   /**
    * Tìm tối đa top N bài viết liên quan nhất trong thư viện (chỉ đọc ít bài liên quan thay vì nhồi hết 33 bài)
    * Có phân biệt dấu thanh khi người dùng gõ có dấu (tránh "sứa" khớp nhầm "sữa"), vẫn hỗ trợ gõ không dấu.
@@ -527,6 +551,7 @@ Format: Concise Markdown with clear bullet points.
   function findRelevantTopics(query, topics, maxResults = 3) {
     if (!query || !Array.isArray(topics) || topics.length === 0) return [];
     const normQuery = normalizeText(query);
+    const japaneseBigrams = getCurrentLang() === 'ja' ? getJapaneseBigrams(normQuery) : [];
     const rawQueryTokens = tokenizeRaw(query).filter(w => {
       const n = normalizeText(w);
       return n.length >= 2 && !STOP_WORDS.has(n);
@@ -599,6 +624,13 @@ Format: Concise Markdown with clear bullet points.
         score += descHit;
       }
 
+      if (japaneseBigrams.length > 0) {
+        const titleHits = japaneseBigrams.filter(bigram => titleNorm.includes(bigram)).length;
+        const descNorm = normalizeText(descRaw);
+        const descHits = japaneseBigrams.filter(bigram => descNorm.includes(bigram)).length;
+        score += Math.min(titleHits * 2.5, 10) + Math.min(descHits * 0.75, 2);
+      }
+
       if (score >= 4.5) {
         scored.push({ topic, score });
       }
@@ -611,13 +643,17 @@ Format: Concise Markdown with clear bullet points.
   /**
    * Tạo ngữ cảnh rút gọn (chỉ 2-3 bài liên quan nhất) để gửi kèm cho Gemini, tiết kiệm token
    * @param {Array} matchedTopics
-   * @param {'vi'|'en'} lang
+   * @param {'vi'|'en'|'ja'} lang
    * @returns {string}
    */
   function buildCompactTopicsContext(matchedTopics, lang) {
     if (!matchedTopics || matchedTopics.length === 0) return '';
     const isEn = lang === 'en';
-    const header = isEn ? '[RELATED MEDFA LIBRARY ARTICLES]' : '[TÀI LIỆU THƯ VIỆN MEDFA LIÊN QUAN]';
+    const header = isEn
+      ? '[RELATED MEDFA LIBRARY ARTICLES]'
+      : lang === 'ja'
+        ? '[MEDFAライブラリの関連記事]'
+        : '[TÀI LIỆU THƯ VIỆN MEDFA LIÊN QUAN]';
 
     const blocks = matchedTopics.slice(0, 2).map((t, idx) => {
       const stepsSummary = (t.steps || [])
@@ -639,13 +675,17 @@ Format: Concise Markdown with clear bullet points.
   /**
    * Tạo khối gợi ý liên kết trực tiếp tới các bài liên quan trong Thư viện MedFA
    * @param {Array} matchedTopics
-   * @param {'vi'|'en'} lang
+   * @param {'vi'|'en'|'ja'} lang
    * @returns {string}
    */
   function renderTopicSuggestionsHtml(matchedTopics, lang) {
     if (!matchedTopics || matchedTopics.length === 0) return '';
     const isEn = lang === 'en';
-    const heading = isEn ? 'Related guides in MedFA Library:' : 'Bài viết liên quan trong Thư viện MedFA:';
+    const heading = isEn
+      ? 'Related guides in MedFA Library:'
+      : lang === 'ja'
+        ? 'MedFAライブラリの関連ガイド:'
+        : 'Bài viết liên quan trong Thư viện MedFA:';
 
     const linksHtml = matchedTopics.map(t => `
       <a href="topic-detail.html?id=${encodeURIComponent(t.id)}" class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-surface-container-low hover:bg-primary/10 border border-outline-variant/30 transition-colors text-xs text-primary font-semibold group">
@@ -670,7 +710,7 @@ Format: Concise Markdown with clear bullet points.
   /**
    * Render câu trả lời ngoại tuyến trực tiếp từ bài học khớp nhất trong thư viện 33 bài (song ngữ)
    * @param {Array} matchedTopics
-   * @param {'vi'|'en'} lang
+   * @param {'vi'|'en'|'ja'} lang
    * @returns {string}
    */
   function renderOfflineTopicHtml(matchedTopics, lang) {
@@ -687,7 +727,7 @@ Format: Concise Markdown with clear bullet points.
     const warningText = (primary.donts && primary.donts.length > 0)
       ? primary.donts[0]
       : '';
-    const warningLabel = isEn ? 'Avoid:' : 'Lưu ý tránh:';
+    const warningLabel = isEn ? 'Avoid:' : lang === 'ja' ? '避けること:' : 'Lưu ý tránh:';
 
     return `
       <div class="flex flex-col gap-2">
@@ -720,6 +760,7 @@ Format: Concise Markdown with clear bullet points.
   function generateOfflineResponse(query, matchedTopics = []) {
     const lang = getCurrentLang();
     const isEn = lang === 'en';
+    const isJa = lang === 'ja';
     const q = normalizeText(query);
 
     // 0. Phản hồi tự nhiên cho câu chào hỏi ngắn
@@ -729,6 +770,14 @@ Format: Concise Markdown with clear bullet points.
           <div class="flex flex-col gap-1.5 text-xs leading-relaxed">
             <p class="font-semibold text-primary">Hello! I'm the MedFA First Aid Assistant 🩺</p>
             <p>Tell me the emergency or first aid situation you need help with (e.g., <em>burns, choking, bleeding, CPR, snakebite, fainting</em>), and I'll guide you step by step.</p>
+          </div>
+        `;
+      }
+      if (isJa) {
+        return `
+          <div class="flex flex-col gap-1.5 text-xs leading-relaxed">
+            <p class="font-semibold text-primary">こんにちは。MedFA応急手当アシスタントです 🩺</p>
+            <p>どのような応急手当が必要ですか？やけど、窒息、出血、CPR、熱中症などの状況を教えてください。</p>
           </div>
         `;
       }
@@ -746,8 +795,8 @@ Format: Concise Markdown with clear bullet points.
     }
     
     // 2. Fallback về 7 quy tắc phản xạ nội bộ nếu chưa tải được topics.json (ví dụ mở file://)
-    const primaryRules = isEn ? OFFLINE_RULES_EN : OFFLINE_RULES;
-    const secondaryRules = isEn ? OFFLINE_RULES : OFFLINE_RULES_EN;
+    const primaryRules = isEn ? OFFLINE_RULES_EN : isJa ? [] : OFFLINE_RULES;
+    const secondaryRules = isEn || isJa ? [] : OFFLINE_RULES_EN;
 
     let matchedRule = primaryRules.find(rule =>
       rule.keywords.some(keyword => q.includes(normalizeText(keyword)))
@@ -765,7 +814,7 @@ Format: Concise Markdown with clear bullet points.
         return `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check_circle</span><span>${formatted}</span></li>`;
       }).join('');
 
-      const warningLabel = isEn ? 'Note:' : 'Lưu ý:';
+      const warningLabel = isEn ? 'Note:' : isJa ? '注意:' : 'Lưu ý:';
 
       return `
         <div class="flex flex-col gap-2">
@@ -787,6 +836,19 @@ Format: Concise Markdown with clear bullet points.
               <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
             </a>
           ` : ''}
+        </div>
+      `;
+    }
+
+    if (isJa) {
+      return `
+        <div class="flex flex-col gap-2 text-xs leading-relaxed">
+          <p>MedFAで質問を受け付けました: <em>"${escapeHTML(query)}"</em></p>
+          <p>緊急時は、まず周囲の安全を確認し、地域の救急サービスへ連絡してください。ベトナムでは115、日本では119です。</p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>標準的な手順は<a href="topics.html" class="text-primary font-bold underline">応急手当ライブラリ</a>で確認できます。</li>
+            <li><a href="flashcards.html" class="text-secondary font-bold underline">フラッシュカード</a>や<a href="quiz.html" class="text-tertiary font-bold underline">シナリオクイズ</a>で知識を確認できます。</li>
+          </ul>
         </div>
       `;
     }
@@ -823,11 +885,11 @@ Format: Concise Markdown with clear bullet points.
    * Gọi Vercel Serverless Function /api/chat (Bảo mật API Key ở server Vercel)
    * @param {string} prompt 
    * @param {string} model 
-   * @param {{ lang?: 'vi'|'en', topicsContext?: string }} [options={}]
+   * @param {{ lang?: 'vi'|'en'|'ja', topicsContext?: string }} [options={}]
    * @returns {Promise<string>}
    */
   async function callVercelChatApi(prompt, model, options = {}) {
-    const lang = options.lang === 'en' ? 'en' : 'vi';
+    const lang = options.lang === 'en' || options.lang === 'ja' ? options.lang : 'vi';
     const payload = {
       prompt,
       model,
@@ -860,18 +922,18 @@ Format: Concise Markdown with clear bullet points.
    * @param {string} prompt 
    * @param {string} apiKey 
    * @param {string} model
-   * @param {{ lang?: 'vi'|'en', topicsContext?: string }} [options={}]
+   * @param {{ lang?: 'vi'|'en'|'ja', topicsContext?: string }} [options={}]
    * @returns {Promise<string>}
    */
   async function callGeminiApi(prompt, apiKey, model, options = {}) {
     if (!model) {
       throw new Error('Chưa cấu hình mô hình Gemini (GEMINI_DEFAULT_MODEL trong .env hoặc chọn trong Cài đặt).');
     }
-    const lang = options.lang === 'en' ? 'en' : 'vi';
+    const lang = options.lang === 'en' || options.lang === 'ja' ? options.lang : 'vi';
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
 
     const userPromptWithContext = options.topicsContext
-      ? `${options.topicsContext}\n\n${lang === 'en' ? 'User question' : 'Câu hỏi người dùng'}: ${prompt}`
+      ? `${options.topicsContext}\n\n${lang === 'en' ? 'User question' : lang === 'ja' ? '質問' : 'Câu hỏi người dùng'}: ${prompt}`
       : prompt;
 
     const contents = [
@@ -885,7 +947,7 @@ Format: Concise Markdown with clear bullet points.
     const body = {
       contents,
       systemInstruction: {
-        parts: [{ text: lang === 'en' ? SYSTEM_INSTRUCTION_EN : SYSTEM_INSTRUCTION }]
+        parts: [{ text: lang === 'en' ? SYSTEM_INSTRUCTION_EN : lang === 'ja' ? SYSTEM_INSTRUCTION_JA : SYSTEM_INSTRUCTION }]
       },
       generationConfig: {
         temperature: 0.2,
@@ -1065,7 +1127,9 @@ Format: Concise Markdown with clear bullet points.
         console.warn(`[MedFA Chatbot] Lỗi gọi Gemini AI (${activeModel}), chuyển sang chế độ phản xạ y khoa nội bộ:`, err.message);
         const fallbackBanner = lang === 'en'
           ? `Could not connect to ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Switched to AHA/ERC offline guide:`
-          : `Không kết nối được ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Đã tự động chuyển về phản xạ chuẩn AHA/ERC:`;
+          : lang === 'ja'
+            ? `${escapeHTML(getModelLabel(activeModel))}に接続できませんでした。AHA/ERCに基づくオフライン案内に切り替えました。`
+            : `Không kết nối được ${escapeHTML(getModelLabel(activeModel))} (${escapeHTML(err.message)}). Đã tự động chuyển về phản xạ chuẩn AHA/ERC:`;
         finalHtml = `
           <div class="p-2 mb-2 rounded bg-error-container/20 text-error text-[11px] font-semibold flex items-center gap-1">
             <span class="material-symbols-outlined text-[14px]">info</span>
@@ -1095,8 +1159,8 @@ Format: Concise Markdown with clear bullet points.
   function populateModelOptions(selectEl) {
     if (!selectEl) return;
     const defaultModel = envConfig.defaultModel;
-    const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
-    const defaultTag = isEn ? ' (Default)' : ' (Mặc định)';
+    const lang = getCurrentLang();
+    const defaultTag = lang === 'en' ? ' (Default)' : lang === 'ja' ? ' (デフォルト)' : ' (Mặc định)';
 
     const models = AVAILABLE_MODELS.slice();
     if (defaultModel && !models.some(m => m.id === defaultModel)) {
@@ -1176,12 +1240,14 @@ Format: Concise Markdown with clear bullet points.
       const selectedId = modelSelect.value;
       setSelectedModel(selectedId);
       modal.classList.add('hidden');
-      const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
+      const lang = getCurrentLang();
       const title = typeof window !== 'undefined' && window.t ? window.t('chat.keyUpdated') : '✅ Đã cập nhật cấu hình!';
       const label = escapeHTML(getModelLabel(selectedId));
-      const desc = isEn
+      const desc = lang === 'en'
         ? `Assistant will use <strong>${label}</strong>.`
-        : `Trợ lý sẽ sử dụng mô hình <strong>${label}</strong>.`;
+        : lang === 'ja'
+          ? `アシスタントは<strong>${label}</strong>を使用します。`
+          : `Trợ lý sẽ sử dụng mô hình <strong>${label}</strong>.`;
       appendMessage('bot', `
         <p class="text-xs text-secondary font-bold" data-i18n="chat.keyUpdated">${title}</p>
         <p class="text-xs text-on-surface-variant mt-1">${desc}</p>
@@ -1193,10 +1259,12 @@ Format: Concise Markdown with clear bullet points.
       populateModelOptions(modelSelect);
       modal.classList.add('hidden');
       const defaultId = envConfig.defaultModel || modelSelect.value;
-      const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage && window.I18n.getLanguage() === 'en';
-      const msg = isEn
+      const lang = getCurrentLang();
+      const msg = lang === 'en'
         ? `ℹ️ Reset to default model: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`
-        : `ℹ️ Đã khôi phục mô hình mặc định: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`;
+        : lang === 'ja'
+          ? `ℹ️ デフォルトモデルに戻しました: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>。`
+          : `ℹ️ Đã khôi phục mô hình mặc định: <strong>${escapeHTML(getModelLabel(defaultId))}</strong>.`;
       appendMessage('bot', `
         <p class="text-xs text-on-surface font-semibold">${msg}</p>
       `);
@@ -1228,7 +1296,9 @@ Format: Concise Markdown with clear bullet points.
       langListenerBound = true;
       window.addEventListener('medfa:languageChanged', (e) => {
         if (!chatbotWarmedUp) return;
-        const nextLang = e?.detail?.language === 'en' ? 'en' : getCurrentLang();
+        const nextLang = e?.detail?.language === 'en' || e?.detail?.language === 'ja'
+          ? e.detail.language
+          : getCurrentLang();
         loadLibraryTopics(nextLang);
       });
     }

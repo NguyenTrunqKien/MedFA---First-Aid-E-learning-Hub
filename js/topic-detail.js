@@ -548,16 +548,20 @@
         linkLabelEl.textContent = isYouTube ? ytText : vidText;
       }
       if (creatorEl) {
-        const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+        const lang = typeof window !== 'undefined' && window.I18n ? window.I18n.getLanguage() : 'vi';
         const prefix = (typeof window !== 'undefined' && typeof window.t === 'function')
           ? window.t('detail.videoSourcePrefix')
-          : (isEn ? 'Professional Source: ' : 'Nguồn chuyên môn: ');
+          : (lang === 'en' ? 'Professional Source: ' : lang === 'ja' ? '専門資料: ' : 'Nguồn chuyên môn: ');
         const fallback = (typeof window !== 'undefined' && typeof window.t === 'function')
           ? window.t('detail.videoFallbackDesc')
-          : (isEn ? 'Visual instructional video for first aid procedure.' : 'Video minh họa trực quan quy trình sơ cấp cứu.');
+          : (lang === 'en'
+            ? 'Visual instructional video for first aid procedure.'
+            : lang === 'ja'
+              ? '応急手当の手順を解説する動画です。'
+              : 'Video minh họa trực quan quy trình sơ cấp cứu.');
 
         let creatorName = topic.video.creator || '';
-        if (isEn && CREATOR_EN_MAP[creatorName]) {
+        if (lang === 'en' && CREATOR_EN_MAP[creatorName]) {
           creatorName = CREATOR_EN_MAP[creatorName];
         }
 
@@ -716,7 +720,8 @@
     const catBadge = document.getElementById('detail-category-badge');
     const catLabel = document.getElementById('detail-category-label');
     if (catBadge && catLabel) {
-      const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+      const lang = typeof window !== 'undefined' && window.I18n ? window.I18n.getLanguage() : 'vi';
+      const categoryName = (en, ja, vi) => lang === 'en' ? en : lang === 'ja' ? ja : vi;
       const catKey = (topic.category || '').toLowerCase();
       const rawLabel = (topic.categoryLabel || '').toLowerCase();
 
@@ -725,22 +730,22 @@
 
       if (catKey === 'tai-nan' || catKey === 'chan-thuong' || rawLabel.includes('chấn thương') || rawLabel.includes('trauma')) {
         icon = 'personal_injury';
-        labelText = isEn ? 'Trauma' : 'Chấn thương';
+        labelText = categoryName('Trauma', '外傷', 'Chấn thương');
       } else if (catKey === 'tre-em' || rawLabel.includes('trẻ em') || rawLabel.includes('pediatric')) {
         icon = 'child_care';
-        labelText = isEn ? 'Pediatric' : 'Trẻ em';
+        labelText = categoryName('Pediatric', '小児', 'Trẻ em');
       } else if (catKey === 'sinh-hoat' || rawLabel.includes('sinh hoạt') || rawLabel.includes('daily life')) {
         icon = 'home';
-        labelText = isEn ? 'Daily Life' : 'Sinh hoạt';
+        labelText = categoryName('Daily Life', '日常生活', 'Sinh hoạt');
       } else if (catKey === 'ngoai-troi' || rawLabel.includes('ngoài trời') || rawLabel.includes('outdoor')) {
         icon = 'nature_people';
-        labelText = isEn ? 'Outdoors' : 'Ngoài trời';
+        labelText = categoryName('Outdoors', '屋外', 'Ngoài trời');
       } else if (catKey === 'benh-ly' || rawLabel.includes('bệnh lý') || rawLabel.includes('medical')) {
         icon = 'ecg_heart';
-        labelText = isEn ? 'Medical' : 'Bệnh lý';
+        labelText = categoryName('Medical', '医療', 'Bệnh lý');
       } else if (topic.id && topic.id.includes('hoc-di-vat')) {
         icon = 'air';
-        labelText = isEn ? 'Airway Choking' : 'Cấp cứu đường thở';
+        labelText = categoryName('Airway Choking', '気道異物', 'Cấp cứu đường thở');
       }
 
       const iconEl = catBadge.querySelector('.material-symbols-outlined');

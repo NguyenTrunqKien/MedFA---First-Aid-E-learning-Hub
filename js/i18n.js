@@ -1,6 +1,6 @@
 /**
  * MedFA Internationalization (i18n) Engine
- * Quản lý trạng thái ngôn ngữ (vi / en), lưu trữ localStorage (có bộ nhớ đệm dự phòng),
+ * Quản lý trạng thái ngôn ngữ (vi / en / ja), lưu trữ localStorage (có bộ nhớ đệm dự phòng),
  * tra cứu từ điển và áp dụng bản dịch động vào DOM.
  */
 
@@ -8,7 +8,7 @@ const I18n = (() => {
   'use strict';
 
   const STORAGE_KEY = 'medfa.language';
-  const SUPPORTED_LANGUAGES = ['vi', 'en'];
+  const SUPPORTED_LANGUAGES = ['vi', 'en', 'ja'];
   const DEFAULT_LANGUAGE = 'vi';
 
   function getSavedLanguage() {
@@ -106,7 +106,7 @@ const I18n = (() => {
 
   /**
    * Thay đổi ngôn ngữ, lưu vào bộ nhớ, cập nhật HTML và phát sự kiện toàn cục
-   * @param {'vi'|'en'} lang
+   * @param {'vi'|'en'|'ja'} lang
    */
   function setLanguage(lang) {
     const validLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : DEFAULT_LANGUAGE;

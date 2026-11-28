@@ -1,0 +1,2296 @@
+﻿[
+    {
+        "id":  "hoc-di-vat",
+        "title":  "窒息（気道異物）",
+        "fullTitle":  "窒息・気道異物への応急手当",
+        "category":  "tre-em",
+        "categoryLabel":  "子ども",
+        "criticalLevel":  "high",
+        "readTime":  "2分",
+        "standard":  "欧州蘇生協議会（ERC）および米国心臓協会（AHA）の2025年ガイドライン",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpolyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"\u003e\u003c/polyline\u003e\u003c/svg\u003e",
+        "shortDesc":  "ハイムリック法で成人や子どもの気道閉塞に対処する方法。",
+        "lead":  "異物によって突然気道が塞がれることがあります。現場で適切な応急手当が行われないと、酸素不足からわずか4分で回復困難な脳障害が始まることがあります。",
+        "emergencyAlert":  "意識を失った、唇や手足が青くなった、または呼吸音がしなくなった場合は、直ちに115へ通報してください。",
+        "timeline":  [
+                         {
+                             "time":  "0～1分",
+                             "status":  "息苦しさ、パニック、喉を押さえる",
+                             "level":  "safe"
+                         },
+                         {
+                             "time":  "1～2分",
+                             "status":  "唇が青くなり、咳の反射が弱まる",
+                             "level":  "warning"
+                         },
+                         {
+                             "time":  "2～4分",
+                             "status":  "失神、意識消失、呼吸停止",
+                             "level":  "danger"
+                         },
+                         {
+                             "time":  "4分超",
+                             "status":  "回復不能な脳障害または死亡",
+                             "level":  "critical"
+                         }
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "気道閉塞の程度を確認する",
+                          "desc":  "「喉に詰まりましたか」と尋ねます。話す、泣く、または力強く咳をすることができる場合は、咳を続けるよう促します。この段階では背部叩打や腹部突き上げを行わないでください。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "背中を5回強くたたく",
+                          "desc":  "息ができない、または弱い咳しかできない場合は、少し後ろに立ち、片手で胸を支えて前かがみにします。もう一方の手の付け根で、肩甲骨の間を上向きに5回強くたたきます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "腹部突き上げを5回行う（ハイムリック法）",
+                          "desc":  "相手の腰に両腕を回します。握りこぶしを作り、親指側を内側にして、へその上・胸骨の先端より下の上腹部に当てます。もう一方の手でこぶしを包み、内側かつ上向きに素早く引き上げます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "背部叩打5回と腹部突き上げ5回を交互に行う",
+                          "desc":  "異物が出るか、正常に呼吸できるようになるまで、背部叩打5回と腹部突き上げ5回を交互に続けます。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "意識を失ったらCPRを開始する",
+                          "desc":  "硬く平らな場所に仰向けに寝かせ、115へ通報して胸骨圧迫を始めます（圧迫30回に人工呼吸2回）。人工呼吸の前に、口の中に見える異物がないか確認します。"
+                      }
+                  ],
+        "dos":  [
+                    "力強く咳ができる場合は、咳を続けるよう促す。",
+                    "背部叩打中は前かがみにして、異物が出やすくする。",
+                    "1歳未満の乳児には、背部叩打5回と指2本での胸部突き上げ5回を行う。腹部突き上げはしない。"
+                ],
+        "donts":  [
+                      "異物がはっきり見えない場合、指を盲目的に口の奥へ入れない。",
+                      "異物を押し下げようとして水やご飯を与えない。",
+                      "妊娠後期には腹部突き上げを避け、代わりに胸部突き上げを行う。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ロンチャウ薬局",
+                            "url":  "https://nhathuoclongchau.com.vn/bai-viet/nghiem-phap-heimlich-la-gi-cach-thuc-hien.html",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/chu-de/nghiem-phap-heimlich",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "健康と生活新聞（SKDS）",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=HS4_SPZdp5g"
+                  }
+    },
+    {
+        "id":  "bong-cap-do-1-2",
+        "title":  "I度・II度熱傷",
+        "fullTitle":  "表在性・浅達性熱傷の応急手当",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "medium",
+        "readTime":  "3分",
+        "standard":  "国際熱傷学会（ISBI）のガイドライン",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "熱傷を冷やし、感染を防ぎ、よくある誤った処置を避ける方法。",
+        "lead":  "熱による皮膚損傷は強い痛み、体液の喪失、感染リスクを引き起こします。受傷後15～20分の適切な冷却が、最終的な瘢痕の状態の80%を左右します。",
+        "emergencyAlert":  "熱傷が手のひらより大きい、顔・関節・手・性器に及ぶ、または負傷者が幼児の場合は、直ちに医療機関を受診してください。",
+        "timeline":  [
+                         {
+                             "time":  "0～20分",
+                             "status":  "水で冷やす重要な時間",
+                             "level":  "safe"
+                         },
+                         {
+                             "time":  "20～60分",
+                             "status":  "水疱を保護し、滅菌ガーゼで覆う",
+                             "level":  "warning"
+                         },
+                         {
+                             "time":  "1時間超",
+                             "status":  "体液喪失と組織感染の危険",
+                             "level":  "danger"
+                         }
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "熱源から離し、近くの物を取り除く",
+                          "desc":  "速やかに危険な場所から離します。腫れ始める前に、熱傷部位の近くにある熱い物質で汚れた衣服や装飾品をそっと取り除きます。衣服が皮膚に貼り付いている場合は、引き剥がさず周囲を切ります。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "清潔な流水で15～20分間ゆっくり冷やす",
+                          "desc":  "清潔な冷たい水（約15～25°C）を少なくとも15～20分、痛みが和らぐまで熱傷部位に穏やかに流します。氷を直接当てないでください。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "滅菌包帯で熱傷を保護する",
+                          "desc":  "滅菌ガーゼまたは清潔な食品用ラップをゆるくかぶせます。腫れた組織との摩擦や損傷を防ぐため、きつく巻かないでください。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "水分を補い、医療機関を受診する",
+                          "desc":  "意識がはっきりしていれば、経口補水液または温かい水を与えます。熱傷範囲が広い、または大きな水疱がある場合は、最寄りの病院へ連れて行きます。"
+                      }
+                  ],
+        "dos":  [
+                    "受傷後すぐに、清潔な水に15～20分間浸すか、流水で冷やす。",
+                    "熱傷の水疱はそのままにし、つぶさない。",
+                    "湿らせた滅菌ガーゼまたは清潔な食品用ラップで覆う。"
+                ],
+        "donts":  [
+                      "歯磨き粉、魚醤、ニシキヘビの脂、または生卵を塗らない。",
+                      "氷を直接当てない。凍傷や血管収縮による組織損傷を招くことがある。",
+                      "自然にできた水疱をつぶさない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "グエン・チー・フオン病院",
+                            "url":  "https://bvnguyentriphuong.com.vn/chan-thuong-chinh-hinh/quy-trinh-so-cuu-cap-cuu-ton-thuong-bong-nhiet",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ホーチミン市法律新聞",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=cwpPymepUgE"
+                  }
+    },
+    {
+        "id":  "chay-mau-nghiem-trong",
+        "title":  "重度の出血",
+        "fullTitle":  "重度の外出血に対する応急手当",
+        "category":  "tai-nan",
+        "categoryLabel":  "外傷",
+        "criticalLevel":  "high",
+        "readTime":  "4分",
+        "standard":  "Stop the Bleedおよび赤十字の推奨",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"\u003e\u003c/path\u003e\u003cpath d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "緊急時の直接圧迫と止血帯の使い方。",
+        "lead":  "動脈性出血は数分で致命的な出血性ショックを引き起こすことがあります。現場で直接圧迫を行うことは、命を救う重要な技能です。",
+        "emergencyAlert":  "血液が噴き出す、複数の布に染み通る、または皮膚が冷たい・汗をかく・眠そうになる場合は、直ちに115へ通報してください。",
+        "timeline":  [
+                         {
+                             "time":  "0～3分",
+                             "status":  "急速な失血と心拍数の増加",
+                             "level":  "warning"
+                         },
+                         {
+                             "time":  "3～5分",
+                             "status":  "血圧低下、出血性ショック、失神",
+                             "level":  "danger"
+                         },
+                         {
+                             "time":  "5分超",
+                             "status":  "循環不全と死亡の危険",
+                             "level":  "critical"
+                         }
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "保護具を使い、直接圧迫する",
+                          "desc":  "可能であれば医療用手袋を着用します。清潔なガーゼや厚手の布を出血している傷にしっかり押し当て、少なくとも5～10分間、圧迫を続けます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "圧迫包帯を固定し、手足を高くする",
+                          "desc":  "弾性包帯を傷の周囲にしっかり巻いて圧迫を保ちます。骨折が疑われない場合は、負傷した手足を心臓より高く上げます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "血液が染みたら包帯を重ねる",
+                          "desc":  "最初の包帯に血液が染み続けても、できかけた血餅を崩さないよう取り外しません。その上に新しい包帯を重ね、さらにしっかり巻きます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "手足から噴き出す出血には止血帯を使う",
+                          "desc":  "腕や脚の大量の動脈性出血が圧迫で止まらない場合、傷口より体幹側へ5～7 cm離し、関節を避けて止血帯を装着します。出血が完全に止まるまで締め、装着時刻を額にはっきり記します。"
+                      }
+                  ],
+        "dos":  [
+                    "少なくとも5分間、傷口を強く連続して圧迫する。",
+                    "救急隊員に伝えるため、止血帯を装着した正確な時刻を記録する。",
+                    "低体温に伴うショックを防ぐため、負傷者を暖かく保つ。"
+                ],
+        "donts":  [
+                      "出血が治まりつつあるとき、傷を確認するため最初の包帯を外さない。",
+                      "肘や膝の真上に止血帯を巻かない。",
+                      "医療従事者の助けなしに止血帯を緩めない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-chay-mau-cam-mau-nhung-dieu-can-biet-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-vet-thuong-chay-mau-bang-cach-de-ep-va-bang-vet-thuong-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "健康と生活新聞",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=qix-Gb1DZvA"
+                  }
+    },
+    {
+        "id":  "ngung-tuan-hoan-cpr",
+        "title":  "心停止（CPR）",
+        "fullTitle":  "心肺蘇生（CPR）とAEDの手順",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "critical",
+        "readTime":  "5分",
+        "standard":  "AHAおよびERCの2025年国際手順",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"\u003e\u003c/path\u003e\u003cpath d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "人工呼吸を含むCPRの方法と適切なテンポ。",
+        "lead":  "心臓が止まると、脳への血流も直ちに止まります。CPRを行わない時間が1分増えるごとに、生存の可能性は10%低下します。",
+        "emergencyAlert":  "助けを呼び、115へ通報し、直ちにAEDを持ってきてもらってください。胸骨圧迫をすぐに開始してください。",
+        "timeline":  [
+                         {
+                             "time":  "0～4分",
+                             "status":  "脳機能の最良の回復が期待できる時間",
+                             "level":  "safe"
+                         },
+                         {
+                             "time":  "4～6分",
+                             "status":  "脳細胞の損傷が始まる",
+                             "level":  "warning"
+                         },
+                         {
+                             "time":  "6～10分",
+                             "status":  "広範囲で不可逆的な脳損傷",
+                             "level":  "danger"
+                         },
+                         {
+                             "time":  "10分超",
+                             "status":  "臨床的脳死および死亡",
+                             "level":  "critical"
+                         }
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "現場の安全と反応を確認する",
+                          "desc":  "現場が安全か確認します。両肩をしっかりたたき、大きな声で大丈夫か尋ねます。胸の動きを5～10秒見て、正常な呼吸があるか確認します。あえぎ呼吸は正常な呼吸ではありません。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "115へ通報し、AEDを手配する",
+                          "desc":  "近くにいる人を指名して115への通報とAEDの持参を頼みます。一人の場合はスピーカーフォンで115に電話し、すぐに胸骨圧迫を始めます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "胸の中央を毎分100～120回圧迫する",
+                          "desc":  "片手の付け根を胸の中央、胸骨の下半分に置き、もう一方の手を重ねて指を組みます。腕を伸ばして胸に垂直にし、上半身の力で5～6 cm沈むまで圧迫し、毎回胸が完全に戻るのを待ちます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "人工呼吸を行う（圧迫30回に呼吸2回）",
+                          "desc":  "圧迫30回の後、頭を後ろに傾けてあごを上げ、鼻をつまみ、胸が上がるように1秒ずつ2回息を吹き込みます。人工呼吸に慣れていない、または感染防護具がない場合は、中断せず胸骨圧迫のみを続けます。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "AEDが届いたらすぐに電源を入れる",
+                          "desc":  "AEDの電源を入れ、音声案内に従い、図のとおりに2枚のパッドを貼ります。解析中や電気ショック中は誰も傷病者に触れないようにします。"
+                      }
+                  ],
+        "dos":  [
+                    "毎分100～120回、強く速く圧迫する（「ステイン・アライブ」のリズムが目安）。",
+                    "成人では胸を5～6 cm圧迫し、毎回胸が完全に戻るのを待つ。",
+                    "疲労や質の低下を防ぐため、2分ごとに圧迫する人を交代する。"
+                ],
+        "donts":  [
+                      "圧迫の合間に胸へもたれかからない。",
+                      "圧迫のサイクル間で10秒を超えて中断しない。",
+                      "AEDが電気ショックを行う際に傷病者に触れない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/hoi-sinh-tim-phoi-co-ban-cho-nguoi-lon-khi-bi-tai-nan-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-ho-hap-nhan-tao-cho-nguoi-lon-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "バックマイ病院／健康と生活新聞",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=e7GsqN19s1g"
+                  }
+    },
+    {
+        "id":  "soc-nhiet-say-nang",
+        "title":  "熱中症・日射病",
+        "fullTitle":  "重度の熱中症・労作性高体温症への応急手当",
+        "category":  "ngoai-troi",
+        "categoryLabel":  "屋外",
+        "criticalLevel":  "high",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\u003e\u003ccircle cx=\"12\" cy=\"7\" r=\"3\"/\u003e\u003cpath d=\"M12 1v2M4 7h2m12 0h2M6.3 1.3l1.4 1.4m8.6 0 1.4-1.4M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "暑さによる体調不良や熱中症を見分け、意識状態が変化したら助けを呼び、すぐに冷却を始めます。",
+        "lead":  "熱中症は救急疾患で、混乱や失神を引き起こすことがあります。熱疲労はより軽度ですが、悪化することがあります。水を与えるかどうかは、本人の意識と状態によって判断します。",
+        "emergencyAlert":  "混乱、失神、けいれん、著しい高体温、急速な悪化など、熱中症が疑われる場合は直ちに115へ通報してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "熱中症が疑われたら115へ通報する",
+                          "desc":  "混乱している、失神した、けいれんがある、または体が非常に熱い場合は、直ちに115へ通報します。体温計を待たずに手当てを始めます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "涼しい場所へ移動させる",
+                          "desc":  "日差しや暑さから離れた場所へ移動させます。衣服をゆるめ、不要な重ね着を脱がせます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "すぐに冷却を始める",
+                          "desc":  "皮膚を冷たい水で濡らし、風を送ります。首、脇の下、鼠径部に冷たいタオルを当ててもかまいません。安全を確保し見守れる場合は、冷水浴も利用できます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "状態を観察し、水を与えるか判断する",
+                          "desc":  "救助が到着するまで呼吸と意識を観察します。熱疲労の場合、意識がはっきりして飲み込める人には水を少しずつ飲ませます。熱中症が疑われる場合、飲み物を与えないでください。"
+                      }
+                  ],
+        "dos":  [
+                    "意識の変化または熱中症が疑われる場合は、直ちに115へ通報する。",
+                    "涼しい場所へ移動し、すぐに冷却を始める。",
+                    "救助を待つ間、呼吸と意識を繰り返し確認する。"
+                ],
+        "donts":  [
+                      "救急車を待つ間、冷却を遅らせない。",
+                      "熱中症が疑われる人、混乱している人、意識のない人に水を飲ませない。",
+                      "眠気のある人を浴槽に一人で残さない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "米国疾病予防管理センター（CDC）—暑さに関連する疾患の認識と対応",
+                            "url":  "https://stacks.cdc.gov/view/cdc/59395"
+                        },
+                        {
+                            "name":  "タムアン病院",
+                            "url":  "https://tamanhhospital.vn/benh/say-nang-say-nong/",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "ホーチミン市保健局（Medinet）",
+                            "url":  "https://trungtamytequan12.medinet.gov.vn/chuyen-muc/4-buoc-so-cuu-say-nang-soc-nhiet-don-gian-cmobile14390-239756.aspx",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "タムアン総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=UCHbYZjZ4vg"
+                  }
+    },
+    {
+        "id":  "co-giat-dong-kinh",
+        "title":  "けいれん発作・てんかん",
+        "fullTitle":  "てんかん発作中および発作後の応急手当",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "medium",
+        "readTime":  "4分",
+        "standard":  "国際抗てんかん連盟（ILAE）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3\"\u003e\u003c/path\u003e\u003cpath d=\"M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4\"\u003e\u003c/path\u003e\u003ccircle cx=\"20\" cy=\"10\" r=\"2\"\u003e\u003c/circle\u003e\u003c/svg\u003e",
+        "shortDesc":  "発作中のけがを防ぎ、意識が戻った後の回復体位を知る。",
+        "lead":  "発作は脳の電気活動が突然異常になることで起こります。多くの発作は1～3分で自然に止まります。応急手当をする人の主な役割は、けがから本人を守ることです。",
+        "emergencyAlert":  "発作が5分を超える場合、または意識が戻らないまま発作を繰り返す場合は、直ちに115へ通報してください。",
+        "timeline":  [
+                         {
+                             "time":  "0～1分",
+                             "status":  "全身が硬直し、唇が青くなることがある",
+                             "level":  "warning"
+                         },
+                         {
+                             "time":  "1～3分",
+                             "status":  "筋肉が規則的にけいれんし、口から泡が出ることがある",
+                             "level":  "danger"
+                         },
+                         {
+                             "time":  "発作後",
+                             "status":  "発作後の回復時に混乱、深い呼吸、眠気がみられる",
+                             "level":  "safe"
+                         }
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "頭を守り、尖った物を遠ざける",
+                          "desc":  "安全で平らな場所に、そっと横たえます。頭の下に柔らかいクッションや折りたたんだ衣服を置き、衝撃から守ります。硬い物や尖った物、近くの家具を遠ざけます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "衣服をゆるめ、発作の時間を計る",
+                          "desc":  "呼吸しやすいよう、ネクタイ、襟、ベルトをゆるめます。時計で発作の時間を正確に計ります。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "押さえつけず、口に物を入れない",
+                          "desc":  "発作が自然に治まるのを待ちます。手足を押さえると骨折や筋断裂を招くことがあります。布、箸、指などを口に入れないでください。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "発作が終わったら回復体位にする",
+                          "desc":  "発作が終わったらすぐに、体全体をそっと横向きにします。唾液や吐物を流し、気道を保ちやすくします。"
+                      }
+                  ],
+        "dos":  [
+                    "頭への衝撃を防ぐため、頭の下に柔らかい物を置く。",
+                    "発作の開始時刻と終了時刻を記録する。",
+                    "発作が終わったら、安全に横向きにする。"
+                ],
+        "donts":  [
+                      "箸、スプーン、レモン、指などを口に入れない。",
+                      "発作中に押さえつけたり、手足を拘束したりしない。",
+                      "完全に意識が戻るまで、食べ物や飲み物を与えない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/?p=197275",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/cach-so-cuu-nguoi-bi-co-giat-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ウィン・トラン医師 公式",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=U_nqzdiQ0bc"
+                  }
+    },
+    {
+        "id":  "hoc-di-vat-o-tre-em",
+        "title":  "小児の窒息",
+        "fullTitle":  "乳幼児・子どもの窒息に対する応急手当",
+        "category":  "tre-em",
+        "categoryLabel":  "子ども",
+        "criticalLevel":  "high",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"8\" cy=\"5\" r=\"2\"/\u003e\u003cpath d=\"M8 7v6m-3 0 3-2 3 2m-3-2v9m7-13h6m-3-3 3 3-3 3\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "窒息を見分け、1歳未満の乳児と年長児で異なる応急手当を学ぶ。",
+        "lead":  "異物は非常に短時間で気道を塞ぐことがあります。対応は、子どもがまだ咳をできるか、1歳以上かどうかによって異なります。",
+        "emergencyAlert":  "子どもが咳・泣く・呼吸することができない、青くなる、または意識を失った場合は直ちに115へ通報してください。応急手当を始める間に、別の人に通報を頼みます。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "咳や呼吸ができるか確認する",
+                          "desc":  "力強く咳をする、または泣くことができるなら、咳を促しながら注意深く見守ります。咳が弱い、音が出ない、または呼吸できない場合は、すぐに気道閉塞への処置を始めます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "1歳未満の乳児には背部叩打を行う",
+                          "desc":  "頭と首を支え、頭が胸より低くなるように乳児を前腕にうつ伏せで乗せます。手の付け根で肩甲骨の間を5回たたきます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "1歳未満の乳児には胸部突き上げを行う",
+                          "desc":  "乳児を仰向けに返し、頭を胸より低く保ちます。指2本で、乳頭線のすぐ下にある胸の中央をすばやく5回押します。必要に応じて背部叩打5回と胸部突き上げ5回を繰り返します。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "1歳以上の子どもには背部叩打と腹部突き上げを行う",
+                          "desc":  "子どもを前かがみにし、肩甲骨の間を5回たたきます。詰まりが取れない場合は後ろに立つか膝をつき、腹部を内側かつ上向きに5回突き上げます。呼吸できるか意識を失うまで繰り返します。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "意識を失った場合",
+                          "desc":  "硬い床に寝かせます。まだ通報されていなければ115へ通報し、指示または訓練に従ってCPRを始めます。口の中に見える異物だけを取り除きます。"
+                      }
+                  ],
+        "dos":  [
+                    "効果的な咳を促し、子どもから目を離さない。",
+                    "1歳未満の乳児には背部叩打5回と胸部突き上げ5回を交互に行う。",
+                    "重度の窒息がある1歳以上の子どもには、背部叩打5回と腹部突き上げ5回を交互に行う。"
+                ],
+        "donts":  [
+                      "1歳未満の乳児に腹部突き上げを行わない。",
+                      "異物がはっきり見えない場合、指で口の中を探らない。",
+                      "呼吸・咳・泣くことができない子どもを一人にしたり、様子見で待ったりしない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-tre-bi-hoc-di-vat-duong-tho-vi",
+                            "accessDate":  "10/9/2026"
+                        },
+                        {
+                            "name":  "ベトナム・サバイバルスキル（SSVN）",
+                            "url":  "https://survivalskills.vn/2024/07/10/xu-ly-tre-em-hoc-thuc-an-di-vat/",
+                            "accessDate":  "10/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ドンナイ疾病管理センター",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=6HOgkJmfoyM"
+                  }
+    },
+    {
+        "id":  "duoi-nuoc-o-tre-em",
+        "title":  "小児の溺水",
+        "fullTitle":  "子どもの溺水に対する初期応急手当と蘇生",
+        "category":  "ngoai-troi",
+        "categoryLabel":  "屋外",
+        "criticalLevel":  "critical",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"5\" r=\"2\"/\u003e\u003cpath d=\"M4 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0m-9-8 2-3 4 4\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "安全に水から救出し、助けを呼び、正常に呼吸していない場合は呼吸を支援する。",
+        "lead":  "溺水では体内の酸素が不足します。安全な救助、応援要請、早期の呼吸支援を優先してください。肺から水を出そうとして時間を費やさないでください。",
+        "emergencyAlert":  "子どもが意識を失っている、呼吸していない、またはあえぎ呼吸だけの場合は直ちに115へ通報してください。救出後に咳が続く、呼吸困難、その他の異常がある場合も医療機関で評価を受けてください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "安全に子どもを水から引き上げる",
+                          "desc":  "ライフガードを呼び、自分を危険にさらさず子どもを岸へ運びます。安全に入水する技能や装備がない場合は、水に入らないでください。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "115へ通報し、反応と呼吸を確認する",
+                          "desc":  "誰かに115への通報とAEDの手配を頼みます。子どもが反応するか、正常に呼吸しているか確認します。あえぎ呼吸は正常な呼吸ではありません。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "呼吸を支援し、呼吸がなければCPRを始める",
+                          "desc":  "方法を知っていれば気道を確保し、最初に人工呼吸を2回行い、その後、胸骨圧迫30回と人工呼吸2回を交互に行います。人工呼吸ができない場合は、115の指令員の指示に従って胸骨圧迫を続けます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "AEDを使用し、状態を観察し続ける",
+                          "desc":  "AEDが届き次第使用し、音声案内に従います。医療スタッフに引き継ぐまで手当てを続けます。正常な呼吸が戻ったら、呼吸と意識を観察します。"
+                      }
+                  ],
+        "dos":  [
+                    "近づく前に救助者自身の安全を確保する。",
+                    "早めに115へ通報し、正常な呼吸がなければCPRを始める。",
+                    "AEDを使用し、水から上げた後も子どもの状態を観察する。"
+                ],
+        "donts":  [
+                      "安全に救助する技能や装備がないのに、水に飛び込まない。",
+                      "水を出そうとして腹部突き上げをしたり、子どもを逆さにしたりしない。",
+                      "喉を指で探ったり肺から水を吸い出そうとしたりして、CPRを遅らせない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/cac-buoc-so-cuu-ban-dau-tre-bi-duoi-nuoc-vi",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/so-cuu-duoi-nuoc/",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "VTV24",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=uRQwZ2QX7Vc"
+                  }
+    },
+    {
+        "id":  "dot-quy",
+        "title":  "脳卒中",
+        "fullTitle":  "FASTの兆候を見分ける脳卒中への緊急対応",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "critical",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M12 18V6a3 3 0 0 0-5.7-1.3A3 3 0 0 0 4 9a3 3 0 0 0 .2 5A3 3 0 0 0 7 19a3 3 0 0 0 5-1Zm0 0V6a3 3 0 0 1 5.7-1.3A3 3 0 0 1 20 9a3 3 0 0 1-.2 5A3 3 0 0 1 17 19a3 3 0 0 1-5-1Z\"/\u003e\u003cpath d=\"M8 8c0 2 2 2 2 4m6-4c0 2-2 2-2 4\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "FASTの兆候を確認し、直ちに115へ通報して、症状が始まった時刻を記録する。",
+        "lead":  "脳卒中では、顔の片側が垂れる、片側の手足に力が入らない、話しにくい、突然の視力障害やふらつきなどが起こることがあります。早く助けを求めることで、後遺症のリスクを減らせます。",
+        "emergencyAlert":  "顔のゆがみ、片腕の脱力、話しにくさ、突然の神経症状など、脳卒中が疑われる場合は直ちに115へ通報してください。症状が消えた場合も通報します。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "FASTの兆候を確認する",
+                          "desc":  "顔のゆがみ、両腕を上げたときの左右差、ろれつが回らない・話が理解しにくいなどを確認します。ふらつき、かすみ目、突然の激しい頭痛にも注意します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "115へ通報し、症状の開始時刻を記録する",
+                          "desc":  "直ちに救急へ通報します。症状が始まった時刻、または最後に普段どおりだった時刻を記録し、医療スタッフに伝えます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "安全を確保する",
+                          "desc":  "安静にしてもらい、安心させ、きつい衣服をゆるめます。眠気、よだれ、嚥下困難があるが呼吸している場合、脊椎損傷が疑われなければ横向きにします。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "助けを待つ間、状態を観察する",
+                          "desc":  "呼吸と意識を観察します。正常な呼吸が止まった場合は、指令員の指示に従ってCPRを始めます。"
+                      }
+                  ],
+        "dos":  [
+                    "脳卒中が疑われたら、症状がすぐ消えても直ちに115へ通報する。",
+                    "症状が始まった時刻、または最後に普段どおりだった時刻を記録する。",
+                    "そばにいて安心させ、呼吸と意識を観察する。"
+                ],
+        "donts":  [
+                      "症状が消えるのを待ってから救急へ通報しない。",
+                      "嚥下困難や窒息の危険がある場合、食べ物や飲み物を与えない。",
+                      "発作中の人の口に箸、布、物などを入れない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "タムアン病院",
+                            "url":  "https://tamanhhospital.vn/dot-quy-co-cuu-duoc-khong/",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-dot-quy-tai-nha-vi",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ホーチミン市医科大学病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=SKs8EKh_3SQ"
+                  }
+    },
+    {
+        "id":  "bong-nhiet",
+        "title":  "熱傷",
+        "fullTitle":  "熱湯・高温物による熱傷の応急手当",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "medium",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "熱傷を冷たい流水で冷却し、清潔な物で覆い、救急要請が必要な状態を見分ける。",
+        "lead":  "熱湯や火による熱傷では、熱への曝露を止め、早めに冷却します。冷却後は皮膚を保護し、熱傷の重症度を判断します。",
+        "emergencyAlert":  "広範囲または深い熱傷、顔や首の熱傷、呼吸困難を伴う熱傷は直ちに115へ通報してください。手、足、関節、性器の熱傷も緊急の医療評価が必要です。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "熱源への曝露を止める",
+                          "desc":  "安全を確保して熱源から離します。衣服に火がついた場合は水で消すか、地面に倒れて転がるよう促します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "20分間冷やす",
+                          "desc":  "熱傷を冷たい流水に約20分さらします。特に子どもや広範囲の熱傷では、体のほかの部分を暖かく保ちます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "熱傷に貼り付いていない物を取り除く",
+                          "desc":  "腫れ始める前に、熱傷の近くにある装飾品や衣服を外します。皮膚に貼り付いた物はそのままにします。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "熱傷を覆い、状態を確認する",
+                          "desc":  "冷却後、清潔な食品用ラップまたは清潔で傷に貼り付きにくいドレッシング材でゆるく覆います。熱傷が広い、深い、または敏感な部位にある場合は医療機関を受診します。"
+                      }
+                  ],
+        "dos":  [
+                    "熱傷を冷たい流水で約20分間冷やす。",
+                    "皮膚に貼り付いていない装飾品を熱傷の近くから取り除く。",
+                    "冷却後、清潔な物でゆるく覆う。"
+                ],
+        "donts":  [
+                      "熱傷に氷を直接当てない。",
+                      "熱傷した皮膚に貼り付いた衣服をはがさない。",
+                      "歯磨き粉、油、バターを塗ったり、水疱をつぶしたりしない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "グエン・チー・フオン病院",
+                            "url":  "https://bvnguyentriphuong.com.vn/chan-thuong-chinh-hinh/quy-trinh-so-cuu-cap-cuu-ton-thuong-bong-nhiet",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ホーチミン市法律新聞",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=cwpPymepUgE"
+                  }
+    },
+    {
+        "id":  "bong-hoa-chat",
+        "title":  "化学熱傷",
+        "fullTitle":  "酸・アルカリ性化学物質への曝露に対する応急手当",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "high",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M9 3h6m-4 0v7l-5 8a2 2 0 0 0 1.7 3h8.6a2 2 0 0 0 1.7-3l-5-8V3M8 16h8\"/\u003e\u003cpath d=\"M11 18h.01m3 1h.01\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "救助者を保護し、化学物質を取り除き、流水で洗い続けて救急医療を受ける。",
+        "lead":  "化学物質は皮膚や目に残っている間、損傷を与え続けることがあります。直ちに曝露を止め、医療評価を受けてください。",
+        "emergencyAlert":  "化学物質が皮膚や目に付いた場合は直ちに115へ通報してください。特に熱傷が広い、痛みが増す、呼吸困難がある、または化学物質が不明な場合は必ず通報します。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "救助者を保護し、115へ通報する",
+                          "desc":  "化学物質に直接触れないようにします。可能であれば手袋を着用し、曝露場所から離れて救急へ通報します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "汚染された物を取り除く",
+                          "desc":  "安全であれば、汚染された衣服や装飾品を取り除きます。乾燥粉末の化学物質は、水で洗う前に皮膚からそっと払い落とします。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "流水で洗い続ける",
+                          "desc":  "大量の冷水またはぬるま湯の流水で、少なくとも20分間洗い続け、115の指示に従います。目に入った場合は医療スタッフが引き継ぐまで洗い続けます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "状態を観察し、医療機関を受診する",
+                          "desc":  "呼吸と意識を観察し、医療機関へ連れて行きます。可能であれば化学物質のラベルや名称を持参し、救助者が再び曝露しないようにします。"
+                      }
+                  ],
+        "dos":  [
+                    "手袋を着用し、救助者を曝露から守る。",
+                    "汚染された衣服を脱がせ、乾燥粉末は洗い流す前に払い落とす。",
+                    "大量の水で洗い続け、医療評価を受ける。"
+                ],
+        "donts":  [
+                      "別の化学物質を使って熱傷を中和しようとしない。",
+                      "助けを待つ間、熱傷にクリーム、油、薬を塗らない。",
+                      "汚染された皮膚や衣服に素手で触れない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-hoa-chat-vi",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "レ・フー・チャック国立熱傷病院",
+                            "url":  "https://vienbongquocgia.vn/huong-dan-so-cap-cuu-bong/huong-dan-so-cap-cuu-bong-hoa-chat-o-tre-em",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "レ・フー・チャック国立熱傷病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=gCrAxTJC3w8"
+                  }
+    },
+    {
+        "id":  "ngo-doc-thuc-pham",
+        "title":  "食中毒",
+        "fullTitle":  "急性食中毒・食品由来疾患への応急手当",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "medium",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M12 7c-3-3-9-1-9 5 0 4 3 9 6 9 1.5 0 2-1 3-1s1.5 1 3 1c3 0 6-5 6-9 0-6-6-8-9-5Zm0 0c0-2 1-4 3-5m-3 5c2-2 4-2 6-1\"/\u003e\u003cpath d=\"M12 10v5m0 3h.01\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "安全に水分を補給し、脱水に注意して、緊急受診が必要な兆候を見分ける。",
+        "lead":  "食中毒では嘔吐、下痢、脱水が起こることがあります。安全な水分補給、重い症状の観察、必要な場合の医療相談を優先します。",
+        "emergencyAlert":  "意識消失、けいれん、呼吸困難がある場合は直ちに115へ通報してください。血便、高熱、水分を保てない、脱水の兆候がある場合は速やかに受診してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "重症度を評価する",
+                          "desc":  "意識、呼吸、嘔吐や下痢の頻度を確認します。意識消失、けいれん、呼吸困難がある場合は115へ通報します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "少量ずつ水分を与える",
+                          "desc":  "意識がはっきりして飲み込める場合は、水を少量ずつ頻繁に与えます。下痢が頻繁な場合は、説明書どおりに調製した経口補水液を優先します。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "脱水の兆候を観察する",
+                          "desc":  "口の渇き、尿量の減少、立ち上がったときのめまい、極度の疲労に注意します。幼児は涙が少なくなったり、ぐったりしたりすることがあります。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "重い症状があれば受診する",
+                          "desc":  "血便、高熱、水分を保てないほどの嘔吐、続く下痢、脱水の兆候がある場合は医療機関に相談します。食べた物を記録し、医療スタッフに伝えます。"
+                      }
+                  ],
+        "dos":  [
+                    "意識がはっきりした人には、水を少量ずつ頻繁に与える。",
+                    "必要に応じ、説明書に従って経口補水液を調製する。",
+                    "脱水の兆候を観察し、症状が重ければ受診する。"
+                ],
+        "donts":  [
+                      "嘔吐させるために喉を刺激したり、吐かせたりしない。",
+                      "意識のない人や嚥下困難のある人に水を無理に飲ませない。",
+                      "高熱や血便がある場合、医療者に相談せず止瀉薬を使わない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "タムアン病院",
+                            "url":  "https://tamanhhospital.vn/so-cuu-ngo-doc-thuc-pham/",
+                            "accessDate":  "13/9/2026"
+                        },
+                        {
+                            "name":  "ホーチミン市疾病管理センター（HCDC）",
+                            "url":  "https://hcdc.vn/cach-so-cap-cuu-tam-thoi-khi-bi-ngo-doc-thuc-pham-GFkYsi.html",
+                            "accessDate":  "13/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "THVL総合",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=lHw-YZfyvdY"
+                  }
+    },
+    {
+        "id":  "dien-giat",
+        "title":  "感電",
+        "fullTitle":  "高圧・低圧電気による負傷への応急対応",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "high",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"m13 2-9 12h7l-1 8 10-12h-7l1-8Z\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "安全に電源を切り、助けを呼び、呼吸を確認して電気熱傷を手当てする。",
+        "lead":  "感電は皮膚の熱傷が小さく見えても、不整脈や呼吸停止を起こすことがあります。近づく前に電源が切れていることを確認してください。",
+        "emergencyAlert":  "意識消失、異常な呼吸、胸痛、重度の熱傷、高電圧への曝露がある場合は直ちに115へ通報してください。感電した人は全員、医療スタッフの評価を受けてください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "電源を切り、現場を安全にする",
+                          "desc":  "人に触れる前に、スイッチやブレーカーで電源を切ります。高電圧や危険な電源の場合は近づかず、115および関係する緊急機関へ通報します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "115へ通報し、状態を確認する",
+                          "desc":  "安全を確認してから、意識があるか、正常に呼吸しているかを確認します。近くの人に115への通報とAEDの手配を頼みます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "正常な呼吸がなければCPRを始める",
+                          "desc":  "意識がなく、呼吸していない、またはあえぎ呼吸だけの場合は、115の指示に従ってCPRを始めます。AEDが届き次第使用します。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "熱傷を手当てし、状態を観察する",
+                          "desc":  "熱傷がある場合、電源が切れていることを確認してから、清潔な冷たい流水で冷やします。呼吸と意識を観察し、医療評価を受けます。"
+                      }
+                  ],
+        "dos":  [
+                    "人に触れる前に電源を切る。",
+                    "115へ通報し、呼吸を観察し、正常な呼吸が止まったらCPRを始める。",
+                    "熱傷が小さくても、感電後は医療評価を受ける。"
+                ],
+        "donts":  [
+                      "電源に接触したままの人に触れない。",
+                      "高圧線や安全が確認されていない場所に近づかない。",
+                      "皮膚の熱傷だけで負傷の重症度を判断しない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "タムアン病院",
+                            "url":  "https://tamanhhospital.vn/cach-so-cuu-nguoi-bi-dien-giat/",
+                            "accessDate":  "16/9/2026"
+                        },
+                        {
+                            "name":  "ベトナム・サバイバルスキル（SSVN）",
+                            "url":  "https://survivalskills.vn/2026/08/27/dien-giat-4-buoc-so-cuu-dung-cach-bao-ve-nguoi-than/",
+                            "accessDate":  "16/9/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "クアンチ省テレビ",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=05CxQUoSSy0"
+                  }
+    },
+    {
+        "id":  "hoi-sinh-tim-phoi-nguoi-lon",
+        "title":  "成人のCPRとAED",
+        "fullTitle":  "成人の心肺蘇生とAEDの操作",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "critical",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"\u003e\u003c/path\u003e\u003cpath d=\"M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "心停止を見分け、115へ通報し、適切なテンポで胸骨圧迫を行い、早期にAEDを使う。",
+        "lead":  "成人が意識を失い、正常に呼吸していない、またはあえぎ呼吸だけの場合は、救急へ通報してすぐにCPRを始めます。AEDが届き次第使用します。",
+        "emergencyAlert":  "成人が反応せず、正常に呼吸していない、またはあえぎ呼吸だけの場合は直ちに115へ通報してください。近くの人にAEDを持ってきてもらいます。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "安全、反応、呼吸を確認する",
+                          "desc":  "現場が安全か確認します。声をかけて肩をたたきます。最大10秒間、正常な呼吸があるか確認します。あえぎ呼吸は正常な呼吸ではありません。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "115へ通報し、AEDを手配する",
+                          "desc":  "近くの人に115への通報とAEDの手配を頼みます。一人の場合はスピーカーフォンで通報して指示を受け、CPRを始めます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "胸骨圧迫を30回行う",
+                          "desc":  "硬い場所に寝かせ、胸の中央に両手を重ねて置きます。約5～6 cm沈む深さで毎分100～120回圧迫し、毎回胸が完全に戻るのを待ちます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "訓練を受けている場合は人工呼吸を行う",
+                          "desc":  "訓練を受けていて実施可能なら、圧迫30回の後、胸が上がるように約1秒かけて人工呼吸を2回行います。30対2の割合を続けます。人工呼吸ができない場合は胸骨圧迫を中断せず続けます。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "AEDを使い、CPRを続ける",
+                          "desc":  "AEDの電源を入れ、装置に示された位置にパッドを貼り、音声案内に従います。心電図解析中や電気ショック中は誰も傷病者に触れないようにします。指示があればCPRを再開します。"
+                      }
+                  ],
+        "dos":  [
+                    "意識がなく正常に呼吸していない人には、115へ通報して直ちに胸骨圧迫を始める。",
+                    "毎分100～120回圧迫し、毎回胸が完全に戻るのを待つ。",
+                    "早めにAEDを使い、音声案内に従う。"
+                ],
+        "donts":  [
+                      "訓練を受けていない場合、脈拍の確認で圧迫を遅らせない。",
+                      "圧迫のサイクル間で10秒を超えて中断しない。",
+                      "AEDの解析中や電気ショック中に傷病者に触れない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/hoi-sinh-tim-phoi-co-ban-cho-nguoi-lon-khi-bi-tai-nan-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-ho-hap-nhan-tao-cho-nguoi-lon-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "バックマイ病院／健康と生活新聞",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=e7GsqN19s1g"
+                  }
+    },
+    {
+        "id":  "chay-mau-va-cam-mau",
+        "title":  "出血と止血",
+        "fullTitle":  "創傷被覆、圧迫包帯、出血の制御",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "high",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.09 3 12.25c0 2.22 1.8 4.05 4 4.05z\"\u003e\u003c/path\u003e\u003cpath d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "直接圧迫を行い、重度の出血では115へ通報し、必要に応じて止血帯を使う。",
+        "lead":  "大量出血は急速にショックを引き起こすことがあります。まず直接圧迫を行い、救急へ通報してください。止血帯は腕や脚の命に関わる出血に使用します。",
+        "emergencyAlert":  "大量かつ持続する出血や噴き出す出血、直接圧迫で止まらない出血、または顔面蒼白、冷感、眠気、速い呼吸がある場合は直ちに115へ通報してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "安全を確認して助けを呼ぶ",
+                          "desc":  "可能であれば手袋や防護具を使います。重度の出血では直ちに115へ通報し、出血源を確認します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "傷口を直接圧迫する",
+                          "desc":  "出血している場所にガーゼまたは清潔な布を当て、強く連続して圧迫します。深く刺さった物がある場合は抜かず、その周囲を圧迫します。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "手足の命に関わる出血には止血帯を使う",
+                          "desc":  "腕や脚の重度の出血に対して止血帯の使い方を学んでいる場合、傷より上で関節を避けて装着します。出血が止まるまで締め、時刻を記録します。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "助けを待つ間、状態を観察する",
+                          "desc":  "出血が続く場合は圧迫を続けます。本人を暖かく保ち、呼吸と意識を観察し、実施した処置を医療スタッフに伝えます。"
+                      }
+                  ],
+        "dos":  [
+                    "ガーゼや清潔な布で出血源を強く直接圧迫する。",
+                    "重度の出血やショックの兆候があれば、直ちに115へ通報する。",
+                    "止血帯を使った場合、時刻を記録して医療スタッフに伝える。"
+                ],
+        "donts":  [
+                      "傷に刺さった物を引き抜かない。",
+                      "血液が染みても、傷に接している最初の包帯を外さない。",
+                      "装着した止血帯は、医療スタッフが緩めるか外すまでそのままにする。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-chay-mau-cam-mau-nhung-dieu-can-biet-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-vet-thuong-chay-mau-bang-cach-de-ep-va-bang-vet-thuong-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "健康と生活新聞",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=qix-Gb1DZvA"
+                  }
+    },
+    {
+        "id":  "gay-xuong",
+        "title":  "骨折",
+        "fullTitle":  "骨折が疑われる場合の副木固定と応急手当",
+        "category":  "tai-nan",
+        "categoryLabel":  "外傷",
+        "criticalLevel":  "high",
+        "readTime":  "1分",
+        "standard":  "医学資料に基づく（臨床レビュー未完了）",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M6.5 7.5 4 7a2.5 2.5 0 1 1 3-3l.5 2.5 9 10L19 17a2.5 2.5 0 1 1-3 3l-.5-2.5-9-10Z\"/\u003e\u003cpath d=\"m10 10 2 1-1 2 3 1\"/\u003e\u003c/svg\u003e",
+        "shortDesc":  "骨折が疑われる部位を動かさず、出血に対処し、救急要請が必要な兆候を見分ける。",
+        "lead":  "骨折は開放性または閉鎖性の場合があります。人を動かしたり、骨を誤って元に戻そうとしたりすると、さらに傷つけるおそれがあります。患部を動かさず、重い症状を確認します。",
+        "emergencyAlert":  "骨が突き出ている、手足が大きく変形している、大量出血がある、骨折部より先がしびれる・冷たい、または頭・首・背中・股関節の損傷が疑われる場合は直ちに115へ通報してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "状況を確認し、助けを呼ぶ",
+                          "desc":  "現場、呼吸、出血、ショックの兆候を確認します。開放骨折、大きな変形、頭部または脊椎の損傷が疑われる場合は115へ通報します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "負傷部位を動かさない",
+                          "desc":  "現在の姿勢のまま横になるか座るよう助けます。タオルや柔らかい当て物で負傷した手足を支えます。骨をまっすぐに戻そうとしないでください。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "出血と腫れに対処する",
+                          "desc":  "出血がある場合は、突き出た骨を直接押さないようにしながら、清潔なガーゼで傷の周囲を圧迫します。閉鎖性の損傷では、本人が耐えられる場合、タオルで包んだ冷却材を最大20分当ててもかまいません。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "医療スタッフを待つ間、観察する",
+                          "desc":  "骨折部より先の皮膚の色や感覚を確認し、意識を観察します。暖かく保ち、動きを抑えます。脊椎損傷が疑われる場合は自分で動かさないでください。"
+                      }
+                  ],
+        "dos":  [
+                    "患部を動かさず、現在の位置で支える。",
+                    "開放骨折、大きな変形、脊椎損傷の疑いでは115へ通報する。",
+                    "負傷部より先の感覚と皮膚の色を確認する。"
+                ],
+        "donts":  [
+                      "変形した手足をまっすぐにしたり、位置を戻したりしない。",
+                      "突き出た骨を押し戻したり、直接圧迫したりしない。",
+                      "現場が危険でない限り、首や脊椎の損傷が疑われる人を動かさない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-gay-xuong-dung-co-di-chuyen-nguoi-benh-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/phan-loai-va-nhung-bien-chung-sau-khi-gay-xuong-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ホーチミン市外傷整形外科病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=fJNjXeEV2yQ"
+                  }
+    },
+    {
+        "id":  "xu-ly-khi-bi-soc-phan-ve",
+        "title":  "アナフィラキシーへの対応",
+        "fullTitle":  "重度のアレルギー反応・アナフィラキシーへの緊急対応",
+        "category":  "tre-em",
+        "categoryLabel":  "子ども",
+        "criticalLevel":  "critical",
+        "readTime":  "2分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"10\"\u003e\u003c/circle\u003e\u003cpath d=\"M8 14s1.5 2 4 2 4-2 4-2\"\u003e\u003c/path\u003e\u003cline x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"\u003e\u003c/line\u003e\u003cline x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"\u003e\u003c/line\u003e\u003c/svg\u003e",
+        "shortDesc":  "アナフィラキシーは突然起こる重度のアレルギー反応で、緊急治療が遅れると命に関わることがあります。",
+        "lead":  "アナフィラキシーは、薬、ハチ毒、魚介類、ピーナッツなどに触れた後、急速に起こりうる全身性の重いアレルギー反応です。喉の腫れや血圧低下は、迅速な医療対応がなければ命に関わります。",
+        "emergencyAlert":  "直ちに115へ通報してください。本人に処方されたエピネフリン自己注射器があれば、本人の太ももの前外側への使用を手伝ってください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "疑わしいアレルゲンへの曝露を止める",
+                          "desc":  "食べ物や薬など、疑わしい原因への曝露を止めます。ハチに刺された場合は、針をそっと払い落とします。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "適切な姿勢をとらせる",
+                          "desc":  "平らな場所に仰向けに寝かせます。循環を保つため、両脚を約30 cm上げてもかまいません。呼吸が非常に苦しい場合は、背中を支えて上体を少し起こして座らせてもかまいません。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "処方済みのアドレナリン（エピネフリン）を使う手助けをする",
+                          "desc":  "本人に処方されたエピネフリン自己注射器がある場合、製品の説明に従い太ももの前外側へ注射するのを手伝います。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "115へ通報し、状態を観察する",
+                          "desc":  "医療機関へ搬送するため、直ちに115へ連絡します。呼吸や心拍が止まった場合は、指示に従って胸骨圧迫を行います。"
+                      }
+                  ],
+        "dos":  [
+                    "呼吸困難や血圧低下の兆候があり、処方薬があれば、早めにエピネフリンの使用を手伝う。",
+                    "呼吸困難がなければ、本人を動かさず暖かく保ち、脚を上げる。",
+                    "二相性反応に備え、医師の指示に従い医療機関で少なくとも24時間観察を受ける。"
+                ],
+        "donts":  [
+                      "血圧が下がるおそれがあるため、急に起き上がらせたり、立たせたり、歩かせたりしない。",
+                      "喉の腫れや呼吸困難がある場合、救急への通報を遅らせない。",
+                      "呼吸困難や意識低下がある人に、独断で食べ物、飲み物、内服薬を与えない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/xu-ly-khi-bi-soc-phan-ve-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ロンチャウ薬局チェーン",
+                            "url":  "https://nhathuoclongchau.com.vn/bai-viet/so-cuu-soc-phan-ve-dung-cach-va-hieu-qua-54180.html",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "フート省総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=vdtyxGilk0w"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "sac-sua-o-tre-so-sinh-rat-nguy",
+        "title":  "乳児のミルク誤嚥",
+        "fullTitle":  "新生児の重度のミルク誤嚥・窒息に対する応急手当",
+        "category":  "tre-em",
+        "categoryLabel":  "子ども",
+        "criticalLevel":  "medium",
+        "readTime":  "3分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"10\"\u003e\u003c/circle\u003e\u003cpath d=\"M8 14s1.5 2 4 2 4-2 4-2\"\u003e\u003c/path\u003e\u003cline x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"\u003e\u003c/line\u003e\u003cline x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"\u003e\u003c/line\u003e\u003c/svg\u003e",
+        "shortDesc":  "元記事は、ビンメック国際総合病院の小児科・新生児科医、ブイ・ティ・ハー医師の助言を受けて作成されました。",
+        "lead":  "ミルクが乳児や幼児の気道に入り、詰まらせることがあります。速やかに対応しないと、短時間で酸素不足に陥るおそれがあります。",
+        "emergencyAlert":  "最初の応急手当の後も乳児が青い、呼吸が止まった、または泣けない場合は、直ちに115へ通報してください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "背部叩打でミルクの排出を促す",
+                          "desc":  "乳児を前腕にうつ伏せで乗せ、頭を胸より低くします。あごと頬をそっと支えます。もう一方の手の付け根で、肩甲骨の間を5回しっかりたたきます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "呼吸困難が続く場合は胸部突き上げを行う",
+                          "desc":  "乳児がまだ青い場合は、もう一方の前腕に仰向けに返し、頭を体より低く保ちます。人差し指と中指で、乳頭線より約1 cm下の胸骨下半分を5回突き上げます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "口と鼻からミルクを取り除く",
+                          "desc":  "吸引器または清潔なガーゼを使い、口と鼻にたまったミルクを取り除きます。鼻より先に口をきれいにします。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "呼吸を助け、救急医療を受ける",
+                          "desc":  "呼吸が止まった場合、小児の応急手当の指針に従って、やさしく人工呼吸と胸骨圧迫を行います。乳児を最寄りの医療機関へ連れて行きます。"
+                      }
+                  ],
+        "dos":  [
+                    "背部叩打や胸部突き上げの間、ミルクが流れやすいよう乳児の頭を胸より低く保つ。",
+                    "鼻より先に口をきれいにする。",
+                    "授乳時は頭を高く保ち、ゆっくり飲ませた後にげっぷをさせる。"
+                ],
+        "donts":  [
+                      "ミルクでむせている乳児を逆さにしたり、急に縦抱きにしたりしない。",
+                      "指を盲目的に喉へ入れない。粘膜を傷つけたり、ミルクを奥へ押し込んだりすることがある。",
+                      "泣く、咳をする、呼吸困難の兆候がある間は授乳を続けない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/sac-sua-o-tre-so-sinh-rat-nguy-hiem-huong-dan-nhan-biet-va-so-cuu-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-xu-tri-sac-sua-cho-tre-so-sinh-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "タムアン総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=TKGN00us97o"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "so-cuu-ong-dot",
+        "title":  "ハチ・スズメバチ刺傷",
+        "fullTitle":  "ハチ目昆虫の刺傷とアナフィラキシー予防の応急手当",
+        "category":  "ngoai-troi",
+        "categoryLabel":  "屋外",
+        "criticalLevel":  "medium",
+        "readTime":  "3分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"5\"\u003e\u003c/circle\u003e\u003cpath d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "元記事は、ビンメック国際総合病院の救急・集中治療医、レ・ティ・タイン・フオン医師の助言を受けて作成されました。",
+        "lead":  "ハチなどの昆虫に刺されると、局所的な痛み、赤み、腫れが起こることがあります。複数箇所を刺された場合、頭・顔・首を刺された場合、またはアレルギー体質の場合は、アナフィラキシーの危険があります。",
+        "emergencyAlert":  "複数箇所を刺された、頭・顔・首を刺された、または呼吸困難、唇や目の腫れ、じんましん、めまいなどアナフィラキシーの兆候がある場合は、直ちに115へ通報してください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "速やかにハチから離れる",
+                          "desc":  "ハチがいる場所から、できるだけ速やかに離れます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "針をそっと取り除く",
+                          "desc":  "爪で刺さった方向に沿ってそっとこそげ取るか、ピンセットで取り除きます。ミツバチは針と毒嚢を皮膚に残すことがあります。指で挟むと毒が広がることがあるため、挟まないでください。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "刺された皮膚を石けんと温水で洗う",
+                          "desc":  "刺された部位を石けんと温水で洗います。ポビドンヨード10%やアルコール70%などの消毒薬を、1日2回患部に塗ります。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "毒素を排出するため水を十分に飲む",
+                          "desc":  "毒素の排出を助けるため、水を十分に飲みます。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "痛みと腫れを抑えるため冷やす",
+                          "desc":  "痛みや腫れを抑えるため、冷湿布を当てます。"
+                      }
+                  ],
+        "dos":  [
+                    "ハチのいる場所から速やかに離れる。",
+                    "針をそっとこそげ取る。",
+                    "患部を石けんと温水で洗う。",
+                    "毒素を排出するため水を十分に飲む。"
+                ],
+        "donts":  [
+                      "すべてのハチ刺傷が無害だと思い込まない。ハチの種類によっては、健康に重大な影響を与える量の毒を持つ。",
+                      "ハチ刺傷の予防をおろそかにしない。",
+                      "ハチに近づいたり、巣を刺激したりしない。",
+                      "ハチが向かってきても走らない。追われないよう、立つか座って動かずにいる。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-ong-dot-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/so-cuu-ong-dot/",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "地域保健チャンネル",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=oTYpNw1JFcw"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "so-cap-cuu-chan-thuong-dau-va-tuy",
+        "title":  "頭部・脊椎の外傷",
+        "fullTitle":  "外傷性脳損傷・脊髄損傷が疑われる場合の応急手当",
+        "category":  "tai-nan",
+        "categoryLabel":  "外傷",
+        "criticalLevel":  "medium",
+        "readTime":  "2分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpolyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"\u003e\u003c/polyline\u003e\u003c/svg\u003e",
+        "shortDesc":  "元記事は、ビンメック・タイムズシティ国際総合病院の救急医、チン・ゴック・ズイ医師が執筆しました。",
+        "lead":  "頭部や頸椎の損傷は重大です。不適切な応急手当や移動は命に関わり、長期的な運動障害を引き起こすことがあります。",
+        "emergencyAlert":  "首を動かさず、115へ通報してください。脇の下を持ち上げたり、おんぶしたり、首をひねったりしないでください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "動きを制限し、頭と首を一直線に保つ",
+                          "desc":  "頭と首を曲げたり反らせたり回したりせず、中立の位置で一直線に保ちます。頭の両側をそっと支えるか、耳の横に柔らかい当て物を置きます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "複数人に協力を頼む",
+                          "desc":  "危険から緊急に移動させる必要がある場合は、少なくとも3～4人で協力し、全身を一体として回すログロールを行います。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "硬く平らな担架を準備する",
+                          "desc":  "硬い担架または平らな板を、本人のすぐ横に平行に置きます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "全員で協調して担架へ移す",
+                          "desc":  "頭を支える人が合図を出し、全員で体の軸を保ちながら横向きにします。背中の下へ担架を差し込み、そっと仰向けに戻します。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "体を固定して病院へ搬送する",
+                          "desc":  "額、胸、腰を担架にそっと固定します。外傷診療部門のある医療機関へ搬送します。"
+                      }
+                  ],
+        "dos":  [
+                    "頭、首、胴体を常に一直線に保つ。",
+                    "気道、呼吸、意識を定期的に確認する。",
+                    "医療スタッフを待つ間、きつい衣服をゆるめ、暖かく保つ。"
+                ],
+        "donts":  [
+                      "脊椎損傷を悪化させるおそれがあるため、脇の下を持ち上げたり、おんぶや抱きかかえで運んだりしない。",
+                      "首の後ろの傷を見るために頭を回したり曲げたりしない。",
+                      "2人で首を固定する訓練を受けていない場合、ヘルメットを外さない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-chan-thuong-dau-va-tuy-song-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "トゥオイチェー新聞—健康",
+                            "url":  "https://tuoitre.vn/video/bac-si-huong-dan-cach-so-cuu-khi-bi-chan-thuong-vung-dau-tranh-sai-lam-nguy-hiem-155283.htm",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "HTV7",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=Eu2Kt6Qdl0E"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "bi-bong-gan-co-tay-co-chan-phai",
+        "title":  "捻挫・筋違い（R.I.C.E.）",
+        "fullTitle":  "急性の靱帯捻挫・筋挫傷への応急手当",
+        "category":  "tai-nan",
+        "categoryLabel":  "外傷",
+        "criticalLevel":  "low",
+        "readTime":  "4分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "早期の対応が重要です。適切に処置しないと捻挫が悪化することがあります。",
+        "lead":  "捻挫は、関節の過度な動きや転倒により、関節周囲の靱帯が伸びたり裂けたりした状態です。安静、冷却、圧迫、挙上は、初期の痛みや腫れを抑えるためによく推奨されます。",
+        "emergencyAlert":  "関節が変形している、体重をかけられない、または非常に痛く骨折が疑われる場合は、医療機関を受診してください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "安静にする",
+                          "desc":  "運動を中止し、負傷した関節で歩いたり動かしたりするのを控えます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "冷やす",
+                          "desc":  "氷を柔らかい布で包み、受傷後48時間は2～3時間ごとに約15～20分、関節に当てると腫れや痛みを抑えられます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "圧迫する",
+                          "desc":  "弾性包帯を関節にゆるく巻いて支えます。指先がしびれたり青くなったりするほどきつく巻かないでください。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "挙上する",
+                          "desc":  "休む間、負傷した関節を心臓より高く上げ、循環を助けて腫れを抑えます。"
+                      }
+                  ],
+        "dos":  [
+                    "受傷後48時間はRICEの4段階を行う。",
+                    "皮膚の凍傷を避けるため、氷は必ず布で包む。",
+                    "靱帯損傷の評価や骨折の有無を確認するため医師の診察を受ける。"
+                ],
+        "donts":  [
+                      "腫れが増すおそれがあるため、受傷直後に温感オイルや薬用アルコールで揉んだり、熱い湯に浸けたりしない。",
+                      "負傷した関節を自分で動かしたり引っ張って戻したりしない。",
+                      "関節が回復して安定する前に激しい運動を再開しない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/bi-bong-gan-co-tay-co-chan-phai-lam-sao-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/so-cuu-bong-gan-trat-khop/",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "1LIFE応急手当（ファム・クアン・ビン医師）",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=K8Cf9g5EHgc"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "xu-ly-ha-duong-huyet-o-nguoi-tieu",
+        "title":  "糖尿病の低血糖",
+        "fullTitle":  "糖尿病に伴う急性低血糖への応急対応",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "medium",
+        "readTime":  "4分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpolyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"\u003e\u003c/polyline\u003e\u003c/svg\u003e",
+        "shortDesc":  "低血糖は糖尿病の人によくみられる合併症です。",
+        "lead":  "薬の過量、食事の欠食、活動量の増加などで低血糖が起こることがあります。手の震え、冷や汗、強い空腹感がよくみられます。低血糖が長引くと意識や神経系に影響することがあります。",
+        "emergencyAlert":  "眠気、意識消失、けいれんが現れた場合は直ちに115へ通報してください。意識のない人の口に食べ物や飲み物を入れないでください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "症状を見分け、すぐに血糖値を測る",
+                          "desc":  "個人用血糖測定器があれば使います。一般に3.9 mmol/Lまたは70 mg/dL未満は低血糖とみなされます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "意識がはっきりしていれば「15のルール」を使う",
+                          "desc":  "意識がはっきりしていれば、速効性の糖質を約15 gすぐに与えます。例：甘い果汁飲料120 mL、ブドウ糖タブレット3錠、はちみつ大さじ1杯、または温かい砂糖水1杯。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "休ませ、15分後に再確認する",
+                          "desc":  "座って休ませます。15分後に血糖値を再測定し、まだ低ければ糖質を15 gもう一度与えます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "血糖値を保つため軽食を与える",
+                          "desc":  "血糖値が安定したら、クラッカー、パン、おかゆなど軽いでんぷん質の軽食をとってもらいます。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "意識が低下した場合に対応する",
+                          "desc":  "回復体位で横向きにし、115へ通報します。口から何も与えないでください。処方済みのグルカゴン注射器があれば、医療指示に従って使用します。"
+                      }
+                  ],
+        "dos":  [
+                    "手の震えや発汗など初期症状に気づいたら、速効性の糖質をすぐに与える。",
+                    "糖尿病の人は飴や砂糖の小袋を携帯する。",
+                    "低血糖が繰り返される場合は、治療担当医に薬の計画を相談する。"
+                ],
+        "donts":  [
+                      "意識のない人やけいれん中の人に、窒息のおそれがある食べ物や飲み物を与えない。",
+                      "脂肪が糖の吸収を遅らせるため、チョコレートやアイスクリームなど高脂肪食品を速効治療として頼らない。",
+                      "低血糖が疑われる場合、自己判断でインスリンを追加しない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/xu-ly-ha-duong-huyet-o-nguoi-tieu-duong-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/cach-cap-cuu-khi-bi-ha-duong-huyet-dot-ngot-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "タムアン総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=xJH6RltjkPU"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "cach-lay-di-vat-trong-mat",
+        "title":  "目の異物",
+        "fullTitle":  "目の表面の異物・角膜刺激物に対する応急手当",
+        "category":  "ngoai-troi",
+        "categoryLabel":  "屋外",
+        "criticalLevel":  "medium",
+        "readTime":  "3分",
+        "standard":  "参考：www.vinmec.com",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"5\"\u003e\u003c/circle\u003e\u003cpath d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "元記事は、ビンメック国際総合病院の救急・集中治療医、ブー・フー・タン医師の助言を受けて作成されました。",
+        "lead":  "ほこり、小さな虫、砂などが目に入ることがあります。やさしく扱うことで、角膜の傷や感染の危険を減らせます。",
+        "emergencyAlert":  "金属片が深く刺さっている、目から出血している、または強い痛みがある場合は、直ちに眼科専門医の診察を受けてください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "手をよく洗う",
+                          "desc":  "目の周りに触れる前に、石けんと清潔な水で手を洗います。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "生理食塩水または清潔な水ですすぐ",
+                          "desc":  "頭を傾け、0.9%生理食塩水を目頭から目尻に向かってそっと垂らすか流し、異物を洗い出します。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "清潔な水の中でそっとまばたきする",
+                          "desc":  "目を清潔な水または生理食塩水のカップにそっと浸し、数回まばたきしてもかまいません。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "目を確認し、必要なら受診する",
+                          "desc":  "下まぶたの内側に異物がはっきり見える場合は、湿らせた綿棒でそっと触れて取り除けます。角膜上にある場合や、洗眼後も強い異物感が続く場合は医療機関を受診します。"
+                      }
+                  ],
+        "dos":  [
+                    "自然な涙で異物を洗い流せるよう、数回まばたきする。",
+                    "眼に使用する0.9%生理食塩水を優先する。",
+                    "刺激や痛みが改善しない場合は清潔なガーゼで軽く覆い、医師の診察を受ける。"
+                ],
+        "donts":  [
+                      "異物が角膜を傷つけることがあるため、目をこすらない。",
+                      "ピンセット、尖った棒、硬い器具で異物を取り除かない。",
+                      "角膜に刺さった異物を自分で取り出そうとしない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-cach-lay-di-vat-trong-mat-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考ガイドライン資料",
+                            "url":  "https://vietngagroup.vn/cach-xu-ly-nhanh-khi-co-di-vat-roi-vao-mat/",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ゲアン・テレビ",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=h3KYeNW0Mzc"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "cach-so-cuu-dong-kinh-xu-tri-dung",
+        "title":  "けいれん発作への対応",
+        "fullTitle":  "けいれん発作に対する標準的な応急手当",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "medium",
+        "readTime":  "3分",
+        "standard":  "参考：オーストラリアてんかん財団",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpolyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"\u003e\u003c/polyline\u003e\u003c/svg\u003e",
+        "shortDesc":  "発作中のけがを防ぎ、時間を計り、救急要請が必要な状況を見分ける。",
+        "lead":  "落ち着いて、本人のそばにいてください。発作中のけがを防ぎ、意識が戻るまで状態を観察します。",
+        "emergencyAlert":  "発作が5分以上続く、次の発作が起こる、初めての発作である、または発作後に回復しない場合は115へ通報してください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "けがから本人を守る",
+                          "desc":  "硬い物や尖った物を遠ざけ、頭の下に柔らかい物を置き、発作の時間を計ります。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "気道を保つ",
+                          "desc":  "安全にできるときに、そっと横向きにします。口の中に食べ物、液体、吐物がある場合は、すぐに横向きにします。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "そばにいて状態を観察する",
+                          "desc":  "呼吸を観察し、意識が戻るか救急スタッフが到着するまでそばにいます。"
+                      }
+                  ],
+        "dos":  [
+                    "発作の開始時刻と終了時刻を記録する。",
+                    "危険物を遠ざけ、意識が戻ったら安心させる。"
+                ],
+        "donts":  [
+                      "発作中の人を押さえつけない。",
+                      "完全に意識が戻るまで口に物を入れたり、食べ物や飲み物を与えたりしない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "オーストラリアてんかん財団—発作時の応急手当",
+                            "url":  "https://epilepsyfoundation.org.au/understanding-epilepsy/seizure-first-aid/tonic-clonic-seizures/"
+                        },
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/?p=197275",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/cach-so-cuu-nguoi-bi-co-giat-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ウィン・トラン医師 公式",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=U_nqzdiQ0bc"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "nhung-cach-so-cuu-nguoi-bi-ngat",
+        "title":  "失神",
+        "fullTitle":  "血管迷走神経性失神・突然の失神への応急対応",
+        "category":  "ngoai-troi",
+        "categoryLabel":  "屋外",
+        "criticalLevel":  "medium",
+        "readTime":  "2分",
+        "standard":  "参考：セント・ジョン救急サービス",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"5\"\u003e\u003c/circle\u003e\u003cpath d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "失神しそうな人を横にし、反応が戻らない場合は呼吸を確認する。",
+        "lead":  "失神は通常短時間です。反応が戻らない場合は呼吸を確認し、救急へ通報してください。",
+        "emergencyAlert":  "反応が戻らない、または正常に呼吸していない場合は115へ通報し、指令員の指示に従ってください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "横になるのを助ける",
+                          "desc":  "可能であれば脚を少し上げます。周囲の人に離れてもらい、本人の周りの空気の通りをよくします。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "意識が戻る間、状態を観察する",
+                          "desc":  "安心させます。気分がよくなったら、数分かけて徐々に座る姿勢へ移るのを手伝います。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "反応が戻らない場合に確認する",
+                          "desc":  "気道を確保し、呼吸を確認して115へ通報します。正常に呼吸していれば回復体位で横向きにし、観察を続けます。"
+                      }
+                  ],
+        "dos":  [
+                    "本人の周りを片付け、風通しをよくする。",
+                    "意識と呼吸を観察する。"
+                ],
+        "donts":  [
+                      "意識が戻った直後に立ち上がらせない。",
+                      "本人の周りに人だかりを作らない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "セント・ジョン救急サービス—失神時の応急手当",
+                            "url":  "https://www.sja.org.uk/first-aid-advice/fainting/"
+                        },
+                        {
+                            "name":  "セント・ジョン救急サービス—回復体位",
+                            "url":  "https://www.sja.org.uk/first-aid-advice/recovery-position/"
+                        },
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/?p=103141",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/bi-ngat-xiu-nen-uong-gi-cach-so-cuu-nguoi-ngat-xiu-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "総合診療—グエン・チュン・トゥック医師",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=63NzApt2-UY"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "so-cuu-khi-bi-ran-can-ran-doc",
+        "title":  "毒蛇咬傷",
+        "fullTitle":  "毒蛇咬傷・毒液注入に対する応急手当",
+        "category":  "ngoai-troi",
+        "categoryLabel":  "屋外",
+        "criticalLevel":  "high",
+        "readTime":  "3分",
+        "standard":  "参考：タムアン総合病院およびビンメック",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"5\"\u003e\u003c/circle\u003e\u003cpath d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "世界に約3,000種いるヘビのうち、人に有毒な毒や唾液を持つのは約15～20%です。",
+        "lead":  "毒蛇咬傷は神経系や血液凝固に深刻な影響を及ぼすことがあります。専門的な治療を待つ間、毒の広がりを遅らせることを目指します。",
+        "emergencyAlert":  "必要に応じて評価や抗毒素治療を受けるため、できるだけ早く最寄りの医療機関へ搬送してください。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "安全な場所へ移動し、本人を落ち着かせる",
+                          "desc":  "ヘビの届かない場所へ移動させます。落ち着いて横になるよう助けます。不安や激しい動きで毒が速く広がることがあるため、動きを抑えます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "装飾品を外し、衣服をゆるめる",
+                          "desc":  "腫れ始める前に、咬まれた手足の指輪、ブレスレット、腕時計を速やかに外します。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "やさしく洗い、手足の動きを抑える",
+                          "desc":  "咬傷の表面を清潔な水または生理食塩水でそっとすすぎ、清潔なガーゼで覆ってもかまいません。添え木で咬まれた手足をそっと固定し、心臓より低く保ちます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "医療機関へ搬送する",
+                          "desc":  "歩かせず、担架など適切な方法で搬送します。安全であればヘビの模様を覚えるか、離れた場所から写真を撮って医師に見せます。"
+                      }
+                  ],
+        "dos":  [
+                    "本人を静かに保ち、咬まれた手足の動きをできるだけ制限する。",
+                    "腫れる前に指輪や時計など締め付ける物を外す。",
+                    "中毒を治療できる医療機関へできるだけ早く搬送する。"
+                ],
+        "donts":  [
+                      "感染や血管損傷の危険が増すため、皮膚を切ったり、咬傷から血を絞り出したりしない。",
+                      "口で毒を吸い出さない。救助者も保護する。",
+                      "組織壊死を起こすおそれがあるため、血流を完全に止めるほど強い止血帯を巻かない。",
+                      "病院への搬送を遅らせる葉などの民間療法や、根拠のない処置をしない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "タムアン総合病院",
+                            "url":  "https://tamanhhospital.vn/cach-so-cuu-khi-bi-ran-can/",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-so-cuu-khi-bi-ran-can-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "VTV健康",
+                      "youtubeUrl":  "https://suckhoe.vtv.vn/video/so-cuu-khi-bi-ran-can-108672762.htm"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "nghiem-phap-heimlich-la-gi-cach",
+        "title":  "ハイムリック法ガイド",
+        "fullTitle":  "ハイムリック法の実施方法：総合ガイド",
+        "category":  "tre-em",
+        "categoryLabel":  "子ども",
+        "criticalLevel":  "medium",
+        "readTime":  "2分",
+        "standard":  "参考：ロンチャウおよびビンメック",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003ccircle cx=\"12\" cy=\"12\" r=\"10\"\u003e\u003c/circle\u003e\u003cpath d=\"M8 14s1.5 2 4 2 4-2 4-2\"\u003e\u003c/path\u003e\u003cline x1=\"9\" y1=\"9\" x2=\"9.01\" y2=\"9\"\u003e\u003c/line\u003e\u003cline x1=\"15\" y1=\"9\" x2=\"15.01\" y2=\"9\"\u003e\u003c/line\u003e\u003c/svg\u003e",
+        "shortDesc":  "ハイムリック法は、気道閉塞を取り除くための応急手当です。",
+        "lead":  "ハイムリック法では、成人や年長児の気道に異物が詰まったときに腹部突き上げを行います。肺から空気を押し上げ、異物の排出を促します。",
+        "emergencyAlert":  "喉を押さえる、話す・咳をすることができない、皮膚が青いなど、重度の気道閉塞の兆候があればすぐに対応してください。誰かに115への通報を頼みます。",
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "相手の後ろに安定して立つ",
+                          "desc":  "片足を前に出してバランスを取りながら相手の後ろに立ち、腰に両腕を回します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "手を正しい位置に置く",
+                          "desc":  "握りこぶしを作り、親指側を上腹部に当てます。へその上、胸骨の先端より約2～3 cm下です。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "腹部突き上げを行う",
+                          "desc":  "もう一方の手でこぶしを包み、内側かつ斜め上向きに素早く引き上げます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "背部叩打と腹部突き上げを交互に行う",
+                          "desc":  "ERCなど多くの現行ガイドラインでは、異物が出るか、咳や呼吸ができるようになるまで、背部叩打5回と腹部突き上げ5回を交互に行います。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "意識を失った場合",
+                          "desc":  "硬い場所にそっと仰向けに寝かせ、115へ通報してCPRを始めます。口の中に異物がはっきり見える場合だけ取り除きます。"
+                      }
+                  ],
+        "dos":  [
+                    "空気圧で異物を押し出せるよう、突き上げは斜め上向きに行う。",
+                    "異物が出た後、軟部組織の損傷がないか確認してもらう。",
+                    "現行の応急手当ガイドラインに従い、必要に応じて背部叩打5回と腹部突き上げ5回を交互に行う。"
+                ],
+        "donts":  [
+                      "1歳未満の乳児に腹部突き上げを行わない。背部叩打と胸部突き上げを使う。",
+                      "握りこぶしを胸骨の先端や肋骨の上に置かない。",
+                      "妊娠後期に腹部突き上げを行わない。代わりに胸部突き上げを行う。",
+                      "異物が見えないときに、指を盲目的に口へ入れない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ロンチャウ薬局",
+                            "url":  "https://nhathuoclongchau.com.vn/bai-viet/nghiem-phap-heimlich-la-gi-cach-thuc-hien.html",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック国際総合病院",
+                            "url":  "https://www.vinmec.com/vie/chu-de/nghiem-phap-heimlich",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "健康と生活新聞（SKDS）",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=HS4_SPZdp5g"
+                  },
+        "timeline":  [
+
+                     ]
+    },
+    {
+        "id":  "so-cuu-nguoi-bi-nhoi-mau-co-tim-dau-tim-dot-ngot",
+        "title":  "心筋梗塞",
+        "fullTitle":  "急性心筋梗塞・胸痛への応急対応",
+        "category":  "benh-ly",
+        "categoryLabel":  "医療",
+        "criticalLevel":  "critical",
+        "readTime":  "5分",
+        "standard":  "ビンメックの医学的指針を参考",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"\u003e\u003c/path\u003e\u003cpath d=\"m12 13-1-1 2-2-3-3 2-2\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "冠動脈が詰まると、肩や左腕に広がる強い胸痛が起こることがあります。安静にし、115へ通報して、CPRを始める準備をしてください。",
+        "lead":  "冠動脈が突然詰まると、心筋への血流が途絶えます。肩、左腕、あごに広がる強い胸痛、呼吸困難、発汗などが現れることがあります。本人を上体を少し起こした姿勢で安静にし、直ちに115へ通報します。心停止に備えCPRを行う準備をしてください。",
+        "emergencyAlert":  "強い胸痛が数分以上続いて肩、あご、左腕へ広がる、または失神や意識消失がある場合は直ちに115へ通報してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "上体を少し起こして完全に安静にする",
+                          "desc":  "活動を直ちに止めます。風通しのよい場所で上体を少し起こして座るか休み、膝を曲げて、体を地面から約75度にします。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "衣服をゆるめ、穏やかに呼吸する",
+                          "desc":  "肩と腕の力を抜き、目を閉じて鼻から穏やかに呼吸します。気道を保つため、襟、ネクタイ、スカーフをゆるめます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "医師の指示どおりに薬を使う",
+                          "desc":  "既に処方されている場合は、医療指示に従ってニトログリセリン錠を舌下に置くか、アスピリン錠を1錠かみ砕きます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "意識を失ったら胸骨圧迫を行う",
+                          "desc":  "硬い場所に寝かせます。胸の中央、胸骨の上で両手を重ね、胸の深さの3分の1まで強く押し、115の救急車が到着するまで続けます。"
+                      }
+                  ],
+        "dos":  [
+                    "活動を止め、膝を少し曲げて上体を起こした姿勢で休む。",
+                    "肩と腕の力を抜き、目を閉じ、鼻から穏やかに呼吸する。",
+                    "医師から事前に指示されている場合は、ニトログリセリンを舌下に置くかアスピリンをかみ砕く。",
+                    "直ちに115へ通報し、呼吸が止まった場合に胸骨圧迫を行う準備をする。"
+                ],
+        "donts":  [
+                      "心臓への負担が増すため、無理に深呼吸したり息を止めたりしない。",
+                      "本人を不安にさせないよう、大声で話したり質問を繰り返したりしない。",
+                      "歩かせたり、自分で車を運転して病院へ行かせたりしない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/huong-dan-xu-tri-so-cuu-cho-nguoi-bi-nhoi-mau-co-tim-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考資料2",
+                            "url":  "https://tiemchunglongchau.com.vn/kien-thuc-tiem-chung/huong-dan-so-cuu-nhoi-mau-co-tim-va-bien-phap-phong-benh-hieu-qua",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "タムアン総合病院—心筋梗塞の警告兆候",
+                            "url":  "https://tamanhhospital.vn/dau-hieu-dau-tim/",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ロンチャウ薬局—左胸痛の原因・見分け方と安全な対応",
+                            "url":  "https://nhathuoclongchau.com.vn/bai-viet/dau-nguc-trai-nguyen-nhan-dau-hieu-nhan-biet-va-cach-xu-tri-an-toan.html",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "ホアンミー・サイゴン病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=1VxQt1QBrSo"
+                  }
+    },
+    {
+        "id":  "so-cuu-chay-mau-cam",
+        "title":  "鼻出血",
+        "fullTitle":  "前方・後方鼻出血への応急手当",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "medium",
+        "readTime":  "3分",
+        "standard":  "ビンメックの医学的指針を参考",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M9.5 3v6.5L7.5 13a2.5 2.5 0 0 0 2.3 3.5h.7\"\u003e\u003c/path\u003e\u003cpath d=\"M14.5 3v6.5l2 3.5a2.5 2.5 0 0 1-2.3 3.5h-.7\"\u003e\u003c/path\u003e\u003cpath d=\"M12 16.5s-2 2-2 3.3a2 2 0 0 0 4 0c0-1.3-2-3.3-2-3.3Z\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "乾燥やけがで鼻の細い血管が破れることがあります。座って少し前かがみになり、鼻の柔らかい部分を10～15分つまみます。",
+        "lead":  "乾燥、鼻をほじること、けがなどで鼻粘膜の細い血管が破れることがあります。座って頭を少し前に傾け、鼻の柔らかい部分を10～15分つまみ、口で呼吸してもらいます。頭を後ろへ傾けないでください。",
+        "emergencyAlert":  "出血が30分以上続く、失神やふらつきがある、または頭部・顔面のけがの後に出血した場合は、直ちに115へ通報するか病院へ行ってください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "座って頭を少し前に傾ける",
+                          "desc":  "座って頭を少し前に傾けます。圧力を減らし、血液が喉へ流れて窒息や嘔吐を起こすのを防ぎます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "鼻の柔らかい部分を10～15分つまむ",
+                          "desc":  "親指と人差し指で鼻の柔らかい部分の両側をつまみます。口で呼吸しながら、10～15分間、一定の圧力を保ちます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "出血を確認し、必要なら繰り返す",
+                          "desc":  "15分後にゆっくり圧迫をゆるめます。出血が続く場合はさらに10～15分つまみます。それでも止まらない場合は直ちに医療機関へ行きます。"
+                      }
+                  ],
+        "dos":  [
+                    "血液が鼻孔から流れ出るよう、少し前かがみで座る。",
+                    "親指と人差し指で鼻の柔らかい部分を10～15分、途中で離さずにつまむ。",
+                    "鼻をつまんでいる間、口から落ち着いて呼吸する。",
+                    "止血後数時間は、頭を胸より高く保つ。"
+                ],
+        "donts":  [
+                      "血液が喉へ流れ、窒息や嘔吐を招くことがあるため、頭を後ろへ傾けない。",
+                      "応急手当後数時間は、鼻をほじる、強くかむ、前かがみになることを避ける。",
+                      "汚れたティッシュや粗い綿を鼻の奥に詰めない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-dung-khi-bi-chay-mau-cam-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考資料2",
+                            "url":  "https://tamanhhospital.vn/so-cuu-chay-mau-cam/",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "タムアン総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=P2doSrpRTnE"
+                  }
+    },
+    {
+        "id":  "so-cap-cuu-chan-thuong-bung-theo-huong-dan-cua-bo-y-te",
+        "title":  "腹部外傷",
+        "fullTitle":  "鈍的・穿通性腹部外傷への応急手当",
+        "category":  "tai-nan",
+        "categoryLabel":  "外傷",
+        "criticalLevel":  "high",
+        "readTime":  "5分",
+        "standard":  "ビンメックの医学的指針を参考",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M7 4c0 2-1 4-1 7s1 5 1 9\"\u003e\u003c/path\u003e\u003cpath d=\"M17 4c0 2 1 4 1 7s-1 5-1 9\"\u003e\u003c/path\u003e\u003ccircle cx=\"12\" cy=\"13\" r=\"3\"\u003e\u003c/circle\u003e\u003cpath d=\"M12 7v2M12 17v2M8 13h1M15 13h1\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "腹部への打撃や刺創は内臓損傷や痛み、腫れを起こすことがあります。動かさず、暖かく保ち、口から何も与えず115へ通報してください。",
+        "lead":  "強い打撃や腹部の刺創は内臓を損傷することがあります。痛み、腹部の腫れ、失血によるショックなどが起こることがあります。本人を動かさず、暖かく保ち、口から何も与えず、救急医療を受けてください。",
+        "emergencyAlert":  "ショックの兆候、発汗、腹部の腫れ、吐血、臓器の露出、刺さった物がある腹部外傷が疑われる場合は、直ちに115へ通報してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "涼しく風通しのよい場所で楽な姿勢で横にする",
+                          "desc":  "衣服やベルトをゆるめます。吐いている、または吐きそうな場合は、回復体位で左側を下にして横向きにします。必要に応じて気道、呼吸、循環を確認します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "ショックや開放創に対処する",
+                          "desc":  "ショックの兆候がある場合は、頭を低く、脚を上げて暖かく保ちます。出血している開放創は滅菌ガーゼまたは清潔な衣服で覆います。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "露出した臓器を保護する",
+                          "desc":  "露出した臓器を腹部へ押し戻さないでください。感染予防と湿潤保持のため、生理食塩水で湿らせた清潔なガーゼ、または清潔なボウルを逆さにして覆います。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "刺さった物はそのままにし、救急車を待つ",
+                          "desc":  "腹部に刺さった物や武器を抜かないでください。抜くと命に関わる出血を起こすことがあります。115の救急車を待って引き継ぎます。"
+                      }
+                  ],
+        "dos":  [
+                    "吐いている場合は左側を下にして横向きにする。",
+                    "露出した臓器は生理食塩水で湿らせた清潔なガーゼか、清潔なボウルを逆さにして覆う。",
+                    "薄い毛布で本人を暖かく保つ。",
+                    "臓器が露出している、またはショックの兆候があることを115の指令員にはっきり伝える。"
+                ],
+        "donts":  [
+                      "露出した腸や臓器を腹部に押し戻さない。",
+                      "現場で刺さった物を抜かない。",
+                      "食べ物や飲み物を与えない。",
+                      "状態が不安定な重傷者を自分だけで動かさない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-chan-thuong-bung-huong-dan-cua-bo-y-te-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考資料2",
+                            "url":  "https://bvnguyentriphuong.com.vn/hoi-suc-tich-cuc-chong-doc/so-cap-cuu-chan-thuong-bung",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "医療を学ぼう",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=oTgIDLi0hdw"
+                  }
+    },
+    {
+        "id":  "nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien",
+        "title":  "応急手当の基本原則",
+        "fullTitle":  "救急応急手当における基本原則と安全手順",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "medium",
+        "readTime":  "4分",
+        "standard":  "ビンメックの医学的指針を参考",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M12 11v4\"\u003e\u003c/path\u003e\u003cpath d=\"M14 13h-4\"\u003e\u003c/path\u003e\u003cpath d=\"M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\"\u003e\u003c/path\u003e\u003crect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"\u003e\u003c/rect\u003e\u003c/svg\u003e",
+        "shortDesc":  "4つの原則：落ち着いて安全を確保し、現場を管理し、初期手当を行い、評価・計画・実行・再評価の順に進める。",
+        "lead":  "応急手当の主な原則は、落ち着いて安全を確保する、状況を管理する、初期手当を行う、段階的に進める、の4つです。見落としを防ぐため、評価、計画、実行、再評価を行います。",
+        "emergencyAlert":  "二次事故、火災、爆発のおそれがある場合、または意識消失、呼吸停止、命に関わる出血がある場合は直ちに115へ通報してください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "評価する",
+                          "desc":  "現場が自分と負傷者にとって安全か確認します。必要な応急手当を判断するため、本人の状態も評価します。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "計画する",
+                          "desc":  "行動計画を立てます。必要に応じて115や病院など外部へ助けを求める、または近くの人に協力を頼むことを計画します。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "実行する",
+                          "desc":  "計画に沿って行動します。必要ならすぐに応急手当を行うか、評価に基づいて負傷への対応に優先順位をつけます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "再評価する",
+                          "desc":  "行った応急手当を見直します。現場の安全を保ち、状態の変化を見逃さないよう本人を継続的に再評価します。"
+                      }
+                  ],
+        "dos":  [
+                    "落ち着いて、自分、負傷者、周囲の人の安全を守る。",
+                    "現場を安全に保てるよう状況を管理する。",
+                    "命を守り、回復を促すため初期手当を行う。",
+                    "不安に圧倒されず重要事項を見落とさないよう、段階的に進める。"
+                ],
+        "donts":  [
+                      "電線、火災、爆発、有毒ガスなどの危険がある現場へ、急いで入らない。",
+                      "脊椎損傷が疑われる人を動かさない。",
+                      "複数の負傷者がいる場合、重傷者を後回しにして命に関わらない傷だけに対応しない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/nguyen-tac-so-cap-cuu-va-ke-hoach-thuc-hien-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考資料2",
+                            "url":  "https://tramytep10q10.medinet.gov.vn/chuyen-muc/huong-dan-so-cap-cuu-ban-dau-cmobile3091-154422.aspx",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ]
+    },
+    {
+        "id":  "so-cap-cuu-bong-o-tre-em",
+        "title":  "小児の熱傷",
+        "fullTitle":  "子どもの熱湯熱傷・接触熱傷に対する応急手当",
+        "category":  "sinh-hoat",
+        "categoryLabel":  "日常生活",
+        "criticalLevel":  "high",
+        "readTime":  "4分",
+        "standard":  "ビンメックの医学的指針を参考",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"\u003e\u003c/path\u003e\u003cpath d=\"M12 18a2 2 0 0 1-2-2c0-1.2 2-3 2-3s2 1.8 2 3a2 2 0 0 1-2 2Z\"\u003e\u003c/path\u003e\u003c/svg\u003e",
+        "shortDesc":  "熱湯、熱い食べ物、炎による熱傷は、清潔な水で15～20分冷やし、清潔なガーゼで覆って、すぐに医療機関を受診してください。",
+        "lead":  "子どもの皮膚は薄く敏感なため、熱湯、熱い食べ物、炎による熱傷は深くなり、熱傷ショックや感染につながることがあります。清潔で冷たい水で15～20分冷やし、清潔なガーゼで覆って病院へ行ってください。ニシキヘビの脂や歯磨き粉を塗らないでください。",
+        "emergencyAlert":  "背中、胸、腹部、手足全体を覆う広範囲の熱傷、顔や性器の熱傷、II度以上の熱傷、ショックや強い不安の兆候がある場合は、直ちに子どもを病院へ連れて行ってください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "熱源を取り除き、安全な場所へ移動する",
+                          "desc":  "子どもを速やかに熱源から離します。熱い液体で濡れた衣服をそっと脱がせます。衣服が皮膚に貼り付いている場合は、剥がそうとせず周囲を切ります。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "清潔な水で15～20分冷やす",
+                          "desc":  "熱傷をすぐに清潔な冷水へ浸すか、15～20°Cの流水で15～20分間やさしく冷やし、熱傷の深さ、痛み、腫れを抑えます。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "清潔な滅菌ガーゼで熱傷を保護する",
+                          "desc":  "熱傷部位を清潔に保ち、局所の痛みを和らげるため滅菌ガーゼを軽くかぶせます。使い慣れない薬や化学物質を塗らないでください。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "水分を補い、熱傷ショックを防ぎ、受診する",
+                          "desc":  "ショック予防のため、母乳または少量の塩を加えた砂糖水、経口補水液を十分に飲ませます。逆流を防ぐため、頭を高くして横向きにします。速やかに最寄りの医療機関へ連れて行きます。"
+                      }
+                  ],
+        "dos":  [
+                    "受傷後すぐに、清潔で冷たい水へ15～20分浸す。",
+                    "水分補給のため、塩入り砂糖水または経口補水液を与える。",
+                    "子どもを安心させ、怖がらないようにする。"
+                ],
+        "donts":  [
+                      "歯磨き粉、熱傷用クリーム、ニシキヘビの脂、使い慣れない薬を塗らない。",
+                      "凍傷や低体温症を招くおそれがあるため、氷水に浸さない。",
+                      "皮膚の水疱をつぶさない。",
+                      "熱傷に貼り付いた衣服を皮膚から引き剥がさない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cap-cuu-bong-o-tre-em-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考資料2",
+                            "url":  "https://tamanhhospital.vn/so-cuu-tre-bi-bong/",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック—火炎熱傷・熱湯熱傷の応急手当",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-khi-bi-bong-lua-bong-nuoc-soi-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "ビンメック—子どもの熱傷に対する応急手当の手順",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/cac-buoc-so-cuu-ban-dau-tre-bi-bong-vi",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "タムアン総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=_GO6VO5wzsU"
+                  }
+    },
+    {
+        "id":  "so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu",
+        "title":  "切断された手足",
+        "fullTitle":  "外傷性切断に対する応急手当と切断部位の適切な冷却保存",
+        "category":  "tai-nan",
+        "categoryLabel":  "外傷",
+        "criticalLevel":  "critical",
+        "readTime":  "5分",
+        "standard":  "ビンメックの医学的指針を参考",
+        "iconSvg":  "\u003csvg aria-hidden=\"true\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\"\u003e\u003cpath d=\"M10 10.01h.01\"\u003e\u003c/path\u003e\u003cpath d=\"M10 14.01h.01\"\u003e\u003c/path\u003e\u003cpath d=\"M14 10.01h.01\"\u003e\u003c/path\u003e\u003cpath d=\"M14 14.01h.01\"\u003e\u003c/path\u003e\u003cpath d=\"M18 6v12\"\u003e\u003c/path\u003e\u003cpath d=\"M6 6v12\"\u003e\u003c/path\u003e\u003crect x=\"2\" y=\"6\" width=\"20\" height=\"12\" rx=\"2\"\u003e\u003c/rect\u003e\u003c/svg\u003e",
+        "shortDesc":  "手足の切断は緊急事態です。出血を止め、切断部位を密閉袋に入れて氷容器内で間接的に冷やします。",
+        "lead":  "外傷性切断は緊急事態です。本人の出血を止め、切断部位を清潔な袋に密封して氷容器内で間接的に冷やすことが、顕微鏡下再接着手術の可否に影響します。",
+        "emergencyAlert":  "直ちに115へ通報してください。命に関わる出血を止め、切断部位を間接冷却して保存し、6時間以内の顕微鏡下手術につなげてください。",
+        "timeline":  [
+
+                     ],
+        "steps":  [
+                      {
+                          "stepNumber":  1,
+                          "title":  "気道を確保し、バイタルサインを確認する",
+                          "desc":  "気道が確保されていることを確認します。呼吸や循環が止まった場合は直ちにCPRを始めます。"
+                      },
+                      {
+                          "stepNumber":  2,
+                          "title":  "まず断端からの出血を止める",
+                          "desc":  "傷を生理食塩水または清潔な水ですすぎ、包帯で覆います。断端に圧迫包帯を当てます。手や足が切断されている場合、または圧迫しても出血が止まらない場合は、断端から10 cm離れた位置に止血帯を巻き、時刻を記録します。"
+                      },
+                      {
+                          "stepNumber":  3,
+                          "title":  "切断部位をそっと洗い、湿ったガーゼで包む",
+                          "desc":  "切断部位を丁寧に扱い、滅菌生理食塩水または清潔な水ですすぎます。石けんや化学薬品は避けます。滅菌ガーゼを生理食塩水で湿らせ、厚くなりすぎないよう全体を包みます。"
+                      },
+                      {
+                          "stepNumber":  4,
+                          "title":  "密閉袋に入れ、氷容器内で間接的に冷やす",
+                          "desc":  "包んだ部位を清潔なビニール袋に入れて密封し、水が入らないようにします。その袋を氷容器または氷水の入った洗面器に入れます。切断部位が氷に直接触れないようにします。"
+                      },
+                      {
+                          "stepNumber":  5,
+                          "title":  "本人と切断部位を速やかに病院へ搬送する",
+                          "desc":  "本人と切断部位の両方を、顕微鏡下再接着が可能な病院へ速やかに搬送します。"
+                      }
+                  ],
+        "dos":  [
+                    "まず本人の出血を止める。",
+                    "切断部位を丁寧に扱い、清潔な生理食塩水ですすぐ。",
+                    "湿ったガーゼで包み、ビニール袋に密封してから氷容器に入れ、間接的に冷やす。",
+                    "手足が部分的に切断されている場合、まだつながっている部分を切り離さない。"
+                ],
+        "donts":  [
+                      "顕微鏡手術に必要な組織を損傷するおそれがあるため、切断部位を氷に直接触れさせない。",
+                      "石けん、アルコール、化学薬品で切断部位を洗わない。",
+                      "皮膚につながったままの部分を切り取らない。"
+                  ],
+        "sources":  [
+                        {
+                            "name":  "ビンメック",
+                            "url":  "https://www.vinmec.com/vie/bai-viet/so-cuu-va-bao-quan-chi-bi-dut-lia-trong-cap-cuu-vi",
+                            "accessDate":  "16/09/2026"
+                        },
+                        {
+                            "name":  "参考資料2",
+                            "url":  "https://nhathuoclongchau.com.vn/bai-viet/cach-so-cuu-va-bao-quan-chi-the-dut-roi.html",
+                            "accessDate":  "16/09/2026"
+                        }
+                    ],
+        "video":  {
+                      "creator":  "サウスサイゴン国際総合病院",
+                      "youtubeUrl":  "https://www.youtube.com/watch?v=ZG6IyTPEEQU"
+                  }
+    }
+]
