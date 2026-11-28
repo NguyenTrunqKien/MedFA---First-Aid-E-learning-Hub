@@ -210,21 +210,21 @@
         <tr>
           <th scope="row" data-i18n="detail.rowRate">Tần số ép tim (Rate)</th>
           <td colspan="3" class="text-center font-bold text-primary">
-            <span class="badge-cpr">100 – 120 nhịp/phút</span> <span class="text-xs text-on-surface-variant font-normal" data-i18n="detail.rowRateShared">(áp dụng đồng nhất cho mọi lứa tuổi)</span>
+            <span class="badge-cpr" data-i18n="detail.rowRateBadge">100 – 120 nhịp/phút</span> <span class="text-xs text-on-surface-variant font-normal" data-i18n="detail.rowRateShared">(áp dụng đồng nhất cho mọi lứa tuổi)</span>
           </td>
         </tr>
         <tr>
           <th scope="row" data-i18n="detail.rowDepth">Độ sâu ép tim (Depth)</th>
           <td>
-            <strong>5 – 6 cm</strong><br>
+            <strong data-i18n="detail.rowDepthAdultValue">5 – 6 cm</strong><br>
             <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthAdult">Không ấn sâu quá 6 cm</span>
           </td>
           <td>
-            <strong>Khoảng 5 cm</strong><br>
+            <strong data-i18n="detail.rowDepthChildValue">Khoảng 5 cm</strong><br>
             <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthChild">~1/3 đường kính lồng ngực</span>
           </td>
           <td>
-            <strong>Khoảng 4 cm</strong><br>
+            <strong data-i18n="detail.rowDepthInfantValue">Khoảng 4 cm</strong><br>
             <span class="text-xs text-on-surface-variant" data-i18n="detail.rowDepthInfant">~1/3 đường kính lồng ngực</span>
           </td>
         </tr>
@@ -247,12 +247,12 @@
             <span class="text-xs text-on-surface-variant" data-i18n="detail.rowRatioAdult">Áp dụng cho cả 1 hoặc 2 người sơ cứu</span>
           </td>
           <td>
-            <span class="font-bold text-primary">30 : 2</span> (1 người cứu)<br>
-            <span class="font-bold text-secondary">15 : 2</span> (2 người cứu y tế)
+            <span class="font-bold text-primary">30 : 2</span> <span data-i18n="detail.rowRatioSingleRescuer">(1 người cứu)</span><br>
+            <span class="font-bold text-secondary">15 : 2</span> <span data-i18n="detail.rowRatioTwoRescuers">(2 người cứu y tế)</span>
           </td>
           <td>
-            <span class="font-bold text-primary">30 : 2</span> (1 người cứu)<br>
-            <span class="font-bold text-secondary">15 : 2</span> (2 người cứu y tế)
+            <span class="font-bold text-primary">30 : 2</span> <span data-i18n="detail.rowRatioSingleRescuer">(1 người cứu)</span><br>
+            <span class="font-bold text-secondary">15 : 2</span> <span data-i18n="detail.rowRatioTwoRescuers">(2 người cứu y tế)</span>
           </td>
         </tr>
         <tr>

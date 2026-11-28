@@ -352,13 +352,13 @@ function extractCardsFromTopics(topics) {
     return true;
   });
 
-  const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+  const lang = typeof window !== 'undefined' && window.I18n ? window.I18n.getLanguage() : 'vi';
   const actionPrefix = (typeof window !== 'undefined' && typeof window.t === 'function')
     ? window.t('flashcard.actionPrefix')
-    : (isEn ? 'Action: ' : 'Xử trí: ');
+    : (lang === 'en' ? 'Action: ' : lang === 'ja' ? '対応: ' : 'Xử trí: ');
   const stepPrefix = (typeof window !== 'undefined' && typeof window.t === 'function')
     ? window.t('flashcard.stepPrefix')
-    : (isEn ? 'Step ' : 'Bước ');
+    : (lang === 'en' ? 'Step ' : lang === 'ja' ? '手順' : 'Bước ');
 
   return validTopics.map(t => {
     const frontTitle = cleanTitle(t.title || t.fullTitle);
@@ -405,10 +405,12 @@ function shuffleArray(arr) {
  */
 function setFlipped(flipped) {
   if (flipText) {
-    const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
+    const lang = typeof window !== 'undefined' && window.I18n ? window.I18n.getLanguage() : 'vi';
     const label = (typeof window !== 'undefined' && typeof window.t === 'function')
       ? window.t(flipped ? 'flashcard.flipBackBtn' : 'flashcard.flipBtn')
-      : (flipped ? (isEn ? 'Show question' : 'Xem câu hỏi') : (isEn ? 'Flip card' : 'Lật thẻ'));
+      : (flipped
+        ? (lang === 'en' ? 'Show question' : lang === 'ja' ? '質問に戻る' : 'Xem câu hỏi')
+        : (lang === 'en' ? 'Flip card' : lang === 'ja' ? 'カードをめくる' : 'Lật thẻ'));
     flipText.textContent = label;
   }
   card.classList.toggle('is-flipped', flipped);
@@ -548,8 +550,10 @@ function showCard() {
   const current = cards[index];
 
   if (cardCategory) {
-    const isEn = typeof window !== 'undefined' && window.I18n && window.I18n.getLanguage() === 'en';
-    cardCategory.textContent = current.category || (typeof window.t === 'function' ? window.t('flashcard.deckTag') : (isEn ? 'First Aid Reflex' : 'Phản xạ sơ cứu'));
+    const lang = typeof window !== 'undefined' && window.I18n ? window.I18n.getLanguage() : 'vi';
+    cardCategory.textContent = current.category || (typeof window.t === 'function'
+      ? window.t('flashcard.deckTag')
+      : lang === 'en' ? 'First Aid Reflex' : lang === 'ja' ? '応急手当の反射' : 'Phản xạ sơ cứu');
   }
 
   front.textContent = current.front;

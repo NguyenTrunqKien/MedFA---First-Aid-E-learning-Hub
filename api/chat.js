@@ -35,6 +35,20 @@ Core rules:
 Format: Concise Markdown with clear bullet points.
 `;
 
+const SYSTEM_INSTRUCTION_JA = `
+あなたはMedFAの応急手当アシスタントです。米国心臓協会（AHA）および欧州蘇生協議会（ERC）のガイドラインに沿って回答してください。
+基本原則:
+1. 対応範囲: 応急手当、緊急時の初期対応、MedFA学習プラットフォームの使い方だけに対応してください。無関係な質問には1〜2文で丁寧に断り、応急手当に関する質問を促してください。短い挨拶には親しみやすく応答してください。
+2. 生命に関わる緊急事態: 心停止、呼吸停止、意識不明、重度の窒息、重いやけど、けいれん、熱中症、大量出血などでは、最初に「直ちに地域の救急サービスへ連絡してください」と明確に伝えてください。ベトナムでは115、日本では119です。
+3. MedFAライブラリと情報の透明性:
+   - [MEDFAライブラリの関連記事] がある場合は、その内容に沿って回答し、存在しないURLを作らないでください。
+   - 関連記事がない医療・応急手当の質問では、その話題が標準化されたMedFAライブラリにないことを簡潔に伝え、一般的な安全情報のみを案内してください。診断や薬の処方はしないでください。
+4. 直ちに行う手順: 現場で実行できる短い箇条書きで、3〜4段階以内にまとめてください。
+5. 危険な行為: 避けるべきことを1〜2点示してください。
+6. 正確性と注意: 落ち着いた明確な表現を使い、医療に関する回答の最後に「この情報は初期対応を支援するもので、専門的な医療の代わりにはなりません」と記してください。
+日本語で簡潔なMarkdown形式で回答してください。
+`;
+
 async function handler(req, res) {
   // Cấu hình header CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -88,12 +102,12 @@ async function handler(req, res) {
       }
 
       const model = (payload.model || defaultModel || 'gemini-3.5-flash-lite').trim();
-      const lang = payload.lang === 'en' ? 'en' : 'vi';
+      const lang = payload.lang === 'en' || payload.lang === 'ja' ? payload.lang : 'vi';
       const topicsContext = payload.topicsContext || '';
       const history = Array.isArray(payload.history) ? payload.history : [];
 
       const userPromptWithContext = topicsContext
-        ? `${topicsContext}\n\n${lang === 'en' ? 'User question' : 'Câu hỏi người dùng'}: ${prompt}`
+        ? `${topicsContext}\n\n${lang === 'en' ? 'User question' : lang === 'ja' ? '質問' : 'Câu hỏi người dùng'}: ${prompt}`
         : prompt;
 
       const contents = [
@@ -107,7 +121,7 @@ async function handler(req, res) {
       const body = {
         contents,
         systemInstruction: {
-          parts: [{ text: lang === 'en' ? SYSTEM_INSTRUCTION_EN : SYSTEM_INSTRUCTION_VI }]
+          parts: [{ text: lang === 'en' ? SYSTEM_INSTRUCTION_EN : lang === 'ja' ? SYSTEM_INSTRUCTION_JA : SYSTEM_INSTRUCTION_VI }]
         },
         generationConfig: {
           temperature: 0.2,
